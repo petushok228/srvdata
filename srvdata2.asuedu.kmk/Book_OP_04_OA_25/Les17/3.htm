@@ -1,0 +1,981 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les17/3.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:00:38 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+	font-size: small;
+}
+    .style2 {
+				font-size: small;
+}
+    .style5 {
+	font-size: small;
+	color: rgb(0, 0, 255);
+}
+    .style6 {
+	text-align: left;
+	font-size: small;
+}
+    .style7 {
+	font-size: medium;
+}
+    .style8 {
+	color: #0000FF;
+	font-size: large;
+}
+    .style9 {
+	color: #0000FF;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 3. Строки и символы Python.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text" >
+               <p class="style2">Строка представляет 
+												последовательность символов в 
+												кодировке Unicode, заключенных в 
+												кавычки. Причем для определения 
+												строк Python позволяет 
+												использовать как одинарные, так 
+												и двойные кавычки:</p>
+				<pre class="style7">message = &quot;Hello World!&quot;
+print(message)  # Hello World!
+name = &#39;Tom&#39;
+print(name)  # Tom</pre>
+												<p class="style6">
+												Если строка длинная, ее можно 
+												разбить на части и разместить их 
+												на разных строках кода. В этом 
+												случае вся строка заключается в 
+												круглые скобки, а ее отдельные 
+												части - в кавычки:</p>
+				<pre class="style6">text = ("Laudate omnes gentes laudate "        "Magnificat in secula ")
+print(text)</pre>
+												<p class="style2">
+												Если же мы хотим определить 
+												многострочный текст, то такой 
+												текст заключается в тройные 
+												двойные или одинарные кавычки:</p>
+				<pre class="style2">'''Это комментарий'''
+text = '''Laudate omnes gentes laudateMagnificat in seculaEt anima mea laudateMagnificat in secula '''
+print(text)												&nbsp;</pre>
+												<p class="style2">&nbsp;При использовании тройных 
+												одинарных кавычек не стоит 
+												путать их с комментариями: если 
+												текст в тройных одинарных 
+												кавычках присваивается 
+												переменной, то это строка, а не 
+												комментарий.</p>
+												<h4 style="font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+												Управляющие последовательности в 
+												строке</h4>
+												<p class="style2">
+												Строка может содержать ряд 
+												специальных символов - 
+												управляющих последовательностей 
+												или escape-последовательности. 
+												Некоторые из них:</p>
+												<ul style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+																<li>
+																<p style="line-height: 1.56; overflow-wrap: break-word;">
+																<span class="style5" style="font-weight: bold;">
+																\</span><span class="style2">: 
+																позволяет 
+																добавить внутрь 
+																строки слеш</span></p>
+																</li>
+																<li>
+																<p style="line-height: 1.56; overflow-wrap: break-word;">
+																<span class="style5" style="font-weight: bold;">
+																\&#39;</span><span class="style2">: 
+																позволяет 
+																добавить внутрь 
+																строки одинарную 
+																кавычку</span></p>
+																</li>
+																<li>
+																<p style="line-height: 1.56; overflow-wrap: break-word;">
+																<span class="style5" style="font-weight: bold;">
+																\&quot;</span><span class="style2">: 
+																позволяет 
+																добавить внутрь 
+																строки двойную 
+																кавычку</span></p>
+																</li>
+																<li>
+																<p style="line-height: 1.56; overflow-wrap: break-word;">
+																<span class="style5" style="font-weight: bold;">
+																\n</span><span class="style2">: 
+																осуществляет 
+																переход на новую 
+																строку</span></p>
+																</li>
+																<li>
+																<p style="line-height: 1.56; overflow-wrap: break-word;">
+																<span class="style5" style="font-weight: bold;">
+																\t</span><span class="style2">: 
+																добавляет 
+																табуляцию (4 
+																отступа)</span></p>
+																</li>
+												</ul>
+												<p class="style2">
+												Используем некоторые 
+												последовательностей:</p>
+				<pre class="style2">text = "Message:\n\"Hello World\""
+print(text)
+												&nbsp;</pre>
+												<p class="style5">
+												<strong>Консольный вывод программы:</strong></p>
+												<div class="style2" style="padding: 0px; margin: 5px; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+																<pre class="consoletext" style="font-family: var(--main-font-family); max-width: 99%; line-height: 25.6px; white-space: pre-wrap; border: 1px solid rgb(204, 204, 204); clear: both; overflow-wrap: break-word; background-color: var(--console-bgcolor); color: var(--console-textcolor); padding-left: 10px;">Message:
+&quot;Hello World&quot;
+</pre>
+												</div>
+												<p class="style2">
+												Хотя подобные последовательности 
+												могут нам помочь в некоторых 
+												делах, например, поместить в 
+												строку кавычку, сделать 
+												табуляцию, перенос на другую 
+												строку. Но они также могут и 
+												мешать. Например:</p>
+				<pre class="style2">path = "C:\python\name.txt"
+print(path)
+												&nbsp;</pre>
+												<p class="style2">
+												Здесь переменная path содержит 
+												некоторый путь к файлу. Однако 
+												внутри строки встречаются 
+												символы &quot;\n&quot;, которые будут 
+												интерпретированы как управляющая 
+												последовательность. Так, мы 
+												получим следующий консольный 
+												вывод:</p>
+				<pre class="style2">C:\python
+ame.txt
+												&nbsp;</pre>
+												<p class="style2">
+												Чтобы избежать подобной 
+												ситуации, перед строкой ставится 
+												символ<span>&nbsp;</span><span class="style8" style="font-weight: bold;">r</span></p>
+				<pre class="style2">path = r"C:\python\name.txt"
+print(path)
+												&nbsp;</pre>
+												<h3 style="font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+												Вставка значений в строку</h3>
+												<p class="style2">
+												Python позволяет встравивать в 
+												строку значения других 
+												переменных. Для этого внутри 
+												строки переменные размещаются в 
+												фигурных скобках {}, а перед 
+												всей строкой ставится символ<span>&nbsp;</span><span class="style9" style="font-weight: bold;">f</span>:</p>
+				<pre class="style2">path = r"C:\python\name.txt"
+print(path)</pre>
+				<pre class="style2">userName = "Tom"
+userAge = 37
+user = f"name: {userName}  age: {userAge}"print(user)   # name: Tom  age: 37
+												&nbsp;</pre>
+												<p class="style2">
+												В данном случае на место<span>&nbsp;</span><code style="font-family: monospace;">{userName}</code><span>&nbsp;</span>будет 
+												вставляться значение переменной 
+												userName. Аналогично на вместо<span>&nbsp;</span><code style="font-family: monospace;">{userAge}</code><span>&nbsp;</span>будет 
+												вставляться значение переменной 
+												userAge.</p>
+												<h3 style="font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+												Обращение к символам строки</h3>
+												<p class="style2">
+												И мы можем обратиться к 
+												отдельным символам строки по 
+												индексу в квадратных скобках:</p>
+				<pre class="style2">string = "hello world"
+c0 = string[0]  # h
+print(c0)
+c6 = string[6]  # w
+print(c6) 
+c11 = string[11]  # ошибка IndexError: string index out of rangeprint(c11)
+												&nbsp;</pre>
+												<p>
+												<span class="style2">Индексация начинается с нуля, 
+												поэтому первый символ строки 
+												будет иметь индекс 0. А если мы 
+												попытаемся обратиться к индексу, 
+												которого нет в строке, то мы 
+												получим исключение IndexError. 
+												Например, в случае выше длина 
+												строки 11 символов, поэтому ее 
+												символы будут иметь индексы от 0 
+												до 10.</p>
+												<p>
+												Чтобы получить доступ к 
+												символам, начиная с конца 
+												строки, можно использовать 
+												отрицательные индексы. Так, 
+												индекс -1 будет представлять 
+												последний символ, а -2 - 
+												предпоследний символ и так 
+												далее:</p>
+				<pre>string = "hello world"
+c1 = string[-1]  # d
+print(c1)
+c5 = string[-5]  # w
+print(c5)												</span></pre>
+												<p class="style2">
+												При работе с символами следует 
+												учитывать, что строка - это 
+												неизменяемый (immutable) тип, 
+												поэтому если мы попробуем 
+												изменить какой-то отдельный 
+												символ строки, то мы получим 
+												ошибку, как в следующем случае:</p>
+				<pre class="style2">string = "hello world"
+string[1] = "R"
+												&nbsp;</pre>
+												<p class="style2">
+												Мы можем только полностью 
+												переустановить значение строки, 
+												присвоив ей другое значение.</p>
+												<h3 style="font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+												Перебор строки</h3>
+												<p class="style2">
+												С помощью цикла<span>&nbsp;</span><span class="b" style="font-weight: bold;">for</span><span>&nbsp;</span>можно 
+												перебрать все символы строки:</p>
+				<pre class="style2">string = "hello world"
+for char in string:
+	print(char)
+												&nbsp;</pre>
+												<h3 style="font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+												Получение подстроки</h3>
+												<p class="style2">
+												При необходимости мы можем 
+												получить из строки не только 
+												отдельные символы, но и 
+												подстроку. Для этого 
+												используется следующий 
+												синтаксис:</p>
+												<ul>
+													<li>
+													<p style="line-height: 1.56; overflow-wrap: break-word;">
+													<code style="font-family: monospace;">
+													<span class="style2">string[:end]</span></code><span class="style2">: 
+																извлекается 
+																последовательность 
+																символов начиная 
+																с 0-го индекса 
+																по индекс end 
+																(не включая)</p>
+				</li>
+				<li>
+				<p style="line-height: 1.56; overflow-wrap: break-word;">
+				<code style="font-family: monospace;"><span class="style7">string[start:end]</span></code><span class="style7">: 
+																извлекается 
+																последовательность 
+																символов начиная 
+																с индекса start 
+																по индекс end 
+																(не включая)</span></p>
+				</li>
+				<li>
+				<p style="line-height: 1.56; overflow-wrap: break-word;">
+				<code style="font-family: monospace;"><span class="style7">string[start:end:step]</span></code><span class="style7">: 
+																извлекается 
+																последовательность 
+																символов начиная 
+																с индекса start 
+																по индекс end 
+																(не включая) 
+																через шаг step</span></p>
+				</li>
+				</ul>
+				<p style="line-height: 1.56; overflow-wrap: break-word;"></p>
+												<p class="style2">
+												Используем все варианты 
+												получения подстроки:</p>
+				<pre class="style2">string = "hello world" # с 0 до 5 индекса
+sub_string1 = string[:5]
+print(sub_string1)      # hello 
+# со 2 до 5 индекса
+sub_string2 = string[2:5]
+print(sub_string2)      # llo 
+# с 2 по 9 индекса через один символ
+sub_string3 = string[2:9:2]
+print(sub_string3)      # lowr
+												&nbsp;</pre>
+												<h3 style="font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+												Объединение строк</h3>
+												<p class="style2">
+												Одной из самых распространенных 
+												операций со строками является их 
+												объединение или конкатенация. 
+												Для объединения строк 
+												применяется операция сложения:</p>
+				<pre class="style2">name = "Tom"
+surname = "Smith"
+fullname = name + " " + surname
+print(fullname)  # Tom Smith
+												&nbsp;</pre>
+												<p class="style2">
+												С объединением двух строк все 
+												просто, но что, если нам надо 
+												сложить строку и число? В этом 
+												случае необходимо привести число 
+												к строке с помощью функции<span>&nbsp;</span><span class="b" style="font-weight: bold;">str()</span>:</p>
+				<pre class="style2">name = "Tom"
+age = 33
+info = "Name: " + name + " 
+Age: " + str(age)
+print(info)  # Name: Tom 
+Age: 33
+												&nbsp;</pre>
+												<h3 style="font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+												Повторение строки</h3>
+												<p class="style2">
+												Для повторения строки 
+												определенное количество раз 
+												применяется операция умножения:</p>
+				<pre class="style2">print("a" * 3)  # aaa
+print("he" * 4)  # hehehehe												&nbsp;</pre>
+												<h3 style="font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+												Сравнение строк</h3>
+												<p class="style2">
+												Особо следует сказать о 
+												сравнении строк. При сравнении 
+												строк принимается во внимание 
+												символы и их регистр. Так, 
+												цифровой символ условно меньше, 
+												чем любой алфавитный символ. 
+												Алфавитный символ в верхнем 
+												регистре условно меньше, чем 
+												алфавитные символы в нижнем 
+												регистре. Например:</p>
+				<pre class="style2">str1 = "1a"str2 = "aa"
+str3 = "Aa"
+print(str1 > str2)  # False, так как первый символ в str1 - цифра
+print(str2 > str3)  # True, так как первый символ в str2 - в нижнем регистре
+												&nbsp;</pre>
+												<p>
+												<span class="style2">Поэтому строка &quot;1a&quot; условно 
+												меньше, чем строка &quot;aa&quot;. Вначале 
+												сравнение идет по первому 
+												символу. Если начальные символы 
+												обоих строк представляют цифры, 
+												то меньшей считается меньшая 
+												цифра, например, &quot;1a&quot; меньше, 
+												чем &quot;2a&quot;.</p>
+												<p>
+												Если начальные символы 
+												представляют алфавитные символы 
+												в одном и том же регистре, то 
+												смотрят по алфавиту. Так, &quot;aa&quot; 
+												меньше, чем &quot;ba&quot;, а &quot;ba&quot; меньше, 
+												чем &quot;ca&quot;.</p>
+												<p>
+												Если первые символы одинаковые, 
+												в расчет берутся вторые символы 
+												при их наличии.</p>
+												<p>
+												Зависимость от регистра не 
+												всегда желательна, так как по 
+												сути мы имеем дело с одинаковыми 
+												строками. В этом случае перед 
+												сравнением мы можем привести обе 
+												строки к одному из регистров.</p>
+												<p>
+												Функция<span>&nbsp;</span><span class="b" style="font-weight: bold;">lower()</span><span>&nbsp;</span>приводит 
+												строку к нижнему регистру, а 
+												функция<span>&nbsp;</span><span class="b" style="font-weight: bold;">upper()</span><span>&nbsp;</span>- 
+												к верхнему.</p>
+				<pre>str2 = "tom"str1 = "Tom"
+print(str1 == str2)  # False - строки не равны 
+print(str1.lower() == str2.lower())  # True												</span></pre>
+												<h3 style="font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+												Функции ord и len</h3>
+												<p class="style2">
+												Поскольку строка содержит 
+												символы Unicode, то с помощью 
+												функции<span>&nbsp;</span><span class="b" style="font-weight: bold;">ord()</span><span>&nbsp;</span>мы 
+												можем получить числовое значение 
+												для символа в кодировке Unicode:</p>
+				<pre class="style2">print(ord("A"))     # 65
+												&nbsp;</pre>
+												<p class="style2">
+												Для получения длины строки можно 
+												использовать функцию<span>&nbsp;</span><span class="b" style="font-weight: bold;">len()</span>:</p>
+				<pre class="style2">string = "hello world"
+length = len(string)
+print(length)   # 11
+												&nbsp;</pre>
+												<h3 style="font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+												Поиск в строке</h3>
+												<p class="style2">
+												С помощью выражения<span>&nbsp;</span><code style="font-family: monospace;">term 
+												in string</code><span>&nbsp;</span>можно 
+												найти подстроку term в строке 
+												string. Если подстрока найдена, 
+												то выражение вернет значение<span>&nbsp;</span><code style="font-family: monospace;">True</code>, 
+												иначе возвращается значение<span>&nbsp;</span><code style="font-family: monospace;">False</code>:</p>
+				<pre class="style2">string = "hello world"
+exist = "hello" in string
+print(exist)    # True 
+exist = "sword" in string
+print(exist)    # False
+												&nbsp;</pre>
+				<h2 style="font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+				Основные методы строк</h2>
+				<p class="style2">
+				Рассмотрим основные методы строк, которые мы можем применить в 
+				приложениях:</p>
+				<ul style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<span class="style2" style="font-weight: bold;">
+								isalpha()</span><span class="style2">: возвращает True, если строка 
+								состоит только из алфавитных символов</p>
+								</li>
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<span class="b" style="font-weight: bold;">
+								islower()</span>: возвращает True, если строка 
+								состоит только из символов в нижнем регистре</p>
+								</li>
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<span class="b" style="font-weight: bold;">
+								isupper()</span>: возвращает True, если все 
+								символы строки в верхнем регистре</p>
+								</li>
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<span class="b" style="font-weight: bold;">
+								isdigit()</span>: возвращает True, если все 
+								символы строки - цифры</p>
+								</li>
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<span class="b" style="font-weight: bold;">
+								isnumeric()</span>: возвращает True, если строка 
+								представляет собой число</p>
+								</li>
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<span class="b" style="font-weight: bold;">
+								startswith(str)</span>: возвращает True, если 
+								строка начинается с подстроки str</p>
+								</li>
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<span class="b" style="font-weight: bold;">
+								endswith(str)</span>: возвращает True, если 
+								строка заканчивается на подстроку str</p>
+								</li>
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<span class="b" style="font-weight: bold;">
+								lower()</span>: переводит строку в нижний 
+								регистр</p>
+								</li>
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<span class="b" style="font-weight: bold;">
+								upper()</span>: переводит строку в вехний 
+								регистр</p>
+								</li>
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<span class="b" style="font-weight: bold;">
+								title()</span>: начальные символы всех слов в 
+								строке переводятся в верхний регистр</p>
+								</li>
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<span class="b" style="font-weight: bold;">
+								capitalize()</span>: переводит в верхний регистр 
+								первую букву только самого первого слова строки</p>
+								</li>
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<span class="b" style="font-weight: bold;">
+								lstrip()</span>: удаляет начальные пробелы из 
+								строки</p>
+								</li>
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<span class="b" style="font-weight: bold;">
+								rstrip()</span>: удаляет конечные пробелы из 
+								строки</p>
+								</li>
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<span class="b" style="font-weight: bold;">
+								strip()</span>: удаляет начальные и конечные 
+								пробелы из строки</p>
+								</li>
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<span class="b" style="font-weight: bold;">
+								ljust(width)</span>: если длина строки меньше 
+								параметра width, то справа от строки добавляются 
+								пробелы, чтобы дополнить значение width, а сама 
+								строка выравнивается по левому краю</p>
+								</li>
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<span class="b" style="font-weight: bold;">
+								rjust(width)</span>: если длина строки меньше 
+								параметра width, то слева от строки добавляются 
+								пробелы, чтобы дополнить значение width, а сама 
+								строка выравнивается по правому краю</p>
+								</li>
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<span class="b" style="font-weight: bold;">
+								center(width)</span>: если длина строки меньше 
+								параметра width, то слева и справа от строки 
+								равномерно добавляются пробелы, чтобы дополнить 
+								значение width, а сама строка выравнивается по 
+								центру</p>
+								</li>
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<span class="b" style="font-weight: bold;">
+								find(str[, start [, end])</span>: возвращает 
+								индекс подстроки в строке. Если подстрока не 
+								найдена, возвращается число -1</p>
+								</li>
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<span class="b" style="font-weight: bold;">
+								replace(old, new[, num])</span>: заменяет в 
+								строке одну подстроку на другую</p>
+								</li>
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<span class="b" style="font-weight: bold;">
+								split([delimeter[, num]])</span>: разбивает 
+								строку на подстроки в зависимости от разделителя</p>
+								</li>
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<span class="b" style="font-weight: bold;">
+								join(strs)</span>: объединяет строки в одну 
+								строку, вставляя между ними определенный 
+								разделитель</span></p>
+								</li>
+				</ul>
+				<p class="style2">
+				Например, если мы ожидаем ввод с клавиатуры числа, то перед 
+				преобразованием введенной строки в число можно проверить, с 
+				помощью метода isnumeric() введено ли в действительности число, 
+				и если так, то выполнить операцию преобразования:</p>
+				<pre class="style2">string = input("Введите число: ")
+if string.isnumeric():    
+	number = int(string)    
+print(number)
+				&nbsp;</pre>
+				<p class="style2">
+				Проверка, начинается или оканчивается строка на определенную 
+				подстроку:</p>
+				<pre class="style2">file_name = "hello.py" 
+starts_with_hello = file_name.startswith("hello") # True
+ends_with_exe = file_name.endswith("exe")           # False
+				&nbsp;</pre>
+				<p class="style2">
+				Удаление пробелов в начале и в конце строки:</p>
+				<pre class="style2">string = "   hello  world!  "
+string = string.strip()
+print(string)           # hello  world!				&nbsp;</pre>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p class="style2">
+				Дополнение строки пробелами и выравнивание:</p>
+				<pre class="style2">print("iPhone 7:", "52000".rjust(10))
+print("Huawei P10:", "36000".rjust(10))
+				&nbsp;</pre>
+				<p class="style5">
+				Консольный вывод:</p>
+				<pre>iPhone 7:      52000
+Huawei P10:      36000
+				&nbsp;</pre>
+				<h3 style="font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+				Поиск в строке</h3>
+				<p class="style2">
+				Для поиска подстроки в строке в Python применяется метод<span>&nbsp;</span><span class="b" style="font-weight: bold;">find()</span>, 
+				который возвращает индекс первого вхождения подстроки в строку и 
+				имеет три формы:</p>
+				<ul style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<code style="font-family: monospace;">
+								<span class="style2">find(str)</span></code><span class="style2">: 
+								поиск подстроки str ведется с начала строки до 
+								ее конца</p>
+								</li>
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<code style="font-family: monospace;">find(str, 
+								start)</code>: параметр start задает начальный 
+								индекс, с которого будет производиться поиск</p>
+								</li>
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<code style="font-family: monospace;">find(str, 
+								start, end)</code>: параметр end задает конечный 
+								индекс, до которого будет идти поиск</span></p>
+								</li>
+				</ul>
+				<p class="style2">
+				Если подстрока не найдена, метод возвращает -1:</p>
+				<pre class="style2">welcome = "Hello world! Goodbye world!"
+index = welcome.find("wor")
+print(index)       # 6 
+# поиск с 10-го индекса
+index = welcome.find("wor",10)
+print(index)       # 21 
+# поиск с 10 по 15 индекс
+index = welcome.find("wor",10,15)
+print(index)       # -1
+				&nbsp;</pre>
+				<h3 style="font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+				Замена в строке</h3>
+				<p class="style2">
+				Для замены в строке одной подстроки на другую применяется метод<span>&nbsp;</span><span class="b" style="font-weight: bold;">replace()</span>:</p>
+				<ul style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<code style="font-family: monospace;">
+								<span class="style2">replace(old, new)</span></code><span class="style2">: заменяет подстроку old 
+								на new</p>
+								</li>
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<code style="font-family: monospace;">
+								replace(old, new, num)</code>: параметр num 
+								указывает, сколько вхождений подстроки old надо 
+								заменить на new</span></p>
+								</li>
+				</ul>
+				<pre>phone = "+1-234-567-89-10" # замена дефисов на пробелe
+dited_phone = phone.replace("-", " ")
+print(edited_phone)     # +1 234 567 89 10 
+# удаление дефисов
+edited_phone = phone.replace("-", "")
+print(edited_phone)     # +12345678910 
+# замена только первого дефиса
+edited_phone = phone.replace("-", "", 1)
+print(edited_phone)     # +1234-567-89-10&nbsp;</pre>
+				<h3 style="font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+				Разделение на подстроки</h3>
+				<p class="style2">
+				Метод<span>&nbsp;</span><span class="b" style="font-weight: bold;">split()</span><span>&nbsp;</span>разбивает 
+				строку на список подстрок в зависимости от разделителя. В 
+				качестве разделителя может выступать любой символ или 
+				последовательность символов. Данный метод имеет следующие формы:</p>
+				<ul style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<code style="font-family: monospace;">
+								<span class="style2">split()</span></code><span class="style2">: 
+								в качестве разделителя используется пробел</p>
+								</li>
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<code style="font-family: monospace;">
+								split(delimeter)</code>: в качестве разделителя 
+								используется delimeter</p>
+								</li>
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<code style="font-family: monospace;">
+								split(delimeter, num)</code>: параметр num 
+								указывает, сколько вхождений delimeter 
+								используется для разделения. Оставшаяся часть 
+								строки добавляется в список без разделения на 
+								подстроки</span></p>
+								</li>
+				</ul>
+				<pre>text = "Это был огромный, в два обхвата дуб, с обломанными ветвями и с обломанной корой"
+# разделение по пробелам
+splitted_text = text.split()
+print(splitted_text)
+print(splitted_text[6])     # дуб, 
+# разбиение по запятым
+splitted_text = text.split(",")
+print(splitted_text)
+print(splitted_text[1])     # в два обхвата дуб 
+# разбиение по первым пяти пробелам
+splitted_text = text.split(" ", 5)
+print(splitted_text)        
+print(splitted_text[5])     # обхвата дуб, с обломанными ветвями и с обломанной корой&nbsp;</pre>
+				<h3 style="font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+				Соединение строк</h3>
+				<p class="style2">
+				При рассмотрении простейших операций со строками было показано, 
+				как объединять строки с помощью операции сложения. Другую 
+				возможность для соединения строк представляет метод<span>&nbsp;</span><span class="b" style="font-weight: bold;">join()</span>: 
+				он объединяет список строк. Причем текущая строка, у которой 
+				вызывается данный метод, используется в качестве разделителя:</p>
+				<pre class="style2">words = ["Let", "me", "speak", "from", "my", "heart", "in", "English"] 
+# разделитель - пробел
+sentence = " ".join(words)
+print(sentence)  # Let me speak from my heart in English 
+# разделитель - вертикальная черта
+sentence = " | ".join(words)
+print(sentence)  # Let | me | speak | from | my | heart | in | English
+				&nbsp;</pre>
+				<p class="style2">
+				Вместо списка в метод join можно передать простую строку, тогда 
+				разделитель будет вставляться между символами этой строки:</p>
+				<pre class="style2">word = "hello"
+joined_word = "|".join(word)
+print(joined_word)      # h|e|l|l|o
+				&nbsp;</pre>
+				<h2 style="font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+				Форматирование</h2>
+				<p class="style2">
+				В прошлых темах было рассмотрено, как можно вставлять в строку 
+				некоторые значения, предваряя строку символом<span>&nbsp;</span><span class="b" style="font-weight: bold;">f</span>:</p>
+				<pre class="style2">first_name="Tom"
+text = f"Hello, {first_name}."
+print(text)     # Hello, Tom. name="Bob"
+age=23
+info = f"Name: {name}\t Age: {age}"
+print(info)     # Name: Bob Age: 23
+				&nbsp;</pre>
+				<p>
+				<span class="style2">Но также в Python есть альтернативный способ, который 
+				предоставляет метод<span>&nbsp;</span><span class="b" style="font-weight: bold;">format()</span>. 
+				Этот метод позволяет форматировать строку, вставляя в нее на 
+				место плейсхолдеров определенные значения.</p>
+				<p>
+				Для вставки в строку используются специальные параметры, которые 
+				обрамляются фигурными скобками ({}).</span></p>
+				<h3 style="font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+				Именованные параметры</h3>
+				<p class="style2">
+				В форматируемой строке мы можем определять параметры, в методе<span>&nbsp;</span><code style="font-family: monospace;">format()</code><span>&nbsp;</span>передавать 
+				для этих параметров значения:</p>
+				<pre class="style2">text = "Hello, {first_name}.".format(first_name="Tom")
+print(text)     # Hello, Tom. 
+info = "Name: {name}\t Age: {age}".format(name="Bob", age=23)
+print(info)     # Name: Bob  Age: 23
+				&nbsp;</pre>
+				<p class="style2">
+				Причем в метод формат аргументы определяются с тем же именем, 
+				что и параметры в строке. Так, если параметр называется<span>&nbsp;</span><code style="font-family: monospace;">first_name</code>, 
+				как в первом случае, то аргумент, которому присваивается 
+				значение, также называется<span>&nbsp;</span><code style="font-family: monospace;">first_name</code>.</p>
+				<h3 style="font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+				Параметры по позиции</h3>
+				<p class="style2">
+				Мы также можем последовательно передавать в метод format набор 
+				аргументов, а в самой форматируемой строке вставлять эти 
+				аргумента, указывая в фигурных скобках их номер (нумерация 
+				начинается с нуля):</p>
+				<pre class="style2">info = "Name: {0}\t Age: {1}".format("Bob", 23)
+print(info)     # Name: Bob  Age: 23
+				&nbsp;</pre>
+				<p class="style2">
+				При этом аргументы можно вставлять в строку множество раз:</p>
+				<pre class="style2">text = "Hello, {0} {0} {0}.".format("Tom")
+				&nbsp;</pre>
+				<h3 style="font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+				Подстановки</h3>
+				<p class="style2">
+				Еще один способ передачи форматируемых значений в строку 
+				представляет использование подстановок или специальных 
+				плейсхолдеров, на место которых вставляются определенные 
+				значения. Для форматирования мы можем использовать следующие 
+				плейсхолдеры:</p>
+				<ul style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<span class="style2" style="font-weight: bold;">s</span><span class="style2">: 
+								для вставки строк</p>
+								</li>
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<span class="b" style="font-weight: bold;">d</span>: 
+								для вставки целых чисел</p>
+								</li>
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<span class="b" style="font-weight: bold;">f</span>: 
+								для вставки дробных чисел. Для этого типа также 
+								можно определить через точку количество знаков в 
+								дробной части.</p>
+								</li>
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<span class="b" style="font-weight: bold;">%</span>: 
+								умножает значение на 100 и добавляет знак 
+								процента</p>
+								</li>
+								<li>
+								<p style="line-height: 1.56; overflow-wrap: break-word;">
+								<span class="b" style="font-weight: bold;">e</span>: 
+								выводит число в экспоненциальной записи</span></p>
+								</li>
+				</ul>
+				<p class="style2">
+				Общий синтаксис плейсхолдера следующий:</p>
+				<pre class="style2">text = "Hello, {0} {0} {0}.".format("Tom")</pre>
+				<pre class="style2">{:плейсхолдер}				&nbsp;</pre>
+				<p class="style2">
+				В зависимости от плейсхолдера можно добавлять дополнительные 
+				параметры. Например, для форматирования чисел float можно 
+				использовать следующие параметры</p>
+				<pre class="style2">{:[количество_символов][запятая][.число_знаков_в_дробной_части] плейсхолдер}
+				&nbsp;</pre>
+				<p class="style2">
+				При вызове метода format в него в качестве аргументов передаются 
+				значения, которые вставляются на место плейсхолдеров:</p>
+				<pre class="style2">welcome = "Hello {:s}"
+name = "Tom"formatted_welcome = welcome.format(name)
+print(formatted_welcome)        # Hello Tom				&nbsp;</pre>
+				<p>
+				<span class="style2">В качестве результата метод<span>&nbsp;</span><code style="font-family: monospace;">format()</code><span>&nbsp;</span>возвращает 
+				новую отформатированную строку.</p>
+				<p>
+				Форматирование целых чисел:</p>
+				<pre>number = 5
+source = "{:d} символов"
+target = source.format(number)
+print(target)   # 5 символов
+				</span></pre>
+				<p class="style2">
+				Если форматируемое число больше 999, то мы можем указать в 
+				определении плейсхолдера, что мы хотим использовать запятую в 
+				качестве разделителя разрядов:</p>
+				<pre class="style2">source = "{:,d} символов"
+print(source.format(5000))   # 5,000 символов				&nbsp;</pre>
+				<p class="style2">
+				Причем плейсхолдеры можно использовать и в f-строках:</p>
+				<pre class="style2">source = "{:,d} символов"
+print(source.format(5000))   # 5,000 символов
+				&nbsp;</pre>
+				<p class="style2">
+				Для дробных чисел, то есть таких, которые представляют тип 
+				float, перед кодом плейсхолдера после точки можно указать, 
+				сколько знаков в дробной части мы хотим вывести:</p>
+				<pre class="style2">number = 23.8589578print("{:.2f}".format(number))   # 23.86
+print("{:.3f}".format(number))   # 23.859
+print("{:.4f}".format(number))   # 23.8590
+print("{:,.2f}".format(10001.23554))    # 10,001.24
+				&nbsp;</pre>
+				<p class="style2">
+				Еще один параметр позволяет установить минимальную ширину 
+				форматируемого значения в символах:</p>
+				<pre class="style2">print("{:10.2f}".format(23.8589578))    #     23.86
+print("{:8d}".format(25))               #      25				&nbsp;</pre>
+				<p class="style2">
+				Аналогичный пример с f-строками:</p>
+				<pre class="style2">n1 = 23.8589578
+print(f"{n1:10.2f}")    #     23.86
+n2 = 25
+print(f"{n2:8d}")       #      25
+				&nbsp;</pre>
+				<p class="style2">
+				Для вывода процентов лучше воспользоваться кодом &quot;%&quot;:</p>
+				<pre class="style2">number = .12345
+print("{:%}".format(number))        # 12.345000%
+print("{:.0%}".format(number))      # 12%
+print("{:.1%}".format(number))      # 12.3% 
+print(f"{number:%}")        # 12.345000%
+print(f"{number:.0%}")      # 12%
+print(f"{number:.1%}")      # 12.3%				&nbsp;</pre>
+				<p class="style2">
+				Для вывода числа в экспоненциальной записи применяется 
+				плейсхолдер &quot;e&quot;:</p>
+				<pre class="style2">number = 12345.6789
+print("{:e}".format(number))        # 1.234568e+04
+print("{:.0e}".format(number))      # 1e+04
+print("{:.1e}".format(number))      # 1.2e+04 
+print(f"{number:e}")        # 1.234568e+04
+print(f"{number:.0e}")      # 1e+04
+print(f"{number:.1e}")      # 1.2e+04				&nbsp;</pre>
+				<h3 style="font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+				Форматирование без метода format</h3>
+				<p class="style2">
+				Существует также еще один способ форматирования с помощью 
+				следующего синтаксиса:</p>
+				<pre class="style2">строка%(параметр1, параметр2,..параметрN)
+				&nbsp;</pre>
+				<p class="style2">
+				То есть в начале идет строка, которая содержит те же 
+				плейсхолдеры, которые были рассмотрены выше (за исключением 
+				плейсхолдера %), после строки ставится знак процента %, а затем 
+				список значений, которые вставляются в строку. Фактически знак 
+				процента представляют операцию, в результате которой образуется 
+				новая строка:</p>
+				<pre class="style2">info = "Имя: %s \t Возраст: %d" % ("Tom", 35)
+print(info)   # Имя: Tom     Возраст: 35
+				&nbsp;</pre>
+				<p class="style2">
+				Рядом с плейсхолдером указывается знак процента и в отличие от 
+				функции format здесь не требуются фигурные скобки.</p>
+				<p>
+				Причем способы форматирования чисел здесь также применяются:</p>
+				<pre>number = 23.8589578
+				print("%0.2f  - %e" % (number, number))   # 23.86  - 2.385896e+01			&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2008 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les17.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les17/3.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:00:38 GMT -->
+</html>

@@ -1,0 +1,323 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les21/8.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:09:09 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: small;
+	color: rgb(0, 0, 255);
+}
+    .style3 {
+	font-size: small;
+}
+    .style4 {
+	color: #0000FF;
+}
+.style5 {
+	margin-left: 40px;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 8.  Работа с текстовыми файлами в C#.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text" 
+                >
+                <p style="box-sizing: border-box; margin: 0px 0px 10px; color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span lang="ru">Работа с файлами средствами класса </span>Классы 
+				File и FileInfo.</p>
+				<p style="box-sizing: border-box; margin: 0px 0px 10px; color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для работы с текстовыми файлами применяется класс FileInfo. В классе FileInfo используются статические методы:
+				</p>
+				<ul style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">AppendAllLines(String, 
+					IEnumerable&lt;String&gt;)</span><span>&nbsp;</span>/<span>&nbsp;</span><span class="b" style="font-weight: bold;">AppendAllLinesAsync(String, 
+					IEnumerable&lt;String&gt;, CancellationToken) </span>добавляют в файл набор строк. Если файл не существует, то он 
+					создается</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">AppendAllText(String, 
+					String)</span><span>&nbsp;</span>/<span>&nbsp;</span><span class="b" style="font-weight: bold;">AppendAllTextAsync(String, 
+					String, CancellationToken) </span>добавляют в файл строку. Если файл не существует, то он 
+					создается</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">byte[] 
+					ReadAllBytes (string path)</span><span>&nbsp;</span>/<span>&nbsp;</span><span class="b" style="font-weight: bold;">Task&lt;byte[]&gt; 
+					ReadAllBytesAsync (string path, CancellationToken 
+					cancellationToken) </span>считывают содержимое бинарного файла в массив байтов</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">string[] 
+					ReadAllLines (string path)</span><span>&nbsp;</span>/<span>&nbsp;</span><span class="b" style="font-weight: bold;">Task&lt;string[]&gt; 
+					ReadAllLinesAsync (string path, CancellationToken 
+					cancellationToken) </span>считывают содержимое текстового файла в массив строк</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">string 
+					ReadAllText (string path)</span><span>&nbsp;</span>/<span>&nbsp;</span><span class="b" style="font-weight: bold;">Task&lt;string&gt; 
+					ReadAllTextAsync (string path, CancellationToken 
+					cancellationToken) </span>считывают содержимое текстового файла в строку</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">IEnumerable&lt;string&gt; 
+					ReadLines (string path) </span>считывают содержимое текстового файла в коллекцию строк</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">void 
+					WriteAllBytes (string path, byte[] bytes)</span><span>&nbsp;</span>/<span>&nbsp;</span><span class="b" style="font-weight: bold;">Task 
+					WriteAllBytesAsync (string path, byte[] bytes, 
+					CancellationToken cancellationToken) </span>записывают массив байт в бинарный файл. Если файл не 
+					существует, он создается. Если существует, то 
+					перезаписывается</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">void 
+					WriteAllLines (string path, string[] contents)</span><span>&nbsp;</span>/<span>&nbsp;</span><span class="b" style="font-weight: bold;">Task 
+					WriteAllLinesAsync (string path, IEnumerable&lt;string&gt; 
+					contents, CancellationToken cancellationToken) </span>записывают массив строк в текстовый файл. Если файл не 
+					существует, он создается. Если существует, то 
+					перезаписывается</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">WriteAllText 
+					(string path, string? contents)</span><span>&nbsp;</span>/<span>&nbsp;</span><span class="b" style="font-weight: bold;">Task 
+					WriteAllTextAsync (string path, string? contents, 
+					CancellationToken cancellationToken) </span>записывают строку в текстовый файл. Если файл не существует, 
+					он создается. Если существует, то перезаписывается</p>
+					</li>
+				</ul>
+				<p style="box-sizing: border-box; margin: 0px 0px 10px; color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				.Пример создание, запись, чтение и добавление строк в файл.</p>
+				<pre class="style5"><span class="style4"><strong>// определите путь к текстовому файлу в вашей системе
+        string file = @"C:\Documents\Textfile.txt";
+
+      // определите путь к текстовому файлу в вашей системе
+            string file = @"D:\!Pr_OA_OOP_Py_Is_ABD_CCA_24\!BakulinCharp\Ur21_FileInfo\Textfile.txt";
+            string[] arrayLine = new string[5];  //создали массив
+            arrayLine[0] = "Строка 1";
+            arrayLine[1] = "Строка 2";
+            arrayLine[2] = "Строка 3";
+            arrayLine[3] = "Строка 4";
+            arrayLine[4] = "Строка 5";
+
+            // void WriteAllLines (string path, string[] contents)  для записи в файл
+            //записывают строку в текстовый файл.Если файл не существует, он создается.Если существует, то перезаписывается
+            File.WriteAllLines(file, arrayLine);  //записали массив 
+
+            // Использование метода  WriteAllText (string path, string? contents) для записи в файл
+            // записывают массив строк в текстовый файл. Если файл не существует, он создается. Если существует, то перезаписывается
+            //открывается файл удаляется старый текст и записывается новый
+            // File.WriteAllText(file, arrayLine[0]);
+            // File.WriteAllText(file, arrayLine[1]); //удаляет Строка 1 и Записывает Строка 2
+            // File.WriteAllText(file, arrayLine[2]);
+            /*
+            
+             string s ="";
+             for (int i = 0; i < arrayLine.Length; i++)
+             {
+                 s = s + arrayLine[i]+"\n";  //преобразовали массив в строку
+             }
+             File.WriteAllText(file, s);  //записали строку
+             */
+
+//Добавление строки в файл AppendAllText(String, String)  добавляют в файл строку.
+            //Если файл не существует, то он создается
+            string l = "Добавленная строка методом AppendAllText/n";
+            File.AppendAllText(file, l);
+            */
+            //AppendAllLines(String, IEnumerable</strong></span><String><span class="style4"><strong>)  добавляют в файл набор строк. Если файл не существует, то он создается
+            string[] arrayLines = new string[5];  //создали массив
+            arrayLines[0] = "Добавленная Строка 1";
+            arrayLines[1] = "Добавленная Строка 2";
+            arrayLines[2] = "Добавленная Строка 3";
+            arrayLines[3] = "Добавленная Строка 4";
+            arrayLines[4] = "Добавленная Строка 5";
+            File.AppendAllLines(file, arrayLines);
+
+            Console.WriteLine("Чтение файла с помощью File.ReadAllText()");
+
+            // Чтение всего файла за один раз
+            // Если файл существует
+            if (File.Exists(file))
+            {
+                // Чтение всего содержимого в одной строке
+                // и вывод его на экран
+                string str = File.ReadAllText(file);
+                Console.WriteLine(str);
+            }
+
+
+
+         Console.WriteLine("Чтение файла с помощью File.ReadAllText()");
+            
+            // Чтение всего файла за один раз
+            // Если файл существует
+            if (File.Exists(file))
+            {
+                // Чтение всего содержимого в одной строке
+                // и вывод его на экран
+                string str = File.ReadAllText(file);
+                Console.WriteLine(str);
+            }
+            Console.WriteLine();
+            Console.WriteLine("Чтение файла с помощью File.ReadAllLines()");
+
+            // Прочитать текст по одной строке за раз
+            if (File.Exists(file))
+            {
+                // Поместим каждую строку в массив строк
+                string[] lines = File.ReadAllLines(file);
+
+                foreach (string ln in lines)
+                    Console.WriteLine(ln);
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("Чтение файла с помощью StreamReader");
+
+            // используем StreamReader
+            if (File.Exists(file))
+            {
+                // Читаем файл построчно
+                var textFile = new StreamReader(file);
+                string line;
+
+                while ((line = textFile.ReadLine()) != null)
+                {
+                    Console.WriteLine(line);
+                }
+                textFile.Close();
+               
+            }</strong></span></pre>
+				<p style="box-sizing: border-box; margin: 0px 0px 10px; color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				&nbsp;</p>
+				<p style="box-sizing: border-box; margin: 0px 0px 10px; color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для работы с текстовыми файлами <span lang="ru">в потоке </span>применяются два 
+				<span lang="ru">динамических </span>класса<span>&nbsp;</span><strong style="box-sizing: border-box; font-weight: 700;">StreamReader</strong><span>&nbsp;</span>и<span>&nbsp;</span><strong style="box-sizing: border-box; font-weight: 700;">StreamWriter</strong>. 
+				По названию классов видно, что первый используется для работы с 
+				файлами в режиме чтения, второй для работы в режиме записи. Они 
+				интуитивно понятны, так как все их методы явно отражают 
+				действия. Приведем пример чтения по строкам:</p>
+				<pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; display: block; padding: 9.5px; margin: 0px 0px 10px; line-height: 1.42857; color: rgb(51, 51, 51); word-break: break-all; overflow-wrap: break-word; background-color: rgb(245, 245, 245); border: 1px solid rgb(204, 204, 204); border-radius: 4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span class="style2"><strong>System.IO.StreamReader sr = new System.IO.StreamReader(&quot;Путь к файлу&quot;, Encoding.Default);
+string line = null;
+while ((line = sr.ReadLine()) != null)
+</strong>{<strong>
+     //в line содержится очередная строчка из файла
+</strong>}<strong>
+</strong><strong>sr.Close();
+//Второй параметр указывает кодировку файла. В большинстве случаев указывается кодировка по умолчанию
+//Однако если в результате content содержит так называемые &quot;кракозябры&quot; укажите кодировку файла (этом может быть
+//Encoding.UTF8, Encoding.Unicode и другие). Далее в примерах будет всегда указываться кодировка по умолчанию.</strong></span>  
+</pre>
+				<p style="box-sizing: border-box; margin: 0px 0px 10px; color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Объект sr так же имеет методы ReadToEnd, ReadBlock и другие. 
+				Названия этих методов говорят сами за себя.</p>
+				<p style="box-sizing: border-box; margin: 0px 0px 10px; color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример записи в файл:</p>
+				<pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; display: block; padding: 9.5px; margin: 0px 0px 10px; line-height: 1.42857; color: rgb(51, 51, 51); word-break: break-all; overflow-wrap: break-word; background-color: rgb(245, 245, 245); border: 1px solid rgb(204, 204, 204); border-radius: 4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span class="style2"><strong>bool append = true; //Если true, то мы дописываем в конец файла, если false то переписываем файл
+</strong><strong>System.IO.StreamWriter sw = new System.IO.StringWriter(&quot;Путь к файлу&quot;, append, Encoding.Default);
+</strong><strong>sw.WriteLine(&quot;Строка 1&quot;); //Данный метод приписывает к строке символ \r\n
+</strong><strong>sw.WriteLine(&quot;Строка 2&quot;); 
+</strong><strong>sw.Write(&quot;Строка 3\r\n&quot;);//Тоже самое что sw.WriteLine(&quot;Строка 3&quot;);  
+</strong><strong>sw.Write(&quot;Строка 4&quot;);
+</strong><strong>sw.Write(&quot;Строка 5&quot;); //Четвертая строка имеет текст &quot;Строка 4Строка 5&quot; 
+//sw.Flush(); //Выгружает буфер в файл, однако метод Close так же содержит данный вызов (см. MSDN)
+</strong><strong>sw.Close();</strong></span>
+</pre>
+				<p style="box-sizing: border-box; margin: 0px 0px 10px; color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Так же стоит отметить, что оба класса реализуют интерфейс 
+				IDisposable. А это означает, что предпочтительней использовать 
+				конструкцию using.</p>
+				<pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; display: block; padding: 9.5px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; background-color: rgb(245, 245, 245); border: 1px solid rgb(204, 204, 204); border-radius: 4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2"><strong>using (var sr = new System.IO.StreamReader(&quot;Путь к файлу&quot;, Encoding.Default))
+</strong>{<strong>
+     string line = null;
+     while ((line = sr.ReadLine()) != null)
+     {
+          //в line содержится очередная строчка из файла
+     }
+</strong>}<strong>
+</strong></pre>
+				<p style="box-sizing: border-box; margin: 0px 0px 10px; color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Более того в библиотеке IO есть несколько предопределенных 
+				наиболее часто используемых операций. Нет смысла подробно 
+				описывать данные функции, нужно просто запомнить их<span>&nbsp;</span><img draggable="false" role="img" class="emoji" alt="🙂" src="https://s.w.org/images/core/emoji/15.0.3/svg/1f642.svg" style="box-sizing: border-box; border: none !important; vertical-align: -0.1em !important; display: inline !important; box-shadow: none !important; height: 1em !important; width: 1em !important; margin: 0px 0.07em !important; background: none !important; padding: 0px !important;" /></p>
+				<h3 style="box-sizing: border-box; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-weight: 500; line-height: 1.1; color: rgb(51, 51, 51); margin-top: 20px; margin-bottom: 10px; font-size: 24px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Чтение всего текстового файла в переменную</h3>
+				<pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; display: block; padding: 9.5px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; background-color: rgb(245, 245, 245); border: 1px solid rgb(204, 204, 204); border-radius: 4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2"><strong>string content = System.IO.File.ReadAllText(&quot;Путь к файлу&quot;, Encoding.Default);
+</strong></pre>
+				<h3 style="box-sizing: border-box; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-weight: 500; line-height: 1.1; color: rgb(51, 51, 51); margin-top: 20px; margin-bottom: 10px; font-size: 24px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Чтение всего текстового файла построчно в массив</h3>
+				<pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; display: block; padding: 9.5px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; background-color: rgb(245, 245, 245); border: 1px solid rgb(204, 204, 204); border-radius: 4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2"><strong>string[] lines = System.IO.File.ReadAllLines(&quot;Путь к файлу&quot;, Encoding.Default); </strong></pre>
+			</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2008 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les21.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les21/8.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:09:09 GMT -->
+</html>

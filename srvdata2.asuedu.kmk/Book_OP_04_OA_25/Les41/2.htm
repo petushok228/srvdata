@@ -1,0 +1,267 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les41/2.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:48:50 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: medium;
+}
+    .style3 {
+	font-size: small;
+}
+    .style4 {
+	border: 2px solid #0000FF;
+}
+    .style5 {
+	color: #0000FF;
+	font-size: small;
+	margin-left: 40px;
+}
+.style6 {
+	color: rgb(0, 0, 255);
+}
+.style7 {
+	margin-left: 40px;
+}
+    .style8 {
+	color: red;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 2.Необобщенные коллекции</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text" style="border-color: #0000FF; border-width: 3px">
+                <p class="style3">
+				Необобщенные коллекции вошли в состав среды .NET Framework еще в 
+				версии 1.0. Они определяются в<span>&nbsp;</span><em>пространстве 
+				имен System.Collections</em>.<span>&nbsp;</span><dfn style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-style: italic;"><strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">Необобщенные 
+				коллекции</strong></dfn><span>&nbsp;</span>представляют собой 
+				структуры данных общего назначения, оперирующие ссылками на 
+				объекты. Таким образом, они позволяют манипулировать объектом 
+				любого типа, хотя и не типизированным способом. В этом состоит 
+				их преимущество и в то же время недостаток. Благодаря тому что 
+				необобщенные коллекции оперируют ссылками на объекты, в них 
+				можно хранить разнотипные данные. Это удобно в тех случаях, 
+				когда требуется манипулировать совокупностью разнотипных 
+				объектов или же когда типы хранящихся в коллекции объектов 
+				заранее неизвестны. Но если коллекция предназначается для 
+				хранения объекта конкретного типа, то необобщенные коллекции не 
+				обеспечивают типовую безопасность, которую можно обнаружить в 
+				обобщенных коллекциях.</p>
+				<p class="style3">
+				Необобщенные коллекции определены в ряде интерфейсов и классов, 
+				реализующих эти интерфейсы.</p>
+				<h2 class="style2">
+				Интерфейсы необобщенных коллекций</h2>
+				<p class="style3">
+				В пространстве имен System.Collections определен целый ряд 
+				интерфейсов необобщенных коллекций. Начинать рассмотрение 
+				необобщенных коллекций следует именно с интерфейсов, поскольку 
+				они определяют функциональные возможности, которые являются 
+				общими для всех классов необобщенных коллекций. Интерфейсы, 
+				служащие опорой для необобщенных коллекций, сведены в следующей 
+				таблице:</p>
+				<div>
+					<table>
+						<caption class="style2" >
+						Интерфейсы, используемые в необобщенных коллекциях</caption>
+						<tbody>
+							<tr class="style3">
+								<th class="style4">
+								Интерфейс</th>
+								<th class="style4">
+								Описание</th>
+							</tr>
+							<tr class="style3">
+								<td class="style4">
+								ICollection</td>
+								<td class="style4">
+								Определяет элементы, которые должны иметь все 
+								необобщенные коллекции</td>
+							</tr>
+							<tr class="style3">
+								<td class="style4">
+								IComparer</td>
+								<td class="style4">
+								Определяет метод Compare() для сравнения 
+								объектов, хранящихся в коллекции</td>
+							</tr>
+							<tr class="style3">
+								<td class="style4">
+								IDictionary</td>
+								<td class="style4">
+								Определяет коллекцию, состоящую из пар 
+								&quot;ключ-значение&quot;</td>
+							</tr>
+							<tr class="style3">
+								<td class="style4">
+								IDictionaryEnumerator</td>
+								<td class="style4">
+								Определяет перечислитель для коллекции, 
+								реализующей интерфейс IDictionary</td>
+							</tr>
+							<tr class="style3">
+								<td class="style4">
+								IEnumerable</td>
+								<td class="style4">
+								Определяет метод GetEnumerator(), 
+								предоставляющий перечислитель для любого класса 
+								коллекции</td>
+							</tr>
+							<tr class="style3">
+								<td class="style4">
+								IEnumerator</td>
+								<td class="style4">
+								Предоставляет методы, позволяющие получать 
+								содержимое коллекции по очереди</td>
+							</tr>
+							<tr class="style3">
+								<td class="style4">
+								IEqualityComparer</td>
+								<td class="style4">
+								Сравнивает два объекта на предмет равенства</td>
+							</tr>
+							<tr class="style3">
+								<td style="height: 18px" class="style4">
+								IHashCodeProvider</td>
+								<td style="height: 18px" class="style4">
+								Считается устаревшим. Вместо него следует 
+								использовать интерфейс IEqualityComparer</td>
+							</tr>
+							<tr class="style3">
+								<td class="style4">
+								IList</td>
+								<td class="style4">
+								Определяет коллекцию, доступ к которой можно 
+								получить с помощью индексатора</td>
+							</tr>
+							<tr class="style3">
+								<td class="style4">
+								IStructuralComparable</td>
+								<td class="style4">
+								Определяет метод CompareTo(), применяемый для 
+								структурного сравнения</td>
+							</tr>
+							<tr class="style3">
+								<td class="style4">
+								IStructuralEquatable</td>
+								<td class="style4">
+								Определяет метод Equals(), применяемый для 
+								выяснения структурного, а не ссылочного 
+								равенства. Кроме того, определяет метод 
+								GetHashCode()</td>
+							</tr>
+					</table>
+				</div>
+				<h2 class="style2">
+				Структура DictionaryEntry</h2>
+				<p class="style3">
+				В пространстве имен System.Collections определена структура 
+				DictionaryEntry. Необобщенные коллекции пар &quot;ключ-значение&quot; 
+				сохраняют эти пары в объекте типа DictionaryEntry. В данной 
+				структуре определяются два следующих свойства:</p>
+				<pre class="style5">
+<strong>public object Key { get; set; }
+public object Value { get; set; }</strong></pre>
+				<p class="style3">
+				Эти свойства служат для доступа к ключу или значению, связанному 
+				с элементом коллекции. Объект типа DictionaryEntry может быть 
+				сконструирован с помощью конструктора:</p>
+				<p class="style7">
+				<span class="hljs-function">
+				<code class="hljs cs" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: inherit; color: inherit; background-color: transparent; border-radius: 0px; white-space: pre-wrap;">
+				<span class="style6" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; ">
+public</span> <span class="style6" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; ">DictionaryEntry</span>(<span class="hljs-params" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; color: rgb(108, 200, 204);"><span class="style6" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; ">object</span></span></code><span class="style6" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; "><code class="hljs cs" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: inherit; background-color: transparent; border-radius: 0px; white-space: pre-wrap;"> key, </code></span>
+				<code class="hljs cs" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: inherit; color: inherit; background-color: transparent; border-radius: 0px; white-space: pre-wrap;"><span class="hljs-params" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; color: rgb(108, 200, 204);"> 
+				<span class="style6" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; ">object</span> 
+				<span class="style6" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; ">value</span></span>)</code></span></p>
+				<p>
+				где key обозначает ключ, a value — значение.</p>
+				<h2 class="style2">
+				Классы необобщенных коллекций</h2>
+				<p>
+				Ниже приведены классы необобщенных коллекций:</p>
+				<ul>
+					<li>
+					<strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">ArrayList
+					</strong>
+					<span class="style8">Определяет динамический массив</span>, т.е. такой массив, который 
+					может при необходимости увеличивать свой размер.</li>
+					<li>
+					<strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">Hashtable </strong>
+					<span class="style8">Определяет хеш-таблицу</span> для пар &quot;ключ-значение&quot;</li>
+					<li>
+					<strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">Queue</strong><span style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">
+					</span><span class="style8">Определяет очередь</span>, или список, действующий по принципу 
+					&quot;первым пришел — первым обслужен&quot;</li>
+					<li>
+					<strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">SortedList </strong>
+					<span class="style8">Определяет отсортированный список пар &quot;ключ-значение&quot;</span></li>
+					<li>
+					<strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">Stack </strong>
+					<span class="style8">Определяет стек, или список</span>, действующий по принципу &quot;первым 
+					пришел — последним обслужен&quot;</li>
+				</ul>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les50.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les41/2.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:48:50 GMT -->
+</html>

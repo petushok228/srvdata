@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les52/3.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 12:06:57 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+				color: blue;
+}
+.style3 {
+				color: red;
+}
+    .style4 {
+				font-size: small;
+				color: #0000FF;
+				margin-left: 40px;
+}
+    .style5 {
+				font-size: small;
+				color: #0000FF;
+}
+    .style6 {
+				margin-left: 40px;
+}
+    .style7 {
+				font-size: small;
+				margin-left: 40px;
+}
+    .style8 {
+	font-size: small;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 3. Пример использования атрибутов защиты. </td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p>
+				<span class="style8">В Python разделяют <span class="style2">конструктор класса</span> и 
+				<span class="style2">метод для инициализации экземпляра класса</span>. </p>
+				<p>
+				Конструктор класса это метод <span class="style3">&nbsp;__new__(cls, *args, **kwargs)</span> для инициализации экземпляра класса используется метод 
+				<span class="style3">__init__(self). </span></p>
+				<p>
+								При этом, как вы могли заметить __new__ – это классовый метод, а __init__ таким не является. Метод __new__ редко переопределяется, чаще используется реализация от базового класса object, __init__ же наоборот является очень удобным способом задать параметры объекта при его создании.</p>
+				<p>
+				Создадим реализацию класса Ved с&nbsp; конструктором и 
+				инициализатором:</span></p>
+				<pre class="style4">class Ved:
+    nom = 0
+    fio = ""
+    disc = ""
+    otc = 0
+
+def __new__(cls, *args, **kwargs):
+  print("Это конструктор  __new__")
+  return super().__new__(cls)
+
+def __init__(self, nom, fio, disc, otc):
+   print("Это метод инициализации __init__")
+   self.nom = nom
+   self.fio = fio
+   self.disc = disc
+   self.otc = otc</pre>
+				<pre class="style4"></pre>
+				
+				<p>
+				Проверим результат </p>
+				<pre class="style4">
+print("Номер: ",ved.nom," Фамилия", ved.fio, " Дисциплина: ", ved.disc, "Отценка: ", ved.otc) 
+v = ved("1", "Иванов", "Основы алгоритмизации", "4")
+#print("Номер: ",v.nom," Фамилия", v.fio, " Дисциплина: ", v.disc, "Отценка: ", v.otc)</pre>
+				<pre class="style4">
+&nbsp;</pre>
+				<p><span class="style8">В современных языка (<span lang="en-us">C#)</span> вы можете явно указать для переменной, что доступ к ней снаружи класса запрещен, это делается с помощью ключевых слов (<span class="style3">private, protected
+				</span>и т.д.). 
+</p>
+				<p>В Python таких возможностей нет, и любой может обратиться к атрибутам и методам вашего класса, если возникнет такая необходимость. Это существенный недостаток этого языка, т.к. нарушается один из ключевых принципов ООП – инкапсуляция. 
+</p>
+				<p>Хорошим тоном считается, что для чтения/изменения какого-то атрибута должны использоваться специальные методы, которые называются 
+				<span class="style3"><strong>getter/setter</strong></span>, их можно реализовать, но ничего не помешает изменить атрибут напрямую. 
+</p>
+				<p>При этом есть соглашение, что метод или <span class="style3">
+				<strong>атрибут, который начинается с нижнего подчеркивания, является скрытым,</strong></span> и снаружи класса трогать его не нужно (хотя сделать это можно).
+</p>
+				<p>Внесем соответствующие изменения в класс Ved:</span></p>
+				<pre><span class="style5">class ved:
+   _nom = 2
+   _fio = "Сидоров"
+   _disc = "Основы алгоритмизации"
+   _otc = 3
+
+   def __new__(cls, *args, **kwargs):
+     print("Это конструктор  __new__")
+     return super().__new__(cls)
+
+   def __init__(self, nom, fio, disc, otc):
+     print("Это метод инициализации __init__")
+     self._nom = nom
+     self._fio = fio
+     self._disc = disc
+     self._otc = otc
+
+   def get_nom(self):
+        return self._nom
+   def set_nom(self, nom):
+        self._nom = nom
+   def get_fio(self):
+        return self._fio
+   def set_fio(self, nom):
+        self._fio = fio
+   def get_disc(self):
+        return self._disc
+   def set_disc(self, nom):
+        self._disc = disc
+   def get_otc(self):
+        return self._otc
+   def set_otc(self, nom):
+        self._otc = nom</span>
+   
+&nbsp;</pre>
+				<p>В приведенном примере для доступа к _width и _height 
+				используются специальные методы, но ничего не мешает вам 
+				обратиться к ним (атрибутам) напрямую.</p>
+				<pre class="style4">#но можно обратиться напрямую
+print("Номер: ",v._nom," Фамилия", v._fio, " Дисциплина: ", v._disc, "Отценка: ", v._otc)
+# или так
+print("Номер: ",v.get_nom()," Фамилия", v.get_fio(), " Дисциплина: ", v.get_disc(), "Отценка: ", v.get_otc())</pre>
+				<p>Если же атрибут или метод начинается с <span class="style3">
+				<strong>двух подчеркиваний</strong></span>, то тут напрямую вы к нему уже не обратитесь (простым образом). Модифицируем наш класс 
+				ved:&nbsp;</p>
+				<pre class="style6"><span class="style5"><strong>#Пример  защищенного поля (private) с двумя нижними подчеркиваниями (__private_example)
+class ved:
+   __nom = 2
+   __fio = "Сидоров"
+   __disc = "Основы алгоритмизации"
+   __otc = 3
+   
+
+   def __new__(cls, *args, **kwargs):
+     print("Это конструктор  __new__")
+     return super().__new__(cls)
+
+   def __init__(self, nom, fio, disc, otc):
+     print("Это метод инициализации __init__")
+     self.__nom = nom
+     self.__fio = fio
+     self.__disc = disc
+     self_otc = otc
+
+   def get_nom(self):
+        return self.__nom
+   def set_nom(self, nom):
+        self.__nom = nom
+   def get_fio(self):
+        return self.__fio
+   def set_fio(self, nom):
+        self.__fio = fio
+   def get_disc(self):
+        return self.__disc
+   def set_disc(self, nom):
+        self.__disc = disc
+   def get_otc(self):
+        return self.__otc
+   def set_otc(self, nom):
+        self.__otc = nom</strong></span>
+   </pre>
+				<p>Теперь напрямую к полям объекта обратиться нельзя, они
+				<span class="style5"><strong>защищенны, поля (private)</strong></span></p>
+				<pre class="style7">#Так нельзя
+#print("Номер: ",ved.set_nom," Фамилия", ved.set_fio, " Дисциплина: ", ved.set_disc, "Отценка: ", get_sed.otc) #
+v = ved(1, "Иванов", "Основы алгоритмизации", 4)
+#теперь обратиться напрямую нельзя
+#print("Номер: ",v.__nom," Фамилия", v.__fio, " Дисциплина: ", v.__disc, "Отценка: ", v.__otc)
+# Можно только так
+print("Номер: ",v.get_nom()," Фамилия", v.get_fio(), " Дисциплина: ", v.get_disc(), "Отценка: ", v.get_otc())</pre></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les52.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les52/3.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 12:06:57 GMT -->
+</html>

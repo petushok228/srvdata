@@ -1,0 +1,295 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les7/2.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 10:44:17 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: medium;
+	color: rgb(0, 0, 255);
+}
+.style3 {
+	color: rgb(255, 0, 0);
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 2. Консольный ввод и вывод данных Pascal. </td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <h3 style="box-sizing: inherit; margin-top: 0px; margin-bottom: 0.5rem; font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-weight: 500; line-height: 1.1; font-size: 1.75rem; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Консольное приложение.</h3>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Решение самой простой задачи на компьютере не обходится без 
+				операций ввода-вывода информации. Ввод данных — это передача 
+				данных от внешнего устройства в оперативную память для 
+				обработки. Вывод — обратный процесс, когда данные передаются 
+				после обработки из оперативной памяти на внешнее устройство. 
+				Внешним устройством может служить консоль ввода-вывода 
+				(клавиатура и монитор), принтер, гибкий или жесткий диск и 
+				другие устройства.</p>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Сейчас мы рассмотрим лишь средства консольного ввод-вывода 
+				данных. Консоль — это клавиатура плюс монитор. С клавиатуры 
+				данные вводятся в программу, а на монитор выводятся результаты 
+				ее работы. Консольная модель ввода-вывода, при которой данные 
+				представляются потоком символов, не позволяет использовать 
+				графических средств. Однако она очень подходит для изучения 
+				языка Delphi, так как не загромождает примеры программ излишней 
+				информацией о среде и библиотеках программирования.</p>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Итак, давайте последовательно создадим консольное приложение:</p>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				1. Запустите среду Delphi, выберите в главном меню команду&nbsp;<b style="box-sizing: inherit; font-weight: bolder;">File 
+				| Close All</b>, а затем — команду&nbsp;<b style="box-sizing: inherit; font-weight: bolder;">File 
+				| New</b>.</p>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				2. Выберите “Console Application” и нажмите “OK” (рисунок 2.1).</p>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</p>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: center;">
+				<img src="Pic/ris1.png" alt="" style="box-sizing: inherit; border-style: none; vertical-align: middle; font-size: 1rem;" /></p>
+				<i style="box-sizing: inherit; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; text-align: center;">
+				<i style="box-sizing: inherit; font-size: 1rem;">Рисунок 2.1. 
+				Окно среды Delphi для создания нового проекта</i></p>
+				</i>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</p>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				3. В появившемся окне между ключевыми словами BEGIN и END 
+				введите следующие строчки (рисунок 2.2):</p>
+				<div id="E1WAE" style="box-sizing: inherit; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<table width="98%" style="box-sizing: inherit; border-collapse: collapse; background-color: transparent;">
+						<tbody style="box-sizing: inherit;">
+							<tr style="box-sizing: inherit;">
+								<td style="box-sizing: inherit;">
+								<pre style="box-sizing: inherit; font-family: Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; margin-top: 0px; margin-bottom: 1rem; overflow: auto; display: block; " class="style2">Writeln(&#39;Press Enter to exit...&#39;);
+ReadLn;
+</pre>
+								</td>
+							</tr>
+					</table>
+				</div>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</p>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: center;">
+				<img src="Pic/ris2.png" alt="" style="box-sizing: inherit; border-style: none; vertical-align: middle; font-size: 1rem;" /></p>
+				<i style="box-sizing: inherit; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; text-align: center;">
+				<i style="box-sizing: inherit; font-size: 1rem;">Рисунок 2.2. 
+				Текст простейшей консольной программы в окне редактора кода</i></p>
+				</i>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</p>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				4. Скомпилируйте и выполните эту программу, щелкнув на пункте&nbsp;<b style="box-sizing: inherit; font-weight: bolder;">Run&nbsp;|&nbsp;Run</b>&nbsp;главного 
+				меню среды Delphi. На экране появится черное окно (рисунок 2.3), 
+				в левом верхнем углу которого будет содержаться текст &quot;Press 
+				ENTER to exit...&quot; (&quot;Нажмите клавишу Enter ...&quot;).</p>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</p>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: center;">
+				<img src="Pic/ris3.png" alt="" style="box-sizing: inherit; border-style: none; vertical-align: middle; font-size: 1rem;" /></p>
+				<i style="box-sizing: inherit; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; text-align: center;">
+				<i style="box-sizing: inherit; font-size: 1rem;">Рисунок 2.3. 
+				Окно работающей консольной программы</i></p>
+				</i>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</p>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				5. Нажмите в этом окне клавишу Enter — консольное приложение 
+				завершится.</p>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Теперь, когда есть основа для проверки изучаемого материала, 
+				рассмотрим операторы консольного ввода-вывода. К ним относятся 
+				Write, Writeln, Read, Readln.</p>
+				<h3 style="box-sizing: inherit; margin-top: 0px; margin-bottom: 0.5rem; font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-weight: 500; line-height: 1.1; font-size: 1.75rem; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Консольный вывод</h3>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Инструкции Write и Writeln служат для вывода чисел, символов, 
+				строк и булевских значений на экран. Они имеют следующий формат:</p>
+				<div style="box-sizing: inherit; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<table width="98%" style="box-sizing: inherit; border-collapse: collapse; background-color: transparent;">
+						<tbody style="box-sizing: inherit;">
+							<tr style="box-sizing: inherit;">
+								<td style="box-sizing: inherit;">
+								<pre style="box-sizing: inherit; font-family: Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; margin-top: 0px; margin-bottom: 1rem; overflow: auto; display: block; " class="style2">Write(Y1, Y2, ... ,Yn);
+Writeln(Y1, Y2, ... ,Yn);
+</pre>
+								</td>
+							</tr>
+					</table>
+				</div>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				где Y1, Y2,..., Yn — константы, переменные и результаты 
+				выражений. Инструкция Writeln аналогична Write, но после своего 
+				выполнения переводит курсор в начало следующей строки.</p>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если инструкции Write и Writeln записаны без параметров:</p>
+				<div style="box-sizing: inherit; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<table width="98%" style="box-sizing: inherit; border-collapse: collapse; background-color: transparent;">
+						<tbody style="box-sizing: inherit;">
+							<tr style="box-sizing: inherit;">
+								<td style="box-sizing: inherit;">
+								<pre style="box-sizing: inherit; font-family: Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 12.6px; margin-top: 0px; margin-bottom: 1rem; overflow: auto; display: block; color: rgb(55, 58, 60);"><span class="style2">Write;
+Writeln;</span>
+</pre>
+								</td>
+							</tr>
+					</table>
+				</div>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				то это вызывает пропуск на экране соответственно одной позиции и 
+				одной строки.</p>
+				<h3 style="box-sizing: inherit; margin-top: 0px; margin-bottom: 0.5rem; font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-weight: 500; line-height: 1.1; font-size: 1.75rem; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Консольный ввод</h3>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Инструкции ввода обеспечивают ввод числовых данных, символов, 
+				строк для последующей обработки в программе. Формат их прост:</p>
+				<div id="EGYAE" style="box-sizing: inherit; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<table width="98%" style="box-sizing: inherit; border-collapse: collapse; background-color: transparent;">
+						<tbody style="box-sizing: inherit;">
+							<tr style="box-sizing: inherit;">
+								<td style="box-sizing: inherit;">
+								<pre style="box-sizing: inherit; font-family: Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 12.6px; margin-top: 0px; margin-bottom: 1rem; overflow: auto; display: block; color: rgb(55, 58, 60);"><span class="style2">Read(X1, X2, ... ,Xn);
+Readln(X1, X2, ... ,Xn);</span>
+</pre>
+								</td>
+							</tr>
+					</table>
+				</div>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				где X1, X2, ..., Xn — переменные, для которых осуществляется 
+				ввод значений. Пример:</p>
+				<div id="EKYAE" style="box-sizing: inherit; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<table width="98%" style="box-sizing: inherit; border-collapse: collapse; background-color: transparent;">
+						<tbody style="box-sizing: inherit;">
+							<tr style="box-sizing: inherit;">
+								<td style="box-sizing: inherit;">
+								<pre style="box-sizing: inherit; font-family: Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 12.6px; margin-top: 0px; margin-bottom: 1rem; overflow: auto; display: block; color: rgb(55, 58, 60);"><span class="style2"><strong>Read(A);   // Вводится значение переменной A
+</strong><strong>Readln(B); // Вводится значение переменной B</strong></span>
+</pre>
+								</td>
+							</tr>
+					</table>
+				</div>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если одна инструкция вводит несколько значений:</p>
+				<div id="ETYAE" style="box-sizing: inherit; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<table width="98%" style="box-sizing: inherit; border-collapse: collapse; background-color: transparent;">
+						<tbody style="box-sizing: inherit;">
+							<tr style="box-sizing: inherit;">
+								<td style="box-sizing: inherit;">
+								<pre style="box-sizing: inherit; font-family: Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 12.6px; margin-top: 0px; margin-bottom: 1rem; overflow: auto; display: block; color: rgb(55, 58, 60);"><span class="style2">Read(A, B);</span>
+</pre>
+								</td>
+							</tr>
+					</table>
+				</div>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				то все эти значения надо набрать на клавиатуре, отделяя одно 
+				значение от другого пробелом, и нажать клавишу Enter.</p>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если вводится одно значение:</p>
+				<div id="EZYAE" style="box-sizing: inherit; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<table width="98%" style="box-sizing: inherit; border-collapse: collapse; background-color: transparent;">
+						<tbody style="box-sizing: inherit;">
+							<tr style="box-sizing: inherit;">
+								<td style="box-sizing: inherit;">
+								<pre style="box-sizing: inherit; font-family: Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 12.6px; margin-top: 0px; margin-bottom: 1rem; overflow: auto; display: block; color: rgb(55, 58, 60);"><span class="style2">Read(C);</span>
+</pre>
+								</td>
+							</tr>
+					</table>
+				</div>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				то его следует набрать и нажать клавишу Enter. С этого момента 
+				программа может обрабатывать введенное значение в соответствии с 
+				алгоритмом решаемой задачи.</p>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Инструкция Readln отличается от Read только одним свойством: 
+				каждое выполнение инструкции Readln переводит курсор в начало 
+				новой строки, а после выполнения Read курсор остается в той же 
+				строке, где и был (потренеруйтесь — и вы быстро поймете 
+				разницу).</p>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В простейшем случае в инструкциях Read и Readln параметры можно 
+				вообще не указывать:</p>
+				<div style="box-sizing: inherit; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<table width="98%" style="box-sizing: inherit; border-collapse: collapse; background-color: transparent;">
+						<tbody style="box-sizing: inherit;">
+							<tr style="box-sizing: inherit;">
+								<td style="box-sizing: inherit;">
+								<pre style="box-sizing: inherit; font-family: Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 12.6px; margin-top: 0px; margin-bottom: 1rem; overflow: auto; display: block; color: rgb(55, 58, 60);"><span class="style2">Read;
+Readln;</span>
+</pre>
+								</td>
+							</tr>
+					</table>
+				</div>
+				<p id="yui_3_17_2_1_1659545193251_23" style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Оба этих оператора останавливают выполнение программы до нажатия 
+				клавиши Enter.</p>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les7.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les7/2.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 10:44:19 GMT -->
+</html>

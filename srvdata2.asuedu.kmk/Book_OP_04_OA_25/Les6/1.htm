@@ -1,0 +1,491 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les6/1.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 10:41:20 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: #0000FF;
+}
+.style3 {
+	color: #0000FF;
+	text-decoration: underline;
+}
+.style4 {
+	color: #800000;
+	text-decoration: underline;
+}
+.style5 {
+	color: #800000;
+}
+.style6 {
+	color: #DC143C;
+	text-decoration: underline;
+}
+.style7 {
+	color: #FF0000;
+	text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 1. Переменные. </td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text" style="font-size: small">
+                <p>Переменные и константы.</p>
+				<p><span class="style2"><strong>Переменная </strong></span>- 
+				область оперативной памяти, обладающая собственным именем и 
+				предназначеная для хранения данных, которые могут быть изменены.<br />
+				<br />
+				<span class="style2"><strong>Константа</strong></span> - область 
+				оперативной памяти, обладающая собственным именем и 
+				предназначеная для хранения постоянных данных.<br />
+				<br />
+				Из определений становятся понятно, что <span class="style3">
+				<strong>для поиска данных в памяти им дают имена</strong></span> 
+				(по аналогии с тем, что вещи в багажном вагоне снабжают 
+				бирочками). В среде программирования их называют 
+				идентификаторами.</p>
+				<p class="ZagT">Правила составления имен идентификаторов</p>
+				<p>Имена данным даются, соблюдая строго определенные правила. 
+				Этих правил нарушать нельзя! В имени допустимо использование 
+				только следующих символов:<br />
+				<span class="style4"><em>ПРОПИСНЫЕ и строчные буквы латинского 
+				алфавита. При этом не забывайте о регистрозависимости языка.
+				</em></span></p>
+				<p>Например, Age и age - это два разных имени.</p>
+				<p class="style4"><em>Цифры. Однако, цифра не может быть 
+				использована в качестве первого символа. </em></p>
+				<p><span class="style2">То есть, Name1 допустимо, </p>
+				<p>1Name - нет.</span></p>
+				<p><span class="style4"><em>Пробел в именах идентификаторов 
+				использовать нельзя</em></span>, его можно заменять<span class="style3"><em> 
+				знаком подчеркивания</em></span>. </p>
+				<p>Например, Age_Of_Man.</p>
+				<p class="style4"><em>Нельзя использовать зарезервированный 
+				слова. </em></p>
+				<p>Например int, float,double и т. п..</p>
+				<p class="style5"><em><br />
+				Нежелательно существование двух идентификаторов с одинаковыми 
+				именами.</em></p>
+				<p>Объявление и использование переменных и констант</p>
+				<p class="ZagT">Общий синтаксис:</p>
+				<p class="style2"><br />
+				<span class="style5"><strong>тип_данных имя_переменной; </strong>
+				</span>- в данном случае в оперативной памяти будет выделена 
+				ячейка размером, соответствующим заданному типу. И этой ячейке 
+				будет присвоенное выбранное Вами имя.</p>
+				<p>&nbsp;<span class="style6"><strong>Что же там будет 
+				содержаться? </strong></span>В только что созданную переменную 
+				будет записано случайное число, определяемое операционной 
+				системой. Это число будет содержаться в памяти до тех пор, Вы не 
+				заполните переменную другим значением, с помощью специального
+				<span class="style6"><strong>оператора присваивания =</strong></span></p>
+				<p><span class="style3"><strong>тип_данных имя_переменной = 
+				значение; </strong></span>- существует и такая возможность - 
+				заполнить переменную значением, прямо при создании. Такой 
+				процесс мы будем называть инициализацией.</p>
+				<p><span class="style3"><strong>const тип_данных 
+				имя_переменной=значение; -</strong></span> а это объявление 
+				константы. Основные моменты состоят в том, что вне зависимости 
+				от типа данных перед ним указывается ключевое слово const. Кроме 
+				того константа обязательно должна быть проинициализирована при 
+				создании. Поменять ее значение впоследствии будет невозможно.</p>
+				<p class="ZagT">Переменные в <span lang="en-us">Pascal,</span></p>
+				<h3 style="box-sizing: inherit; margin-top: 0px; margin-bottom: 0.5rem; font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-weight: 500; line-height: 1.1; color: rgb(38, 38, 38); font-size: 1.75rem; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Переменные.</h3>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<i style="box-sizing: inherit;">Переменные</i>&nbsp;в отличие от 
+				констант могут неограниченное число раз менять свое значение в 
+				процессе работы программы. Если в начале программы некоторая 
+				переменная X имела значение 0, то в конце программы X может 
+				принять значение 10000. Так бывает, например, при суммировании 
+				введенных с клавиатуры чисел.</p>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Переменные описываются с помощью зарезервированного слова&nbsp;<b style="box-sizing: inherit; font-weight: bolder;">var</b>. 
+				За ним перечисляются идентификаторы переменных, и через 
+				двоеточие указывается их тип. Каждая группа переменных 
+				отделяется от другой группы точкой с запятой. Например:</p>
+				<div style="box-sizing: inherit; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<table width="98%" style="box-sizing: inherit; border-collapse: collapse; background-color: transparent;">
+						<tbody style="box-sizing: inherit;">
+							<tr style="box-sizing: inherit;">
+								<td style="box-sizing: inherit;">
+								<pre style="box-sizing: inherit; font-family: Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 12.6px; margin-top: 0px; margin-bottom: 1rem; overflow: auto; display: block; color: rgb(55, 58, 60);">var
+  Index: Integer;        // переменная целого типа данных
+  FileName: string;      // переменная строкового типа данных
+  Sum, Profit: Double;   // группа переменных вещественного типа данных
+</pre>
+								</td>
+							</tr>
+					</table>
+				</div>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В теле программы переменной можно присвоить значение. Для этого 
+				используется составной символ&nbsp;<b style="box-sizing: inherit; font-weight: bolder;">:=</b>, 
+				например:</p>
+				<div style="box-sizing: inherit; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<table width="98%" style="box-sizing: inherit; border-collapse: collapse; background-color: transparent;">
+						<tbody style="box-sizing: inherit;">
+							<tr style="box-sizing: inherit;">
+								<td style="box-sizing: inherit;">
+								<pre style="box-sizing: inherit; font-family: Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 12.6px; margin-top: 0px; margin-bottom: 1rem; overflow: auto; display: block; color: rgb(55, 58, 60);">Sum := 5000.0;           // переменной Sum присваивается 5000
+Percent := 0.15;         // переменной Percent присваивается 0.15
+Profit := Sum * Percent; // вычисляется произведение двух переменных
+                         // и его результат присваивается переменной
+                         // Profit
+</pre>
+								</td>
+							</tr>
+					</table>
+				</div>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вы можете присвоить значение переменной непосредственно при 
+				объявлении:</p>
+				<div style="box-sizing: inherit; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<table width="98%" style="box-sizing: inherit; border-collapse: collapse; background-color: transparent;">
+						<tbody style="box-sizing: inherit;">
+							<tr style="box-sizing: inherit;">
+								<td style="box-sizing: inherit;">
+								<pre style="box-sizing: inherit; font-family: Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 12.6px; margin-top: 0px; margin-bottom: 1rem; overflow: auto; display: block; color: rgb(55, 58, 60);">var
+  Index: Integer = 1;
+  Delimiter: Char = &#39;;&#39;;
+</pre>
+								</td>
+							</tr>
+					</table>
+				</div>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Объявленные таким образом переменные называются&nbsp;<i style="box-sizing: inherit;">инициализированными</i>. 
+				На инициализированные переменные накладывается ограничение: они 
+				не могут объявляться в подпрограммах (процедурах и функциях). 
+				Если переменная не инициализируется при объявлении, то по 
+				умолчанию она заполняется нулем.</p>
+				<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Каждый используемый в программе элемент данных должен быть 
+				описан в разделе&nbsp;<b style="box-sizing: inherit; font-weight: bolder;">const</b>&nbsp;или&nbsp;<b style="box-sizing: inherit; font-weight: bolder;">var</b>. 
+				Исключение составляют данные, заданные непосредственно<i style="box-sizing: inherit;">&nbsp;значением</i>, 
+				например:</p>
+				<div id="yui_3_17_2_1_1659381263595_28" style="box-sizing: inherit; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<table width="98%" id="yui_3_17_2_1_1659381263595_27" style="box-sizing: inherit; border-collapse: collapse; background-color: transparent;">
+						<tbody id="yui_3_17_2_1_1659381263595_26" style="box-sizing: inherit;">
+							<tr id="yui_3_17_2_1_1659381263595_25" style="box-sizing: inherit;">
+								<td id="yui_3_17_2_1_1659381263595_24" style="box-sizing: inherit;">
+								<pre id="yui_3_17_2_1_1659381263595_23" style="box-sizing: inherit; font-family: Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 12.6px; margin-top: 0px; margin-bottom: 1rem; overflow: auto; display: block; color: rgb(55, 58, 60);">Write(100, 200); // 100 и 200 - данные, заданные значением</pre>
+								</td>
+							</tr>
+					</table>
+				</div>
+				<p class="ZagT">Переменные в <span lang="en-us">C#.</span></p>
+				<p><span lang="en-us">Синтаксис объявления переменных в C# 
+				выглядит следующим образом:<br />
+				<br />
+				<span class="style7"><strong>ТипДанных Идентификатор</strong></span><br />
+				<br />
+				Например:<br />
+				<br />
+				<span class="style2"><strong>int i;</strong></span></span></p>
+				<p><span lang="en-us">Объявить можно переменную любого 
+				действительного типа. Важно подчеркнуть, что возможности 
+				переменной определяются ее типом. Например, переменную типа bool 
+				нельзя использовать для хранения числовых значений с плавающей 
+				точкой. Кроме того, тип переменной нельзя изменять в течение 
+				срока ее существования. В частности, переменную типа int нельзя 
+				преобразовать в переменную типа char.<br />
+				<br />
+				Все переменные в C# должны быть объявлены до их применения. Это 
+				нужно для того, чтобы уведомить компилятор о типе данных, 
+				хранящихся в переменной, прежде чем он попытается правильно 
+				скомпилировать любой оператор, в котором используется 
+				переменная. Это позволяет также осуществлять строгий контроль 
+				типов в C#.</span></p>
+				<p><span lang="en-us" class="ZagT"><span class="style2"><strong>
+				Инициализация переменной</strong></span></span></p>
+				<p><span lang="en-us">Задать значение переменной можно, в 
+				частности, с помощью оператора присваивания. Кроме того, задать 
+				начальное значение переменной можно при ее объявлении. Для этого 
+				после имени переменной указывается знак равенства (=) и 
+				присваиваемое значение. Если две или более переменные одного и 
+				того же типа объявляются списком, разделяемым запятыми, то этим 
+				переменным можно задать, например, начальное значение. Ниже 
+				приведена общая форма инициализации переменной:<br />
+				<br />
+				<span class="style2"><strong>int i = 10; // задаем целочисленной 
+				переменной i значение 10<br />
+				char symbol = &#39;Z&#39;; // инициализируем переменную symbol буквенным 
+				значением Z<br />
+				float f = 15.7F; // переменная f инициализируется числовым 
+				значением 15.</strong></span><br />
+				<span class="style2"><strong>int x = 5, y = 10, z = 12; // 
+				инициализируем несколько переменных одного типа</strong></span></span></p>
+				<p><span lang="en-us">Инициализация переменных демонстрирует 
+				пример обеспечения безопасности C#. Коротко говоря, компилятор 
+				C# требует, чтобы любая переменная была инициализирована 
+				некоторым начальным значением, прежде чем можно было обратиться 
+				к ней в какой-то операции. В большинстве современных 
+				компиляторов нарушение этого правила определяется и выдается 
+				соответствующее предупреждение, но &quot;всевидящий&quot; компилятор C# 
+				трактует такие нарушения как ошибки. Это предохраняет от 
+				нечаянного получения значений &quot;мусора&quot; из памяти, оставшегося 
+				там от других программ.<br />
+				<br />
+				В C# используются два метода для обеспечения инициализации 
+				переменных перед пользованием:<br />
+				<br />
+				Переменные, являющиеся полями класса или структуры, если не 
+				инициализированы явно, по умолчанию обнуляются в момент 
+				создания.<br />
+				<br />
+				Переменные, локальные по отношению к методу, должны быть явно 
+				инициализированы в коде до появления любого оператора, в котором 
+				используются их значения. В данном случае при объявлении 
+				переменной ее инициализация не происходит автоматически, но 
+				компилятор проверит все возможные пути потока управления в 
+				методе и сообщит об ошибке, если обнаружит любую возможность 
+				использования значения этой локальной переменной до ее 
+				инициализации.<br />
+				<br />
+				Например, в C# поступить следующим образом нельзя:</span></p>
+				<p class="style2"><span lang="en-us"><strong>public static int 
+				Main()<br />
+				</strong></span>{<span lang="en-us"><strong><br />
+				</strong><strong>int d;<br />
+				</strong><strong>Console.WriteLine(d); // Так нельзя!<br />
+				// Необходимо инициализировать d перед использованием.<br />
+				return 0;</strong></span></p>
+				<p><span lang="en-us"><br />
+				<span class="style2"><strong>Динамическая инициализация</strong></span></span></p>
+				<p><span lang="en-us">В приведенных выше примерах в качестве 
+				инициализаторов переменных использовались только константы, но в 
+				C# допускается также динамическая инициализация переменных с 
+				помощью любого выражения, действительного на момент объявления 
+				переменной:<br />
+				<br />
+				<span class="style2"><strong>int i1 = 3, i2 = 4;</strong></span><br />
+				<span class="style2"><strong>// Инициализируем динамически 
+				переменную result<br />
+				double result = Math.Sqrt(i1*i1 + i2*i2);</strong></span></span></p>
+				<p><span lang="en-us">В данном примере объявляются три локальные 
+				переменные i1, i2, result, первые две из которых 
+				инициализируются константами, а переменная result 
+				инициализируется динамически с использованием метода Math.Sqrt(), 
+				возвращающего квадратный корень выражения. Следует особо 
+				подчеркнуть, что в выражении для инициализации можно 
+				использовать любой элемент, действительный на момент самой 
+				инициализации переменной, в том числе вызовы методов, другие 
+				переменные или литералы.<br />
+				<br />
+				<span class="style2"><strong>Неявно типизированные переменные</strong></span></span></p>
+				<p><span lang="en-us">Как пояснялось выше, все переменные в C# 
+				должны быть объявлены. Как правило, при объявлении переменной 
+				сначала указывается тип, например int или bool, а затем имя 
+				переменной. Но начиная с версии C# 3.0, компилятору 
+				предоставляется возможность самому определить тип локальной 
+				переменной, исходя из значения, которым она инициализируется. 
+				Такая переменная называется неявно типизированной.<br />
+				<br />
+				Неявно типизированная переменная объявляется с помощью ключевого 
+				слова var и должна быть непременно инициализирована. Для 
+				определения типа этой переменной компилятору служит тип ее 
+				инициализатора, т.е. значения, которым она инициализируется:<br />
+				<br />
+				<span class="style2"><strong>var i = 12; // переменная i 
+				инициализируется целочисленным литералом<br />
+				</strong><strong>var d = 12.3; // переменная d инициализируется 
+				литералом с плавающей точкой,<br />
+				// имеющему тип double<br />
+				</strong><strong>var f = 0.34F; // переменная f теперь имеет тип 
+				float</strong></span><br />
+				</span></p>
+				<p><span lang="en-us">Единственное отличие неявно типизированной 
+				переменной от обычной, явно типизированной переменной, — в 
+				способе определения ее типа. Как только этот тип будет 
+				определен, он закрепляется за переменной до конца ее 
+				существования.<br />
+				<br />
+				Неявно типизированные переменные внедрены в C# не для того, 
+				чтобы заменить собой обычные объявления переменных. Напротив, 
+				неявно типизированные переменные предназначены для особых 
+				случаев, и самый примечательный из них имеет отношение к языку 
+				интегрированных запросов (LINQ). Таким образом, большинство 
+				объявлений переменных должно и впредь оставаться явно 
+				типизированными, поскольку они облегчают чтение и понимание 
+				исходного текста программы.<br />
+				<br />
+				Давайте рассмотрим пример, где в консоль будем выводить типы 
+				неявно типизированных переменных:<br />
+				<br />
+				<span class="style2"><strong>using System;<br />
+				using System.Collections.Generic;<br />
+				using System.Linq;<br />
+				using System.Text;<br />
+				<br />
+				namespace ConsoleApplication1<br />
+				</strong></span></span><span class="style2">{<span lang="en-us"><strong><br />
+				class Program<br />
+				</strong></span>{<span lang="en-us"><strong><br />
+				static void Main(string[] args)<br />
+				</strong></span>{<span lang="en-us"><strong><br />
+				</strong><strong>var name = &quot;Alex Erohin&quot;;<br />
+				</strong><strong>var age = 26;<br />
+				</strong><strong>var isProgrammer = true;<br />
+				<br />
+				// Определяем тип переменных<br />
+				Type nameType = name.GetType();<br />
+				Type ageType = age.GetType();<br />
+				Type isProgrammerType = isProgrammer.GetType();<br />
+				<br />
+				// Выводим в консоль результаты<br />
+				</strong><strong>Console.WriteLine(&quot;Тип name: {0}&quot;,nameType);<br />
+				</strong><strong>Console.WriteLine(&quot;Тип age {0}&quot;,ageType);<br />
+				</strong><strong>Console.WriteLine(&quot;Тип isProgrammer {0}&quot;,isProgrammerType);<br />
+				</strong><strong>Console.ReadLine();<br />
+				</strong></span>}<span lang="en-us"><strong><br />
+				</strong></span>}<span lang="en-us"><strong><br />
+				</strong></span></span>}<span lang="en-us"><br />
+				Результатом работы данной программы будет:</span></p>
+				<p><img alt="" src="Pic/img3091.png" width="677" height="150" /></p>
+				<p class="ZagT">Переменные в <span lang="en-us">Pyton.</span></p>
+				<p class="stk-reset" data-ce-tag="paragraph" style="margin-top: 0px; margin-right: 0px; margin-bottom: var(--theme-bottom-indent); margin-left: 0px; padding: 0px; box-sizing: content-box; animation: auto ease 0s 1 normal none running none;  border: 0px; border-radius: 0px; inset: auto; box-shadow: none; clear: none; clip: auto; color: rgb(0, 0, 0); columns: auto; content: normal; cursor: inherit; filter: none; float: none; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-weight: 400; font-stretch: inherit; font-size: var(--stk-f_size); font-family: var(--stk-f_family), &quot;stk&quot;; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; height: auto; image-rendering: auto; letter-spacing: normal; line-height: var(--stk-f_height); list-style: none; -webkit-mask: none; mask: none; max-height: none; max-width: none; min-height: var(--stk-f_height); mix-blend-mode: normal; opacity: 1; outline: 0px; overflow: visible; pointer-events: all; position: static; quotes: none; table-layout: auto; text-align-last: auto; text-align: start; text-decoration: none; text-indent: 0px; text-overflow: clip; text-shadow: none; text-size-adjust: none; text-transform: none; transform-origin: 50% 50% 0px; transform: none; transition: none 0s ease 0s; vertical-align: baseline; visibility: visible; white-space: normal; word-break: normal; word-spacing: 0px; overflow-wrap: break-word; z-index: auto; flex: 0 0 auto; width: auto; --stk-f_family: &quot;GraphikLCG-Regular&quot;; --stk-f_size: 18px; --stk-f_weight: 400; --stk-f_height: 26px; --stk-f_spacing: 0px; --stk-f--b_family: &quot;GraphikLCG-Semibold&quot;; --stk-f--b_size: 18px; --stk-f--b_weight: 400; --stk-f--b_spacing: 0px; --stk-f--b_transform: none; --stk-f--i_family: &quot;GraphikLCG-Regular&quot;; --stk-f--i_size: 18px; --stk-f--i_weight: 400; --stk-f--i_style: regular; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px;">
+				Python&nbsp;— язык с&nbsp;динамической типизацией. То есть значения 
+				присваиваются переменным не&nbsp;при компиляции, а&nbsp;построчно во&nbsp;время 
+				выполнения программы.</p>
+				<p class="stk-reset" data-ce-tag="paragraph" style="margin-top: 0px; margin-right: 0px; margin-bottom: var(--theme-bottom-indent); margin-left: 0px; padding: 0px; box-sizing: content-box; animation: auto ease 0s 1 normal none running none;  border: 0px; border-radius: 0px; inset: auto; box-shadow: none; clear: none; clip: auto; color: rgb(0, 0, 0); columns: auto; content: normal; cursor: inherit; filter: none; float: none; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-weight: 400; font-stretch: inherit; font-size: var(--stk-f_size); font-family: var(--stk-f_family), &quot;stk&quot;; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; height: auto; image-rendering: auto; letter-spacing: normal; line-height: var(--stk-f_height); list-style: none; -webkit-mask: none; mask: none; max-height: none; max-width: none; min-height: var(--stk-f_height); mix-blend-mode: normal; opacity: 1; outline: 0px; overflow: visible; pointer-events: all; position: static; quotes: none; table-layout: auto; text-align-last: auto; text-align: start; text-decoration: none; text-indent: 0px; text-overflow: clip; text-shadow: none; text-size-adjust: none; text-transform: none; transform-origin: 50% 50% 0px; transform: none; transition: none 0s ease 0s; vertical-align: baseline; visibility: visible; white-space: normal; word-break: normal; word-spacing: 0px; overflow-wrap: break-word; z-index: auto; flex: 0 0 auto; width: auto; --stk-f_family: &quot;GraphikLCG-Regular&quot;; --stk-f_size: 18px; --stk-f_weight: 400; --stk-f_height: 26px; --stk-f_spacing: 0px; --stk-f--b_family: &quot;GraphikLCG-Semibold&quot;; --stk-f--b_size: 18px; --stk-f--b_weight: 400; --stk-f--b_spacing: 0px; --stk-f--b_transform: none; --stk-f--i_family: &quot;GraphikLCG-Regular&quot;; --stk-f--i_size: 18px; --stk-f--i_weight: 400; --stk-f--i_style: regular; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px;">
+				Поэтому в&nbsp;Python объявлять переменную отдельно не&nbsp;нужно&nbsp;— 
+				достаточно сразу её&nbsp;<strong class="stk-reset" style="margin: 0px; padding: 0px; box-sizing: content-box; font-weight: var(--stk-f--b_weight); animation: auto ease 0s 1 normal none running none; background: 0px 0px; border: 0px; border-radius: 0px; inset: auto; box-shadow: none; clear: none; clip: auto; color: inherit; columns: auto; content: normal; cursor: inherit; filter: none; float: none; font-style: inherit; font-variant: inherit; font-stretch: inherit; font-size: var(--stk-f--b_size); font-family: var(--stk-f--b_family), &quot;stk&quot;; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; height: auto; image-rendering: auto; letter-spacing: var(--stk-f--b_spacing); line-height: var(--stk-f_height); list-style: none; -webkit-mask: none; mask: none; max-height: none; max-width: none; min-height: var(--stk-f_height); mix-blend-mode: normal; opacity: 1; outline: 0px; overflow: visible; pointer-events: all; position: static; quotes: none; table-layout: auto; text-align-last: auto; text-align: start; text-decoration: none; text-indent: 0px; text-overflow: clip; text-shadow: none; text-size-adjust: none; text-transform: var(--stk-f--b_transform); transform-origin: 50% 50% 0px; transform: none; transition: none 0s ease 0s; vertical-align: baseline; visibility: visible; white-space: normal; word-break: normal; word-spacing: normal; overflow-wrap: break-word; z-index: auto; width: auto;">инициализировать, 
+				то&nbsp;есть присвоить значение</strong>. Для этого используют знак 
+				равно<span>&nbsp;</span><u class="stk-reset" style="margin-top: 0px; margin-right: 0px; margin-bottom: var(--theme-bottom-indent); margin-left: 0px; padding: 2px 4px; box-sizing: content-box; animation: auto ease 0s 1 normal none running none; background: 0px 0px rgb(232, 234, 240); border: 0px; border-radius: 4px; inset: auto; box-shadow: none; clear: none; clip: auto; color: inherit; columns: auto; content: normal; cursor: inherit; filter: none; float: none; font-style: inherit; font-variant: inherit; font-weight: var(--stk-f_weight); font-stretch: inherit; font-size: var(--stk-f_size); font-family: var(--stk-f_family), &quot;stk&quot;; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; height: auto; image-rendering: auto; letter-spacing: var(--stk-f_spacing); line-height: var(--stk-f_height); list-style: none; -webkit-mask: none; mask: none; max-height: none; max-width: none; min-height: var(--stk-f_height); mix-blend-mode: normal; opacity: 1; outline: 0px; overflow: visible; pointer-events: all; position: static; quotes: none; table-layout: auto; text-align-last: auto; text-align: start; text-decoration: underline; text-indent: 0px; text-overflow: clip; text-shadow: none; text-size-adjust: none; text-transform: var(--stk-f_transform); transform-origin: 50% 50% 0px; transform: none; transition: none 0s ease 0s; vertical-align: baseline; visibility: visible; white-space: normal; word-break: normal; word-spacing: normal; overflow-wrap: break-word; z-index: auto; width: auto;">=</u>.</p>
+				<p class="stk-reset" data-ce-tag="paragraph" style="margin-top: 0px; margin-right: 0px; margin-bottom: var(--theme-bottom-indent); margin-left: 0px; padding: 0px; box-sizing: content-box; animation: auto ease 0s 1 normal none running none;  border: 0px; border-radius: 0px; inset: auto; box-shadow: none; clear: none; clip: auto; color: rgb(0, 0, 0); columns: auto; content: normal; cursor: inherit; filter: none; float: none; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-weight: 400; font-stretch: inherit; font-size: var(--stk-f_size); font-family: var(--stk-f_family), &quot;stk&quot;; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; height: auto; image-rendering: auto; letter-spacing: normal; line-height: var(--stk-f_height); list-style: none; -webkit-mask: none; mask: none; max-height: none; max-width: none; min-height: var(--stk-f_height); mix-blend-mode: normal; opacity: 1; outline: 0px; overflow: visible; pointer-events: all; position: static; quotes: none; table-layout: auto; text-align-last: auto; text-align: start; text-decoration: none; text-indent: 0px; text-overflow: clip; text-shadow: none; text-size-adjust: none; text-transform: none; transform-origin: 50% 50% 0px; transform: none; transition: none 0s ease 0s; vertical-align: baseline; visibility: visible; white-space: normal; word-break: normal; word-spacing: 0px; overflow-wrap: break-word; z-index: auto; flex: 0 0 auto; width: auto; --stk-f_family: &quot;GraphikLCG-Regular&quot;; --stk-f_size: 18px; --stk-f_weight: 400; --stk-f_height: 26px; --stk-f_spacing: 0px; --stk-f--b_family: &quot;GraphikLCG-Semibold&quot;; --stk-f--b_size: 18px; --stk-f--b_weight: 400; --stk-f--b_spacing: 0px; --stk-f--b_transform: none; --stk-f--i_family: &quot;GraphikLCG-Regular&quot;; --stk-f--i_size: 18px; --stk-f--i_weight: 400; --stk-f--i_style: regular; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px;">
+				Более того, потом ей&nbsp;же можно присвоить значение другого типа:</p>
+				<p class="stk-reset" data-ce-tag="paragraph" style="margin-top: 0px; margin-right: 0px; margin-bottom: var(--theme-bottom-indent); margin-left: 0px; padding: 0px; box-sizing: content-box; animation: auto ease 0s 1 normal none running none;  border: 0px; border-radius: 0px; inset: auto; box-shadow: none; clear: none; clip: auto; color: rgb(0, 0, 0); columns: auto; content: normal; cursor: inherit; filter: none; float: none; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-weight: 400; font-stretch: inherit; font-size: var(--stk-f_size); font-family: var(--stk-f_family), &quot;stk&quot;; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; height: auto; image-rendering: auto; letter-spacing: normal; line-height: var(--stk-f_height); list-style: none; -webkit-mask: none; mask: none; max-height: none; max-width: none; min-height: var(--stk-f_height); mix-blend-mode: normal; opacity: 1; outline: 0px; overflow: visible; pointer-events: all; position: static; quotes: none; table-layout: auto; text-align-last: auto; text-align: start; text-decoration: none; text-indent: 0px; text-overflow: clip; text-shadow: none; text-size-adjust: none; text-transform: none; transform-origin: 50% 50% 0px; transform: none; transition: none 0s ease 0s; vertical-align: baseline; visibility: visible; white-space: normal; word-break: normal; word-spacing: 0px; overflow-wrap: break-word; z-index: auto; flex: 0 0 auto; width: auto; --stk-f_family: &quot;GraphikLCG-Regular&quot;; --stk-f_size: 18px; --stk-f_weight: 400; --stk-f_height: 26px; --stk-f_spacing: 0px; --stk-f--b_family: &quot;GraphikLCG-Semibold&quot;; --stk-f--b_size: 18px; --stk-f--b_weight: 400; --stk-f--b_spacing: 0px; --stk-f--b_transform: none; --stk-f--i_family: &quot;GraphikLCG-Regular&quot;; --stk-f--i_size: 18px; --stk-f--i_weight: 400; --stk-f--i_style: regular; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px;">
+				&nbsp;</p>
+				<pre class="hljs" style="margin: 0px; padding: 0.5em; box-sizing: border-box !important; font-family: monospace, monospace; font-size: 17px; line-height: 1.9; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: block; overflow-x: auto; background: rgb(0, 0, 0); color: rgb(248, 248, 248);">x = <span class="hljs-number" style="margin: 0px; padding: 0px; box-sizing: border-box !important; color: rgb(255, 115, 253);">4</span>
+print(x)
+<span class="hljs-meta" style="margin: 0px; padding: 0px; box-sizing: border-box !important; color: rgb(124, 124, 124);">&gt;&gt;&gt; </span><span class="hljs-number" style="margin: 0px; padding: 0px; box-sizing: border-box !important; color: rgb(255, 115, 253);">4</span>
+
+x = <span class="hljs-string" style="margin: 0px; padding: 0px; box-sizing: border-box !important; color: rgb(168, 255, 96);">&#39;слово&#39;</span>
+print(x)
+<span class="hljs-meta" style="margin: 0px; padding: 0px; box-sizing: border-box !important; color: rgb(124, 124, 124);">&gt;&gt;&gt; </span>слово</pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				&nbsp;</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Переменные предназначены для хранения данных. Название 
+				переменной в Python должно начинаться с алфавитного символа или 
+				со знака подчеркивания и может содержать алфавитно-цифровые 
+				символы и знак подчеркивания. И кроме того, название переменной 
+				не должно совпадать с названием ключевых слов языка Python. 
+				Ключевых слов не так много, их легко запомнить:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/KeyPyton.png" width="570" height="271" /></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Например, создадим переменную:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<code class="py plain" style="font-family: var(--code-font-family) !important; border-radius: 0px !important; background: none !important; border: 0px !important; inset: auto !important; float: none !important; height: auto !important; line-height: 21px; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; text-align: left !important; vertical-align: baseline !important; width: auto !important; box-sizing: content-box !important; font-weight: normal !important; font-style: normal !important; font-size: var(--code-font-size) !important; min-height: auto !important; white-space: pre !important; color: var(--code-plain) !important;">
+				name</code><code class="py keyword" style="font-family: var(--code-font-family) !important; border-radius: 0px !important; background: none !important; border: 0px !important; inset: auto !important; float: none !important; height: auto !important; line-height: 21px; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; text-align: left !important; vertical-align: baseline !important; width: auto !important; box-sizing: content-box !important; font-weight: normal !important; font-style: normal !important; font-size: var(--code-font-size) !important; min-height: auto !important; white-space: pre !important; color: var(--code-keyword) !important;">=</code><code class="py string" style="font-family: var(--code-font-family) !important; border-radius: 0px !important; background: none !important; border: 0px !important; inset: auto !important; float: none !important; height: auto !important; line-height: 21px; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; text-align: left !important; vertical-align: baseline !important; width: auto !important; box-sizing: content-box !important; font-weight: normal !important; font-style: normal !important; font-size: var(--code-font-size) !important; min-height: auto !important; white-space: pre !important; color: var(--code-string) !important;">&quot;Tom&quot;</code></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Здесь определена переменная<span>&nbsp;</span><code style="font-family: monospace;">name</code>, 
+				которая хранит строку &quot;Tom&quot;.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В пайтоне применяется два типа наименования переменных:<span>&nbsp;</span><span class="b" style="font-weight: bold;">camel 
+				case</span><span>&nbsp;</span>и<span>&nbsp;</span><span class="b" style="font-weight: bold;">underscore 
+				notation</span>.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="b" style="font-weight: bold;">Camel case</span><span>&nbsp;</span>подразумевает, 
+				что каждое новое подслово в наименовании переменной начинается с 
+				большой буквы. Например:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<code class="py plain" style="font-family: var(--code-font-family) !important; border-radius: 0px !important; background: none !important; border: 0px !important; inset: auto !important; float: none !important; height: auto !important; line-height: 21px; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; text-align: left !important; vertical-align: baseline !important; width: auto !important; box-sizing: content-box !important; font-weight: normal !important; font-style: normal !important; font-size: var(--code-font-size) !important; min-height: auto !important; white-space: pre !important; color: var(--code-plain) !important;">
+				userName</code><code class="py keyword" style="font-family: var(--code-font-family) !important; border-radius: 0px !important; background: none !important; border: 0px !important; inset: auto !important; float: none !important; height: auto !important; line-height: 21px; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; text-align: left !important; vertical-align: baseline !important; width: auto !important; box-sizing: content-box !important; font-weight: normal !important; font-style: normal !important; font-size: var(--code-font-size) !important; min-height: auto !important; white-space: pre !important; color: var(--code-keyword) !important;">=</code><code class="py string" style="font-family: var(--code-font-family) !important; border-radius: 0px !important; background: none !important; border: 0px !important; inset: auto !important; float: none !important; height: auto !important; line-height: 21px; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; text-align: left !important; vertical-align: baseline !important; width: auto !important; box-sizing: content-box !important; font-weight: normal !important; font-style: normal !important; font-size: var(--code-font-size) !important; min-height: auto !important; white-space: pre !important; color: var(--code-string) !important;">&quot;Tom&quot;</code></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="b" style="font-weight: bold;">Underscore notation</span><span>&nbsp;</span>подразумевает, 
+				что подслова в наименовании переменной разделяются знаком 
+				подчеркивания. Например:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<code class="py plain" style="font-family: var(--code-font-family) !important; border-radius: 0px !important; background: none !important; border: 0px !important; inset: auto !important; float: none !important; height: auto !important; line-height: 21px; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; text-align: left !important; vertical-align: baseline !important; width: auto !important; box-sizing: content-box !important; font-weight: normal !important; font-style: normal !important; font-size: var(--code-font-size) !important; min-height: auto !important; white-space: pre !important; color: var(--code-plain) !important;">
+				user_name</code><code class="py keyword" style="font-family: var(--code-font-family) !important; border-radius: 0px !important; background: none !important; border: 0px !important; inset: auto !important; float: none !important; height: auto !important; line-height: 21px; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; text-align: left !important; vertical-align: baseline !important; width: auto !important; box-sizing: content-box !important; font-weight: normal !important; font-style: normal !important; font-size: var(--code-font-size) !important; min-height: auto !important; white-space: pre !important; color: var(--code-keyword) !important;">=</code><code class="py string" style="font-family: var(--code-font-family) !important; border-radius: 0px !important; background: none !important; border: 0px !important; inset: auto !important; float: none !important; height: auto !important; line-height: 21px; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; text-align: left !important; vertical-align: baseline !important; width: auto !important; box-sizing: content-box !important; font-weight: normal !important; font-style: normal !important; font-size: var(--code-font-size) !important; min-height: auto !important; white-space: pre !important; color: var(--code-string) !important;">&quot;Tom&quot;</code></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				И также надо учитывать регистрозависимость, поэтому переменные<span>&nbsp;</span><code style="font-family: monospace;">name</code><span>&nbsp;</span>и<span>&nbsp;</span><code style="font-family: monospace;">Name</code><span>&nbsp;</span>будут 
+				представлять разные объекты.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				# две разные переменные<br />
+				name = &quot;Tom&quot;<br />
+				Name = &quot;Tom&quot;</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Определив переменную, мы можем использовать в программе. 
+				Например, попытаться вывести ее содержимое на консоль с помощью 
+				встроенной функции<span>&nbsp;</span><span class="b" style="font-weight: bold;">print</span>:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				name = &quot;Tom&quot;&nbsp; # определение переменной <br />
+				nameprint(name)&nbsp;&nbsp; # вывод значения переменной name на консоль</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Например, определение и применение переменной в среде PyCharm:</p>
+				<img src="2.2.png" alt="Переменные в Python" style="max-width: 99%; height: auto; margin-bottom: 15px; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" /><p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Отличительной особенностью переменной является то, что мы можем 
+				менять ее значение в течение работы программы:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				name = &quot;Tom&quot;&nbsp; # переменной name равна &quot;Tom&quot;<br />
+				print(name)&nbsp;&nbsp; # выводит: Tom<br />
+				name = &quot;Bob&quot;&nbsp; # меняем значение на &quot;Bob&quot;<br />
+				print(name)&nbsp;&nbsp; # выводит: Bob</p>
+				<p>&nbsp;</p>
+			</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les6.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les6/1.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 10:41:23 GMT -->
+</html>

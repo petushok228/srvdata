@@ -1,0 +1,309 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les21/3.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:09:09 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: small;
+}
+.style3 {
+	font-size: small;
+	font-weight: bold;
+}
+    .style8 {
+	color: rgb(255, 0, 0);
+}
+.style9 {
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	font-size: small;
+	line-height: normal;
+	font-family: "courier new", courier;
+	color: rgb(255, 0, 0);
+}
+    .style10 {
+	font-size: small;
+	color: rgb(255, 0, 0);
+}
+    .style12 {
+	font-size: medium;
+}
+    .style13 {
+	color: rgb(0, 0, 255);
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                C#: файловый ввод/вывод
+				<strong><span class="style10">Класс FileStream</span></strong><span class="style2">.</span></td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text" 
+                >
+                <p style="color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-style: normal; font-variant: normal; font-weight: 400; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+				Файл (file) это коллекция данных, сохраненных на диске с 
+				определенным именем и по определенному пути на этом диске. Когда 
+				файл открывается для чтения или записи, он становится потоком 
+				(stream).</p>
+				<p style="color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-style: normal; font-variant: normal; font-weight: 400; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+				Поток в сущности это последовательность байт, проходящих через 
+				канал обмена данными. Есть 2 основных потока: поток ввода (input 
+				stream) и поток вывода (output stream). Поток ввода используется 
+				для чтения данных из файла (read operation) и поток вывода 
+				используется для записи данных в файл (write operation).</p>
+				<p style="font: 400 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				[<strong><span class="style2">Классы ввода/вывода C#</span></strong><span class="style2">]</span></p>
+				<p xmlns:edi="http://www.intuit.ru/2010/edi" id="id_6" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Центральную часть потоковой С#-системы занимает<span>&nbsp;</span><a name="keyword7"></a><span class="keyword" style="font-style: oblique;">класс</span><span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;"><span class="style12"><strong>Stream</strong></span><span>&nbsp;</span></span>пространства 
+				имен<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">System.IO. 
+				<strong>Класс Stream</strong></span><span>&nbsp;</span>представляет байтовый<span>&nbsp;</span><a name="keyword8"></a><span class="keyword" style="font-style: oblique;">поток</span><span>&nbsp;</span>и 
+				является базовым для всех остальных потоковых классов. Из класса<span>&nbsp;</span><a name="keyword9"></a><span class="keyword" style="font-style: oblique;">Stream</span><span>&nbsp;</span>выведены 
+				такие байтовые классы потоков как:</p>
+				<div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_6" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<ol>
+					<li>
+					<span class="style2" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+					<strong>FileStream</strong><span>&nbsp;</span></span><span class="style2">- 
+					байтовый поток, разработанный для<span>&nbsp;</span><a name="keyword10"></a><span class="keyword" style="font-style: oblique;">файлового 
+					ввода-вывода</span></li>
+					<li>
+					<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+					<strong>BufferedStream</strong><span>&nbsp;</span></span>- заключает в оболочку 
+					байтовый поток и добавляет буферизацию, которая во многих 
+					случаях увеличивает производительность программы;</li>
+					<li>
+					<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+					<strong>MemoryStream</strong><span>&nbsp;</span></span>- байтовый поток, который 
+					использует память для хранения данных.</span></li>
+				</ol>
+				<p style="font: 400 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong><span class="style10">Класс FileStream</span></strong><span class="style2">. Этот класс из System.IO 
+				namespace помогает в чтении, записи и закрытие файлов после их 
+				использования. Этот класс происходит от абстрактного класса 
+				Stream.</span></p>
+				<p style="color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-style: normal; font-variant: normal; font-weight: 400; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+				Чтобы создать новый файл или открыть существующий файл, 
+				<span class="style8"><strong>Вам 
+				нужно создать объект FileStream</strong></span>. Синтаксис создания объекта 
+				FileStream следующий:</p>
+				<p style="letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-style: normal; font-variant: normal; font-weight: 400; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style10">
+				<span style="font-family: &quot;courier new&quot;, courier;">
+				<strong>FileStream &lt; object_name&gt; = new FileStream( &lt; имя файла&gt;,</strong></span><strong><br />
+				</strong>
+				<span style="font-family: &quot;courier new&quot;, courier;">
+				<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				&lt; FileMode Enumerator&gt;,&nbsp; //</strong></span>определяет 
+												различные методы, которые 
+												применяются для работы с 
+												файлами:<br />
+				<span style="font-family: &quot;courier new&quot;, courier;">
+				<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				&lt; FileAccess Enumerator&gt;,&nbsp; //</strong></span><strong>определяющий 
+				доступ к файлу<br />
+				</strong>
+				<span style="font-family: &quot;courier new&quot;, courier;">
+				<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				&lt; FileShare Enumerator&gt;);&nbsp;&nbsp; //</strong></span><strong>определяющее 
+				совместное использование файла:</strong></p>
+				<p style="color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-style: normal; font-variant: normal; font-weight: 400; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+				Например, вот так мы создаем объект FileStream F для чтения 
+				файла sample.txt:</p>
+				<p style="font: 400 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</p>
+				<div style="border-left: 0.8em solid gray; border-right: 0.1em solid gray; border-top: 0.1em solid gray; border-bottom: 0.1em solid gray; color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; background: rgb(248, 248, 248); overflow: auto; width: auto; border-image: initial; padding: 0.2em 0.6em; font-style: normal; font-variant: normal; font-weight: 400; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+								<pre style="line-height: 13.75px; margin-left: 0px; margin-right: 0px; margin-top: 0px;" ><span class="style13"><strong>FileStream F </strong>= </span><span style="color: rgb(0, 128, 0); font-weight: bold;">new</span><span class="style12"> FileStream(<span style="color: rgb(186, 33, 33);">&quot;sample.txt&quot;</span>,
+                              FileMode.Open,
+                              FileAccess.Read,
+                              FileShare.Read);</span>
+</pre>
+				</div>
+				<p style="color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-style: normal; font-variant: normal; font-weight: 400; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+				Назначение параметров конструктора класса FileStream:</p>
+				<p style="font: 400 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</p>
+				<table border="0" cellspacing="1" cellpadding="3"  style="color: rgb(0, 0, 0); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); background-color: rgb(222, 231, 236);">
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style3">
+												Параметр</td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style3">
+												Описание</td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); ">
+												<td class="style9">
+												<strong>FileMode</strong></td>
+												<td style="font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style10">
+												<strong>Перечисление FileMode определяет 
+												различные методы, которые 
+												применяются для работы с 
+												файлами:<br />
+												<br />
+												Append</strong><span><strong>&nbsp;</strong></span><strong>- 
+												открывает существующий файл и 
+												перемещает позицию ввода (так 
+												называемый курсор файла) в конец 
+												файла, или создает новый файл, 
+												если указанный по имени файл не 
+												существует.<br />
+												Create</strong><span><strong>&nbsp;</strong></span><strong>- 
+												создает новый файл.<br />
+												CreateNew&nbsp;- 
+												указывает операционной системе, 
+												что она должна создать новый 
+												файл.<br />
+												Open</strong><span><strong>&nbsp;</strong></span><strong>- 
+												открывает существующий файл.<br />
+												OpenOrCreate&nbsp;- 
+												указывает операционной системе, 
+												что нужно открыть файл, если он 
+												существует, и если он не 
+												существует, то нужно создать 
+												новый файл.<br />
+												Truncate&nbsp;- 
+												откроет существующий файл и 
+												обрежет его, в результате файл 
+												станет пустым (его размер 
+												составит 0 байт).</strong></td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); ">
+												<td style="font: 11px Verdana, Arial, Helvetica, sans-serif; " class="style8">
+												<span face="courier new, courier" style="font-family: &quot;courier new&quot;, courier;" class="style2">
+												<strong>FileAccess</strong></span></td>
+												<td style="font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style10">
+												<strong>Перечислитель, определяющий 
+												доступ к файлу:</strong><span><strong>&nbsp;</strong></span><strong>Read</strong><span><strong>&nbsp;</strong></span><strong>(только 
+												чтение),</strong><span><strong>&nbsp;</strong></span><strong>ReadWrite</strong><span><strong>&nbsp;</strong></span><strong>(чтение 
+												и запись) и</strong><span><strong>&nbsp;</strong></span><strong>Write</strong><span><strong>&nbsp;</strong></span><strong>(только 
+												запись).</strong></td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); ">
+												<td style="font: 11px Verdana, Arial, Helvetica, sans-serif; " class="style8">
+												<span face="courier new, courier" style="font-family: &quot;courier new&quot;, courier;" class="style2">
+												<strong>FileShare</strong></span></td>
+												<td style="font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style10">
+												<strong>Перечисление, определяющее 
+												совместное использование файла:<br />
+												Inheritable&nbsp;- 
+												позволяет наследовать доступ к 
+												дескриптору файла для дочерних 
+												процессов.<br />
+												None&nbsp;- 
+												запрещает совместный доступ к 
+												текущему файлу.<br />
+												Read</strong><span><strong>&nbsp;</strong></span><strong>- 
+												позволяет другим потокам открыть 
+												файл на чтение.<br />
+												ReadWrite</strong><span><strong>&nbsp;</strong></span><strong>- 
+												позволяет совместную работу с 
+												файлом на чтение и запись.<br />
+												Write&nbsp;- 
+												позволяет другим потокам открыть 
+												файл на запись.</strong></td>
+								</tr>
+				</table>
+				<p style="font: 400 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</p>
+				<p style="color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-style: normal; font-variant: normal; font-weight: 400; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+				Следующая программа демонстрирует использование класса 
+				FileStream:</p>
+				<div style="font: 400 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; background: rgb(248, 248, 248); overflow: auto; width: auto; border-style: solid; border-color: gray; border-image: initial; border-width: 0.1em 0.1em 0.1em 0.8em; padding: 0.2em 0.6em;">
+								<pre style="margin: 0px; line-height: 13.75px;"><span style="color: rgb(0, 128, 0); font-weight: bold;"><span class="style2">using</span></span><span class="style2"> </span><span style="color: rgb(0, 0, 255); font-weight: bold;"><span class="style2">System</span></span><span class="style2">;</pre>
+								<pre style="margin: 0px; line-height: 13.75px;"><span style="color: rgb(0, 128, 0); font-weight: bold;">using</span> <span style="color: rgb(0, 0, 255); font-weight: bold;">System.IO</span>;</pre>
+								<pre style="margin: 0px; line-height: 13.75px;">&nbsp;</pre>
+								<pre style="margin: 0px; line-height: 13.75px;"><span style="color: rgb(0, 128, 0); font-weight: bold;">namespace</span> <span style="color: rgb(0, 0, 255); font-weight: bold;">FileIOApplication</span>
+{
+   <span style="color: rgb(0, 128, 0); font-weight: bold;">class</span> <span style="color: rgb(0, 0, 255); font-weight: bold;">Program</span>
+   {
+      <span style="color: rgb(0, 128, 0); font-weight: bold;">static</span> <span style="color: rgb(0, 128, 0); font-weight: bold;">void</span> <span style="color: rgb(0, 0, 255);">Main</span>(<span style="color: rgb(176, 0, 64);">string</span>[] args)
+      {
+         FileStream F = <span style="color: rgb(0, 128, 0); font-weight: bold;">new</span> FileStream(<span style="color: rgb(186, 33, 33);">&quot;test.dat&quot;</span>, FileMode.OpenOrCreate, 
+            FileAccess.ReadWrite);
+         
+         <span style="color: rgb(0, 128, 0); font-weight: bold;">for</span> (<span style="color: rgb(176, 0, 64);">int</span> i = <span style="color: rgb(102, 102, 102);">1</span>; i &lt; <span style="color: rgb(102, 102, 102);">21</span>; i++)
+            F.WriteByte((<span style="color: rgb(176, 0, 64);">byte</span>)i);
+         F.Position = <span style="color: rgb(102, 102, 102);">0</span>;
+         <span style="color: rgb(0, 128, 0); font-weight: bold;">for</span> (<span style="color: rgb(176, 0, 64);">int</span> i = <span style="color: rgb(102, 102, 102);">0</span>; i &lt; <span style="color: rgb(102, 102, 102);">21</span>; i++)
+            Console.Write(F.ReadByte() + <span style="color: rgb(186, 33, 33);">&quot; &quot;</span>);
+         F.Close();
+         Console.ReadKey();
+      }
+   }
+}
+</span></pre>
+				</div>
+				<p style="color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-style: normal; font-variant: normal; font-weight: 400; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+				Когда этот код будет скомпилирован и запущен на выполнение, то 
+				мы получим следующий результат:</p>
+				<div style="border-left: 0.8em solid gray; border-right: 0.1em solid gray; border-top: 0.1em solid gray; border-bottom: 0.1em solid gray; color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; background: rgb(0, 0, 0); overflow: auto; width: auto; border-image: initial; padding: 0.2em 0.6em; font-style: normal; font-variant: normal; font-weight: 400; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+								<pre style="margin: 0px; line-height: 13.75px;"><span style="color: rgb(255, 255, 255);">1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 -1
+</span></pre>
+				</div>
+				<p style="font: 400 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				[<strong><span class="style2">Более сложные операции с файлами на C#</span></strong><span class="style2">]</span></p>
+				<p style="color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-style: normal; font-variant: normal; font-weight: 400; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+				В предыдущем примере был показан простейший пример операций с 
+				файлом на C#. Однако для использование классов System.IO в 
+				полную силу следует знать их часто используемые свойства и 
+				методы.</p>
+			</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2008 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les21.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les21/3.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:09:09 GMT -->
+</html>

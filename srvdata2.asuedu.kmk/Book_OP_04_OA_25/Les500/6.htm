@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les500/6.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 10:38:44 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style5 {
+	font-size: medium;
+	margin-left: 40px;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 6. Типы-значения (value type) в C#.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <h2 class="wp-block-heading" id="main-menu-1" style="margin: 24px 0px; padding: 0px; border: 0px; font-size: 18px; vertical-align: baseline; clear: both; line-height: 1.6; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Тип-значение (value type) в C#</h2>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В рамках этого урока мы познакомимся поближе с 
+				типами-значениями.</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				О типах значениях важно помнить следующее:</p>
+				<ul class="wp-block-list" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; list-style: outside square; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+					экземпляры этих типов располагаются в стеке, но если они 
+					являются частью ссылочного типа, то в куче;</li>
+					<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+					они не обрабатываются сборщиком мусора (только вместе с 
+					объектом, в состав которого могут входить);</li>
+					<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+					как только метод (блок кода), в котором они объявлены, 
+					завершается, экземпляры удаляются из памяти;</li>
+					<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+					если вы присваиваете значение одной переменной типа-значения 
+					другой, то создается новый экземпляр, в который копируются 
+					все поля из исходного объекта;</li>
+					<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+					тип-значение не может быть базовым типом, то есть от него 
+					нельзя наследоваться;</li>
+					<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+					при сравнении экземпляров типов через оператор&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 12px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">==</code>&nbsp;(или 
+					метод&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 12px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Equals()</code>) 
+					сравниваются значения полей, а не ссылки.</li>
+				</ul>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				К типам-значениям относятся:</p>
+				<ul class="wp-block-list" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; list-style: outside square; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+					группа из набора примитивных типов (числа,&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 12px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">bool</code>,&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 12px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">char</code>);</li>
+					<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+					перечисления (<code style="margin: 0px; padding: 0px; border: 0px; font-size: 12px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">enum</code>);</li>
+					<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+					структуры (<code style="margin: 0px; padding: 0px; border: 0px; font-size: 12px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">struct</code>);</li>
+					<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+					типы значений, допускающие&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 12px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">null</code>;</li>
+					<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+					типы значений кортежей (<code style="margin: 0px; padding: 0px; border: 0px; font-size: 12px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">ValueTuple</code>);</li>
+					<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+					структуры записи (<code style="margin: 0px; padding: 0px; border: 0px; font-size: 12px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">struct 
+					record</code>).</li>
+				</ul>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В рамках урока подробно остановимся на примитивных 
+				типах-значениях (про другие типы более детально расскажем 
+				позже).</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				К&nbsp;<strong style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">примитивным 
+				типам-значениям</strong>&nbsp;относятся:</p>
+				<ul class="wp-block-list" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; list-style: outside square; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+					целочисленные типы;</li>
+					<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+					типы с плавающей точкой;</li>
+					<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+					тип&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 12px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">bool</code>&nbsp;для 
+					представления логических значений (<code style="margin: 0px; padding: 0px; border: 0px; font-size: 12px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">true</code>&nbsp;и&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 12px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">false</code>);</li>
+					<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+					тип&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 12px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">char</code>&nbsp;для 
+					представления символьных значений.</li>
+				</ul>
+				<h2 class="wp-block-heading" id="main-menu-2" style="margin: 24px 0px; padding: 0px; border: 0px; font-size: 18px; vertical-align: baseline; clear: both; line-height: 1.6; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Создание переменной типа-значения</h2>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Рассмотрим, что происходит при создании переменной 
+				типа-значения, на примере переменной типа&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 12px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">int</code>.</p>
+				<pre class="style5"><strong>int n = 3;</strong></pre>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При выполнении этой строки в стеке выделяется память под 
+				переменную&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 12px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">num</code>.</p>
+				<figure class="wp-block-image" style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; display: block; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img decoding="async" src="Pic/620.png" alt="" style="margin: 0px 0px 10px; padding: 0px; border: 0px; font-size: 14px; vertical-align: bottom; box-sizing: border-box; height: auto; max-width: 100%;" /></figure><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При модификации значения переменной, в памяти (в соответствующей 
+				ячейке) изменится содержимое.</p>
+				<figure class="wp-block-image" style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; display: block; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img decoding="async" src="Pic/621.png" alt="" style="margin: 0px 0px 10px; padding: 0px; border: 0px; font-size: 14px; vertical-align: bottom; box-sizing: border-box; height: auto; max-width: 100%;" /></figure><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При завершении работы блока кода (метода), память, выделенная 
+				под локальные переменные, очищается.</p>
+				<h2 class="wp-block-heading" id="main-menu-3" style="margin: 24px 0px; padding: 0px; border: 0px; font-size: 18px; vertical-align: baseline; clear: both; line-height: 1.6; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Присваивание объектов типов-значений</h2>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В предыдущем уроке, посвященном ссылочным типам, мы выяснили, 
+				что при присваивании значения ссылочного типа, происходит 
+				копирование ссылки на объект, который располагается в памяти 
+				(куче), при этом сам объект остается тем же.</p>
+				<pre class="style5"><strong>Person p1 = new Person() { Name = "John" };
+// Person - это класс
+Person p2 = p1;</strong></pre>
+				<figure class="wp-block-image" style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; display: block; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img decoding="async" src="Pic/622.png" alt="" style="margin: 0px 0px 10px; padding: 0px; border: 0px; font-size: 14px; vertical-align: bottom; box-sizing: border-box; height: auto; max-width: 100%;" /></figure><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При присваивании типов-значений происходит создание нового 
+				экземпляра типа и копирование значений свойств (полей) из 
+				исходного значения в новое. Все это будет храниться в стеке.</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Создадим объект тип&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 12px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Point</code>, 
+				присвоим его другому объекту:</p>
+				<pre class="style5"><strong>var pnt1 = new Point() { X = 1.2, Y = 3.4 }; // Point - это структура
+var pnt2 = pnt1;
+Console.WriteLine($"{pnt1.X}, {pnt1.Y}"); // 1.2, 3.4
+Console.WriteLine($"{pnt2.X}, {pnt2.Y}"); // 1.2, 3.4</strong></pre>
+				<figure class="wp-block-image" style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; display: block; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img decoding="async" src="Pic/623.png" alt="" style="margin: 0px 0px 10px; padding: 0px; border: 0px; font-size: 14px; vertical-align: bottom; box-sizing: border-box; height: auto; max-width: 100%;" /></figure><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Изменим значение поля&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 12px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">X</code>&nbsp;у&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 12px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">pnt1</code>:</p>
+				<pre class="style5"><strong>pnt1.X = 5.6;
+Console.WriteLine($"{pnt1.X}, {pnt1.Y}"); // 5.6, 3.4
+Console.WriteLine($"{pnt2.X}, {pnt2.Y}"); // 1.2, 3.4</strong></pre>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При этом значение полей у&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 12px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">pnt2</code>&nbsp;не 
+				измениться, так как эти переменные связаны с разными областями 
+				памяти в стеке.</p>
+				<figure class="wp-block-image" style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; display: block; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img decoding="async" src="Pic/624.png" alt="" style="margin: 0px 0px 10px; padding: 0px; border: 0px; font-size: 14px; vertical-align: bottom; box-sizing: border-box; height: auto; max-width: 100%;" /></figure><h2 class="wp-block-heading" id="main-menu-4" style="margin: 24px 0px; padding: 0px; border: 0px; font-size: 18px; vertical-align: baseline; clear: both; line-height: 1.6; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Сравнение на равенство объектов типов-значений</h2>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При сравнении объектов ссылочного типа между собой через метод&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 12px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Equals()</code>, 
+				если у соответствующего класса он не переопределен, сравниваются 
+				ссылки, то есть проверяется: указывают ли переменные на один и 
+				тоже объект в памяти, таким образом, проверяется тождественность 
+				объектов. Если метод&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 12px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Equals()</code>&nbsp;переопределен, 
+				то результат сравнения зависит от&nbsp; заложенной в него 
+				логики.</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Сравнение экземпляров типов-значений в случае если&nbsp; метод&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 12px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Equals()</code>&nbsp;не 
+				переопределен, выполняется как сравнение значений свойств 
+				(полей).</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Создадим набор переменных типа&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 12px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Point</code>&nbsp;и 
+				сравним их между собой:</p>
+				<pre class="style5"><strong>var a = new Point() { X = 1.2, Y = 3.4 };
+var b = new Point() { X = 1.2, Y = 3.4 };
+var c = new Point() { X = 5.6, Y = 3.4 };
+Console.WriteLine(a.Equals(b)); // True
+Console.WriteLine(a.Equals(c)); // False</strong></pre>
+                <p></p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les500.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les500/6.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 10:38:48 GMT -->
+</html>

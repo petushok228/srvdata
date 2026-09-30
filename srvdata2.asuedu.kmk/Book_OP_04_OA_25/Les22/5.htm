@@ -1,0 +1,587 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les22/5.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:09:43 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+				font-size: small;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                C# → Запись и чтение из файла. (дополнение)</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text" 
+                >
+                <p style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: normal; font-weight: 400; margin: 0px 0px 1.5em; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;, Helvetica, sans-serif; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Работа с файлами. Побайтовое чтение/запись. Чтение текстовых 
+				данных</p>
+				<p style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: normal; font-weight: 400; margin: 0px 0px 1.5em; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;, Helvetica, sans-serif; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Любой ввод и вывод информации в .Net Framework включает в себя 
+				использование потоков.</p>
+				<p style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: normal; font-weight: 400; margin: 0px 0px 1.5em; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;, Helvetica, sans-serif; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: inherit; font-weight: bold; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(80, 80, 80);">
+				Поток</strong><span>&nbsp;</span>— абстрактное представление 
+				последовательного устройств, облегчающее последовательное 
+				хранение данных и доступ к ним (по одному байту в каждый 
+				конкретный момент времени). В качестве такого устройства могут 
+				выступать расположенный на диске файл, принтер, область памяти, 
+				любой другой объект допускающий последовательное считывание и 
+				запись информации).</p>
+				<p style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: normal; font-weight: 400; margin: 0px 0px 1.5em; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;, Helvetica, sans-serif; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В пространстве имен System.IO хранятся классы, предназначенные 
+				для считывания и записи данных в файлы. Классы:</p>
+				<p style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: normal; font-weight: 400; margin: 0px 0px 1.5em; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;, Helvetica, sans-serif; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span id="more-46" style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+				</span></p>
+				<p style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: normal; font-weight: 400; margin: 0px 0px 1.5em; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;, Helvetica, sans-serif; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: inherit; font-weight: bold; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(80, 80, 80);">
+				File</strong><span>&nbsp;</span>– содержит статические методы для 
+				манипуляции файлами (создание, копирование, удаление);<span>&nbsp;</span><strong style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: inherit; font-weight: bold; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(80, 80, 80);">Directory</strong><span>&nbsp;</span>– 
+				содержит статические методы для манипуляции директориями;</p>
+				<p style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: normal; font-weight: 400; margin: 0px 0px 1.5em; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;, Helvetica, sans-serif; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: inherit; font-weight: bold; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(80, 80, 80);">
+				Path</strong><span>&nbsp;</span>– статических класс, «путь»;<span>&nbsp;</span><strong style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: inherit; font-weight: bold; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(80, 80, 80);">FileInfo</strong><span>&nbsp;</span>– 
+				не обладает статическими методами, соответствует физическому 
+				фалу, во многом дублирует функциональность File;</p>
+				<pre class="style2" style="box-sizing: border-box; border-width: 0px 0px 0px 1px; border-top-style: initial; border-right-style: initial; border-bottom-style: initial; border-left-style: solid; border-top-color: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: rgb(204, 204, 204); border-image: initial; font-size: 1.5rem; font-style: normal; font-weight: 400; margin: 0px 0px 1.6em; outline: 0px; padding: 4px 10px 4px 20px; vertical-align: baseline; background: rgb(247, 247, 247); line-height: 1.6; font-family: Consolas, Menlo, Monaco, monospace !important; color: rgb(0, 0, 0); overflow-x: auto; white-space: pre-wrap; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">FileInfo aFile = new FileInfo(&quot;d:\log.txt&quot;);
+if (aFile.Exists == false)  { aFile.Create(); }
+aFile.Attributes = FileAttributes.ReadOnly | FileAttributes.Hidden;
+
+// aFile.Attributes = aFile.Attributes &amp;~FileAttributes.ReadOnly; // убрать атрибут</pre>
+				<p style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: normal; font-weight: 400; margin: 0px 0px 1.5em; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;, Helvetica, sans-serif; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: inherit; font-weight: bold; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(80, 80, 80);">
+				FileStream</strong><span>&nbsp;</span>– представляет поток, 
+				указывающий на файл или местоположение в сети. Представляет файл 
+				для считывания/записи, оперирует байтами и массивом байтов, в то 
+				время как Stream оперирует символьными данными.</p>
+				<pre class="style2" style="box-sizing: border-box; border-width: 0px 0px 0px 1px; border-top-style: initial; border-right-style: initial; border-bottom-style: initial; border-left-style: solid; border-top-color: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: rgb(204, 204, 204); border-image: initial; font-size: 1.5rem; font-style: normal; font-weight: 400; margin: 0px 0px 1.6em; outline: 0px; padding: 4px 10px 4px 20px; vertical-align: baseline; background: rgb(247, 247, 247); line-height: 1.6; font-family: Consolas, Menlo, Monaco, monospace !important; color: rgb(0, 0, 0); overflow-x: auto; white-space: pre-wrap; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">FileStream fs = new FileStream(&quot;d:\log.txt&quot;, FileMode.OpenOrCreate, FileAccess.Read);
+&gt;&gt; enum FileMode {
+Append, // открывает (если существует), переводит указатель в конец, или создает новый файл. Может использоваться только совместно с FileAccess.Write
+Create, // создает (если существует – заменяет)
+CreateNew, // создает (если существует – генерируется исключение)
+Open, // открывает (если не существует – генерируется исключение)
+OpenOrCreate, // если существует открывает, иначе создает новый
+Truncate  // открывает существ. файл,но всю ифн. внутри затирает (если не существует – исключение)
+}
+&gt;&gt; enum FileAccess  { Rad, Write, ReadWrite } 
+
+FileStream fs = File.OpenRead(&quot;d:\log.txt&quot;); // открывает &quot;только на чтение&quot;
+FileStream fs = File.OpenWrite(&quot;d:\log.txt&quot;); // открывает для записи</pre>
+				<p style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: normal; font-weight: 400; margin: 0px 0px 1.5em; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;, Helvetica, sans-serif; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Класс FileStream поддерживает внутренний указатель файла, 
+				ссылающийся на то место в файле, в котором будет производиться 
+				очередная операция чтения/записи. Метод Seek() позволяет 
+				осуществить поиск конкретной позиции в файле (байтовой).</p>
+				<pre class="style2" style="box-sizing: border-box; border-width: 0px 0px 0px 1px; border-top-style: initial; border-right-style: initial; border-bottom-style: initial; border-left-style: solid; border-top-color: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: rgb(204, 204, 204); border-image: initial; font-size: 1.5rem; font-style: normal; font-weight: 400; margin: 0px 0px 1.6em; outline: 0px; padding: 4px 10px 4px 20px; vertical-align: baseline; background: rgb(247, 247, 247); line-height: 1.6; font-family: Consolas, Menlo, Monaco, monospace !important; color: rgb(0, 0, 0); overflow-x: auto; white-space: pre-wrap; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">public long Seek(long offset, SeekOrigin origin);  
+// origin = { Begin, End, Current }
+// offset – на сколько вперед в байтах должен быть передвинут указатель
+// origin – с какой точки веси отсчет
+
+fs.Seek(-5, SeekOrigin.End); // переходит на 5й с конца байт файла</pre>
+				<p style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: normal; font-weight: 400; margin: 0px 0px 1.5em; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;, Helvetica, sans-serif; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При чтении и записи в файл, происходит изменение позиции 
+				указателя (при считывании на 1б)</p>
+				<pre class="prettyprint" style="box-sizing: border-box; border-width: 0px 0px 0px 1px; border-top-style: initial; border-right-style: initial; border-bottom-style: initial; border-left-style: solid; border-top-color: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: rgb(204, 204, 204); border-image: initial; font-size: 1.5rem; font-style: normal; font-weight: 400; margin: 0px 0px 1.6em; outline: 0px; padding: 4px 10px 4px 20px; vertical-align: baseline; background: rgb(247, 247, 247); line-height: 1.6; font-family: Consolas, Menlo, Monaco, monospace !important; color: rgb(0, 0, 0); overflow-x: auto; white-space: pre-wrap; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">           <span class="style2"> // побайтовое чтение из файла с отступом в 55 байт
+            byte[] byData = new byte[100];   // массив байтов
+            char[] charData = new char[100];    // масив символов
+            try
+            {	// файловый поток, открывает файл (при отсутсвии создает) только для чтения
+                FileStream fs = new FileStream(&quot;d:\log.txt&quot;, FileMode.OpenOrCreate, FileAccess.Read);
+                if (fs.CanSeek == true) // если можно производить поиск
+                {
+                    fs.Seek(55, SeekOrigin.Begin);  // делаем отступ на 55 байт с начала файла
+                    // чтение данных и запись в масив байтов, со двигом в мас. 0, и длинной в 100 байт
+                    fs.Read(byData, 0, 100);
+                }
+                fs.Dispose(); // освобождаем ресурсы
+            }
+            catch (IOException err)
+            {
+                MessageBox.Show(err.Message);  return;
+            }
+            Decoder d = Encoding.UTF8.GetDecoder(); // декодирует в кодировку UTF8 (Unicode)
+            d.GetChars(byData, 0, byData.Length, charData, 0); // преобразовывет байты в символы
+            string str = new string(charData); // строим строку
+            MessageBox.Show(str); 
+}
+
+            // записываем в файл побайтно начиная с позиции 55 набор байтов
+            char[] charArr = &quot;sauron918&quot;.ToCharArray();
+            byte[] byteArr = new byte[500];
+            try
+            {
+                FileStream fs = new FileStream(&quot;d:\log.txt&quot;, FileMode.OpenOrCreate, FileAccess.Write);
+                fs.Seek(55, SeekOrigin.Begin);
+                Encoder enc = Encoding.UTF8.GetEncoder();
+                enc.GetBytes(charArr, 0, charArr.Length, byteArr, 0, true); // перекодирование
+                fs.Write(byteArr, 0, byteArr.Length); // запись массива байт
+                fs.Dispose(); // освобождаем ресурсы
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message); return;
+            }</span></pre>
+				<p style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: normal; font-weight: 400; margin: 0px 0px 1.5em; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;, Helvetica, sans-serif; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Классы Stream позволяют осуществлять последовательный доступ к 
+				файлам, и в них не предусмотрена возможность работы с 
+				указателем.</p>
+				<p style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: normal; font-weight: 400; margin: 0px 0px 1.5em; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;, Helvetica, sans-serif; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: inherit; font-weight: bold; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(80, 80, 80);">
+				StreamWriter<span>&nbsp;</span></strong>– позволяет осуществлять 
+				запись в файл символов и строк и самостоятельно выполняет все 
+				необходимые преобразования.</p>
+				<pre class="style2" style="box-sizing: border-box; border-width: 0px 0px 0px 1px; border-top-style: initial; border-right-style: initial; border-bottom-style: initial; border-left-style: solid; border-top-color: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: rgb(204, 204, 204); border-image: initial; font-size: 1.5rem; font-style: normal; font-weight: 400; margin: 0px 0px 1.6em; outline: 0px; padding: 4px 10px 4px 20px; vertical-align: baseline; background: rgb(247, 247, 247); line-height: 1.6; font-family: Consolas, Menlo, Monaco, monospace !important; color: rgb(0, 0, 0); overflow-x: auto; white-space: pre-wrap; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">StreamWriter sw = new StreamWriter(fs);
+StreamWriter sw = new StreamWriter(&quot;d:\log.txt&quot;, true); 
+// true - добавлять инф. или создать новый
+--
+FileStream fs = new FileStream(&quot;d:\log.txt&quot;, FileMode.OpenOrCreate, FileAccess.Write);
+StreamWriter sw = new StreamWriter(fs);
+sw.WriteLine(&quot;hello world&quot;); 
+sw.Write(&quot;this is &quot;);
+sw.Close();</pre>
+				<p style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: normal; font-weight: 400; margin: 0px 0px 1.5em; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;, Helvetica, sans-serif; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: inherit; font-weight: bold; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(80, 80, 80);">
+				StreamReader</strong><span>&nbsp;</span>– осуществляет чтение 
+				символьных данных из потока и их преобразование.</p>
+				<pre class="style2" style="box-sizing: border-box; border-width: 0px 0px 0px 1px; border-top-style: initial; border-right-style: initial; border-bottom-style: initial; border-left-style: solid; border-top-color: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: rgb(204, 204, 204); border-image: initial; font-size: 1.5rem; font-style: normal; font-weight: 400; margin: 0px 0px 1.6em; outline: 0px; padding: 4px 10px 4px 20px; vertical-align: baseline; background: rgb(247, 247, 247); line-height: 1.6; font-family: Consolas, Menlo, Monaco, monospace !important; color: rgb(0, 0, 0); overflow-x: auto; white-space: pre-wrap; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">StreamReader sr = new StreamReader(&quot;d:\log.txt&quot;, Encoding.UTF8);
+while (sr.Peek() != -1)
+{
+    Line = sr.ReadLine();      // Line = sr.ReadToEnd();
+    MessageBox.Show(Line);
+}
+sr.Dispose();    // sr.Close();
+--
+            string path = @&quot;c:tempMyTest.txt&quot;;
+            try
+            {
+                if (File.Exists(path)) { File.Delete(path);  }
+                using (StreamWriter sw = new StreamWriter(path))
+                {
+                    sw.WriteLine(&quot;is some text&quot;);
+                }
+                using (StreamReader sr = new StreamReader(path))
+                {
+                    while (sr.Peek() != -1)  // проверяет следующий символ, но не считывает 
+                    {
+                        Console.WriteLine(sr.ReadLine());
+                    }
+                }
+            }
+            catch (Exception e) {  Console.WriteLine(&quot;The process failed: {0}&quot;, e.ToString()); }
+--
+            // чтение файлов с разделителями
+            string Line;
+            string[] strArr;
+            char[] charArr = new char[] { &#39; &#39; };
+            try
+            {
+                FileStream fs = new FileStream(&quot;d:\log.txt&quot;, FileMode.Open);
+                StreamReader sr = new StreamReader(fs, Encoding.UTF8);
+                while (sr.EndOfStream != true)  // framework 2.0
+                {
+                    Line = sr.ReadLine();
+                    strArr = Line.Split(charArr);
+                    for (int i = 0; i &lt; strArr.Length; i++)
+                    {
+                        MessageBox.Show(strArr[i].Trim());
+                    }
+                }
+                sr.Close();
+            }
+            catch(Exception ex) { MessageBox.Show(ex.Message);  }</pre>
+				<p style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: normal; font-weight: 400; margin: 0px 0px 1.5em; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;, Helvetica, sans-serif; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: inherit; font-weight: bold; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(80, 80, 80);">
+				FileStreamWatcher</strong><span>&nbsp;</span>– используется для 
+				слежения за состоянием файловой системы (файлов и директорий) и 
+				генерирует события в моменты, когда изменяется их 
+				местоположение. Сначала нужно задать значения свойств, 
+				определив, где следует осуществлять контроль, что нужно 
+				контролировать и когда следует генерировать события. Свойства:</p>
+				<p style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: normal; font-weight: 400; margin: 0px 0px 1.5em; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;, Helvetica, sans-serif; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: inherit; font-weight: bold; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(80, 80, 80);">
+				Path</strong><span>&nbsp;</span>– путь к файлу/директории, подлежащей 
+				контрою.</p>
+				<p style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: normal; font-weight: 400; margin: 0px 0px 1.5em; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;, Helvetica, sans-serif; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: inherit; font-weight: bold; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(80, 80, 80);">
+				NotifyFilter</strong><span>&nbsp;</span>– сочетание значений 
+				перечисляемого типа NotifyFilters, которое позволяет определить 
+				за наступлением каких именно событий для данных файлов следует 
+				наблюдать. { Attributes, CreationTime, DirectoryName, FileName, 
+				LastAccess, LastWrite, Security, Size }. Допускается 
+				использование различных сочетаний этих значений посредством 
+				оператора | или &amp;.</p>
+				<p style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: normal; font-weight: 400; margin: 0px 0px 1.5em; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;, Helvetica, sans-serif; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: inherit; font-weight: bold; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(80, 80, 80);">
+				Filter</strong><span>&nbsp;</span>– фильтр, определяющий какие именно 
+				файлы подлежат контролю, например, *.txt</p>
+				<p style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: normal; font-weight: 400; margin: 0px 0px 1.5em; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;, Helvetica, sans-serif; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: inherit; font-weight: bold; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(80, 80, 80);">
+				EnableRaisingEvents</strong><span>&nbsp;</span>– после задания всех 
+				свойст необходимо присвоить значение true, что будет означать<span>&nbsp;</span><span style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; text-decoration: underline;">начало 
+				наблюдения</span>.</p>
+				<pre class="style2" style="box-sizing: border-box; border-width: 0px 0px 0px 1px; border-top-style: initial; border-right-style: initial; border-bottom-style: initial; border-left-style: solid; border-top-color: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: rgb(204, 204, 204); border-image: initial; font-size: 1.5rem; font-style: normal; font-weight: 400; margin: 0px 0px 1.6em; outline: 0px; padding: 4px 10px 4px 20px; vertical-align: baseline; background: rgb(247, 247, 247); line-height: 1.6; font-family: Consolas, Menlo, Monaco, monospace !important; color: rgb(0, 0, 0); overflow-x: auto; white-space: pre-wrap; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">… 
+this.watcher = new System.IO.FileSystemWatcher();
+// объект наблюдение за файловой системой
+private System.IO.FileSystemWatcher watcher;
+…
+        public Form1()
+        {
+            InitializeComponent();
+            DirectoryInfo di = new DirectoryInfo(&quot;D:\Source&quot;); // директория для мониторинга
+            if (di.Exists == false) di.Create();
+            watcher.Deleted += new FileSystemEventHandler(watcher_Deleted);
+            watcher.Renamed += new RenamedEventHandler(watcher_Renamed);
+            watcher.Changed += new FileSystemEventHandler(watcher_Changed);
+            watcher.Created += new FileSystemEventHandler(watcher_Created);
+        }
+
+        void watcher_Created(object sender, FileSystemEventArgs e)
+        {
+            try
+            {
+                StreamWriter sw = new StreamWriter(&quot;d:\log.txt&quot;, true);
+                sw.WriteLine(&quot;Файл {0} создан&quot;, e.FullPath);
+                sw.Close();
+                lbWatch.Text = &quot;Файл создан&quot;;
+            }
+            catch (IOException) { lbWatch.Text = &quot;Ошибка записи в лог&quot;; }
+        }
+
+        void watcher_Changed(object sender, FileSystemEventArgs e)
+        {
+            try
+            {
+                // открыть ф. для дополнения (true), елси нет - создать
+                StreamWriter sw = new StreamWriter(&quot;d:\log.txt&quot;, true);
+                sw.WriteLine(&quot;Файл: {0} {1}&quot;, e.FullPath, e.ChangeType.ToString());
+                sw.Close();
+                lbWatch.Text = &quot;Записыю измения в лог&quot;;
+            }
+            catch (IOException) {lbWatch.Text = &quot;Ошибка записи в лог&quot;;}
+        }
+
+        void watcher_Renamed(object sender, RenamedEventArgs e)
+        {
+            try
+            {
+                StreamWriter sw = new StreamWriter(&quot;d:\log.txt&quot;, true);
+                sw.WriteLine(&quot;Файл переименован из {0} в {1}&quot;, e.OldName, e.FullPath);
+                sw.Close();
+                lbWatch.Text = &quot;Файл переименован&quot;;
+            }
+            catch (IOException) {lbWatch.Text = &quot;Ошибка записи в лог&quot;;}
+        }
+
+        void watcher_Deleted(object sender, FileSystemEventArgs e)
+        {
+            try
+            {
+                StreamWriter sw = new StreamWriter(&quot;d:\log.txt&quot;, true);
+                sw.WriteLine(&quot;Файл {0} был удален&quot;, e.FullPath);
+                sw.Close();
+                lbWatch.Text = &quot;Файл удалён&quot;;
+            }
+            catch (IOException) { lbWatch.Text = &quot;Ошибка записи в лог&quot;; }
+        }
+
+        private void btnWatch_Click(object sender, EventArgs e)
+        {
+            watcher.Path = Path.GetDirectoryName(txtLocation.Text);  
+            watcher.Filter = Path.GetFileName(txtLocation.Text);  // &quot;*.*
+            // уведомлять об изм. времени последней записи, имени файла, размера файла
+            watcher.NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName | NotifyFilters.Size;
+            lbWatch.Text = &quot;Наблюдаю: &quot; + txtLocation.Text;
+            watcher.EnableRaisingEvents = true; // начало наблюдения
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            if (FileDialog.ShowDialog() != DialogResult.Cancel)
+            {
+                txtLocation.Text = FileDialog.FileName;
+                btnWatch.Enabled = true;
+            }
+ }
+ ...
+            string str;
+            try
+            {
+                using (StreamReader sr = new StreamReader(&quot;d:\log.txt&quot;))
+                {
+                    while((str = sr.ReadLine()) != null)
+                    {
+                        MessageBox.Show(str);
+                    }
+                }
+            }
+            catch (IOException err) { MessageBox.Show(err.Message);  }</pre>
+				<h2 style="box-sizing: border-box; border: 0px; font-size: 2.4rem; font-style: normal; font-weight: bold; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; clear: both; font-family: &quot;Open Sans Condensed&quot;, Helvetica, sans-serif; color: rgb(51, 51, 51); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Асинхронный доступ к файлам</h2>
+				<p style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: normal; font-weight: 400; margin: 0px 0px 1.5em; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;, Helvetica, sans-serif; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Приложение может выполнять какие-то действия параллельно с 
+				процессом ввода/вывода файла, вместо ожидания окончания этого 
+				процесса. Процесс считываня файла начинается с вызова метода 
+				BeginRead(), методу передаются параметры аналогичные методу 
+				Read() + дополнительные, необходимые для осуществления 
+				асинхронного процесса.</p>
+				<pre class="style2" style="box-sizing: border-box; border-width: 0px 0px 0px 1px; border-top-style: initial; border-right-style: initial; border-bottom-style: initial; border-left-style: solid; border-top-color: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: rgb(204, 204, 204); border-image: initial; font-size: 1.5rem; font-style: normal; font-weight: 400; margin: 0px 0px 1.6em; outline: 0px; padding: 4px 10px 4px 20px; vertical-align: baseline; background: rgb(247, 247, 247); line-height: 1.6; font-family: Consolas, Menlo, Monaco, monospace !important; color: rgb(0, 0, 0); overflow-x: auto; white-space: pre-wrap; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">byte[] byteData = new byte[100];
+char[] charData = new char[100];
+try
+{
+                FileStream fs = new FileStream(&quot;d:\log.txt&quot;, FileMode.Open);
+                fs.Seek(0, SeekOrigin.Begin); // на начало файла
+                // начало процедуры асинхронного чтения из файла, первые 3 параметра аналогичные Read()
+                // 4й пар.-делегат на метод, к.будет вызван по завершению чтения
+                // 5й пар.-заданный пользов. объект состояния, предназначенный для передачи некой 
+                // строки или данных, позволяющих идентифицир. данную асинхронную операцию
+                IAsyncResult asResult = fs.BeginRead(byteData, 0, byteData.Length, null, null);
+                // выполнение друхиг действий паралельно с чтение данных
+                while (!asResult.IsCompleted) // хранит инф. о сотоянии процесса
+                {
+                    // другие действия только здесь...
+                    MessageBox.Show(&quot;reading from file...&quot;);
+                }
+                // завершение чтения. передается объект IAsyncResult, возвращенный методом Begin()
+                fs.EndRead(asResult);
+ // обработка данных, без нее завершить процесс безсмысленно
+ Decoder d = Encoding.ASCII.GetDecoder();
+                d.GetChars(byteData, 0, byteData.Length, charData, 0);
+                MessageBox.Show(new string(charData));
+                fs.Close();
+}
+catch (Exception err)
+{
+    MessageBox.Show(err.Message);
+}</pre>
+				<p style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: normal; font-weight: 400; margin: 0px 0px 1.5em; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;, Helvetica, sans-serif; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Другой,<span>&nbsp;</span><strong style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: inherit; font-weight: bold; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(80, 80, 80);">более 
+				совершенный</strong>, способ осуществления доступа к файлам в 
+				асинхронном режиме включает использование метода, возвращающего 
+				сообщение (о том что операция завершена).</p>
+				<pre class="prettyprint" style="box-sizing: border-box; border-width: 0px 0px 0px 1px; border-top-style: initial; border-right-style: initial; border-bottom-style: initial; border-left-style: solid; border-top-color: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: rgb(204, 204, 204); border-image: initial; font-size: 1.5rem; font-style: normal; font-weight: 400; margin: 0px 0px 1.6em; outline: 0px; padding: 4px 10px 4px 20px; vertical-align: baseline; background: rgb(247, 247, 247); line-height: 1.6; font-family: Consolas, Menlo, Monaco, monospace !important; color: rgb(0, 0, 0); overflow-x: auto; white-space: pre-wrap; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">    <span class="style2">public class AsyncRead
+    {
+        byte[] byteData;
+        char[] charData;
+
+        public AsyncRead()
+        {
+            byteData = new byte[1000];
+            charData = new char[1000];
+            try
+            {
+                FileStream fs = new FileStream(&quot;d:\log.txt&quot;, FileMode.Open);
+                fs.Seek(0, SeekOrigin.Begin); // на начало файла
+                // делегат указатель на функцию, которая будет обрабатываться 
+                AsyncCallback cb = new AsyncCallback(this.HandleRead);  
+                IAsyncResult aResult = fs.BeginRead(byteData, 0, byteData.Length, cb, &quot;read log.txt&quot;);
+            }
+            catch (IOException err) { MessageBox.Show(err.Message); }
+        }
+
+        // действия которые будут выполняться по завершению обработки
+        public void HandleRead(IAsyncResult ar)
+        {
+            Decoder d = Encoding.ASCII.GetDecoder();
+            d.GetChars(byteData, 0, byteData.Length, charData, 0);
+            MessageBox.Show(new string(charData));
+        }
+…
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AsyncRead ar = new AsyncRead();
+            // продолжаем основные действия
+            for (int i = 0; i &lt; 50; i++) { MessageBox.Show(i.ToString()); }
+        }</span></pre>
+				<p style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: normal; font-weight: 400; margin: 0px 0px 1.5em; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;, Helvetica, sans-serif; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Создается экземпляр класса AsyncReader, а заме продолжается 
+				выполнение – вывод порядковых чисел на консоль; теперь этому 
+				методу не приходиться отслеживать процедуру считывания, и он 
+				может выполнять какие-либо другие действия, совершенно от этой 
+				процедуры не зависящие. Метод HandleRead вызывается системой, 
+				когда завершается процедура считывания файла. Это позволяет 
+				приложению продолжать обработку какой-либо иной информации, пока 
+				выполняется относительно медленная процедура считывания файла.</p>
+				<p style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: normal; font-weight: 400; margin: 0px 0px 1.5em; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;, Helvetica, sans-serif; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример:</p>
+				<div id="img" style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: normal; font-weight: 400; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;, Helvetica, sans-serif; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<a rel="lightbox[46]" style="box-sizing: border-box; border: 0px; font-size: 17px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 85, 128);" href="../Les21/read.gif">
+								<img class="size-full wp-image-351 aligncenter" src="../Les21/read.gif" alt="read" width="460" height="413" style="box-sizing: border-box; height: auto; max-width: 100%; border: 0px; clear: both; display: block; margin: 0.75em auto;" /></a></div>
+				<pre class="style2" style="box-sizing: border-box; border-width: 0px 0px 0px 1px; border-top-style: initial; border-right-style: initial; border-bottom-style: initial; border-left-style: solid; border-top-color: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: rgb(204, 204, 204); border-image: initial; font-size: 1.5rem; font-style: normal; font-weight: 400; margin: 0px 0px 1.6em; outline: 0px; padding: 4px 10px 4px 20px; vertical-align: baseline; background: rgb(247, 247, 247); line-height: 1.6; font-family: Consolas, Menlo, Monaco, monospace !important; color: rgb(0, 0, 0); overflow-x: auto; white-space: pre-wrap; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">namespace WindowsApplication1
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+            this.btnOK.Enabled = false;
+            this.LoadOccupation();
+
+            this.txtName.Tag = false;
+            this.txtAge.Tag = false;
+            this.txtAddress.Tag = false;
+
+            this.txtName.Validating += new CancelEventHandler(this.txtBoxEmpty_Validating);
+            this.txtAddress.Validating += new CancelEventHandler(this.txtBoxEmpty_Validating);
+            this.txtAge.Validating += new CancelEventHandler(this.txtBoxEmpty_Validating);
+            this.txtAge.KeyPress += new KeyPressEventHandler(txtAge_KeyPress);
+
+            this.txtName.TextChanged += new EventHandler(txtBox_TextChanged);
+            this.txtAddress.TextChanged += new EventHandler(txtBox_TextChanged);
+            this.txtAge.TextChanged += new EventHandler(txtBox_TextChanged);
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            string output;
+
+            output = &quot;Имя: &quot; + this.txtName.Text + &quot;rn&quot;;
+            output += &quot;Адрес: &quot; + this.txtAddress.Text + &quot;rn&quot;;
+            output += &quot;Профессия: &quot; + this.cmbOccupation.Text + &quot;rn&quot;;
+            output += &quot;Пол: &quot; + (string)(this.rdoMale.Checked ? &quot;Мужской&quot; : &quot;Женский&quot;) + &quot;rn&quot;;
+            output += &quot;Возраст: &quot; + this.txtAge.Text;
+
+            this.txtOutput.Text = output;
+        }
+
+        // чтение из файла
+        private void LoadOccupation()
+        {
+            try
+            {
+                // создание объекта StreamReader
+                System.IO.StreamReader sr = new System.IO.StreamReader(&quot;occupation.txt&quot;);
+                string input;
+                do
+                {
+                    input = sr.ReadLine(); // построчное чтение
+                    if (input != &quot;&quot;) // пропуск пустых строк
+                        this.cmbOccupation.Items.Add(input);
+                } while (sr.Peek() != -1); // -1 возвращается когда достигнут конец потока
+                sr.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(&quot;Файл не найден&quot;);
+            }
+        }
+
+        // запись в файл
+        private void SaveOccupation()
+        {
+            try
+            {
+                System.IO.StreamWriter sw = new System.IO.StreamWriter(&quot;occupation.txt&quot;);
+                foreach (string item in this.cmbOccupation.Items)
+                {
+                    sw.WriteLine(item);  // запись
+                }
+                sw.Flush(); // очистка буфера
+                sw.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(&quot;Файл не найден&quot;);
+            }
+        }
+        private void ValidateAll()
+        {
+            this.btnOK.Enabled = ((bool)(this.txtName.Tag) &amp;&amp;
+                                  (bool)(this.txtAddress.Tag) &amp;&amp;
+                                  (bool)(this.txtAge.Tag));
+        }
+
+        private void cmbOccupation_KeyDown(object sender, KeyEventArgs e)
+        {
+            // если Text отсутствует в семействе Items то добавляем его
+            int index = 0;
+            ComboBox cb = (ComboBox)sender;
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                // осуществ. поиск строки и не является чувствительным к регистру
+                index = cb.FindStringExact(cb.Text); 
+                if (index &lt; 0)
+                    cb.Items.Add(cb.Text);
+                else
+                    cb.SelectedIndex = index;
+                // указывает на то что событие KeyDown нами обработано
+                e.Handled = true;
+            }
+        }
+    }
+}
+…
+protected override void Dispose(bool disposing)
+        {
+            // сохранение элементов 
+            SaveOccupation();
+
+            if (disposing &amp;&amp; (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }</pre>
+			</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2008 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les21.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les22/5.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:09:47 GMT -->
+</html>

@@ -1,0 +1,325 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les14/9.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 10:57:35 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: #0000FF;
+}
+.style3 {
+	color: #0000FF;
+	margin-left: 40px;
+}
+    .style4 {
+	margin-left: 40px;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 9.   Форматирование и интерполяция строк <span lang="ru">
+				в </span>C#. </td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <h3 style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				Форматирование строк</h3>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				При выводе строк в консоли с помощью метода Console.WriteLine 
+				для встраивания значений в строку мы можем применять 
+				форматирование вместо конкатенации:</p>
+				<pre style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span class="style2" style="font-size: small;">string name = &quot;Tom&quot;;
+age = 23;&nbsp;
+Console.WriteLine(&quot;Имя: {0}  Возраст: {1}&quot;, name, age);// консольный вывод// Имя: Tom  Возраст: 23</span>
+				</pre>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				В строке &quot;Имя: {0} Возраст: {1}&quot; на место<span>&nbsp;</span><code style="font-family: monospace;">{0}</code><span>&nbsp;</span>и<span>&nbsp;</span><code style="font-family: monospace;">{1}</code><span>&nbsp;</span>затем 
+				будут вставляться в порядке следования значения переменныйх<span>&nbsp;</span><code style="font-family: monospace;">name</code><span>&nbsp;</span>и<span>&nbsp;</span><code style="font-family: monospace;">age</code></p>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				То же самое форматирование в строке мы можем сделать не только в 
+				методе Console.WriteLine, но и в любом месте программы с помощью 
+				метода<span>&nbsp;</span><span class="b" style="font-weight: bold;">string.Format</span>:</p>
+				<pre class="style3"><strong>string name = "Tom";
+</strong><strong>int age = 23;
+string output = string.Format("Имя: {0}  Возраст: {1}", name, age);
+</strong><strong>Console.WriteLine(output);</strong></pre>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				Метод<span>&nbsp;</span><code style="font-family: monospace;">Format</code><span>&nbsp;</span>принимает 
+				строку с плейсхолдерами типа {0}, {1} и т.д., а также набор 
+				аргументов, которые вставляются на место данных плейсхолдеров. В 
+				итоге генерируется новая строка.</p>
+				<h3 style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				Спецификаторы форматирования</h3>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				В методе Format могут использоваться различные спецификаторы и 
+				описатели, которые позволяют настроить вывод данных. Рассмотрим 
+				основные описатели. Все используемые форматы:</p>
+				<table class="tab" style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: block; overflow-x: auto; width: auto; max-width: 99%; clear: both; background-color: rgb(247, 247, 250); border-collapse: collapse; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+					<tr style="vertical-align: top; display: table-row;">
+						<td style="vertical-align: top; padding: 1px 3px 1px 5px; width: auto; border: 1px solid rgb(204, 204, 204); display: table-cell;">
+						<p style="line-height: 25.6px; overflow-wrap: break-word;">
+						<span class="b" style="font-weight: bold;">C / c</span></p>
+						</td>
+						<td style="vertical-align: top; padding: 1px 3px 1px 5px; width: auto; border: 1px solid rgb(204, 204, 204); display: table-cell;">
+						<p style="line-height: 25.6px; overflow-wrap: break-word;">
+						Задает формат денежной единицы, указывает количество 
+						десятичных разрядов после запятой</p>
+						</td>
+					</tr>
+					<tr style="vertical-align: top; display: table-row;">
+						<td style="vertical-align: top; padding: 1px 3px 1px 5px; width: auto; border: 1px solid rgb(204, 204, 204); display: table-cell;">
+						<p style="line-height: 25.6px; overflow-wrap: break-word;">
+						<span class="b" style="font-weight: bold;">D / d</span></p>
+						</td>
+						<td style="vertical-align: top; padding: 1px 3px 1px 5px; width: auto; border: 1px solid rgb(204, 204, 204); display: table-cell;">
+						<p style="line-height: 25.6px; overflow-wrap: break-word;">
+						Целочисленный формат, указывает минимальное количество 
+						цифр</p>
+						</td>
+					</tr>
+					<tr style="vertical-align: top; display: table-row;">
+						<td style="vertical-align: top; padding: 1px 3px 1px 5px; width: auto; border: 1px solid rgb(204, 204, 204); display: table-cell;">
+						<p style="line-height: 25.6px; overflow-wrap: break-word;">
+						<span class="b" style="font-weight: bold;">E / e</span></p>
+						</td>
+						<td style="vertical-align: top; padding: 1px 3px 1px 5px; width: auto; border: 1px solid rgb(204, 204, 204); display: table-cell;">
+						<p style="line-height: 25.6px; overflow-wrap: break-word;">
+						Экспоненциальное представление числа, указывает 
+						количество десятичных разрядов после запятой</p>
+						</td>
+					</tr>
+					<tr style="vertical-align: top; display: table-row;">
+						<td style="vertical-align: top; padding: 1px 3px 1px 5px; width: auto; border: 1px solid rgb(204, 204, 204); display: table-cell;">
+						<p style="line-height: 25.6px; overflow-wrap: break-word;">
+						<span class="b" style="font-weight: bold;">F / f</span></p>
+						</td>
+						<td style="vertical-align: top; padding: 1px 3px 1px 5px; width: auto; border: 1px solid rgb(204, 204, 204); display: table-cell;">
+						<p style="line-height: 25.6px; overflow-wrap: break-word;">
+						Формат дробных чисел с фиксированной точкой, указывает 
+						количество десятичных разрядов после запятой</p>
+						</td>
+					</tr>
+					<tr style="vertical-align: top; display: table-row;">
+						<td style="vertical-align: top; padding: 1px 3px 1px 5px; width: auto; border: 1px solid rgb(204, 204, 204); display: table-cell;">
+						<p style="line-height: 25.6px; overflow-wrap: break-word;">
+						<span class="b" style="font-weight: bold;">G / g</span></p>
+						</td>
+						<td style="vertical-align: top; padding: 1px 3px 1px 5px; width: auto; border: 1px solid rgb(204, 204, 204); display: table-cell;">
+						<p style="line-height: 25.6px; overflow-wrap: break-word;">
+						Задает более короткий из двух форматов: F или E</p>
+						</td>
+					</tr>
+					<tr style="vertical-align: top; display: table-row;">
+						<td style="vertical-align: top; padding: 1px 3px 1px 5px; width: auto; border: 1px solid rgb(204, 204, 204); display: table-cell;">
+						<p style="line-height: 25.6px; overflow-wrap: break-word;">
+						<span class="b" style="font-weight: bold;">N / n</span></p>
+						</td>
+						<td style="vertical-align: top; padding: 1px 3px 1px 5px; width: auto; border: 1px solid rgb(204, 204, 204); display: table-cell;">
+						<p style="line-height: 25.6px; overflow-wrap: break-word;">
+						Также задает формат дробных чисел с фиксированной 
+						точкой, определяет количество разрядов после запятой</p>
+						</td>
+					</tr>
+					<tr style="vertical-align: top; display: table-row;">
+						<td style="vertical-align: top; padding: 1px 3px 1px 5px; width: auto; border: 1px solid rgb(204, 204, 204); display: table-cell;">
+						<p style="line-height: 25.6px; overflow-wrap: break-word;">
+						<span class="b" style="font-weight: bold;">P / p</span></p>
+						</td>
+						<td style="vertical-align: top; padding: 1px 3px 1px 5px; width: auto; border: 1px solid rgb(204, 204, 204); display: table-cell;">
+						<p style="line-height: 25.6px; overflow-wrap: break-word;">
+						Задает отображения знака процентов рядом с число, 
+						указывает количество десятичных разрядов после запятой</p>
+						</td>
+					</tr>
+					<tr style="vertical-align: top; display: table-row;">
+						<td style="vertical-align: top; padding: 1px 3px 1px 5px; width: auto; border: 1px solid rgb(204, 204, 204); display: table-cell;">
+						<p style="line-height: 25.6px; overflow-wrap: break-word;">
+						<span class="b" style="font-weight: bold;">X / x</span></p>
+						</td>
+						<td style="vertical-align: top; padding: 1px 3px 1px 5px; width: auto; border: 1px solid rgb(204, 204, 204); display: table-cell;">
+						<p style="line-height: 25.6px; overflow-wrap: break-word;">
+						Шестнадцатеричный формат числа</p>
+						</td>
+					</tr>
+				</table>
+				<h4 style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				Форматирование валюты</h4>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				Для форматирования валюты используется описатель &quot;C&quot;:</p>
+				<pre class="style3"><strong>double number = 23.7;string result = string.Format("{0:C0}", number);
+Console.WriteLine(result); // 24 р.
+string result2 = string.Format("{0:C2}", number);
+Console.WriteLine(result2); // 23,70 р.</strong></pre>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				Число после описателя указывает, сколько чисел будет 
+				использоваться после разделителя между целой и дробной частью. 
+				При выводе также добавляется обозначение денежного знака для 
+				текущей культуры компьютера. В зависимости от локализации 
+				текущей операционной системы результат может различаться. Также 
+				обратите внимание на округление в первом примере.</p>
+				<h4 style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				Форматирование целых чисел</h4>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				Для форматирования целочисленных значение применяется описатель 
+				&quot;d&quot;:</p>
+				<pre class="style3"><strong>int number = 23;
+string result = string.Format("{0:d}", number);
+Console.WriteLine(result); // 23
+string result2 = string.Format("{0:d4}", number);
+Console.WriteLine(result2); // 0023</strong></pre>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				Число после описателя указывает, сколько цифр будет в числовом 
+				значении. Если в исходном числе цифр меньше, то к нему 
+				добавляются нули.</p>
+				<h4 style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				Форматирование дробных чисел</h4>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				Для форматирования дробны чисел используется описатель F, число 
+				после которого указывает, сколько знаков будет использоваться 
+				после разделителя между целой и дробной частью. Если исходное 
+				число - целое, то к нему добавляются разделитель и нули.</p>
+				<pre class="style3"><strong>int number = 23;
+string result = string.Format("{0:f}", number);
+</strong><strong>Console.WriteLine(result); // 23,00 
+				</strong></pre>
+				<pre class="style4"><span class="style2"><strong>double number2 = 45.08;
+string result2 = string.Format("{0:f4}", number2);
+</strong><strong>Console.WriteLine(result2); // 45,0800 
+</strong></span>	<span class="style2"><strong>
+double number3 = 25.07;
+string result3 = string.Format("{0:f1}", number3);
+</strong><strong>Console.WriteLine(result3); // 25,1</strong></span></pre>
+				<h4 style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				Формат процентов</h4>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				Описатель &quot;P&quot; задает отображение процентов. Используемый с ним 
+				числовой спецификатор указывает, сколько знаков будет после 
+				запятой:</p>
+				<pre class="style3"><strong>decimal number = 0.15345m;
+Console.WriteLine("{0:P1}", number);// 15,3%</strong></pre>
+				<h4 style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				Настраиваемые форматы</h4>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				Используя знак #, можно настроить формат вывода. Например, нам 
+				надо вывести некоторое число в формате телефона +х (ххх)ххх-хх-хх:</p>
+				<pre class="style3"><strong>long number = 19876543210;
+string result = string.Format(&quot;{0:+# (###) ###-##-##}&quot;, number);
+Console.WriteLine(result); // +1 (987) 654-32-10</strong></pre>
+				<h3 style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				Метод ToString</h3>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				Метод<span>&nbsp;</span><code style="font-family: monospace;">ToString()</code><span>&nbsp;</span>не 
+				только получает строковое описание объекта, но и может 
+				осуществлять форматирование. Он поддерживает те же описатели, 
+				что используются в методе Format:</p>
+				<pre class="style3"><strong>long number = 19876543210;
+Console.WriteLine(number.ToString("+# (###) ###-##-##"));// +1 (987) 654-32-10 
+double money = 24.8;
+Console.WriteLine(money.ToString("C2")); // 24,80 р.</strong></pre>
+				<h3 style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				Интерполяция строк</h3>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				Интерполяция строк призвана упростить форматирование строк. Так, 
+				перепишем пример с выводом значений переменных в строке:</p>
+				<pre class="style3"><strong>string name = "Tom";
+int age = 23; 
+Console.WriteLine($"Имя: {name}  Возраст: {age}");// консольный вывод
+// Имя: Tom  Возраст: 23</strong></pre>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				Знак доллара перед строкой указывает, что будет осуществляться 
+				интерполяция строк. Внутри строки опять же используются 
+				плейсхолдеры<span>&nbsp;</span><code style="font-family: monospace;">{...}</code>, 
+				только внутри фигурных скобок уже можно напрямую писать те 
+				выражения, которые мы хотим вывести.</p>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				Интерполяция по сути представляет более лаконичное 
+				форматирование. При этом внутри фигурных скобок мы можем 
+				указывать не только свойства, но и различные выражения языка C#:</p>
+				<pre class="style3"><strong>int x = 8;
+int y = 7;
+string result = $"{x} + {y} = {x + y}";
+Console.WriteLine(result); // 8 + 7 = 15</strong></pre>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				Также внутри фигурных скобок можно выполнять более сложные 
+				выражения, например, вызывать методы:</p>
+				<pre class="style3"><strong>int x = 8;
+int y = 7;
+string result = $"{x} * {y} = {Multiply(x, y)}";
+Console.WriteLine(result); // 8 * 7 = 56 
+int Multiply(int a, int b) => a * b;</strong></pre>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				Уже внутри строки можно применять форматирование. В этом случае 
+				мы можем применять все те же описатели, что и в методе<span>&nbsp;</span><code style="font-family: monospace;">Format</code>. 
+				Например, выведем номер телефона в формате +x xxx-xxx-xx-xx:</p>
+				<pre class="style3"><strong>long number = 19876543210;
+Console.WriteLine($"{number:+# ### ### ## ##}"); // +1 987 654 32 10</strong></pre>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				Добавляем пространство до и после форматируемого вывода:</p>
+				<pre class="style3"><strong>string name = "Tom";
+int age = 23; 
+Console.WriteLine($"Имя: {name, -5} Возраст: {age}"); // пробелы после
+Console.WriteLine($"Имя: {name, 5} Возраст: {age}"); // пробелы до</strong></pre>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				Вывод:</p>
+				<pre class="style3"><strong>Имя: Том      Возраст: 23
+Имя:      Том Возраст: 23</strong></pre>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les14.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les14/9.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 10:57:35 GMT -->
+</html>

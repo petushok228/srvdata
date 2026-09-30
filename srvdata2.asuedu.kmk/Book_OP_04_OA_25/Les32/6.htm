@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les32/6.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:26:05 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: #0000FF;
+}
+.style3 {
+	margin-left: 40px;
+}
+.style4 {
+	color: #0000FF;
+	margin-left: 40px;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 6.  Возврат нескольких значений из методов в C#.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td id="Naz" align="center" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()" style="width: 98px">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p class="style2"><strong>Использование out параметров</strong></p><p>
+Первый и самый базовый способ вернуть из метода несколько значений — это использование out параметров. Эти параметры позволяют методам возвращать данные через аргументы, переданные в метод.
+</p><pre class="style3">
+<span class="style2"><strong>public void GetCoordinates(out int x, out int y)
+</strong></span>{<span class="style2"><strong>
+    x = 10; // предположим, это результат работы метода
+    y = 20; // и это тоже
+}</strong></span></pre><p>
+Чтобы использовать этот метод, вам нужно объявить переменные, которые будут переданы в метод и в которые метод поместит возвращаемые значения:
+</p><pre class="style3">
+<span class="style2"></span><strong><span class="style2">int x, y;
+</span></strong><span class="style2"></span><strong><span class="style2">GetCoordinates(out x, out y);
+</span></strong><span class="style2"><strong>Console.WriteLine($"Coordinates: ({x}, {y})");</strong></span></pre><p>
+Возврат кортежей</p><p>
+С появлением кортежей (tuples) в C# 7.0, возвращение нескольких значений стало гораздо проще и эстетичнее. Кортежи позволяют объединять несколько элементов в один тип данных.
+</p><pre class="style3">
+<span class="style2">public (int, int) GetCoordinates()
+</span>{<span class="style2">
+    return (10, 20);
+}</span></pre><p>
+Использование кортежей делает код более чистым и позволяет возвращать значения сразу:
+</p><pre class="style4">
+<strong>var (x, y) = GetCoordinates();
+</strong><strong>Console.WriteLine($"Coordinates: ({x}, {y})");</strong></pre><p>
+Создание структур и классов</p><p>
+Если вам нужно возвращать сложные данные или вы хотите повысить читаемость кода, вы можете создать структуру или класс для хранения возвращаемых значений.
+</p><pre class="style3">
+<span class="style2"><strong>public class Coordinates
+</strong></span>{<span class="style2"><strong>
+    public int X { get; set; }
+    public int Y { get; set; }
+</strong></span>}<span class="style2"><strong>
+
+public Coordinates GetCoordinates()
+</strong></span>{<span class="style2"><strong>
+    return new Coordinates { X = 10, Y = 20 };
+</strong></span>}</pre><p>
+Такой подход не только упрощает понимание того, что возвращает метод, но и позволяет вам добавить в класс или структуру дополнительную логику:
+</p><pre class="style4">
+Coordinates coords = GetCoordinates();
+Console.WriteLine($"Coordinates: ({coords.X}, {coords.Y})");</pre><p>
+Использование словарей и коллекций</p><p>
+Для возврата наборов данных можно использовать словари или другие коллекции. Это особенно полезно, когда количество возвращаемых элементов динамично или их типы различны.
+</p><pre class="style3">
+<span class="style2"><strong>public Dictionary</strong></span><string, object> <span class="style2"><strong>GetData()
+</strong></span>{<span class="style2"><strong>
+    var data = new Dictionary</strong></span><string, object><span class="style2"><strong>
+    {
+        { "Temperature", 23.5 },
+        { "Humidity", 60 },
+        { "Pressure", 1013.25 }
+    };
+    return data;
+</strong></span>}</pre><p>
+Пример использования словаря:</p><pre>
+
+Dictionary<string, object> weatherData = GetData();
+Console.WriteLine($"Temperature: {weatherData["Temperature"]} °C");</pre><p>
+Использование ValueTuple для именованных значений</p><p>
+ValueTuple — это расширение для кортежей, которое позволяет использовать имена для элементов, делая код еще более понятным.
+</p><pre class="style3">
+<span class="style2"><strong>public (double Temperature, int Humidity, double Pressure) GetWeatherData()
+</strong></span>{<span class="style2"><strong>
+    return (23.5, 60, 1013.25);
+</strong></span>}</pre><p>
+Использование именованных кортежей улучшает читаемость кода:</p>
+				<pre class="style3">
+
+<span class="style2"><strong>var weather = GetWeatherData();
+</strong><strong>Console.WriteLine($"Temperature: {weather.Temperature} °C, Humidity: {weather.Humidity}%, Pressure: {weather.Pressure} hPa");</strong></span></pre><p>
+В этой статье мы рассмотрели основные способы возврата нескольких значений из методов в C#. Выбор способа зависит от конкретной задачи и предпочтений программиста. Использование out параметров подходит для простых сценариев, кортежи и ValueTuple обеспечивают большую гибкость и удобство, а создание классов и структур является оптимальным выбором для сложных данных. Словари и коллекции отлично подойдут для работы с динамическими наборами данных. Понимание всех этих способов позволит вам писать более эффективный и понятный код на C#.</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td style="width: 98px">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les32.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les32/6.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:26:05 GMT -->
+</html>

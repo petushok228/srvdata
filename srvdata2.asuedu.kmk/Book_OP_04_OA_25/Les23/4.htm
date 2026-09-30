@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les23/4.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:09:53 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: rgb(255, 0, 0);
+}
+.style3 {
+	font-size: large;
+	color: rgb(255, 0, 0);
+}
+    .style4 {
+	font-size: medium;
+	color: #0000FF;
+}
+    .style5 {
+	font-size: large;
+}
+.style6 {
+	font-size: large;
+	font-weight: bold;
+}
+    .style7 {
+	color: #800080;
+	font-size: medium;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 4. Работа с бинарными файлами.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Бинарные файлы <span class="style2"><strong>в отличие от текстовых хранят информацию в виде 
+				набора байт</strong></span>. При открытии бинарного файла на чтение или запись 
+				также надо учитывать, что нам нужно применять режим 
+				<span class="style3"><strong>&quot;b&quot;</strong></span> в 
+				дополнение к режиму записи<span class="style3"><strong> (&quot;w&quot;)
+				</strong></span>или чтения <span class="style3"><strong>(&quot;r&quot;).</strong></span></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При чтении мы получаем файл в виде набора байт, и наоборот, при 
+				записи в метод<span>&nbsp;</span><code style="font-family: monospace;">write()</code><span>&nbsp;</span>передается 
+				набор байт. Например, скопируем файл:</p>
+				<pre class="style4"><strong>FILENAME = "forest.png" # файл для чтения
+				            
+NEWFILENAME = "forest_new.png" # файл для записи     
+				&nbsp;
+image_data = []     # список для хранения считанных данных
+				  
+# считываем файл в список image_data
+with open(FILENAME, &quot;rb&quot;) as file:&nbsp;&nbsp;&nbsp;&nbsp;
+	image_data = file.read()     # запись выше считанных байт в новый файл
+with open(NEWFILENAME, "wb") as file:    
+	file.write(image_data)     
+print(f"Файл {FILENAME} скопирован в {NEWFILENAME}")</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Считывает файл, путь к которому хранится в переменной FILENAME. 
+				В данном случае это файл изображения &quot;forest.png&quot;. Считанные 
+				байты помещаются в список image_data. Затем этот список 
+				записываем в файл с именем NEWFILENAME. Таким образом, мы 
+				скопируем содержимое одного файла в другой.</p>
+				<h3 style="font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				Модуль pickle</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Также для работы с бинарными файлами Python предоставляет 
+				специальный встроенный модуль<span>&nbsp;</span><span class="b" style="font-weight: bold;">pickle</span>, 
+				который упрощает работу с бинарными файлами. Этот модуль 
+				предоставляет два метода:</p>
+				<ul style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style2">
+					<span class="style5" style="font-weight: bold;">dump(obj, file)</span><span class="style6">: 
+					</span></span>записывает объект obj в бинарный файл file</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style3" style="font-weight: bold;">load(file)</span>: 
+					считывает данные из бинарного файла в объект</p>
+					</li>
+				</ul>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Допустим, надо надо сохранить значения двух переменных:</p>
+				<pre class="style4"><strong>import pickle 
+FILENAME = "user.dat" 
+name = "Tom"
+age = 19 
+with open(FILENAME, "wb") as file:    
+	pickle.dump(name, file)    
+	pickle.dump(age, file)
+with open(FILENAME, "rb") as file:    
+	name = pickle.load(file)    
+	age = pickle.load(file)    
+	print("Имя:", name, "\tВозраст:", age)</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				С помощью функции dump последовательно записываются два объекта. 
+				Поэтому при чтении файла также последовательно посредством 
+				функции load мы можем считать эти объекты. Консольный вывод 
+				программы:</p>
+				<pre class="style4"><strong>Имя: Tom 		Возраст: 28</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Подобным образом мы можем сохранять и извлекать из файла наборы 
+				объектов:</p>
+				<pre class="style4"><strong>import pickle 
+FILENAME = "users.dat" 
+users = [
+	    ["Tom", 28, True],    
+           ["Alice", 23, False],    
+	    ["Bob", 34, False]
+	] 
+with open(FILENAME, "wb") as file:
+	    pickle.dump(users, file)  
+with open(FILENAME, "rb") as file:    
+	users_from_file = pickle.load(file)    
+	for user in users_from_file:        
+		print("Имя:", user[0], "\tВозраст:", user[1], "\tЖенат/замужем:", user[2])</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В зависимости от того, какой объект мы записывали функцией dump, 
+				тот же объект будет возвращен функцией load при считывании 
+				файла.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Консольный вывод:</p>
+				
+				<pre class="style7">
+<strong>Имя: Tom 		Возраст: 28 	Женат/замужем: True
+Имя: Alice 		Возраст: 23 	Женат/замужем: False
+Имя: Bob 		Возраст: 34 	Женат/замужем: False</strong></pre>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2024 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les22.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les23/4.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:09:53 GMT -->
+</html>

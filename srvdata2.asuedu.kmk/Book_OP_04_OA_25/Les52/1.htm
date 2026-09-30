@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les52/1.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 12:06:11 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: blue;
+}
+.style3 {
+	font-size: small;
+}
+.style4 {
+	text-align: center;
+}
+    .style5 {
+	color: blue;
+	font-size: small;
+	margin-left: 40px;
+}
+    .style6 {
+	color: red;
+}
+    .style7 {
+	color: blue;
+	font-size: small;
+}
+.style8 {
+	font-size: medium;
+}
+    </style>
+</head>
+<body>
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 1. Уровни доступа атрибутов в Python.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text" style="margin-left: 40px">
+            <p>В классических языках программирования (таких как C++ и Java) 
+			доступ к ресурсам класса реализуется с помощью служебных слов&nbsp;<span class="style2"><strong> 
+			public,&nbsp;private&nbsp;и&nbsp;protected</strong></span>:<br />
+			</p>
+			<p><span class="style2">Private.&nbsp;</span>Приватные члены класса 
+			недоступны извне - с ними можно работать только внутри 
+			класса.Public.&nbsp;Публичные методы наоборот - открыты для работы 
+			снаружи и, как правило, объявляются публичными сразу по-умолчанию. </p>
+			<p><span class="style2"><strong>Protected.</strong></span>&nbsp;Доступ к 
+			защищенным ресурсам класса возможен только внутри этого класса и 
+			также внутри унаследованных от него классов (иными словами, внутри 
+			классов-потомков). Больше никто доступа к ним не имеет.</p>
+			<p>С точки зрения разграничения доступа к атрибутам класса Python 
+			является особенным языком - в нем отсутствует механизм, который мог 
+			бы запретить доступ к переменной или методу внутри класса. Вместо 
+			этого создатели Python предложили соглашение, в соответствии с 
+			которым:</p>
+			<ul>
+				<li><span class="style3">Если переменная/метод начинается с
+				<span class="style2"><strong>одного нижнего подчеркивания</strong></span> 
+				(_protected_example), то она/он считается защищенным 
+				(protected).</span></li>
+				<span class="style3">
+				<li>Если переменная/метод начинается с <span class="style2">двух 
+				нижних подчеркивани</span>й (__private_example), то она/он 
+				считается приватным (private).</span></li>
+			</ul>
+			<p class="style4">
+			<img alt="" src="Pic/Smartiqa_OOP_4_Acces.png" width="768" height="528" /></p>
+			<p>Все члены класса в Python являются публичными по умолчанию. Любой член класса может быть доступен за пределами самого класса. Вот так выглядит создание и работа с публичными (public) методами в Python:</p>
+				<pre class="style5"><strong>class Phone:
+
+    def __init__(self, color):
+        # Объявляем публично поле color
+        self.color = color</strong></pre>
+        <pre class="style5">>>> from phone import Phone
+
+# Создаем экземпляр класса Phone
+>>> phone = Phone('Grey')
+
+# Обращаемся к свойству color
+>>> phone.color
+'Grey'
+
+# Изменяем свойство color
+>>> phone.color = 'Red'
+>>> phone.color
+'Red'</pre>
+<p>Как видите, никаких проблем. Идем дальше. Как мы уже сказали, в соотвествии с соглашением чтобы сделать атрибут класса защищенным (<strong style="box-sizing: content-box; font-weight: 700;"><span data-redactor-tag="span" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 124, 119);">protected</span></strong>), необходимо добавить к имени символ подчеркивания<span>&nbsp;</span><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 124, 119);">_</span><span>&nbsp;</span>. Как, например, здесь:</p>
+			<pre class="style5">class Phone:
+
+    def __init__(self, color):
+        # Объявляем защищенное поле _color
+        self.<span class="style6"><strong>_</strong></span>color = color</pre>
+        <p>Однако по факту в Python такой атрибут все равно будет<span>&nbsp;</span><strong style="box-sizing: content-box; font-weight: 700;">доступен</strong><span>&nbsp;</span>снаружи класса. Вы все еще можете выполнить операции, которые мы рассмотрели выше:</p>
+	<pre class="style5"><strong># Создаем экземпляр класса Phone
+>>> phone = Phone('Grey')
+
+# Обращаемся к защищенному свойству _color
+>>> phone._color
+'Grey'
+
+# Изменяем защищенное свойство _color
+>>> phone._color = 'Red'
+>>> phone._color
+'Red'</strong></pre>	
+<P>Иными словами, это больше вопрос ответственности программиста - он не должен работать с атрибутами, имена которых начинаются с нижнего подчёркивания<strong style="box-sizing: content-box; font-weight: 700;"><span>&nbsp;</span><span data-redactor-tag="span" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 124, 119);">_</span></strong><span>&nbsp;</span>, снаружи класса.<br style="box-sizing: content-box;" />
+																												<br style="box-sizing: content-box;" />
+																												Аналогично, два нижних подчеркивания<span>&nbsp;</span><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 124, 119);"><strong style="box-sizing: content-box; font-weight: 700;">__</strong><span>&nbsp;</span></span>в названии свойства/метода делают его приватным (<strong style="box-sizing: content-box; font-weight: 700;"><span data-redactor-tag="span" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 124, 119);">private</span></strong>). Здесь уже интереснее - получить доступ к таким атрибутам напрямую нельзя (но если очень хочется, то все равно можно - об этом чуть ниже):</P>
+			<Pre class="style5"><strong>class Phone:
+
+    def __init__(self, color):
+        # Объявляем приватное поле __color
+        self.__color = color&nbsp;</strong></Pre>
+        <pre class="style5">>>> from phone import Phone
+>>> phone = Phone('Grey')
+
+# Пытаемся обратиться к приватному свойству и получаем ошибку
+>>> phone.__color
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'Phone' object has no attribute '__color'</pre>	
+<p>Однако если мы заглянем в список атрибутов нашего класса, то увидим, что на самом деле наше свойство просто получило другое имя. И как вы уже наверное догадались, оно все еще доступно извне, но теперь уже по другому имени:</p>
+<pre class="style7"># Получаем список атрибутов класса, в котором находим новое имя свойства: '_Phone__color'
+>>> dir(phone)
+['_Phone__color', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__',</pre>
+			<pre class="style7"> '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', </pre>
+			<pre class="style7">'__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', </pre>
+			<pre class="style7">'__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__']
+
+# Обращаемся к защищенному свойству по новому имени
+>>> phone._Phone__color
+'Grey'
+
+# Меняем значение защищенного свойства
+>>> phone._Phone__color = 'Blue'
+>>> phone._Phone__color
+'Blue'</pre>
+																												<strong style="box-sizing: content-box; font-weight: 700;">
+			<span class="style8"><span lang="ru">Итоги</span></span></strong><br style="box-sizing: content-box;" />
+																												<ol style="box-sizing: content-box; padding-left: 22px; margin-top: 0px; margin-bottom: 10px;" class="style3">
+																																<li style="box-sizing: content-box;">Существует три уровня доступа к свойствам/методам класса: public, protected, private</li>
+																																<li style="box-sizing: content-box;">Физически данный механизм ограничения доступа к атрибутам класса в Python реализован слабо, что от части может противоречить одному из главных принципов ООП - инкапсуляции.</li>
+																																<li style="box-sizing: content-box;">Однако существует некоторое соглашение, по которому в Python задать уровень доступа к свойству/методу класса можно с помощью добавления к имени одного (<strong style="box-sizing: content-box; font-weight: 700;"><span data-redactor-tag="span" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 124, 119);">protected</span></strong>) или двух (<strong style="box-sizing: content-box; font-weight: 700;"><span data-redactor-tag="span" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 124, 119);">private</span></strong>) подчеркиваний. Ответственность за соблюдение данного соглашения ложится на плечи программистов</li>
+																												</ol>
+				<div id="rec220751123" class="r t-rec t-rec_pt_0 t-rec_pb_0 r_anim r_showed" data-record-type="106" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les52.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les52/1.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 12:06:21 GMT -->
+</html>

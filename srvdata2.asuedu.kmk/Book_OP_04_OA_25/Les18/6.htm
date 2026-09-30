@@ -1,0 +1,770 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les18/6.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:06:31 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 6. Операции с множествами&nbsp; <span lang="en-us">Pascal</span>.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text" 
+                >
+                <h3 style="margin: 5px 0px; padding: 0px; font-weight: bold; font-size: 12pt; line-height: normal !important; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Множества</h3>
+				<p  id="id_176" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Еще один<span>&nbsp;</span><a name="keyword106"></a><span class="keyword" style="font-style: oblique;">структурированный 
+				тип данных</span><span>&nbsp;</span>- это<span>&nbsp;</span><a name="keyword107"></a><span class="keyword" style="font-style: oblique;">множество</span><span>&nbsp;</span>(<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">set</span><span>&nbsp;</span>). 
+				В нем может содержаться не более 256 элементов.</p>
+				<div  class="lecture_mark" id="mark_176" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p  id="id_178" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Важное отличие<span>&nbsp;</span><a name="keyword108"></a><span class="keyword" style="font-style: oblique;">множества</span><span>&nbsp;</span>от 
+				остальных структурированных типов состоит в том, что его 
+				элементы не являются упорядоченными.</p>
+				<div  class="lecture_mark" id="mark_178" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<a  name="sect16" style="color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</a>
+				<h4 style="margin: 0px; padding: 0px; font-weight: bold; font-size: 14.4px; line-height: normal !important; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Описание множеств</h4>
+				<p  id="id_179" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В разделе<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">var</span><span>&nbsp;</span>множества 
+				описываются следующим образом:</p>
+				<div  class="lecture_mark" id="mark_179" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div  class="example" id="id_181" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>var &lt;имя_множества&gt;: set of &lt;тип_элементов_множества&gt;;</pre>
+				</div>
+				<div  class="lecture_mark" id="mark_181" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p  id="id_182" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Элементы могут принадлежать к любому<span>&nbsp;</span><a name="keyword109"></a><span class="keyword" style="font-style: oblique;">порядковому 
+				типу</span>, размер которого не превышает 1 байт (256 
+				элементов). Например:</p>
+				<div  class="lecture_mark" id="mark_182" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div  class="example" id="id_183" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>var s1: set of char;	{множество из 256-ти элементов}
+	s2: set of &#39;a&#39;..&#39;z&#39;,&#39;A&#39;..&#39;Z&#39;; 	{множество из 52-х элементов}
+	s3: set of 0..10; 	{множество из 11-ти элементов}
+	s4: set of boolean; 	{множество из 2-х элементов}</pre>
+				</div>
+				<div  class="lecture_mark" id="mark_183" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<a  name="sect17" style="color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</a>
+				<h4 style="margin: 0px; padding: 0px; font-weight: bold; font-size: 14.4px; line-height: normal !important; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Множество-константа</h4>
+				<a  name="sect18" style="color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</a>
+				<h5 style="margin: 0px; padding: 0px; font-weight: bold; font-size: 14.4px; line-height: normal !important; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Неименованная константа</h5>
+				<p  id="id_184" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<a name="keyword110"></a>
+				<span class="keyword" style="font-style: oblique;">Множество</span><span>&nbsp;</span>можно 
+				задать<span>&nbsp;</span><a name="keyword111"></a><span class="keyword" style="font-style: oblique;">неименованной 
+				константой</span><span>&nbsp;</span>прямо в тексте программы. Для 
+				этого необходимо заключить список элементов создаваемого 
+				множества в квадратные скобки:</p>
+				<div  class="lecture_mark" id="mark_184" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div  class="example" id="id_185" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>[&lt;список_элементов&gt;]</pre>
+				</div>
+				<div  class="lecture_mark" id="mark_185" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p  id="id_186" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<b>Список элементов</b><span>&nbsp;</span>может быть задан 
+				перечислением элементов нового множества через запятую, 
+				интервалом или объединением этих двух способов. Элементы и 
+				границы интервалов могут быть переменными, константами и 
+				выражениями. Если левая граница интервала окажется больше 
+				правой, результатом будет пустое<span>&nbsp;</span><a name="keyword112"></a><span class="keyword" style="font-style: oblique;">множество</span>.</p>
+				<div  class="lecture_mark" id="mark_186" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p  id="id_187" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Примеры конструирования и использования различных множеств:</p>
+				<div  class="lecture_mark" id="mark_187" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div  class="example" id="id_188" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>if c in [&#39;a&#39;,&#39;e&#39;,&#39;i&#39;,&#39;o&#39;,&#39;u&#39;] 
+	then writeln(&#39;Гласная буква&#39;);
+if set1 &lt; [k*2+1..n,13] then set1:=[];</pre>
+				</div>
+				<div  class="lecture_mark" id="mark_188" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<a  name="sect19" style="color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</a>
+				<h5 style="margin: 0px; padding: 0px; font-weight: bold; font-size: 14.4px; line-height: normal !important; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Нетипизированная константа</h5>
+				<p  id="id_189" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<a name="keyword113"></a>
+				<span class="keyword" style="font-style: oblique;">Множество</span><span>&nbsp;</span>- 
+				это<span>&nbsp;</span><a name="keyword114"></a><span class="keyword" style="font-style: oblique;">структурированный 
+				тип данных</span>, поэтому его невозможно задать 
+				нетипизированной константой.</p>
+				<div  class="lecture_mark" id="mark_189" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<a  name="sect20" style="color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</a>
+				<h5 style="margin: 0px; padding: 0px; font-weight: bold; font-size: 14.4px; line-height: normal !important; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Типизированная константа</h5>
+				<p  id="id_190" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Задать<span>&nbsp;</span><a name="keyword115"></a><span class="keyword" style="font-style: oblique;">множество</span><span>&nbsp;</span>как<span>&nbsp;</span><a name="keyword116"></a><span class="keyword" style="font-style: oblique;">типизированную 
+				константу</span><span>&nbsp;</span>можно в разделе<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">const</span>:</p>
+				<div  class="lecture_mark" id="mark_190" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div  class="example" id="id_192" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>&lt;имя_константы&gt; : set of &lt;тип_элементов&gt; =[&lt;список_элементов&gt;];</pre>
+				</div>
+				<div  class="lecture_mark" id="mark_192" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p  id="id_193" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Например:</p>
+				<div  class="lecture_mark" id="mark_193" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div  class="example" id="id_194" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>type 	cipher = set of &#39;0&#39;..&#39;9&#39;;
+const odds: cipher = [&#39;1&#39;,&#39;3&#39;,&#39;5&#39;,&#39;7&#39;,&#39;9&#39;];
+	vowels: set of &#39;a&#39;..&#39;z&#39; = [&#39;a&#39;,&#39;o&#39;,&#39;e&#39;,&#39;u&#39;,&#39;i&#39;];</pre>
+				</div>
+				<h4 style="margin: 0px; padding: 0px; font-weight: bold; font-size: 14.4px; line-height: normal !important; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Операции с множествами</h4>
+				<p  id="id_195" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Все<span>&nbsp;</span><a name="keyword117"></a><span class="keyword" style="font-style: oblique;">теоретико-множественные 
+				операции</span><span>&nbsp;</span>реализованы и в языке Pascal:</p>
+				<div  class="lecture_mark" id="mark_195" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div  class="xml_table_env" id="id_196" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<a name="table."></a>
+					<table border="0" class="xml_table" cellpadding="2" cellspacing="1" style="border-collapse: separate !important; margin: 0px; width: auto !important; padding: 0px; border: 0px;">
+						<tbody style="border: 0px; padding: 0px; margin: 0px;">
+							<tr style="border: 0px; padding: 0px; margin: 0px;">
+								<td bgcolor="#eaeaea" valign="top" style="border-style: none; border-color: inherit; border-width: 0px; padding: 0px; margin: 0px; width: 680px;">
+								1) Пересечение двух множеств<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">s1</span><span>&nbsp;</span>и<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">s2</span>:</td>
+								<td bgcolor="#eaeaea" valign="top" style="border-style: none; border-color: inherit; border-width: 0px; padding: 0px; margin: 0px; width: 173px;">
+								<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+								s:=s1*s2;</span></td>
+							</tr>
+							<tr style="border: 0px; padding: 0px; margin: 0px;">
+								<td bgcolor="#eaeaea" valign="top" style="border-style: none; border-color: inherit; border-width: 0px; padding: 0px; margin: 0px; width: 680px;">
+								2) Объединение двух множеств<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">s1</span><span>&nbsp;</span>и<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">s2</span>:</td>
+								<td bgcolor="#eaeaea" valign="top" style="border-style: none; border-color: inherit; border-width: 0px; padding: 0px; margin: 0px; width: 173px;">
+								<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+								s:=s1+s2;</span></td>
+							</tr>
+							<tr style="border: 0px; padding: 0px; margin: 0px;">
+								<td bgcolor="#eaeaea" valign="top" style="border-style: none; border-color: inherit; border-width: 0px; padding: 0px; margin: 0px; width: 680px;">
+								3) Разность двух множеств<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">s1</span><span>&nbsp;</span>и<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">s2</span><span>&nbsp;</span>(все 
+								элементы, которые принадлежат множеству<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">s1</span><span>&nbsp;</span>и 
+								одновременно не принадлежат множеству<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">s2</span><span>&nbsp;</span>)<sup style="display: inline-block;">5</sup>:</td>
+								<td bgcolor="#eaeaea" valign="top" style="border-style: none; border-color: inherit; border-width: 0px; padding: 0px; margin: 0px; width: 173px;">
+								<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+								s:=s1-s2;</span></td>
+							</tr>
+							<tr style="border: 0px; padding: 0px; margin: 0px;">
+								<td bgcolor="#eaeaea" valign="top" style="border-style: none; border-color: inherit; border-width: 0px; padding: 0px; margin: 0px; width: 680px;">
+								4) Проверка принадлежности элемента<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">el</span><span>&nbsp;</span>множеству<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">s</span><span>&nbsp;</span>(результат 
+								этой операции имеет тип<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">boolean</span><span>&nbsp;</span>):</td>
+								<td bgcolor="#eaeaea" valign="top" style="border-style: none; border-color: inherit; border-width: 0px; padding: 0px; margin: 0px; width: 173px;">
+								<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+								el in s</span></td>
+							</tr>
+							<tr style="border: 0px; padding: 0px; margin: 0px;">
+								<td bgcolor="#eaeaea" valign="top" style="border-style: none; border-color: inherit; border-width: 0px; padding: 0px; margin: 0px; width: 680px;">
+								5) Обозначение для пустого множества:</td>
+								<td bgcolor="#eaeaea" valign="top" style="border-style: none; border-color: inherit; border-width: 0px; padding: 0px; margin: 0px; width: 173px;">
+								<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+								[]</span></td>
+							</tr>
+							<tr style="border: 0px; padding: 0px; margin: 0px;">
+								<td bgcolor="#eaeaea" valign="top" style="border-style: none; border-color: inherit; border-width: 0px; padding: 0px; margin: 0px; width: 680px;">
+								6) Создание множества из списка элементов:</td>
+								<td bgcolor="#eaeaea" valign="top" style="border-style: none; border-color: inherit; border-width: 0px; padding: 0px; margin: 0px; width: 173px;">
+								<div class="example" id="id_214" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left;">
+									<pre>s:=[e1,_,eN];</pre>
+								</div>
+								<div class="lecture_mark" id="mark_214" style="padding: 0px; margin: 0px;">
+								</div>
+								</td>
+							</tr>
+							<tr style="border: 0px; padding: 0px; margin: 0px;">
+								<td bgcolor="#eaeaea" valign="top" style="border-style: none; border-color: inherit; border-width: 0px; padding: 0px; margin: 0px; width: 680px;">
+								7) Проверка двух множеств на равенство или 
+								строгое включение (результат этих операций имеет 
+								тип<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">boolean</span><span>&nbsp;</span>):</td>
+								<td bgcolor="#eaeaea" valign="top" style="border-style: none; border-color: inherit; border-width: 0px; padding: 0px; margin: 0px; width: 173px;">
+								<div class="example" id="id_216" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left;">
+									<pre>s1 = s2
+s1 &gt; s2
+s1 &lt; s2</pre>
+								</div>
+								<div class="lecture_mark" id="mark_216" style="padding: 0px; margin: 0px;">
+								</div>
+								</td>
+							</tr>
+					</table>
+				</div>
+				<div  class="lecture_mark" id="mark_196" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p  id="id_217" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Не существует никакой процедуры, позволяющей распечатать 
+				содержимое множества. Это приходится делать следующим образом:</p>
+				<div  class="lecture_mark" id="mark_217" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div  class="example" id="id_218" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>{s: set of type1; k: type1}
+for k:= min_type1 to max_type1
+	do if k in s then write(k);</pre>
+				</div>
+				<div  class="lecture_mark" id="mark_218" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<a  name="sect22" style="color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</a>
+				<h4 style="margin: 0px; padding: 0px; font-weight: bold; font-size: 14.4px; line-height: normal !important; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Представление множеств массивами</h4>
+				<p  id="id_219" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Одно из основных неудобств при работе с множествами - это 
+				ограничение размера всего лишь 256-ю элементами. Мы приведем 
+				здесь два очень похожих способа представления больших множеств 
+				массивами. Единственным условием является наличие некоторого 
+				внутреннего порядка среди представляемых элементов: без этого 
+				невозможно будет их перенумеровать.</p>
+				<div  class="lecture_mark" id="mark_219" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<a  name="sect23" style="color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</a>
+				<h5 style="margin: 0px; padding: 0px; font-weight: bold; font-size: 14.4px; line-height: normal !important; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Представление множеств линейными массивами</h5>
+				<p  id="id_220" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Задав<span>&nbsp;</span><a name="keyword118"></a><span class="keyword" style="font-style: oblique;">линейный 
+				массив</span><span>&nbsp;</span>достаточной длины, можно &quot;вручную&quot; 
+				сымитировать<span>&nbsp;</span><a name="keyword119"></a><span class="keyword" style="font-style: oblique;">множество</span><span>&nbsp;</span>для 
+				более широкого, чем 256 элементов, диапазона значений. Например, 
+				чтобы работать с<span>&nbsp;</span><a name="keyword120"></a><span class="keyword" style="font-style: oblique;">множеством</span>, 
+				содержащим 10 000 элементов, достаточно такого массива:</p>
+				<div  class="lecture_mark" id="mark_220" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div  class="example" id="id_221" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>set_arr: array[1..10000] of boolean;</pre>
+				</div>
+				<div  class="lecture_mark" id="mark_221" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p  id="id_222" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При таком способе представления возможно задать<span>&nbsp;</span><a name="keyword121"></a><span class="keyword" style="font-style: oblique;">множество</span><span>&nbsp;</span>до 
+				65 000 элементов.</p>
+				<div  class="lecture_mark" id="mark_222" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p  id="id_223" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для простоты изложения мы ограничимся только числовыми 
+				множествами, однако все сказанное ниже можно применять и к 
+				множествам, элементы которых имеют другую природу. Итак, 
+				признаком того, что элемент<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">k</span><span>&nbsp;</span>является 
+				элементом нашего множества, будет значение<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">true</span><span>&nbsp;</span>в<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">k</span><span>&nbsp;</span>-й 
+				ячейке этого массива.</p>
+				<div  class="lecture_mark" id="mark_223" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p  id="id_227" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Посмотрим теперь, какими способами мы вынуждены будем 
+				имитировать операции над &quot;массивными&quot; множествами.</p>
+				<div  class="lecture_mark" id="mark_227" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<ol id="id_228" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li  style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					<p id="id_230" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px;">
+					<b>Проверка множества на пустоту</b><span>&nbsp;</span>может быть 
+					осуществлена довольно просто:</p>
+					<div class="lecture_mark" id="mark_230" style="padding: 0px; margin: 0px;">
+					</div>
+					<div class="example" id="id_231" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left;">
+						<pre>pusto:= true;
+for i:= 1 to N do
+      if set_arr[i] then 
+						      begin pusto:= false;
+                                        break
+                         end;</pre>
+					</div>
+					<div class="lecture_mark" id="mark_231" style="padding: 0px; margin: 0px;">
+					</div>
+					</li>
+					<li  style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					<p id="id_233" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px;">
+					<b>Проверка элемента на принадлежность</b><span>&nbsp;</span>множеству 
+					также не вызовет никаких затруднений, поскольку 
+					соответствующая компонента массива содержит ответ на этот 
+					вопрос:</p>
+					<div class="lecture_mark" id="mark_233" style="padding: 0px; margin: 0px;">
+					</div>
+					<div class="example" id="id_234" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left;">
+						<pre>is_in:= set_arr[element];</pre>
+					</div>
+					<div class="lecture_mark" id="mark_234" style="padding: 0px; margin: 0px;">
+					</div>
+					</li>
+					<li  style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					<p id="id_236" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px;">
+					<b>Добавление элемента в</b><span>&nbsp;</span><a name="keyword122"></a><span class="keyword" style="font-style: oblique;">множество</span><span>&nbsp;</span>нужно 
+					записывать так:</p>
+					<div class="lecture_mark" id="mark_236" style="padding: 0px; margin: 0px;">
+					</div>
+					<div class="example" id="id_237" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left;">
+						<pre>set_arr[element]:= true;</pre>
+					</div>
+					<div class="lecture_mark" id="mark_237" style="padding: 0px; margin: 0px;">
+					</div>
+					</li>
+					<li  style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					<p id="id_239" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px;">
+					<b>Удаление элемента из множества</b><span>&nbsp;</span>записывается 
+					аналогичным образом:</p>
+					<div class="lecture_mark" id="mark_239" style="padding: 0px; margin: 0px;">
+					</div>
+					<div class="example" id="id_240" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left;">
+						<pre>set_arr[element]:= false;</pre>
+					</div>
+					<div class="lecture_mark" id="mark_240" style="padding: 0px; margin: 0px;">
+					</div>
+					</li>
+					<li  style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					<b>Построение пересечения множеств</b><span>&nbsp;</span>реализуется 
+					как проверка вхождения каждого элемента в оба множества и 
+					последующее добавление удовлетворивших этому условию 
+					элементов в результирующее<span>&nbsp;</span><a name="keyword123"></a><span class="keyword" style="font-style: oblique;">множество</span>.</li>
+					<li  style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					<b>Построение объединения множеств</b><span>&nbsp;</span>аналогичным 
+					образом базируется на проверке вхождения элемента хотя бы в 
+					одно из объединяемых множеств и дальнейшем добавлении 
+					элементов в результирующее<span>&nbsp;</span><a name="keyword124"></a><span class="keyword" style="font-style: oblique;">множество</span>.</li>
+					<li  style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					<b>Построение разности двух множеств</b><span>&nbsp;</span>также 
+					опирается на проверку вхождения элемента в оба множества, 
+					причем добавление элемента в создаваемое<span>&nbsp;</span><a name="keyword125"></a><span class="keyword" style="font-style: oblique;">множество</span><span>&nbsp;</span>происходит 
+					только в том случае, если элемент присутствует в 
+					множестве-уменьшаемом и одновременно отсутствует в 
+					множестве-вычитаемом.</li>
+					<li  style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					<p id="id_245" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px;">
+					<b>Проверка двух множеств на равенство</b><span>&nbsp;</span>не 
+					требует особых пояснений:</p>
+					<div class="lecture_mark" id="mark_245" style="padding: 0px; margin: 0px;">
+					</div>
+					<div class="example" id="id_246" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left;">
+						<pre>equal:= true;
+for i:=1 to N do
+		if set1[i]&lt;&gt; set2[i] 
+			then begin equal:= false;
+							break
+					end;</pre>
+					</div>
+					<div class="lecture_mark" id="mark_246" style="padding: 0px; margin: 0px;">
+					</div>
+					</li>
+					<li  style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					<p id="id_248" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px;">
+					<b>Проверка двух множеств на включение</b><span>&nbsp;</span>(<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">set1&lt;set2</span><span>&nbsp;</span>) 
+					тоже не потребует больших усилий:</p>
+					<div class="lecture_mark" id="mark_248" style="padding: 0px; margin: 0px;">
+					</div>
+					<div class="example" id="id_250" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left;">
+						<pre>subset:= true;
+for i:= 1 to N do
+		if set1[i]and not set2[i]
+			then begin subset:= false;
+							break
+					end;</pre>
+					</div>
+					</li>
+				</ol>
+				<h5 style="margin: 0px; padding: 0px; font-weight: bold; font-size: 14.4px; line-height: normal !important; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Представление множеств битовыми массивами</h5>
+				<p  id="id_251" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В случае, если 65 000 элементов недостаточно для задания всех 
+				необходимых множеств (например, 10 множеств по 10 000 элементов 
+				в каждом), это число можно увеличить в 8 раз, перейдя от байтов 
+				к битам. Тогда 1 байт будет хранить информацию не об одном, а 
+				сразу о восьми элементах: единичный бит будет означать наличие 
+				элемента в множестве, а нулевой бит - отсутствие.</p>
+				<div  class="lecture_mark" id="mark_251" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p  id="id_252" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Задавая<span>&nbsp;</span><a name="keyword126"></a><span class="keyword" style="font-style: oblique;">битовый 
+				массив</span>, начнем нумерацию его компонент с 0:</p>
+				<div  class="lecture_mark" id="mark_252" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div  class="example" id="id_253" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>set_bit: array[0..N-1] of byte;</pre>
+				</div>
+				<div  class="lecture_mark" id="mark_253" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p  id="id_254" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Тогда результатом операции<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">&lt;номер_элемента&gt; 
+				div 8</span><span>&nbsp;</span>будет номер той компоненты массива, в 
+				которой содержится информация об этом элементе. А вот номер 
+				бита, в котором содержится информация об этом элементе, придется 
+				вычислять более сложным образом:</p>
+				<div  class="lecture_mark" id="mark_254" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div  class="example" id="id_256" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>bit:= &lt;номер_элемента&gt; mod 8;
+if bit=0 then bit:= 8;</pre>
+				</div>
+				<div  class="lecture_mark" id="mark_256" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p  id="id_257" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Эти вычисления потребуются нам еще не раз, поэтому запишем их 
+				снова, более строго, а затем будем использовать по умолчанию (<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">element</span><span>&nbsp;</span>- 
+				это &quot;номер&quot; обрабатываемого элемента в нашем множестве):</p>
+				<div  class="lecture_mark" id="mark_257" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div  class="example" id="id_259" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>kmp:= element div 8;	{номер компоненты массива}
+bit:= element mod 8;	{номер бита}
+if bit=0 then bit:= 8;</pre>
+				</div>
+				<div  class="lecture_mark" id="mark_259" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p  id="id_260" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Перечислим теперь действия, которые потребуются для реализации 
+				операций над множествами, заданными<span>&nbsp;</span><a name="keyword127"></a><span class="keyword" style="font-style: oblique;">битовыми 
+				массивами</span>.</p>
+				<div  class="lecture_mark" id="mark_260" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<ol id="id_261" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li  style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					<p id="id_263" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px;">
+					<b>Проверка множества на пустоту</b><span>&nbsp;</span>почти не 
+					будет отличаться от аналогичной проверки в случае 
+					представления множества не<span>&nbsp;</span><a name="keyword128"></a><span class="keyword" style="font-style: oblique;">битовым</span>, 
+					а обычным массивом:</p>
+					<div class="lecture_mark" id="mark_263" style="padding: 0px; margin: 0px;">
+					</div>
+					<div class="example" id="id_264" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left;">
+						<pre>pusto:= true;
+for i:= 0 to N-1 do
+        if set_arr[i]&lt;&gt;0 then begin pusto:= false;
+                                                  break
+                                          end;</pre>
+					</div>
+					<div class="lecture_mark" id="mark_264" style="padding: 0px; margin: 0px;">
+					</div>
+					</li>
+					<li  style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					<p id="id_266" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px;">
+					<b>Проверка элемента на принадлежность множеству</b><span>&nbsp;</span>потребует 
+					несколько большей изворотливости ведь нам теперь нужно 
+					вычленить соответствующий бит:</p>
+					<div class="lecture_mark" id="mark_266" style="padding: 0px; margin: 0px;">
+					</div>
+					<div class="example" id="id_267" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left;">
+						<pre>if set_arr[kmp]and(1 shl(bit-1))=0
+		then is_in:= false
+		else is_in:= true;</pre>
+					</div>
+					<div class="lecture_mark" id="mark_267" style="padding: 0px; margin: 0px;">
+					</div>
+					<p id="id_268" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px;">
+					Поясним, что здесь используется операция &quot;побитовое и&quot; (см. 
+					лекцию 2), которая работает непосредственно с битами нужной 
+					нам компоненты массива и числа, состоящего из семи нулей и 
+					единицы на месте с номером<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">bit</span>.</p>
+					<div class="lecture_mark" id="mark_268" style="padding: 0px; margin: 0px;">
+					</div>
+					</li>
+					<li  style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					<p id="id_271" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px;">
+					<b>Добавление элемента в</b><span>&nbsp;</span><a name="keyword129"></a><span class="keyword" style="font-style: oblique;">множество</span><span>&nbsp;</span>теперь 
+					будет записано так:</p>
+					<div class="lecture_mark" id="mark_271" style="padding: 0px; margin: 0px;">
+					</div>
+					<div class="example" id="id_272" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left;">
+						<pre>set_arr[kmp]:= set_arr[kmp]or(1 shl(bit-1));</pre>
+					</div>
+					<div class="lecture_mark" id="mark_272" style="padding: 0px; margin: 0px;">
+					</div>
+					<p id="id_273" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px;">
+					Здесь нельзя использовать обычную операцию сложения (<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">+</span><span>&nbsp;</span>), 
+					так как если добавляемый компонент уже содержится в 
+					множестве (то есть соответствующий бит уже имеет значение<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">1</span><span>&nbsp;</span>), 
+					то в результате сложения<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">1+1</span><span>&nbsp;</span>получится<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">10</span>: 
+					единица автоматически перенесется в старший бит, а на нужном 
+					месте окажется<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">0</span>.</p>
+					<div class="lecture_mark" id="mark_273" style="padding: 0px; margin: 0px;">
+					</div>
+					</li>
+					<li  style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					<p id="id_280" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px;">
+					<b>Удаление элемента из множества</b><span>&nbsp;</span>придется 
+					записать более сложным образом:</p>
+					<div class="lecture_mark" id="mark_280" style="padding: 0px; margin: 0px;">
+					</div>
+					<div class="example" id="id_281" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left;">
+						<pre>set_arr[kmp]:= set_arr[kmp]and not(1 shl(bit-1));</pre>
+					</div>
+					<div class="lecture_mark" id="mark_281" style="padding: 0px; margin: 0px;">
+					</div>
+					<p id="id_282" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px;">
+					Операция<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">not</span><span>&nbsp;</span>превратит 
+					все<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">0</span><span>&nbsp;</span>в<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">1</span><span>&nbsp;</span>и 
+					наоборот, следовательно, теперь в качестве второго операнда 
+					для побитового<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">and</span><span>&nbsp;</span>будет 
+					фигурировать число, состоящее из семи единиц и нуля на месте 
+					с номером<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">bit</span>. 
+					Единицы сохранят любые значения тех битов, которые должны 
+					остаться без изменения, и лишь<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">0</span><span>&nbsp;</span>&quot;уничтожит&quot; 
+					значение единственного нужного бита.</p>
+					<div class="lecture_mark" id="mark_282" style="padding: 0px; margin: 0px;">
+					</div>
+					</li>
+					<li  style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					<p id="id_290" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px;">
+					<b>Пересечение множеств</b><span>&nbsp;</span>реализуется теперь 
+					при помощи операции &quot;побитовое и&quot;:</p>
+					<div class="lecture_mark" id="mark_290" style="padding: 0px; margin: 0px;">
+					</div>
+					<div class="example" id="id_291" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left;">
+						<pre>for i:= 0 to N-1 do set_res[i]:= set1[i] and set2[i];</pre>
+					</div>
+					<div class="lecture_mark" id="mark_291" style="padding: 0px; margin: 0px;">
+					</div>
+					</li>
+					<li  style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					<p id="id_293" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px;">
+					<b>Объединение множеств</b><span>&nbsp;</span>реализуется при 
+					помощи операции &quot;побитовое или&quot;:</p>
+					<div class="lecture_mark" id="mark_293" style="padding: 0px; margin: 0px;">
+					</div>
+					<div class="example" id="id_294" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left;">
+						<pre>for i:= 0 to N-1 do
+		set_res[i]:= set1[i] or set2[i];</pre>
+					</div>
+					<div class="lecture_mark" id="mark_294" style="padding: 0px; margin: 0px;">
+					</div>
+					</li>
+					<li  style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					<p id="id_296" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px;">
+					<b>Разность двух множеств</b><span>&nbsp;</span>может быть 
+					построена так:</p>
+					<div class="lecture_mark" id="mark_296" style="padding: 0px; margin: 0px;">
+					</div>
+					<div class="example" id="id_297" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left;">
+						<pre>for i:= 0 to N-1 do
+		set_res[i]:= (set1[i] or set2[i]) and not set2[i];</pre>
+					</div>
+					<div class="lecture_mark" id="mark_297" style="padding: 0px; margin: 0px;">
+					</div>
+					<p id="id_298" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px;">
+					Поясним, что здесь мы вначале прибавляем содержимое второго 
+					множества к первому, чтобы затем быть полностью уверенными в 
+					правомерности операции вычитания.</p>
+					<div class="lecture_mark" id="mark_298" style="padding: 0px; margin: 0px;">
+					</div>
+					</li>
+					<li  style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					<p id="id_300" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px;">
+					<b>Проверка двух множеств на равенство</b><span>&nbsp;</span>по-прежнему 
+					не требует особых пояснений:</p>
+					<div class="lecture_mark" id="mark_300" style="padding: 0px; margin: 0px;">
+					</div>
+					<div class="example" id="id_301" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left;">
+						<pre>equal:= true;
+for i:=0 to N-1 do
+      if set1[i]&lt;&gt; set2[i] then begin equal:= false;
+                                                    break
+                                      end;</pre>
+					</div>
+					<div class="lecture_mark" id="mark_301" style="padding: 0px; margin: 0px;">
+					</div>
+					</li>
+					<li  style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					<p id="id_303" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px;">
+					<b>Проверка двух множеств на включение</b><span>&nbsp;</span>(<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">set1&lt;set2</span><span>&nbsp;</span>) 
+					будет производиться по схеме: &quot;Если<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">(A\B)∪B=A</span>, 
+					то<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">B⊂A</span><span>&nbsp;</span>&quot;, 
+					доказательство которой настолько очевидно, что мы не станем 
+					на нем задерживаться:</p>
+					<div class="lecture_mark" id="mark_303" style="padding: 0px; margin: 0px;">
+					</div>
+					<div class="example" id="id_307" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left;">
+						<pre>subset:= true;
+for i:= 0 to N-1 do
+    if((set1[i] or set2[i])and not set2[i])
+           or set2[i] &lt;&gt; set1[i]
+       then begin subset:= false;
+                            break
+                end;</pre>
+					</div>
+					<div class="lecture_mark" id="mark_307" style="padding: 0px; margin: 0px;">
+					</div>
+					</li>
+				</ol>
+				<div class="lecture_mark" id="mark_261" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p  id="id_308" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<b>Замечание</b>. Если предстоит многократно выполнять действия 
+				с элементами<span>&nbsp;</span><a name="keyword130"></a><span class="keyword" style="font-style: oblique;">битовых 
+				массивов</span>, то используемые для этого значения &quot;единиц&quot; 
+				удобнее всего сразу задать в специальном массиве:</p>
+				<div  class="lecture_mark" id="mark_308" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div  class="example" id="id_309" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>{ed: array[1..8] of byte;}
+ed[1]:=1; 	
+for k:= 2 to 8 do 
+		ed[k]:= ed[k-1] shl 1;</pre>
+				</div>
+				<div  class="lecture_mark" id="mark_309" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p  id="id_310" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				И далее вместо громоздкой конструкции<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">1<span>&nbsp;</span><a name="keyword131"></a><span class="keyword" style="font-style: oblique;">shl</span>(bit-1)</span><span>&nbsp;</span>можно 
+				использовать просто<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">ed[bit]</span>.</p>
+				<div  class="lecture_mark" id="mark_310" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<a  name="sect25" style="color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</a>
+				<h4 style="margin: 0px; padding: 0px; font-weight: bold; font-size: 14.4px; line-height: normal !important; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Примеры использования символов, строк и множеств</h4>
+				<p  id="id_313" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<b>Задача 1</b>. Оставить в<span>&nbsp;</span><a name="keyword132"></a><span class="keyword" style="font-style: oblique;">строке</span><span>&nbsp;</span>только 
+				первое вхождение каждого<span>&nbsp;</span><a name="keyword133"></a><span class="keyword" style="font-style: oblique;">символа</span>, 
+				взаимный порядок оставленных<span>&nbsp;</span><a name="keyword134"></a><span class="keyword" style="font-style: oblique;">символов</span><span>&nbsp;</span>сохранить.</p>
+				<div  class="lecture_mark" id="mark_313" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div  class="example" id="id_314" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>program z1;
+var s: set of char;
+inp, res: string;
+i: byte;
+
+begin
+	s:=[];
+	res:= &#39;&#39;;
+	for i:= 1 to length(inp) do
+			if not(inp[i] in s)
+			  then begin res:= res+inp[i];
+								s:= s+[inp[i]];
+					  end;
+end.</pre>
+				</div>
+				<div  class="lecture_mark" id="mark_314" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p  id="id_315" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<b>Задача 2</b><span>&nbsp;</span><sup style="display: inline-block;">6</sup><span>&nbsp;</span>Оставить 
+				в<span>&nbsp;</span><a name="keyword135"></a><span class="keyword" style="font-style: oblique;">строке</span><span>&nbsp;</span>только 
+				последнее вхождение каждого<span>&nbsp;</span><a name="keyword136"></a><span class="keyword" style="font-style: oblique;">символа</span>, 
+				взаимный порядок оставленных<span>&nbsp;</span><a name="keyword137"></a><span class="keyword" style="font-style: oblique;">символов</span><span>&nbsp;</span>сохранить.</p>
+				<div  class="lecture_mark" id="mark_315" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div  class="example" id="id_317" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>program z2;
+var inp, res: string; 
+i, k: byte;
+
+begin
+	res:= &#39;&#39;;
+	for i:= 1 to length(inp) do
+		begin 
+			k:= pos(inp[i],res);
+			if k&lt;&gt;0 
+				then delete(res,k,1);
+			res:= res+inp[i];
+		end;
+end.</pre>
+				</div>
+				<div  class="lecture_mark" id="mark_317" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p  id="id_318" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<b>Задача 3</b>. Выдать первые 100 000 натуральных чисел в 
+				случайном порядке без повторений.</p>
+				<div  class="lecture_mark" id="mark_318" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div  class="example" id="id_319" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>program z3;
+var bset: array[0..12499] of byte;   {множество, битовый массив}
+		  ed: array[1..8] of byte;
+		  el,k: longint;
+		  kmp,bin: integer;
+begin
+	ed[1]:= 1; 	{генерация массива битовых единиц}
+	for k:= 2 to 8 do ed[k]:= ed[k-1] shl 1;
+{-------------------------------------------------------}
+	k:=0;
+	randomize;	{процедура активизации генератора случайных 
+чисел}
+	while k&lt;100000 do
+begin
+		   el:= 1+random(99999); 	{случайное число из диапазона 0..99999}
+		kmp:= el div 8;
+		bin:= el mod 8;
+		if bin=0 then bin:= 8;
+		   if bset[kmp]and ed[bin]=0	{проверка повторов}
+	   then begin inc(k);
+								 writeln(el);
+								 bset[kmp]:= bset[kmp]or ed[bin]
+			  end;
+end
+end.</pre>
+				</div>
+				<p>&nbsp;</p>
+			</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2008 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les18.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les18/6.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:06:31 GMT -->
+</html>

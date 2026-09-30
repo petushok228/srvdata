@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les11/7.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 10:48:39 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: large;
+	color: rgb(255, 0, 0);
+}
+.style3 {
+	font-size: medium;
+}
+.style4 {
+	font-size: large;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 7  Функция range</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p style="color: rgb(0, 0, 0); font-family: Roboto, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Например, дана задача: в массиве чисел к каждому элементу 
+				прибавить его индекс. Можно эту задачу решить через цикл while, 
+				но всё же хотелось бы через for.</p>
+				<p style="color: rgb(0, 0, 0); font-family: Roboto, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вот пример решения через цикл for:</p>
+				<div class="highlight" style="background: rgb(232, 255, 216); padding: 0.375rem 0.5rem; margin: 0.75rem 0px; overflow-x: auto; color: rgb(0, 0, 0); font-family: Roboto, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre style="font: 400 0.95rem / 1.25rem monospace; margin: 0px;"><span class="n">array</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="p">[</span><span class="mi" style="color: rgb(102, 102, 102);">1</span><span class="p">,</span> <span class="mi" style="color: rgb(102, 102, 102);">5</span><span class="p">,</span> <span class="o" style="color: rgb(102, 102, 102);">-</span><span class="mi" style="color: rgb(102, 102, 102);">2</span><span class="p">,</span> <span class="mi" style="color: rgb(102, 102, 102);">8</span><span class="p">,</span> <span class="mi" style="color: rgb(102, 102, 102);">0</span><span class="p">,</span> <span class="mi" style="color: rgb(102, 102, 102);">2</span><span class="p">]</span>
+<span class="n">index</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="mi" style="color: rgb(102, 102, 102);">0</span>
+<span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">for</span> <span class="n">element</span> <span class="ow" style="color: rgb(170, 34, 255); font-weight: bold;">in</span> <span class="n">array</span><span class="p">:</span>
+    <span class="nb" style="color: rgb(0, 128, 0);">print</span><span class="p">(</span><span class="n">element</span> <span class="o" style="color: rgb(102, 102, 102);">+</span> <span class="n">index</span><span class="p">)</span>
+    <span class="n">index</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="n">index</span> <span class="o" style="color: rgb(102, 102, 102);">+</span> <span class="mi" style="color: rgb(102, 102, 102);">1</span>
+</pre>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: Roboto, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Нам понадобилась дополнительная переменная для хранения текущего 
+				индекса. Но хочется иметь способ сделать наоборот: брать 
+				индексы, а по ним иметь доступ к элементам. И желательно без 
+				дополнительной переменной.</p>
+				<p style="color: rgb(0, 0, 0); font-family: Roboto, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В Python так можно. А чтобы брать индексы, и в принципе 
+				последовательности чисел, есть функция<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.075rem 0.125rem;"><span class="style2"><strong>range</strong></span></tt>:</p>
+				<div class="highlight" style="background: rgb(232, 255, 216); padding: 0.375rem 0.5rem; margin: 0.75rem 0px; overflow-x: auto; color: rgb(0, 0, 0); font-family: Roboto, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre style="font: 400 0.95rem / 1.25rem monospace; margin: 0px;"><span class="n">array</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="p">[</span><span class="mi" style="color: rgb(102, 102, 102);">1</span><span class="p">,</span> <span class="mi" style="color: rgb(102, 102, 102);">5</span><span class="p">,</span> <span class="o" style="color: rgb(102, 102, 102);">-</span><span class="mi" style="color: rgb(102, 102, 102);">2</span><span class="p">,</span> <span class="mi" style="color: rgb(102, 102, 102);">8</span><span class="p">,</span> <span class="mi" style="color: rgb(102, 102, 102);">0</span><span class="p">,</span> <span class="mi" style="color: rgb(102, 102, 102);">2</span><span class="p">]</span>
+<span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">for</span> <span class="n">index</span> <span class="ow" style="color: rgb(170, 34, 255); font-weight: bold;">in</span> <span class="nb" style="color: rgb(0, 128, 0);">range</span><span class="p">(</span><span class="nb" style="color: rgb(0, 128, 0);">len</span><span class="p">(</span><span class="n">array</span><span class="p">)):</span>
+    <span class="nb" style="color: rgb(0, 128, 0);">print</span><span class="p">(</span><span class="n">index</span> <span class="o" style="color: rgb(102, 102, 102);">+</span> <span class="n">array</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+</pre>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: Roboto, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Что же делает функция<span>&nbsp;</span><span class="style2"><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.075rem 0.125rem;"><strong>range</strong></tt></span>? 
+				Она, будучи вызвана с одним аргументом, возвращает объект, 
+				поддерживающий протокол итерирования, который &quot;пробегает&quot; 
+				значения от нуля до этого аргумента (<strong>не включая</strong><span>&nbsp;</span>значение 
+				самого аргумента), с шагом 1.</p>
+				<div class="note docutils container" style="background: rgba(155, 192, 192, 0.2); padding: 0.675rem; margin: 0.5rem 0px; color: rgb(0, 0, 0); font-family: Roboto, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<p style="margin-top: 0px;" class="style3">Что такое 
+					&quot;объект, поддерживающий протокол итерирования&quot;? Это как 
+					список, или массив, но<span>&nbsp;</span><strong>только</strong><span>&nbsp;</span>для 
+					нужд цикла for. Если попробовать распечатать<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.075rem 0.125rem;">range</tt>, 
+					то мы увидим не список значений:</p>
+					<div class="highlight" style="background: rgb(232, 255, 216); padding: 0.375rem 0.5rem; margin: 0.75rem 0px; overflow-x: auto;">
+						<pre style="font: 400 0.95rem / 1.25rem monospace; margin: 0px;"><span class="gp" style="color: rgb(0, 0, 128); font-weight: bold;">&gt;&gt;&gt; </span><span class="nb" style="color: rgb(0, 128, 0);">print</span><span class="p">(</span><span class="nb" style="color: rgb(0, 128, 0);">range</span><span class="p">(</span><span class="mi" style="color: rgb(102, 102, 102);">10</span><span class="p">))</span>
+<span class="go" style="color: rgb(113, 113, 113);">range(0, 10)</span>
+</pre>
+					</div>
+					<p style="margin-bottom: 0px;" class="style4">Но в цикле for 
+					этот объект ведёт себя также, как и массив с числами от 0 до 
+					10. И объект занимает меньше места в памяти, чем массив.</p>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: Roboto, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если она вызвана с двумя аргументами, то возвращаемый объект 
+				&quot;пробегает&quot; значения от первого аргумента до второго.</p>
+				<div class="highlight" style="background: rgb(232, 255, 216); padding: 0.375rem 0.5rem; margin: 0.75rem 0px; overflow-x: auto; color: rgb(0, 0, 0); font-family: Roboto, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre style="font: 400 0.95rem / 1.25rem monospace; margin: 0px;"><span class="gp" style="color: rgb(0, 0, 128); font-weight: bold;">&gt;&gt;&gt; </span><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">for</span> <span class="n">i</span> <span class="ow" style="color: rgb(170, 34, 255); font-weight: bold;">in</span> <span class="nb" style="color: rgb(0, 128, 0);">range</span><span class="p">(</span><span class="mi" style="color: rgb(102, 102, 102);">5</span><span class="p">,</span> <span class="mi" style="color: rgb(102, 102, 102);">8</span><span class="p">):</span>
+<span class="gp" style="color: rgb(0, 0, 128); font-weight: bold;">... </span>    <span class="nb" style="color: rgb(0, 128, 0);">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="gp" style="color: rgb(0, 0, 128); font-weight: bold;">...</span>
+<span class="go" style="color: rgb(113, 113, 113);">5</span>
+<span class="go" style="color: rgb(113, 113, 113);">6</span>
+<span class="go" style="color: rgb(113, 113, 113);">7</span>
+</pre>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: Roboto, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если же функция<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.075rem 0.125rem;"><span class="style2"><strong>range</strong></span></tt><span>&nbsp;</span>вызвана 
+				с тремя аргументами, то третий аргумент - это шаг изменения 
+				значения. Он может быть и отрицательным:</p>
+				<div class="highlight" style="background: rgb(232, 255, 216); padding: 0.375rem 0.5rem; margin: 0.75rem 0px; overflow-x: auto; color: rgb(0, 0, 0); font-family: Roboto, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre style="font: 400 0.95rem / 1.25rem monospace; margin: 0px;"><span class="gp" style="color: rgb(0, 0, 128); font-weight: bold;">&gt;&gt;&gt; </span><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">for</span> <span class="n">i</span> <span class="ow" style="color: rgb(170, 34, 255); font-weight: bold;">in</span> <span class="nb" style="color: rgb(0, 128, 0);">range</span><span class="p">(</span><span class="mi" style="color: rgb(102, 102, 102);">8</span><span class="p">,</span> <span class="mi" style="color: rgb(102, 102, 102);">5</span><span class="p">,</span> <span class="o" style="color: rgb(102, 102, 102);">-</span><span class="mi" style="color: rgb(102, 102, 102);">2</span><span class="p">):</span>
+<span class="gp" style="color: rgb(0, 0, 128); font-weight: bold;">... </span>    <span class="nb" style="color: rgb(0, 128, 0);">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="gp" style="color: rgb(0, 0, 128); font-weight: bold;">...</span>
+<span class="go" style="color: rgb(113, 113, 113);">8</span>
+<span class="go" style="color: rgb(113, 113, 113);">6</span></pre>
+				</div>
+                <p></p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les11.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les11/7.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 10:48:39 GMT -->
+</html>

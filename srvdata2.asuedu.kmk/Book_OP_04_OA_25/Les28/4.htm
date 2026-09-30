@@ -1,0 +1,280 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les28/4.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:17:54 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 4. Работа с файлами</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <section id="id2" style="box-sizing: border-box; display: block; color: rgb(64, 64, 64); font-family: Lato, proxima-nova, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(252, 252, 252); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<h2 style="box-sizing: border-box; margin-top: 0px; font-weight: 700; font-family: &quot;Roboto Slab&quot;, ff-tisa-web-pro, Georgia, Arial, sans-serif; font-size: 24px;">
+				Ввод данных<a class="headerlink" title="Permalink to this heading" style="box-sizing: border-box; color: rgb(41, 128, 185); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://notes.algoprog.ru/python_basics/7_files.html#id2"></a></h2>
+				<section id="input" style="box-sizing: border-box; display: block;">
+				<h3 style="box-sizing: border-box; margin-top: 0px; font-weight: 700; font-family: &quot;Roboto Slab&quot;, ff-tisa-web-pro, Georgia, Arial, sans-serif; font-size: 20px;">
+				Чтение по аналогии с input<a class="headerlink" title="Permalink to this heading" style="box-sizing: border-box; color: rgb(41, 128, 185); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://notes.algoprog.ru/python_basics/7_files.html#input"></a></h3>
+				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px;">
+				Чтобы считать данные из файла, вам надо сначала «открыть файл на 
+				чтение». Это делается командой</p>
+				<div class="highlight-python notranslate" style="box-sizing: border-box; border: 1px solid rgb(225, 228, 229); overflow-x: auto; margin: 1px 0px 24px;">
+								<div class="highlight" style="box-sizing: border-box; background: rgb(248, 248, 248); border: none; overflow-x: auto; margin: 0px; padding: 0px;">
+												<pre style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: pre; line-height: 1.4; margin: 0px; padding: 12px; display: block; overflow: auto;"><span class="n" style="box-sizing: border-box;">f</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">open</span><span class="p" style="box-sizing: border-box;">(</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;input.txt&quot;</span><span class="p" style="box-sizing: border-box;">,</span> <span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;r&quot;</span><span class="p" style="box-sizing: border-box;">)</span>
+</pre>
+								</div>
+				</div>
+				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px;">
+				Здесь<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto;"><span class="pre" style="box-sizing: border-box;">input.txt</span></code><span>&nbsp;</span>— 
+				файл, откуда надо считать данные, параметр<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto;"><span class="pre" style="box-sizing: border-box;">&quot;r&quot;</span></code><span>&nbsp;</span>указывает, 
+				что вы собираетесь именно<span>&nbsp;</span><em style="box-sizing: border-box;">читать</em><span>&nbsp;</span>(<strong style="box-sizing: border-box; font-weight: 700;">r</strong>ead) 
+				данные, а не записывать (<strong style="box-sizing: border-box; font-weight: 700;">w</strong>rite, 
+				см. ниже).</p>
+				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px;">
+				Далее с полученным объектом<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto;"><span class="pre" style="box-sizing: border-box;">f</span></code><span>&nbsp;</span>можно 
+				работать. Самая простая операция —<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto;"><span class="pre" style="box-sizing: border-box;">f.readline()</span></code><span>&nbsp;</span>— 
+				возвращает очередную строку файла. Это полный аналог<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto;"><span class="pre" style="box-sizing: border-box;">input()</span></code>, 
+				за исключением того, что на конце полученной строки будет 
+				специальный символ перевода строки<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto;"><span class="pre" style="box-sizing: border-box;">&quot;\n&quot;</span></code><span>&nbsp;</span>(при 
+				выводе строки на экран он не будет заметен, но переведет лишний 
+				раз строку). Как правило, он вам будет мешать, но вы его можете 
+				легко убрать методом<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto;"><span class="pre" style="box-sizing: border-box;">.rstrip(&quot;\n&quot;)</span></code>, 
+				например,<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto;"><span class="pre" style="box-sizing: border-box;">f.readline().rstrip(&quot;\n&quot;)</span></code>.</p>
+				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px;">
+				Пример. Пусть во входном файле два числа по одному на строке. С 
+				клавиатуры вы бы считывали так:</p>
+				<div class="highlight-python notranslate" style="box-sizing: border-box; border: 1px solid rgb(225, 228, 229); overflow-x: auto; margin: 1px 0px 24px;">
+								<div class="highlight" style="box-sizing: border-box; background: rgb(248, 248, 248); border: none; overflow-x: auto; margin: 0px; padding: 0px;">
+												<pre style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: pre; line-height: 1.4; margin: 0px; padding: 12px; display: block; overflow: auto;"><span class="n" style="box-sizing: border-box;">a</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">int</span><span class="p" style="box-sizing: border-box;">(</span><span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">input</span><span class="p" style="box-sizing: border-box;">())</span>
+<span class="n" style="box-sizing: border-box;">b</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">int</span><span class="p" style="box-sizing: border-box;">(</span><span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">input</span><span class="p" style="box-sizing: border-box;">())</span>
+</pre>
+								</div>
+				</div>
+				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px;">
+				Тогда из файла надо считывать так:</p>
+				<div class="highlight-python notranslate" style="box-sizing: border-box; border: 1px solid rgb(225, 228, 229); overflow-x: auto; margin: 1px 0px 24px;">
+								<div class="highlight" style="box-sizing: border-box; background: rgb(248, 248, 248); border: none; overflow-x: auto; margin: 0px; padding: 0px;">
+												<pre style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: pre; line-height: 1.4; margin: 0px; padding: 12px; display: block; overflow: auto;"><span class="n" style="box-sizing: border-box;">f</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">open</span><span class="p" style="box-sizing: border-box;">(</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;input.txt&quot;</span><span class="p" style="box-sizing: border-box;">,</span> <span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;r&quot;</span><span class="p" style="box-sizing: border-box;">)</span>
+<span class="n" style="box-sizing: border-box;">a</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">int</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">f</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">readline</span><span class="p" style="box-sizing: border-box;">()</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">rstrip</span><span class="p" style="box-sizing: border-box;">(</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;</span><span class="se" style="box-sizing: border-box; color: rgb(170, 93, 31); font-weight: bold;">\n</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;</span><span class="p" style="box-sizing: border-box;">))</span>
+<span class="n" style="box-sizing: border-box;">b</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">int</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">f</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">readline</span><span class="p" style="box-sizing: border-box;">()</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">rstrip</span><span class="p" style="box-sizing: border-box;">(</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;</span><span class="se" style="box-sizing: border-box; color: rgb(170, 93, 31); font-weight: bold;">\n</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;</span><span class="p" style="box-sizing: border-box;">))</span>
+</pre>
+								</div>
+				</div>
+				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px;">
+				Аналогично, если два числа в одной строке. С клавиатуры это 
+				считывается так:</p>
+				<div class="highlight-python notranslate" style="box-sizing: border-box; border: 1px solid rgb(225, 228, 229); overflow-x: auto; margin: 1px 0px 24px;">
+								<div class="highlight" style="box-sizing: border-box; background: rgb(248, 248, 248); border: none; overflow-x: auto; margin: 0px; padding: 0px;">
+												<pre style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: pre; line-height: 1.4; margin: 0px; padding: 12px; display: block; overflow: auto;"><span class="n" style="box-sizing: border-box;">a</span><span class="p" style="box-sizing: border-box;">,</span> <span class="n" style="box-sizing: border-box;">b</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">map</span><span class="p" style="box-sizing: border-box;">(</span><span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">int</span><span class="p" style="box-sizing: border-box;">,</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">input</span><span class="p" style="box-sizing: border-box;">()</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">split</span><span class="p" style="box-sizing: border-box;">())</span>
+</pre>
+								</div>
+				</div>
+				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px;">
+				Тогда из файла считываем так:</p>
+				<div class="highlight-python notranslate" style="box-sizing: border-box; border: 1px solid rgb(225, 228, 229); overflow-x: auto; margin: 1px 0px 24px;">
+								<div class="highlight" style="box-sizing: border-box; background: rgb(248, 248, 248); border: none; overflow-x: auto; margin: 0px; padding: 0px;">
+												<pre style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: pre; line-height: 1.4; margin: 0px; padding: 12px; display: block; overflow: auto;"><span class="n" style="box-sizing: border-box;">f</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">open</span><span class="p" style="box-sizing: border-box;">(</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;input.txt&quot;</span><span class="p" style="box-sizing: border-box;">,</span> <span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;r&quot;</span><span class="p" style="box-sizing: border-box;">)</span>
+<span class="n" style="box-sizing: border-box;">a</span><span class="p" style="box-sizing: border-box;">,</span> <span class="n" style="box-sizing: border-box;">b</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">map</span><span class="p" style="box-sizing: border-box;">(</span><span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">int</span><span class="p" style="box-sizing: border-box;">,</span> <span class="n" style="box-sizing: border-box;">f</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">readline</span><span class="p" style="box-sizing: border-box;">()</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">rstrip</span><span class="p" style="box-sizing: border-box;">(</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;</span><span class="se" style="box-sizing: border-box; color: rgb(170, 93, 31); font-weight: bold;">\n</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;</span><span class="p" style="box-sizing: border-box;">)</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">split</span><span class="p" style="box-sizing: border-box;">())</span>
+</pre>
+								</div>
+				</div>
+				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px;">
+				Более сложный пример: сначала число<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto;"><span class="pre" style="box-sizing: border-box;">N</span></code>, 
+				а потом<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto;"><span class="pre" style="box-sizing: border-box;">N</span></code><span>&nbsp;</span>строк 
+				по одному числу в каждой. С клавиатуры:</p>
+				<div class="highlight-python notranslate" style="box-sizing: border-box; border: 1px solid rgb(225, 228, 229); overflow-x: auto; margin: 1px 0px 24px;">
+								<div class="highlight" style="box-sizing: border-box; background: rgb(248, 248, 248); border: none; overflow-x: auto; margin: 0px; padding: 0px;">
+												<pre style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: pre; line-height: 1.4; margin: 0px; padding: 12px; display: block; overflow: auto;"><span class="n" style="box-sizing: border-box;">n</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">int</span><span class="p" style="box-sizing: border-box;">(</span><span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">input</span><span class="p" style="box-sizing: border-box;">())</span>
+<span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">for</span> <span class="n" style="box-sizing: border-box;">i</span> <span class="ow" style="box-sizing: border-box; color: rgb(170, 34, 255); font-weight: bold;">in</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">range</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">n</span><span class="p" style="box-sizing: border-box;">):</span>
+    <span class="n" style="box-sizing: border-box;">x</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">int</span><span class="p" style="box-sizing: border-box;">(</span><span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">input</span><span class="p" style="box-sizing: border-box;">())</span>
+    <span class="c1" style="box-sizing: border-box; color: rgb(61, 123, 123); font-style: italic;">#... что-то делаем с x</span>
+</pre>
+								</div>
+				</div>
+				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px;">
+				Из файла:</p>
+				<div class="highlight-python notranslate" style="box-sizing: border-box; border: 1px solid rgb(225, 228, 229); overflow-x: auto; margin: 1px 0px 24px;">
+								<div class="highlight" style="box-sizing: border-box; background: rgb(248, 248, 248); border: none; overflow-x: auto; margin: 0px; padding: 0px;">
+												<pre style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: pre; line-height: 1.4; margin: 0px; padding: 12px; display: block; overflow: auto;"><span class="n" style="box-sizing: border-box;">f</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">open</span><span class="p" style="box-sizing: border-box;">(</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;input.txt&quot;</span><span class="p" style="box-sizing: border-box;">,</span> <span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;r&quot;</span><span class="p" style="box-sizing: border-box;">)</span>
+<span class="n" style="box-sizing: border-box;">n</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">int</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">f</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">readline</span><span class="p" style="box-sizing: border-box;">()</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">rstrip</span><span class="p" style="box-sizing: border-box;">(</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;</span><span class="se" style="box-sizing: border-box; color: rgb(170, 93, 31); font-weight: bold;">\n</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;</span><span class="p" style="box-sizing: border-box;">))</span>
+<span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">for</span> <span class="n" style="box-sizing: border-box;">i</span> <span class="ow" style="box-sizing: border-box; color: rgb(170, 34, 255); font-weight: bold;">in</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">range</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">n</span><span class="p" style="box-sizing: border-box;">):</span>
+    <span class="n" style="box-sizing: border-box;">x</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">int</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">f</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">readline</span><span class="p" style="box-sizing: border-box;">()</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">rstrip</span><span class="p" style="box-sizing: border-box;">(</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;</span><span class="se" style="box-sizing: border-box; color: rgb(170, 93, 31); font-weight: bold;">\n</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;</span><span class="p" style="box-sizing: border-box;">))</span>
+    <span class="c1" style="box-sizing: border-box; color: rgb(61, 123, 123); font-style: italic;">#... что-то делаем с x</span>
+</pre>
+								</div>
+				</div>
+				</section><section id="id3" style="box-sizing: border-box; display: block;">
+				<h3 style="box-sizing: border-box; margin-top: 0px; font-weight: 700; font-family: &quot;Roboto Slab&quot;, ff-tisa-web-pro, Georgia, Arial, sans-serif; font-size: 20px;">
+				Чтение до конца файла<a class="headerlink" title="Permalink to this heading" style="box-sizing: border-box; color: rgb(41, 128, 185); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://notes.algoprog.ru/python_basics/7_files.html#id3"></a></h3>
+				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px;">
+				Пока файл не кончился, функция<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto;"><span class="pre" style="box-sizing: border-box;">readline</span></code><span>&nbsp;</span>будет 
+				вам всегда возвращать<span>&nbsp;</span><em style="box-sizing: border-box;">непустую</em><span>&nbsp;</span>строку 
+				(в ней будет как минимум символ<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto;"><span class="pre" style="box-sizing: border-box;">&quot;\n&quot;</span></code>). 
+				Как только файл кончится,<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto;"><span class="pre" style="box-sizing: border-box;">readline</span></code><span>&nbsp;</span>вернет 
+				пустую строку. Поэтому читать до конца файла можно так:</p>
+				<div class="highlight-python notranslate" style="box-sizing: border-box; border: 1px solid rgb(225, 228, 229); overflow-x: auto; margin: 1px 0px 24px;">
+								<div class="highlight" style="box-sizing: border-box; background: rgb(248, 248, 248); border: none; overflow-x: auto; margin: 0px; padding: 0px;">
+												<pre style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: pre; line-height: 1.4; margin: 0px; padding: 12px; display: block; overflow: auto;"><span class="n" style="box-sizing: border-box;">f</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">open</span><span class="p" style="box-sizing: border-box;">(</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;input.txt&quot;</span><span class="p" style="box-sizing: border-box;">,</span> <span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;r&quot;</span><span class="p" style="box-sizing: border-box;">)</span>
+<span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">while</span> <span class="kc" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">True</span><span class="p" style="box-sizing: border-box;">:</span>
+    <span class="n" style="box-sizing: border-box;">s</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="n" style="box-sizing: border-box;">f</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">readline</span><span class="p" style="box-sizing: border-box;">()</span>
+    <span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="n" style="box-sizing: border-box;">s</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">==</span> <span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;&quot;</span><span class="p" style="box-sizing: border-box;">:</span>
+        <span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">break</span>
+    <span class="c1" style="box-sizing: border-box; color: rgb(61, 123, 123); font-style: italic;"># обрабатываем s, в частности, теперь можно вызвать s = s.rstrip(&quot;\n&quot;)</span>
+</pre>
+								</div>
+				</div>
+				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px;">
+				Альтернативный вариант — можно сразу считать весь файл в массив 
+				строк:</p>
+				<div class="highlight-python notranslate" style="box-sizing: border-box; border: 1px solid rgb(225, 228, 229); overflow-x: auto; margin: 1px 0px 24px;">
+								<div class="highlight" style="box-sizing: border-box; background: rgb(248, 248, 248); border: none; overflow-x: auto; margin: 0px; padding: 0px;">
+												<pre style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: pre; line-height: 1.4; margin: 0px; padding: 12px; display: block; overflow: auto;"><span class="n" style="box-sizing: border-box;">data</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">open</span><span class="p" style="box-sizing: border-box;">(</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;input.txt&quot;</span><span class="p" style="box-sizing: border-box;">,</span> <span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;r&quot;</span><span class="p" style="box-sizing: border-box;">)</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">readlines</span><span class="p" style="box-sizing: border-box;">()</span>
+</pre>
+								</div>
+				</div>
+				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px;">
+				Теперь<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto;"><span class="pre" style="box-sizing: border-box;">data</span></code><span>&nbsp;</span>— 
+				это массив строк, каждый элемент которого — это очередная строка 
+				из входного файла. Например, если в файле было написано</p>
+				<div class="highlight-python notranslate" style="box-sizing: border-box; border: 1px solid rgb(225, 228, 229); overflow-x: auto; margin: 1px 0px 24px;">
+								<div class="highlight" style="box-sizing: border-box; background: rgb(248, 248, 248); border: none; overflow-x: auto; margin: 0px; padding: 0px;">
+												<pre style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: pre; line-height: 1.4; margin: 0px; padding: 12px; display: block; overflow: auto;"><span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">1</span> <span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">2</span> <span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">3</span>
+<span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">4</span> <span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">5</span> <span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">6</span>
+<span class="n" style="box-sizing: border-box;">some</span> <span class="n" style="box-sizing: border-box;">text</span>
+</pre>
+								</div>
+				</div>
+				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px;">
+				то<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto;"><span class="pre" style="box-sizing: border-box;">data</span></code><span>&nbsp;</span>будет 
+				содержать массив<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto;"><span class="pre" style="box-sizing: border-box;">[&quot;1</span><span>&nbsp;</span><span class="pre" style="box-sizing: border-box;">2</span><span>&nbsp;</span><span class="pre" style="box-sizing: border-box;">3\n&quot;,</span><span>&nbsp;</span><span class="pre" style="box-sizing: border-box;">&quot;4</span><span>&nbsp;</span><span class="pre" style="box-sizing: border-box;">5</span><span>&nbsp;</span><span class="pre" style="box-sizing: border-box;">6\n&quot;,</span><span>&nbsp;</span><span class="pre" style="box-sizing: border-box;">&quot;some</span><span>&nbsp;</span><span class="pre" style="box-sizing: border-box;">text\n&quot;]</span></code>, 
+				и дальше вы можете работать с этим массивом как вам надо.</p>
+				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px;">
+				Еще можно написать<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto;"><span class="pre" style="box-sizing: border-box;">open(&quot;input.txt&quot;,</span><span>&nbsp;</span><span class="pre" style="box-sizing: border-box;">&quot;r&quot;).read()</span></code>, 
+				это считает весь файл в одну большую строку (в том числе в 
+				середине этой строки могут быть символы перевода строки, но это 
+				все равно будет одна большая строка, а не массив строк).</p>
+				</section></section>
+				<section id="id4" style="box-sizing: border-box; display: block; color: rgb(64, 64, 64); font-family: Lato, proxima-nova, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(252, 252, 252); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<h2 style="box-sizing: border-box; margin-top: 0px; font-weight: 700; font-family: &quot;Roboto Slab&quot;, ff-tisa-web-pro, Georgia, Arial, sans-serif; font-size: 24px;">
+				Вывод<a class="headerlink" title="Permalink to this heading" style="box-sizing: border-box; color: rgb(41, 128, 185); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://notes.algoprog.ru/python_basics/7_files.html#id4"></a></h2>
+				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px;">
+				Для вывода данных вы можете открыть файл<span>&nbsp;</span><em style="box-sizing: border-box;">на 
+				вывод</em>:</p>
+				<div class="highlight-python notranslate" style="box-sizing: border-box; border: 1px solid rgb(225, 228, 229); overflow-x: auto; margin: 1px 0px 24px;">
+								<div class="highlight" style="box-sizing: border-box; background: rgb(248, 248, 248); border: none; overflow-x: auto; margin: 0px; padding: 0px;">
+												<pre style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: pre; line-height: 1.4; margin: 0px; padding: 12px; display: block; overflow: auto;"><span class="n" style="box-sizing: border-box;">f</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">open</span><span class="p" style="box-sizing: border-box;">(</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;output.txt&quot;</span><span class="p" style="box-sizing: border-box;">,</span> <span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;w&quot;</span><span class="p" style="box-sizing: border-box;">)</span>
+</pre>
+								</div>
+				</div>
+				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px;">
+				(буква<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto;"><span class="pre" style="box-sizing: border-box;">w</span></code><span>&nbsp;</span>обозначает 
+				write, запись). И дальше можно использовать<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto;"><span class="pre" style="box-sizing: border-box;">f</span></code><span>&nbsp;</span>в 
+				качестве опционального аргумента уже знакомой вам функции<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto;"><span class="pre" style="box-sizing: border-box;">print</span></code>:</p>
+				<div class="highlight-python notranslate" style="box-sizing: border-box; border: 1px solid rgb(225, 228, 229); overflow-x: auto; margin: 1px 0px 24px;">
+								<div class="highlight" style="box-sizing: border-box; background: rgb(248, 248, 248); border: none; overflow-x: auto; margin: 0px; padding: 0px;">
+												<pre style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: pre; line-height: 1.4; margin: 0px; padding: 12px; display: block; overflow: auto;"><span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">print</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">a</span><span class="p" style="box-sizing: border-box;">,</span> <span class="n" style="box-sizing: border-box;">b</span><span class="p" style="box-sizing: border-box;">,</span> <span class="n" style="box-sizing: border-box;">file</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span><span class="n" style="box-sizing: border-box;">f</span><span class="p" style="box-sizing: border-box;">)</span>
+</pre>
+								</div>
+				</div>
+				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px;">
+				После окончания всего вывода рекомендуется вызвать<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto;"><span class="pre" style="box-sizing: border-box;">f.close()</span></code>, 
+				чтобы данные реально оказались записаны на диск (хотя в 
+				большинстве случаев все работает и без этого).</p>
+				</section><section id="id5" style="box-sizing: border-box; display: block; color: rgb(64, 64, 64); font-family: Lato, proxima-nova, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(252, 252, 252); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<h2 style="box-sizing: border-box; margin-top: 0px; font-weight: 700; font-family: &quot;Roboto Slab&quot;, ff-tisa-web-pro, Georgia, Arial, sans-serif; font-size: 24px;">
+				Как это использовать в практических работах.<a class="headerlink" title="Permalink to this heading" style="box-sizing: border-box; color: rgb(41, 128, 185); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://notes.algoprog.ru/python_basics/7_files.html#id5"></a></h2>
+				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px;">
+				Основное достоинство ввода из файлов при решении алгоритмических 
+				задач  — что вам не надо 
+				каждый раз заново вводить весь тест. Если вы отлаживаете 
+				программу на некотором тесте, разбираетесь, почему она не 
+				работает, пытаетесь исправить ошибки, вы будете много раз 
+				запускать программу на одном и том же тесте. Каждый раз его 
+				вводить — сложно и долго. Намного проще его один раз записать в 
+				файл, и дальше делать ввод из файла.</p>
+				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px;">
+				Вторая причина использовать файлы — вы намного легче можете 
+				«жонглировать» тестами. Вы можете записать несколько тестов в 
+				другой, вспомогательный, файл, и просто копировать нужный тест 
+				во входной файл. Более того, в большинстве случаев вы можете 
+				даже хранить много тестов прямо во входном файле.</p>
+				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px;">
+				А именно, во многих задачах у вас чтение данных идет не до конца 
+				файла — например, вы считываете только два числа, или только 
+				одну строку, или вам задается число<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto;"><span class="pre" style="box-sizing: border-box;">N</span></code><span>&nbsp;</span>и 
+				дальше<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto;"><span class="pre" style="box-sizing: border-box;">N</span></code><span>&nbsp;</span>чисел 
+				— во всех этих случаях программе не важно, что идет после этих 
+				данных. Вы там можете хранить другие тесты, а потом, когда вам 
+				нужно, переносите просто нужный тест в самое начало файла.</p>
+				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px;">
+				(А вообще, можете даже написать программу так, чтобы она 
+				обрабатывала вообще все тесты, которые есть во входном файле — 
+				это так называемый мультитест. На тестирующем сервере будет 
+				только один тест, и программа отработает только его, а при вашем 
+				тестировании программа будет сразу запускаться на многих тестах. 
+				А еще, бывают задачи, где во входных данных сразу мультитест, 
+				т.е. задается сразу много тестов. Тогда тем более вы можете 
+				тестировать сразу на многих тестах.)</p>
+				</section>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les28.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les28/4.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:17:54 GMT -->
+</html>

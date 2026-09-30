@@ -1,0 +1,954 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les17/2.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:00:30 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style3 {
+	font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	font-size: 16px;
+	color: #0000FF;
+	text-transform: none;
+	background-color: #FFFFFF;
+}
+.style4 {
+	background-color: #FFFFFF;
+}
+    .style6 {
+	font-size: small;
+}
+.style7 {
+	color: #FF0000;
+}
+.style8 {
+	font-size: small;
+	color: rgb(255, 0, 0);
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 3. Строки и символы <span lang="en-us">C#</span>.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text" 
+                >
+                <h3 style="box-sizing: border-box; font-family: &quot;Open Sans&quot;, sans-serif; font-weight: 600; line-height: 1.1; color: rgb(85, 85, 85); margin: 20px 0px 24px; font-size: 20px; text-transform: uppercase; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-style: initial; text-decoration-color: initial;">
+				<span id="i-2" style="box-sizing: border-box;">СИМВОЛЫ И СТРОКИ</span></h3>
+				<p style="box-sizing: border-box; font-family: &quot;Open Sans&quot;, sans-serif; font-weight: 600; line-height: 1.1; color: rgb(85, 85, 85); margin: 20px 0px 24px; font-size: 20px; text-transform: uppercase; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/Unicode.jpg" width="700" height="521" /></p>
+				<ul style="box-sizing: border-box; margin: 0px 0px 24px 19px; list-style: disc; padding: 0px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-style: initial; text-decoration-color: initial;">
+								<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+								<span class="style6">Символ заключается в одинарные кавычки:</span><div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: auto; position: relative;">
+												<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 729px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																<tbody style="box-sizing: border-box;">
+																				<tr style="box-sizing: border-box;">
+																								<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 729px;">
+																								<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span class="style6">Console</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">WriteLine</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&#39;A&#39;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">);</span></pre>
+																								</td>
+																				</tr>
+												</table>
+								</div>
+								</li>
+								<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+								<span class="style6">Можно использовать переменную типа</span><span><span class="style6">&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">char</code><span class="style6">&nbsp;для 
+								хранения символьных данных:</span><div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: auto; position: relative;">
+												<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 729px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																<tbody style="box-sizing: border-box;">
+																				<tr style="box-sizing: border-box;">
+																								<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 729px;">
+																								<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">char</span> <span class="style6">symb </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&#39;A&#39;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span> <span class="style6">
+</span><span class="style6">Console</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">WriteLine</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span class="style6">symb</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">);</span></pre>
+																								</td>
+																				</tr>
+												</table>
+								</div>
+								</li>
+								<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+								<span class="style6">Строка — это объект типа</span><span><span class="style6">&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">String</code><span class="style6">, 
+								значением которого является текст. Внутренне 
+								строка хранится в виде последовательности 
+								объектов типа</span><span><span class="style6">&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">Char</code><span class="style6">, 
+								доступной только для чтения.</li>
+								<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+								Строка заключается в двойные кавычки:</span><div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: auto; position: relative;">
+												<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 729px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																<tbody style="box-sizing: border-box;">
+																				<tr style="box-sizing: border-box;">
+																								<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 729px;">
+																								<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span class="style6">Console</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">WriteLine</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&quot;Добрый день&quot;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">);</span></pre>
+																								</td>
+																				</tr>
+												</table>
+								</div>
+								</li>
+								<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+								<span class="style6">Можно использовать переменную типа</span><span><span class="style6">&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">string</code><span class="style6">&nbsp;для 
+								хранения текстовых данных:</span><div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: 723.688px; position: relative;">
+												<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 721.688px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																<tbody style="box-sizing: border-box;">
+																				<tr style="box-sizing: border-box;">
+																								<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 721.688px;">
+																								<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">string</span><span class="style6"> phrase </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&quot;Добрый день&quot;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span> <span class="style6">
+</span><span class="style6">Console</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">WriteLine</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span class="style6">phrase</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">);</span><span class="style6">  </span><span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">// Добрый день</span><span class="style6">
+</span><span class="style6">Console</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">WriteLine</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span class="style6">phrase</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">[</span><span style="box-sizing: border-box; color: rgb(255, 0, 0);" class="style6">1</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">]);</span> <span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">// o</span></pre>
+																								</td>
+																				</tr>
+												</table>
+								</div>
+								</li>
+				</ul>
+				<h3 style="box-sizing: border-box; font-family: &quot;Open Sans&quot;, sans-serif; font-weight: 600; line-height: 1.1; color: rgb(85, 85, 85); margin: 20px 0px 24px; font-size: 20px; text-transform: uppercase; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-style: initial; text-decoration-color: initial;">
+				<span id="i-3" style="box-sizing: border-box;">ОБЪЯВЛЕНИЕ И 
+				ИНИЦИАЛИЗАЦИЯ СТРОК</span></h3>
+				<ul style="box-sizing: border-box; margin: 0px 0px 24px 19px; list-style: disc; padding: 0px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-style: initial; text-decoration-color: initial;">
+								<span class="style6">Рассмотрим несколько способов:</span><p style="box-sizing: border-box; margin: 0px 0px 24px;">
+								</p>
+								<p style="box-sizing: border-box; margin: 0px 0px 24px;" class="style6">
+								Объявление без инициализации:</p>
+								<div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: 723.688px; position: relative;">
+												<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 721.688px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																<tbody style="box-sizing: border-box;">
+																				<tr style="box-sizing: border-box;">
+																								<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 721.688px;">
+																								<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">string</span><span class="style6"> str1</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span></pre>
+																								</td>
+																				</tr>
+												</table>
+								</div>
+								<p style="box-sizing: border-box; margin: 0px 0px 24px;">
+								<span class="style6">Инициализация значением</span><span><span class="style6">&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">null</code><span class="style6">:</span></p>
+								<div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: 723.688px; position: relative;">
+												<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 721.688px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																<tbody style="box-sizing: border-box;">
+																				<tr style="box-sizing: border-box;">
+																								<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 721.688px;">
+																								<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">string</span><span class="style6"> str2 </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(6, 0, 255); font-weight: bold;" class="style6">null</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span></pre>
+																								</td>
+																				</tr>
+												</table>
+								</div>
+								<p style="box-sizing: border-box; margin: 0px 0px 24px;" class="style6">
+								Инициализация пустым значением:</p>
+								<div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: auto; position: relative;">
+												<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 729px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																<tbody style="box-sizing: border-box;">
+																				<tr style="box-sizing: border-box;">
+																								<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 729px;">
+																								<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">string</span><span class="style6"> str3 </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&quot;&quot;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span></pre>
+																								</td>
+																				</tr>
+												</table>
+								</div>
+								<p style="box-sizing: border-box; margin: 0px 0px 24px;">
+								<span class="style6">Или лучше использовать константу</span><span><span class="style6">&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">Empty</code><span class="style6">&nbsp;(с 
+								англ.<span>&nbsp;</span><em style="box-sizing: border-box;">«пустой»</em>) 
+								вместо значения</span><span><span class="style6">&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">&quot;&quot;</code><span class="style6">:</span></p>
+								<div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: 723.688px; position: relative;">
+												<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 721.688px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																<tbody style="box-sizing: border-box;">
+																				<tr style="box-sizing: border-box;">
+																								<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 721.688px;">
+																								<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">string</span><span class="style6"> str3 </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(0, 0, 0);" class="style6">System</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">String</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">Empty</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span></pre>
+																								</td>
+																				</tr>
+												</table>
+								</div>
+								<p style="box-sizing: border-box; margin: 0px 0px 24px;" class="style6">
+								// Инициализировать обычным строковым литералом:</p>
+								<div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: auto; position: relative;">
+												<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 729px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																<tbody style="box-sizing: border-box;">
+																				<tr style="box-sizing: border-box;">
+																								<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 729px;">
+																								<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">string</span><span class="style6"> str4</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&quot;Microsoft Visual Studio&quot;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span></pre>
+																								</td>
+																				</tr>
+												</table>
+								</div>
+								<p style="box-sizing: border-box; margin: 0px 0px 24px;">
+								<span class="style6">Инициализировать с помощью дословным строковым 
+								литералом (использование</span><span><span class="style6">&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">@</code><span class="style6">):</span></p>
+								<div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: 723.688px; position: relative;">
+												<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 721.688px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																<tbody style="box-sizing: border-box;">
+																				<tr style="box-sizing: border-box;">
+																								<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 721.688px;">
+																								<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">string</span><span class="style6"> str5</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">@&quot;Microsoft Visual Studio&quot;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span></pre>
+																								</td>
+																				</tr>
+												</table>
+								</div>
+								<p style="box-sizing: border-box; margin: 0px 0px 24px;">
+								<span class="style6">Или можно использовать</span><span><span class="style6">&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">System.String</code><span class="style6">:</span></p>
+								<div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: 723.688px; position: relative;">
+												<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 721.688px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																<tbody style="box-sizing: border-box;">
+																				<tr style="box-sizing: border-box;">
+																								<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 721.688px;">
+																								<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span style="box-sizing: border-box; color: rgb(0, 0, 0);" class="style6">System</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">String</span><span class="style6"> greeting </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&quot;Привет мир!&quot;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span></pre>
+																								</td>
+																				</tr>
+												</table>
+								</div>
+								<p style="box-sizing: border-box; margin: 0px 0px 24px;">
+								<span class="style6">Для локальных переменных (т.е. в теле 
+								метода/функции) вы можете использовать неявную 
+								типизацию (</span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">var</code><span class="style6">):</span></p>
+								<div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: 723.688px; position: relative;">
+												<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 721.688px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																<tbody style="box-sizing: border-box;">
+																				<tr style="box-sizing: border-box;">
+																								<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 721.688px;">
+																								<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span style="box-sizing: border-box; color: rgb(6, 0, 255); font-weight: bold;" class="style6">var</span><span class="style6"> temp </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&quot;I&#39;m Ok&quot;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span></pre>
+																								</td>
+																				</tr>
+												</table>
+								</div>
+								<p style="box-sizing: border-box; margin: 0px 0px 24px;" class="style6">
+								Используйте строковую константу, в случае, если 
+								значение не нужно менять:</p>
+								<div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: 723.688px; position: relative;">
+												<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 721.688px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																<tbody style="box-sizing: border-box;">
+																				<tr style="box-sizing: border-box;">
+																								<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 721.688px;">
+																								<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span style="box-sizing: border-box; color: rgb(6, 0, 255); font-weight: bold;" class="style6">const</span> <span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">string</span><span class="style6"> str6 </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&quot;У меня всё хорошо!&quot;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span></pre>
+																								</td>
+																				</tr>
+												</table>
+								</div>
+								<p style="box-sizing: border-box; margin: 0px 0px 24px;">
+								<span class="style6">Использование строкового конструктора только в 
+								том случае, когда строка формируется из символов 
+								(</span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">char[]</code><span class="style6">), 
+								или</span><span><span class="style6">&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">sbyte</code><span class="style6">:</span></p>
+								<div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: auto; position: relative;">
+												<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 729px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																<tbody style="box-sizing: border-box;">
+																				<tr style="box-sizing: border-box;">
+																								<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 729px;">
+																								<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">char</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">[]</span><span class="style6"> letters </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">{</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&#39;A&#39;</span><span class="style6">, </span><span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&#39;B&#39;</span><span class="style6">, </span><span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&#39;C&#39;</span> <span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">};</span><span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">string</span><span class="style6"> alphabet </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">new</span> <span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">string</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span class="style6">letters</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">);</span><span class="style6">
+</span><span class="style6">Console</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">WriteLine</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span class="style6">alphabet</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">);</span> <span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">// ABC</span></pre>
+																								</td>
+																				</tr>
+												</table>
+								</div>
+								<h3 style="box-sizing: border-box; font-family: inherit; font-weight: 600; line-height: 1.1; color: inherit; margin: 20px 0px 24px; font-size: 20px; text-transform: uppercase;">
+								<span id="i-4" style="box-sizing: border-box;">
+								ИЗМЕНЕНИЕ СТРОК</span></h3>
+								<ul style="box-sizing: border-box; margin: 12px 0px 0px 19px; list-style: disc; padding: 0px;">
+												<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+												<strong style="box-sizing: border-box; font-weight: bold;">
+												<span class="style6">Конкатенация</span></strong><span><span class="style6">&nbsp;</span></span><span class="style6">— 
+												слияние (склеивание) строк.</li>
+												<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+												Для конкатенации используется 
+												оператор</span><span><span class="style6">&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">+=</code><span class="style6">&nbsp;</span>:<div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: 704.875px; position: relative;">
+																<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 702.875px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																				<tbody style="box-sizing: border-box;">
+																								<tr style="box-sizing: border-box;">
+																												<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 702.875px;">
+																												<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">string</span><span class="style6"> s1 </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&quot;Строка - это больше, чем просто &quot;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span><span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">string</span><span class="style6"> s2 </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&quot;набор символов.&quot;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span><span class="style6">
+</span>&nbsp;<span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">// Конкатенация s1 и s2. После чего создается</span><span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">// основная объединенная строка s1:</span><span class="style6">
+s1 </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">+=</span><span class="style6"> s2</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span><span class="style6">
+</span>&nbsp;<span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(0, 0, 0);" class="style6">System</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">Console</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">WriteLine</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span class="style6">s1</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">);</span><span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">// Вывод: Строка - это больше, чем просто набор символов..</span></pre>
+																												</td>
+																								</tr>
+																</table>
+												</div>
+												</li>
+												<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+												<span class="style6">Если вы создадите ссылку на 
+												строку (присвоите одну строку 
+												другой строке), а затем измените 
+												значение исходной строки, то 
+												ссылка будет продолжать 
+												указывать на исходный объект 
+												вместо нового объекта, который 
+												был создан при изменении строки:</span><div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: 704.875px; position: relative;">
+																<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 702.875px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																				<tbody style="box-sizing: border-box;">
+																								<tr style="box-sizing: border-box;">
+																												<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 702.875px;">
+																												<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">string</span><span class="style6"> s1 </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&quot;Hello &quot;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span><span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">string</span><span class="style6"> s2 </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span><span class="style6"> s1</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span> <span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">// ссылка на строку s1</span><span class="style6">
+s1 </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">+=</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&quot;World&quot;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span><span class="style6">
+</span>&nbsp;<span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(0, 0, 0);" class="style6">System</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">Console</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">WriteLine</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span class="style6">s2</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">);</span><span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">//Вывод: Hello</span></pre>
+																												</td>
+																								</tr>
+																</table>
+												</div>
+												</li>
+								</ul>
+								<h3 style="box-sizing: border-box; font-family: inherit; font-weight: 600; line-height: 1.1; color: inherit; margin: 20px 0px 24px; font-size: 20px; text-transform: uppercase;">
+								<span id="_Escape" style="box-sizing: border-box;">
+								НАИБОЛЕЕ РАСПРОСТРАНЕННЫЕ ESCAPE-СИМВОЛЫ В 
+								СТРОКАХ<br style="box-sizing: border-box;" />
+								ДОСЛОВНЫЕ СТРОКИ</span></h3>
+								<p style="box-sizing: border-box; margin: 0px 0px 24px;" class="style6">
+								Escape-символы — это специальные символы, 
+								которые используются в строке c#.</p>
+								<h2 style="margin: 4px 0px; font: 700 24px / 28px &quot;YS Text&quot;, -apple-system, BlinkMacSystemFont, Arial, Helvetica, &quot;Arial Unicode MS&quot;, sans-serif; color: rgb(51, 51, 51); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								Основные escape-последовательности в C#</h2>
+								<div class="FuturisMarkdown-TableWrapper" style="display: inline-block; overflow-x: auto; box-sizing: border-box; max-width: 100%; margin-bottom: 0.5rem; border: 0.8px solid rgba(0, 0, 0, 0.1); border-radius: 0.75rem; color: rgb(51, 51, 51); font-family: &quot;YS Text&quot;, -apple-system, BlinkMacSystemFont, Arial, Helvetica, &quot;Arial Unicode MS&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+									<table class="FuturisMarkdown-Table" style="overflow: hidden; border-spacing: 0px; border-collapse: separate; font: 400 16px / 22px &quot;YS Text&quot;, -apple-system, BlinkMacSystemFont, Arial, Helvetica, &quot;Arial Unicode MS&quot;, sans-serif; background-color: rgba(13, 35, 67, 0.1); background-clip: content-box;">
+										<thead style="font-weight: 700;">
+											<tr>
+												<th class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; width: 131px;">
+												Escape-последовательность</th>
+												<th class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; width: 673px;">
+												Что представляет</th>
+												<th class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; width: 535px;">
+												Пример использования</th>
+											</tr>
+										</thead>
+										<tr>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); border-top-left-radius: 0.75rem; width: 131px;">
+											<pre class="FuturisMarkdown-InlineCode" style="display: inline; padding: 0px 0.25rem; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-language-override: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, monospace, sans-serif; vertical-align: middle; white-space: pre-wrap; color: rgba(0, 0, 0, 0.6); border-radius: 0.25rem; background-color: rgba(0, 0, 0, 0.05);">\\</pre>
+											</td>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); width: 673px;">
+											Один обратный слеш (<pre class="FuturisMarkdown-InlineCode" style="display: inline; padding: 0px 0.25rem; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-language-override: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, monospace, sans-serif; vertical-align: middle; white-space: pre-wrap; color: rgba(0, 0, 0, 0.6); border-radius: 0.25rem; background-color: rgba(0, 0, 0, 0.05);">\</pre>
+											)</td>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); border-top-right-radius: 0.75rem; width: 535px;">
+											<pre class="FuturisMarkdown-InlineCode" style="display: inline; padding: 0px 0.25rem; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-language-override: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, monospace, sans-serif; vertical-align: middle; white-space: pre-wrap; color: rgba(0, 0, 0, 0.6); border-radius: 0.25rem; background-color: rgba(0, 0, 0, 0.05);">string path = &quot;C:\\Users\\Name&quot;;</pre>
+											</td>
+										</tr>
+										<tr>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); width: 131px;">
+											<pre class="FuturisMarkdown-InlineCode" style="display: inline; padding: 0px 0.25rem; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-language-override: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, monospace, sans-serif; vertical-align: middle; white-space: pre-wrap; color: rgba(0, 0, 0, 0.6); border-radius: 0.25rem; background-color: rgba(0, 0, 0, 0.05);">\&quot;</pre>
+											</td>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); width: 673px;">
+											<span class="style7"><strong>Двойная 
+											кавычка (</strong><pre class="FuturisMarkdown-InlineCode" style="display: inline; padding: 0px 0.25rem; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-language-override: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, monospace, sans-serif; vertical-align: middle; white-space: pre-wrap; color: rgba(0, 0, 0, 0.6); border-radius: 0.25rem; background-color: rgba(0, 0, 0, 0.05);"><strong>&quot;</strong></span></pre>
+											)</td>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); width: 535px;">
+											<pre class="FuturisMarkdown-InlineCode" style="display: inline; padding: 0px 0.25rem; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-language-override: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, monospace, sans-serif; vertical-align: middle; white-space: pre-wrap; color: rgba(0, 0, 0, 0.6); border-radius: 0.25rem; background-color: rgba(0, 0, 0, 0.05);">string text = &quot;Он сказал: \&quot;Привет!\&quot;&quot;;</pre>
+											</td>
+										</tr>
+										<tr>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); width: 131px;">
+											<pre class="FuturisMarkdown-InlineCode" style="display: inline; padding: 0px 0.25rem; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-language-override: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, monospace, sans-serif; vertical-align: middle; white-space: pre-wrap; color: rgba(0, 0, 0, 0.6); border-radius: 0.25rem; background-color: rgba(0, 0, 0, 0.05);">\&#39;</pre>
+											</td>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); width: 673px;">
+											Одинарная кавычка (<pre class="FuturisMarkdown-InlineCode" style="display: inline; padding: 0px 0.25rem; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-language-override: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, monospace, sans-serif; vertical-align: middle; white-space: pre-wrap; color: rgba(0, 0, 0, 0.6); border-radius: 0.25rem; background-color: rgba(0, 0, 0, 0.05);">&#39;</pre>
+											)</td>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); width: 535px;">
+											`char singleQuote = &#39;&#39;&#39;;</td>
+										</tr>
+										<tr>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); width: 131px;">
+											<pre class="FuturisMarkdown-InlineCode" style="display: inline; padding: 0px 0.25rem; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-language-override: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, monospace, sans-serif; vertical-align: middle; white-space: pre-wrap; color: rgba(0, 0, 0, 0.6); border-radius: 0.25rem; background-color: rgba(0, 0, 0, 0.05);">\n</pre>
+											</td>
+											<td class="style7" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); width: 673px;">
+											<strong>Новая строка</strong></td>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); width: 535px;">
+											<pre class="FuturisMarkdown-InlineCode" style="display: inline; padding: 0px 0.25rem; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-language-override: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, monospace, sans-serif; vertical-align: middle; white-space: pre-wrap; color: rgba(0, 0, 0, 0.6); border-radius: 0.25rem; background-color: rgba(0, 0, 0, 0.05);">Console.WriteLine(&quot;Первая строка\пВторая строка&quot;);</pre>
+											</td>
+										</tr>
+										<tr>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); width: 131px;">
+											<pre class="FuturisMarkdown-InlineCode" style="display: inline; padding: 0px 0.25rem; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-language-override: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, monospace, sans-serif; vertical-align: middle; white-space: pre-wrap; color: rgba(0, 0, 0, 0.6); border-radius: 0.25rem; background-color: rgba(0, 0, 0, 0.05);">\t</pre>
+											</td>
+											<td class="style7" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); width: 673px;">
+											<strong>Горизонтальная табуляция</strong></td>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); width: 535px;">
+											<pre class="FuturisMarkdown-InlineCode" style="display: inline; padding: 0px 0.25rem; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-language-override: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, monospace, sans-serif; vertical-align: middle; white-space: pre-wrap; color: rgba(0, 0, 0, 0.6); border-radius: 0.25rem; background-color: rgba(0, 0, 0, 0.05);">Console.WriteLine(&quot;Имя\тВозраст&quot;);</pre>
+											</td>
+										</tr>
+										<tr>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); width: 131px;">
+											<pre class="FuturisMarkdown-InlineCode" style="display: inline; padding: 0px 0.25rem; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-language-override: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, monospace, sans-serif; vertical-align: middle; white-space: pre-wrap; color: rgba(0, 0, 0, 0.6); border-radius: 0.25rem; background-color: rgba(0, 0, 0, 0.05);">\r</pre>
+											</td>
+											<td class="style7" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); width: 673px;">
+											<strong>Возврат каретки (не влияет 
+											на перенос строки в большинстве 
+											систем, кроме Windows)</strong></td>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); width: 535px;">
+											<pre class="FuturisMarkdown-InlineCode" style="display: inline; padding: 0px 0.25rem; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-language-override: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, monospace, sans-serif; vertical-align: middle; white-space: pre-wrap; color: rgba(0, 0, 0, 0.6); border-radius: 0.25rem; background-color: rgba(0, 0, 0, 0.05);">Console.WriteLine(&quot;Текст\rИмейте в виду&quot;);</pre>
+											</td>
+										</tr>
+										<tr>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); width: 131px;">
+											<pre class="FuturisMarkdown-InlineCode" style="display: inline; padding: 0px 0.25rem; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-language-override: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, monospace, sans-serif; vertical-align: middle; white-space: pre-wrap; color: rgba(0, 0, 0, 0.6); border-radius: 0.25rem; background-color: rgba(0, 0, 0, 0.05);">\f</pre>
+											</td>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); width: 673px;">
+											Перевод страницы</td>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); width: 535px;">
+											<pre class="FuturisMarkdown-InlineCode" style="display: inline; padding: 0px 0.25rem; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-language-override: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, monospace, sans-serif; vertical-align: middle; white-space: pre-wrap; color: rgba(0, 0, 0, 0.6); border-radius: 0.25rem; background-color: rgba(0, 0, 0, 0.05);">Console.WriteLine(&quot;Дополнение\fПустой строки&quot;);</pre>
+											</td>
+										</tr>
+										<tr>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); width: 131px;">
+											<pre class="FuturisMarkdown-InlineCode" style="display: inline; padding: 0px 0.25rem; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-language-override: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, monospace, sans-serif; vertical-align: middle; white-space: pre-wrap; color: rgba(0, 0, 0, 0.6); border-radius: 0.25rem; background-color: rgba(0, 0, 0, 0.05);">\v</pre>
+											</td>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); width: 673px;">
+											Вертикальная табуляция</td>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); width: 535px;">
+											<pre class="FuturisMarkdown-InlineCode" style="display: inline; padding: 0px 0.25rem; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-language-override: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, monospace, sans-serif; vertical-align: middle; white-space: pre-wrap; color: rgba(0, 0, 0, 0.6); border-radius: 0.25rem; background-color: rgba(0, 0, 0, 0.05);">Console.WriteLine(&quot;Вертикальный\vотступ&quot;);</pre>
+											</td>
+										</tr>
+										<tr>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); width: 131px;">
+											<pre class="FuturisMarkdown-InlineCode" style="display: inline; padding: 0px 0.25rem; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-language-override: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, monospace, sans-serif; vertical-align: middle; white-space: pre-wrap; color: rgba(0, 0, 0, 0.6); border-radius: 0.25rem; background-color: rgba(0, 0, 0, 0.05);">\u</pre>
+											</td>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); width: 673px;">
+											Символ Юникода (UTF-16)</td>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); width: 535px;">
+											<pre class="FuturisMarkdown-InlineCode" style="display: inline; padding: 0px 0.25rem; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-language-override: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, monospace, sans-serif; vertical-align: middle; white-space: pre-wrap; color: rgba(0, 0, 0, 0.6); border-radius: 0.25rem; background-color: rgba(0, 0, 0, 0.05);">Console.WriteLine(&quot;\u00E7&quot;); // выведет &quot;ç&quot;</pre>
+											</td>
+										</tr>
+										<tr>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); width: 131px;">
+											<pre class="FuturisMarkdown-InlineCode" style="display: inline; padding: 0px 0.25rem; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-language-override: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, monospace, sans-serif; vertical-align: middle; white-space: pre-wrap; color: rgba(0, 0, 0, 0.6); border-radius: 0.25rem; background-color: rgba(0, 0, 0, 0.05);">\U</pre>
+											</td>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); width: 673px;">
+											Символ Юникода (UTF-32)</td>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; background-color: rgb(255, 255, 255); width: 535px;">
+											<pre class="FuturisMarkdown-InlineCode" style="display: inline; padding: 0px 0.25rem; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-language-override: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, monospace, sans-serif; vertical-align: middle; white-space: pre-wrap; color: rgba(0, 0, 0, 0.6); border-radius: 0.25rem; background-color: rgba(0, 0, 0, 0.05);">Console.WriteLine(&quot;\U0001F47D&quot;); // выведет &quot;👽&quot;</pre>
+											</td>
+										</tr>
+										<tr>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; border-bottom-width: medium; border-bottom-style: none; border-bottom-color: currentcolor; background-color: rgb(255, 255, 255); width: 131px;">
+											<pre class="FuturisMarkdown-InlineCode" style="display: inline; padding: 0px 0.25rem; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-language-override: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, monospace, sans-serif; vertical-align: middle; white-space: pre-wrap; color: rgba(0, 0, 0, 0.6); border-radius: 0.25rem; background-color: rgba(0, 0, 0, 0.05);">\x</pre>
+											</td>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; border-bottom-width: medium; border-bottom-style: none; border-bottom-color: currentcolor; background-color: rgb(255, 255, 255); width: 673px;">
+											Символ Юникода (переменной длины)</td>
+											<td class="FuturisMarkdown-TableCell" style="text-align: left; vertical-align: top; border-bottom-width: medium; border-bottom-style: none; border-bottom-color: currentcolor; background-color: rgb(255, 255, 255); width: 535px;">
+											<pre class="FuturisMarkdown-InlineCode" style="display: inline; padding: 0px 0.25rem; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-language-override: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, monospace, sans-serif; vertical-align: middle; white-space: pre-wrap; color: rgba(0, 0, 0, 0.6); border-radius: 0.25rem; background-color: rgba(0, 0, 0, 0.05);">Console.WriteLine(&quot;\x00E7&quot;); // выведет &quot;ç&quot;</pre>
+											</td>
+										</tr>
+									</table>
+								</div>
+								<p style="box-sizing: border-box; margin: 0px 0px 24px;" class="style6">
+								&nbsp;</p>
+								<ul style="box-sizing: border-box; margin: 12px 0px 0px 19px; list-style: disc; padding: 0px;">
+												<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+												<span class="style6">Escape-символы в C#:</span><div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: auto; position: relative;">
+																<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 710px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																				<tbody style="box-sizing: border-box;">
+																								<tr style="box-sizing: border-box;">
+																												<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 710px;">
+																												<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">// Клавиша Tab (табулярный отступ)</span><span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">string</span><span class="style6"> columns </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);"><span class="style6">&quot;Column 1</span></span><span style="box-sizing: border-box; font-weight: bold;"><span style="box-sizing: border-box; " class="style7">\</span></span><span style="box-sizing: border-box; color: rgb(102, 102, 102);"><span style="box-sizing: border-box; color: rgb(0, 128, 128); font-weight: bold;"><span class="style6">t</span></span><span class="style6">Column 2</span><span style="box-sizing: border-box; color: rgb(0, 128, 128); font-weight: bold;">\<span class="style6">t</span></span><span class="style6">Column 3&quot;</span></span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span><span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">//Вывод: Column 1        Column 2        Column 3</span><span class="style6">
+</span>&nbsp;<span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">// Новая строка</span><span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">string</span><span class="style6"> rows </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);"><span class="style6">&quot;Row 1</span><span style="box-sizing: border-box; font-weight: bold;" class="style7"><span class="style6">\r\n</span></span><span class="style6">Row 2</span><span style="box-sizing: border-box; color: rgb(0, 128, 128); font-weight: bold;"><span class="style6">\r\n</span></span><span class="style6">Row 3&quot;</span></span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span><span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;"><span class="style6">/* Вывод:
+  Row 1
+  Row 2
+  Row 3
+*/</span></span><span class="style6">
+</span>&nbsp;<span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">//если мы хотим использовать кавычки, мы используем обратную косую черту перед ней:</span><span class="style6">
+</span><span class="style6">Console</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">WriteLine</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span style="box-sizing: border-box; color: rgb(102, 102, 102);"><span class="style6">&quot;Я читаю букву </span><span style="box-sizing: border-box; font-weight: bold;" class="style8">\&quot;</span>Я<span style="box-sizing: border-box; font-weight: bold;" class="style8">\&quot;</span><span class="style6"> в тексте&quot;</span></span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">);</span> <span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">// Я читаю букву &quot;Я&quot; в тексте</span><span class="style6">
+</span>&nbsp;<span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">string</span><span class="style6"> title </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);">&quot;<span style="box-sizing: border-box; color: rgb(0, 128, 128); font-weight: bold;" class="style6">\&quot;</span><span class="style6">The </span><span style="box-sizing: border-box; color: rgb(0, 128, 128); font-weight: bold;" class="style6">\u</span><span class="style6">00C6olean Harp</span><span style="box-sizing: border-box; color: rgb(0, 128, 128); font-weight: bold;" class="style6">\&quot;</span><span class="style6">, by Samuel Taylor Coleridge&quot;</span></span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span><span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">//Вывод: &quot;The Æolean Harp&quot;, by Samuel Taylor Coleridge</span></pre>
+																												</td>
+																								</tr>
+																</table>
+												</div>
+												</li>
+												<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+												<span class="style6">В c# есть своего рода строка, 
+												которая называется<span>&nbsp;</span><strong style="box-sizing: border-box; font-weight: bold;">дословная</strong><span>&nbsp;</span>строка. 
+												В дословной строке не нужно 
+												использовать двойную обратную 
+												косую черту (слэш), когда она, 
+												казалось бы, необходима. Перед 
+												строкой достаточно установить 
+												знак</span><span><span class="style6">&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">@</code><span class="style6">.</li>
+												<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+												В каких случаях необходимо 
+												использовать<span>&nbsp;</span><strong style="box-sizing: border-box; font-weight: bold;">дословные</strong><span>&nbsp;</span>строки:</li>
+												<li style="box-sizing: border-box; margin: 0px 0px 12px 15px; padding: 0px; position: relative; list-style-type: circle;">
+												когда строка содержит символы 
+												обратной косой черты;</li>
+												<li style="box-sizing: border-box; margin: 0px 0px 12px 15px; padding: 0px; position: relative; list-style-type: circle;">
+												для инициализации многострочных 
+												строк;</li>
+												<li style="box-sizing: border-box; margin: 0px 0px 12px 15px; padding: 0px; position: relative; list-style-type: circle;">
+												когда у нас есть кавычки внутри 
+												строки.</span><div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: auto; position: relative;">
+																<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 710px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																				<tbody style="box-sizing: border-box;">
+																								<tr style="box-sizing: border-box;">
+																												<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 710px;">
+																												<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;">string</span> filePath <span style="box-sizing: border-box; color: rgb(0, 128, 0);">=</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);">@&quot;C:\Users\scoleridge\Documents\&quot;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);">;</span>
+<span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;">//Вывод: C:\Users\scoleridge\Documents\</span>
+&nbsp;
+<span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;">string</span> text <span style="box-sizing: border-box; color: rgb(0, 128, 0);">=</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);">@&quot;My pensive SARA ! thy soft cheek reclined
+    Thus on my arm, most soothing sweet it is
+    To sit beside our Cot,...&quot;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);">;</span>
+<span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;">/* Вывод:
+My pensive SARA ! thy soft cheek reclined
+   Thus on my arm, most soothing sweet it is
+   To sit beside our Cot,... 
+*/</span>
+&nbsp;
+<span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;">string</span> quote <span style="box-sizing: border-box; color: rgb(0, 128, 0);">=</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);">@&quot;Ее зовут &quot;&quot;Катя.&quot;&quot;&quot;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);">;</span>
+<span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;">//Вывод: Ее зовут &quot;Катя.&quot;</span></pre>
+																												</td>
+																								</tr>
+																</table>
+												</div>
+												</li>
+								</ul>
+								<h3 style="box-sizing: border-box; font-family: inherit; font-weight: 600; line-height: 1.1; color: inherit; margin: 20px 0px 24px; font-size: 20px; text-transform: uppercase;">
+								<span id="_Substring_Replace_indexOf" style="box-sizing: border-box;">
+								МЕТОДЫ SUBSTRING, REPLACE И INDEXOF СТРОКОВОГО 
+								ТИПА</span></h3>
+								<ul style="box-sizing: border-box; margin: 12px 0px 0px 19px; list-style: disc; padding: 0px;">
+												<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+												<span class="style6">В c# существует 
+												<span class="style7"><strong>множество 
+												стандартных методов</strong></span> внутри типа</span><span><span class="style6">&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">string</code><span class="style6">. 
+												Если поставить точку после 
+												переменной, то подсказка Visual 
+												Studio выдаст список ко всем 
+												методам:</span><pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; display: block; padding: 9.5px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245); border: 1px solid rgb(204, 204, 204); border-radius: 4px;" class="style6">variable. ... 
+</pre>
+												</li>
+												<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+												<span class="style6">Подстрока — это любая 
+												последовательность символов, 
+												содержащаяся в строке:</span><div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: auto; position: relative;">
+																<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 710px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																				<tbody style="box-sizing: border-box;">
+																								<tr style="box-sizing: border-box;">
+																												<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 710px;">
+																												<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">string</span> <span class="style6">str </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&quot;Visual C# обучение&quot;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span><span class="style6">
+</span>&nbsp;<span class="style6">
+</span><span class="style6">Console</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">WriteLine</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span class="style6">str</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; " class="style8"><strong>Substring</strong></span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span style="box-sizing: border-box; color: rgb(255, 0, 0);" class="style6">7</span><span class="style6">, </span><span style="box-sizing: border-box; color: rgb(255, 0, 0);" class="style6">2</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">));</span><span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">// Вывод: &quot;C#&quot;</span><span class="style6">
+</span>&nbsp;<span class="style6">
+</span><span class="style6">Console</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">WriteLine</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span class="style6">str</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; " class="style8"><strong>Replace</strong></span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&quot;C#&quot;</span><span class="style6">, </span><span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&quot;C++&quot;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">));</span><span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">// Вывод: &quot;Visual C++ обучение&quot;</span><span class="style6">
+</span>&nbsp;<span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">// Индекс определенного символа в строке:</span><span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">// Индексы начинаются с нуля</span><span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">int</span><span class="style6"> index </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span class="style6">str</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; " class="style8"><strong>IndexOf</strong></span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&quot;C&quot;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">);</span> <span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">// Вывод: 7</span><span class="style6">
+</span>&nbsp;<span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">// поиск конкретного символа в строке: </span><span class="style6">
+</span><span class="style6">Console</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">WriteLine</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span class="style6">str</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; " class="style8"><strong>IndexOf</strong></span> <span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&#39;z&#39;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">));</span> <span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">// Вывод: -1</span></pre>
+																												</td>
+																								</tr>
+																</table>
+												</div>
+												</li>
+												<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+												<span class="style6">Также имеются методы:</li>
+												<li style="box-sizing: border-box; margin: 0px 0px 12px 15px; padding: 0px; position: relative; list-style-type: circle;">
+												преобразование к верхнему 
+												регистру:</span><div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: 704.875px; position: relative;">
+																<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 702.875px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																				<tbody style="box-sizing: border-box;">
+																								<tr style="box-sizing: border-box;">
+																												<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 702.875px;">
+																												<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span class="style6">Console</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">WriteLine</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span class="style6">phrase</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">ToUpper</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">());</span></pre>
+																												</td>
+																								</tr>
+																</table>
+												</div>
+												</li>
+												<li style="box-sizing: border-box; margin: 0px 0px 12px 15px; padding: 0px; position: relative; list-style-type: circle;">
+												<span class="style6">поиск подстроки в строке:</span><div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: 704.875px; position: relative;">
+																<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 702.875px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																				<tbody style="box-sizing: border-box;">
+																								<tr style="box-sizing: border-box;">
+																												<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 702.875px;">
+																												<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span class="style6">Console</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">WriteLine</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span class="style6">phrase</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">Contains</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&quot;z&quot;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">));</span> <span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">// Вывод: False</span></pre>
+																												</td>
+																								</tr>
+																</table>
+												</div>
+												</li>
+								</ul>
+								<h3 style="box-sizing: border-box; font-family: inherit; font-weight: 600; line-height: 1.1; color: inherit; margin: 20px 0px 24px; font-size: 20px; text-transform: uppercase;">
+								<span id="i-5" style="box-sizing: border-box;">
+								ПРЕОБРАЗОВАНИЕ СТРОКИ В МАССИВ: РАЗДЕЛЕНИЕ СТРОК</span></h3>
+								<ul style="box-sizing: border-box; margin: 12px 0px 0px 19px; list-style: disc; padding: 0px;">
+												<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+												<span class="style6">Следующий пример кода 
+												демонстрирует возможность 
+												синтаксического анализа строки с 
+												использованием строки</span><span><span class="style6">&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 15.3px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">.</code><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;"><span class="style6">String.Split</span></code><span class="style6">. 
+												Метод работает возвращает массив 
+												строк, в котором каждый элемент 
+												представляет собой слово. Метод</span><span><span class="style6">&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">Split</code><span class="style6">&nbsp;принимает 
+												в качестве одного из параметров 
+												массив строк, тогда как другой 
+												параметр — символ, который 
+												следует использовать в качестве 
+												разделителя между словами. В 
+												этом примере используются 
+												пробелы, запятые, точки, 
+												двоеточия и символы табуляции. 
+												Массив и разделитель передаются 
+												методу</span><span><span class="style6">&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">Split</code><span class="style6">, 
+												и каждое слово в предложении 
+												выводится отдельно с 
+												использованием результирующего 
+												массива строк.</span><div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: auto; position: relative;">
+																<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 710px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																				<tbody style="box-sizing: border-box;">
+																								<tr style="box-sizing: border-box;">
+																												<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 710px;">
+																												<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">char</span><span class="style6"> delimiter </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&#39; &#39;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span><span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">string</span><span class="style6"> text </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&quot;Как твои дела?&quot;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span><span class="style6">
+</span><span class="style6">Console</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">WriteLine</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span>$<span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&quot;Исходный текст: &#39;{text}&#39;&quot;</span> <span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">);</span><span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">string</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">[]</span><span class="style6"> words </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span class="style6">text</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; " class="style8"><strong>Split</strong></span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span class="style6">delimiter</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">);</span><span class="style6">
+</span><span class="style6">Console</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">WriteLine</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span>$<span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&quot;слова в тексте:{words.Length} &quot;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">);</span><span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(6, 0, 255); font-weight: bold;" class="style6">foreach</span> <span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">string</span><span class="style6"> s </span><span style="box-sizing: border-box; color: rgb(6, 0, 255); font-weight: bold;" class="style6">in</span><span class="style6"> words</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">)</span><span class="style6">
+     Console</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">WriteLine</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span>s<span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">);</span></pre>
+																												</td>
+																								</tr>
+																</table>
+												</div>
+												<p style="box-sizing: border-box; margin: 0px 0px 24px;" class="style6">
+												Результат:</p>
+												<pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; display: block; padding: 9.5px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245); border: 1px solid rgb(204, 204, 204); border-radius: 4px;" class="style6">Исходный текст: &#39;Как твои дела?&#39;
+слова в тексте:4
+Как 
+твои 
+дела?
+</pre>
+												</li>
+												<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+												В качестве разделителя можно 
+												использовать массив символов:<div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: 704.875px; position: relative;">
+																<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 702.875px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																				<tbody style="box-sizing: border-box;">
+																								<tr style="box-sizing: border-box;">
+																												<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 702.875px;">
+																												<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">char</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">[]</span> <span class="style6">delimiterChars </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">{</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&#39; &#39;</span><span class="style6">, </span><span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&#39;,&#39;</span><span class="style6">, </span><span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&#39;.&#39;</span><span class="style6">, </span><span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&#39;:&#39;</span><span class="style6">, </span><span style="box-sizing: border-box; color: rgb(102, 102, 102);">&#39;<span style="box-sizing: border-box; color: rgb(0, 128, 128); font-weight: bold;" class="style6">\t</span><span class="style6">&#39;</span></span> <span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">};</span><span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">string</span><span class="style6"> text </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);"><span class="style6">&quot;one</span><span style="box-sizing: border-box; color: rgb(0, 128, 128); font-weight: bold;">\<span class="style6">t</span></span><span class="style6">two </span><span class="style6">three:four,five six seven&quot;</span></span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span><span class="style6">
+</span><span class="style6">Console</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">WriteLine</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span>$<span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&quot;Исходный текст: &#39;{text}&#39;&quot;</span> <span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">);</span><span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">string</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">[]</span><span class="style6"> words </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span class="style6">text</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">Split</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span class="style6">delimiterChars</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">);</span><span class="style6">
+</span><span class="style6">Console</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">WriteLine</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span>$<span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&quot;слова в тексте:{words.Length} &quot;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">);</span><span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(6, 0, 255); font-weight: bold;" class="style6">foreach</span> <span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">string</span><span class="style6"> s </span><span style="box-sizing: border-box; color: rgb(6, 0, 255); font-weight: bold;" class="style6">in</span><span class="style6"> words</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">)</span><span class="style6">
+     Console</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">WriteLine</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span>s<span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">);</span></pre>
+																												</td>
+																								</tr>
+																</table>
+												</div>
+												<p style="box-sizing: border-box; margin: 0px 0px 24px;">
+												Результат:</p>
+												<pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; display: block; padding: 9.5px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245); border: 1px solid rgb(204, 204, 204); border-radius: 4px;" class="style6">Исходный текст: &#39;one      two three:four,five six seven&#39;
+слова в тексте:7
+one
+two
+three
+four
+five
+six
+seven</pre>
+												<p style="box-sizing: border-box; margin: 0px 0px 24px;">
+												<strong style="box-sizing: border-box; font-weight: bold;">
+												<u style="box-sizing: border-box;">
+												Пример:</u></strong><span>&nbsp;</span>Введите 
+												строку. Выведите слова, в 
+												которых первая буква встречается 
+												по крайней мере еще один раз.</p>
+												<div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: auto; position: relative;">
+																<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 710px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																				<tbody style="box-sizing: border-box;">
+																								<tr style="box-sizing: border-box;">
+																												<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 710px;">
+																												<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">string</span><span class="style6"> s </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);">&quot;<span class="style6">wow,this is google&quot;</span></span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span><span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">string</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">[]</span><span class="style6"> words </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> s<span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">Split</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&#39; &#39;</span><span class="style6">, </span><span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&#39;.&#39;</span><span class="style6">, </span><span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&#39;,&#39;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">);</span><span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(6, 0, 255); font-weight: bold;" class="style6">foreach</span> <span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">string</span><span class="style6"> word </span><span style="box-sizing: border-box; color: rgb(6, 0, 255); font-weight: bold;" class="style6">in</span><span class="style6"> words</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">)</span><span class="style6">
+</span> <span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">{</span><span class="style6">
+    </span><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">char</span><span class="style6"> c </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span><span class="style6"> word</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">[</span><span style="box-sizing: border-box; color: rgb(255, 0, 0);" class="style6">0</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">];</span><span class="style6">
+    </span><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">bool</span><span class="style6"> flag </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(6, 0, 255); font-weight: bold;" class="style6">false</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span><span class="style6">
+    </span><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">int</span> <span class="style6">i </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(255, 0, 0);" class="style6">1</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span><span class="style6">
+    </span><span style="box-sizing: border-box; color: rgb(6, 0, 255); font-weight: bold;" class="style6">while</span> <span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span class="style6">i </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">&lt;</span> <span class="style6">word</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">Length</span> <span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">&amp;</span> <span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">!</span><span class="style6">flag</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">)</span><span class="style6">
+                </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">{</span><span class="style6">
+                    </span><span style="box-sizing: border-box; color: rgb(6, 0, 255); font-weight: bold;" class="style6">if</span> <span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span class="style6">word</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">[</span><span class="style6">i</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">]</span> <span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">==</span><span class="style6"> c</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">)</span><span class="style6"> flag </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(6, 0, 255); font-weight: bold;" class="style6">true</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span><span class="style6">
+                    i</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">++;</span><span class="style6">
+                </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">}</span><span class="style6">
+    </span><span style="box-sizing: border-box; color: rgb(6, 0, 255); font-weight: bold;" class="style6">if</span> <span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span class="style6">flag</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">)</span> <span class="style6">Console</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">WriteLine</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span class="style6">word</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">);</span><span class="style6">
+</span> <span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">}</span><span class="style6">
+</span><span class="style6">Console</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">ReadKey</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">();</span></pre>
+																												</td>
+																								</tr>
+																</table>
+												</div>
+												</li>
+								</ul>
+								<h3 style="box-sizing: border-box; font-family: inherit; font-weight: 600; line-height: 1.1; color: inherit; margin: 20px 0px 24px; font-size: 20px; text-transform: uppercase;">
+								<span id="i-6" style="box-sizing: border-box;">
+								ДОСТУП К СИМВОЛАМ СТРОКИ</span></h3>
+								<ul style="box-sizing: border-box; margin: 12px 0px 0px 19px; list-style: disc; padding: 0px;">
+												<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;" class="style6">
+												Строка состоит из символов. 
+												Чтобы получить доступ только для 
+												чтения<span>&nbsp;</span><em style="box-sizing: border-box;">к 
+												отдельным символам</em><span>&nbsp;</span>внутри 
+												строки и вывести их, можно 
+												обратиться к символу строки по 
+												его индексу (начинается с 0):</li>
+												<li style="box-sizing: border-box; margin: 0px 0px 12px 15px; padding: 0px; position: relative; list-style-type: circle;">
+												<code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">
+												s[i]</code><span class="style6">&nbsp;– для 
+												доступа к</span><span><span class="style6">&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">i</code>-<span class="style6">му 
+												символу строки s</span></li>
+												<li style="box-sizing: border-box; margin: 0px 0px 12px 15px; padding: 0px; position: relative; list-style-type: circle;">
+												<code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">
+												s.Length</code><span class="style6">&nbsp;– 
+												длина строки (кол-во символов в 
+												строке)</span><p style="box-sizing: border-box; margin: 0px 0px 24px;">
+												<strong style="box-sizing: border-box; font-weight: bold;">
+												<u style="box-sizing: border-box;">
+												<span class="style6">Использование цикла</span><span><span class="style6">&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">for</code>:</u></strong></p>
+												<div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: 704.875px; position: relative;">
+																<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 702.875px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																				<tbody style="box-sizing: border-box;">
+																								<tr style="box-sizing: border-box;">
+																												<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 702.875px;">
+																												<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span style="box-sizing: border-box; color: rgb(6, 0, 255); font-weight: bold;" class="style6">var</span><span class="style6"> s </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&quot;Computer&quot;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span><span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(6, 0, 255); font-weight: bold;" class="style6">for</span> <span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span style="box-sizing: border-box; color: rgb(6, 0, 255); font-weight: bold;" class="style6">var</span> <span class="style6">i</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span><span style="box-sizing: border-box; color: rgb(255, 0, 0);" class="style6">0</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span> <span class="style6">i </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">&lt;</span> s<span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">Length</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span> <span class="style6">i</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">++)</span><span class="style6">
+     Console</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">Write</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span>$<span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&quot;{s[i]} &quot;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">);</span> <span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">// Вывод:  C o m p u t e r</span></pre>
+																												</td>
+																								</tr>
+																</table>
+												</div>
+												<p style="box-sizing: border-box; margin: 0px 0px 24px;">
+												<strong style="box-sizing: border-box; font-weight: bold;">
+												<u style="box-sizing: border-box;">
+												Использование цикла<span>&nbsp;</span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 15.3px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">foreach</code>:</u></strong></p>
+												<div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: 704.875px; position: relative;">
+																<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 702.875px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																				<tbody style="box-sizing: border-box;">
+																								<tr style="box-sizing: border-box;">
+																												<td class="code" style="border-style: none; border-color: inherit; border-width: medium; box-sizing: border-box; padding: 0px; text-align: left; vertical-align: top; background-color: rgb(238, 238, 238); background-image: url('linear-gradient%28transparent%2050%25%2c%20rgba%28255%2c%20255%2c%20255%2c%200.9.html)%2050%25)'); background-size: 1px 32px; line-height: normal; white-space: normal; width: 702.875px; height: 24px;">
+																												<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span style="box-sizing: border-box; color: rgb(6, 0, 255); font-weight: bold;" class="style6">var</span><span class="style6"> s </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&quot;Computer&quot;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span><span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(6, 0, 255); font-weight: bold;" class="style6">foreach</span> <span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span style="box-sizing: border-box; color: rgb(6, 0, 255); font-weight: bold;" class="style6">var</span><span class="style6"> c </span><span style="box-sizing: border-box; color: rgb(6, 0, 255); font-weight: bold;" class="style6">in</span><span class="style6"> s</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">)</span><span class="style6">
+   Console</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">Write</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span>$<span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&quot;{c} &quot;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">);</span> <span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">//  Вывод: C o m p u t e r</span></pre>
+																												</td>
+																								</tr>
+																</table>
+												</div>
+												</li>
+								</ul>
+								<h3 style="box-sizing: border-box; font-family: inherit; font-weight: 600; line-height: 1.1; color: inherit; margin: 20px 0px 24px; font-size: 20px; text-transform: uppercase;">
+								<span id="i-7" style="box-sizing: border-box;">
+								ИЗМЕНЕНИЕ КОНКРЕТНОГО СИМВОЛА В СТРОКЕ</span></h3>
+								<p style="box-sizing: border-box; font-family: inherit; font-weight: 600; line-height: 1.1; color: inherit; margin: 20px 0px 24px; font-size: 20px; text-transform: uppercase;">
+								<span style="color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+								Извлекает подстроку из этого экземпляра. 
+								Подстрока начинается с указанной позиции символа 
+								и продолжается до конца строки. Начальная 
+								позиция подстроки в данном случае, 
+								отсчитывающаяся от нуля.</span></p>
+								<p style="box-sizing: border-box; font-family: inherit; font-weight: 600; line-height: 1.1; color: inherit; margin: 20px 0px 24px; font-size: 20px; text-transform: uppercase;">
+								<span class="style3"><strong>public string 
+								Substring (int startIndex, int length);</strong><span class="style4"><strong><br />
+								</strong><strong>startIndex - Начальная позиция 
+								подстроки в данном случае, отсчитывающаяся от 
+								нуля.<br />
+								length - Количество символов в подстроке.</strong></span></span></p>
+								<ul style="box-sizing: border-box; margin: 12px 0px 0px 19px; list-style: disc; padding: 0px;">
+												<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative; left: -12px; top: 0px; width: 1507px;">
+												<span class="style6">Строки в C# неизменяемы, это 
+												означает, что мы<span>&nbsp;</span><strong style="box-sizing: border-box; font-weight: bold;">не 
+												можем<span>&nbsp;</span></strong>использовать 
+												следующий код (ошибка!):</span><span><span class="style6">&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">s[i]=&#39;a&#39;;</code></li>
+												<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+												<span class="style6">Символы обрамляются одинарными 
+												кавычками.</span><div class="big" style="box-sizing: border-box; margin-bottom: 20px; font-size: 1.1em !important; font-weight: bold;">
+																<span class="style6">1. Использование 
+																метода&nbsp;</span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">Substring</code><span class="style6">&nbsp;строкового 
+																типа:</span></div>
+												</li>
+												<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+												<span class="style6">Чтобы изменить конкретный символ 
+												в строке можно использовать 
+												метод</span><span><span class="style6">&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">Substring</code>:<div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: 704.875px; position: relative;">
+																<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 702.875px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																				<tbody style="box-sizing: border-box;">
+																								<tr style="box-sizing: border-box;">
+																												<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 702.875px;">
+																												<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span style="box-sizing: border-box; color: rgb(6, 0, 255); font-weight: bold;" class="style6">var</span> <span class="style6">str </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);">&quot;<span class="style6">abcdefghijjklmnopqrstuvwxy&quot;</span></span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span> <span class="style6">
+</span><span class="style6">str </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&#39;Z&#39;</span> <span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">+</span> <span class="style6">str</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">Substring</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span style="box-sizing: border-box; color: rgb(255, 0, 0);" class="style6">1</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">);</span><span class="style6">
+</span><span class="style6">Console</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">WriteLine</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span class="style6">str</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">);</span> <span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">// вывод: Zbcdefghijjklmnopqrstuvwxy</span></pre>
+																												</td>
+																								</tr>
+																</table>
+												</div>
+												<div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: 704.875px; position: relative;">
+																<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 731.641px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																				<tbody style="box-sizing: border-box;">
+																								<tr style="box-sizing: border-box;">
+																												<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 731.641px;">
+																												<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">string</span><span class="style6"> phrase </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&quot;Good Day&quot;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span><span class="style6">
+</span><span class="style6">Console</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">WriteLine</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span class="style6">phrase</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">Substring</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span style="box-sizing: border-box; color: rgb(255, 0, 0);" class="style6">5</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">));</span> <span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">// Вывод: &#39;Day&#39;</span><span class="style6">
+</span><span class="style6">Console</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">WriteLine</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span class="style6">phrase</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">Substring</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span style="box-sizing: border-box; color: rgb(255, 0, 0);" class="style6">5</span>,<span style="box-sizing: border-box; color: rgb(255, 0, 0);" class="style6">2</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">));</span> <span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">// сколько символов мы собираемся взять. Вывод: &#39;Da&#39;</span></pre>
+																												</td>
+																								</tr>
+																</table>
+												</div>
+												<div class="style6" style="box-sizing: border-box; margin-bottom: 20px; font-weight: bold;">
+																2. Использование 
+																класса 
+																StringBuilder</div>
+												</li>
+												<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+												<span class="style6">Можно использовать класс</span><span><span class="style6">&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">StringBuilder</code><span class="style6">&nbsp;для 
+												изменения определенных символов:</span><div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: auto; position: relative;">
+																<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 710px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																				<tbody style="box-sizing: border-box;">
+																								<tr style="box-sizing: border-box;">
+																												<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 710px;">
+																												<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span style="box-sizing: border-box; color: rgb(6, 0, 255); font-weight: bold;">using</span> <span style="box-sizing: border-box; color: rgb(0, 128, 128);">System.Text</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);">;</span> <span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;">// необходимо подключение этой директивы</span>
+<span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;">//...</span>
+var strst = &quot;Изменение определенных символов&quot;; //создали стандартную неизменяемую строку
+var dinstr = new StringBuilder(strst); // - создали динамическую строку используя класс StringBuilder .
+dinstr[10] = &#39;О&#39;; //заменили в динамической строке символ 10
+strst = dinstr.ToString(); //
+Console.WriteLine(strst); // Вывод: Изменение Определенных символов</pre>
+																												</td>
+																								</tr>
+																</table>
+												</div>
+												</li>
+												<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+												Создание объекта класса 
+												StringBuilder:<div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: 704.875px; position: relative;">
+																<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 702.875px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																				<tbody style="box-sizing: border-box;">
+																								<tr style="box-sizing: border-box;">
+																												<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 702.875px;">
+																												<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">// 1) Пустая строка:</span><span class="style6">
+</span><span class="style6">StringBuilder sb </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">new</span> <span class="style6">StringBuilder</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">();</span><span class="style6">
+</span>&nbsp;<span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">// 2) Строка определенной длины:</span><span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(102, 102, 204); font-weight: bold;" class="style6">int</span><span class="style6"> n </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(255, 0, 0);" class="style6">50</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">;</span><span class="style6">
+</span><span class="style6">StringBuilder sb </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">new</span> <span class="style6">StringBuilder</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span>n<span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">);</span><span class="style6">
+</span>&nbsp;<span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">// 3) Строка инициализированная значением:</span><span class="style6">
+</span><span class="style6">StringBuilder sb </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">new</span> <span class="style6">StringBuilder</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span style="box-sizing: border-box; color: rgb(102, 102, 102);" class="style6">&quot;qwerty&quot;</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">);</span></pre>
+																												</td>
+																								</tr>
+																</table>
+												</div>
+												</li>
+												<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+												Ввод и вывод значений:<div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: 704.875px; position: relative;">
+																<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 702.875px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																				<tbody style="box-sizing: border-box;">
+																								<tr style="box-sizing: border-box;">
+																												<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 702.875px;">
+																												<pre class="csharp" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">// ReadLine() метод:</span><span class="style6">
+</span><span class="style6">StringBuilder sb </span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">=</span> <span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">new</span> <span class="style6">StringBuilder</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span class="style6">Console</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">ReadLine</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">());</span><span class="style6">
+</span>&nbsp;<span class="style6">
+</span><span style="box-sizing: border-box; color: rgb(0, 128, 128); font-style: italic;" class="style6">// WriteLine() метод:</span><span class="style6">
+</span><span class="style6">Console</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">.</span><span style="box-sizing: border-box; color: rgb(0, 0, 255);" class="style6">WriteLine</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">(</span><span class="style6">sb</span><span style="box-sizing: border-box; color: rgb(0, 128, 0);" class="style6">);</span></pre>
+																												</td>
+																								</tr>
+																</table>
+												</div>
+												</li>
+												<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+												<code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">
+												StringBuilder</code><span class="style6">&nbsp;— 
+												это класс, представляющий<span>&nbsp;</span><strong style="box-sizing: border-box; font-weight: bold;">изменяемую</strong><span>&nbsp;</span>строку. 
+												Класс позволяет легко и быстро 
+												создавать строку и изменять ее 
+												на лету, но, в отличие от класса</span><span><span class="style6">&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">string</code><span class="style6">, 
+												он не оптимизирован для поиска. 
+												То есть, в нем нет таких 
+												методов, как</span><span><span class="style6">&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">indexOf</code><span class="style6">&nbsp;или</span><span><span class="style6">&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">lastIndexOf</code><span class="style6">&nbsp;и 
+												т.д.</span></li>
+												<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+												<span class="style6">Однако класс</span><span>&nbsp;</span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 15.3px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">StringBuilder</code><span>&nbsp;</span>предоставляет 
+												возможность использования 
+												некоторых других<span>&nbsp;</span><strong style="box-sizing: border-box; font-weight: bold;">методов</strong>:</li>
+												<li style="box-sizing: border-box; margin: 0px 0px 12px 15px; padding: 0px; position: relative; list-style-type: circle; left: 2px; top: 1px;">
+												<code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">
+												Append</code><span class="style6">&nbsp;— 
+												добавление в конец строки;</span></li>
+												<li style="box-sizing: border-box; margin: 0px 0px 12px 15px; padding: 0px; position: relative; list-style-type: circle;">
+												<code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">
+												Insert</code><span class="style6">&nbsp;— 
+												вставка по индексу;</span></li>
+												<li style="box-sizing: border-box; margin: 0px 0px 12px 15px; padding: 0px; position: relative; list-style-type: circle;">
+												<code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">
+												Remove</code><span class="style6">&nbsp;— 
+												удаление из строки;</span></li>
+												<li style="box-sizing: border-box; margin: 0px 0px 12px 15px; padding: 0px; position: relative; list-style-type: circle;">
+												<code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style6">
+												Replace</code><span class="style6">&nbsp;— 
+												замена символа или строки.</span></li>
+								</ul>
+				</ul>
+			</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2008 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les17.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les17/2.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:00:38 GMT -->
+</html>

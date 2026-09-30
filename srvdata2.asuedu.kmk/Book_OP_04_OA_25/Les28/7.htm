@@ -1,0 +1,301 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les28/7.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:18:57 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 1 Индексы и срезы строк</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				На самом деле в Python строка представляются как упорядоченная 
+				коллекция символов. И ключевое слово здесь – «упорядоченная». 
+				Это значит, что у каждого символа в строке есть свой порядковый 
+				номер – индекс, по которому мы можем его получить. Например, 
+				когда мы создаем строку</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">msg <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(72, 61, 139);">&quot;Hello World!&quot;</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				то формируется следующая коллекция:</p>
+				<p align="center" style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img width="623" height="82" id="Рисунок 1" src="Pic/image001.jpg" style="max-width: 600px; height: auto;" /></p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Каждый символ имеет свой индекс, начиная с нулевого. Первый 
+				символ в Python всегда имеет нулевой индекс.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для обращения к тому или иному символу используется следующий 
+				синтаксис:</p>
+				<p align="center" style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				&lt;строка&gt;[&lt;индекс&gt;]</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Например:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">msg<span style="color: black;">[</span><span style="color: rgb(255, 69, 0);">0</span><span style="color: black;">]</span>
+msg<span style="color: black;">[</span><span style="color: rgb(255, 69, 0);">6</span><span style="color: black;">]</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				и так далее. Но, если указать неверный индекс, например:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">msg<span style="color: black;">[</span><span style="color: rgb(255, 69, 0);">12</span><span style="color: black;">]</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				то возникнет ошибка. Поэтому здесь следует быть аккуратным и не 
+				выходить за пределы этого списка. В частности, последний 
+				«рабочий» индекс можно определить с помощью функции len – длины 
+				строки:</p>
+				<p align="center" style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				lastIndex = len(&lt;строка&gt;) – 1</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				То есть, к последнему индексу мы можем обратиться так:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">msg<span style="color: black;">[</span><span style="color: rgb(0, 128, 0);">len</span><span style="color: black;">(</span>msg<span style="color: black;">)</span>-<span style="color: rgb(255, 69, 0);">1</span><span style="color: black;">]</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Но это не очень удобно. Поэтому разработчики языка Python 
+				решили, что отрицательные индексы будут означать движение по 
+				строке с конца в начало. И предыдущую запись можно переписать 
+				так:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">msg<span style="color: black;">[</span>-<span style="color: rgb(255, 69, 0);">1</span><span style="color: black;">]</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Видите? Это намного удобнее. То есть, у строк есть еще такие 
+				отрицательные индексы:</p>
+				<p align="center" style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img width="623" height="107" id="Рисунок 2" src="Pic/image002.jpg" style="max-width: 600px; height: auto;" /></p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Также в Python можно использовать доступ к отдельному символу 
+				непосредственно у строкового литерала:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(72, 61, 139);">&quot;abcd&quot;</span><span style="color: black;">[</span><span style="color: rgb(255, 69, 0);">1</span><span style="color: black;">]</span>
+<span style="color: rgb(72, 61, 139);">&quot;abcd&quot;</span><span style="color: black;">[</span>-<span style="color: rgb(255, 69, 0);">1</span><span style="color: black;">]</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Иногда это бывает удобно.</p>
+				<h2 style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Срезы</h2>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Часто в программировании требуется выбрать не один какой-то 
+				символ, а сразу несколько. Для этого используются так называемые 
+				срезы. Их работу проще показать на конкретных примерах. Пусть у 
+				нас есть наша строка:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">msg <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(72, 61, 139);">&quot;Hello World!&quot;</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				и мы хотим выделить последнее слово «World!». Для этого в 
+				квадратных скобках указывается начальный индекс и через 
+				двоеточие – конечный. Если мы запишем все вот в таком виде:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">msg<span style="color: black;">[</span><span style="color: rgb(255, 69, 0);">6</span>:<span style="color: rgb(255, 69, 0);">11</span><span style="color: black;">]</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				то получим результат «World» без восклицательного знака. Дело в 
+				том, что последний индекс исключается из интервала, то есть, 
+				интервал определяется как</p>
+				<p align="center" style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				[6: 11)</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Поэтому, мы должны записать срез так:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">msg<span style="color: black;">[</span><span style="color: rgb(255, 69, 0);">6</span>:<span style="color: rgb(255, 69, 0);">12</span><span style="color: black;">]</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Другой пример для выделения символов «llo»:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">msg<span style="color: black;">[</span><span style="color: rgb(255, 69, 0);">2</span>:<span style="color: rgb(255, 69, 0);">5</span><span style="color: black;">]</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				и так далее. В Python допускается не указывать начальное или 
+				конечное значения, или даже, оба из них. Например:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">msg<span style="color: black;">[</span>:<span style="color: rgb(255, 69, 0);">5</span><span style="color: black;">]</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				выделяет слово «Hello», а вот так:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">msg<span style="color: black;">[</span><span style="color: rgb(255, 69, 0);">6</span>:<span style="color: black;">]</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				получим «World!». Наконец, записав все в таком виде:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">msg<span style="color: black;">[</span>:<span style="color: black;">]</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				получим ту же самую строку, не копию! Это можно проверить так:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(220, 20, 60);">copy</span> <span style="color: rgb(102, 204, 102);">=</span> msg<span style="color: black;">[</span>:<span style="color: black;">]</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: rgb(0, 128, 0);">id</span><span style="color: black;">(</span><span style="color: rgb(220, 20, 60);">copy</span><span style="color: black;">)</span><span style="color: rgb(102, 204, 102);">,</span> <span style="color: rgb(0, 128, 0);">id</span><span style="color: black;">(</span>msg<span style="color: black;">))</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Увидим одно и то же значение id для обеих переменных, это 
+				означет, что они ссылаются на один и тот же объект.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В срезах на Python можно дополнительно указывать шаг через 
+				двоеточие. Например, так:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">msg<span style="color: black;">[</span>::<span style="color: rgb(255, 69, 0);">2</span><span style="color: black;">]</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				мы здесь ставим еще одно двоеточие и указываем шаг 2, то есть, 
+				идем через символ: «HloWrd». Также это можно комбинировать с 
+				граничными значениями:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">msg<span style="color: black;">[</span>:<span style="color: rgb(255, 69, 0);">5</span>:<span style="color: rgb(255, 69, 0);">2</span><span style="color: black;">]</span>
+msg<span style="color: black;">[</span><span style="color: rgb(255, 69, 0);">6</span>::<span style="color: rgb(255, 69, 0);">2</span><span style="color: black;">]</span>
+msg<span style="color: black;">[</span><span style="color: rgb(255, 69, 0);">1</span>:<span style="color: rgb(255, 69, 0);">6</span>:<span style="color: rgb(255, 69, 0);">2</span><span style="color: black;">]</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				и использовать отрицательный шаг:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">msg<span style="color: black;">[</span>::-<span style="color: rgb(255, 69, 0);">1</span><span style="color: black;">]</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				в этом случае символы будут перебираться в обратном порядке.</p>
+				<h2 style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Строка – неизменяемый объект</h2>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Далее, при работе со строками следует помнить, что это 
+				неизменяемый объект, то есть, мы не можем изменять в строковом 
+				объекте уже существующие символы, то есть, вот такая запись:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">msg<span style="color: black;">[</span><span style="color: rgb(255, 69, 0);">0</span><span style="color: black;">]</span> <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(72, 61, 139);">&#39;A&#39;</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				приведет к ошибке, говорящая о том, что строка не может быть 
+				изменена. Тогда как в Python нам изменять строки? Для этого 
+				создается новая строка с нужным содержимым. Например, изменим 
+				строку</p>
+				<p align="center" style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				«Hello World!»</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				на строку</p>
+				<p align="center" style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				«Hello word!»</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Это можно сделать так:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">myStr <span style="color: rgb(102, 204, 102);">=</span> msg<span style="color: black;">[</span>:<span style="color: rgb(255, 69, 0);">6</span><span style="color: black;">]</span>+<span style="color: rgb(72, 61, 139);">&quot;w&quot;</span>+msg<span style="color: black;">[</span><span style="color: rgb(255, 69, 0);">7</span>:<span style="color: rgb(255, 69, 0);">9</span><span style="color: black;">]</span>+msg<span style="color: black;">[</span><span style="color: rgb(255, 69, 0);">10</span>:<span style="color: black;">]</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В результате строка myStr ссылается на новую измененную строку, 
+				а msg осталась прежней.</p>
+				<h2 style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Задания для самоподготовки</h2>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				1. Напишите программу подсчета букв ‘a’ в строке «abrakadabra».</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				2. Из строки «abrakadabra» удалите все сочетания «ab».</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				3. Напишите программу определения слова палиндрома (это слова, 
+				которые одинаково читаются в обоих направлениях, например, анна, 
+				abba и т.п.). Слово вводится с клавиатуры.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				4. Напишите программу определения количества вхождений фраз «ra» 
+				в слове «abrakadabra».</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				5. Разделите введенное с клавиатуры предложение на слова (слова 
+				разделяются пробелом).</p>
+                <p></p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les28.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les28/7.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:19:04 GMT -->
+</html>

@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les41/5.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:48:50 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: rgb(255, 0, 0);
+}
+    .style3 {
+	color: #0000FF;
+}
+.style4 {
+	margin-left: 40px;
+}
+    .style5 {
+	color: rgb(128, 0, 0);
+}
+    .style6 {
+	color: #0000FF;
+	text-decoration: underline;
+}
+    .style7 {
+	margin-left: 40px;
+	font-size: medium;
+}
+.style8 {
+	font-size: medium;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 5. Двухсвязный список LinkedList &lt;T&gt; .</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Класс<span>&nbsp;</span><span class="style5" style="font-weight: bold;">LinkedList&lt;T&gt;</span><span>&nbsp;</span>представляет 
+				<span class="style2"><strong>двухсвязный список</strong></span>, в 
+				<span class="style6"><em>котором каждый элемент хранит ссылку 
+				одновременно на следующий и на предыдущий элемент</em></span>.</p>
+				<h3 style="font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+				Создание связанного списка</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для создания связного списка можно принименять один из его 
+				конструктора. Например, создадим пустой связный список:</p>
+				<pre class="style7"><span class="style3"><strong>LinkedList &lt;string&gt;</strong></span><string><span class="style3"><strong> people = new  LinkedList </strong></span><string><span class="style3"><strong>&lt;string&gt;</strong></span><string><string><span class="style3"><strong>();</strong></span></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В данном случае связанный список people предназначен для 
+				хранения строк.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Также можно в конструктор передать коллекцию элементов, 
+				например, список List, по которому будет создан связный список:</p>
+				<pre class="style7"><span class="style3"><strong>var employees = new List</strong></span><string><span class="style3"><strong> { "Tom", "Sam", "Bob" }; 
+LinkedList</strong></span><string><span class="style3"><strong> </strong></span><string><span class="style3"><strong>&lt;string&gt; </strong></span><string><string><span class="style3"><strong>people = new LinkedList</strong></span><string><string><span class="style3"><strong>&lt;string&gt;</strong></span><string><string><string><span class="style3"><strong>(employees);
+foreach (string person in people)
+{    Console.WriteLine(person);}</strong></span></pre>
+				<h3 style="font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+				LinkedListNode</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если в простом списке List&lt;T&gt; каждый элемент представляет объект 
+				типа T, то в LinkedList&lt;T&gt; каждый узел представляет объект 
+				класса<span>&nbsp;</span><span class="b" style="font-weight: bold;">LinkedListNode&lt;T&gt;</span>. 
+				А добавляемые в связанный список элементы T фактически 
+				обертываются в объект LinkedListNode.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Класс <span class="style3"><strong>LinkedListNode</strong></span> имеет следующие свойства:</p>
+				<ul style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style8" style="font-weight: bold;">Value</span><span class="style8">: 
+					возвращает или устанавливает само значение узла, 
+					представленное типом T</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style8" style="font-weight: bold;">Next</span><span class="style8">: 
+					возвращает ссылку на следующий элемент типа 
+					LinkedListNode&lt;T&gt; в списке. Если следующий элемент 
+					отсутствует, то имеет значение null</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style8" style="font-weight: bold;">Previous</span><span class="style8">: 
+					возвращает ссылку предыдущий элемент типа LinkedListNode&lt;T&gt; 
+					в списке. Если предыдущий элемент отсутствует, то имеет 
+					значение null</span></p>
+					</li>
+				</ul>
+				<h3 style="font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+				Свойства LinkedList</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Класс LinkedList определяет следующие свойства:</p>
+				<ul style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style8" style="font-weight: bold;">Count</span><span class="style8">: 
+					количество элементов в связанном списке</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style8" style="font-weight: bold;">First</span><span class="style8">: 
+					первый узел в списке в виде объекта LinkedListNode&lt;T&gt;</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style8" style="font-weight: bold;">Last</span><span class="style8">: 
+					последний узел в списке в виде объекта LinkedListNode&lt;T&gt;</span></p>
+					</li>
+				</ul>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Используем эти свойства:</p>
+				<pre class="style8"><span class="style3"><strong>var employees = new List</strong></span><string><span class="style3"><strong> </strong></span><string><span class="style3"><strong>&lt;string&gt; </strong></span><string><span class="style3"><strong>{ "Tom", "Sam", "Bob" }; 
+LinkedList</strong></span><string><span class="style3"><strong> </strong></span><string><span class="style3"><strong>&lt;string&gt; </strong></span><string><string><span class="style3"><strong>people = new LinkedList</strong></span><string><span class="style3"><strong> </strong></span><string><span class="style3"><strong>&lt;string</strong></span>&gt;<string><string><string>(<strong><span class="style3">employees);
+Console.WriteLine(people.Count);            // 3
+Console.WriteLine(people.First?.Value);    // Tom
+Console.WriteLine(people.Last?.Value);    // Bob</span></strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Используя свойства LinkedList и LinkedListNode, можно пройтись 
+				по всем элементам списка в прямом или обратном порядке:</p>
+				<pre class="style4"><span class="style3"><strong><span class="style8">LinkedList</span></strong></span><span class="style8"><string><span class="style3"><strong> </strong></span><string><span class="style3"><strong>&lt;string&gt; </strong></span><string><span class="style3"><strong>people = new LinkedList </strong></span><string><span class="style3"><strong>&lt;string&gt; </strong></span><string><string></span><span class="style3"><strong><span class="style8">(new[] { "Tom", "Sam", "Bob" });
+// от начала до конца списка
+var currentNode = people.First;
+while(currentNode != null)
+	{    
+		Console.WriteLine(currentNode.Value);    
+		currentNode = currentNode.Next;
+	} 
+// с конца до начала списка
+currentNode = people.Last;
+while (currentNode != null)
+	{    
+		Console.WriteLine(currentNode.Value);   
+		 currentNode = currentNode.Previous;</span>
+	}</strong></span></pre>
+				<h3 style="font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+				Методы LinkedList</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Используя методы класса LinkedList&lt;T&gt;, можно обращаться к 
+				различным элементам, как в конце, так и в начале списка:</p>
+				<ul style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style8" style="font-weight: bold;">
+					AddAfter(LinkedListNode&lt;T&gt; node, LinkedListNode&lt;T&gt; newNode)</span><span class="style8">: 
+					вставляет узел newNode в список после узла node.</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style8" style="font-weight: bold;">
+					AddAfter(LinkedListNode&lt;T&gt; node, T value)</span><span class="style8">: вставляет 
+					в список новый узел со значением value после узла node.</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style8" style="font-weight: bold;">
+					AddBefore(LinkedListNode&lt;T&gt; node, LinkedListNode&lt;T&gt; newNode)</span><span class="style8">: 
+					вставляет в список узел newNode перед узлом node.</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style8" style="font-weight: bold;">
+					AddBefore(LinkedListNode&lt;T&gt; node, T value)</span><span class="style8">: вставляет 
+					в список новый узел со значением value перед узлом node.</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style8" style="font-weight: bold;">
+					AddFirst(LinkedListNode&lt;T&gt; node)</span><span class="style8">: вставляет новый 
+					узел в начало списка</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style8" style="font-weight: bold;">AddFirst(T value)</span><span class="style8">: 
+					вставляет новый узел со значением value в начало списка</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style8" style="font-weight: bold;">AddLast(LinkedListNode&lt;T&gt; 
+					node)</span><span class="style8">: вставляет новый узел в конец списка</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style8" style="font-weight: bold;">AddLast(T value)</span><span class="style8">: 
+					вставляет новый узел со значением value в конец списка</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style8" style="font-weight: bold;">RemoveFirst()</span><span class="style8">: 
+					удаляет первый узел из списка. После этого новым первым 
+					узлом становится узел, следующий за удаленным</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style8" style="font-weight: bold;">RemoveLast()</span><span class="style8">: 
+					удаляет последний узел из списка</span></p>
+					</li>
+				</ul>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Применим некоторые из этих методов:</p>
+				<pre class="style7"><strong>var people = new LinkedList </strong><string><span class="style3"><strong>&lt;string&gt;</strong></span><string><strong>();
+people.AddLast("Tom"); // вставляем узел со значением Tom на последнее место                        
+				//так как в списке нет узлов, то последнее будет также и первым
+people.AddFirst("Bob"); // вставляем узел со значением Bob на первое место</strong><string><strong>
+// вставляем после первого узла новый узел со значением Mike
+if (people.First != null) people.AddAfter(people.First, &quot;Mike&quot;);
+// теперь у нас список имеет следующую последовательность: Bob Mike Tom</strong><string><string><string><strong>
+foreach (var person in people) Console.WriteLine(person);</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Подобным образом можно создавать связанные списки и других 
+				типов:</p>
+				<pre class="style4"><span class="style3"><strong><span class="style8">var company = new LinkedList</span></strong></span><span class="style8"><Person><span class="style3"><strong> </strong><code class="c# plain" style="font-family: var(--code-font-family) !important; border-radius: 0px !important; background: none !important; inset: auto !important; float: none !important; height: auto !important; line-height: 21px; outline: 0px !important; overflow: visible !important; text-align: left !important; vertical-align: baseline !important; width: auto !important; box-sizing: content-box !important; font-weight: normal !important; font-style: normal !important; font-size: var(--code-font-size) !important; min-height: auto !important; white-space: pre !important; color: var(--code-plain) !important;"><strong>&lt;Person&gt;</strong></code></span><Person></span><span class="style3"><strong><span class="style8">(); 
+company.AddLast(new Person("Tom"));
+company.AddLast(new Person("Sam"));
+company.AddFirst(new Person("Bill")); 
+foreach (var person in company) Console.WriteLine(person.Name); 
+class Person
+{    
+	public string Name { get; }    
+	public Person(string name) => Name = name;
+</span>}</strong></span></pre>
+				</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les41.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les41/5.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:48:50 GMT -->
+</html>

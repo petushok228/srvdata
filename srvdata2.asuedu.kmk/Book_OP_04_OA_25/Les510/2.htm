@@ -1,0 +1,300 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les510/2.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 10:39:03 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+				font-size: 14px;
+}
+.style3 {
+				color: blue;
+}
+.style4 {
+				color: maroon;
+}
+.style5 {
+				color: red;
+				text-decoration: underline;
+}
+.style6 {
+				color: maroon;
+				text-decoration: underline;
+}
+    .style7 {
+	color: maroon;
+	font-size: medium;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 7. Преобразования базовых типов данных <span lang="en-us">
+				C#</span>.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p class="style2">
+				<img alt="" src="../LES8/Pic/TDCH.jpg" width="800" height="600" /></p>
+				<p class="style2">При рассмотрении типов данных указывалось, 
+				какие значения может иметь тот или иной тип и сколько байт 
+				памяти он может занимать. В прошлой теме были рассмотрены 
+				арифметические операции. Теперь применим операцию сложения к 
+				данным разных типов:<br />
+				<br />
+				<span class="style7"><em>byte a = 4;<br />
+				int b = a + 70;</em></span></p>
+				<p class="style2"><br />
+				Результатом операции вполне справедливо является число 74, как и 
+				ожидается.<br />
+				<br />
+				Но теперь попробуем применить сложение к двум объектам типа 
+				byte:<br />
+				<br />
+				<span class="style7"><em>byte a = 4;<br />
+				byte b = a + 70; // ошибка</em></span></p>
+				<p class="style2"><br />
+				Здесь поменялся только тип переменной, которая получает 
+				результат сложения - с int на byte. Однако при попытке 
+				скомпилировать программу мы получим ошибку на этапе компиляции. 
+				И если мы работаем в Visual Studio, среда подчеркнет вторую 
+				строку красной волнистой линией, указывая, что в ней ошибка.<br />
+				<br />
+				При операциях мы должны учитывать диапазон значений, которые 
+				может хранить тот или иной тип. Но в данном случае число 74, 
+				которое мы ожидаем получить, вполне укладывается в диапазон 
+				значений типа byte, тем не менее мы получаем ошибку.<br />
+				<br />
+				Дело в том, что операция сложения (да и вычитания) возвращает 
+				значение типа int, если в операции участвуют целочисленные типы 
+				данных с разрядностью меньше или равно int (то есть типы byte, 
+				short, int). Поэтому результатом операции a + 70 будет объект, 
+				который имеет длину в памяти 4 байта. Затем этот объект мы 
+				пытаемся присвоить переменной b, которая имеет тип byte и в 
+				памяти занимает 1 байт.<br />
+				<br />
+				И чтобы выйти из этой ситуации, необходимо применить операцию 
+				преобразования типов. </p>
+				<p class="style2"><span class="style3"><strong>Операция 
+				преобразования типов</strong></span> предполагает указание в 
+				скобках того типа, к которому надо преобразовать значение:<br />
+				<br />
+				<span class="style3"><em>(тип_данных_в_который_надо_преобразовать) 
+				значение_для_преобразования;</em></span><br />
+				Так, изменим предыдущий пример, применив операцию преобразования 
+				типов:<br />
+				<br />
+				<span class="style7"><em>byte a = 4;<br />
+				byte b = (byte)(a + 70);</em></span></p>
+				<p class="style2"><span class="style3"><strong>Сужающие и 
+				расширяющие преобразования</strong></span><br />
+				Преобразования могут сужающие (narrowing) и расширяющие 
+				(widening). Расширяющие преобразования расширяют размер объекта 
+				в памяти. </p>
+				<p class="style2">Например:<br />
+				<span class="style4"><em>byte a = 4; // 0000100<br />
+				</em><em>ushort b = a; // 000000000000100</em></span><br />
+				</p>
+				<p class="style2">В данном случае переменной типа ushort 
+				присваивается значение типа byte. Тип byte занимает 1 байт (8 
+				бит), и значение переменной a в двоичном виде можно представить 
+				как:<br />
+				<br />
+				<span class="style4"><strong>00000100</strong></span></p>
+				<p class="style2">Значение типа ushort занимает 2 байта (16 
+				бит). И при присвоении переменной b значение переменной a 
+				расширяется до 2 байт<br />
+				<br />
+				<span class="style4"><strong>0000000000000100</strong></span></p>
+				<p class="style2">То есть значение, которое занимает 8 бит, 
+				расширяется до 16 бит.<br />
+				<br />
+				Сужающие преобразования, наоборот, сужают значение до типа 
+				меньшей разядности. Во втором листинге статьи мы как раз имели 
+				дело с сужающими преобразованиями:<br />
+				<br />
+				<span class="style4"><em>ushort a = 4;<br />
+				byte b = (byte) a;</em></span><br />
+				</p>
+				<p class="style2">Здесь переменной b, которая занимает 8 бит, 
+				присваивается значение ushort, которое занимает 16 бит. То есть 
+				из 0000000000000100 получаем 00000100. Таким образом, значение 
+				сужается с 16 бит (2 байт) до 8 бит (1 байт).<br />
+				<br />
+				<span class="style3"><strong>Явные и неявные преобразования</strong></span></p>
+				<p class="style2"><span class="style5"><em>Неявные 
+				преобразования</em></span><br />
+				В случае с расширяющими преобразованиями компилятор за нас 
+				выполнял все преобразования данных, то есть преобразования были 
+				неявными (implicit conversion). Такие преобразования не вызывают 
+				каких-то затруднений. Тем не менее стоит сказать пару слов об 
+				общей механике подобных преобразований.<br />
+				<br />
+				Если производится преобразование от безнакового типа меньшей 
+				разрядности к безнаковому типу большой разрядности, то 
+				добавляются дополнительные биты, которые имеют значени 0. Это 
+				называется дополнение нулями или zero extension.<br />
+				<br />
+				<span class="style4">byte a = 4; // 0000100<br />
+				ushort b = a; // 000000000000100</span></p>
+				<p class="style2"><br />
+				Если производится преобразование к знаковому типу, то битовое 
+				представление дополняется нулями, если число положительное, и 
+				единицами, если число отрицательное. Последний разряд числа 
+				содержит знаковый бит - 0 для положительных и 1 для 
+				отрицательных чисел. При расширении в добавленные разряды 
+				компируется знаковый бит.<br />
+				<br />
+				Рассмотрим преобразование положительного числа:<br />
+				<br />
+				<span class="style4">sbyte a = 4; // 0000100<br />
+				short b = a; // 000000000000100<br />
+				</span></p>
+				<p class="style2">
+				<img alt="" src="../LES8/Pic/2.7.png" width="590" height="157" /></p>
+				<p class="style2"><br />
+				<span class="style6"><strong>Преобразование отрицательного 
+				числа:</strong></span><br />
+				<br />
+				<span class="style4">sbyte a = -4; // 1111100<br />
+				short b = a; // 111111111111100</span></p>
+				<p class="style2">
+				<img alt="" src="../LES8/Pic/2.8.png" width="582" height="146" /></p>
+				<p class="style2"><br />
+				<span class="style3"><strong>Явные преобразования</strong></span><br />
+				При явных преобразованиях (explicit conversion) мы сами должны 
+				применить операцию преобразования (операция ()). Суть операции 
+				преобразования типов состоит в том, что перед значением 
+				указывается в скобках тип, к которому надо привести данное 
+				значение:<br />
+				<br />
+				<span class="style4">int a = 4;<br />
+				int b = 6;<br />
+				byte c = (byte)(a+b);</span></p>
+				<p class="style2"><br />
+				Расширяющие преобразования от типа с меньшей разрядностью к типу 
+				с большей разрядностью компилятор проводит неявно. Это могут 
+				быть следующие цепочки преобразований:<br />
+				<br />
+				<img alt="" src="../LES8/Pic/r2.9.png" width="359" height="157" /><br />
+				<br />
+				Все безопасные автоматические преобразования можно описать 
+				следующей таблицей:<br />
+				<br />
+				<img alt="" src="../LES8/Pic/r2.10.png" width="468" height="674" /><br />
+				<br />
+				<img alt="" src="../LES8/Pic/2.9.png" width="493" height="507" /><br />
+				</p>
+				<p class="style2">В остальных случаях следует использовать явные 
+				преобразования типов.<br />
+				<br />
+				Также следует отметить, что несмотря на то, что и double, и 
+				decimal могут хранить дробные данные, а decimal имеет большую 
+				разрядность, чем double, но все равно значение double нужно явно 
+				приводить к типу decimal:<br />
+				<br />
+				<br />
+				<span class="style4">double a = 4.0;<br />
+				decimal b = (decimal)a;</span></p>
+				<p class="style2"><br />
+				<span class="style3"><strong>Потеря данных и ключевое слово 
+				checked</strong></span></p>
+				<p class="style2"><br />
+				Рассмотрим другую ситуацию, что будет, например, в следующем 
+				случае:<br />
+				<br />
+				<span class="style7">int a = 33;<br />
+				int b = 600;<br />
+				byte c = (byte)(a+b);<br />
+				Console.WriteLine(c); // 121</span></p>
+				<p class="style2"><br />
+				Результатом будет число 121, так число 633 не попадает в 
+				допустимый диапазон для типа byte, и старшие биты будут 
+				усекаться. В итоге получится число 121. Поэтому при 
+				преобразованиях надо это учитывать. И мы в данном случае можем 
+				либо взять такие числа a и b, которые в сумме дадут число не 
+				больше 255, либо мы можем выбрать вместо byte другой тип данных, 
+				например, int.<br />
+				<br />
+				Однако ситуации разные могут быть. Мы можем точно не знать, 
+				какие значения будут иметь числа a и b. И чтобы избежать 
+				подобных ситуаций, в c# имеется ключевое слово checked:<br />
+				<br />
+				<span class="style7">try<br />
+				{<br />
+				int a = 33;<br />
+				int b = 600;<br />
+				byte c = checked((byte)(a + b));<br />
+				Console.WriteLine(c);<br />
+				}<br />
+				catch (OverflowException ex)<br />
+				{<br />
+				Console.WriteLine(ex.Message);<br />
+				</span>}</p>
+				<p class="style2"><br />
+				При использовании ключевого слова checked приложение выбрасывает 
+				исключение о переполнении. Поэтому для его обработки в данном 
+				случае используется конструкция try...catch. Подробнее данную 
+				конструкцию и обработку исключений мы рассмотрим позже, а пока 
+				надо знать, что в блок try мы включаем действия, в которых может 
+				потенциально возникнуть ошибка, а в блоке catch обрабатываем 
+				ошибку.</p>
+			</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les8.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les510/2.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 10:39:26 GMT -->
+</html>

@@ -1,0 +1,341 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les22/7.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:09:50 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: small;
+}
+.style3 {
+	font-size: small;
+	font-weight: bold;
+}
+.style4 {
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	font-size: small;
+	line-height: normal;
+	font-family: "courier new", courier;
+	color: rgb(0, 0, 0);
+}
+.style5 {
+	color: rgb(255, 0, 0);
+	font-size: medium;
+}
+    .style6 {
+	font-size: medium;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 5. C#: Чтение и запись текстовых файлов . Классы StreamReader и StreamWriter</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text" 
+                >
+                <p style="color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-style: normal; font-variant: normal; font-weight: 400; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+				Классы <span class="style5">StreamReader</span> и 
+				<span class="style5">StreamWriter</span> помогают в доступе к 
+				информации текстового файла на чтение и запись. Они наследуются 
+				из абстрактного базового класса Stream, который поддерживает 
+				чтение и запись байт файлового потока.</p>
+				<p style="font: 400 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong><span class="style2">StreamReader</span></strong><span class="style2">. Класс StreamReader также 
+				наследуется из абстрактного базового класса TextReader, который 
+				представляет средство для последовательного чтения символов. 
+				Следующая таблица описывает наиболее часто используемые методы 
+				класса StreamReader:</span></p>
+				<table border="0" cellspacing="1" cellpadding="3" bgcolor="#8cacbb" style="color: rgb(0, 0, 0); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; font-style: italic; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); background-color: rgb(222, 231, 236);">
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												<strong>Метод</strong></td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style3">
+												Описание</td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+												<td class="style4">
+												public override void Close()</td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												Закрывает объект StreamReader и 
+												нижележащий поток, и освобождает 
+												любые ресурсы системы, связанные 
+												с этим читающим объектом.</td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												<span face="courier new, courier" style="font-family: &quot;courier new&quot;, courier;">
+												public override int Peek()</span></td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												Вернет следующий доступный 
+												символ без перемещения позиции 
+												чтения в файле.</td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												<span face="courier new, courier" style="font-family: &quot;courier new&quot;, courier;">
+												public override int Read()</span></td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												Читает следующий символ из 
+												входного потока с переходом к 
+												следующему символу.</td>
+								</tr>
+				</table>
+				<p style="color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-style: normal; font-variant: normal; font-weight: 400; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+				Следующий пример показывает чтение файла mytext.txt, 
+				находящегося в каталоге TEMP диска C:.</p>
+				<div style="font: 400 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; background: rgb(248, 248, 248); overflow: auto; width: auto; border-style: solid; border-color: gray; border-image: initial; border-width: 0.1em 0.1em 0.1em 0.8em; padding: 0.2em 0.6em;">
+								<pre style="margin: 0px; line-height: 13.75px;"><span style="color: rgb(0, 128, 0); font-weight: bold;"><span class="style2">using</span></span><span class="style2"> </span><span style="color: rgb(0, 0, 255); font-weight: bold;"><span class="style2">System</span></span><span class="style2">;</pre>
+								<pre style="margin: 0px; line-height: 13.75px;"><span style="color: rgb(0, 128, 0); font-weight: bold;">using</span> <span style="color: rgb(0, 0, 255); font-weight: bold;">System.IO</span>;</pre>
+								<pre style="margin: 0px; line-height: 13.75px;">&nbsp;</pre>
+								<pre style="margin: 0px; line-height: 13.75px;"><span style="color: rgb(0, 128, 0); font-weight: bold;">namespace</span> <span style="color: rgb(0, 0, 255); font-weight: bold;">FileApplication</span>
+{
+   <span style="color: rgb(0, 128, 0); font-weight: bold;">class</span> <span style="color: rgb(0, 0, 255); font-weight: bold;">Program</span>
+   {
+      <span style="color: rgb(0, 128, 0); font-weight: bold;">static</span> <span style="color: rgb(0, 128, 0); font-weight: bold;">void</span> <span style="color: rgb(0, 0, 255);">Main</span>(<span style="color: rgb(176, 0, 64);">string</span>[] args)
+      {
+         <span style="color: rgb(0, 128, 0); font-weight: bold;">try</span>
+         {
+            <span style="color: rgb(64, 128, 128); font-style: italic;">// Создание экземпляра класса StreamReader для чтения из файла.</span>
+            <span style="color: rgb(64, 128, 128); font-style: italic;">// Оператор using обрамляет код, где используется StreamReader.</span>
+            <span style="color: rgb(0, 128, 0); font-weight: bold;">using</span> (StreamReader sr = <span style="color: rgb(0, 128, 0); font-weight: bold;">new</span> StreamReader(<span style="color: rgb(186, 33, 33);">&quot;c:/temp/mytext.txt&quot;</span>))
+            {
+               <span style="color: rgb(176, 0, 64);">string</span> line;
+               <span style="color: rgb(64, 128, 128); font-style: italic;">// Построчное чтение файла и отображение этих строк,</span>
+               <span style="color: rgb(64, 128, 128); font-style: italic;">// пока не будет достигнут конец файла.</span>
+               <span style="color: rgb(0, 128, 0); font-weight: bold;">while</span> ((line = sr.ReadLine()) != <span style="color: rgb(0, 128, 0); font-weight: bold;">null</span>)
+                  Console.WriteLine(line);
+            }
+         }
+         <span style="color: rgb(0, 128, 0); font-weight: bold;">catch</span> (Exception e)
+         {
+            <span style="color: rgb(64, 128, 128); font-style: italic;">// Обработка исключения даст пользователю информацию,</span>
+            <span style="color: rgb(64, 128, 128); font-style: italic;">// что пошло не так.</span>
+            Console.WriteLine(<span style="color: rgb(186, 33, 33);">&quot;The file could not be read:&quot;</span>);
+            Console.WriteLine(e.Message);
+         }
+         Console.ReadKey();
+      }
+   }
+}
+</span></pre>
+				</div>
+				<p style="color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-style: normal; font-variant: normal; font-weight: 400; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+				<span style="color: rgb(128, 128, 128);">Примечание: обратите 
+				внимание, что в пути до файла используется правый слеш, что 
+				избегает необходимости экранирования символа, когда применяется 
+				правый слеш (//).</span></p>
+				<p style="font: 400 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong><span class="style2">StreamWriter</span></strong><span class="style2">. Класс StreamWriter наследуется из 
+				абстрактного класса TextWriter, который предоставляет способ 
+				записи последовательности символов. Следующая таблица описывает 
+				наиболее часто используемые методы этого класса:</span></p>
+				<table border="0" cellspacing="1" cellpadding="3" bgcolor="#8cacbb" style="color: rgb(0, 0, 0); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; font-style: italic; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); background-color: rgb(222, 231, 236);">
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												<strong>Метод</strong></td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style3">
+												Описание</td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+												<td class="style4">
+												public override void Close()</td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												Закрывает текущий объект 
+												StreamWriter и связанный с ним 
+												нижележащий поток.</td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+												<td style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);">
+												<span face="courier new, courier" style="font-family: &quot;courier new&quot;, courier;" class="style2">
+												public override void Flush()</span></td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												Очищает все буферы текущего 
+												записывающего объекта, что 
+												приводит к тому, что все 
+												хранящиеся в буфере (кэше) 
+												данные записываются в 
+												нижележащий поток.</td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+												<td style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);">
+												<span face="courier new, courier" style="font-family: &quot;courier new&quot;, courier;" class="style2">
+												public virtual void Write(bool 
+												value)</span></td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												Записывает текст, представляющий 
+												двоичное значение в строку 
+												текста или в поток (унаследовано 
+												от TextWriter).</td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+												<td style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);">
+												<span face="courier new, courier">
+												<span face="courier new, courier" style="font-family: &quot;courier new&quot;, courier;" class="style2">
+												public override void Write(char 
+												value)</span></span></td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												Записывает символ в поток.</td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+												<td style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);">
+												<span face="courier new, courier">
+												<span face="courier new, courier" style="font-family: &quot;courier new&quot;, courier;" class="style2">
+												public virtual void 
+												Write(decimal value)</span></span></td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												Записывает текстовое 
+												представление десятичного 
+												значения в строку текста или 
+												поток.</td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+												<td style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);">
+												<span face="courier new, courier">
+												<span face="courier new, courier" style="font-family: &quot;courier new&quot;, courier;" class="style2">
+												public virtual void Write(double 
+												value)</span></span></td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												Записывает текстовое 
+												представление 8-байтного 
+												значения в формате с плавающей 
+												точкой в строку текста или 
+												поток.</td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+												<td style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);">
+												<span face="courier new, courier">
+												<span face="courier new, courier" style="font-family: &quot;courier new&quot;, courier;" class="style2">
+												public virtual void Write(int 
+												value)</span></span></td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												Записывает текстовое 
+												представление 4-байтного 
+												значения целого числа со знаком 
+												в строку текста или поток.</td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+												<td style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);">
+												<span face="courier new, courier">
+												<span face="courier new, courier" style="font-family: &quot;courier new&quot;, courier;" class="style2">
+												public override void 
+												Write(string value)</span></span></td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												Записывает строку в поток.</td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+												<td style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);">
+												<span face="courier new, courier">
+												<span face="courier new, courier" style="font-family: &quot;courier new&quot;, courier;" class="style2">
+												public virtual void WriteLine()</span></span></td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												Записывает терминатор строки в 
+												строку текста или поток.</td>
+								</tr>
+				</table>
+				<p style="color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-style: normal; font-variant: normal; font-weight: 400; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+				Для получения полного списка методов обратитесь к документации 
+				C# от Microsoft.</p>
+				<p style="color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-style: normal; font-variant: normal; font-weight: 400; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+				Следующий пример демонстрирует запись файла names.txt в текущий 
+				каталог.</p>
+				<div style="font: 400 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; background: rgb(248, 248, 248); overflow: auto; width: auto; border-style: solid; border-color: gray; border-image: initial; border-width: 0.1em 0.1em 0.1em 0.8em; padding: 0.2em 0.6em;">
+								<pre style="margin: 0px; line-height: 13.75px;"><span style="color: rgb(0, 128, 0); font-weight: bold;"><span class="style2">using</span></span><span class="style2"> </span><span style="color: rgb(0, 0, 255); font-weight: bold;"><span class="style2">System</span></span><span class="style2">;</pre>
+								<pre style="margin: 0px; line-height: 13.75px;"><span style="color: rgb(0, 128, 0); font-weight: bold;">using</span> <span style="color: rgb(0, 0, 255); font-weight: bold;">System.IO</span>;</pre>
+								<pre style="margin: 0px; line-height: 13.75px;">&nbsp;</pre>
+								<pre style="margin: 0px; line-height: 13.75px;"><span style="color: rgb(0, 128, 0); font-weight: bold;">namespace</span> <span style="color: rgb(0, 0, 255); font-weight: bold;">FileApplication</span>
+{
+   <span style="color: rgb(0, 128, 0); font-weight: bold;">class</span> <span style="color: rgb(0, 0, 255); font-weight: bold;">Program</span>
+   {
+      <span style="color: rgb(0, 128, 0); font-weight: bold;">static</span> <span style="color: rgb(0, 128, 0); font-weight: bold;">void</span> <span style="color: rgb(0, 0, 255);">Main</span>(<span style="color: rgb(176, 0, 64);">string</span>[] args)
+      {
+         <span style="color: rgb(176, 0, 64);">string</span>[] names = <span style="color: rgb(0, 128, 0); font-weight: bold;">new</span> <span style="color: rgb(176, 0, 64);">string</span>[] {<span style="color: rgb(186, 33, 33);">&quot;Иван Петров&quot;</span>, <span style="color: rgb(186, 33, 33);">&quot;Козьма Прутков&quot;</span>};
+         
+         <span style="color: rgb(64, 128, 128); font-style: italic;">// Запись файла:</span>
+         <span style="color: rgb(0, 128, 0); font-weight: bold;">using</span> (StreamWriter sw = <span style="color: rgb(0, 128, 0); font-weight: bold;">new</span> StreamWriter(<span style="color: rgb(186, 33, 33);">&quot;names.txt&quot;</span>))
+         {
+            <span style="color: rgb(0, 128, 0); font-weight: bold;">foreach</span> (<span style="color: rgb(176, 0, 64);">string</span> s <span style="color: rgb(0, 128, 0); font-weight: bold;">in</span> names)
+               sw.WriteLine(s);
+         }
+         
+         <span style="color: rgb(64, 128, 128); font-style: italic;">// Чтение и отображение каждой строки из файла.</span>
+         <span style="color: rgb(176, 0, 64);">string</span> line = <span style="color: rgb(186, 33, 33);">&quot;&quot;</span>;
+         <span style="color: rgb(0, 128, 0); font-weight: bold;">using</span> (StreamReader sr = <span style="color: rgb(0, 128, 0); font-weight: bold;">new</span> StreamReader(<span style="color: rgb(186, 33, 33);">&quot;names.txt&quot;</span>))
+         {
+            <span style="color: rgb(0, 128, 0); font-weight: bold;">while</span> ((line = sr.ReadLine()) != <span style="color: rgb(0, 128, 0); font-weight: bold;">null</span>)
+               Console.WriteLine(line);
+         }
+         Console.ReadKey();
+      }
+   }
+}
+</span></pre>
+				</div>
+				<p style="color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-style: normal; font-variant: normal; font-weight: 400; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+				Когда этот код будет скомпилирован и выполнен, то он покажет в 
+				консоли следующий результат:</p>
+				<div style="border-left: 0.8em solid gray; border-right: 0.1em solid gray; border-top: 0.1em solid gray; border-bottom: 0.1em solid gray; color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; background: rgb(0, 0, 0); overflow: auto; width: auto; border-image: initial; padding: 0.2em 0.6em; font-style: normal; font-variant: normal; font-weight: 400; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style6">
+								<pre style="margin: 0px; line-height: 13.75px;"><span style="color: rgb(255, 255, 255);">Иван Петров
+Козьма Прутков</span></pre>
+				</div>
+			</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2008 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les21.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les22/7.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:09:50 GMT -->
+</html>

@@ -1,0 +1,680 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les20/2.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:08:22 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: #0000FF;
+	margin-left: 80px;
+}
+.style3 {
+	color: #800000;
+}
+.style4 {
+	color: #FF0000;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 2. Файлы Pascal-Паскаль.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p>Для каждого открываемого файла заводится отдельная файловая переменная
+Бинарные файлы с точки зрения программы на Паскале бывают типизированные и нет.
+Примеры описаний переменных, связываемых с файлами:</p>
+
+<pre class="style2"><strong>var f: file of integer; {типизированный бинарный}
+type Str20 = string[20]; {типизированный бинарный}
+</strong><strong>var f: file of Str20; {file of string определить нельзя, поскольку string имеет переменную длину!}
+</strong><strong>var f: file; {нетипизированный бинарный}
+</strong><strong>var f: Text; {текстовый}</strong></pre>
+<p class="style3"><strong>Процедуры и функции для работы с файлами через файловые переменные</strong></p>
+<p class="style4"><strong>procedure Assign(f: FileType; name: string);
+— Связывает файловую переменную f с именем файла name</strong></p>
+
+<p class="style4"><strong>procedure AssignFile(f: FileType; name: string);
+— Связывает файловую переменную f с именем файла name</strong></p>
+
+<p class="style4"><strong>procedure Close(f: FileType);
+— Закрывает файл f</strong></p>
+
+<p class="style4"><strong>procedure CloseFile(f: FileType);
+— Закрывает файл f</strong></p>
+
+<p class="style4"><strong>procedure Reset(f: Text);
+— Открывает текстовый файл f на чтение</strong></p>
+
+<p class="style4"><strong>procedure Reset(f: file of T);
+— Открывает типизированный файл f на чтение и запись</strong></p>
+
+<p class="style4"><strong>procedure Reset(f: file);
+— Открывает нетипизированный файл f на чтение и запись</strong></p>
+
+<p class="style4"><strong>procedure Rewrite(f: Text);
+— Открывает текстовый файл f на запись, обнуляя его содержимое. Если файл существовал, он обнуляется</strong></p>
+
+<p class="style4"><strong>procedure Rewrite(f: file of T);
+— Открывает типизированный файл f на чтение и запись, обнуляя его содержимое. Если файл существовал, он обнуляется</strong></p>
+
+<p class="style4"><strong>procedure Rewrite(f: file);
+— Открывает нетипизированный файл f на чтение и запись, обнуляя его содержимое. Если файл существовал, он обнуляется</strong></p>
+
+<p class="style4"><strong>procedure Append(f: Text);
+— Открывает текстовый f файл на дополнение</strong></p>
+
+<p class="style4"><strong>function Eof(f: FileType): boolean;
+— Возвращает True, если достигнут конец файла f</strong></p>
+<p class="style4"><strong>procedure Flush(f: FileType);
+— Записывает содержимое буфера файла на диск</strong></p>
+
+<p class="style4"><strong>procedure Erase(f: FileType);
+— Удаляет файл, связанный с файловой переменной f</strong></p>
+
+<p class="style4"><strong>procedure Rename(f: FileType; newname: string);
+— Переименовывает файл, связаный с файловой переменной f, давая ему имя newname</strong></p>
+
+<p class="style4"><strong>function Eoln(f: Text): boolean;
+— Возвращает True, если достигнут конец строки в текстовом файле f</strong></p>
+
+<p class="style4"><strong>function SeekEof(f: Text): boolean;
+— Пропускает пробельные символы, после чего возвращает True, если достигнут конец текстового файла f</strong></p>
+<p class="style4"><strong>function SeekEoln(f: Text): boolean;
+— Пропускает пробельные символы, после чего возвращает True, если достигнут конец строки в текстовом файле f</strong></p>
+
+<p class="style4"><strong>procedure Truncate(f: file of T);
+— Усекает типизированный файл f, отбрасывая все элементы с позиции файлового указателя</strong></p>
+
+<p class="style4"><strong>procedure Truncate(f: file);
+— Усекает нетипизированный файл f, отбрасывая все элементы с позиции файлового указателя</strong></p>
+
+<p class="style4"><strong>function FilePos(f: file of T): int64;
+— Возвращает текущую позицию файлового указателя в типизированном файле f</strong></p>
+
+<p class="style4"><strong>function FilePos(f: file): int64;
+— Возвращает текущую позицию файлового указателя в нетипизированном файле f</strong></p>
+
+<p class="style4"><strong>function FileSize(f: file of T): int64;
+— Возвращает количество элементов в типизированном файле f</strong></p>
+
+<p class="style4"><strong>function FileSize(f: file): int64;
+— Возвращает количество байт в нетипизированном файле f</strong></p>
+
+<p class="style4"><strong>procedure Seek(f: file of T; n: int64);
+— Устанавливает текущую позицию файлового указателя в типизированном файле f на элемент с номером n</strong></p>
+
+<p class="style4"><strong>procedure Seek(f: file; n: int64);
+— Устанавливает текущую позицию файлового указателя в нетипизированном файле f на байт с номером n&nbsp;</strong></p>
+                <p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				&nbsp;</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Существенной особенностью всех рассмотренных до сих пор значений 
+				производных типов является наличие в них конечного, наперед 
+				заданного числа компонент. Так, в значении многомерного массива 
+				это число можно определить, зная количество компонент по каждому 
+				измерению, а в значении записи это число определяется 
+				количеством и типом полей. Таким образом, заранее, еще до 
+				выполнения программы, по этому описанию можно выделить 
+				необходимый объем памяти машины для хранения значений переменных 
+				этих типов. Но существует определенный класс задач и 
+				определенные ситуации, когда количество компонент (пусть даже 
+				одного и того же из известных уже типов) заранее определить 
+				невозможно, оно выясняется только в процессе решения задачи. 
+				Поэтому возникает необходимость в специальном типе значений, 
+				которые представляют собой произвольные последовательности 
+				элементов одного и того же типа, причем длина этих 
+				последовательностей заранее не определяется, а конкретизируется 
+				в процессе выполнения программы. Этот тип значений получил 
+				название<span>&nbsp;</span><b style="padding: 0px; margin: 0px;">файлового 
+				типа</b>. Условно<span>&nbsp;</span><b style="padding: 0px; margin: 0px;">файл 
+				в Паскале</b><span>&nbsp;</span>можно изобразить как некоторую ленту, 
+				у которой есть начало, а конец не фиксируется. Элементы файла 
+				записываются на эту ленту последовательно друг за другом:</p>
+				<p align="center" style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; background-color: rgb(255, 255, 255);">
+				<img src="pic/new-2.png" alt="файл Паскаля (Pascal)" style="padding: 0px; margin: 0px;" /></p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				где F – имя файла, а F1, F2, F3, F4 – его элементы. Файл во 
+				многом напоминает магнитную ленту, начало которой заполнено 
+				записями, а конец пока свободен. В программировании существует 
+				несколько разновидностей файлов, отличающихся методом доступа к 
+				его компонентам:<b style="padding: 0px; margin: 0px;"><span>&nbsp;</span>файлы 
+				последовательного доступа</b><span>&nbsp;</span>и<span>&nbsp;</span><b style="padding: 0px; margin: 0px;">файлы 
+				произвольного доступа</b>.</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Простейший метод доступа состоит в том, что по файлу можно 
+				двигаться только последовательно, начиная с первого его 
+				элемента, и, кроме этого, всегда существует возможность начать 
+				просмотр файла с его начала. Таким образом, чтобы добраться до 
+				пятого элемента файла, необходимо, начав с первого элемента, 
+				пройти через предыдущие четыре. Такие файлы называют<span>&nbsp;</span><b style="padding: 0px; margin: 0px;">файлами 
+				последовательного доступа</b>. У последовательного файла 
+				доступен всегда лишь очередной элемент. Если в процессе решения 
+				задачи необходим какой-либо из предыдущих элементов, то 
+				необходимо вернуться в начало файла и последовательно пройти все 
+				его элементы до нужного.</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				<b style="padding: 0px; margin: 0px;">Файлы произвольного 
+				доступа Паскаля</b><span>&nbsp;</span>позволяют вызывать компоненты в 
+				любом порядке по их номеру.</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Важной особенностью файлов является то, что данные, содержащиеся 
+				в файле, переносятся на внешние носители. Файловый тип Паскаля – 
+				это единственный тип значений, посредством которого данные, 
+				обрабатываемые программой, могут быть получены извне, а 
+				результаты могут быть переданы во внешний мир. Это единственный 
+				тип значений, который связывает программу с внешними 
+				устройствами ЭВМ.</p>
+				<a name="pascal-files_1" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration: none; padding: 0px; margin: 0px; color: rgb(70, 122, 167); font-weight: bold; font-family: verdana, arial, sans-serif; font-size: 10px; text-align: justify; background-color: rgb(255, 255, 255);">
+				</a>
+				<h3 style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 0.5em; clear: both; font-family: &quot;trebuchet ms&quot;, arial, sans-serif; font-weight: normal; font-size: 20px; text-align: justify; background-color: rgb(255, 255, 255);">
+				Работа с файлами в Паскале</h3>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Любой файл имеет три характерные особенности. Во-первых, у него 
+				есть имя, что дает возможность программе работать одновременно с 
+				несколькими файлами. Во-вторых, он содержит компоненты одного 
+				типа. Типом компонентов может быть любой тип Паскаля, кроме 
+				файлов. Иными словами, нельзя создать «файл файлов». В-третьих, 
+				длина вновь создаваемого файла никак не оговаривается при его 
+				объявлении и ограничивается только емкостью устройств внешней 
+				памяти.</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				<b style="padding: 0px; margin: 0px;">Файловый тип или 
+				переменную файлового типа в Паскале можно задать одним из трех 
+				способов</b>:</p>
+				<div class="example hljs delphi" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 45px; overflow-x: auto; display: block; color: rgb(68, 68, 68); overflow-y: hidden !important;">
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					Type</span><span>&nbsp;</span>&lt;имя_ф_типа&gt;=<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">file</span><span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">of</span>&lt;тип_элементов&gt;;<br style="padding: 0px; margin: 0px;" />
+					&lt;имя_ф_типа&gt;=text;<br style="padding: 0px; margin: 0px;" />
+					&lt;имя_ф_типа&gt;=<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">file</span>;<br style="padding: 0px; margin: 0px;" />
+				</div>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Здесь &lt;имя_ф_типа&gt; – имя файлового типа (правильный 
+				идентификатор); File, of – зарезервированные слова (файл, из); 
+				&lt;тип_элементов&gt; – любой тип Паскаля, кроме файлов.</p>
+				<b class="exampleTitle" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 2px 6px; margin: 0px; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; border-image: initial; border-bottom: none; display: inline; background: rgb(100, 149, 237) url('Pic/new-1.png'); font-weight: bold; font-size: 8pt; color: white; font-family: verdana, arial, sans-serif; text-align: justify;">
+				Пример описания файлового типа в Паскале</b><div class="example hljs delphi" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 180px; overflow-x: auto; display: block; color: rgb(68, 68, 68); overflow-y: hidden !important;">
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					Type</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;&nbsp;Product=<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">record</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">Name</span>:<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">string</span>;<br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Code: word;<br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">End</span>;<br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;&nbsp;Text80=<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">file</span><span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">of</span><span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">string</span>[<span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">80</span>];<br style="padding: 0px; margin: 0px;" />
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					Var</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;&nbsp;F1:<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">file</span><span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">of</span><span>&nbsp;</span>char;<br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;&nbsp;F2: text;<br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;&nbsp;F3:<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">file</span>;<br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;&nbsp;F4: Text80;<br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;&nbsp;F5:<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">file</span><span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">of</span><span>&nbsp;</span>Product;<br style="padding: 0px; margin: 0px;" />
+				</div>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				В зависимости от способа объявления можно выделить три вида 
+				файлов Паскаля:</p>
+				<ul style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0.5em 0px 1em; list-style: none; font-size: 8pt; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+					<li style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('Pic/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; font-size: 10.6667px;">
+					типизированные файлы Паскаля(задаются предложением file 
+					of..);</li>
+					<li style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('Pic/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; font-size: 10.6667px;">
+					текстовые файлы Паскаля(определяются типом text);</li>
+					<li style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('Pic/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; font-size: 10.6667px;">
+					нетипизированные файлы Паскаля(определяются типом file).</li>
+				</ul>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Следует помнить, что физические файлы на магнитных дисках и 
+				переменные файлового типа в программе на Паскале – объекты 
+				различные. Переменные файлового типа в Паскале могут 
+				соответствовать не только физическим файлам, но и логическим 
+				устройствам, связанным с вводом/выводом информации. Например, 
+				клавиатуре и экрану соответствуют файлы со стандартными именами 
+				Input, Output.</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Как известно, каждый тип данных в Паскале, вообще говоря, 
+				определяет множество значений и множество операций над 
+				значениями этого типа. Однако над значениями файлового типа 
+				Паскаля не определены какие-либо операции, в том числе операции 
+				отношения и присваивания, так что даже такое простое действие, 
+				как присваивание значения одной файловой переменной другой 
+				файловой переменной, имеющей тот же самый тип, запрещено. Все 
+				операции могут производиться лишь с элементами (компонентами) 
+				файлов. Естественно, что множество операций над компонентами 
+				файла определяется типом компонент.</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Переменные файлового типа используются в программе только в 
+				качестве параметров собственных и стандартных процедур и 
+				функций.</p>
+				<a name="pascal-files_2" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration: none; padding: 0px; margin: 0px; color: rgb(70, 122, 167); font-weight: bold; font-family: verdana, arial, sans-serif; font-size: 10px; text-align: justify; background-color: rgb(255, 255, 255);">
+				</a>
+				<h3 style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 0.5em; clear: both; font-family: &quot;trebuchet ms&quot;, arial, sans-serif; font-weight: normal; font-size: 20px; text-align: justify; background-color: rgb(255, 255, 255);">
+				Основные процедуры и функции для работы с файлами</h3>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				<b style="padding: 0px; margin: 0px;">1.До начала работы с 
+				файлами в Паскале необходимо установить связь между файловой 
+				переменной и именем физического дискового файла:</b></p>
+				<div class="example hljs javascript" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 15px; overflow-x: auto; display: block; color: rgb(68, 68, 68); overflow-y: hidden !important;">
+					Assign(<span class="xml" style="padding: 0px; margin: 0px;"><span class="hljs-tag" style="padding: 0px; margin: 0px;">&lt;<span class="hljs-name" style="padding: 0px; margin: 0px; font-weight: bold;">файловая_переменная</span>&gt;</span>,<span>&nbsp;</span><span class="hljs-tag" style="padding: 0px; margin: 0px;">&lt;<span class="hljs-name" style="padding: 0px; margin: 0px; font-weight: bold;">имя_дискового_файла</span>&gt;</span>)</span></div>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Следует помнить, что имя дискового файла при необходимости 
+				должно содержать путь доступа к этому файлу, включая имя 
+				дисковода. При этом имя дискового файла – строковая величина, 
+				т.е. должна быть заключена в апострофы. Например:</p>
+				<b class="exampleTitle" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 2px 6px; margin: 0px; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; border-image: initial; border-bottom: none; display: inline; background: rgb(100, 149, 237) url('Pic/new-1.png'); font-weight: bold; font-size: 8pt; color: white; font-family: verdana, arial, sans-serif; text-align: justify;">
+				Пример процедуры Assign в Паскале</b><div class="example hljs nginx" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 15px; overflow-x: auto; display: block; color: rgb(68, 68, 68); overflow-y: hidden !important;">
+					<span class="hljs-attribute" style="padding: 0px; margin: 0px; font-weight: bold;">
+					Assign</span><span>&nbsp;</span>(chf,<span>&nbsp;</span><span class="hljs-string" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">&#39;G:\Home\ 
+					Student\ Lang\ Pascal\ primer.dat&#39;</span>);</div>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Если путь не указан, то программа будет искать файл в своем 
+				рабочем каталоге и по указанным путям в autoexec.bat.</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Вместо имени дискового файла можно указать имя логического 
+				устройства, каждое из которых имеет стандартное имя:</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				CON – консоль, т.е. клавиатура-дисплей;</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				PRN – принтер. Если к компьютеру подключено несколько принтеров, 
+				доступ к ним осуществляется по именам LPT1, LPT2, LPT3.</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Не разрешается связывать с одним физическим файлом более одной 
+				файловой переменной.</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				<b style="padding: 0px; margin: 0px;">2.После окончания работы с 
+				файлами на Паскале, они должны быть закрыты.</b></p>
+				<div class="example hljs javascript" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 15px; overflow-x: auto; display: block; color: rgb(68, 68, 68); overflow-y: hidden !important;">
+					Close(<span class="xml" style="padding: 0px; margin: 0px;"><span class="hljs-tag" style="padding: 0px; margin: 0px;">&lt;<span class="hljs-name" style="padding: 0px; margin: 0px; font-weight: bold;">список</span><span>&nbsp;</span>файловых 
+					переменных&gt;</span>);</span></div>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				При выполнении этой процедуры закрываются соответствующие 
+				физические файлы и фиксируются сделанные изменения. Следует 
+				иметь в виду, что при выполнении процедуры close связь файловой 
+				переменной с именем дискового файла, установленная ранее 
+				процедурой assign, сохраняется, следовательно, файл можно 
+				повторно открыть без дополнительного использования процедуры 
+				assign.</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Работа с файлами заключается, в основном, в записи элементов в 
+				файл и считывании их из файла. Для удобства описания этих 
+				процедур введем понятие указателя, который определяет позицию 
+				доступа, т.е. ту позицию файла, которая доступна для чтения (в 
+				режиме чтения), либо для записи (в режиме записи). Позиция 
+				файла, следующая за последней компонентой файла (или первая 
+				позиция пустого файла) помечается специальным маркером, который 
+				отличается от любых компонент файла. Благодаря этому маркеру 
+				определяется конец файла.</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				<b style="padding: 0px; margin: 0px;">3.Подготовка к записи в 
+				файл Паскаля</b></p>
+				<div class="example hljs javascript" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 15px; overflow-x: auto; display: block; color: rgb(68, 68, 68); overflow-y: hidden !important;">
+					Rewrite(<span class="xml" style="padding: 0px; margin: 0px;"><span class="hljs-tag" style="padding: 0px; margin: 0px;">&lt;<span class="hljs-name" style="padding: 0px; margin: 0px; font-weight: bold;">имя_ф_переменной</span>&gt;</span>);</span></div>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Процедура Rewrite(f) (где f – имя файловой переменной) 
+				устанавливает файл с именем f в начальное состояние режима 
+				записи, в результате чего указатель устанавливается на первую 
+				позицию файла. Если ранее в этот файл были записаны какие-либо 
+				элементы, то они становятся недоступными. Результат выполнения 
+				процедуры rewrite(f); выглядит следующим образом:</p>
+				<p align="center" style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; background-color: rgb(255, 255, 255);">
+				<img src="pic/new-5.png" alt="файл Паскаля (Pascal)" style="padding: 0px; margin: 0px;" /></p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				<b style="padding: 0px; margin: 0px;">4.Запись в файл Паскаля</b></p>
+				<div class="example hljs javascript" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 15px; overflow-x: auto; display: block; color: rgb(68, 68, 68); overflow-y: hidden !important;">
+					Write(<span class="xml" style="padding: 0px; margin: 0px;"><span class="hljs-tag" style="padding: 0px; margin: 0px;">&lt;<span class="hljs-name" style="padding: 0px; margin: 0px; font-weight: bold;">имя_ф_переменной</span>&gt;</span>,<span>&nbsp;</span><span class="hljs-tag" style="padding: 0px; margin: 0px;">&lt;<span class="hljs-name" style="padding: 0px; margin: 0px; font-weight: bold;">список</span><span>&nbsp;</span>записи&gt;</span>);</span></div>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				При выполнении процедуры write(f, x) в ту позицию, на которую 
+				показывает указатель, записывается очередная компонента, после 
+				чего указатель смещается на следующую позицию. Естественно, тип 
+				выражения х должен совпадать с типом компонент файла. Результат 
+				действия процедуры write(f, x) можно изобразить так:</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Состояние файла f до выполнения процедуры</p>
+				<p align="center" style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; background-color: rgb(255, 255, 255);">
+				<img src="pic/new-6.png" alt="файл Паскаля (Pascal)" style="padding: 0px; margin: 0px;" /></p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Состояние файла f после выполнения процедуры</p>
+				<p align="center" style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; background-color: rgb(255, 255, 255);">
+				<img src="pic/new-7.png" alt="файл Паскаля (Pascal)" style="padding: 0px; margin: 0px;" /></p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Для типизированных файлов выполняется следующее утверждение: 
+				если в списке записи перечислено несколько выражений, то они 
+				записываются в файл, начиная с первой доступной позиции, а 
+				указатель смещается на число позиций, равное числу записываемых 
+				выражений.</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				<b style="padding: 0px; margin: 0px;">5.Подготовка файла к 
+				чтению Паскаля</b></p>
+				<div class="example hljs sql" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 15px; overflow-x: auto; display: block; color: rgb(68, 68, 68); overflow-y: hidden !important;">
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					Reset</span>(&lt;имя_ф_переменной&gt;);</div>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Эта процедура ищет на диске уже существующий файл и переводит 
+				его в режим чтения, устанавливая указатель на первую позицию 
+				файла. Результат выполнения этой процедуры можно изобразить 
+				следующим образом:</p>
+				<p align="center" style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; background-color: rgb(255, 255, 255);">
+				<img src="pic/new-8.png" alt="файл Паскаля (Pascal)" style="padding: 0px; margin: 0px;" /></p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Если происходит попытка открыть для чтения не существующий еще 
+				на диске файл, то возникает ошибка ввода/вывода, и выполнение 
+				программы будет прервано.</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				<b style="padding: 0px; margin: 0px;">6.Чтение из файла в 
+				Паскале</b></p>
+				<div class="example hljs javascript" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 15px; overflow-x: auto; display: block; color: rgb(68, 68, 68); overflow-y: hidden !important;">
+					Read(<span class="xml" style="padding: 0px; margin: 0px;"><span class="hljs-tag" style="padding: 0px; margin: 0px;">&lt;<span class="hljs-name" style="padding: 0px; margin: 0px; font-weight: bold;">имя_ф_переменной</span>&gt;</span>,<span class="hljs-tag" style="padding: 0px; margin: 0px;">&lt;<span class="hljs-name" style="padding: 0px; margin: 0px; font-weight: bold;">список</span><span>&nbsp;</span>переменных&gt;</span>);</span></div>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Рассмотрим результат действия процедуры read(f, v):</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Состояние файла f и переменной v до выполнения процедуры:</p>
+				<p align="center" style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; background-color: rgb(255, 255, 255);">
+				<img src="pic/new-9.png" alt="файл Паскаля (Pascal)" style="padding: 0px; margin: 0px;" /></p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Состояние файла f и переменной v после выполнения процедуры:</p>
+				<p align="center" style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; background-color: rgb(255, 255, 255);">
+				<img src="pic/new-11.png" alt="файл Паскаля (Pascal)" style="padding: 0px; margin: 0px;" /></p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Для типизированных файлов при выполнении процедуры read() 
+				последовательно считывается, начиная с текущей позиции 
+				указателя, число компонент файла, соответствующее числу 
+				переменных в списке, а указатель смещается на это число позиций.</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				В большинстве задач, в которых используются файлы, необходимо 
+				последовательно перебрать компоненты и произвести их обработку. 
+				В таком случае необходимо иметь возможность определять, 
+				указывает ли указатель на какую-то компоненту файла, или он уже 
+				вышел за пределы файла и указывает на маркер конца файла.</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				<b style="padding: 0px; margin: 0px;">7.Функция определения 
+				достижения конца файла в Паскале</b></p>
+				<div class="example hljs javascript" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 15px; overflow-x: auto; display: block; color: rgb(68, 68, 68); overflow-y: hidden !important;">
+					Eof(<span class="xml" style="padding: 0px; margin: 0px;"><span class="hljs-tag" style="padding: 0px; margin: 0px;">&lt;<span class="hljs-name" style="padding: 0px; margin: 0px; font-weight: bold;">имя_ф_переменной</span>&gt;</span>);</span></div>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Название этой функции является сложносокращенным словом от end 
+				of file. Значение этой функции имеет значение true, если конец 
+				файла уже достигнут, т.е. указатель стоит на позиции, следующей 
+				за последней компонентой файла. В противном случае значение 
+				функции – false.</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				<b style="padding: 0px; margin: 0px;">8.Изменение имени файла в 
+				Паскале</b></p>
+				<div class="example hljs sql" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 15px; overflow-x: auto; display: block; color: rgb(68, 68, 68); overflow-y: hidden !important;">
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					Rename</span>(&lt;имя_ф_переменной&gt;, &lt;новое_имя_файла&gt;);</div>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Здесь новое_ имя_ файла – строковое выражение, содержащее новое 
+				имя файла, возможно с указанием пути доступа к нему.</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Перед выполнением этой процедуры необходимо закрыть файл, если 
+				он ранее был открыт.</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				<b style="padding: 0px; margin: 0px;">9.Уничтожение файла в 
+				Паскале</b></p>
+				<div class="example hljs javascript" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 15px; overflow-x: auto; display: block; color: rgb(68, 68, 68); overflow-y: hidden !important;">
+					Erase(<span class="xml" style="padding: 0px; margin: 0px;"><span class="hljs-tag" style="padding: 0px; margin: 0px;">&lt;<span class="hljs-name" style="padding: 0px; margin: 0px; font-weight: bold;">имя_ф_переменной</span>&gt;</span>);</span></div>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Перед выполнением этой процедуры необходимо закрыть файл, если 
+				он ранее был открыт.</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				<b style="padding: 0px; margin: 0px;">10.Уничтожение части файла 
+				от текущей позиции указателя до конца в Паскале</b></p>
+				<div class="example hljs sql" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 15px; overflow-x: auto; display: block; color: rgb(68, 68, 68); overflow-y: hidden !important;">
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					Truncate</span>(&lt;имя_ф_переменной&gt;);</div>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				<b style="padding: 0px; margin: 0px;">11.Файл Паскаля может быть 
+				открыт для добавления записей в конец файла</b></p>
+				<div class="example hljs javascript" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 15px; overflow-x: auto; display: block; color: rgb(68, 68, 68); overflow-y: hidden !important;">
+					Append(<span class="xml" style="padding: 0px; margin: 0px;"><span class="hljs-tag" style="padding: 0px; margin: 0px;">&lt;<span class="hljs-name" style="padding: 0px; margin: 0px; font-weight: bold;">имя_ф_переменной</span>&gt;</span>);</span></div>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				<b style="padding: 0px; margin: 0px;">Типизированные файлы 
+				Паскаля.</b><span>&nbsp;</span>Длина любого компонента 
+				типизированного файла строго постоянна, т.к. тип компонент 
+				определяется при описании, а, следовательно, определяется объем 
+				памяти, отводимый под каждую компоненту. Это дает возможность 
+				организовать прямой доступ к каждой компоненте (т.е. доступ по 
+				порядковому номеру).</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Перед первым обращением к процедурам ввода/вывода указатель 
+				файла стоит в его начале и указывает на его первый компонент с 
+				номером 0. После каждого чтения или записи указатель сдвигается 
+				к следующему компоненту файла. Переменные и выражения в списках 
+				ввода и вывода в процедурах<span>&nbsp;</span><b style="padding: 0px; margin: 0px;">read() 
+				и write()</b><span>&nbsp;</span>должны иметь тот же тип, что и 
+				компоненты файла Паскаля. Если этих переменных или выражений в 
+				списке несколько, то указатель будет смещаться после каждой 
+				операции обмена данными на соответствующее число позиций.</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Для облегчения перемещения указателя по файлу и доступа к 
+				компонентам типизированного файла существуют специальные 
+				процедуры и функции:</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				<b style="padding: 0px; margin: 0px;">fileSize</b>(&lt;имя_ф_переменной&gt;) 
+				– функция Паскаля, определяющая число компонентов в файле;</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				<b style="padding: 0px; margin: 0px;">filePos</b>(&lt;имя_ф_переменной&gt;) 
+				– функция Паскаля, значением которой является текущая позиция 
+				указателя;</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				<b style="padding: 0px; margin: 0px;">seek</b>(&lt;имя_ф_переменной&gt;,n) 
+				– процедура Паскаля, смещающая указатель на компоненту файла с 
+				номером n. Так, процедура seek(&lt;имя_ф_переменной&gt;,0) установит 
+				указатель в начало файла, а процедура seek(&lt;имя_ф_переменной&gt;, 
+				FileSize(&lt;имя_ф_переменной&gt;)) установит указатель на признак 
+				конца файла.</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				<b style="padding: 0px; margin: 0px;">Текстовые файлы Паскаля.</b><span>&nbsp;</span>Текстовые 
+				файлы предназначены для хранения текстовой информации. Именно в 
+				таких файлах хранятся, например, исходные тексты программ. 
+				Компоненты текстовых файлов могут иметь переменную длину, что 
+				существенно влияет на характер работы с ними. Доступ к каждой 
+				строке текстового файла Паскаля возможен лишь последовательно, 
+				начиная с первой. К текстовым файлам применимы процедуры assign, 
+				reset, rewrite, read, write и функция eof. Процедуры и функции 
+				seek, filepos, filesize к ним не применяются. При создании 
+				текстового файла в конце каждой записи (строки) ставится 
+				специальный признак EOLN(end of line – конец строки). Для 
+				определения достижения конца строки существует одноименная 
+				логическая функция EOLN(&lt;имя_ф_переменной&gt;), которая принимает 
+				значение true, если конец строки достигнут.</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Форма обращения к процедурам write и read для текстовых и 
+				типизированных файлов одинакова, но их использование 
+				принципиально различается.</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				В списке записываемых в текстовый файл элементов могут 
+				чередоваться в произвольном порядке числовые, символьные, 
+				строковые выражения. При этом строковые и символьные элементы 
+				записываются непосредственно, а числовые из машинной формы 
+				автоматически преобразуются в строку символов.</p>
+				<ul style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0.5em 0px 1em; list-style: none; font-size: 8pt; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+					<li style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('Pic/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; font-size: 10.6667px;">
+					текстовые файлы удобнее для восприятия человеком, а 
+					типизированные соответствуют машинному представлению 
+					объектов;</li>
+					<li style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('Pic/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; font-size: 10.6667px;">
+					текстовые файлы, как правило, длиннее типизированных;</li>
+					<li style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('Pic/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; font-size: 10.6667px;">
+					длина текстовых файлов зависит не только от количества 
+					записей, но и от величины переменных.</li>
+				</ul>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Так, в типизированном файле числа 6, 65 и 165 как целые будут 
+				представлены одним и тем же числом байт. А в текстовых файлах, 
+				после преобразования в строку, они будут иметь разную длину. Это 
+				вызывает проблемы при расшифровке текстовых файлов. Пусть в 
+				текстовый файл пишутся подряд целые числа (типа byte): 2, 12, 2, 
+				128. Тогда в файле образуется запись 2122128. При попытке 
+				прочитать из такого файла переменную типа byte программа 
+				прочитает всю строку и выдаст сообщение об ошибке, связанной с 
+				переполнением диапазона.</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Но, вообще-то, такой файл не понимает не только машина, а и 
+				человек.</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Чтобы избежать этой ошибки, достаточно вставить при записи в 
+				файл после каждой переменной пробел. Тогда программа при каждом 
+				чтении берет символы от пробела до пробела и правильно 
+				преобразует текстовое представление в число.</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Кроме процедур read и write при работе с текстовыми файлами 
+				используются их разновидности readln и writeln. Отличие 
+				заключается в том, что процедура writeln после записи заданного 
+				списка записывает в файл специальный маркер конца строки. Этот 
+				признак воспринимается как переход к новой строке. Процедура 
+				readln после считывания заданного списка ищет в файле следующий 
+				признак конца строки и подготавливается к чтению с начала 
+				следующей строки.</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				<b style="padding: 0px; margin: 0px;">Пример решения задачи с 
+				файлами Паскаля</b></p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Пусть нам необходимо сформировать текстовый файл с помощью 
+				Паскаля, а затем переписать из данного файла во второй только те 
+				строки, которые начинаются с буквы «А» или «а».</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				<b style="padding: 0px; margin: 0px;">Пояснения:</b><span>&nbsp;</span>нам 
+				понадобятся две файловые переменные f1 и f2, поскольку оба файла 
+				текстовые, то тип переменных будет text. Задача разбивается на 
+				два этапа: первый – формирование первого файла; второй – чтение 
+				первого файла и формирование второго.</p>
+				<p style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; font-family: verdana, arial, sans-serif; text-align: justify; background-color: rgb(255, 255, 255);">
+				Для завершенности решения задачи есть смысл добавить еще одну 
+				часть, которая в задаче явно не указана – вывод на экран 
+				содержимого второго файла.</p>
+				<a name="pascal-files_3" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration: none; padding: 0px; margin: 0px; color: rgb(70, 122, 167); font-weight: bold; font-family: verdana, arial, sans-serif; font-size: 10px; text-align: justify; background-color: rgb(255, 255, 255);">
+				</a>
+				<b class="exampleTitle" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 2px 6px; margin: 0px; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; border-image: initial; border-bottom: none; display: inline; background: rgb(100, 149, 237) url('Pic/new-1.png'); font-weight: bold; font-size: 8pt; color: white; font-family: verdana, arial, sans-serif; text-align: justify;">
+				Пример процедуры Assign Паскаля</b><div class="example hljs delphi" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 690px; overflow-x: auto; display: block; color: rgb(68, 68, 68); overflow-y: hidden !important;">
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					Program</span><span>&nbsp;</span>primer;<br style="padding: 0px; margin: 0px;" />
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					Var</span><span>&nbsp;</span>f1,f2:text;<br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp; I,n: integer;<br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp; S:<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">string</span>;<br style="padding: 0px; margin: 0px;" />
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					Begin</span><br style="padding: 0px; margin: 0px;" />
+					<span class="hljs-comment" style="padding: 0px; margin: 0px; color: rgb(136, 136, 136);">
+					{формируем первый файл}</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp; Assign(f1,<span>&nbsp;</span><span class="hljs-string" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">&#39;file1.txt&#39;</span>);<span>&nbsp;</span><span class="hljs-comment" style="padding: 0px; margin: 0px; color: rgb(136, 136, 136);">{устанавливаем 
+					связь файловой переменной с физическим файлом на диске}</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp; Rewrite(f1);&nbsp;<span>&nbsp;</span><span class="hljs-comment" style="padding: 0px; margin: 0px; color: rgb(136, 136, 136);">{открываем 
+					файл для записи}</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp; Readln(n)<span>&nbsp;</span><span class="hljs-comment" style="padding: 0px; margin: 0px; color: rgb(136, 136, 136);">{определим 
+					количество вводимых строк}</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">for</span><span>&nbsp;</span>i:=<span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">1</span><span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">to</span><span>&nbsp;</span>n<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">do</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">begin</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; readln(s);<span>&nbsp;</span><span class="hljs-comment" style="padding: 0px; margin: 0px; color: rgb(136, 136, 136);">{вводим 
+					с клавиатуры строки}</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; writeln(f1,s);<span>&nbsp;</span><span class="hljs-comment" style="padding: 0px; margin: 0px; color: rgb(136, 136, 136);">{записываем 
+					последовательно строки в файл}</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">end</span>;<br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp; close(f1);<span>&nbsp;</span><span class="hljs-comment" style="padding: 0px; margin: 0px; color: rgb(136, 136, 136);">{заканчиваем 
+					работу с первым файлом, теперь на диске существует файл с 
+					именем file1.txt, содержащий введенные нами строки. На этом 
+					программу можно закончить, работу с файлом можно продолжить 
+					в другой программе, в другое время, но мы продолжим}</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;<br style="padding: 0px; margin: 0px;" />
+					<span class="hljs-comment" style="padding: 0px; margin: 0px; color: rgb(136, 136, 136);">
+					{часть вторая: чтение из первого файла и формирование 
+					второго}</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp; Reset(f1);<span>&nbsp;</span><span class="hljs-comment" style="padding: 0px; margin: 0px; color: rgb(136, 136, 136);">{открываем 
+					первый файл для чтения}</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp; Assign(f2,<span>&nbsp;</span><span class="hljs-string" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">&#39;file2.txt&#39;</span>);<span>&nbsp;</span><span class="hljs-comment" style="padding: 0px; margin: 0px; color: rgb(136, 136, 136);">{устанавливаем 
+					связь второй файловой переменной с физическим файлом}</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp; Rewrite(f2);<span>&nbsp;</span><span class="hljs-comment" style="padding: 0px; margin: 0px; color: rgb(136, 136, 136);">{открываем 
+					второй файл для записи}</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;<br style="padding: 0px; margin: 0px;" />
+					<span class="hljs-comment" style="padding: 0px; margin: 0px; color: rgb(136, 136, 136);">
+					{Дальше необходимо последовательно считывать строки из 
+					первого файла, проверять выполнение условия и записывать 
+					нужные строки во второй файл. Для чтения из текстового файла 
+					рекомендуется использовать цикл по условию «пока не конец 
+					файла»}</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">While</span><span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">not</span><span>&nbsp;</span>eof(f1)<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">do</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">Begin</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Readln(f1,s);<span class="hljs-comment" style="padding: 0px; margin: 0px; color: rgb(136, 136, 136);">{считываем 
+					очередную строку из первого файла}</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">If</span><span>&nbsp;</span>(s[<span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">1</span>]=<span class="hljs-string" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">&#39;A&#39;</span>)<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">or</span><span>&nbsp;</span>(s[<span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">1</span>]=<span class="hljs-string" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">&#39;a&#39;</span>)<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">then</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Writeln(f2,s);<span>&nbsp;</span><span class="hljs-comment" style="padding: 0px; margin: 0px; color: rgb(136, 136, 136);">{записываем 
+					во второй файл строки, удовлетворяющие условию}</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">End</span>;<br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp; Close(f1,f2);<span>&nbsp;</span><span class="hljs-comment" style="padding: 0px; margin: 0px; color: rgb(136, 136, 136);">{заканчиваем 
+					работу с файлами}</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;<br style="padding: 0px; margin: 0px;" />
+					<span class="hljs-comment" style="padding: 0px; margin: 0px; color: rgb(136, 136, 136);">
+					{часть третья: выводим на экран второй файл}</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp; Writeln;<br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp; Writeln(<span class="hljs-string" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">&#39;Второй 
+					файл содержит строки:&#39;</span>);<br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp; Reset(f2);<span>&nbsp;</span><span class="hljs-comment" style="padding: 0px; margin: 0px; color: rgb(136, 136, 136);">{открываем 
+					второй файл для чтения}</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">While</span><span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">not</span><span>&nbsp;</span>eof(f2)<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">do</span><span>&nbsp;</span><span class="hljs-comment" style="padding: 0px; margin: 0px; color: rgb(136, 136, 136);">{пока 
+					не конец второго файла}</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">Begin</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Readln(f2,s);<span class="hljs-comment" style="padding: 0px; margin: 0px; color: rgb(136, 136, 136);">{считываем 
+					очередную строку из второго файла}</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Writeln(s);<span>&nbsp;</span><span class="hljs-comment" style="padding: 0px; margin: 0px; color: rgb(136, 136, 136);">{выводим 
+					строку на экран}</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">End</span>;<br style="padding: 0px; margin: 0px;" />
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					End</span>.</div>
+                </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les20.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les20/2.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:08:28 GMT -->
+</html>

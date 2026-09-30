@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les42/6.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:49:16 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: #0000FF;
+	font-size: small;
+}
+.style3 {
+	margin-left: 40px;
+}
+.style4 {
+	color: rgb(0, 0, 255);
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 1. Коллекция Класс ArrayList.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <div class="content" style="box-sizing: border-box; margin: 0px; border: 0px; padding: 0px 15px; color: rgb(34, 34, 34); font-family: &quot;Times New Roman&quot;; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<h3 class="solution-text" style="box-sizing: border-box; margin: 0px; border: 0px; font-weight: bolder; line-height: 37.908px; color: rgb(53, 66, 81);">
+					Формулировка задачи:</h3>
+				</div>
+				<div class="form-group" style="box-sizing: border-box; margin: 0px 0px 15px; border: 0px; color: rgb(34, 34, 34); font-family: &quot;Times New Roman&quot;; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<div class="solution-description" style="box-sizing: border-box; margin: 0px; border: 0px; overflow-wrap: break-word; padding: 0px 15px;">
+						Решить задачу используя 
+						класс ArrayList. На основе данных входного файла 
+						<span class="style4"><strong>составить автомобильную ведомость</strong></span>, включив следующие 
+						данные: марка автомобиля, номер автомобиля, фамилия его 
+						владельца, год приобретения, пробег. Вывести в новый 
+						файл информацию об автомобилях, выпущенных ранее 
+						определенного года, отсортировав их по пробегу.</div>
+				</div>
+                <pre class="style3"><span class="style2"><strong>//Решение задачи: «Класс ArrayList»
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.IO;
+using System.Text.RegularExpressions;
+using System.Diagnostics;
+</strong> <strong>
+namespace Laba_16
+</strong>{<strong>
+    class Program
+    {
+        public class myReverserClass : IComparer
+        {
+            int IComparer.Compare(Object x, Object y)
+            {
+                return ((new CaseInsensitiveComparer()).Compare(x, y));
+            }
+        }
+</strong> <strong>
+        struct Trans : IComparable
+        {
+            string Marka;
+            string Number;
+            string Famil;
+            int Year;
+            public int Probeg;
+</strong> <strong>
+            public Trans(string Marka, string Number, string Famil, int Year, int Probeg)
+            {
+                this.Marka = Marka;
+                this.Number = Number;
+                this.Famil = Famil;
+                this.Year = Year;
+                this.Probeg = Probeg;
+            }
+            public void write(int k, StreamWriter file)
+            {
+                if (k >= this.Year)
+                    file.WriteLine("{0}   {1}   {2}   {3}   {4}", this.Marka, this.Number, this.Famil, this.Year, this.Probeg);
+            }
+            public override string ToString()   //Преобразование ToString()
+            {
+                return "" + Marka + "  " + Number + "  " + Famil + "  " + Year.ToString() + "  " + Probeg.ToString() + "";
+            }
+            public int CompareTo(object obj) // сортировка
+            {
+                Trans b = (Trans)obj;
+                if (this.Probeg == b.Probeg) return 0;
+                else if (this.Probeg > b.Probeg) return 1;
+                else return -1;
+            }
+        }
+</strong> <strong>
+        static void Main(string[] args)
+        {
+            ArrayList array = new ArrayList();
+            array.Add(new Trans("Audi R8", "7777 EA-7", "Петров", 2010, 2000));
+            array.Add(new Trans("Lambargini", "3333 EA-3", "Сидоров", 2009, 100000));
+            array.Add(new Trans("VAZ 2101", "6666 EA-6", "Иванов", 1970, 1000));
+</strong> <strong>
+            foreach (Trans element in array)
+                Console.WriteLine(element.ToString());
+</strong> <strong>
+            IComparer myComparer = new myReverserClass();
+</strong> <strong>
+            array.Sort(myComparer);
+</strong> <strong>
+            foreach (Trans element in array)
+                Console.WriteLine(element.ToString());
+        }
+    }
+</strong></span>}</pre>
+				<p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les42.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les42/6.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:49:16 GMT -->
+</html>

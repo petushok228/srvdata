@@ -1,0 +1,374 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les52/4.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 12:06:57 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: small;
+}
+    .style3 {
+	color: #FF0000;
+}
+.style4 {
+	color: #0000FF;
+}
+.style5 {
+	margin-left: 40px;
+}
+.style6 {
+	color: #800000;
+}
+.style7 {
+	margin-left: 80px;
+}
+.style8 {
+	font-size: small;
+	color: #800000;
+}
+    .style9 {
+	color: #0000FF;
+	margin-left: 40px;
+}
+.style10 {
+	color: #800000;
+	margin-left: 40px;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 4. Геттер и сеттер в Python.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p><span class="style8"><strong>Дескриптор</strong> — это объектовый атрибут с поведением, определяемым методами в его классе. Если просто — это способ, с помощью которого объект может контролировать доступ к его атрибутам, используя специально определенные методы __get__, __set__, и __delete__. Если говорить еще проще — дескрипторы позволяют задавать точки доступа к атрибутам объекта, добавляя дополнительную логику, когда атрибут читается, записывается или удаляется.</p><p>
+<strong>Основные методы</strong> </p>
+				<p>
+Протокол дескриптора в Python определяется наличием методов __get__, __set__ и __delete__ в классе. Эти методы позволяют объектам управлять тем, как значения атрибутов извлекаются, устанавливаются или удаляются. Также существует необязательный метод __set_name__, который позволяет дескриптору узнавать имя атрибута, к которому он присвоен в классе.</span></p>
+                <p class="style2">
+</p>
+				<p class="style2">В Python геттеры и сеттеры не то же самое, что в других объектно-ориентированных языках программирования. В основном, основной целью использования геттеров и сеттеров в объектно-ориентированных программах 
+				<span class="style3"><strong>является обеспечение инкапсуляции данных</strong></span>. Приватные переменные в Python на самом деле не являются скрытыми полями, как в других объектно-ориентированных языках. Геттеры и сеттеры в Python часто используются при:
+</p>
+				<ul class="style4">
+					<li><span class="style2">Мы используем геттеры и сеттеры для 
+					<span class="style3"><strong>добавления логики валидации</strong></span>, связанной с получением и установкой значений.</li>
+					<li><span class="style3"><strong>Чтобы избежать прямого доступа к полю класса</strong></span>, т.е. Внешний пользователь не может получить прямой доступ к приватным переменным или изменить их.</li>
+				</ul>
+				<p class="style4">
+<strong>Использование штатной функции для достижения поведения геттеров и сеттеров</strong></p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Так вот, чтобы указать программисту (пользователю класса), чтобы 
+				он не обращался напрямую к атрибутам, их следует делать 
+				«закрытыми». Что это такое? Смотрите, в Python возможны 
+				следующие варианты доступа к данным:</p>
+				<ul style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+								<li>attribute (без одного или двух подчеркиваний 
+								вначале) – публичное свойство (<b>public</b>);</li>
+								<li>_attribute (с одним подчеркиванием) – режим 
+								доступа<span>&nbsp;</span><b>protected</b><span>&nbsp;</span>(служит 
+								для обращения внутри класса и во всех его 
+								дочерних классах)</li>
+								<li>__attribute (с двумя подчеркиваниями) – 
+								режим доступа<span>&nbsp;</span><b>private</b><span>&nbsp;</span>(служит 
+								для обращения только внутри класса).</li>
+				</ul>
+				<p class="style4">
+&nbsp;</p><p>
+
+Для достижения свойств геттеров и сеттеров, если мы определим нормальные методы и методы, это не будет отражать какое-либо производство. Напримерget()set()</p><p>
+</p><pre class="style5">
+
+
+<span class="style4"><strong>
+# Python program showing a use 
+# of get() and set() method in 
+# normal function 
+  
+class Geek: 
+    def __init__(self, age = 0): 
+         self._age = age 
+      
+    # getter method 
+    def </span><span class="style3">get_age</span><span class="style4">(self): 
+        return self._age 
+      
+    # setter method 
+    def </span><span class="style3">set_age</span><span class="style4">(self, x): 
+        self._age = x 
+  
+raj = Geek() 
+  
+# setting the age using setter 
+raj.set_age(21) 
+  
+# retrieving age using getter 
+print(raj.get_age()) 
+  
+print(raj._age) </span></strong></pre><p>
+Выпуск:</p><pre class="style7">
+<span class="style6"><strong>21
+21</strong></span></pre><p>
+В приведенном коде приведенные выше функции представлены как обычные функции и не требуют никаких затрат в качестве геттеров и сеттеров, для достижения такой функции в Python есть специальная функция.<span class="style6"><strong>get_age()&nbsp; set_age() property()
+</strong></span>
+</p><p>
+Использование функции property() для достижения поведения геттеров и сеттеров
+</p><p>
+В Python встроена функция, которая создает и возвращает свойства объекта. Свойства объекта имеют три метода: getter(), setter() и delete(). Функция в Python имеет четыре аргумента и является преобразованием для получения значения атрибута. — Функция для установки значения атрибута. — Функция для удаления значения атрибута. Создает строку документации для атрибута. Свойства объекта имеют три метода: , , и для указаний, и по отдельности. Напримерproperty()property() property(fget, fset, fdel, doc)fgetfsetfdeldocgetter()setter()delete()fgetfsetfdel
+</p><pre class="style5">
+
+
+
+<span class="style4"><strong># Python program showing a 
+# use of property() function 
+  
+class Geeks: 
+     def __init__(self): 
+          self._age = 0
+       
+     # function to get value of _age 
+     def get_age(self): 
+         print(&quot;<span lang="ru">вызывается метод </span>get&quot;) 
+         return self._age 
+       
+     # function to set value of _age 
+     def set_age(self, a): 
+         print(&quot;</strong></span><span class="style2"><span class="style4"><strong><span lang="ru">вызывается метод </span>set</strong></span></span><span class="style4"><strong>") 
+         self._age = a 
+  
+     # function to delete _age attribute 
+     def del_age(self): 
+         del self._age 
+     
+     age = property(get_age, set_age, del_age)  
+  
+mark = Geeks() 
+  
+</strong><strong>mark.age = 10
+  
+print(mark.age)</strong></span> </pre><p>
+Выпуск:</p><pre class="style5">
+<span class="style6"><strong>метод сеттера называется
+метод получения называется</strong></span>
+10</pre><p>
+В приведенном выше коде есть только один оператор print at, но вывод состоит из трех строк из метода установки, вызываемого в, и метода получения, вызываемого в . Следовательно — это объект-свойство, которое помогает обеспечить безопасный доступ к приватной переменной.line #25set_age()line #23get_age()line #25age
+</p><p>
+Использование декораторов @property для достижения результатов геттеров и сеттеров
+</p><p>
+В предыдущем методе мы использовали функцию для достижения поведения геттеров и сеттеров. Однако, как упоминалось ранее в этом посте, геттеры и сеттеры также используются для проверки получения и установки атрибутов значений. Существует еще один способ реализации функции свойства — использование декоратора . Python @property — один из встроенных декораторов. Основная цель любого декоратора — изменить методы или атрибуты вашего класса таким образом, чтобы пользователю вашего класса не нужно было вносить какие-либо изменения в их код. Напримерproperty()
+</p><pre class="style5">
+
+
+
+<span class="style4"><strong># Python program showing the use of 
+# @property 
+
+class Geeks: 
+def __init__(self): 
+</strong><strong>self._age = 0
+
+# using property decorator 
+# a getter function 
+@property
+def age(self): 
+print(&quot;</strong></span><span class="style2"><span class="style4"><strong><span lang="ru">вызывается метод </span>get</strong></span></span><span class="style4"><strong>&quot;) 
+return self._age 
+
+# a setter function 
+</strong>@<strong>age.setter 
+def age(self, a): 
+</span><span class="style6">if(a &lt; 18):</span><span class="style4"> 
+raise ValueError(&quot;</span></strong><span class="style6"><span style="white-space: pre-wrap;"><strong>К </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="0:5" style="white-space: pre-wrap;"><strong>сожалению</strong></span><span style="white-space: pre-wrap;"><strong>, </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="6:3" style="white-space: pre-wrap;"><strong>ваш</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="10:3" style="white-space: pre-wrap;"><strong>возраст</strong></span><span style="white-space: pre-wrap;"><strong> не </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="17:5" style="white-space: pre-wrap;"><strong>соответствует</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="23:11" style="white-space: pre-wrap;"><strong>критериям</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="35:8" style="white-space: pre-wrap;"><strong>отбора</strong></span></span><span class="style4"><strong>&quot;) 
+print(&quot;</strong></span><span class="style2"><span class="style4"><strong><span lang="ru">вызывается метод </span>set</strong></span></span><span class="style4"><strong>&quot;) 
+</strong><strong>self._age = a 
+
+mark = Geeks() 
+
+</strong><strong>mark.age = 19
+
+print(mark.age) </strong></span></pre><p>
+Выпуск:</p><pre>
+
+метод сеттера называется
+метод получения называется
+19</pre><p>
+В приведенном выше коде понятно, как использовать декоратор для создания геттеров и сеттеров в Pythonic. применяется как проверка кода, что приводит к тому, что если мы пытаемся элементарно определить возраст со значением меньше 18, таким образом, любой вид проверки может быть применен в функциях геттера или сеттера .@propertyLine 15-16ValueError
+</p><p class="style4">
+
+<strong>Использование свойств вместо геттеров и сеттеров: способ Python </strong> </p>
+				<p>Представим, что у нас есть такой класс:</p>
+				<pre class="style5">
+
+<span class="style4"><strong>class Person:
+    def __init__(self, name, surname):
+        self.name = name
+        self.surname = surname</strong></span></pre><p>
+Что нам делать, если мы захотим иметь возможность получить еще и полное имя (имя+фамилию) объекта?</p><p>
+
+Мы могли бы в инициализаторе добавить строчку self.full_name = name + ' ' + surname. Но если впоследствии имя или фамилия поменяются, полное имя устареет, и его нужно будет не забыть поменять.
+</p><p>
+Также мы могли бы добавить метод с именем вроде get_full_name, который бы возвращал полное имя. Но и такой вариант не идеален, ведь нам хочется работать с полным именем, как с простым атрибутом-переменной.
+</p><p>
+Оказывается, что в Python есть средство, позволяющее получить атрибут, значение которого вычисляется динамически, то есть во время обращения к атрибуту. Речь идет о свойствах.
+</p><p>
+Добавим в класс свойство и посмотрим на его использование:
+</p><pre class="style9">
+<strong>class Person:
+    def __init__(self, name, surname):
+        self.name = name
+        self.surname = surname
+    <span class="style3">@property</span>
+    def full_name(self):
+        return self.name + ' ' + self.surname
+
+tom = Person('Thomas', 'Smith')
+</strong><strong>tom.full_name  # 'Thomas Smith'</strong></pre><p>
+full_name выглядит как утка, то есть как атрибут! Но вычисляется динамически. И если мы поменяем name, то full_name также изменится:
+</p><pre class="style9">
+<strong>tom.name = 'Alice'
+</strong><strong>tom.full_name  # 'Alice Smith'</strong></pre><p>
+Как вы можете видеть, свойство объявляется как метод без параметров (кроме self, естественно), декорированный с помощью property. Такой метод, возвращающий динамически вычисляемое значение, называется геттером (getter).
+</p><p class="style4">
+<strong>Сеттер</strong></p><p>
+Атрибутам пространства имен можно присваивать значения, но что делать, если атрибут — свойство? Если вы попытаетесь присвоить значение свойству, у которого один лишь getter, вы получите ошибку "AttributeError: can't set attribute".
+</p><p>
+Чтобы иметь возможность присвоить значение свойству, нужно использовать сеттер (setter). Сеттер — это тоже метод, который принимает новое значение для атрибута и как-то его обрабатывает. Чтобы метод стал сеттером, его тоже нужно соответствующим образом декорировать. Если у вас уже есть геттер, вы можете сделать так:
+</p><pre class="style9">
+<strong>class Person:
+    def __init__(self, name, surname):
+        self.name = name
+        self.surname = surname
+
+    <span class="style3">@property</span>
+    def full_name(self):
+        return self.name + ' ' + self.surname
+
+    # сеттер для свойства full_name
+   <span class="style3"> @full_name.setter</span>
+    def full_name(self, new):
+        self.name, self.surname = new.split(' ')</strong></pre><p>
+Теперь свойству full_name можно присваивать новое полное имя. В итоге оно будет разделено по пробелу на две части, первая из которых станет новым именем, а вторая — фамилией. Пример:
+</p><pre class="style9">
+<strong>tom = Person('Thomas', 'Smith')
+</strong><strong>tom.full_name  # 'Thomas Smith'
+</strong><strong>tom.full_name = 'Alice Cooper'
+tom.name  # 'Alice'
+</strong><strong>tom.surname  # 'Cooper'</strong></pre><p>
+Сеттеры часто используют для того, чтобы проверить корректность нового значения или произвести какие-то его преобразования перед фактическим сохранением в другие атрибуты.
+</p><p class="style4">
+<strong>Делитер</strong></p><p>
+Кроме геттеров и сеттеров, в Python существует еще один важный метод для управления атрибутами классов — это делитеры (deleter). Этот метод предоставляет дополнительный уровень контроля над тем, как атрибуты класса удаляются.
+</p><p>
+<span class="style4"><strong>Делитер — это особый метод в классе, который вызывается при удалении атрибута</strong></span>. Как правило, удаление атрибута - это нечастая операция, и в большинстве случаев мы можем обойтись без явного определения делитера. Тем не менее, зная о его существовании, мы можем контролировать процесс удаления атрибутов, например, очищать связанные ресурсы или 
+<span class="style3"><strong>выполнять некоторую логику очистки</strong></span>.
+</p><p>
+В нашем примере с классом Person, если мы решим реализовать делитер для свойства full_name, то его можно использовать для удаления имени и фамилии. Давайте посмотрим, как это работает:
+</p><pre>
+class Person:
+    def __init__(self, name, surname):
+        self.name = name
+        self.surname = surname
+
+    <span class="style3"><strong>@property</strong></span>
+    def full_name(self):
+        return self.name + ' ' + self.surname
+
+    <span class="style3"><strong>@full_name.setter</strong></span>
+    def full_name(self, new):
+        self.name, self.surname = new.split(' ')
+
+    <span class="style3"><strong>@full_name.deleter</strong></span>
+    def full_name(self):
+        print("Удаляем имя и фамилию!")
+        self.name = None
+        self.surname = None</pre><p>
+Теперь при удалении свойства full_name будет вызываться наш делитер, который устанавливает свойствам name и surname значение None, тем самым "удаляя" эти значения. Пример:
+</p><pre class="style10">
+<strong>tom = Person('Thomas', 'Smith')
+</strong><strong>tom.full_name  # 'Thomas Smith'
+del tom.full_name  # Удаляем имя и фамилию
+tom.name       # None
+</strong><strong>tom.surname    # None</pere></strong><p>
+Использование делитера особенно полезно в случаях, когда необходимо управлять удалением важных или связанных данных, или выполнять освобождение ресурсов (как, например, закрытие файлов или сетевых соединений) в момент уничтожения объекта или его свойств.
+</p><p>
+Декоратор property</p><p>
+Если посмотреть в документацию к декоратору property, то можно увидеть такую сигнатуру:
+</p><pre class="style10">
+<strong>property(fget=None, fset=None, fdel=None, doc=None)</strong></pre><p>
+Первые три аргумента позволяют задать getter, setter и deleter, а аргумент doc позволяет указать docstring. В такой форме property удобно использовать, когда вы уже имеете готовые функции, которые хотите просто "упаковать" в свойство:
+</p><pre class="style9">
+<strong>def get_full_name(self):
+    ...
+
+def set_full_name(self, new):
+    ...
+
+class Person:
+    ...
+    full_name = property(
+        fget=get_full_name,
+        fset=set_full_name,
+        doc='A full name of person'
+    )</strong></pre>
+				<p>
+
+&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les52.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les52/4.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 12:06:57 GMT -->
+</html>

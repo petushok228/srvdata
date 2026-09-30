@@ -1,0 +1,549 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les5/11.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 10:41:19 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: medium;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 11. Операции и выражения в Pascal </td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <h4 style="margin: 0px; padding: 0px; font-weight: bold; font-size: 14.4px; line-height: normal !important; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Арифметические операции</h4>
+				<p xmlns:edi="http://www.intuit.ru/2010/edi" id="id_116" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Как мы уже упоминали, для каждого типа данных определены 
+				действия, применимые к его значениям. Например, если переменная 
+				относится к<span>&nbsp;</span><a name="keyword35"></a><span class="keyword" style="font-style: oblique;">порядковому 
+				типу</span><span>&nbsp;</span>данных, то она может фигурировать в 
+				качестве аргумента стандартных функций<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">ord()</span>,<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">pred()</span><span>&nbsp;</span>и<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">succ()</span><span>&nbsp;</span>(см. 
+				п. &quot;<a name="keyword36"></a><span class="keyword" style="font-style: oblique;">Совместимость 
+				типов</span><span>&nbsp;</span>данных&quot; ниже). А к вещественным типам 
+				эти функции применить невозможно.</p>
+				<div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_116" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="http://www.intuit.ru/2010/edi" id="id_120" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Итак, поговорим теперь об операциях - стандартных действиях, 
+				разрешенных для переменных того или иного<span>&nbsp;</span><a name="keyword37"></a><span class="keyword" style="font-style: oblique;">базового 
+				типа данных</span>. Основу будут составлять<span>&nbsp;</span><a name="keyword-context4"></a><span class="keyword_def" style="font-style: oblique; font-weight: bold;"><a name="keyword38"></a><span class="keyword" style="font-style: oblique;">арифметические 
+				операции</span></span>, но, конечно же, мы не забудем и о<span>&nbsp;</span><a name="keyword39"></a><span class="keyword" style="font-style: oblique;">логическом 
+				типе</span><span>&nbsp;</span>данных (операции, определенные для 
+				значений<span>&nbsp;</span><a name="keyword40"></a><span class="keyword" style="font-style: oblique;">символьного 
+				типа</span>, будут подробно рассмотрены в лекции 5).</p>
+				<div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_120" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="http://www.intuit.ru/2010/edi" id="id_121" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<b>Замечание</b>: Все перечисленные ниже операции (за 
+				исключением унарных &#39;-&#39; и not) требуют двух операндов.</p>
+				<div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_121" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<ol id="id_122" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li xmlns:edi="http://www.intuit.ru/2010/edi" style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+								Логические операции (and, or, not,<span>&nbsp;</span><a name="keyword41"></a><span class="keyword" style="font-style: oblique;">xor</span>) 
+								применимы только к значениям типа<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">boolean</span>. 
+								Их результатом также служат величины типа<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">boolean</span>. 
+								Приведем таблицы значений для этих операций:<div class="xml_table_env" id="id_236" style="padding: 0px; margin: 0px;">
+												<a name="table."></a>
+												<table border="0" class="xml_table" cellpadding="2" cellspacing="1" style="border-collapse: separate !important; margin: 0px; width: auto !important; padding: 0px;  border: 0px;">
+																<tbody style="border: 0px; padding: 0px; margin: 0px; ">
+																				<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																								<th bgcolor="#d8d8d8" style="text-align: center; padding: 0px; border: 0px;  margin: 0px;">Оператор</th>
+																								<th bgcolor="#d8d8d8" style="text-align: center; padding: 0px; border: 0px;  margin: 0px;">Операнд 1</th>
+																								<th bgcolor="#d8d8d8" style="text-align: center; padding: 0px; border: 0px;  margin: 0px;">Операнд 2</th>
+																								<th bgcolor="#d8d8d8" style="text-align: center; padding: 0px; border: 0px;  margin: 0px;">Результат</th>
+																				</tr>
+																				<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																								<td rowspan="2" bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;"><b>not</b></td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">false</td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">-</td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">true</td>
+																				</tr>
+																				<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">true</td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">-</td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">false</td>
+																				</tr>
+																				<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																								<td rowspan="4" bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;"><b>and</b></td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">false</td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">false</td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">false</td>
+																				</tr>
+																				<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">false</td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">true</td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">false</td>
+																				</tr>
+																				<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">true</td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">false</td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">false</td>
+																				</tr>
+																				<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">true</td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">true</td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">true</td>
+																				</tr>
+																				<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																								<td rowspan="4" bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;"><b>or</b></td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">false</td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">false</td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">false</td>
+																				</tr>
+																				<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">false</td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">true</td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">true</td>
+																				</tr>
+																				<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">true</td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">false</td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">true</td>
+																				</tr>
+																				<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">true</td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">true</td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">true</td>
+																				</tr>
+																				<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																								<td rowspan="4" bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;"><b>xor</b></td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">false</td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">false</td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">false</td>
+																				</tr>
+																				<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">false</td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">true</td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">true</td>
+																				</tr>
+																				<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">true</td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">false</td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">true</td>
+																				</tr>
+																				<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">true</td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">true</td>
+																								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">false</td>
+																				</tr>
+												</table>
+								</div>
+								<div class="lecture_mark" id="mark_236" style="padding: 0px; margin: 0px;">
+								</div>
+								</li>
+								<li xmlns:edi="http://www.intuit.ru/2010/edi" style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+								Операции сравнения (=, &lt;&gt;, &gt;, &lt;, &lt;=, &gt;=) 
+								применимы ко всем<span>&nbsp;</span><a name="keyword42"></a><span class="keyword" style="font-style: oblique;">базовым 
+								типам</span>. Их результатами также являются 
+								значения типа<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">boolean</span>.</li>
+								<li xmlns:edi="http://www.intuit.ru/2010/edi" style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+								Операции целочисленной арифметики применимы, как 
+								легко догадаться, только к<span>&nbsp;</span><a name="keyword43"></a><span class="keyword" style="font-style: oblique;">целым 
+								типам</span>. Их результат - целое число, тип 
+								которого зависит от типов операндов.<p id="id_140" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px;">
+								<span class="style2" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+								a div b<span>&nbsp;</span></span><span class="style2">- деление а на b 
+								нацело (не нужно, наверное, напоминать, что 
+								деление на 0 запрещено, поэтому в таких случаях 
+								операция выдает ошибку). Результат будет 
+								принадлежать к типу данных, общему для тех 
+								типов, к которым принадлежат операнды. Например, 
+								(shortint div byte = integer). Пояснить это 
+								можно так: integer - это минимальный тип, 
+								подмножествами которого являются одновременно и 
+								byte, и shortint.</span></p>
+								<div class="lecture_mark" id="mark_140" style="padding: 0px; margin: 0px;">
+								</div>
+								<p id="id_142" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px;">
+								<span class="style2" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+								a mod b<span>&nbsp;</span></span><span class="style2">- взятие остатка при 
+								делении а на b нацело. Тип результата, как и в 
+								предыдущем случае, определяется типами 
+								операндов, а 0 является запрещенным значением 
+								для b. В отличие от математической операции mod, 
+								результатом которой всегда является 
+								неотрицательное число, знак результата 
+								&quot;программистской&quot; операции mod определяется 
+								знаком ее первого операнда. Таким образом, если 
+								в математике (-2 mod 5)=3, то у нас (-2 mod 5)= 
+								-2.</span></p>
+								<div class="lecture_mark" id="mark_142" style="padding: 0px; margin: 0px;">
+								</div>
+								<p id="id_144" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px;">
+								<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+								a<span><span class="style2">&nbsp;</span></span><span class="style2"><a name="keyword44"></a><span class="keyword" style="font-style: oblique;">shl</span></span><span><span class="style2">&nbsp;</span></span><span class="style2">k</span></span><span><span class="style2">&nbsp;</span></span><span class="style2">- 
+								сдвиг значения а на k битов влево (это 
+								эквивалентно умножению значения переменной а на 
+								2<sup style="display: inline-block;">k</sup>). 
+								Результат операции будет иметь тот же тип, что и 
+								первый ее операнд (а).</span></p>
+								<div class="lecture_mark" id="mark_144" style="padding: 0px; margin: 0px;">
+								</div>
+								<p id="id_146" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px;">
+								<span class="style2" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+								a shr k<span>&nbsp;</span></span><span class="style2">- сдвиг значения а 
+								на k битов вправо (это эквивалентно делению 
+								значения переменной а на 2<sup style="display: inline-block;">k</sup><span>&nbsp;</span>нацело). 
+								Результат операции будет иметь тот же тип, что и 
+								первый ее операнд (а).</span></p>
+								<div class="lecture_mark" id="mark_146" style="padding: 0px; margin: 0px;">
+								</div>
+								<p id="id_148" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px;">
+								<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+								and,or,not,<a name="keyword45"></a><span class="keyword" style="font-style: oblique;">xor</span></span><span>&nbsp;</span>- 
+								операции двоичной арифметики, работающие с 
+								битами<span>&nbsp;</span><a name="keyword46"></a><span class="keyword" style="font-style: oblique;">двоичного 
+								представления</span><span>&nbsp;</span>целых чисел, 
+								по тем же правилам, что и соответствующие им 
+								логические операции.</p>
+								<div class="lecture_mark" id="mark_148" style="padding: 0px; margin: 0px;">
+								</div>
+								</li>
+								<li xmlns:edi="http://www.intuit.ru/2010/edi" style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+								Операции общей арифметики (+, -, *, /) применимы 
+								ко всем арифметическим типам. Их результат 
+								принадлежит к типу данных, общему для обоих 
+								операндов (исключение составляет только операция 
+								дробного деления /, результат которой всегда 
+								относится к вещественному типу данных).</li>
+				</ol>
+				<div class="lecture_mark" id="mark_122" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<a xmlns:edi="http://www.intuit.ru/2010/edi" name="sect9" style="color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</a>
+				<h4 style="margin: 0px; padding: 0px; font-weight: bold; font-size: 14.4px; line-height: normal !important; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Другие операции</h4>
+				<p xmlns:edi="http://www.intuit.ru/2010/edi" id="id_151" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Помимо арифметических, существуют и другие операции, специфичные 
+				для значений некоторых стандартных типов данных языка Pascal. 
+				Эти операции мы рассмотрим в соответствующих разделах:</p>
+				<div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_151" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="http://www.intuit.ru/2010/edi" class="example" id="id_152" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<pre>#, in, +, *, [] : см. лекцию 5
+@, ^ 		: см. лекцию 10</pre>
+				</div>
+				<div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_152" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<a xmlns:edi="http://www.intuit.ru/2010/edi" name="sect10" style="color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</a>
+				<h4 style="margin: 0px; padding: 0px; font-weight: bold; font-size: 14.4px; line-height: normal !important; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Стандартные арифметические функции</h4>
+				<p xmlns:edi="http://www.intuit.ru/2010/edi" id="id_153" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				К арифметическим операциям примыкают и стандартные<span>&nbsp;</span><a name="keyword-context5"></a><span class="keyword_def" style="font-style: oblique; font-weight: bold;"><a name="keyword47"></a><span class="keyword" style="font-style: oblique;">арифметические 
+				функции</span></span>. Их список с кратким описанием мы приводим 
+				в таблице.</p>
+				<div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_153" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="http://www.intuit.ru/2010/edi" class="xml_table_env" id="id_154" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<a name="table."></a>
+								<table border="0" class="xml_table" cellpadding="2" cellspacing="1" style="border-collapse: separate !important; margin: 0px; width: auto !important; padding: 0px;  border: 0px;">
+												<tbody style="border: 0px; padding: 0px; margin: 0px; ">
+																<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																				<th bgcolor="#d8d8d8" style="text-align: center; padding: 0px; border: 0px;  margin: 0px;"></th>
+																				<th bgcolor="#d8d8d8" style="text-align: center; padding: 0px; border: 0px;  margin: 0px;">Описание</th>
+																				<th bgcolor="#d8d8d8" style="text-align: center; padding: 0px; border: 0px;  margin: 0px;">Тип аргумента</th>
+																				<th bgcolor="#d8d8d8" style="text-align: center; padding: 0px; border: 0px;  margin: 0px;">Тип результата<sup style="display: inline-block;">4</sup></th>
+																</tr>
+																<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;"><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">abs(x)</span></td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Абсолютное значение (модуль) числа</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Арифметический</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Совпадает с типом аргумента</td>
+																</tr>
+																<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;"><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">arctan(x)</span></td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Арктангенс (в радианах)</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Арифметический</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Вещественный</td>
+																</tr>
+																<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;"><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">cos(x)</span></td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Косинус (в радианах)</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Арифметический</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Вещественный</td>
+																</tr>
+																<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;"><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;"><a name="keyword48"></a><span class="keyword" style="font-style: oblique;">exp</span>(x)</span></td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;"><a name="keyword49"></a><span class="keyword" style="font-style: oblique;">Экспонента</span><span>&nbsp;</span>(e<sup style="display: inline-block;">x</sup>)</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Арифметический</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Вещественный</td>
+																</tr>
+																<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;"><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">frac(x)</span></td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Взятие дробной части числа</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Арифметический</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Вещественный</td>
+																</tr>
+																<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;"><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">int(x)</span></td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Взятие целой части числа</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Арифметический</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Вещественный</td>
+																</tr>
+																<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;"><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">ln(x)</span></td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;"><a name="keyword50"></a><span class="keyword" style="font-style: oblique;">Натуральный логарифм</span><span>&nbsp;</span>(по основанию e)</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Арифметический</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Вещественный</td>
+																</tr>
+																<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;"><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;"><a name="keyword51"></a><span class="keyword" style="font-style: oblique;">odd</span>(x)</span></td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Проверка нечетности числа</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Целый</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;"><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">boolean</span></td>
+																</tr>
+																<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;"><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">pi</span></td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Значение числа<span>&nbsp;</span><img src="Pic/4f08e3dba63dc6d40b22952c7a9dac6d.png" alt="\pi" style="border: none; display: inline;" /></td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">-</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Вещественный</td>
+																</tr>
+																<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;"><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">round(x)</span></td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Округление к ближайшему целому</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Арифметический</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Целый</td>
+																</tr>
+																<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;"><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">trunc(x)</span></td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Округление &quot;вниз&quot; - к ближайшему меньшему целому</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Арифметический</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Целый</td>
+																</tr>
+																<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;"><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">sin(x)</span></td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Синус (в радианах)</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Арифметический</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Вещественный</td>
+																</tr>
+																<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;"><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">sqr(x)</span></td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Возведение в квадрат</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Арифметический</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Вещественный</td>
+																</tr>
+																<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;"><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">sqrt(x)</span></td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Извлечение квадратного корня</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Арифметический</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Вещественный</td>
+																</tr>
+								</table>
+				</div>
+				<div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_154" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<a xmlns:edi="http://www.intuit.ru/2010/edi" name="sect11" style="color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</a>
+				<h4 style="margin: 0px; padding: 0px; font-weight: bold; font-size: 14.4px; line-height: normal !important; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Арифметические выражения</h4>
+				<p xmlns:edi="http://www.intuit.ru/2010/edi" id="id_171" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Все арифметические операции можно сочетать друг с другом - 
+				конечно, с учетом допустимых для их операндов типов данных.</p>
+				<div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_171" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="http://www.intuit.ru/2010/edi" id="id_172" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В роли операндов любой операции могут выступать переменные, 
+				константы, вызовы функций или выражения, построенные на основе 
+				других операций. Все вместе и называется выражением. Определение 
+				выражения через выражение не должно вас смущать, ведь 
+				рекурсивное задание конструкций вообще свойственно 
+				программированию (см. лекцию 9).</p>
+				<div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_172" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="http://www.intuit.ru/2010/edi" id="id_173" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Примеры<span>&nbsp;</span><span class="keyword_def" style="font-style: oblique; font-weight: bold;"><a name="keyword52"></a><span class="keyword" style="font-style: oblique;">арифметических 
+				выражений</span></span>:</p>
+				<div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_173" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="http://www.intuit.ru/2010/edi" id="id_174" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+				(x&lt;0) and (y&gt;0)</span><span>&nbsp;</span>- выражение, результат 
+				которого принадлежит к<span>&nbsp;</span><a name="keyword53"></a><span class="keyword" style="font-style: oblique;">типу 
+				boolean</span>;</p>
+				<div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_174" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="http://www.intuit.ru/2010/edi" id="id_176" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+				z<span>&nbsp;</span><a name="keyword54"></a><span class="keyword" style="font-style: oblique;">shl</span><span>&nbsp;</span>abs(k)</span><span>&nbsp;</span>- 
+				вторым операндом является вызов стандартной функции;</p>
+				<div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_176" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="http://www.intuit.ru/2010/edi" id="id_178" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+				(x mod k) + min(a,b) + trunc(z)</span><span>&nbsp;</span>- сочетание 
+				арифметических операций и вызовов функций;</p>
+				<div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_178" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="http://www.intuit.ru/2010/edi" id="id_180" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+				<a name="keyword55"></a>
+				<span class="keyword" style="font-style: oblique;">odd</span>(round(x/abs(x)))</span><span>&nbsp;</span>- 
+				&quot;многоэтажное&quot; выражение.</p>
+				<div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_180" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<a xmlns:edi="http://www.intuit.ru/2010/edi" name="sect12" style="color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</a>
+				<h4 style="margin: 0px; padding: 0px; font-weight: bold; font-size: 14.4px; line-height: normal !important; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Полнота вычислений</h4>
+				<p xmlns:edi="http://www.intuit.ru/2010/edi" id="id_182" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В общем случае вычисление сложного логического выражения 
+				прекращается в тот момент, когда его окончательное значение 
+				становится понятным (например, true or (b&lt;0)). Зачастую такой 
+				подход позволяет заметно сэкономить на выполнении &quot;лишних&quot; 
+				действий. Скажем, если есть некоторая сложно вычислимая функция 
+				my_func, вызов которой входит в состав выражения</p>
+				<div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_182" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="http://www.intuit.ru/2010/edi" class="example" id="id_183" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<pre>if (x&lt;=0) and my_func(z+12),</pre>
+				</div>
+				<div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_183" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="http://www.intuit.ru/2010/edi" id="id_184" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				то для случая, когда x положительно, этих сложных вычислений 
+				можно избежать.</p>
+				<div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_184" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="http://www.intuit.ru/2010/edi" id="id_185" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Однако включение директивы {$B+} принудит компилятор завершить 
+				эти вычисления даже в таком случае. Ее выключение {$B-} вернет 
+				обычную схему вычислений.</p>
+				<div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_185" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<a xmlns:edi="http://www.intuit.ru/2010/edi" name="sect13" style="color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</a>
+				<h4 style="margin: 0px; padding: 0px; font-weight: bold; font-size: 14.4px; line-height: normal !important; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Порядок вычислений</h4>
+				<p xmlns:edi="http://www.intuit.ru/2010/edi" id="id_186" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если в выражении расставлены скобки, то вычисления производятся 
+				в порядке, известном всем еще с начальной школы: чем меньше 
+				глубина вложенности скобок, тем позже вычисляется заключенная в 
+				них операция. Если же скобок нет, то сначала вычисляются 
+				значения операций с более высоким приоритетом, затем - с менее 
+				высоким. Несколько подряд идущих операций одного<span>&nbsp;</span><span class="keyword_def" style="font-style: oblique; font-weight: bold;"><a name="keyword56"></a><span class="keyword" style="font-style: oblique;">приоритета</span></span><span>&nbsp;</span>вычисляются 
+				в последовательности &quot;слева направо&quot;.</p>
+				<div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_186" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="http://www.intuit.ru/2010/edi" class="xml_table_env" id="id_187" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<a name="table.2.1"></a>
+								<table border="0" class="xml_table" cellpadding="2" cellspacing="1" style="border-collapse: separate !important; margin: 0px; width: auto !important; padding: 0px;  border: 0px;">
+												<caption>Таблица 2.1. Приоритеты 
+												(для всех) операций языка Pascal</caption>
+												<tbody style="border: 0px; padding: 0px; margin: 0px; ">
+																<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																				<th bgcolor="#d8d8d8" style="text-align: center; padding: 0px; border: 0px;  margin: 0px;"></th>
+																				<th bgcolor="#d8d8d8" style="text-align: center; padding: 0px; border: 0px;  margin: 0px;">Операции</th>
+																				<th bgcolor="#d8d8d8" style="text-align: center; padding: 0px; border: 0px;  margin: 0px;">Приоритет</th>
+																</tr>
+																<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Унарные<sup style="display: inline-block;">5</sup><span>&nbsp;</span>операции</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">+, -, not, @, ^, #</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Первый(высший)</td>
+																</tr>
+																<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Операции, эквивалентные умножению</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">*, /, div, mod, and,<span>&nbsp;</span><a name="keyword59"></a><span class="keyword" style="font-style: oblique;">shl</span>, shr</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Второй</td>
+																</tr>
+																<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Операции, эквивалентные сложению</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">+,-, or,<span>&nbsp;</span><a name="keyword60"></a><span class="keyword" style="font-style: oblique;">xor</span></td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Третий</td>
+																</tr>
+																<tr style="border: 0px; padding: 0px; margin: 0px; ">
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Операции сравнения</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">=, &lt;&gt;, &gt;, &lt;, &lt;=, &gt;=, in</td>
+																				<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">Четвертый</td>
+																</tr>
+								</table>
+				</div>
+				<div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_187" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="http://www.intuit.ru/2010/edi" id="id_189" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<b>Замечание</b>: Вызов любой функции имеет более высокий 
+				приоритет, чем все внешние относительно этого вызова операции. 
+				Выражения, являющиеся аргументами вызываемой функции, 
+				вычисляются в момент вызова (см. лекцию 8).</p>
+				<div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_189" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="http://www.intuit.ru/2010/edi" id="id_190" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Примеры выражений (с указанием последовательности вычислений) 
+				для целых чисел:</p>
+				<div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_190" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="http://www.intuit.ru/2010/edi" class="example" id="id_191" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<pre>a + b * c / d			(результат принадлежит к вещест-
+  3   1   2		 	венному типу данных);
+
+a * not b or c * d = 0		(результат принадлежит к логиче-
+  2  1     4   3   5		 скому типу данных);
+
+-min(a + b, 0) * (a + 1) 	(результат принадлежит к целочис-
+3 2    1       5    4		 ленному типу данных).</pre>
+				</div>
+                <p></p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les5.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les5/11.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 10:41:19 GMT -->
+</html>

@@ -1,0 +1,452 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les500/5.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 10:38:38 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: rgb(255, 0, 0);
+	font-size: medium;
+}
+.style3 {
+	font-size: medium;
+}
+.style6 {
+	color: rgb(255, 0, 0);
+}
+    .style7 {
+	font-size: medium;
+	margin-left: 40px;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 5. Ссылочные типы (reference type) в C#.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <h2 class="wp-block-heading" id="main-menu-1" style="margin: 24px 0px; padding: 0px; border: 0px; font-size: 18px; vertical-align: baseline; clear: both; line-height: 1.6; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Ссылочные типы (reference type) в C#</h2>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Большая часть всех типов в C# – это ссылочные типы. Это 
+				относится как к стандартной библиотеке (BCL), так и к 
+				пользовательским типам, которые вы будете создавать в своей 
+				работе.</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Главная особенность ссылочных типов в том, что&nbsp;<em style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">память 
+				для их хранения выделяется в куче</em>, удаляются они от туда 
+				(из кучи) сборщиком мусора. Создаются экземпляры таких типов с 
+				помощью оператора&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">new</code>, 
+				который возвращает адрес в памяти, где будет размещен объект.</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Среди ссылочных типов есть три типа, которые являются&nbsp;<strong style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">примитивными</strong>. 
+				Примитивные типы поддерживает компилятор, благодаря этому можно 
+				использовать сокращенный вариант объявления и инициализации их 
+				экземпляров.</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Примитивные ссылочные типы:</p>
+				<figure class="wp-block-table" style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; display: block; overflow-x: auto; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<table style="margin: 0px 0px 24px; padding: 0px; border-width: 0px 0px 1px; border-top-style: initial; border-right-style: initial; border-bottom-style: solid; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-bottom-color: rgb(237, 237, 237); border-left-color: initial; border-image: initial; font-size: 14pt; vertical-align: baseline; border-collapse: collapse; border-spacing: 0px; width: 685.338px; color: rgb(117, 117, 117); line-height: 2;">
+					<thead style="margin: 0px; padding: 0px; border-width: 0px 0px 3px; border-top-style: initial; border-right-style: initial; border-bottom-style: solid; border-left-style: initial; border-color: initial; border-image: initial; font-size: 14pt; vertical-align: baseline;">
+						<tr style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline;">
+							<th style="margin: 0px; padding: 7px 14px; border: 1px solid; font-size: 11px; vertical-align: baseline; font-weight: bold; text-align: left; background: rgb(241, 241, 241); line-height: 2.18182; text-transform: uppercase; color: rgb(99, 99, 99);">
+							Ключевое слово в C#</th>
+							<th style="margin: 0px; padding: 7px 14px; border: 1px solid; font-size: 11px; vertical-align: baseline; font-weight: bold; text-align: left; background: rgb(241, 241, 241); line-height: 2.18182; text-transform: uppercase; color: rgb(99, 99, 99);">
+							.NET тип</th>
+						</tr>
+					</thead>
+					<tbody style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline;">
+						<tr style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline;">
+							<td style="border-top: 1px solid rgb(237, 237, 237); margin: 0px; padding: 7px 14px; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image: initial; vertical-align: baseline; font-weight: normal; text-align: left; border-left-style: solid; border-left-width: 1px; border-right-style: solid; border-right-width: 1px; border-bottom-style: solid; border-bottom-width: 1px;" class="style2">
+							<code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;" class="style3">
+							<strong>object</strong></code></td>
+							<td style="margin: 0px; padding: 7px 14px; border-width: 1px; border-style: solid; border-top-color: rgb(237, 237, 237); border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image: initial; font-size: 14pt; vertical-align: baseline; font-weight: normal; text-align: left;">
+							<code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;" class="style3">
+							<strong>System.Object</strong></code></td>
+						</tr>
+						<tr style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline;">
+							<td style="border-top: 1px solid rgb(237, 237, 237); margin: 0px; padding: 7px 14px; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image: initial; vertical-align: baseline; font-weight: normal; text-align: left; border-left-style: solid; border-left-width: 1px; border-right-style: solid; border-right-width: 1px; border-bottom-style: solid; border-bottom-width: 1px;" class="style2">
+							<code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;" class="style3">
+							<strong>string</strong></code></td>
+							<td style="margin: 0px; padding: 7px 14px; border-width: 1px; border-style: solid; border-top-color: rgb(237, 237, 237); border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image: initial; font-size: 14pt; vertical-align: baseline; font-weight: normal; text-align: left;">
+							<code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;" class="style3">
+							<strong>System.String</strong></code></td>
+						</tr>
+						<tr style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline;">
+							<td style="border-top: 1px solid rgb(237, 237, 237); margin: 0px; padding: 7px 14px; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image: initial; vertical-align: baseline; font-weight: normal; text-align: left; border-left-style: solid; border-left-width: 1px; border-right-style: solid; border-right-width: 1px; border-bottom-style: solid; border-bottom-width: 1px;" class="style2">
+							<code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;" class="style3">
+							<strong>dynamic</strong></code></td>
+							<td style="margin: 0px; padding: 7px 14px; border-width: 1px; border-style: solid; border-top-color: rgb(237, 237, 237); border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image: initial; font-size: 14pt; vertical-align: baseline; font-weight: normal; text-align: left;">
+							<code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;" class="style3">
+							<strong>System.Object</strong></code></td>
+						</tr>
+				</table>
+				</figure>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Например, полный синтаксис объявления и инициализации строковой 
+				переменной будет выглядеть так:</p>
+				<pre class="style7"><strong>System.String str = new System.String("Hello");</strong></pre>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Сокращенный вариант:</p>
+				<pre class="style7"><strong>string str = "Hello";</strong></pre>
+				<h2 class="wp-block-heading" id="main-menu-2" style="margin: 24px 0px; padding: 0px; border: 0px; font-size: 18px; vertical-align: baseline; clear: both; line-height: 1.6; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Создание переменной ссылочного типа</h2>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Как вы уже знаете из предыдущих уроков, у запущенной программы в 
+				распоряжении есть два вида памяти: стек и куча (или управляемая 
+				куча).</p>
+				<figure class="wp-block-image" style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; display: block; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img decoding="async" src="Pic/513.png" alt="" style="margin: 0px 0px 10px; padding: 0px; border: 0px; font-size: 14px; vertical-align: bottom; box-sizing: border-box; height: auto; max-width: 100%;" /></figure><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Рассмотрим на примере, как выделяется память для объектов 
+				ссылочного типа.</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Приведенный код вам не нужно будет где-то набирать и запускать, 
+				он представлен для демонстрации работы с памятью.</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пусть у нас есть некоторый класс&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Car</code>, 
+				объекты которого мы будем создавать:</p>
+				<pre class="style7"><strong>class Car
+{public string Producer { get; set; }}</strong></pre>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Также есть метод для создания объекта класса&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Car</code>&nbsp;с 
+				предопределенным значением свойства&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Producer</code>:</p>
+				<pre class="style7"><strong>public Car CreateBMW()
+{
+	Car car = new Car() 
+				{ 
+				Producer="BMW"; 
+				}
+	return car;
+}</strong></pre>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Предположим, что где-то в нашей программе вызывается метод&nbsp;<span class="style6"><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;" class="style3">CreateBMW()</code></span>.</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В момент, когда мы запускаем нашу программу, операционная 
+				система в оперативной памяти выделяет специальное место, в 
+				которое загружается среда исполнения CLR, там же создается 
+				управляемая куча и поток со своим стеком. Наш код будет 
+				выполняться в рамках созданного потока. Вся эта сложная 
+				конструкция с памятью и потоками называется процесс. Когда 
+				байт-код нашего метода будет преобразовываться в машинный код 
+				JIT-компилятором, будут определены все используемые типы, и в 
+				управляемую кучу загрузятся соответствующие объекты-типы, в 
+				нашем случае – это&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Car</code>.</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Получим вот такую картину:</p>
+				<figure class="wp-block-image" style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; display: block; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img decoding="async" src="Pic/514.png" alt="" style="margin: 0px 0px 10px; padding: 0px; border: 0px; font-size: 14px; vertical-align: bottom; box-sizing: border-box; height: auto; max-width: 100%;" /></figure><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">объекте-типе 
+				Car</code>&nbsp;содержатся статические поля, методы класса и два 
+				дополнительных поля:&nbsp;<strong style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">указатель 
+				на объект-тип&nbsp;</strong>и&nbsp;<strong style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">индекс 
+				блока синхронизации</strong>, о последнем в рамках этого курса 
+				говорить не будем, он приведен для полноты “картины”. Объект-тип 
+				описывает класс, экземпляры которого мы будем создавать. 
+				Указанные два дополнительных поля, добавляются ко всем объектам, 
+				которые создаются в куче. На картинке мы не стали их отображать, 
+				чтобы не загромождать изображение.</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Когда выполнится первая строка в методе&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">CreateBMW()</code>, 
+				в стеке будет создана локальная переменная&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">car</code>&nbsp;со 
+				значением&nbsp;&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">null</code>. 
+				Такое поведение является вариантом “по умолчанию” для всех 
+				переменных ссылочного типа.</p>
+				<figure class="wp-block-image" style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; display: block; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img decoding="async" src="Pic/515.png" alt="" style="margin: 0px 0px 10px; padding: 0px; border: 0px; font-size: 14px; vertical-align: bottom; box-sizing: border-box; height: auto; max-width: 100%;" /></figure><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				После того как выполнится вторая строка, в куче будет создан 
+				соответствующий экземпляр типа&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Car</code>, 
+				у которого поле&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Producer</code>&nbsp;проинициализировано 
+				значением “BMW”. При этом&nbsp;<strong style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">указатель 
+				на объект-тип</strong>&nbsp;объекта&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">car</code>, 
+				будет указывать на&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">&quot;Объект-тип 
+				Car&quot;</code>&nbsp;созданный в момент загрузки программы и сканирования 
+				ее JIT’ом.</p>
+				<figure class="wp-block-image" style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; display: block; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img decoding="async" src="Pic/516.png" alt="" style="margin: 0px 0px 10px; padding: 0px; border: 0px; font-size: 14px; vertical-align: bottom; box-sizing: border-box; height: auto; max-width: 100%;" /></figure><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				После завершения работы метода стек будет очищен и произойдет 
+				возврат в то место, где был вызван&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">CreateBMW()</code>, 
+				но объект&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">car</code>&nbsp;будет 
+				жить в куче до тех пор, пока его не удалит сборщик мусора.</p>
+				<h2 class="wp-block-heading" id="main-menu-3" style="margin: 24px 0px; padding: 0px; border: 0px; font-size: 18px; vertical-align: baseline; clear: both; line-height: 1.6; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Особенности присваивания значений переменным ссылочного типа</h2>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Присваивание значений переменным ссылочного типа отличается от 
+				того, как это выполняется для значимых типов. Помимо того, что 
+				значения значимых типов, как правило, располагаются в стеке (но 
+				могут и в куче, если они являются частью класса), присваивание 
+				для них выполняется через создание полной копии объекта, а для 
+				переменных ссылочного типа происходит присваивание ссылки на 
+				объект. Т.е. копия объекта не создается.</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Рассмотрим этот аспект более подробно.</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				После создания переменной её нужно проинициализировать. Это 
+				можно сделать с помощью оператора&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">new</code>, 
+				либо присвоить ей значение другой переменной.</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для дальнейшей демонстрации будем пользоваться классом&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Person</code>:</p>
+				<pre class="style7"><strong>class Person</strong></pre>
+				<pre class="style7"><strong>{
+	public string Name { get; set; } = string.Empty;
+}</strong></pre>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Варианты создания и инициализации переменных типа&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Person</code>:</p>
+				<pre class="style7"><strong>// Создание и инициализация с помощью оператора new
+Person p1 = new Person() { Name = "John" };
+// Создание и инициализация через присвоение значения другой переменной
+Person p2 = p1;</strong></pre>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Когда мы проинициализировали переменную с помощью оператора&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">new</code>, 
+				в куче будет создан объект типа&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Person</code>, 
+				полю&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Name</code>&nbsp;будет 
+				присвоено определенное значение, в нашем случае это “John”, а 
+				ссылка на этот объект присваивается переменной&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">p1</code>.</p>
+				<figure class="wp-block-image" style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; display: block; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img decoding="async" src="Pic/517.png" alt="" style="margin: 0px 0px 10px; padding: 0px; border: 0px; font-size: 14px; vertical-align: bottom; box-sizing: border-box; height: auto; max-width: 100%;" /></figure><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Переменная&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">p2</code>&nbsp;инициализируется 
+				через присваивание, ей присваивается значение переменной&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">p1</code>. 
+				Так как обе этих переменных являются переменными ссылочного 
+				типа, в результате выполнения операции присваивания, в стеке 
+				будет создана переменная&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">p2</code>, 
+				в куче для нее&nbsp;<strong style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">не 
+				будет</strong>&nbsp;создан новый объект, вместо этого будет 
+				сформирована ссылка&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">p2</code>&nbsp;на 
+				объект, на который ссылается&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">p1</code>.</p>
+				<figure class="wp-block-image" style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; display: block; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img decoding="async" src="Pic/518.png" alt="" style="margin: 0px 0px 10px; padding: 0px; border: 0px; font-size: 14px; vertical-align: bottom; box-sizing: border-box; height: auto; max-width: 100%;" /></figure><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Это приводит к ряду преимуществ, но в то же время имеет и 
+				некоторые недостатки.</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Начнем с&nbsp;<strong style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">преимуществ</strong>. 
+				Первое — это скорость. На создание объекта в куче тратится 
+				время: нужно выделить память и проинициализировать ее. 
+				Присваивание одних объектов ссылочных типов другим выполняется 
+				очень быстро, так как копируется только значение ссылки на 
+				объект. Второе преимущество — это уменьшение объема потребляемой 
+				памяти, из-за того, что в куче создается всего один конкретный 
+				объект, на который будут ссылаться другие переменные независимо 
+				от их количества. Третье — это снижение нагрузки на сборщик 
+				мусора: созданные в куче объекты периодически нужно обходить и 
+				удалять. Если в ней будет много объектов, то время, которое 
+				затратит сборщик мусора на сканирование и удаление, будет 
+				довольно большим.</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+				Недостатком&nbsp;</strong>является то, что изменяя что-то в одном 
+				объекте, мы автоматически получаем эти изменения в других. Если 
+				это так и задумывалось по дизайну приложения, то всё хорошо. Но 
+				довольно часто эти “эффекты” возникают неожиданно. Т.е. 
+				разработчик не предусматривал такое поведение.</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вернемся к нашему примеру.</p>
+				<pre class="style7"><strong>// Изменим значение свойства Name у p1
+p1.Name = "Mary";
+// Выведем значение свойства Name у p1 и p2
+Console.WriteLine(p1.Name); // Mary
+Console.WriteLine(p2.Name); // Mary</strong></pre>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если мы изменим значение свойства&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Name</code>&nbsp;у 
+				любого из объектов&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">p1</code>&nbsp;или&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">p2</code>, 
+				то при доступе к этому свойству у другого объекта, мы увидим, 
+				что оно поменялось.</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Этот эффект возникает везде, где происходит присваивание одной 
+				переменной ссылочного типа другой, даже если это делается не 
+				явно (не напрямую через знак&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">=</code>&nbsp;). 
+				Например, создадим метод, который принимает на вход&nbsp;объект 
+				класса&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Person</code>&nbsp;и 
+				изменяет значение поля&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Name</code>&nbsp;(стирает 
+				его).</p>
+				<pre class="style7"><strong>private static void PrintName(Person p)
+	{
+		Console.WriteLine($"Name is: {p.Name}");
+		p.Name = string.Empty;
+	}</strong></pre>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Продолжим нашу основную программу следующими строчками:</p>
+				<pre class="style7"><strong>PrintName(p1);
+Console.WriteLine(p1.Name);</strong></pre>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В свойстве&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Name</code>&nbsp;у&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">p1</code>&nbsp;(и 
+				у&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">p2</code>) 
+				вместо “Mary” окажется пустая строка. Дело в том, что при 
+				передаче&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">p1</code>&nbsp;в 
+				метод&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">PrintName</code>, 
+				было выполнено присваивание&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">p 
+				= p1</code>, в результате&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">p</code>&nbsp;стала 
+				указывать на тот же объект в куче, что и&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">p1</code>.</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Ниже представлен полный код программы:</p>
+				<pre class="style7"><strong>internal class Program{static void Main(string[] args)
+{
+	// Создание и инициализация с помощью оператора new
+	Person p1 = new Person() { Name = "John" };
+	// Создание и инициализация через присвоение значения другой переменной
+	Person p2 = p1;
+	// Изменим значение свойства Name у p1
+	p1.Name = "Mary";
+	// Выведем значение Name у p1 и p2
+	Console.WriteLine(p1.Name);// Mary
+	Console.WriteLine(p2.Name);// Mary
+	PrintName(p1);
+	Console.WriteLine(p1.Name);
+}
+private static void PrintName(Person p)
+{
+	Console.WriteLine($"Name is: {p.Name}");
+	p.Name = string.Empty;}
+}
+class Person
+{
+   public string Name { get; set; } = string.Empty;
+}</strong></pre>
+				<h2 class="wp-block-heading" id="main-menu-4" style="margin: 24px 0px; padding: 0px; border: 0px; font-size: 18px; vertical-align: baseline; clear: both; line-height: 1.6; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Равенство и тождество объектов</h2>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Помимо того, что в процессе работы мы присваиваем одни объекты 
+				другим явно или неявно (передавая, как аргументы в методы и т. 
+				п.), довольно часто нам приходится сравнивать их между собой на 
+				предмет “равенства”. Пока возьмем это слово в кавычки, потому 
+				что с ним не всё так однозначно.</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Важно различать понятия&nbsp;<strong style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">равенства</strong>&nbsp;и&nbsp;<strong style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">тождества</strong>. 
+				Как мы с вами знаем из предыдущего степа два разных объекта (с 
+				разными именами) могут указывать на одну и ту же область в 
+				памяти. В то же время мы можем иметь два разных объекта, которые 
+				указывают на разные области в памяти, но содержимое этих 
+				областей одинаковое.</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для демонстрации вернемся к классу&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Person</code>:</p>
+				<pre class="style7"><strong>class Person
+{
+	public string Name { get; set; } = string.Empty;
+}</strong></pre>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Создадим два объекта, указывающие на одну и ту же область в 
+				памяти, и два объекта, которые указывают на разные области в 
+				памяти, но у них одинаковое содержимое.</p>
+				<pre class="style7"><strong>// Разные объекты - одна и та же область памяти
+Person p1 = new Person() { Name = "John" }; 
+Person p2 = p1;
+// Разные объекты, разные области памяти, но одинаковое содержимое
+Person p3 = new Person() { Name = "Mary" };
+Person p4 = new Person() { Name = "Mary" };</strong></pre>
+				<figure class="wp-block-image" style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; display: block; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img decoding="async" src="Pic/519.png" alt="" style="margin: 0px 0px 10px; padding: 0px; border: 0px; font-size: 14px; vertical-align: bottom; box-sizing: border-box; height: auto; max-width: 100%;" /></figure><p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Сравним их между собой на “равенство” (пока это слово до сих пор 
+				в кавычках), для этого воспользуемся оператором&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">==</code>:</p>
+				<pre class="style7"><strong>Console.WriteLine(p1 == p2); // True
+Console.WriteLine(p3 == p4); // False</strong></pre>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Результат первой строки –&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">True</code>, 
+				второй –&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">False</code>. 
+				Помните, в одном из уроков мы говорили про то, что все объекты в 
+				C# являются наследниками&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">System.Object</code>, 
+				у&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">System.Object</code>&nbsp;есть 
+				метод&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Equals()</code>&nbsp;для 
+				сравнения объектов? Когда мы сравниваем наши объекты класса&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Person</code>&nbsp;с 
+				помощью оператора&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">==</code>, 
+				это компилируется в вызов метода&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Equals()</code>. 
+				То есть приведенный выше код, аналогичен следующему:</p>
+				<pre class="style7"><strong>Console.WriteLine(p1.Equals(p2)); // True
+Console.WriteLine(p3.Equals(p4)); // False</strong></pre>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Метод&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Equals()</code>&nbsp;сравнивает 
+				ссылки объектов, то есть проверяет, указывают ли они на один и 
+				тоже объект в памяти. Если да, то возвращает&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">true</code>, 
+				иначе&nbsp;—&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">false</code>. 
+				Именно поэтому, несмотря на то, что&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">p3</code>&nbsp;и&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">p4</code>&nbsp;структурно 
+				и содержательно равны – оба являются объектами типа&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Person</code>&nbsp;и 
+				значение свойства&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Name</code>&nbsp;у 
+				них равно “Mary”, результат сравнения через&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Equals()</code>&nbsp;выдает&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">false</code>.</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для того чтобы сравнивать не&nbsp;<strong style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">тождественность 
+				объектов</strong>, а их&nbsp;<strong style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">равенство</strong>, 
+				необходимо переопределить метод&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Equals()</code>&nbsp;в 
+				классе&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Person</code>. 
+				Корректное написание такого метода — довольно нетривиальная 
+				задача, и она требует бóльших знаний, чем те, что были получены 
+				в рамках курса на текущий момент. Этот вопрос мы разберем позже, 
+				в одном из последних модулей.</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Таким образом, мы с вами выявили, что существует два понятия:</p>
+				<ul class="wp-block-list" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; list-style: outside square; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+					<strong style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+					тождество</strong>&nbsp;– когда сравниваются&nbsp;ссылки (указывают ли 
+					они на одну и ту же область в памяти);</li>
+					<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+					<strong style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+					равенство</strong>&nbsp;– когда сравнивается&nbsp;содержимое объектов 
+					(одинаковые ли значения у полей, свойств и т. п.).</li>
+				</ul>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				У объектов ссылочного типа&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Equal()</code>&nbsp;не 
+				переопределен по умолчанию, и когда используется оператор&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">==</code>&nbsp;для 
+				сравнения, выполняется проверка совпадения ссылок, т.е. проверка 
+				тождественности. У объектов типов-значений&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">Equals()</code>&nbsp;переопределен, 
+				и при сравнении определяется равенство объектов. С учетом того, 
+				что при присваивании одного объекта типа-значения другому 
+				происходит создание нового объекта в памяти и полное копирование 
+				в него данных из исходного, то проверка ссылок для них была бы 
+				бессмысленной.</p>
+                <p></p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les500.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les500/5.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 10:38:44 GMT -->
+</html>

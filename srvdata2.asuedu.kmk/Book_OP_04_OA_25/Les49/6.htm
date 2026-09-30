@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les49/6.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 12:00:50 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: medium;
+}
+    .style3 {
+	padding: 10px;
+	font-size: medium;
+	margin-left: 80px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.style4 {
+	color: rgb(0, 0, 255);
+}
+.style5 {
+	color: rgb(0, 0, 255);
+	font-size: medium;
+}
+.style6 {
+	color: rgb(0, 0, 255);
+	font-size: medium;
+	margin-left: 80px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 10px;
+}
+.style7 {
+	color: rgb(0, 0, 255);
+	font-size: medium;
+	margin-left: 120px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 10px;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 5. Конструкторы Python.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p class="ZagT">Инициализатор __init__ и финализатор __del__</p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 14pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В каждом классе языка Python есть набор предопределенных «<span class="style7" style="color: blue;"><strong>магических</strong></span>» 
+				методов. Да, это такое общепринятое название. Магические методы 
+				начинаются и заканчиваются<span>&nbsp;</span><span class="style8" style="color: red;"><strong>двумя 
+				подчеркиваниями</strong></span>:</p>
+				<pre class="style3" style="font-family: &quot;courier new&quot;; color: rgb(0, 0, 255); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong>__ имя метода__</strong></pre>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 14pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В частности существуют два таких метода:</p>
+				<pre class="style3" style="font-family: &quot;courier new&quot;; color: rgb(0, 0, 255); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong>__init__(self) –  инициализатор объекта класса
+__del__(self) – финализатор класса</strong></pre>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 14pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Первый вызывается сразу после создания экземпляра класса, а 
+				второй – перед непосредственным его удалением. Давайте 
+				посмотрим, как они работают и зачем нужны.</p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 14pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Давайте определим класс с двумя свойствами color и circle и 
+				двумя методами set_coords и get_coords:</p>
+				<pre class="style3" style="font-family: &quot;courier new&quot;; color: rgb(0, 0, 255); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong>class Point:
+    color = &#39;red&#39;
+    circle = 2
+</strong> <strong>
+    def set_coords(self, x, y):
+        self.x = x
+        self.y = y
+</strong> <strong>
+    def get_coords(self):
+        return (self.x, self.y)</strong></pre>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 14pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Использовать на практике такой класс не очень удобно, так как 
+				после создания объекта:</p>
+				<pre class="style3" style="font-family: &quot;courier new&quot;; color: rgb(0, 0, 255); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong>pt = Point()</strong></pre>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 14pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				координат x, y в нем никаких не будет. Дополнительно для этого 
+				нужно еще вызывать метод:</p>
+				<pre class="style3" style="font-family: &quot;courier new&quot;; color: rgb(0, 0, 255); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong>pt.set_coords(1, 2)</strong></pre>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 14pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Было бы хорошо сделать эти действия сразу в момент создания 
+				экземпляра класса. И поможет нам в этом магический метод 
+				__init__. Давайте сначала мы его пропишем в самом простом виде:</p>
+				<pre class="style3" style="font-family: &quot;courier new&quot;; color: rgb(0, 0, 255); font-size: small; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong><span class="style2">class Point:
+    color = &#39;red&#39;
+    circle = 2
+</span></strong><span class="style2"> </span><strong><span class="style2">
+    def __init__(self):
+        print(&quot;вызов __init__&quot;)
+        self.x = 0
+        self.y = 0</span>
+    ...</strong></pre>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 14pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Здесь первый параметр self является ссылкой на созданный 
+				экземпляр класса, через который мы создаем в этом новом объекте 
+				локальные свойства x, y. В результате, создавая экземпляр 
+				класса:</p>
+				<pre class="style6" style="font-family: &quot;courier new&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong>pt = Point()</strong></pre>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 14pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				мы увидим в консоли, что, во-первых, произошел вызов этого 
+				метода и, во-вторых, в объекте pt были созданы два локальных 
+				свойства x, y с нулевыми значениями:</p>
+				<pre class="style3" style="font-family: &quot;courier new&quot;; color: rgb(0, 0, 255); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong>print(pt.__dict__)</strong></pre>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 14pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Детально это работает, следующим образом. Вначале происходит 
+				создание объекта в памяти устройства. Непосредственно перед его 
+				созданием вызывается магический метод __new__ (О нем мы еще 
+				будем говорить). Затем, после успешного создания объекта, 
+				вызывается магический метод __init__ для начальной инициализации 
+				созданного объекта. В результате, у нас появляются два локальных 
+				атрибута x и y.</p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 14pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Давайте теперь сделаем так, чтобы в момент создания экземпляра 
+				класса мы могли сразу указывать значения координат точки. Для 
+				этого в инициализаторе можно прописывать дополнительные 
+				параметры:</p>
+				<pre class="style2" style="padding: 10px; margin: 0px 0px 0px 40px; font-family: &quot;courier new&quot;; color: rgb(0, 0, 255); font-size: small; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong>   <span class="style2"> def __init__(self, a, b):
+        self.x = a
+        self.y = b</span></strong></pre>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 14pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				И при создании объекта с таким инициализатором мы уже должны в 
+				круглых скобках передавать эти два аргумента:</p>
+				<pre class="style2" style="padding: 10px; margin: 0px 0px 0px 40px; font-family: &quot;courier new&quot;; color: rgb(0, 0, 255); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong>pt = Point(1, 2)</strong></pre>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 14pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если этого не сделать, то возникнет ошибка и объект создан не 
+				будет.</p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 14pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Обратите внимание, я специально в качестве дополнительных 
+				параметров указал имена a и b. При этом, в самом объекте 
+				создаются локальные свойства с именами x и y. То есть, то, что 
+				мы прописываем после self, то и является именем нового атрибута. 
+				Конечно, на практике, обычно, имена параметров в инициализаторе 
+				совпадают с именами создаваемых свойств и лучше записать 
+				инициализатор в таком виде:</p>
+				<pre class="style2" style="padding: 10px; margin: 0px 0px 0px 40px; font-family: &quot;courier new&quot;; color: rgb(0, 0, 255); font-size: small; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong>    <span class="style2">def __init__(self, x, y):
+        self.x = x
+        self.y = y</span></strong></pre>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 14pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Также всегда следует помнить, что метод __init__ - это обычная 
+				функция, поэтому мы в качестве дополнительных параметров можем 
+				указывать и фактические и формальные параметры. Например, так:</p>
+				<pre class="style6" style="font-family: &quot;courier new&quot;; color: rgb(0, 0, 128); font-size: 14pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">  <span class="style2"> </span><span class="style4"><span class="style2"> </span><span class="style5"><strong>def __init__(self, x=0, y=0):
+        self.x = x
+        self.y = y</strong></span></span></pre>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 14pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Тогда, при создании объектов мы можем вообще не указывать 
+				аргументы:</p>
+				<pre class="style3" style="font-family: &quot;courier new&quot;; color: rgb(0, 0, 255); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong>pt = Point()</strong></pre>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 14pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Либо указать один или два:</p>
+				<pre class="style7" style="font-family: &quot;courier new&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong>pt = Point(10)
+pt = Point(10, 20)</strong></pre>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 14pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				То есть, здесь все ровно так, как и с обычными функциями.</p>
+				<p class="ZagT" style="font-size: 14px; border-bottom-color: blue; color: red; font-family: cursive; background-color: rgb(204, 255, 153); border-bottom-style: double; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Финализатор объекта класса</p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 14pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Я, надеюсь, вы теперь хорошо себе представляете, как работает 
+				инициализатор объектов класса и зачем он нужен. Второй 
+				аналогичный магический метод __del__ автоматически вызывается 
+				непосредственно перед уничтожением экземпляра класса. Он 
+				называется финализатор.</p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 14pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Давайте пропишем такой магический метод в классе Point, 
+				следующим образом:</p>
+				<pre class="style5" style="padding: 10px; margin: 0px 0px 0px 40px; font-family: &quot;courier new&quot;; color: rgb(0, 0, 128); font-size: 14pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">   <strong><span class="style6" style="color: rgb(0, 0, 255); font-size: small;"> </span><span class="style2" style="color: rgb(0, 0, 255); ">def __del__(self):
+        print(&quot;Удаление экземпляра: &quot;+ str(self))</span></strong></pre>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 14pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Здесь по-прежнему self – это ссылка на экземпляр класса, который 
+				будет удален.</p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 14pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				После запуска программы видим, что объект в конце программы 
+				действительно был удален и вызван метод __del__. Но, здесь у вас 
+				может возникнуть вопрос: а когда и в какой момент вообще 
+				происходит удаление объектов. Мы же в программе это явно нигде 
+				не указываем? Работает все достаточно просто. Интерпретатор 
+				языка Python имеет, так называемый, сборщик мусора. Это 
+				алгоритм, который отслеживает объекты и как только они 
+				становятся ненужными, удаляет их. Но как он определяет нужный 
+				объект или ненужный? Все очень просто. Пока на какой-либо объект 
+				ведет хотя бы одна внешняя ссылка, то он считается используемым 
+				и сохраняется в памяти. Как только все внешние ссылки пропадают, 
+				то сборщик мусора его уничтожает (освобождает память, которую он 
+				занимал).</p>
+				<p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les49htm.html"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les49/6.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 12:00:50 GMT -->
+</html>

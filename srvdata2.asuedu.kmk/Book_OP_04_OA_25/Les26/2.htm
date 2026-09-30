@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les26/2.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:14:43 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: small;
+}
+    .style3 {
+	font-size: medium;
+	color: #0000FF;
+}
+    .style4 {
+	color: rgb(0, 0, 255);
+}
+    .style5 {
+	font-size: medium;
+	color: #0000FF;
+	margin-left: 40px;
+}
+    .style6 {
+	color: rgb(255, 0, 0);
+}
+.style7 {
+	color: rgb(255, 0, 0);
+	font-size: medium;
+}
+.style8 {
+	color: rgb(255, 0, 0);
+	font-size: large;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 2. Блок catch и фильтры исключений  в C#.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text" style="margin-left: 200px">
+                <h3 style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Определение блока catch</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				За обработку исключения отвечает блок<span>&nbsp;</span><span class="b" style="font-weight: bold;">catch</span>, 
+				который может иметь следующие формы:</p>
+				<pre class="style3"><strong>catch
+{    
+	// выполняемые инструкции
+}</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word;" class="style2">Обрабатывает любое исключение, которое возникло в блоке try. 
+					Выше уже был продемонстрирован пример подобного блока.</p>
+				<pre class="style3"><strong>catch(тип_исключения)
+{    
+	// выполняемые инструкции
+}</strong></pre>
+				<ul style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">Обрабатывает только те исключения, которые соответствуют 
+					типу, указаному в скобках после оператора catch.</p>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">Например, обработаем только исключения типа 
+					DivideByZeroException:</p>
+					<ul style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						<li>
+						<pre class="style4"><strong>try
+{    
+	int x = 5;    
+	int y = x / 0;    
+	Console.WriteLine($"Результат: {y}");
+}
+catch(DivideByZeroException)
+{    
+	Console.WriteLine("Возникло исключение DivideByZeroException");
+}</strong></pre>
+						</li>
+					</ul>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">Однако если в блоке try возникнут исключения каких-то других 
+					типов, отличных от DivideByZeroException, то они не будут 
+					обработаны.</p>
+					<pre class="style3"><strong>catch (<span class="style6">тип_исключения</span> имя_переменной)
+{    
+	// выполняемые инструкции
+}</strong></pre>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">Обрабатывает только те 
+					<span class="style6"><strong>исключения, которые соответствуют 
+					типу, указаному в скобках после оператора catch</strong></span>. А вся 
+					информация об исключении помещается в переменную данного 
+					типа. Например:</p>
+					<ul style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						<li>
+						<pre class="style4"><strong>try
+{    
+	int x = 5;    
+	int y = x / 0;    
+	Console.WriteLine($"Результат: {y}");
+}
+catch(DivideByZeroException <span class="style7">ex</span>)
+{    
+	Console.WriteLine($"Возникло исключение {</strong><span class="style8">ex</span><strong>.Message}");
+}</strong></pre>
+						</li>
+					</ul>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">Фактически этот случай аналогичен предыдущему за тем 
+					исключением, что здесь используется переменная. В данном 
+					случае в переменную<span>&nbsp;</span><code style="font-family: monospace;">ex</code>, 
+					которая представляет тип DivideByZeroException, помещается 
+					информация о возникшем исключении. И с помощью свойства<span>&nbsp;</span><code style="font-family: monospace;">Message</code><span>&nbsp;</span>мы 
+					можем получить сообщение об ошибке.</p>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">Если нам не нужна информация об исключении, то переменную 
+					можно не использовать как в предыдущем случае.</p>
+					</li>
+				</ul>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Фильтры исключений</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Фильтры исключений позволяют обрабатывать исключения в 
+				зависимости от определенных условий. Для их применения после 
+				выражения catch идет выражение<span>&nbsp;</span><span class="b" style="font-weight: bold;">when</span>, 
+				после которого в скобках указывается условие:</p>
+				<pre class="style5"><strong>catch when(условие)
+{
+}				</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В этом случае обработка исключения в блоке catch производится 
+				только в том случае, если условие в выражении when истинно. 
+				Например:</p>
+				<pre class="style5"><strong>int x = 1;
+int y = 0; 
+try
+{    
+	int result1 = x / y;    
+	int result2 = y / x;
+}
+catch (DivideByZeroException) when (y == 0)
+{    
+	Console.WriteLine("y не должен быть равен 0");
+}
+catch(DivideByZeroException ex)
+{    
+	Console.WriteLine(ex.Message);
+}</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В данном случае будет выброшено исключение, так как y=0. Здесь 
+				два блока catch, и оба они обрабатывают исключения типа 
+				DivideByZeroException, то есть по сути все исключения, 
+				генерируемые при делении на ноль. Но поскольку для первого блока 
+				указано условие<span>&nbsp;</span><span class="b" style="font-weight: bold;">y 
+				== 0</span>, то именно этот блок будет обрабатывать данное 
+				исключение - условие, указанное после оператора<span>&nbsp;</span><span class="b" style="font-weight: bold;">when</span><span>&nbsp;</span>возвращает 
+				true.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Противоположная ситуация:</p>
+				<pre class="style5"><strong>int x = 0;
+int y = 1; 
+try
+{    
+	int result1 = x / y;    
+	int result2 = y / x;
+}
+catch (DivideByZeroException) when (y == 0)
+{    
+	Console.WriteLine("y не должен быть равен 0");
+}
+catch(DivideByZeroException ex)
+{    
+	Console.WriteLine(ex.Message);
+}</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В данном случае будет выброшено исключение, так как x=0. Условие 
+				первого блока catch -<span>&nbsp;</span><span class="b" style="font-weight: bold;">y 
+				== 0</span><span>&nbsp;</span>теперь возвращает false. Поэтому CLR 
+				будет дальше искать соответствующие блоки catch далее и для 
+				обработки исключения выберет второй блок catch. В итоге если мы 
+				уберем второй блок catch, то исключение вообще не будет 
+				обрабатываться.</p>
+                <p class="style2">&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les26.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les26/2.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:14:43 GMT -->
+</html>

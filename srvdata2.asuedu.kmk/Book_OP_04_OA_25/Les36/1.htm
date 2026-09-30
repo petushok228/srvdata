@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les36/1.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:39:08 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: rgb(255, 0, 0);
+}
+    .style3 {
+	text-align: center;
+}
+.style4 {
+	text-align: left;
+}
+.style5 {
+	font-size: large;
+}
+.style6 {
+	color: rgb(255, 0, 0);
+	font-size: medium;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 1. .</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p>
+                <span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: Verdana, sans-serif;">
+				<span style="font-size: 14px; line-height: 15px;">С помощью 
+				библиотек </span>
+				<span style="font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: Verdana, sans-serif;" class="style2">
+				<strong>можно реализовать модульность для программы</strong></span>, 
+				в виде отдельных компонентов. Например бухгалтерскую программу 
+				можно продать по модулям. Каждый модуль может быть загружен в 
+				основной программе во время выполнения установки. Отдельные 
+				модули загружается только при запросе функций заложенных в них, 
+				поэтому загрузка программы выполняется быстрее.<br />
+				&nbsp; &nbsp; &nbsp; Кроме того обновления легче применить для каждого модуля, 
+				не влияя на другие части программы. Например имеется программа 
+				по зарплате и надо изменить налоговые ставки за каждый год. 
+				Когда эти изменения изолированы в библиотеке, можно применить 
+				обновления без необходимости построения или установки программы 
+				целиком. Давайте рассмотрим пример создания библиотеки с самыми 
+				простыми математическими методами, такие как произведение, 
+				деление, сумма и разность.<br />
+				&nbsp; &nbsp; &nbsp; Для начала, создадим новый проект, для этого запустите<span>&nbsp;</span><b>Microsoft 
+				Visual Studio</b><span>&nbsp;</span>и перейдите в меню<span>&nbsp;</span><b>Файл 
+				-&gt; Создать -&gt; Проект…</b><span>&nbsp;</span>или выполните сочетание 
+				клавиш<span>&nbsp;</span><b>Ctrl+Shift+N</b>.</span></p>
+				<p class="style3">
+				<img alt="" src="Pic/r36_1_1.png" width="1114" height="787" /></p>
+				<p class="style4">Используем шаблон Библиотека классов (<span lang="en-us">NET 
+				Framework</span>). Настроим новый проект. Укажем имя и 
+				размещение проекта в решении. В нашем Решении: </p>
+				<p class="style3">
+				<img alt="" src="Pic/r36_1_2.png" width="1114" height="787" /></p>
+				<p class="style4">
+				<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: Verdana, sans-serif;">
+				<span style="font-size: 14px; line-height: 15px;">У вас 
+				откроется вкладка с классом по умолчанию.&nbsp; По умолчанию 
+				создается класс<span>&nbsp;</span><b>Class1</b>, 
+				переименуем его в класс </span>
+				<span style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: Verdana, sans-serif;" class="style5">
+				<span lang="en-us" class="style2"><strong>Arifm</strong></span></span><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: Verdana, sans-serif;">. Для этого перейдите в меню 
+				Вид - &gt; Классы или выполните сочетание клавиш<span>&nbsp;</span><b>Ctrl 
+				+ W</b>, с последующем нажатием клавиши<span>&nbsp;</span><b>C</b>.</span></span></p>
+				<p class="style4">
+				<img alt="" src="Pic/r36_1_3.png" width="873" height="432" /></p>
+				<p class="style4">&nbsp;<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: Verdana, sans-serif;"><span style="font-size: 14px; line-height: 15px;">Добавим в 
+				класс<span>&nbsp;</span></span></span><span style="font-size: 14px; line-height: 15px;"><span style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: Verdana, sans-serif;" class="style5"><strong><span lang="en-us" class="style2">Arifm</span><span class="style2">
+				</span></strong></span></span>
+				<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: Verdana, sans-serif;">
+				<span style="font-size: 14px; line-height: 15px;">несколько 
+				методов и добавим к ним описание.&nbsp; Сделаем класс 
+				статическим. </span></span></p>
+				<p class="style4">
+				<img alt="" src="Pic/r36_1_5.png" width="662" height="601" /></p>
+				<p class="style4">Выполним сборку библиотеки</p>
+				<p class="style4">
+				<img alt="" src="Pic/r36_1_6.png" width="683" height="710" /></p>
+				<p class="style4">В результате скомпилируется&nbsp; новый 
+				проект, библиотека <span lang="en-us">DLL</span></p>
+				<p class="style4">
+				<img alt="" src="Pic/r36_1_7.png" width="420" height="179" /></p>
+				<p class="style4">
+				<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: Verdana, sans-serif;">
+				<span style="font-size: 14px; line-height: 15px;">Для проверки 
+				работоспособности библиотеки создадим тестовый проект. Выполните<span>&nbsp;</span><b>Файл 
+				-&gt; Создать -&gt; Проект…</b></span></span><br style="color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: Verdana, sans-serif;">
+				<span style="font-size: 14px; line-height: 15px;"><br />
+				</span></span>
+				</p>
+				<p class="style4">
+				<img alt="" src="Pic/r36_1_8.png" width="420" height="464" /></p>
+				<p class="style4">
+				<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: Verdana, sans-serif;">
+				<span style="font-size: 14px; line-height: 15px;">После создания 
+				проекта, в обозревателе решений добавим в проект созданную ранее 
+				библиотеку </span><span lang="en-us">
+				<span style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: Verdana, sans-serif;" class="style6">
+				<strong>Ur36_Lib_DLL.dll</strong></span><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: Verdana, sans-serif;">
+				</span></span>
+				<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: Verdana, sans-serif;">
+				сделайте клик правой клавишей мыши по разделу «<b>Ссылки</b>» и выберете в 
+				появившемся контекстном меню пункт «<b>Добавить ссылку…</b>».</span></span></p>
+				<p class="style4">
+				<img alt="" src="Pic/r36_1_9.png" width="576" height="297" /></p>
+				<p class="style4">
+				<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: Verdana, sans-serif;">
+				<span style="font-size: 14px; line-height: 15px;">Выберете 
+				вкладку «Обзор» и укажите вашу библиотеку.</span></span><br style="color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: Verdana, sans-serif;">
+				<span style="font-size: 14px; line-height: 15px;">Если вы все 
+				успешно выполнили, в разделе «<b>Ссылки</b>» у вас появится 
+				название вашей библиотеки.</span></span></p>
+				<p class="style4">
+				<img alt="" src="Pic/r36_1_10.png" width="1228" height="432" /></p>
+				<p class="style4">
+				<img alt="" src="Pic/r36_1_11.png" width="381" height="429" /></p>
+				<p class="style4">Добавим код в созданный проект и протестируем 
+				работу библиотеки.</p>
+				<p class="style4">
+				<img alt="" src="Pic/r36_1_12.png" width="1093" height="639" /></p>
+				<p class="style4">
+				<img alt="" src="Pic/r36_1_13.png" width="712" height="310" /></p>
+			</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les36.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les36/1.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:41:02 GMT -->
+</html>

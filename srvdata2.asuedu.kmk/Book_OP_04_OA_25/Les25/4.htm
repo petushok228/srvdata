@@ -1,0 +1,553 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les25/4.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:14:10 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 4. Использование точек останова в отладчике Visual Studio.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Точки останова&nbsp;— это один из важнейших инструментов разработчика 
+				для выполнения отладки. Точки останова устанавливаются везде, 
+				где нужно приостановить выполнение отладчика. Например, вы 
+				хотите просмотреть состояние переменных кода или стек вызовов в 
+				определенной точке останова. Если вы пытаетесь разрешить 
+				предупреждение или проблему при использовании точек останова, 
+				см. раздел<span>&nbsp;</span><a data-linktype="relative-path" style="box-sizing: inherit; outline-color: inherit; color: var(--theme-hyperlink); cursor: pointer; overflow-wrap: break-word; text-decoration: none; background-color: rgba(0, 0, 0, 0); outline-style: initial; outline-width: 0px;" href="https://learn.microsoft.com/ru-ru/visualstudio/debugger/troubleshooting-breakpoints?view=vs-2022">Устранение 
+				неполадок точек останова в отладчике Visual Studio</a>.</p>
+				<div class="heading-wrapper" data-heading-level="h2" style="box-sizing: inherit; outline-color: inherit; position: relative; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<h2 id="BKMK_Overview" class="heading-anchor" style="box-sizing: inherit; outline-color: inherit; margin: 32px 0px 12px; padding: 0px; font-size: clamp(1.59375rem, 18.7895px + 1.39803vw, 2.125rem); font-weight: 600; line-height: 1.3; margin-inline-start: -1.875rem; padding-inline-start: 1.875rem;">
+					Установка точек останова в исходном коде</h2>
+				</div>
+				<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Можно установить точку останова в любой строке исполняемого 
+				кода. Например, в следующем коде C# можно задать точку останова 
+				в строке кода с присвоением значения переменной (<code style="box-sizing: inherit; outline-color: inherit; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; direction: ltr; background-color: var(--theme-inline-code); overflow-wrap: break-word; border-radius: 3px; padding: 0.1em 0.2em;">int 
+				testInt = 1</code>), в цикле<span>&nbsp;</span><code style="box-sizing: inherit; outline-color: inherit; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; direction: ltr; background-color: var(--theme-inline-code); overflow-wrap: break-word; border-radius: 3px; padding: 0.1em 0.2em;">for</code><span>&nbsp;</span>или 
+				любом коде в цикле<span>&nbsp;</span><code style="box-sizing: inherit; outline-color: inherit; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; direction: ltr; background-color: var(--theme-inline-code); overflow-wrap: break-word; border-radius: 3px; padding: 0.1em 0.2em;">for</code>. 
+				Точка останова не может быть задана в сигнатурах метода, 
+				объявлениях пространства имен или класса, а также в объявлениях 
+				переменной, не содержащих присваивания и методов задания или 
+				получения.</p>
+				<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Чтобы задать точку останова в исходном коде, сделайте следующее:</p>
+				<ul style="box-sizing: inherit; outline-color: inherit; margin: 16px 0px 16px 38px; padding: 0px; list-style: none; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; outline-style: initial; outline-width: 0px; list-style: disc;">
+					Щелкните в крайнем левом поле рядом с строкой кода. Можно 
+					также выбрать строку и нажать клавишу<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">F9</strong>, 
+					выбрать команду<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Отладка</strong>&gt;<strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Переключить 
+					точку останова</strong><span>&nbsp;</span>или щелкнуть правой 
+					кнопкой мыши и выбрать команду<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Точка 
+					останова</strong>&gt;<strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Вставить 
+					точку останова</strong>. В месте установки точки останова в 
+					левом поле появится красная точка.</li>
+				</ul>
+				<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для большинства языков, включая C#, точка останова и текущие 
+				строки выполнения выделяются автоматически. Для кода C++ можно 
+				включить выделение точек останова и текущих строк, выбрав<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Инструменты</strong><span>&nbsp;</span>(или<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Отладка</strong>) 
+				&gt;<strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Параметры</strong>&gt;<strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Отладка</strong>&gt;<strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Выделить 
+				всю исходную строку для точек останова и текущий оператор 
+				(только C++)</strong>.</p>
+				<div data-moniker="vs-2022" style="box-sizing: inherit; outline-color: inherit; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					<img src="pic/basic-breakpoint5b18.png?view=vs-2022" alt="Установка точки останова" title="Базовая точка останова" data-linktype="relative-path" style="box-sizing: inherit; outline-color: inherit; border: 0px; height: auto; max-width: 100%; vertical-align: baseline; display: inline-block;" /></p>
+				</div>
+				<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При отладке выполнение приостанавливается в точке останова до 
+				выполнения кода в этой строке. Символ точки останова 
+				отображается с желтой стрелкой.</p>
+				<div data-moniker="vs-2022" style="box-sizing: inherit; outline-color: inherit; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					В точке останова в следующем примере значение<span>&nbsp;</span><code style="box-sizing: inherit; outline-color: inherit; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; direction: ltr; background-color: var(--theme-inline-code); overflow-wrap: break-word; border-radius: 3px; padding: 0.1em 0.2em;">testInt</code><span>&nbsp;</span>по-прежнему 
+					равно&nbsp;3. Таким образом, значение не изменялось с момента 
+					инициализации переменной (задания значения&nbsp;3), так как 
+					инструкция, выделенная желтым, еще не была выполнена.</p>
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					<img src="pic/breakpoint-execution5b18.png?view=vs-2022" alt="Выполнение точки останова остановлено" title="Выполнение точки останова" data-linktype="relative-path" style="box-sizing: inherit; outline-color: inherit; border: 0px; height: auto; max-width: 100%; vertical-align: baseline; display: inline-block;" /></p>
+				</div>
+				<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Когда отладчик останавливается в точке останова, можно 
+				просмотреть текущее состояние приложения, включая<span>&nbsp;</span><a data-linktype="relative-path" style="box-sizing: inherit; outline-color: inherit; color: var(--theme-hyperlink); cursor: pointer; overflow-wrap: break-word; text-decoration: none; background-color: rgba(0, 0, 0, 0); outline-style: initial; outline-width: 0px;" href="https://learn.microsoft.com/ru-ru/visualstudio/debugger/debugger-feature-tour?view=vs-2022#inspect-variables-with-data-tips">значения 
+				переменных</a><span>&nbsp;</span>и<span>&nbsp;</span><a data-linktype="relative-path" style="box-sizing: inherit; outline-color: inherit; color: var(--theme-hyperlink); cursor: pointer; overflow-wrap: break-word; text-decoration: none; background-color: rgba(0, 0, 0, 0); outline-style: initial; outline-width: 0px;" href="https://learn.microsoft.com/ru-ru/visualstudio/debugger/how-to-use-the-call-stack-window?view=vs-2022">стека 
+				вызова</a>.</p>
+				<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Ниже приведены некоторые общие инструкции по работе с точками 
+				останова.</p>
+				<ul style="box-sizing: inherit; outline-color: inherit; margin: 16px 0px 16px 38px; padding: 0px; list-style: none; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; outline-style: initial; outline-width: 0px; list-style: disc;">
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					Точка останова представляет собой переключатель. Можно 
+					щелкнуть ее, нажать клавишу<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">F9</strong><span>&nbsp;</span>или 
+					выбрать<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Отладка</strong>&gt;<strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Переключить 
+					точку останова</strong>, чтобы удалить или снова вставить 
+					ее.</p>
+					</li>
+					<li style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; outline-style: initial; outline-width: 0px; list-style: disc;">
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					Чтобы отключить точку останова, не удаляя ее, наведите 
+					указатель мыши на нее или щелкните ее правой кнопкой мыши и 
+					выберите<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Отключить 
+					точку останова</strong>. Отключенные точки останова 
+					отображаются как пустые точки в левом поле или окне<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Точки 
+					останова</strong>. Чтобы повторно включить точку останова, 
+					наведите указатель мыши на нее или щелкните ее правой 
+					кнопкой мыши и выберите<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Включить 
+					точку останова</strong>.</p>
+					</li>
+					<li style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; outline-style: initial; outline-width: 0px; list-style: disc;">
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					Задайте условия и действия, добавьте и измените метки или 
+					экспортируйте точку останова, щелкнув ее правой кнопкой мыши 
+					и выбрав нужную команду или наведя на нее курсор и нажав на 
+					значок<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Параметры</strong>.</p>
+					</li>
+				</ul>
+				<div class="heading-wrapper" data-heading-level="h2" style="box-sizing: inherit; outline-color: inherit; position: relative; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<a class="anchor-link docon docon-link" aria-label="Раздел с заголовком: Действия и точки трассировки точки останова" style="box-sizing: inherit; outline-color: inherit; color: var(--theme-hyperlink); cursor: pointer; overflow-wrap: normal; text-decoration: none; background-color: rgba(0, 0, 0, 0); outline-style: initial; outline-width: 0px; font-family: docons; font-size: 1rem; speak: none; font-variant: normal; text-transform: none; text-align: center; direction: ltr; -webkit-font-smoothing: antialiased; font-style: normal; font-weight: 400; line-height: 16px; display: inline-block; width: 1px; transition: opacity 0.1s linear; position: absolute; inset-inline-start: -1.875rem; transform: translateY(-50%) scale(1); inset-block-start: 1.38125rem; clip: rect(1px, 1px, 1px, 1px); clip-path: inset(50%); height: 1px; opacity: 0; border: 0px; margin: -1px; padding: 0px; overflow: hidden;" href="https://learn.microsoft.com/ru-ru/visualstudio/debugger/using-breakpoints?view=vs-2022#BKMK_Print_to_the_Output_window_with_tracepoints">
+					</a>
+					<h2 id="BKMK_Print_to_the_Output_window_with_tracepoints" class="heading-anchor" style="box-sizing: inherit; outline-color: inherit; margin: 32px 0px 12px; padding: 0px; font-size: clamp(1.59375rem, 18.7895px + 1.39803vw, 2.125rem); font-weight: 600; line-height: 1.3; margin-inline-start: -1.875rem; padding-inline-start: 1.875rem;">
+					Действия и точки трассировки точки останова</h2>
+				</div>
+				<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<em style="box-sizing: inherit; outline-color: inherit;">Точка 
+				трассировки</em><span>&nbsp;</span>— это точка останова, которая 
+				выводит сообщение в окно<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">вывода</strong>. 
+				Точка трассировки может играть роль временного оператора 
+				трассировки в языке программирования и не приостанавливает 
+				выполнение кода. Вы создаете точку трассировки, задавая особое 
+				действие в окне<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Параметры 
+				точки останова</strong>. Подробные инструкции см. в разделе<span>&nbsp;</span><a data-linktype="relative-path" style="box-sizing: inherit; outline-color: inherit; color: var(--theme-hyperlink); cursor: pointer; overflow-wrap: break-word; text-decoration: none; background-color: rgba(0, 0, 0, 0); outline-style: initial; outline-width: 0px;" href="https://learn.microsoft.com/ru-ru/visualstudio/debugger/using-tracepoints?view=vs-2022">Использование 
+				точек трассировки в отладчике Visual Studio</a>.</p>
+				<div class="heading-wrapper" data-heading-level="h2" style="box-sizing: inherit; outline-color: inherit; position: relative; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<a class="anchor-link docon docon-link" aria-label="Раздел с заголовком: Условия точки останова" style="box-sizing: inherit; outline-color: inherit; color: var(--theme-hyperlink); cursor: pointer; overflow-wrap: normal; text-decoration: none; background-color: rgba(0, 0, 0, 0); outline-style: initial; outline-width: 0px; font-family: docons; font-size: 1rem; speak: none; font-variant: normal; text-transform: none; text-align: center; direction: ltr; -webkit-font-smoothing: antialiased; font-style: normal; font-weight: 400; line-height: 16px; display: inline-block; width: 1px; transition: opacity 0.1s linear; position: absolute; inset-inline-start: -1.875rem; transform: translateY(-50%) scale(1); inset-block-start: 1.38125rem; clip: rect(1px, 1px, 1px, 1px); clip-path: inset(50%); height: 1px; opacity: 0; border: 0px; margin: -1px; padding: 0px; overflow: hidden;" href="https://learn.microsoft.com/ru-ru/visualstudio/debugger/using-breakpoints?view=vs-2022#breakpoint-conditions">
+					</a>
+					<h2 id="breakpoint-conditions" class="heading-anchor" style="box-sizing: inherit; outline-color: inherit; margin: 32px 0px 12px; padding: 0px; font-size: clamp(1.59375rem, 18.7895px + 1.39803vw, 2.125rem); font-weight: 600; line-height: 1.3; margin-inline-start: -1.875rem; padding-inline-start: 1.875rem;">
+					Условия точки останова</h2>
+				</div>
+				<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Можно управлять тем, где и когда выполняется точка останова, 
+				задавая условия. Условие может быть любым допустимым выражением, 
+				которое распознает отладчик. Дополнительные сведения о 
+				допустимых выражениях см. в разделе<span>&nbsp;</span><a data-linktype="relative-path" style="box-sizing: inherit; outline-color: inherit; color: var(--theme-hyperlink); cursor: pointer; overflow-wrap: break-word; text-decoration: none; background-color: rgba(0, 0, 0, 0); outline-style: initial; outline-width: 0px;" href="https://learn.microsoft.com/ru-ru/visualstudio/debugger/expressions-in-the-debugger?view=vs-2022">Выражения 
+				в отладчике</a>.</p>
+				<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">
+				Задание условия для точки останова.</strong></p>
+				<ol style="box-sizing: inherit; outline-color: inherit; margin: 16px 0px 16px 38px; padding: 0px; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; outline-style: initial; outline-width: 0px; list-style: decimal;">
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					Щелкните правой кнопкой мыши символ точки останова и 
+					выберите пункт<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Условия</strong><span>&nbsp;</span>(или 
+					нажмите клавиши<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">ALT</strong><span>&nbsp;</span>+<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">F9</strong>,<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">C</strong>). 
+					Или наведите курсор на символ точки останова, выберите 
+					значок<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Параметры</strong>, 
+					а затем выберите<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Условия</strong><span>&nbsp;</span>в 
+					окне<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Параметры 
+					точки останова</strong>.</p>
+					<div data-moniker="vs-2022" style="box-sizing: inherit; outline-color: inherit;">
+						<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+						Вы также можете щелкнуть правой кнопкой мыши в дальнем 
+						левом поле рядом со строкой кода и выбрать<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Вставить 
+						условную точку останова</strong><span>&nbsp;</span>в 
+						контекстном меню, чтобы создать условную точку останова.</p>
+					</div>
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					Можно также задать условия в окне<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Точки 
+					останова</strong>, щелкнув правой кнопкой мыши точку 
+					останова и выбрав пункт<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Параметры</strong>, 
+					а затем<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Условия</strong>.</p>
+					<div data-moniker="vs-2022" style="box-sizing: inherit; outline-color: inherit;">
+						<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+						<img src="pic/breakpoint-settings5b18.png?view=vs-2022" alt="Параметры точки останова" title="Параметры точки останова" data-linktype="relative-path" style="box-sizing: inherit; outline-color: inherit; border: 0px; height: auto; max-width: 100%; vertical-align: baseline; display: inline-block;" /></p>
+					</div>
+					</li>
+					<li style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; outline-style: initial; outline-width: 0px; list-style: decimal;">
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					В раскрывающемся списке выберите<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Условное 
+					выражение</strong>,<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Количество 
+					обращений</strong><span>&nbsp;</span>или<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Фильтр</strong><span>&nbsp;</span>и 
+					задайте соответствующее значение.</p>
+					</li>
+					<li style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; outline-style: initial; outline-width: 0px; list-style: decimal;">
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					Выберите<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Закрыть</strong><span>&nbsp;</span>или 
+					нажмите клавиши<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">CTRL</strong>+<strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">ВВОД</strong>, 
+					чтобы закрыть окно<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Параметры 
+					точки останова</strong>. Или в окне<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Точки 
+					останова</strong><span>&nbsp;</span>выберите<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">ОК</strong>, 
+					чтобы закрыть диалоговое окно.</p>
+					</li>
+				</ol>
+				<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Точки останова с установленными условиями отображаются с 
+				символом<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">+</strong><span>&nbsp;</span>в 
+				исходном коде и окне<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Точки 
+				останова</strong>.</p>
+				<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<a name="BKMK_Specify_a_breakpoint_condition_using_a_code_expression" style="box-sizing: inherit; outline-color: inherit; color: var(--theme-hyperlink); cursor: pointer; overflow-wrap: break-word; text-decoration: none; background-color: rgba(0, 0, 0, 0); outline-style: initial; outline-width: 0px;">
+				</a></p>
+				<div class="heading-wrapper" data-heading-level="h3" style="box-sizing: inherit; outline-color: inherit; position: relative; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<a class="anchor-link docon docon-link" aria-label="Раздел с заголовком: Создание условного выражения" style="box-sizing: inherit; outline-color: inherit; color: var(--theme-hyperlink); cursor: pointer; overflow-wrap: normal; text-decoration: none; background-color: rgba(0, 0, 0, 0); outline-style: initial; outline-width: 0px; font-family: docons; font-size: 1rem; speak: none; font-variant: normal; text-transform: none; text-align: center; direction: ltr; -webkit-font-smoothing: antialiased; font-style: normal; font-weight: 400; line-height: 16px; display: inline-block; width: 1px; transition: opacity 0.1s linear; position: absolute; inset-inline-start: -1.875rem; transform: translateY(-50%) scale(1); inset-block-start: 1.1375rem; clip: rect(1px, 1px, 1px, 1px); clip-path: inset(50%); height: 1px; opacity: 0; border: 0px; margin: -1px; padding: 0px; overflow: hidden;" href="https://learn.microsoft.com/ru-ru/visualstudio/debugger/using-breakpoints?view=vs-2022#create-a-conditional-expression">
+					</a>
+					<h3 id="create-a-conditional-expression" class="heading-anchor" style="box-sizing: inherit; outline-color: inherit; margin: 30px 0px 18px; padding: 0px; font-size: clamp(1.3125rem, 15.4737px + 1.15132vw, 1.75rem); font-weight: 600; line-height: 1.3; margin-inline-start: -1.875rem; padding-inline-start: 1.875rem;">
+					Создание условного выражения</h3>
+				</div>
+				<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При выборе<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">условного 
+				выражения</strong><span>&nbsp;</span>можно выбрать между двумя 
+				условиями:<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">значение 
+				true</strong><span>&nbsp;</span>или<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">при 
+				изменении</strong>. Выберите значение<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Имеет 
+				значение true</strong>, чтобы прервать выполнение при истинности 
+				выражения, или значение<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">При 
+				изменении</strong>, если требуется прервать выполнение при 
+				изменении значения выражения.</p>
+				<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В следующем примере задается применение точки останова, только 
+				если значение<span>&nbsp;</span><code style="box-sizing: inherit; outline-color: inherit; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; direction: ltr; background-color: var(--theme-inline-code); overflow-wrap: break-word; border-radius: 3px; padding: 0.1em 0.2em;">testInt</code><span>&nbsp;</span>равно<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">4</strong>:</p>
+				<div data-moniker="vs-2022" style="box-sizing: inherit; outline-color: inherit; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					<img src="pic/breakpoint-condition-is-true5b18.png?view=vs-2022" alt="Условие для точки останова имеет значение true" title="Точка останова имеет значение true" data-linktype="relative-path" style="box-sizing: inherit; outline-color: inherit; border: 0px; height: auto; max-width: 100%; vertical-align: baseline; display: inline-block;" /></p>
+				</div>
+				<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В следующем примере задается применение точки останова, только 
+				если значение<span>&nbsp;</span><code style="box-sizing: inherit; outline-color: inherit; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; direction: ltr; background-color: var(--theme-inline-code); overflow-wrap: break-word; border-radius: 3px; padding: 0.1em 0.2em;">testInt</code><span>&nbsp;</span>меняется:</p>
+				<div data-moniker="vs-2022" style="box-sizing: inherit; outline-color: inherit; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					<img src="pic/breakpoint-when-changed5b18.png?view=vs-2022" alt="Точка останова при изменении" title="Точка останова при изменении" data-linktype="relative-path" style="box-sizing: inherit; outline-color: inherit; border: 0px; height: auto; max-width: 100%; vertical-align: baseline; display: inline-block;" /></p>
+				</div>
+				<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если условие точки останова имеет недопустимый синтаксис, 
+				появится предупреждающее сообщение. Если указать условие для 
+				точки останова с недопустимой семантикой, но допустимым 
+				синтаксисом, предупреждающее сообщение появится при достижении 
+				точки останова в первый раз. В любом случае отладчик прерывает 
+				выполнение при попадании на недопустимую точку останова. Точка 
+				останова пропускается, только если условие допустимо и принимает 
+				значение<span>&nbsp;</span><code style="box-sizing: inherit; outline-color: inherit; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; direction: ltr; background-color: var(--theme-inline-code); overflow-wrap: break-word; border-radius: 3px; padding: 0.1em 0.2em;">false</code>.</p>
+				<div class="alert is-info" style="box-sizing: inherit; outline-color: var(--theme-text); background-color: var(--theme-info-background); color: rgb(22, 22, 22); overflow-wrap: break-word; word-break: break-word; border: 1px solid var(--theme-info-background-glow-high-contrast); border-radius: 0.375rem; margin-top: 1rem; padding: 1rem; font-size: 16px; transition: height 0.5s ease-in, opacity 0.5s ease-in; display: block; position: relative; font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<p class="alert-title" style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; max-width: 100%; overflow-wrap: break-word; color: var(--theme-info-dark); font-weight: 600;">
+					<span class="docon docon-status-error-outline" aria-hidden="true" style="box-sizing: inherit; outline-color: inherit; font-family: docons; font-size: inherit; speak: none; font-variant: normal; text-transform: none; text-align: center; direction: ltr; -webkit-font-smoothing: antialiased; font-style: normal; font-weight: 400; line-height: 16px; display: inline-block;">
+					</span><span>&nbsp;</span>Примечание</p>
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; max-width: 100%; overflow-wrap: break-word;">
+					Для поля<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">При 
+					изменении</strong><span>&nbsp;</span>отладчик не обрабатывает 
+					первое вычисление условия как изменение, поэтому при первом 
+					вычислении выражения точка останова не сработает.</p>
+				</div>
+				<div class="heading-wrapper" data-heading-level="h3" style="box-sizing: inherit; outline-color: inherit; position: relative; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<a class="anchor-link docon docon-link" aria-label="Раздел с заголовком: Использование идентификаторов объектов в условных выражениях (только C# и F#)" style="box-sizing: inherit; outline-color: inherit; color: var(--theme-hyperlink); cursor: pointer; overflow-wrap: normal; text-decoration: none; background-color: rgba(0, 0, 0, 0); outline-style: initial; outline-width: 0px; font-family: docons; font-size: 1rem; speak: none; font-variant: normal; text-transform: none; text-align: center; direction: ltr; -webkit-font-smoothing: antialiased; font-style: normal; font-weight: 400; line-height: 16px; display: inline-block; width: 1px; transition: opacity 0.1s linear; position: absolute; inset-inline-start: -1.875rem; transform: translateY(-50%) scale(1); inset-block-start: 1.1375rem; clip: rect(1px, 1px, 1px, 1px); clip-path: inset(50%); height: 1px; opacity: 0; border: 0px; margin: -1px; padding: 0px; overflow: hidden;" href="https://learn.microsoft.com/ru-ru/visualstudio/debugger/using-breakpoints?view=vs-2022#using-object-ids-in-breakpoint-conditions-c-and-f">
+					</a>
+					<h3 id="using-object-ids-in-breakpoint-conditions-c-and-f" class="heading-anchor" style="box-sizing: inherit; outline-color: inherit; margin: 30px 0px 18px; padding: 0px; font-size: clamp(1.3125rem, 15.4737px + 1.15132vw, 1.75rem); font-weight: 600; line-height: 1.3; margin-inline-start: -1.875rem; padding-inline-start: 1.875rem;">
+					Использование идентификаторов объектов в условных выражениях 
+					(только C# и F#)</h3>
+				</div>
+				<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Иногда возникает необходимость наблюдать за поведением 
+				определенного объекта. Например, может потребоваться выяснить, 
+				почему объект был вставлен в коллекцию несколько раз. В C# и F# 
+				можно создавать идентификаторы объектов для определенных 
+				экземпляров<span>&nbsp;</span><a data-linktype="absolute-path" style="box-sizing: inherit; outline-color: inherit; color: var(--theme-hyperlink); cursor: pointer; overflow-wrap: break-word; text-decoration: none; background-color: rgba(0, 0, 0, 0); outline-style: initial; outline-width: 0px;" href="https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/reference-types">ссылочных 
+				типов</a><span>&nbsp;</span>и использовать их в условиях точек 
+				останова. Идентификатор объекта создается службами отладки среды 
+				CLR и связан с объектом.</p>
+				<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">
+				Создание идентификатора объекта</strong></p>
+				<ol style="box-sizing: inherit; outline-color: inherit; margin: 16px 0px 16px 38px; padding: 0px; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; outline-style: initial; outline-width: 0px; list-style: decimal;">
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					Установите точку останова в коде после создания объекта.</p>
+					</li>
+					<li style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; outline-style: initial; outline-width: 0px; list-style: decimal;">
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					Запустите отладку и, когда выполнение приостановится на 
+					точке останова, выберите<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Отладка</strong>&gt;<strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Windows</strong>&gt;<strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Локальные</strong><span>&nbsp;</span>(или 
+					нажмите клавиши<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">CTRL</strong><span>&nbsp;</span>+<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">ALT</strong><span>&nbsp;</span>+<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">V</strong>,<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">L</strong>), 
+					чтобы открыть окно<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Локальные</strong>.</p>
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					Найдите конкретный экземпляр объекта в окне<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Локальные</strong>, 
+					щелкните его правой кнопкой мыши и выберите<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Сделать 
+					идентификатор объекта</strong>.</p>
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					В окне<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">$</strong><span>&nbsp;</span>вы 
+					должны увидеть символ<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Локальные</strong><span>&nbsp;</span>. 
+					Это и есть идентификатор объекта.</p>
+					</li>
+					<li style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; outline-style: initial; outline-width: 0px; list-style: decimal;">
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					Добавьте новую точку останова в точке, которую нужно 
+					исследовать, например в точке добавления объекта в 
+					коллекцию. Щелкните правой кнопкой мыши точку останова и 
+					выберите пункт<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Условие</strong>.</p>
+					</li>
+					<li style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; outline-style: initial; outline-width: 0px; list-style: decimal;">
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					Используйте идентификатор объекта в поле<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Условное 
+					выражение</strong>. Например, если переменная<span>&nbsp;</span><code style="box-sizing: inherit; outline-color: inherit; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; direction: ltr; background-color: var(--theme-inline-code); overflow-wrap: break-word; border-radius: 3px; padding: 0.1em 0.2em;">item</code><span>&nbsp;</span>является 
+					объектом, который должен быть добавлен в коллекцию, выберите<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Is 
+					true</strong><span>&nbsp;</span>и введите<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">item 
+					== $&lt;n&gt;</strong>, где &lt;n&gt;&nbsp;— идентификатор объекта.</p>
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					Выполнение прервется в точке добавления объекта в коллекцию.</p>
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					Чтобы удалить идентификатор объекта, щелкните правой кнопкой 
+					мыши переменную в окне<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Локальные</strong><span>&nbsp;</span>и 
+					выберите пункт<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Удалить 
+					идентификатор объекта</strong>.</p>
+					</li>
+				</ol>
+				<div class="alert is-info" style="box-sizing: inherit; outline-color: var(--theme-text); background-color: var(--theme-info-background); color: rgb(22, 22, 22); overflow-wrap: break-word; word-break: break-word; border: 1px solid var(--theme-info-background-glow-high-contrast); border-radius: 0.375rem; margin-top: 1rem; padding: 1rem; font-size: 16px; transition: height 0.5s ease-in, opacity 0.5s ease-in; display: block; position: relative; font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<p class="alert-title" style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; max-width: 100%; overflow-wrap: break-word; color: var(--theme-info-dark); font-weight: 600;">
+					<span class="docon docon-status-error-outline" aria-hidden="true" style="box-sizing: inherit; outline-color: inherit; font-family: docons; font-size: inherit; speak: none; font-variant: normal; text-transform: none; text-align: center; direction: ltr; -webkit-font-smoothing: antialiased; font-style: normal; font-weight: 400; line-height: 16px; display: inline-block;">
+					</span><span>&nbsp;</span>Примечание</p>
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; max-width: 100%; overflow-wrap: break-word;">
+					Идентификаторы объектов создают слабые ссылки и не 
+					предотвращают сборку мусора для объекта. Они действительны 
+					только в рамках текущего сеанса отладки.</p>
+				</div>
+				<div class="heading-wrapper" data-heading-level="h3" style="box-sizing: inherit; outline-color: inherit; position: relative; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<a class="anchor-link docon docon-link" aria-label="Раздел с заголовком: Установка условия количества обращений" style="box-sizing: inherit; outline-color: inherit; color: var(--theme-hyperlink); cursor: pointer; overflow-wrap: normal; text-decoration: none; background-color: rgba(0, 0, 0, 0); outline-style: initial; outline-width: 0px; font-family: docons; font-size: 1rem; speak: none; font-variant: normal; text-transform: none; text-align: center; direction: ltr; -webkit-font-smoothing: antialiased; font-style: normal; font-weight: 400; line-height: 16px; display: inline-block; width: 1px; transition: opacity 0.1s linear; position: absolute; inset-inline-start: -1.875rem; transform: translateY(-50%) scale(1); inset-block-start: 1.1375rem; clip: rect(1px, 1px, 1px, 1px); clip-path: inset(50%); height: 1px; opacity: 0; border: 0px; margin: -1px; padding: 0px; overflow: hidden;" href="https://learn.microsoft.com/ru-ru/visualstudio/debugger/using-breakpoints?view=vs-2022#set-a-hit-count-condition">
+					</a>
+					<h3 id="set-a-hit-count-condition" class="heading-anchor" style="box-sizing: inherit; outline-color: inherit; margin: 30px 0px 18px; padding: 0px; font-size: clamp(1.3125rem, 15.4737px + 1.15132vw, 1.75rem); font-weight: 600; line-height: 1.3; margin-inline-start: -1.875rem; padding-inline-start: 1.875rem;">
+					Установка условия количества обращений</h3>
+				</div>
+				<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если есть подозрение, что цикл в коде начинает неправильно вести 
+				себя после определенного числа итераций, можно установить точку 
+				останова для остановки выполнения после указанного количества 
+				обращений, вместо того чтобы многократно нажимать клавишу<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">F5</strong><span>&nbsp;</span>для 
+				достижения этой итерации.</p>
+				<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В разделе<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Условия</strong><span>&nbsp;</span>в 
+				окне<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Параметры 
+				точки останова</strong><span>&nbsp;</span>выберите<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Количество 
+				обращений</strong>, а затем укажите число итераций. В следующем 
+				примере задается выполнение точки останова при каждой второй 
+				итерации:</p>
+				<div data-moniker="vs-2022" style="box-sizing: inherit; outline-color: inherit; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					<img src="pic/breakpoint-hit-count5b18.png?view=vs-2022" alt="Количество обращений для точки останова" title="BreakpointHitCount" data-linktype="relative-path" style="box-sizing: inherit; outline-color: inherit; border: 0px; height: auto; max-width: 100%; vertical-align: baseline; display: inline-block;" /></p>
+				</div>
+				<div class="heading-wrapper" data-heading-level="h3" style="box-sizing: inherit; outline-color: inherit; position: relative; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<a class="anchor-link docon docon-link" aria-label="Раздел с заголовком: Задание условия фильтра" style="box-sizing: inherit; outline-color: inherit; color: var(--theme-hyperlink); cursor: pointer; overflow-wrap: normal; text-decoration: none; background-color: rgba(0, 0, 0, 0); outline-style: initial; outline-width: 0px; font-family: docons; font-size: 1rem; speak: none; font-variant: normal; text-transform: none; text-align: center; direction: ltr; -webkit-font-smoothing: antialiased; font-style: normal; font-weight: 400; line-height: 16px; display: inline-block; width: 1px; transition: opacity 0.1s linear; position: absolute; inset-inline-start: -1.875rem; transform: translateY(-50%) scale(1); inset-block-start: 1.1375rem; clip: rect(1px, 1px, 1px, 1px); clip-path: inset(50%); height: 1px; opacity: 0; border: 0px; margin: -1px; padding: 0px; overflow: hidden;" href="https://learn.microsoft.com/ru-ru/visualstudio/debugger/using-breakpoints?view=vs-2022#set-a-filter-condition">
+					</a>
+					<h3 id="set-a-filter-condition" class="heading-anchor" style="box-sizing: inherit; outline-color: inherit; margin: 30px 0px 18px; padding: 0px; font-size: clamp(1.3125rem, 15.4737px + 1.15132vw, 1.75rem); font-weight: 600; line-height: 1.3; margin-inline-start: -1.875rem; padding-inline-start: 1.875rem;">
+					Задание условия фильтра</h3>
+				</div>
+				<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вы можете ограничить точку останова, сделав ее срабатывание 
+				возможным лишь на определенных устройствах или в определенных 
+				процессах или потоках.</p>
+				<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В разделе<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Условия</strong><span>&nbsp;</span>в 
+				окне<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Параметры 
+				точки останова</strong><span>&nbsp;</span>выберите<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Фильтр</strong>, 
+				а затем введите одно или несколько из следующих выражений.</p>
+				<ul style="box-sizing: inherit; outline-color: inherit; margin: 16px 0px 16px 38px; padding: 0px; list-style: none; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; outline-style: initial; outline-width: 0px; list-style: disc;">
+					MachineName = &quot;имя&quot;</li>
+					<li style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; outline-style: initial; outline-width: 0px; list-style: disc;">
+					ProcessId = значение</li>
+					<li style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; outline-style: initial; outline-width: 0px; list-style: disc;">
+					ProcessName = &quot;имя&quot;</li>
+					<li style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; outline-style: initial; outline-width: 0px; list-style: disc;">
+					ThreadId = значение</li>
+					<li style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; outline-style: initial; outline-width: 0px; list-style: disc;">
+					ThreadName = &quot;имя&quot;</li>
+				</ul>
+				<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Значения строк следует заключить в двойные кавычки. Для 
+				комбинации условий можно использовать знаки<span>&nbsp;</span><code style="box-sizing: inherit; outline-color: inherit; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; direction: ltr; background-color: var(--theme-inline-code); overflow-wrap: break-word; border-radius: 3px; padding: 0.1em 0.2em;">&amp;</code><span>&nbsp;</span>(И),<span>&nbsp;</span><code style="box-sizing: inherit; outline-color: inherit; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; direction: ltr; background-color: var(--theme-inline-code); overflow-wrap: break-word; border-radius: 3px; padding: 0.1em 0.2em;">||</code><span>&nbsp;</span>(ИЛИ),<span>&nbsp;</span><code style="box-sizing: inherit; outline-color: inherit; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; direction: ltr; background-color: var(--theme-inline-code); overflow-wrap: break-word; border-radius: 3px; padding: 0.1em 0.2em;">!</code><span>&nbsp;</span>(НЕ) 
+				и скобки.</p>
+				<div class="heading-wrapper" data-heading-level="h2" style="box-sizing: inherit; outline-color: inherit; position: relative; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<a class="anchor-link docon docon-link" aria-label="Раздел с заголовком: Установка точек останова функции" style="box-sizing: inherit; outline-color: inherit; color: var(--theme-hyperlink); cursor: pointer; overflow-wrap: normal; text-decoration: none; background-color: rgba(0, 0, 0, 0); outline-style: initial; outline-width: 0px; font-family: docons; font-size: 1rem; speak: none; font-variant: normal; text-transform: none; text-align: center; direction: ltr; -webkit-font-smoothing: antialiased; font-style: normal; font-weight: 400; line-height: 16px; display: inline-block; width: 1px; transition: opacity 0.1s linear; position: absolute; inset-inline-start: -1.875rem; transform: translateY(-50%) scale(1); inset-block-start: 1.38125rem; clip: rect(1px, 1px, 1px, 1px); clip-path: inset(50%); height: 1px; opacity: 0; border: 0px; margin: -1px; padding: 0px; overflow: hidden;" href="https://learn.microsoft.com/ru-ru/visualstudio/debugger/using-breakpoints?view=vs-2022#BKMK_Set_a_breakpoint_in_a_source_file">
+					</a>
+					<h2 id="BKMK_Set_a_breakpoint_in_a_source_file" class="heading-anchor" style="box-sizing: inherit; outline-color: inherit; margin: 32px 0px 12px; padding: 0px; font-size: clamp(1.59375rem, 18.7895px + 1.39803vw, 2.125rem); font-weight: 600; line-height: 1.3; margin-inline-start: -1.875rem; padding-inline-start: 1.875rem;">
+					Установка точек останова функции</h2>
+				</div>
+				<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Выполнение можно прерывать при вызове функции. Это полезно, 
+				например, если известно имя функции, но не ее расположение. Это 
+				также полезно, если у вас есть функции с одинаковым именем и вы 
+				хотите приостановить их все (например, перегруженные функции или 
+				функции в разных проектах).</p>
+				<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">
+				Установка точки останова функции:</strong></p>
+				<ol style="box-sizing: inherit; outline-color: inherit; margin: 16px 0px 16px 38px; padding: 0px; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; outline-style: initial; outline-width: 0px; list-style: decimal;">
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					Выберите<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Отладка</strong>&gt;<strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Создать 
+					точку останова</strong>&gt;<strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Точка 
+					останова функции</strong><span>&nbsp;</span>или нажмите клавиши<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">CTRL</strong><span>&nbsp;</span>+<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">K</strong>,<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">B</strong>.</p>
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					Можно также выбрать<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Создать</strong>&gt;<strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Точка 
+					останова функции</strong><span>&nbsp;</span>в окне<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Точки 
+					останова</strong>.</p>
+					</li>
+					<li style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; outline-style: initial; outline-width: 0px; list-style: decimal;">
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					В диалоговом окне<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Новая 
+					точка останова функции</strong><span>&nbsp;</span>заполните поле<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Имя 
+					функции</strong>.</p>
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					Чтобы уточнить функцию, сделайте следующее.</p>
+					<ul style="box-sizing: inherit; outline-color: inherit; margin: 16px 0px 16px 38px; padding: 0px; list-style: none;">
+						<li style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; outline-style: initial; outline-width: 0px; list-style: disc;">
+						<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+						Используйте полное имя функции.</p>
+						<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+						Пример:<span>&nbsp;</span><code style="box-sizing: inherit; outline-color: inherit; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; direction: ltr; background-color: var(--theme-inline-code); overflow-wrap: break-word; border-radius: 3px; padding: 0.1em 0.2em;">Namespace1.ClassX.MethodA()</code></p>
+						</li>
+						<li style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; outline-style: initial; outline-width: 0px; list-style: disc;">
+						<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+						Добавьте типы параметров перегруженной функции.</p>
+						<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+						Пример:<span>&nbsp;</span><code style="box-sizing: inherit; outline-color: inherit; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; direction: ltr; background-color: var(--theme-inline-code); overflow-wrap: break-word; border-radius: 3px; padding: 0.1em 0.2em;">MethodA(int, 
+						string)</code></p>
+						</li>
+						<li style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; outline-style: initial; outline-width: 0px; list-style: disc;">
+						<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+						Используйте символ &quot;!&quot;, чтобы указать модуль.</p>
+						<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+						Пример:<span>&nbsp;</span><code style="box-sizing: inherit; outline-color: inherit; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; direction: ltr; background-color: var(--theme-inline-code); overflow-wrap: break-word; border-radius: 3px; padding: 0.1em 0.2em;">App1.dll!MethodA</code></p>
+						</li>
+						<li style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; outline-style: initial; outline-width: 0px; list-style: disc;">
+						<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+						Используйте оператор контекста в машинном коде C++.</p>
+						<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+						<code style="box-sizing: inherit; outline-color: inherit; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; direction: ltr; background-color: var(--theme-inline-code); overflow-wrap: break-word; border-radius: 3px; padding: 0.1em 0.2em;">
+						{function, , [module]} [+&lt;line offset from start of 
+						method&gt;]</code></p>
+						<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+						Пример:<span>&nbsp;</span><code style="box-sizing: inherit; outline-color: inherit; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; direction: ltr; background-color: var(--theme-inline-code); overflow-wrap: break-word; border-radius: 3px; padding: 0.1em 0.2em;">{MethodA, 
+						, App1.dll}+2</code></p>
+						</li>
+					</ul>
+					</li>
+					<li style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; outline-style: initial; outline-width: 0px; list-style: decimal;">
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					В раскрывающемся списке<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Язык</strong><span>&nbsp;</span>выберите 
+					язык функции.</p>
+					</li>
+					<li style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; outline-style: initial; outline-width: 0px; list-style: decimal;">
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					Нажмите<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">ОК</strong>.</p>
+					</li>
+				</ol>
+				<div class="heading-wrapper" data-heading-level="h3" style="box-sizing: inherit; outline-color: inherit; position: relative; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<a class="anchor-link docon docon-link" aria-label="Раздел с заголовком: Задание точки останова функции по адресу памяти (только в машинном коде C++)" style="box-sizing: inherit; outline-color: inherit; color: var(--theme-hyperlink); cursor: pointer; overflow-wrap: normal; text-decoration: none; background-color: rgba(0, 0, 0, 0); outline-style: initial; outline-width: 0px; font-family: docons; font-size: 1rem; speak: none; font-variant: normal; text-transform: none; text-align: center; direction: ltr; -webkit-font-smoothing: antialiased; font-style: normal; font-weight: 400; line-height: 16px; display: inline-block; width: 1px; transition: opacity 0.1s linear; position: absolute; inset-inline-start: -1.875rem; transform: translateY(-50%) scale(1); inset-block-start: 1.1375rem; clip: rect(1px, 1px, 1px, 1px); clip-path: inset(50%); height: 1px; opacity: 0; border: 0px; margin: -1px; padding: 0px; overflow: hidden;" href="https://learn.microsoft.com/ru-ru/visualstudio/debugger/using-breakpoints?view=vs-2022#set-a-function-breakpoint-using-a-memory-address-native-c-only">
+					</a>
+					<h3 id="set-a-function-breakpoint-using-a-memory-address-native-c-only" class="heading-anchor" style="box-sizing: inherit; outline-color: inherit; margin: 30px 0px 18px; padding: 0px; font-size: clamp(1.3125rem, 15.4737px + 1.15132vw, 1.75rem); font-weight: 600; line-height: 1.3; margin-inline-start: -1.875rem; padding-inline-start: 1.875rem;">
+					Задание точки останова функции по адресу памяти (только в 
+					машинном коде C++)</h3>
+				</div>
+				<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вы можете использовать адрес объекта, чтобы установить точку 
+				останова функции в методе, вызываемом для конкретного экземпляра 
+				класса. Например, если имеется адресуемый объект типа<span>&nbsp;</span><code style="box-sizing: inherit; outline-color: inherit; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; direction: ltr; background-color: var(--theme-inline-code); overflow-wrap: break-word; border-radius: 3px; padding: 0.1em 0.2em;">my_class</code>, 
+				вы можете задать точку останова функции в методе<span>&nbsp;</span><code style="box-sizing: inherit; outline-color: inherit; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; direction: ltr; background-color: var(--theme-inline-code); overflow-wrap: break-word; border-radius: 3px; padding: 0.1em 0.2em;">my_method</code>, 
+				вызываемом экземпляром.</p>
+				<ol style="box-sizing: inherit; outline-color: inherit; margin: 16px 0px 16px 38px; padding: 0px; color: rgb(22, 22, 22); font-family: &quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; outline-style: initial; outline-width: 0px; list-style: decimal;">
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					Установите точку останова после создания экземпляра класса.</p>
+					</li>
+					<li style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; outline-style: initial; outline-width: 0px; list-style: decimal;">
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					Найдите адрес экземпляра (например,<span>&nbsp;</span><code style="box-sizing: inherit; outline-color: inherit; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; direction: ltr; background-color: var(--theme-inline-code); overflow-wrap: break-word; border-radius: 3px; padding: 0.1em 0.2em;">0xcccccccc</code>).</p>
+					</li>
+					<li style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; outline-style: initial; outline-width: 0px; list-style: decimal;">
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					Выберите<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Отладка</strong>&gt;<strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Создать 
+					точку останова</strong>&gt;<strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Точка 
+					останова функции</strong><span>&nbsp;</span>или нажмите клавиши<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">CTRL</strong><span>&nbsp;</span>+<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">K</strong>,<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">B</strong>.</p>
+					</li>
+					<li style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; outline-style: initial; outline-width: 0px; list-style: decimal;">
+					<p style="box-sizing: inherit; outline-color: inherit; margin: 1rem 0px 0px; padding: 0px; overflow-wrap: break-word;">
+					В поле<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">Имя 
+					функции</strong><span>&nbsp;</span>добавьте следующий текст и 
+					выберите язык<span>&nbsp;</span><strong style="box-sizing: inherit; outline-color: inherit; font-weight: 600;">C++</strong>.</p>
+					<div class="codeHeader" id="code-try-0" data-bi-name="code-header" style="box-sizing: content-box; outline-color: inherit; background-color: var(--theme-code-header); color: var(--theme-text); border-top-color: ; border-top-style: ; border-top-width: ; border-right-color: ; border-right-style: ; border-right-width: ; border-left-color: ; border-left-style: ; border-left-width: ; border-image-source: ; border-image-slice: ; border-image-width: ; border-image-outset: ; border-image-repeat: ; min-height: 30px; border-bottom: 0px; flex-direction: row; margin-top: 16px; font-size: 0.8rem; display: flex;">
+						<span class="language" style="box-sizing: inherit; outline-color: inherit; flex-grow: 1; align-items: center; padding: 2px 16px; display: flex;">
+						C++</span>
+						<button type="button" class="action position-relative display-none-print" data-bi-name="copy" style="box-sizing: inherit; outline-color: inherit; margin: 0px; font-family: inherit; font-size: 12.8px; line-height: normal; overflow: visible; text-transform: none; appearance: button; color: var(--theme-text); background-color: rgba(0, 0, 0, 0); cursor: pointer; position: relative !important; border-top-color: ; border-top-style: ; border-top-width: ; border-right-color: ; border-right-style: ; border-right-width: ; border-bottom-color: ; border-bottom-style: ; border-bottom-width: ; border-left-color: ; border-left-style: ; border-image-source: ; border-image-slice: ; border-image-width: ; border-image-outset: ; border-image-repeat: ; border-left-width: 1px; align-items: center; padding: 2px 10px; display: flex;">
+						<span class="icon margin-right-xxs" aria-hidden="true" style="box-sizing: inherit; outline-color: inherit; margin-inline-end: 0.5rem !important; justify-content: center; align-items: center; display: inline-flex; width: 1em; height: 1em;">
+						<span class="docon docon-edit-copy" style="box-sizing: inherit; outline-color: inherit; font-family: docons; font-size: inherit; speak: none; font-variant: normal; text-transform: none; text-align: center; direction: ltr; -webkit-font-smoothing: antialiased; font-style: normal; font-weight: 400; line-height: 16px; display: inline-block;">
+						</span></span>
+						<span style="box-sizing: inherit; outline-color: inherit;">
+						Копировать</span><div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true" style="box-sizing: inherit; outline-color: var(--theme-success-invert); display: flex !important; justify-content: center !important; align-items: center !important; position: absolute !important; inset-block: 0px !important; inset-inline: 0px !important; color: var(--theme-success-invert) !important; background-color: var(--theme-success-base) !important; opacity: 0; transition: opacity 0.5s ease-in-out;">
+							<span class="icon font-size-lg" style="box-sizing: inherit; outline-color: inherit; font-size: 1.125rem !important; justify-content: center; align-items: center; display: inline-flex; width: 1em; height: 1em;">
+							<span class="docon docon-check-mark" style="box-sizing: inherit; outline-color: inherit; font-family: docons; font-size: inherit; speak: none; font-variant: normal; text-transform: none; text-align: center; direction: ltr; -webkit-font-smoothing: antialiased; font-style: normal; font-weight: 400; line-height: 16px; display: inline-block;">
+							</span></span></div>
+						</button></div>
+					<pre class="has-inner-focus" style="box-sizing: inherit; outline-color: inherit; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace !important; font-size: 0.875rem; margin: 0px 0px 16px; padding: 1rem; -webkit-font-smoothing: auto; border: .125rem solid var(--theme-border); background-color: var(--theme-code-block); white-space: pre; word-spacing: normal; word-break: normal; overflow-wrap: normal; tab-size: 4; hyphens: none; line-height: 1.3571; overflow: auto;"><code class="lang-cpp" style="box-sizing: inherit; outline-color: inherit; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 1em; direction: ltr; border: 0px; padding: 0px; line-height: 1.3571; display: block; position: relative;"><span style="box-sizing: inherit; outline-color: inherit;">((my_class *) <span class="hljs-number" style="box-sizing: inherit; outline-color: inherit;">0xcccccccc</span>)-&gt;my_method</span></code></pre>
+					</li>
+				</ol>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les25.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les25/4.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:14:15 GMT -->
+</html>

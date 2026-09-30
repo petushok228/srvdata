@@ -1,0 +1,636 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les42/1.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:49:04 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: rgb(0, 0, 255);
+}
+.style3 {
+	color: rgb(128, 0, 128);
+}
+.style4 {
+	color: rgb(0, 0, 255);
+	font-size: medium;
+}
+.style5 {
+	font-size: medium;
+}
+.style6 {
+	font-size: medium;
+	color: rgb(128, 0, 0);
+}
+.style7 {
+	font-size: large;
+	color: rgb(128, 0, 0);
+}
+.style8 {
+	color: rgb(128, 0, 0);
+}
+.style9 {
+	font-size: large;
+}
+    .style10 {
+	color: #0000FF;
+	margin-left: 40px;
+}
+    .style11 {
+	font-weight: normal;
+}
+.style12 {
+	text-align: left;
+}
+.style13 {
+	margin-bottom: 0px;
+}
+.style14 {
+	font-size: small;
+}
+    .style15 {
+	color: rgb(255, 0, 0);
+}
+.style16 {
+	color: rgb(255, 0, 0);
+	text-decoration: underline;
+}
+    .style17 {
+	font-size: small;
+	color: #0000FF;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 1. Коллекция Класс ArrayList.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; height: 50px;">
+				Итак, класс<span>&nbsp;</span><span class="b" style="font-weight: bold;">ArrayList</span><span>&nbsp;</span>представляет 
+				коллекцию объектов. И <span class="style2"><strong>если надо 
+				сохранить вместе разнотипные объекты</strong></span> - строки, 
+				числа и т.д., то данный класс как раз для этого подходит.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; height: 50px;">
+				В классе ArrayList поддерживаются динамические массивы, расширяющиеся и сокращающиеся по мере необходимости. В языке C# 
+				<span class="style15"><strong>стандартные массивы имеют фиксированную длину</strong></span>, которая не может изменяться во время выполнения программы. 
+				<span class="style16"><strong>Это означает, что количество элементов в массиве нужно знать заранее</strong></span>. Но иногда требуемая конкретная длина массива остается неизвестной до самого момента выполнения программы. Именно для таких ситуаций и предназначен класс ArrayList. </p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; height: 50px;">
+				<span class="style15"><strong>В классе ArrayList определяется массив переменной длины</strong></span>, который состоит из ссылок на объекты и 
+				<span class="style15"><strong>может динамически увеличивать и уменьшать свой размер</strong></span>.
+
+Массив типа ArrayList создается с первоначальным размером. Если этот размер превышается, то массив автоматически расширяется. А при удалении объектов из такого массива он автоматически сокращается. Коллекции класса ArrayList широко применяются в практике программирования на C#. Многие способы применения коллекций класса ArrayList распространяются и на другие коллекции, в том числе и на обобщенные. В классе ArrayList реализуются интерфейсы ICollection, IList, IEnumerable и ICloneable. </p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; height: 50px;">
+				Реальное отличие и использование ArrayList (от List) заключается в его 
+				<span class="style16"><strong>способности хранить различные типы объектов.</strong></span> Например, один
+				<span class="style16"><strong>ArrayList может содержать числовые, плавающие, строковые элементы и т. д.&nbsp;</strong></span></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; height: 50px;">
+								Ниже приведены конструкторы класса ArrayList:</p>
+				<ul class="style17">
+					<li>
+					<strong>public ArrayList()</strong></li>
+					<li>
+					<strong>public ArrayList(ICollection с)</strong></li>
+					<li>
+					<strong>public ArrayList(int capacity)&nbsp;</strong></li>
+				</ul>
+				<ol>
+					<li>
+					<p class="style14"><strong>Первый конструктор создает пустую коллекцию класса ArrayList с нулевой первоначальной емкостью. 
+					</strong></p>
+					</li>
+					<li>
+					<p class="style14"><strong>Второй конструктор создает коллекцию типа ArrayList с количеством инициализируемых элементов, которое определяется параметром c и равно первоначальной емкости массива. 
+					</strong></p>
+					</li>
+					<li>
+					<p class="style14"><strong>Третий конструктор создает коллекцию, имеющую указанную первоначальную емкость, определяемую параметром capacity. В данном случае емкость обозначает размер базового массива, используемого для хранения элементов коллекции.</strong>
+					</p>
+					</li>
+				</ol>
+				<p class="style14">Емкость коллекции типа ArrayList может увеличиваться автоматически по мере добавления в нее элементов.&nbsp;</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<strong>Основные методы класса:</strong></p>
+				<ul style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<code style="font-family: monospace;"><span class="style6">
+					<strong>int Add(object value)</strong></span></code>: 
+					добавляет в список объект value</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<code style="font-family: monospace;"><strong>
+					<span class="style6">void AddRange(ICollection col)</span></strong></code>: 
+					добавляет в список объекты коллекции col, которая 
+					представляет интерфейс ICollection - интерфейс, реализуемый 
+					коллекциями.</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style7"><code style="font-family: monospace;">
+					<strong>void Clear()</strong></code></span>: удаляет из 
+					списка все элементы</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style7"><code style="font-family: monospace;">
+					<strong>bool Contains(object value)</strong></code></span>: 
+					проверяет, содержится ли в списке объект value. Если 
+					содержится, возвращает true, иначе возвращает false</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style7"><code style="font-family: monospace;">
+					<strong>void CopyTo(Array array)</strong></code></span>: 
+					копирует текущий список в массив array.</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style7"><code style="font-family: monospace;">
+					<strong>ArrayList GetRange(int index, int count)</strong></code></span>: 
+					возвращает новый список ArrayList, который содержит count 
+					элементов текущего списка, начиная с индекса index</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style8"><code style="font-family: monospace;">
+					<span class="style9"><strong>int IndexOf(object value)</strong></span></code><span class="style9"><strong>:
+					</strong></span></span>возвращает индекс элемента value</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style7"><code style="font-family: monospace;">
+					<strong>void Insert(int index, object value)</strong></code></span>: 
+					вставляет в список по индексу index объект value</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style7"><code style="font-family: monospace;">
+					<strong>void InsertRange(int index, ICollection col)</strong></code></span>: 
+					вставляет в список начиная с индекса index коллекцию 
+					ICollection</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style7"><code style="font-family: monospace;">
+					<strong>int LastIndexOf(object value)</strong></code></span>: 
+					возвращает индекс последнего вхождения в списке объекта 
+					value</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style7"><code style="font-family: monospace;">
+					<strong>void Remove(object value)</strong></code><strong>:
+					</strong></span>удаляет из списка объект value</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style7"><code style="font-family: monospace;">
+					<strong>void RemoveAt(int index)</strong></code></span>: 
+					удаляет из списка элемент по индексу index</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style7"><code style="font-family: monospace;">
+					<strong>void RemoveRange(int index, int count)</strong></code></span>: 
+					удаляет из списка count элементов, начиная с индекса index</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style7"><code style="font-family: monospace;">
+					<strong>void Reverse()</strong></code></span>: 
+					переворачивает список</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<code style="font-family: monospace;"><span class="style7">
+					void SetRange(int index, ICollection col)</span></code>: 
+					копирует в список элементы коллекции col, начиная с индекса 
+					index</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<code style="font-family: monospace;"><strong>
+					<span class="style7">void Sort()</span></strong></code>: 
+					сортирует коллекцию</p>
+					</li>
+				</ul>
+				<h2 _msttexthash="1406509" _msthash="102" style="box-sizing: border-box; margin: 2rem 0px 1rem; font-family: &quot;Segoe UI&quot;, Verdana, sans-serif; font-weight: 400; line-height: 1.2; color: rgb(24, 23, 23); font-size: 28px; text-align: left; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Создание ArrayList</h2>
+				<p style="box-sizing: border-box; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style12">
+				<font _mstmutation="1" _msttexthash="48124596" _msthash="103" style="box-sizing: border-box;">
+				Класс, включенный в пространст<span class="style11">во имен.
+				</span>Создайте объект с использованием ключевого слова.<span>&nbsp;</span></font><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: rgb(0, 0, 0); word-break: break-word; background-color: rgb(217, 229, 243); padding: 1px 5px; border-radius: 2px;">ArrayListSystem.CollectionsArrayListnew</code></p>
+				<div class="card code-panel" style="box-sizing: border-box; position: relative; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; min-width: 0px; overflow-wrap: break-word; background-color: rgb(216, 229, 238); background-clip: border-box; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0px; margin-bottom: 1.25rem; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<div class="card-header example-title" _msttexthash="3084172" _msthash="104" style="box-sizing: border-box; padding: 5px 0px 5px 5px; margin-bottom: 0px; background-color: transparent !important; border-bottom: 1px solid rgba(0, 0, 0, 0.125); color: rgb(44, 71, 88); font-size: 16px; min-height: 38px; line-height: 1.7em; border-radius: calc(-1px + 0.25rem) calc(-1px + 0.25rem) 0px 0px;">
+						Пример: Создание ArrayList</div>
+					<div class="panel-body" style="box-sizing: border-box; color: rgb(16, 16, 16);">
+						<pre class="csharpcode" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 15px; margin: 0px; overflow: auto; display: block; color: rgb(0, 0, 0); border: 0px; background: rgb(255, 255, 255); padding: 10px 0px 10px 5px; overflow-wrap: initial;"><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: inherit; word-break: normal; padding: 0px; white-space: inherit; line-height: 1.5rem;"><span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">using</span> System.Collections;
+
+<span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">ArrayList</span> arlist = <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">new</span> <span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">ArrayList</span>(); 
+<span class="rem" style="box-sizing: border-box; color: green;">// or </span>
+<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">var</span> arlist = <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">new</span> <span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">ArrayList</span>(); <span class="rem" style="box-sizing: border-box; color: green;">// recommended </span></code></pre>
+					</div>
+				</div>
+				<h2 id="add-elements" _msttexthash="5009368" _msthash="105" style="box-sizing: border-box; margin: 2rem 0px 1rem; font-family: &quot;Segoe UI&quot;, Verdana, sans-serif; font-weight: 400; line-height: 1.2; color: rgb(24, 23, 23); font-size: 28px; text-align: left; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Добавление элементов в ArrayList</h2>
+				<p style="box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<font _mstmutation="1" _msttexthash="44217212" _msthash="106" style="box-sizing: border-box;">
+				Используйте<span>&nbsp;</span>синтаксис метода или инициализатора 
+				объекта<span>&nbsp;</span>для добавления элементов в .<span>&nbsp;</span></font><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: rgb(0, 0, 0); word-break: break-word; background-color: rgb(217, 229, 243); padding: 1px 5px; border-radius: 2px;">Add()ArrayList</code></p>
+				<p style="box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<font _mstmutation="1" _msttexthash="22879675" _msthash="107" style="box-sizing: border-box;">
+				An может содержать множественные и повторяющиеся значения.<span>&nbsp;</span></font><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: rgb(0, 0, 0); word-break: break-word; background-color: rgb(217, 229, 243); padding: 1px 5px; border-radius: 2px;">ArrayListnull</code></p>
+				<div class="card code-panel" style="box-sizing: border-box; position: relative; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; min-width: 0px; overflow-wrap: break-word; background-color: rgb(216, 229, 238); background-clip: border-box; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0px; margin-bottom: 1.25rem; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<div class="card-header example-title" _msttexthash="7867301" _msthash="108" style="box-sizing: border-box; padding: 5px 0px 5px 5px; margin-bottom: 0px; background-color: transparent !important; border-bottom: 1px solid rgba(0, 0, 0, 0.125); color: rgb(44, 71, 88); font-size: 16px; min-height: 38px; line-height: 1.7em; border-radius: calc(-1px + 0.25rem) calc(-1px + 0.25rem) 0px 0px;">
+						Пример: Добавление элементов в ArrayList</div>
+					<div class="panel-body" style="box-sizing: border-box; color: rgb(16, 16, 16);">
+						<pre class="csharpcode" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 15px; margin: 0px; overflow: auto; display: block; color: rgb(0, 0, 0); border: 0px; background: rgb(255, 255, 255); padding: 10px 0px 10px 5px; overflow-wrap: initial;"><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: inherit; word-break: normal; padding: 0px; white-space: inherit; line-height: 1.5rem;"><span class="rem" style="box-sizing: border-box; color: green;">// adding elements using ArrayList.Add() method</span>
+<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">var</span> arlist1 = <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">new</span> <span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">ArrayList</span>();
+arlist1.Add(1);
+arlist1.Add(<span class="str" style="box-sizing: border-box; color: rgb(163, 21, 21);">&quot;Bill&quot;</span>);
+arlist1.Add(<span class="str" style="box-sizing: border-box; color: rgb(163, 21, 21);">&quot; &quot;</span>);
+arlist1.Add(true);
+arlist1.Add(4.5);
+arlist1.Add(<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">null</span>);
+
+<span class="rem" style="box-sizing: border-box; color: green;">// adding elements using object initializer syntax</span>
+<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">var</span> arlist2 = <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">new</span> <span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">ArrayList</span>()
+                {
+                    2, <span class="str" style="box-sizing: border-box; color: rgb(163, 21, 21);">&quot;Steve&quot;</span>, &quot; &quot;, <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">true</span>, 4.5, <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">null</span>
+                };
+</code></pre>
+					</div>
+					<div class="card-footer example-footer" style="box-sizing: border-box; padding: 0px; background-color: transparent; border: 0px; border-radius: 0px 0px calc(-1px + 0.25rem) calc(-1px + 0.25rem);">
+					</div>
+				</div>
+				<p style="box-sizing: border-box; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style12">
+				<font _mstmutation="1" _msttexthash="23590463" _msthash="110" style="box-sizing: border-box;">
+				Используйте этот метод для добавления всего<span>&nbsp;</span>массива,<span>&nbsp;</span>HashTable,<span>&nbsp;</span>SortedList, 
+				,<span>&nbsp;</span>, Queue<span>&nbsp;</span>и<span>&nbsp;</span>Stack<span>&nbsp;</span>в 
+				.<span>&nbsp;</span></font><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: rgb(0, 0, 0); word-break: break-word; background-color: rgb(217, 229, 243); padding: 1px 5px; border-radius: 2px;">AddRange(ICollection 
+				c)ArrayListBitArrayArrayList</code></p>
+				<div class="style13" style="box-sizing: border-box; position: relative; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; min-width: 0px; overflow-wrap: break-word; background-color: rgb(216, 229, 238); background-clip: border-box; border-radius: 0px; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<div class="card-header example-title" _msttexthash="10140416" _msthash="111" style="box-sizing: border-box; padding: 5px 0px 5px 5px; margin-bottom: 0px; background-color: transparent !important; border-bottom: 1px solid rgba(0, 0, 0, 0.125); color: rgb(44, 71, 88); font-size: 16px; min-height: 38px; line-height: 1.7em; border-radius: calc(-1px + 0.25rem) calc(-1px + 0.25rem) 0px 0px;">
+						Пример: Добавление всего массива/ArrayList в ArrayList</div>
+					<div class="panel-body" style="box-sizing: border-box; color: rgb(16, 16, 16);">
+						<pre class="csharpcode" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 15px; margin: 0px; overflow: auto; display: block; color: rgb(0, 0, 0); border: 0px; background: rgb(255, 255, 255); padding: 10px 0px 10px 5px; overflow-wrap: initial;"><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: inherit; word-break: normal; padding: 0px; white-space: inherit; line-height: 1.5rem;"><span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">var</span> arlist1 = <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">new</span> <span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">ArrayList</span>();
+
+<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">var</span> arlist2 = <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">new</span> <span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">ArrayList</span>()
+                    {
+                        1, <span class="str" style="box-sizing: border-box; color: rgb(163, 21, 21);">&quot;Bill&quot;</span>, &quot; &quot;, <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">true</span>, 4.5, <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">null</span>
+                    };
+
+<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">int</span>[] arr = { 100, 200, 300, 400 };
+
+<span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">Queue</span> myQ = <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">new</span> <span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">Queue</span>();
+myQ.Enqueue(<span class="str" style="box-sizing: border-box; color: rgb(163, 21, 21);">&quot;Hello&quot;</span>);
+myQ.Enqueue(<span class="str" style="box-sizing: border-box; color: rgb(163, 21, 21);">&quot;World!&quot;</span>);
+
+arlist1.AddRange(arlist2); <span class="rem" style="box-sizing: border-box; color: green;">//adding arraylist in arraylist </span>
+arlist1.AddRange(arr); <span class="rem" style="box-sizing: border-box; color: green;">//adding array in arraylist </span>
+arlist1.AddRange(myQ); <span class="rem" style="box-sizing: border-box; color: green;">//adding Queue in arraylist </span>
+</code></pre>
+					</div>
+					<div class="card-footer example-footer" style="box-sizing: border-box; padding: 0px; background-color: transparent; border: 0px; border-radius: 0px 0px calc(-1px + 0.25rem) calc(-1px + 0.25rem);">
+					</div>
+				</div>
+				<h2 id="access-arraylist" _msttexthash="1203670" _msthash="113" style="box-sizing: border-box; margin: 2rem 0px 1rem; font-family: &quot;Segoe UI&quot;, Verdana, sans-serif; font-weight: 400; line-height: 1.2; color: rgb(24, 23, 23); font-size: 28px; text-align: left; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Доступ к ArrayList</h2>
+				<p style="box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<font _mstmutation="1" _msttexthash="237119025" _msthash="114" style="box-sizing: border-box;">
+				Класс реализует интерфейс. Таким образом, доступ к элементам 
+				можно получить с помощью индексатора, так же, как и к массиву. 
+				Индекс начинается с нуля и увеличивается на единицу для каждого 
+				последующего элемента.<span>&nbsp;</span></font><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: rgb(0, 0, 0); word-break: break-word; background-color: rgb(217, 229, 243); padding: 1px 5px; border-radius: 2px;">ArrayListIList</code></p>
+				<p _msttexthash="40268124" _msthash="115" style="box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Требуется явное приведение к соответствующим типам или 
+				используйте переменную<span>&nbsp;</span>var.</p>
+				<div class="card code-panel" style="box-sizing: border-box; position: relative; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; min-width: 0px; overflow-wrap: break-word; background-color: rgb(216, 229, 238); background-clip: border-box; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0px; margin-bottom: 1.25rem; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<div class="card-header example-title" _msttexthash="6063174" _msthash="116" style="box-sizing: border-box; padding: 5px 0px 5px 5px; margin-bottom: 0px; background-color: transparent !important; border-bottom: 1px solid rgba(0, 0, 0, 0.125); color: rgb(44, 71, 88); font-size: 16px; min-height: 38px; line-height: 1.7em; border-radius: calc(-1px + 0.25rem) calc(-1px + 0.25rem) 0px 0px;">
+						Пример: Доступ к элементам ArrayList</div>
+					<div class="panel-body" style="box-sizing: border-box; color: rgb(16, 16, 16);">
+						<pre class="csharpcode" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 15px; margin: 0px; overflow: auto; display: block; color: rgb(0, 0, 0); border: 0px; background: rgb(255, 255, 255); padding: 10px 0px 10px 5px; overflow-wrap: initial;"><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: inherit; word-break: normal; padding: 0px; white-space: inherit; line-height: 1.5rem;"><span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">var</span> arlist = <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">new</span> <span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">ArrayList</span>()
+                {
+                    1,
+                    <span class="str" style="box-sizing: border-box; color: rgb(163, 21, 21);">&quot;Bill&quot;</span>,
+                    300,
+                    4.5f
+                };
+
+<span class="rem" style="box-sizing: border-box; color: green;">//Access individual item using indexer</span>
+<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">int</span> firstElement = (<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">int</span>) arlist[0]; <span class="rem" style="box-sizing: border-box; color: green;">//returns 1</span>
+<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">string</span> secondElement = (<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">string</span>) arlist[1]; <span class="rem" style="box-sizing: border-box; color: green;">//returns &quot;Bill&quot;</span>
+<span class="rem" style="box-sizing: border-box; color: green;">//int secondElement = (int) arlist[1]; //Error: cannot cover string to int</span>
+
+<span class="rem" style="box-sizing: border-box; color: green;">//using var keyword without explicit casting</span>
+<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">var</span> firstElement = arlist[0]; <span class="rem" style="box-sizing: border-box; color: green;">//returns 1</span>
+<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">var</span> secondElement = arlist[1]; <span class="rem" style="box-sizing: border-box; color: green;">//returns &quot;Bill&quot;</span>
+<span class="rem" style="box-sizing: border-box; color: green;">//var fifthElement = arlist[5]; //Error: Index out of range</span>
+
+<span class="rem" style="box-sizing: border-box; color: green;">//update elements</span>
+arlist[0] = <span class="str" style="box-sizing: border-box; color: rgb(163, 21, 21);">&quot;Steve&quot;</span>; 
+arlist[1] = 100;
+<span class="rem" style="box-sizing: border-box; color: green;">//arlist[5] = 500; //Error: Index out of range</span>
+</code></pre>
+					</div>
+					<div class="card-footer example-footer" style="box-sizing: border-box; padding: 0px; background-color: transparent; border: 0px; border-radius: 0px 0px calc(-1px + 0.25rem) calc(-1px + 0.25rem);">
+					</div>
+				</div>
+				<h2 id="iterate-arraylist" _msttexthash="1413568" _msthash="118" style="box-sizing: border-box; margin: 2rem 0px 1rem; font-family: &quot;Segoe UI&quot;, Verdana, sans-serif; font-weight: 400; line-height: 1.2; color: rgb(24, 23, 23); font-size: 28px; text-align: left; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Итерация ArrayList</h2>
+				<p style="box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<font _mstmutation="1" _msttexthash="178071062" _msthash="119" style="box-sizing: border-box;">
+				В нем реализован интерфейс<span>&nbsp;</span>ICollection, 
+				поддерживающий итерацию типов коллекций. Таким образом, 
+				используйте цикл and для итерации . Свойство an возвращает общее 
+				количество элементов в .<span>&nbsp;</span></font><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: rgb(0, 0, 0); word-break: break-word; background-color: rgb(217, 229, 243); padding: 1px 5px; border-radius: 2px;">ArrayListforeachforArrayListCountArrayListArrayList</code></p>
+				<div class="card code-panel" style="box-sizing: border-box; position: relative; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; min-width: 0px; overflow-wrap: break-word; background-color: rgb(216, 229, 238); background-clip: border-box; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0px; margin-bottom: 1.25rem; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<div class="card-header example-title" _msttexthash="3094871" _msthash="120" style="box-sizing: border-box; padding: 5px 0px 5px 5px; margin-bottom: 0px; background-color: transparent !important; border-bottom: 1px solid rgba(0, 0, 0, 0.125); color: rgb(44, 71, 88); font-size: 16px; min-height: 38px; line-height: 1.7em; border-radius: calc(-1px + 0.25rem) calc(-1px + 0.25rem) 0px 0px;">
+						Пример: Итерация ArrayList</div>
+					<div class="panel-body" style="box-sizing: border-box; color: rgb(16, 16, 16);">
+						<pre class="csharpcode" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 15px; margin: 0px; overflow: auto; display: block; color: rgb(0, 0, 0); border: 0px; background: rgb(255, 255, 255); padding: 10px 0px 10px 5px; overflow-wrap: initial;"><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: inherit; word-break: normal; padding: 0px; white-space: inherit; line-height: 1.5rem;"><span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">ArrayList</span> arlist = <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">new</span> <span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">ArrayList</span>()
+                        {
+                            1,
+                            <span class="str" style="box-sizing: border-box; color: rgb(163, 21, 21);">&quot;Bill&quot;</span>,
+                            300,
+                            4.5F
+                        };
+
+<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">foreach</span> (<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">var</span> item <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">in</span> arlist)
+    <span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">Console</span>.Write(item + <span class="str" style="box-sizing: border-box; color: rgb(163, 21, 21);">&quot;, &quot;</span>); <span class="rem" style="box-sizing: border-box; color: green;">//output: 1, Bill, 300, 4.5, </span>
+            
+<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">for</span>(<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">int</span> i = 0 ; i &lt; arlist.Count; i++)
+    <span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">Console</span>.Write(arlist[i] + <span class="str" style="box-sizing: border-box; color: rgb(163, 21, 21);">&quot;, &quot;</span>); <span class="rem" style="box-sizing: border-box; color: green;">//output: 1, Bill, 300, 4.5, </span>
+</code></pre>
+					</div>
+					<div class="card-footer example-footer" style="box-sizing: border-box; padding: 0px; background-color: transparent; border: 0px; border-radius: 0px 0px calc(-1px + 0.25rem) calc(-1px + 0.25rem);">
+					</div>
+				</div>
+				<h2 id="insert-elements" _msttexthash="3919994" _msthash="122" style="box-sizing: border-box; margin: 2rem 0px 1rem; font-family: &quot;Segoe UI&quot;, Verdana, sans-serif; font-weight: 400; line-height: 1.2; color: rgb(24, 23, 23); font-size: 28px; text-align: left; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вставка элементов в ArrayList</h2>
+				<p style="box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<font _mstmutation="1" _msttexthash="24654175" _msthash="123" style="box-sizing: border-box;">
+				Используйте метод для вставки элемента с указанным индексом в .<span>&nbsp;</span></font><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: rgb(0, 0, 0); word-break: break-word; background-color: rgb(217, 229, 243); padding: 1px 5px; border-radius: 2px;">Insert()ArrayList</code></p>
+				<p style="box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<font _mstmutation="1" _msttexthash="996931" _msthash="124" style="box-sizing: border-box;">
+				Подпись:<span>&nbsp;</span></font><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: rgb(0, 0, 0); word-break: break-word; background-color: rgb(217, 229, 243); padding: 1px 5px; border-radius: 2px;"><i style="box-sizing: border-box;">void 
+				Insert(int index, Object value)</i></code></p>
+				<div class="card code-panel" style="box-sizing: border-box; position: relative; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; min-width: 0px; overflow-wrap: break-word; background-color: rgb(216, 229, 238); background-clip: border-box; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0px; margin-bottom: 1.25rem; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<div class="card-header example-title" _msttexthash="1636700" _msthash="125" style="box-sizing: border-box; padding: 5px 0px 5px 5px; margin-bottom: 0px; background-color: transparent !important; border-bottom: 1px solid rgba(0, 0, 0, 0.125); color: rgb(44, 71, 88); font-size: 16px; min-height: 38px; line-height: 1.7em; border-radius: calc(-1px + 0.25rem) calc(-1px + 0.25rem) 0px 0px;">
+						Пример: Insert Element in ArrayList</div>
+					<div class="panel-body" style="box-sizing: border-box; color: rgb(16, 16, 16);">
+						<pre class="csharpcode" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 15px; margin: 0px; overflow: auto; display: block; color: rgb(0, 0, 0); border: 0px; background: rgb(255, 255, 255); padding: 10px 0px 10px 5px; overflow-wrap: initial;"><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: inherit; word-break: normal; padding: 0px; white-space: inherit; line-height: 1.5rem;"><span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">ArrayList</span> arlist = <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">new</span> <span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">ArrayList</span>()
+                {
+                    1,
+                    <span class="str" style="box-sizing: border-box; color: rgb(163, 21, 21);">&quot;Bill&quot;</span>,
+                    300,
+                    4.5f
+                };
+
+arlist.Insert(1, <span class="str" style="box-sizing: border-box; color: rgb(163, 21, 21);">&quot;Second Item&quot;</span>);
+
+<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">foreach</span> (<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">var</span> val <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">in</span> arlist)
+    <span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">Console</span>.WriteLine(<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">val</span>); 
+</code></pre>
+					</div>
+					<div class="card-footer example-footer" style="box-sizing: border-box; padding: 0px; background-color: transparent; border: 0px; border-radius: 0px 0px calc(-1px + 0.25rem) calc(-1px + 0.25rem);">
+					</div>
+				</div>
+				<p style="box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<font _mstmutation="1" _msttexthash="26358384" _msthash="127" style="box-sizing: border-box;">
+				Используйте этот метод для вставки коллекции в указанный индекс.<span>&nbsp;</span></font><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: rgb(0, 0, 0); word-break: break-word; background-color: rgb(217, 229, 243); padding: 1px 5px; border-radius: 2px;">InsertRange()ArrayList</code></p>
+				<p style="box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<font _mstmutation="1" _msttexthash="996931" _msthash="128" style="box-sizing: border-box;">
+				Подпись:<span>&nbsp;</span></font><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: rgb(0, 0, 0); word-break: break-word; background-color: rgb(217, 229, 243); padding: 1px 5px; border-radius: 2px;"><i style="box-sizing: border-box;">Void 
+				InsertRange(int index, ICollection c)</i></code></p>
+				<div class="card code-panel" style="box-sizing: border-box; position: relative; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; min-width: 0px; overflow-wrap: break-word; background-color: rgb(216, 229, 238); background-clip: border-box; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0px; margin-bottom: 1.25rem; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<div class="card-header example-title" _msttexthash="6481618" _msthash="129" style="box-sizing: border-box; padding: 5px 0px 5px 5px; margin-bottom: 0px; background-color: transparent !important; border-bottom: 1px solid rgba(0, 0, 0, 0.125); color: rgb(44, 71, 88); font-size: 16px; min-height: 38px; line-height: 1.7em; border-radius: calc(-1px + 0.25rem) calc(-1px + 0.25rem) 0px 0px;">
+						Пример: Вставка коллекции в ArrayList</div>
+					<div class="panel-body" style="box-sizing: border-box; color: rgb(16, 16, 16);">
+						<pre class="csharpcode" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 15px; margin: 0px; overflow: auto; display: block; color: rgb(0, 0, 0); border: 0px; background: rgb(255, 255, 255); padding: 10px 0px 10px 5px; overflow-wrap: initial;"><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: inherit; word-break: normal; padding: 0px; white-space: inherit; line-height: 1.5rem;"><span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">ArrayList</span> arlist1 = <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">new</span> <span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">ArrayList</span>()
+                {
+                    100, 200, 600
+                };
+
+<span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">ArrayList</span> arlist2 = <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">new</span> <span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">ArrayList</span>()
+                {
+                    300, 400, 500
+                };
+arlist1.InsertRange(2, arlist2);
+
+<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">foreach</span>(<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">var</span> item <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">in</span> arlist1)
+    <span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">Console</span>.Write(item + <span class="str" style="box-sizing: border-box; color: rgb(163, 21, 21);">&quot;, &quot;</span>); <span class="rem" style="box-sizing: border-box; color: green;">//output: 100, 200, 300, 400, 500, 600, </span>
+</code></pre>
+					</div>
+					<div class="card-footer example-footer" style="box-sizing: border-box; padding: 0px; background-color: transparent; border: 0px; border-radius: 0px 0px calc(-1px + 0.25rem) calc(-1px + 0.25rem);">
+					</div>
+				</div>
+				<h2 id="remove-elements" _msttexthash="4635124" _msthash="131" style="box-sizing: border-box; margin: 2rem 0px 1rem; font-family: &quot;Segoe UI&quot;, Verdana, sans-serif; font-weight: 400; line-height: 1.2; color: rgb(24, 23, 23); font-size: 28px; text-align: left; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Удаление элементов из ArrayList</h2>
+				<p style="box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<font _mstmutation="1" _msttexthash="16668184" _msthash="132" style="box-sizing: border-box;">
+				Используйте методы , или для удаления элементов из .<span>&nbsp;</span></font><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: rgb(0, 0, 0); word-break: break-word; background-color: rgb(217, 229, 243); padding: 1px 5px; border-radius: 2px;">Remove()RemoveAt()RemoveRangeArrayList</code></p>
+				<div class="card code-panel" style="box-sizing: border-box; position: relative; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; min-width: 0px; overflow-wrap: break-word; background-color: rgb(216, 229, 238); background-clip: border-box; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0px; margin-bottom: 1.25rem; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<div class="card-header example-title" _msttexthash="7396870" _msthash="133" style="box-sizing: border-box; padding: 5px 0px 5px 5px; margin-bottom: 0px; background-color: transparent !important; border-bottom: 1px solid rgba(0, 0, 0, 0.125); color: rgb(44, 71, 88); font-size: 16px; min-height: 38px; line-height: 1.7em; border-radius: calc(-1px + 0.25rem) calc(-1px + 0.25rem) 0px 0px;">
+						Пример: Удаление элементов из ArrayList</div>
+					<div class="panel-body" style="box-sizing: border-box; color: rgb(16, 16, 16);">
+						<pre class="csharpcode" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 15px; margin: 0px; overflow: auto; display: block; color: rgb(0, 0, 0); border: 0px; background: rgb(255, 255, 255); padding: 10px 0px 10px 5px; overflow-wrap: initial;"><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: inherit; word-break: normal; padding: 0px; white-space: inherit; line-height: 1.5rem;"><span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">ArrayList</span> arList = <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">new</span> <span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">ArrayList</span>()
+                {
+                    1,
+                    null,
+                    <span class="str" style="box-sizing: border-box; color: rgb(163, 21, 21);">&quot;Bill&quot;</span>,
+                    300,
+                    <span class="str" style="box-sizing: border-box; color: rgb(163, 21, 21);">&quot; &quot;</span>,
+                    4.5f,
+                    300,
+                };
+
+arList.Remove(null); <span class="rem" style="box-sizing: border-box; color: green;">//Removes first occurance of null</span>
+arList.RemoveAt(4); <span class="rem" style="box-sizing: border-box; color: green;">//Removes element at index 4</span>
+arList.RemoveRange(0, 2);<span class="rem" style="box-sizing: border-box; color: green;">//Removes two elements starting from 1st item (0 index)</span>
+</code></pre>
+					</div>
+					<div class="card-footer example-footer" style="box-sizing: border-box; padding: 0px; background-color: transparent; border: 0px; border-radius: 0px 0px calc(-1px + 0.25rem) calc(-1px + 0.25rem);">
+					</div>
+				</div>
+				<h2 id="contains" _msttexthash="3929237" _msthash="135" style="box-sizing: border-box; margin: 2rem 0px 1rem; font-family: &quot;Segoe UI&quot;, Verdana, sans-serif; font-weight: 400; line-height: 1.2; color: rgb(24, 23, 23); font-size: 28px; text-align: left; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Проверьте элемент в ArrayList</h2>
+				<p style="box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<font _mstmutation="1" _msttexthash="136026423" _msthash="136" style="box-sizing: border-box;">
+				Используйте этот метод для определения того, существует ли 
+				указанный элемент в поле или нет. Он возвращает true, если 
+				существует, в противном случае возвращает false.</font><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: rgb(0, 0, 0); word-break: break-word; background-color: rgb(217, 229, 243); padding: 1px 5px; border-radius: 2px;">Contains()ArrayList</code></p>
+				<div class="card code-panel" style="box-sizing: border-box; position: relative; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; min-width: 0px; overflow-wrap: break-word; background-color: rgb(216, 229, 238); background-clip: border-box; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0px; margin-bottom: 1.25rem; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<div class="card-header example-title" _msttexthash="10499281" _msthash="137" style="box-sizing: border-box; padding: 5px 0px 5px 5px; margin-bottom: 0px; background-color: transparent !important; border-bottom: 1px solid rgba(0, 0, 0, 0.125); color: rgb(44, 71, 88); font-size: 16px; min-height: 38px; line-height: 1.7em; border-radius: calc(-1px + 0.25rem) calc(-1px + 0.25rem) 0px 0px;">
+						Пример: Проверка на наличие элементов</div>
+					<div class="panel-body" style="box-sizing: border-box; color: rgb(16, 16, 16);">
+						<pre class="csharpcode" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 15px; margin: 0px; overflow: auto; display: block; color: rgb(0, 0, 0); border: 0px; background: rgb(255, 255, 255); padding: 10px 0px 10px 5px; overflow-wrap: initial;"><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: inherit; word-break: normal; padding: 0px; white-space: inherit; line-height: 1.5rem;"><span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">ArrayList</span> arList = <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">new</span> <span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">ArrayList</span>()
+                {
+                    1,
+                    <span class="str" style="box-sizing: border-box; color: rgb(163, 21, 21);">&quot;Bill&quot;</span>,
+                    300,
+                    4.5f,
+                    300
+                };
+
+<span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">Console</span>.WriteLine(arList.Contains(300)); <span class="rem" style="box-sizing: border-box; color: green;">// true</span>
+<span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">Console</span>.WriteLine(arList.Contains(&quot;Bill&quot;)); <span class="rem" style="box-sizing: border-box; color: green;">// true</span>
+<span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">Console</span>.WriteLine(arList.Contains(10)); <span class="rem" style="box-sizing: border-box; color: green;">// false</span>
+<span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">Console</span>.WriteLine(arList.Contains(&quot;Steve&quot;)); <span class="rem" style="box-sizing: border-box; color: green;">// false</span>
+</code></pre>
+					</div>
+					<div class="card-footer example-footer" style="box-sizing: border-box; padding: 0px; background-color: transparent; border: 0px; border-radius: 0px 0px calc(-1px + 0.25rem) calc(-1px + 0.25rem);">
+					</div>
+				</div>
+				<div class="card noteDiv" style="box-sizing: border-box; position: relative; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; min-width: 0px; overflow-wrap: break-word;  background-clip: border-box; border: 1px solid rgb(124, 167, 195); border-radius: 0.25rem; margin-bottom: 1.25rem; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<div class="card-header" style="box-sizing: border-box; padding: 0.5rem 0.5rem 0.5rem 1rem; margin-bottom: 0px; background: rgb(75, 144, 189); border-bottom: 1px solid rgba(0, 0, 0, 0.125); border-radius: calc(-1px + 0.25rem) calc(-1px + 0.25rem) 0px 0px; color: rgb(255, 255, 255);">
+						<span style="box-sizing: border-box;">
+						<i class="fa fa-pencil-square-o" style="box-sizing: border-box; font-style: normal; font-weight: var(--fa-style,900); font-variant: normal; -webkit-font-smoothing: antialiased; font-size: inherit; text-rendering: auto; line-height: 1; display: var(--fa-display,inline-block); font-family: var(--fa-style-family,&quot;Font Awesome 6 Free&quot;);">
+						</i>
+						<font _mstmutation="1" _msttexthash="989989" _msthash="139" style="box-sizing: border-box;">
+						<span>&nbsp;</span>Заметка:</font></span></div>
+					<div class="card-body" style="box-sizing: border-box; -webkit-box-flex: 1; flex: 1 1 auto; padding: 0.5rem 1rem; color: rgb(16, 16, 16);">
+						<font _mstmutation="1" _msttexthash="185657342" _msthash="140" style="box-sizing: border-box;">
+						Не рекомендуется использовать класс из-за проблем с 
+						производительностью. Вместо этого используйте для 
+						хранения разнородных объектов. Для хранения данных 
+						одного типа используйте<span>&nbsp;</span>Generic List&lt;T&gt;.<span>&nbsp;</span></font><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: rgb(0, 0, 0); word-break: break-word; background-color: rgb(217, 229, 243); padding: 1px 5px; border-radius: 2px;">ArrayListList&lt;object&gt;</code></div>
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Кроме того, с помощью свойства<span>&nbsp;</span><code style="font-family: monospace;">Count</code><span>&nbsp;</span>можно 
+				получить количество элементов в списке.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Посмотрим применение класса на примере.</p>
+				<pre class="style10"><strong><span class="style14">using System;
+using System.Collections; 
+namespace Collections
+{    
+	class Program    
+		{        
+		   static void Main(string[] args)       
+			{            
+				ArrayList list = new ArrayList();            
+				list.Add(2.3); // заносим в список объект типа double           
+				list.Add(55); // заносим в список объект типа int            
+				list.AddRange(new string[] { "Hello", "world" }); 
+				// заносим в список строковый массив             
+				// перебор значений            
+				foreach (object o in list)            
+				{               
+				 Console.WriteLine(o);            
+				}             
+				// удаляем первый элемент            
+				list.RemoveAt(0);            
+				// переворачиваем список            
+				list.Reverse();            
+				// получение элемента по индексу            
+				Console.WriteLine(list[0]);            
+				// перебор значений            
+				for (int i = 0; i < list.Count; i++)            
+				{                
+				Console.WriteLine(list[i]);            
+				}             
+				Console.ReadLine();        
+			}    
+		}
+</span>}</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Во-первых, так как класс <span class="style2"><strong>ArrayList</strong></span> 
+				находится в пространстве имен <span class="style2"><strong>
+				System.Collections, </strong></span>то подключаем его (<code style="font-family: monospace;"><span class="style4">using 
+				System.Collections</span><span class="style5">;</span></code><span class="style5">).</span></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вначале создаем объект коллекции через конструктор как объект 
+				любого другого класса:<span>&nbsp;</span><code style="font-family: monospace;"><span class="style4"><strong>ArrayList 
+				list = new ArrayList()</strong></span>;</code>. При 
+				необходимости мы могли бы так же, как и с массивами, выполнить 
+				начальную инициализацию коллекции, например,<span>&nbsp;</span><code style="font-family: monospace;"><strong><span class="style4">ArrayList 
+				list = new ArrayList(){1, 2, 5, &quot;string&quot;, 7.7};</span></strong></code></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Далее последовательно добавляем разные значения. Данный класс 
+				коллекции, как и большинство других коллекций, имеет два способа 
+				добавления: одиночного объекта через метод<span>&nbsp;</span><span class="b" style="font-weight: bold;">Add</span><span>&nbsp;</span>и 
+				набора объектов, например, массива или другой коллекции через 
+				метод<span>&nbsp;</span><span class="b" style="font-weight: bold;">AddRange</span></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Через цикл<span>&nbsp;</span><code style="font-family: monospace;">foreach</code><span>&nbsp;</span>мы 
+				можем пройтись по всем объектам списка. И поскольку данная 
+				коллекция хранит разнородные объекты, а не только числа или 
+				строки, то в качестве типа перебираемых объектов выбран тип 
+				object:<span>&nbsp;</span><code style="font-family: monospace;"><span class="style4">foreach 
+				(object o in list)</span></code></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Многие коллекции, в том числе и ArrayList, реализуют удаление с 
+				помощью методов Remove/RemoveAt. В данном случае мы удаляем 
+				первый элемент, передавая в метод RemoveAt индекс удаляемого 
+				элемента.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В завершении мы опять же выводим элементы коллекции на экран 
+				только уже через цикл for. В данном случае с перебором коллекций 
+				дело обстоит также, как и с массивами. А число элементов 
+				коллекции мы можем получить через свойство<span>&nbsp;</span><code style="font-family: monospace;">Count</code></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				С помощью индексатора мы можем получить по индексу элемент 
+				коллекции так же, как и в массивах:<span>&nbsp;</span><span class="style4"><code style="font-family: monospace;"><strong>object 
+				firstObj = list[0];</strong></code></span></p>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les42.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les42/1.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:49:04 GMT -->
+</html>

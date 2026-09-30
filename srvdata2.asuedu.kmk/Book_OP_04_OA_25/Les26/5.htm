@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les26/5.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:14:52 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: rgb(255, 0, 0);
+}
+    .style3 {
+	color: #0000FF;
+	margin-left: 40px;
+}
+    .style4 {
+	color: rgb(255, 0, 0);
+	margin-left: 40px;
+}
+    .style6 {
+	color: #800080;
+	margin-left: 40px;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 5. Обработка исключительных ситуаций в Puthon.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При программировании на Python мы можем столкнуться с двумя 
+				типами ошибок. Первый тип представляют<span>&nbsp;</span><span class="b" style="font-weight: bold;">синтаксические 
+				ошибки</span><span>&nbsp;</span>(syntax error). Они появляются в 
+				результате нарушения синтаксиса языка программирования при 
+				написании исходного кода. При работе в какой-либо среде 
+				разработки, например, в PyCharm, IDE сама может отслеживать 
+				синтаксические ошибки и каким-либо образом их выделять.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Второй тип ошибок представляют<span>&nbsp;</span><span class="b" style="font-weight: bold;">ошибки 
+				выполнения</span><span>&nbsp;</span>(<span class="style2"><strong>runtime 
+				error</strong></span>). Они появляются в уже в процессе 
+				выполнения программы. Подобные ошибки еще называются 
+				исключениями. Например, в прошлых темах мы рассматривали 
+				преобразование строки в число:</p>
+				<pre class="style3"><strong>string = "5"
+number = int(string)
+print(number)</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Данный скрипт успешно выполнится, так как строка &quot;5&quot; вполне 
+				может быть конвертирована в число. Однако возьмем другой пример:</p>
+				<pre class="style3">string = "hello"
+number = int(string)
+print(number)</pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При выполнении этого скрипта будет выброшено исключение 
+				ValueError, так как строку &quot;hello&quot; нельзя преобразовать в число:</p>
+				<pre class="style3"><strong>ValueError: invalid literal for int() with base 10: 'hello'</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				С одной стороны, здесь очевидно, что строка не представляет 
+				число, но мы можем иметь дело с вводом пользователя, который 
+				также может ввести не совсем то, что мы ожидаем:</p>
+				<pre class="style3"><strong>string = input("Введите число: ")
+number = int(string)
+print(number)</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При возникновении исключения работа программы прерывается, и 
+				чтобы избежать подобного поведения и обрабатывать исключения в 
+				Python есть конструкция<span>&nbsp;</span><span class="b" style="font-weight: bold;">try..except</span>.</p>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				try..except</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Конструкция<span>&nbsp;</span><span class="b" style="font-weight: bold;">try..except</span><span>&nbsp;</span>имеет 
+				следующее формальное определение:</p>
+				<pre class="style4"><strong>try:   
+	инструкции
+except [Тип_исключения]:
+	инструкции</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Весь основной код, в котором потенциально может возникнуть 
+				исключение, помещается после ключевого слова<span>&nbsp;</span><span class="b" style="font-weight: bold;">try</span>. 
+				Если в этом коде генерируется исключение, то работа кода в блоке 
+				try прерывается, и выполнение переходит в блок<span>&nbsp;</span><span class="b" style="font-weight: bold;">except</span>.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				После ключевого слова<span>&nbsp;</span><span class="b" style="font-weight: bold;">except</span><span>&nbsp;</span>опционально 
+				можно указать, какое исключение будет обрабатываться (например, 
+				ValueError или KeyError). После слова except на следующей стоке 
+				идут инструкции блока except, выполняемые при возникновении 
+				исключения.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Рассмотрим обработку исключения на примере преобразовании строки 
+				в число:</p>
+				<pre class="style3"><strong>try:    
+	number = int(input("Введите число: "))    
+	print("Введенное число:", number)
+except:    
+	print("Преобразование прошло неудачно")
+print("Завершение программы")</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вводим строку:</p>
+				<pre class="style6"><strong>Введите число: hello
+Преобразование прошло неудачно
+Завершение программы</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Как видно из консольного вывода, при вводе строки вывод числа на 
+				консоль не происходит, а выполнение программы переходит к блоку 
+				except.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вводим правильное число:</p>
+				<pre class="style6"><strong>Введите число: 22
+Введенное число: 22
+Завершение программы</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Теперь все выполняется нормально, исключение не возникает, и 
+				соответственно блок except не выполняется.</p>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Блок finally</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При обработке исключений также можно использовать необязательный 
+				блок<span>&nbsp;</span><span class="b" style="font-weight: bold;">finally</span>. 
+				Отличительной особенностью этого блока является то, что он 
+				выполняется вне зависимости, было ли сгенерировано исключение:</p>
+				<pre class="style3"><strong>try:    
+	number = int(input("Введите число: "))    
+	print("Введенное число:", number)
+except:    
+	print("Преобразование прошло неудачно")
+finally:    
+	print("Блок try завершил выполнение")
+print("Завершение программы")</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Как правило, блок finally применяется для освобождения 
+				используемых ресурсов, например, для закрытия файлов.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Стоит отметить, что блок<span>&nbsp;</span><span class="b" style="font-weight: bold;">finally</span><span>&nbsp;</span>не 
+				обрабатывает исключения, и если мы используем этот блок без 
+				блока<span>&nbsp;</span><span class="b" style="font-weight: bold;">except</span>, 
+				то при возникновении ошибки приложение аварийно завершится, как 
+				в следующем случае при делении числа на ноль:</p>
+				<pre class="style3"><strong>try:    
+	number = 3/0    # генерирует исключение ZeroDivisionError    
+	print(number)
+finally:    
+	print("Блок try завершил выполнение")
+print("Завершение программы")</strong></pre>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les26.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les26/5.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:14:52 GMT -->
+</html>

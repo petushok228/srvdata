@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les43/8.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:50:48 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: small;
+}
+    .style3 {
+	color: #FF0000;
+	font-size: medium;
+}
+    .style4 {
+	font-size: medium;
+	color: #0000FF;
+}
+    .style5 {
+	color: #800000;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Преобразование строки в словарь на C#.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p _msttexthash="1163177756" _msthash="44" style="box-sizing: border-box; margin: 15px 0px; font-size: 18px; line-height: 30px; color: rgb(33, 37, 41); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При работе с данными в<span>&nbsp;</span>C#<span>&nbsp;</span>часто 
+				встречаются сценарии, где необходимо преобразовать строки в 
+				словари. Преобразования строк в словарь особенно полезны, когда 
+				вы получаете данные в сериализованном формате, таком как JSON 
+				или пары ключ-значение, и вам нужно манипулировать данными или 
+				обращаться к ним как к структуре словаря. В этой записи блога мы 
+				рассмотрим несколько методов преобразования<span>&nbsp;</span>строк<span>&nbsp;</span>в 
+				словари на C#, предоставив подробные объяснения и примеры для 
+				каждого подхода.</p>
+				<h2 _msttexthash="8401887" _msthash="45" style="box-sizing: border-box; margin: 15px 0px; font-weight: 600; line-height: 2; font-size: 21px; color: rgb(27, 110, 183); border-bottom: 2px dashed rgb(220, 233, 237); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Способ 1: Использование класса JavaScriptSerializer</h2>
+				<p style="box-sizing: border-box; margin: 15px 0px; font-size: 18px; line-height: 30px; color: rgb(33, 37, 41); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<font _mstmutation="1" _msttexthash="568817132" _msthash="46" style="box-sizing: border-box;">
+				Первый метод, который мы рассмотрим, — это использование класса<span>&nbsp;</span><code _istranslated="1" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; overflow-wrap: break-word;" class="style3">JavaScriptSerializer</code>, 
+				доступного в пространстве имен. Этот класс предоставляет 
+				функциональные возможности для сериализации и десериализации 
+				данных JSON, включая преобразование строки JSON в<span>&nbsp;</span>представление 
+				словаря. Мы можем использовать этот класс следующим образом:</font><code style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; overflow-wrap: break-word;" class="style3">System.Web.Script.Serialization</code></p>
+				<pre class="style4">using System.Web.Script.Serialization;
+t
+// JSON string to be converted
+string jsonString = "{<span class="style5"><strong>\"key1\": \"value1\", \"key2\": \"value2\"</strong></span>}";
+
+// Create an instance of JavaScriptSerializer
+JavaScriptSerializer serializer = new JavaScriptSerializer();
+
+// Convert the JSON string to a dictionary
+Dictionary<string, string> dictionary = serializer.Deserialize<Dictionary<string, string>>(jsonString);
+
+// Output the dictionary
+foreach (KeyValuePair<string, string> entry in dictionary)
+{
+    Console.WriteLine("Key: " + entry.Key + ", Value: " + entry.Value);
+}</pre>
+				<h2 _msttexthash="10164622" _msthash="47" style="box-sizing: border-box; margin: 15px 0px; font-weight: 600; line-height: 2; font-size: 21px; color: rgb(27, 110, 183); border-bottom: 2px dashed rgb(220, 233, 237); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Способ 2: Использование класса JsonConvert из Newtonsoft.Json</h2>
+				<p style="box-sizing: border-box; margin: 15px 0px; font-size: 18px; line-height: 30px; color: rgb(33, 37, 41); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<font _mstmutation="1" _msttexthash="346884824" _msthash="48" style="box-sizing: border-box;">
+				Второй способ предполагает использование популярной библиотеки 
+				Newtonsoft.Json, которая предоставляет мощную функциональность, 
+				связанную с JSON, в C#. Класс в этой библиотеке позволяет легко 
+				преобразовывать строку JSON в словарь. Вот пример того, как это 
+				сделать<span class="style3">:</span></font><code style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; overflow-wrap: break-word;" class="style3">JsonConvert</code></p>
+				<pre class="style4">using Newtonsoft.Json;
+using System.Collections.Generic;
+
+// JSON string to be converted
+string jsonString = "{\"key1\": \"value1\", \"key2\": \"value2\"}";
+
+// Convert the JSON string to a dictionary
+Dictionary<string, string> dictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonString);
+
+// Output the dictionary
+foreach (KeyValuePair<string, string> entry in dictionary)
+{
+    Console.WriteLine("Key: " + entry.Key + ", Value: " + entry.Value);
+}</pre>
+				<h2 _msttexthash="9235655" _msthash="49" style="box-sizing: border-box; margin: 15px 0px; font-weight: 600; line-height: 2; font-size: 21px; color: rgb(27, 110, 183); border-bottom: 2px dashed rgb(220, 233, 237); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Способ 3: Пользовательский парсинг</h2>
+				<p _msttexthash="1325308829" _msthash="50" style="box-sizing: border-box; margin: 15px 0px; font-size: 18px; line-height: 30px; color: rgb(33, 37, 41); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В некоторых случаях вы можете столкнуться со строковыми 
+				форматами, которые не являются строго JSON, но имеют аналогичную 
+				структуру. В таких сценариях можно реализовать пользовательскую 
+				логику синтаксического анализа для преобразования строки в 
+				словарь. Этот метод включает в себя ручное разделение строки и 
+				извлечение пар ключ-значение. Конкретная реализация будет 
+				зависеть от структуры вашей строки и любых специальных правил 
+				форматирования. Вот упрощенный пример, иллюстрирующий эту 
+				концепцию:</p>
+				<pre class="style4">string inputString = "<span class="style5"><strong>key1=value1;key2=value2</strong></span>";
+
+// Split the string based on the delimiter
+string[] keyValuePairs = inputString.Split(';');
+
+// Create a new dictionary
+Dictionary<string, string> dictionary = new Dictionary<string, string>();
+
+// Parse each key-value pair and add it to the dictionary
+foreach (string pair in keyValuePairs)
+{
+    string[] parts = pair.Split('=');
+    if (parts.Length == 2)
+    {
+        string key = parts[0];
+        string value = parts[1];
+        dictionary[key] = value;
+    }
+}
+
+// Output the dictionary
+foreach (KeyValuePair<string, string> entry in dictionary)
+{
+    Console.WriteLine("Key: " + entry.Key + ", Value: " + entry.Value);
+}</pre>
+				<h2 _msttexthash="1629472" _msthash="51" style="box-sizing: border-box; margin: 15px 0px; font-weight: 600; line-height: 2; font-size: 21px; color: rgb(27, 110, 183); border-bottom: 2px dashed rgb(220, 233, 237); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				&nbsp;</h2>
+                <p class="style2">&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les53.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les43/8.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:50:48 GMT -->
+</html>

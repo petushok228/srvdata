@@ -1,0 +1,406 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les41/4.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:48:50 GMT -->
+<head>
+<title>Untitled Page</title>
+<link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+<style type="text/css">
+.style1 {
+	width: 100%;
+}
+.style2 {
+	color: #0000FF;
+}
+.style3 {
+	margin-left: 40px;
+}
+.style4 {
+	color: rgb(255, 0, 0);
+}
+.style5 {
+	font-size: medium;
+}
+.style6 {
+	margin-left: 40px;
+	font-size: medium;
+}
+.style7 {
+	margin-left: 40px;
+	font-size: large;
+}
+</style>
+</head>
+
+<body>
+
+<table class="style1">
+	<tr>
+		<td colspan="3" class="zag" style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+		Тема 4. Список List&nbsp; &lt;T&gt;. List<T>  Создает динамический массив. Обеспечивает такие же функциональные возможности, как и необобщенный класс</td>
+	</tr>
+	<tr>
+		<td width="60%">&nbsp;</td>
+		<td width="20%">&nbsp;</td>
+		<td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+		Назад</td>
+	</tr>
+	<tr>
+		<td colspan="3" class="text">
+		<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+		Класс List&lt;T&gt; из пространства имен<span> </span>
+		<code style="font-family: monospace;">System.Collections.Generic</code><span>
+		</span>представляет простейший список однотипных объектов. Класс List 
+		<span class="style4"><strong>типизируется 
+		типом</strong></span>, объекты которого будут хранится в списке.</p>
+		<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+		Мы можем создать пустой список:</p>
+		<pre class="style6"><span class="style2"><strong>List</strong></span><string><strong><span class="style4">&lt;string&gt;</span><span class="style2"> people = new List</span></strong><string><string><span class="style4"><strong>&lt;string&gt;</strong></span><string><string><span class="style2"><strong>();</strong></span></pre>
+		<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+		В данном случае объект List типизируется типом<span> </span>
+		<span class="b" style="font-weight: bold;">string</span>. А это значит, 
+		что хранить в этом списке мы можем только строки.</p>
+		<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+		Можно сразу при создании списка инициализировать его начальными значениями. 
+		В этом случае элементы списка помещаются после вызова конструктора в фигурных 
+		скобках</p>
+		<pre class="style6"><string><string><span class="style2"><strong>List</strong></span><string><strong><span class="style4">&lt;string&gt;</span><span class="style2"> people = new List</span></strong><string><string><span class="style4"><strong>&lt;string&gt;</strong></span><string><string><span class="style2"><strong>()</strong></span><string><string><span class="style2"><strong> { &quot;Tom&quot;, &quot;Bob&quot;, &quot;Sam&quot; };</strong></span></pre>
+		<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+		В данном случае в список помещаются три строки</p>
+		<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+		Также можно при создании списка инициализировать его элементами из другой 
+		коллекции, например, другого списка:</p>
+		<pre class="style6"><span class="style2"><strong>var people = new List</strong></span><string><string><span class="style4"><strong>&lt;string&gt;</strong></span><string><span class="style2"><strong>() { &quot;Tom&quot;, &quot;Bob&quot;, &quot;Sam&quot; };
+var employees = new List</strong></span><string><span class="style4"><strong>&lt;string&gt;</strong></span><string><string><span class="style2"><strong>(people);</strong></span></pre>
+		<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+		Можно совместить оба способа:</p>
+		<pre class="style6"><span class="style2"><strong>var people = new List</strong></span><string><span class="style2"><strong>()</strong></span><string><span class="style4"><strong>&lt;string&gt;</strong></span><string><span class="style2"><strong> { &quot;Tom&quot;, &quot;Bob&quot;, &quot;Sam&quot; };
+var employees = new List</strong></span><string><string><span class="style4"><strong>&lt;string&gt;</strong></span><string><string><span class="style2"><strong>(people){&quot;Mike&quot;};</strong></span></pre>
+		<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+		В данном случае в списке employees будет четыре элемента
+		<span class="style2"><strong>(</strong><code style="font-family: monospace;"><strong>{ 
+		&quot;Tom&quot;, &quot;Bob&quot;, &quot;Sam&quot;, &quot;Mike&quot; }</strong></code><strong>) -</strong></span> 
+		три добавляются из списка people и один элемент задается при инициализации.</p>
+		<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+		Начиная с версии<span> </span>
+		<span class="b" style="font-weight: bold;">C# 12</span><span> </span>для 
+		определения списков можно использовать выражения коллекций, которые предполагают 
+		заключение элементов коллекции в квадратные скобки:</p>
+		<pre class="style6"><span class="style2"><strong>List</strong></span><string><span class="style2"><strong> </strong></span><string><span class="style4"><strong>&lt;string&gt;</strong></span><string><span class="style2"><strong> </strong></span><string><span class="style2"><strong>people = [&quot;Tom&quot;, &quot;Bob&quot;, &quot;Sam&quot;];
+List</strong></span><string><string><span class="style4"><strong>&lt;string&gt;</strong></span><string><span class="style2"><strong> </strong></span><string><string><span class="style2"><strong> employees = [];// пустой список</strong></span></pre>
+		<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+		Подобным образом можно работать со списками других типов, например:</p>
+		<pre class="style3"><span class="style2"><strong><span class="style5">List</span></strong></span><span class="style5"><Person><span class="style2"><strong> </strong></span><string><span class="style4"><strong>&lt;string&gt;</strong></span><string><span class="style2"><strong> </strong></span><Person><span class="style2"><strong>people = new List</strong></span><Person></span><span class="style2"><strong><span class="style5">() 
+{ &nbsp;&nbsp;&nbsp;&nbsp;
+	new Person(&quot;Tom&quot;),&nbsp;&nbsp;&nbsp;&nbsp;new Person(&quot;Bob&quot;), &nbsp;&nbsp;&nbsp;&nbsp;new Person(&quot;Sam&quot;) 
+};&nbsp;
+class Person
+{&nbsp;&nbsp;&nbsp;&nbsp;
+	public string Name { get;}&nbsp;&nbsp;&nbsp;&nbsp;
+	public Person(string name) =&gt; Name = name;
+</span>}</strong></span></pre>
+		<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+		Установка начальной емкости списка</h3>
+		<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+		Еще один конструктор класса List принимает в качестве параметра начальную 
+		емкость списка:</p>
+		<pre class="style6"><span class="style2"><strong>List </strong></span><string><span class="style4"><strong>&lt;string&gt;</strong></span><string><span class="style2"><strong> </strong></span><string><span class="style2"><strong> people = new List</strong></span><string><span class="style2"><strong>(16);</strong></span></pre>
+		<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+		Указание начальной емкости списка позволяет в будущем увеличить производительность 
+		и уменьшить издержки на выделение памяти при добавлении элементов. Поскольку 
+		динамическое добавление в список может приводить на низком уровне к дополнительному 
+		выделению памяти, что снижает производительность. Если же мы знаем, что 
+		список не будет превышать некоторый размер, то мы можем передать этот размер 
+		в качестве емкости списка и избежать дополнительных выделений памяти.</p>
+		<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+		Также начальную емкость можно установить с помощью свойства<span> </span>
+		<code style="font-family: monospace;">Capacity</code>, которое имеется у 
+		класса List.</p>
+		<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+		Обращение к элементам списка</h3>
+		<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+		Как и массивы, списки поддерживают индексы, с помощью которых можно обратиться 
+		к определенным элементам:</p>
+		<pre class="style7"><span class="style2"><strong>var people = new List</strong></span><string><string><span class="style4"><strong>&lt;string&gt;</strong></span><string><span class="style2"><strong>() { &quot;Tom&quot;, &quot;Bob&quot;, &quot;Sam&quot; };&nbsp;
+string firstPerson = people[0]; // получаем первый элемент
+Console.WriteLine(firstPerson); // Tom
+people[0] = &quot;Mike&quot;;&nbsp;&nbsp;&nbsp;&nbsp; // изменяем первый элемент
+Console.WriteLine(people[0]); // Mike</strong></span></pre>
+		<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+		Длина списка</h3>
+		<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+		С помощью свойства<span> </span>
+		<span class="b" style="font-weight: bold;">Count</span><span> </span>можно 
+		получить длину списка:</p>
+		<pre class="style6"><span class="style2"><strong>var people = new List</strong></span><string><span class="style4"><strong>&lt;string&gt;</strong></span><string><span class="style2"><strong>() { &quot;Tom&quot;, &quot;Bob&quot;, &quot;Sam&quot; };
+Console.WriteLine(people.Count);&nbsp;&nbsp;&nbsp; // 3</strong></span></pre>
+		<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+		Перебор списка</h3>
+		<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+		C# позволяет осуществить перебор списка с помощью стандартного цикла<span>
+		</span><span class="style4" style="font-weight: bold;">
+		<span class="style5">foreach</span></span><span class="style4"><span class="style5">:/p</span></span></p>
+		<pre class="style6"><span class="style2"><strong>var people = new List</strong></span><string><string><span class="style4"><strong>&lt;string&gt;</strong></span><string><span class="style2"><strong>() { &quot;Tom&quot;, &quot;Bob&quot;, &quot;Sam&quot; };&nbsp;
+foreach (var person in people)
+{&nbsp;&nbsp;&nbsp;&nbsp;
+	Console.WriteLine(person);
+}// Вывод программы:
+// Tom
+// Bob
+// Sam</strong></span></pre>
+		<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+		Также можно использовать другие типы циклов и в комбинации с индексами перебирать 
+		списки:</p>
+		<pre class="style6"><span class="style2"><strong>var people = new List</strong></span><string><span class="style4"><strong>&lt;string&gt;</strong></span><string><span class="style2"><strong>() { &quot;Tom&quot;, &quot;Bob&quot;, &quot;Sam&quot; };&nbsp;
+or (int i = 0; i &lt; people.Count; i++){&nbsp;Console.WriteLine(people[i]);}</strong></span></pre>
+		<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+		Методы списка</h3>
+		<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+		Среди его методов можно выделить следующие:</p>
+		<ul style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+			<li>
+			<p style="line-height: 1.56; overflow-wrap: break-word;">
+			<span class="style5" style="font-weight: bold;">void Add(T item)</span><span class="style5">: 
+			добавление нового элемента в список</span></p>
+			</li>
+			<li>
+			<p style="line-height: 1.56; overflow-wrap: break-word;">
+			<span class="style5" style="font-weight: bold;">void AddRange(IEnumerable&lt;T&gt; 
+			collection)</span><span class="style5">: добавление в список коллекции или массива</span></p>
+			</li>
+			<li>
+			<p style="line-height: 1.56; overflow-wrap: break-word;">
+			<span class="style5" style="font-weight: bold;">int BinarySearch(T item)</span><span class="style5">: 
+			бинарный поиск элемента в списке. Если элемент найден, то метод возвращает 
+			индекс этого элемента в коллекции. При этом список должен быть отсортирован.</span></p>
+			</li>
+			<li>
+			<p style="line-height: 1.56; overflow-wrap: break-word;">
+			<span class="style5" style="font-weight: bold;">void CopyTo(T[] array)</span><span class="style5">: 
+			копирует список в массив array</span></p>
+			</li>
+			<li>
+			<p style="line-height: 1.56; overflow-wrap: break-word;">
+			<span class="style5" style="font-weight: bold;">void CopyTo(int index, T[] 
+			array, int arrayIndex, int count)</span><span class="style5">: копирует из списка начиная 
+			с индекса index элементы, количество которых равно count, и вставляет 
+			их в массив array начиная с индекса arrayIndex</span></p>
+			</li>
+			<li>
+			<p style="line-height: 1.56; overflow-wrap: break-word;">
+			<span class="style5" style="font-weight: bold;">bool Contains(T item)</span><span class="style5">: 
+			возвращает<span> </span><code style="font-family: monospace;">true</code>, 
+			если элемент item есть в списке</span></p>
+			</li>
+			<li>
+			<p style="line-height: 1.56; overflow-wrap: break-word;">
+			<span class="style5" style="font-weight: bold;">void Clear()</span><span class="style5">: удаляет 
+			из списка все элементы</span></p>
+			</li>
+			<li>
+			<p style="line-height: 1.56; overflow-wrap: break-word;">
+			<span class="style5" style="font-weight: bold;">bool Exists(Predicate&lt;T&gt; 
+			match)</span><span class="style5">: возвращает<span> </span>
+			<code style="font-family: monospace;">true</code>, если в списке есть 
+			элемент, который соответствует делегату match</span></p>
+			</li>
+			<li>
+			<p style="line-height: 1.56; overflow-wrap: break-word;">
+			<span class="style5" style="font-weight: bold;">T? Find(Predicate&lt;T&gt; match)</span><span class="style5">: 
+			возвращает первый элемент, который соответствует делегату match. Если 
+			элемент не найден, возвращается null</span></p>
+			</li>
+			<li>
+			<p style="line-height: 1.56; overflow-wrap: break-word;">
+			<span class="style5" style="font-weight: bold;">T? FindLast(Predicate&lt;T&gt; 
+			match)</span><span class="style5">: возвращает последний элемент, который соответствует делегату 
+			match. Если элемент не найден, возвращается null</span></p>
+			</li>
+			<li>
+			<p style="line-height: 1.56; overflow-wrap: break-word;">
+			<span class="style5" style="font-weight: bold;">List&lt;T&gt; FindAll(Predicate&lt;T&gt; 
+			match)</span><span class="style5">: возвращает список элементов, которые соответствуют делегату 
+			match</span></p>
+			</li>
+			<li>
+			<p style="line-height: 1.56; overflow-wrap: break-word;">
+			<span class="style5" style="font-weight: bold;">int IndexOf(T item)</span><span class="style5">: 
+			возвращает индекс первого вхождения элемента в списке</span></p>
+			</li>
+			<li>
+			<p style="line-height: 1.56; overflow-wrap: break-word;">
+			<span class="style5" style="font-weight: bold;">int LastIndexOf(T item)</span><span class="style5">: 
+			возвращает индекс последнего вхождения элемента в списке</span></p>
+			</li>
+			<li>
+			<p style="line-height: 1.56; overflow-wrap: break-word;">
+			<span class="style5" style="font-weight: bold;">List&lt;T&gt; GetRange(int index, 
+			int count)</span><span class="style5">: возвращает список элементов, количество которых равно 
+			count, начиная с индекса index.</span></p>
+			</li>
+			<li>
+			<p style="line-height: 1.56; overflow-wrap: break-word;">
+			<span class="style5" style="font-weight: bold;">void Insert(int index, T 
+			item)</span><span class="style5">: вставляет элемент item в список по индексу index. Если 
+			такого индекса в списке нет, то генерируется исключение</span></p>
+			</li>
+			<li>
+			<p style="line-height: 1.56; overflow-wrap: break-word;">
+			<span class="style5" style="font-weight: bold;">void InsertRange(int index, 
+			collection)</span><span class="style5">: вставляет коллекцию элементов collection в текущий 
+			список начиная с индекса index. Если такого индекса в списке нет, то 
+			генерируется исключение</span></p>
+			</li>
+			<li>
+			<p style="line-height: 1.56; overflow-wrap: break-word;">
+			<span class="style5" style="font-weight: bold;">bool Remove(T item)</span><span class="style5">: 
+			удаляет элемент item из списка, и если удаление прошло успешно, то возвращает 
+			true. Если в списке несколько одинаковых элементов, то удаляется только 
+			первый из них</span></p>
+			</li>
+			<li>
+			<p style="line-height: 1.56; overflow-wrap: break-word;">
+			<span class="style5" style="font-weight: bold;">void RemoveAt(int index)</span><span class="style5">: 
+			удаление элемента по указанному индексу index. Если такого индекса в 
+			списке нет, то генерируется исключение</span></p>
+			</li>
+			<li>
+			<p style="line-height: 1.56; overflow-wrap: break-word;">
+			<span class="style5" style="font-weight: bold;">void RemoveRange(int index, 
+			int count)</span><span class="style5">: параметр index задает индекс, с которого надо удалить 
+			элементы, а параметр count задает количество удаляемых элементов.</span></p>
+			</li>
+			<li>
+			<p style="line-height: 1.56; overflow-wrap: break-word;">
+			<span class="style5" style="font-weight: bold;">int RemoveAll((Predicate&lt;T&gt; 
+			match))</span><span class="style5">: удаляет все элементы, которые соответствуют делегату 
+			match. Возвращает количество удаленных элементов</span></p>
+			</li>
+			<li>
+			<p style="line-height: 1.56; overflow-wrap: break-word;">
+			<span class="style5" style="font-weight: bold;">void Reverse()</span><span class="style5">: изменяет 
+			порядок элементов</span></p>
+			</li>
+			<li>
+			<p style="line-height: 1.56; overflow-wrap: break-word;">
+			<span class="style5" style="font-weight: bold;">void Reverse(int index, int 
+			count)</span><span class="style5">: изменяет порядок на обратный для элементов, количество 
+			которых равно count, начиная с индекса index</span></p>
+			</li>
+			<li>
+			<p style="line-height: 1.56; overflow-wrap: break-word;">
+			<span class="style5" style="font-weight: bold;">void Sort()</span><span class="style5">: сортировка 
+			списка</span></p>
+			</li>
+			<li>
+			<p style="line-height: 1.56; overflow-wrap: break-word;">
+			<span class="style5" style="font-weight: bold;">void Sort(IComparer&lt;T&gt;? comparer)</span><span class="style5">: 
+			сортировка списка с помощью объекта comparer, который передается в качестве 
+			параметра</span></p>
+			</li>
+		</ul>
+		<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+		Добавление в список</h3>
+		<pre class="style6"><span class="style2"><strong>List</strong></span><string><span class="style2"><strong> people = new List</strong></span><string><span class="style2"><strong> () { &quot;Tom&quot; };&nbsp;
+people.Add(&quot;Bob&quot;); // добавление элемента
+// </strong></span><string><string><span class="style2"><strong>people = { &quot;Tom&quot;, &quot;Bob&quot; };&nbsp;
+people.AddRange(new[] { &quot;Sam&quot;, &quot;Alice&quot; });// добавляем массив</strong></span><string><string><span class="style2"><strong>&nbsp;&nbsp; 
+//people = { &quot;Tom&quot;, &quot;Bob&quot;, &quot;Sam&quot;, &quot;Alice&quot; };
+// также можно было бы добавить другой список 
+//</strong></span><string><string><span class="style2"><strong>people.AddRange(new List</strong></span><string><span class="style2"><strong>(){ &quot;Sam&quot;, &quot;Alice&quot; });&nbsp;
+people.Insert(0, &quot;Eugene&quot;); // вставляем на первое место</strong></span><string><string><string><span class="style2"><strong>
+// people = { &quot;Eugene&quot;, &quot;Tom&quot;, &quot;Bob&quot;, &quot;Sam&quot;, &quot;Alice&quot; };&nbsp;
+people.InsertRange(1, new string[] {&quot;Mike&quot;, &quot;Kate&quot;}); // вставляем массив с индекса 1// </strong></span><string><string><string><span class="style2"><strong>
+people = { &quot;Eugene&quot;, &quot;Mike&quot;, &quot;Kate&quot;, &quot;Tom&quot;, &quot;Bob&quot;, &quot;Sam&quot;, &quot;Alice&quot; };&nbsp;
+// также можно было бы добавить другой список
+// </strong></span><string><string><string><span class="style2"><strong>people.InsertRange(1, new List</strong></span><string><span class="style2"><strong>(){ &quot;Mike&quot;, &quot;Kate&quot; });</strong></span></pre>
+		<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+		Удаление из списка</h3>
+		<pre class="style6"><span class="style2"><strong>var people = new List</strong></span><string><span class="style2"><strong> () { &quot;Eugene&quot;, &quot;Mike&quot;, &quot;Kate&quot;, &quot;Tom&quot;, &quot;Bob&quot;, &quot;Sam&quot;, &quot;Tom&quot;, &quot;Alice&quot; };&nbsp;
+people.RemoveAt(1); //&nbsp; удаляем второй элемент
+// people = { &quot;Eugene&quot;, &quot;Kate&quot;, &quot;Tom&quot;, &quot;Bob&quot;, &quot;Sam&quot;, &quot;Tom&quot;, &quot;Alice&quot; };&nbsp;
+people.Remove(&quot;Tom&quot;); //&nbsp; удаляем элемент &quot;Tom&quot;
+// people = { &quot;Eugene&quot;, &quot;Kate&quot;, &quot;Bob&quot;, &quot;Sam&quot;, &quot;Tom&quot;, &quot;Alice&quot; };&nbsp;
+// удаляем из списка все элементы, длина строки которых равна 3
+people.RemoveAll(person =&gt; person.Length == 3);
+// people = { &quot;Eugene&quot;, &quot;Kate&quot;, &quot;Alice&quot; };&nbsp;
+// удаляем из списка 2 элемента начиная с индекса 1
+people.RemoveRange(1, 2);
+// people = { &quot;Eugene&quot;};&nbsp;
+// полностью очищаем список
+people.Clear();
+// people = {&nbsp; };</strong></span></pre>
+		<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+		Поиск и проверка элемента</h3>
+		<pre class="style6"><span class="style2"><strong>var people = new List</strong></span><string><span class="style2"><strong> () { &quot;Eugene&quot;, &quot;Mike&quot;, &quot;Kate&quot;, &quot;Tom&quot;, &quot;Bob&quot;, &quot;Sam&quot; };
+var containsBob = people.Contains(&quot;Bob&quot;);&nbsp;//&nbsp; true</strong></span><string><span class="style2"><strong>&nbsp;&nbsp;&nbsp; 
+var containsBill = people.Contains(&quot;Bill&quot;);// false</strong></span><string><span class="style2"><strong>&nbsp;&nbsp;&nbsp; 
+// проверяем, есть ли в списке строки с длиной 3 символа</strong></span><string><span class="style2"><strong>
+var existsLength3 = people.Exists(p =&gt; p.Length == 3);&nbsp; // true&nbsp;
+// проверяем, есть ли в списке строки с длиной 7 символов
+var existsLength7 = people.Exists(p =&gt; p.Length == 7);&nbsp; // false&nbsp;
+// получаем первый элемент с длиной в 3 символа
+var firstWithLength3 = people.Find(p =&gt; p.Length == 3); // Tom&nbsp;
+// получаем последний элемент с длиной в 3 символа
+var lastWithLength3 = people.FindLast(p =&gt; p.Length == 3);&nbsp; // Sam&nbsp;
+// получаем все элементы с длиной в 3 символа в виде списка
+List</strong></span><string><span class="style2"><strong> peopleWithLength3 = people.FindAll(p =&gt; p.Length == 3);// 
+peopleWithLength3 { &quot;Tom&quot;, &quot;Bob&quot;, &quot;Sam&quot;}</strong></span></pre>
+		<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+		Получение диапазона и копирование в массив</h3>
+		<pre class="style6"><span class="style2"><strong>List</strong></span><string><span class="style2"><strong> people = new List</strong></span><string><span class="style2"><strong>() {&quot;Eugene&quot;, &quot;Tom&quot;, &quot;Mike&quot;, &quot;Sam&quot;, &quot;Bob&quot; };&nbsp;
+// получаем диапазон со второго по четвертый элемент
+var range = people.GetRange(1, 3);
+// range = { &quot;Tom&quot;, &quot;Mike&quot;, &quot;Sam&quot;};&nbsp;
+// копируем в массив первые три элемента
+string[] partOfPeople = new string[3];
+people.CopyTo(0, partOfPeople, 0, 3);
+// partOfPeople = { &quot;Eugene&quot;, &quot;Tom&quot;, &quot;Mike&quot;};</strong></span></pre>
+		<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+		Расположение элементов в обратном порядке</h3>
+		<pre class="style5"><span class="style2"><strong>var people = new List</strong></span><string><span class="style2"><strong> () { &quot;Eugene&quot;, &quot;Tom&quot;, &quot;Mike&quot;, &quot;Sam&quot;, &quot;Bob&quot; };&nbsp;
+// переворачиваем весь список
+people.Reverse();// people = { &quot;Bob&quot;,&quot;Sam&quot;, &quot;Mike&quot;, &quot;Tom&quot;, &quot;Eugene&quot;};&nbsp;
+var people2 = new List</strong></span><string><span class="style2"><strong>() { &quot;Eugene&quot;, &quot;Tom&quot;, &quot;Mike&quot;, &quot;Sam&quot;, &quot;Bob&quot; };
+// переворачиваем часть только 3 элемента с индекса 1
+people2.Reverse(1, 3);
+// people2 = { &quot;Eugene&quot;,&quot;Sam&quot;, &quot;Mike&quot;, &quot;Tom&quot;, &quot;Bob&quot; };</strong></span></pre>
+		<p>&nbsp;</p>
+		</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td colspan="3" style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+		Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+	</tr>
+</table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les41.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les41/4.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:48:50 GMT -->
+</html>

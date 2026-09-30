@@ -1,0 +1,948 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les17/6.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:00:38 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: large;
+}
+.style3 {
+	font-size: medium;
+}
+.style4 {
+	font-size: small;
+}
+.style5 {
+	color: #0000FF;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Функция
+                String.Format в C# .</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text" 
+                >
+                <code style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				String.Format</code><span style="color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;"><span>&nbsp;</span>предназначен 
+				для преобразования значения в соответствии с указанным вами 
+				форматом (Format). В этом руководстве вы познакомитесь со всеми 
+				методами преобразования каждого типа значения в желаемый формат.<br />
+				</span>
+				<span style="color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;" class="style3">
+				Синтаксис.
+				</span><span style="color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+				<br />
+				<span style="color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;" class="style4">
+				<code class="style5" style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: inherit; background-color: transparent; border-radius: 0px; white-space: pre-wrap;">
+				<strong>String.Format(&quot;Конвертируем в тип Decimal {0:C}&quot;,переменная))&nbsp; {0:C}&nbsp; 
+				- тип формата</strong></code></span><br />
+				<br />
+				<h4 style="box-sizing: border-box; font-family: Ubuntu, Arial, sans-serif; font-weight: 500; line-height: 20px; color: rgb(51, 51, 51); margin: 0px 0px 13px; font-size: 20px; letter-spacing: normal; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Программа для демонстрации</h4>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для того, чтобы вы поняли, как работает<span>&nbsp;</span><code style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style2">String.Format</code>, 
+				рассмотрим небольшую демонстрационную программу. 
+				В ней я беру десятичное значение, и конвертирую его в валюту. 
+				Значок валюты будет отображаться в соответствии с настройками 
+				вашего региона.</p>
+				<h4 style="box-sizing: border-box; font-family: Ubuntu, Arial, sans-serif; font-weight: 500; line-height: 20px; color: rgb(51, 51, 51); margin: 0px 0px 13px; font-size: 20px; letter-spacing: normal; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример</h4>
+				<pre style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; white-space: pre-wrap; display: block; padding: 9.5px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245); border: 1px solid rgb(204, 204, 204); border-radius: 4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="cs" style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: inherit; padding: 0px; color: inherit; background-color: transparent; border-radius: 0px; white-space: pre-wrap;">using System;
+ 
+namespace StringFormat_Example
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            decimal coin=17.36m;
+            Console.WriteLine(String.Format(&quot;{0:C}&quot;,coin));
+        }
+    }
+}</code></pre>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; font-weight: bold;">Вывод</strong></p>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				₹ 17.36</p>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<em style="box-sizing: border-box;">Это просто небольшая 
+				демонстрационная программа, и в ней пока не виден широкий спектр 
+				возможностей форматирования String.Format. В этой статье я 
+				попытался охватить все виды форматирования для того, чтобы вы 
+				могли изучить всю тему, прочитав всего одну статью.</em></p>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; font-weight: bold;">
+				<em style="box-sizing: border-box;">В этой главе вы изучите:</em></strong></p>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<em style="box-sizing: border-box;">String.Format - Currency<span>&nbsp;</span>↴</em></p>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<em style="box-sizing: border-box;">String.Format - DateTime<span>&nbsp;</span>↴</em></p>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<em style="box-sizing: border-box;">String.Format – Double, 
+				Decimal, Float или Int<span>&nbsp;</span>↴</em></p>
+				<h4 style="box-sizing: border-box; font-family: Ubuntu, Arial, sans-serif; font-weight: 500; line-height: 20px; color: rgb(51, 51, 51); margin: 0px 0px 13px; font-size: 20px; letter-spacing: normal; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				STRING.FORMAT ДЛЯ ПРЕОБРАЗОВАНИЯ ВАЛЮТЫ</h4>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<em style="box-sizing: border-box;">В большинстве случаев вам 
+				нужно отображать в виде валюты значения типа int, double или 
+				number. Для осуществления этого нам не нужно писать десятки 
+				строк кода. Просто кастомизируйте вывод как вам нужно и 
+				позвольте String.Format сделать за вас всю работу.</em></p>
+				<div style="box-sizing: border-box; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<div class="table" style="box-sizing: border-box; width: 726px; margin-bottom: 20px;">
+						<table style="box-sizing: border-box; border-collapse: collapse; border-spacing: 0px; max-width: 100%; background-color: transparent;">
+							<tbody style="box-sizing: border-box;">
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="133" width="133" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									Формат</strong></p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									Описание</strong></p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="133" width="133" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									{0:C}</strong></p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									Отображает фактическое значение в валюте.</p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="133" width="133" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									{0:C4}</strong></p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									Отображает фактическое значение с точностью 
+									до 4 цифр после запятой.</p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="133" width="133" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									{0:C6}</strong></p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									Отображает фактическое значение с точностью 
+									до 6 цифр после запятой.</p>
+									</td>
+								</tr>
+						</table>
+					</div>
+				</div>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; font-weight: bold;">
+				<em style="box-sizing: border-box;">Пример</em></strong></p>
+				<pre style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; white-space: pre-wrap; display: block; padding: 9.5px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245); border: 1px solid rgb(204, 204, 204); border-radius: 4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="cs" style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: inherit; padding: 0px; color: inherit; background-color: transparent; border-radius: 0px; white-space: pre-wrap;">using System;
+ 
+namespace StringFormat_Currency
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            decimal dcoin=2398.87m;
+            int icoin=2309;
+            float fcoin=9283.65f;
+            Console.WriteLine(String.Format(&quot;Convert Decimal {0:C}&quot;,dcoin));
+            Console.WriteLine(String.Format(&quot;Convert Decimal {0:C4}&quot;,icoin));
+            Console.WriteLine(String.Format(&quot;Convert Decimal {0:C6}&quot;,fcoin));
+        }
+    }
+}</code></pre>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; font-weight: bold;">
+				<em style="box-sizing: border-box;">Вывод</em></strong></p>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<em style="box-sizing: border-box;">Convert Decimal ₹ 2,398.87</em></p>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<em style="box-sizing: border-box;">Convert Decimal ₹ 2,309.0000</em></p>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<em style="box-sizing: border-box;">Convert Decimal ₹ 
+				9,283.650000</em></p>
+				<h4 style="box-sizing: border-box; font-family: Ubuntu, Arial, sans-serif; font-weight: 500; line-height: 20px; color: rgb(51, 51, 51); margin: 0px 0px 13px; font-size: 20px; letter-spacing: normal; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				STRING.FORMAT ДЛЯ ПРЕОБРАЗОВАНИЯ DATETIME</h4>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<code style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12.6px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">
+				String.Format</code><span>&nbsp;</span>широко используется для 
+				преобразований даты и времени. Простенькая DateTime-программа не 
+				даст вам отформатированного вывода.<span>&nbsp;</span><code style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12.6px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">String.Format</code><span>&nbsp;</span>в 
+				C# помогает отображать<span>&nbsp;</span><code style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12.6px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">DateTime</code><span>&nbsp;</span>в 
+				соответствии с вашими потребностями. Для<span>&nbsp;</span><code style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12.6px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">DateTime</code><span>&nbsp;</span>можно 
+				применить следующие форматы.</p>
+				<div style="box-sizing: border-box; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<div class="table" style="box-sizing: border-box; width: 726px; margin-bottom: 20px;">
+						<table style="box-sizing: border-box; border-collapse: collapse; border-spacing: 0px; max-width: 100%; background-color: transparent;">
+							<tbody style="box-sizing: border-box;">
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="165" width="165" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									Формат</strong></p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									Описание</strong></p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="165" width="165" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									{0:yy}</strong></p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									Отображает год в виде двух цифр</p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="165" width="165" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									{0:yyyy}</strong></p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									Отображает год в четырехзначном формате</p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="165" width="165" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									{0:MM}</strong></p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									Отображает месяц. Для обозначения месяца 
+									используется латинская заглавная буква «М», 
+									так как маленькая буква m означает минуты.</p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="165" width="165" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									{0:dd}</strong></p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									Отображает день даты</p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="165" width="165" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									{0:dd-MM-yyyy}</strong></p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									Отображает дату в формате dd-MM-YYYY</p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="165" width="165" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									{0:hh:mm:ss}</strong></p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									Отображает время в формате hh:mm:ss</p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="165" width="165" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									{0:zz}</strong></p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									Отображает текущий часовой пояс</p>
+									</td>
+								</tr>
+						</table>
+					</div>
+				</div>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; font-weight: bold;">
+				Всегда помните при форматировании даты:</strong></p>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; font-weight: bold;">y</strong><span>&nbsp;</span>- 
+				год</p>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; font-weight: bold;">M</strong><span>&nbsp;</span>- 
+				месяц</p>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; font-weight: bold;">d</strong><span>&nbsp;</span>- 
+				день</p>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; font-weight: bold;">h</strong><span>&nbsp;</span>- 
+				час</p>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; font-weight: bold;">m</strong><span>&nbsp;</span>- 
+				минута</p>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; font-weight: bold;">s</strong><span>&nbsp;</span>- 
+				секунда</p>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; font-weight: bold;">f</strong><span>&nbsp;</span>- 
+				миллисекунда</p>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; font-weight: bold;">z</strong><span>&nbsp;</span>- 
+				часовой пояс</p>
+				<h4 style="box-sizing: border-box; font-family: Ubuntu, Arial, sans-serif; font-weight: 500; line-height: 20px; color: rgb(51, 51, 51); margin: 0px 0px 13px; font-size: 20px; letter-spacing: normal; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример</h4>
+				<pre style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; white-space: pre-wrap; display: block; padding: 9.5px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245); border: 1px solid rgb(204, 204, 204); border-radius: 4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="cs" style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: inherit; padding: 0px; color: inherit; background-color: transparent; border-radius: 0px; white-space: pre-wrap;">using System;
+ 
+namespace StringFormat_DateTime
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            DateTime dt=DateTime.Now;            
+ 
+            //Start Formation
+            Console.WriteLine(String.Format(&quot;Original Value :- {0}&quot;,dt));
+            Console.WriteLine(String.Format(&quot;Display Year in 2 Digits :- {0:yy}&quot;,dt));
+            Console.WriteLine(String.Format(&quot;Display Year in 4 Digits :- {0:yyyy}&quot;,dt));
+            //Use Capital M for month. Small m displays minutes
+            Console.WriteLine(String.Format(&quot;Display Year and Months :- {0:yyyy MM}&quot;,dt));
+            Console.WriteLine(String.Format(&quot;Display date, month and  Year :- {0:dd MM yyyy}&quot;,dt));
+            Console.WriteLine(String.Format(&quot;Display Time :- {0:hh:mm:ss}&quot;,dt));
+           Console.WriteLine(String.Format(&quot;My Time Zone is :- {0:zz}&quot;,dt));
+        }
+    }
+}</code></pre>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; font-weight: bold;">Вывод</strong></p>
+				<pre style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; white-space: pre-wrap; display: block; padding: 9.5px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245); border: 1px solid rgb(204, 204, 204); border-radius: 4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: inherit; padding: 0px; color: inherit; background-color: transparent; border-radius: 0px; white-space: pre-wrap;">Original Value :- 17/02/17 9:56:00 AM
+Display Year in 2 Digits :- 17
+Display Year in 4 Digits :- 2017
+Display Year and Months :- 2017 02
+Display date, month and Year :- 17 02 2017
+Display Time :- 09:56:00
+My Time Zone is :- +05
+_</code></pre>
+				<h4 style="box-sizing: border-box; font-family: Ubuntu, Arial, sans-serif; font-weight: 500; line-height: 20px; color: rgb(51, 51, 51); margin: 0px 0px 13px; font-size: 20px; letter-spacing: normal; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				DATETIMEFORMATINFO</h4>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<em style="box-sizing: border-box;">В<span>&nbsp;</span></em><code style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12.6px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">DateTimeFormatInfo</code><em style="box-sizing: border-box;"><span>&nbsp;</span>есть 
+				несколько определенных стандартов, которые помогут вам настроить 
+				дату и время самым простым способом. Вот список Определенных 
+				стандартов (Defined Standard) присущих культуре en-us.</em></p>
+				<div style="box-sizing: border-box; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<div class="table" style="box-sizing: border-box; width: 726px; margin-bottom: 20px;">
+						<table style="box-sizing: border-box; border-collapse: collapse; border-spacing: 0px; max-width: 100%; background-color: transparent;">
+							<tbody style="box-sizing: border-box;">
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="139" width="139" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									Спецификатор</strong></p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									Свойство</strong></p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									Паттерн (для культуры en-us)</strong></p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="139" width="139" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									t</strong></p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									ShortTimePattern</p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									h:mm tt</p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="139" width="139" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									d</strong></p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									ShortDatePattern</p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									M/d/yyyy</p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="139" width="139" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									T</strong></p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									LongTimePattern</p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									h:mm:ss tt</p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="139" width="139" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									D</strong></p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									LongDatePattern</p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									dddd, MMMM dd, yyyy</p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="139" width="139" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									f</strong></p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									(комбинация D и t)</p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									dddd, MMMM dd, yyyy h:mm tt</p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="139" width="139" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									F</strong></p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									FullDateTimePattern</p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									dddd, MMMM dd, yyyy h:mm:ss tt</p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="139" width="139" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									g</strong></p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									(комбинация d и t)</p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									M/d/yyyy h:mm tt</p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="139" width="139" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									G</strong></p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									(комбинация d и T)</p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									M/d/yyyy h:mm:ss tt</p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="139" width="139" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									m,M</strong></p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									MonthDayPattern</p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									MMMM dd</p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="139" width="139" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									y, Y</strong></p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									YearMonthPattern</p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									MMMM, yyyy</p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="139" width="139" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									r, R</strong></p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									RFC1123Pattern</p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									ddd, dd MMM yyyy HH&#39;:&#39;mm&#39;:&#39;ss &#39;GMT&#39; (<em style="box-sizing: border-box;">)</em></p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="139" width="139" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									s</strong></p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									SortableDateTi­mePattern</p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									yyyy&#39;-&#39;MM&#39;-&#39;dd&#39;T&#39;HH&#39;:&#39;mm&#39;:&#39;ss ()</p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="139" width="139" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									u</strong></p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									UniversalSorta­bleDateTimePat­tern</p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									yyyy&#39;-&#39;MM&#39;-&#39;dd HH&#39;:&#39;mm&#39;:&#39;ss&#39;Z&#39; (*)</p>
+									</td>
+								</tr>
+						</table>
+					</div>
+				</div>
+				<h4 style="box-sizing: border-box; font-family: Ubuntu, Arial, sans-serif; font-weight: 500; line-height: 20px; color: rgb(51, 51, 51); margin: 0px 0px 13px; font-size: 20px; letter-spacing: normal; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример</h4>
+				<pre style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; white-space: pre-wrap; display: block; padding: 9.5px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245); border: 1px solid rgb(204, 204, 204); border-radius: 4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="cs" style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: inherit; padding: 0px; color: inherit; background-color: transparent; border-radius: 0px; white-space: pre-wrap;">using System;
+ 
+namespace StringFormat_DateTimeFormatInfo
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            DateTime dt=DateTime.Now;            
+ 
+            //Start Formation
+            Console.WriteLine(String.Format(&quot;Short Time Pattern [t] : {0:t}&quot;,dt));
+            Console.WriteLine(String.Format(&quot;Short Date Pattern [d] : {0:d}&quot;,dt));
+            Console.WriteLine(String.Format(&quot;Long Time Pattern [T] : {0:T}&quot;,dt));
+            Console.WriteLine(String.Format(&quot;Long Date Pattern [D] : {0:D}&quot;,dt));
+            Console.WriteLine(String.Format(&quot;Combination of D and T [f] : {0:f}&quot;,dt));
+            Console.WriteLine(String.Format(&quot;Full Date Time Pattern [F] : {0:F}&quot;,dt));
+            Console.WriteLine(String.Format(&quot;Combination of d and t [g] : {0:g}&quot;,dt));
+            Console.WriteLine(String.Format(&quot;Combination of d and T [G] : {0:G}&quot;,dt));
+            Console.WriteLine(String.Format(&quot;Month Day Pattern [m or M] : {0:M}&quot;,dt));            
+            Console.WriteLine(String.Format(&quot;Year Month Pattern [y or Y] : {0:Y}&quot;,dt));
+            Console.WriteLine(String.Format(&quot;RFC1123Pattern [r or R] : {0:R}&quot;,dt));
+            Console.WriteLine(String.Format(&quot;SortableDateTi­mePattern [s] : {0:s}&quot;,dt));
+            Console.WriteLine(String.Format(&quot;UniversalSorta­bleDateTimePat­tern [u] : {0:u}&quot;,dt));
+        }
+    }
+}</code></pre>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; font-weight: bold;">
+				<em style="box-sizing: border-box;">Вывод</em></strong></p>
+				<pre style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; white-space: pre-wrap; display: block; padding: 9.5px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245); border: 1px solid rgb(204, 204, 204); border-radius: 4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="cs" style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: inherit; padding: 0px; color: inherit; background-color: transparent; border-radius: 0px; white-space: pre-wrap;">Short Time Pattern [t] : 9:53 AM
+Short Date Pattern [d] : 17/02/17
+Long Time Pattern [T] : 9:53:09 AM
+Long Date Pattern [D] : Friday 17 February 2017
+Combination of D and T [f] : Friday 17 February 2017 9:53 AM
+Full Date Time Pattern [F] : Friday 17 February 2017 9:53:09 AM
+Combination of d and t [g] : 17/02/17 9:53 AM
+Combination of d and T [G] : 17/02/17 9:53:09 AM
+Month Day Pattern [m or M] : 17 February
+Year Month Pattern [y or Y] : February 2017
+RFC1123Pattern [r or R] : Fri, 17 Feb 2017 09:53:09 GMT
+SortableDateTi­mePattern [s] : 2017-02-17T09:53:09
+UniversalSorta­bleDateTimePat­tern [u] : 2017-02-17 09:53:09Z
+_</code></pre>
+				<h4 style="box-sizing: border-box; font-family: Ubuntu, Arial, sans-serif; font-weight: 500; line-height: 20px; color: rgb(51, 51, 51); margin: 0px 0px 13px; font-size: 20px; letter-spacing: normal; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				STRING.FORMAT ДЛЯ DOUBLE, DECIMAL, FLOAT ИЛИ INT</h4>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Иногда нам нужно кастомизировать вывод для значений типа Double, 
+				Decimal или Float. Иногда вывод для этих типов данных слишком 
+				длинный (мы говорим о дробной части), и вам просто нужно 
+				обрезать часть значения, оставшуюся за пределами определенной 
+				точности.<span>&nbsp;</span><code style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12.6px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">String.Format</code><span>&nbsp;</span>поможет 
+				вам настроить значения типа Double, Decimal или Float.</p>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; font-weight: bold;">
+				Таблица Форматов</strong></p>
+				<div style="box-sizing: border-box; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<div class="table" style="box-sizing: border-box; width: 726px; margin-bottom: 20px;">
+						<table style="box-sizing: border-box; border-collapse: collapse; border-spacing: 0px; max-width: 100%; background-color: transparent;">
+							<tbody style="box-sizing: border-box;">
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="147" width="147" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									Формат</strong></p>
+									</td>
+									<td data-colwidth="225" width="225" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									Объяснение</strong></p>
+									</td>
+									<td data-colwidth="180" width="180" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									Значение</strong></p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									Вывод</strong></p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="147" width="147" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									{0}</strong></p>
+									</td>
+									<td data-colwidth="225" width="225" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									Исходное значение</p>
+									</td>
+									<td data-colwidth="180" width="180" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									83745.892</p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									83745.892</p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="147" width="147" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									{0:0.00}</strong></p>
+									</td>
+									<td data-colwidth="225" width="225" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									Два десятичных знака после точки</p>
+									</td>
+									<td data-colwidth="180" width="180" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									83745.892</p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									83745.89</p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="147" width="147" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									{0:0.##}</strong></p>
+									</td>
+									<td data-colwidth="225" width="225" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									Максимум два десятичных знака после точки</p>
+									</td>
+									<td data-colwidth="180" width="180" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									83745.892</p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									83745.89</p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="147" width="147" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									{0:00.00}</strong></p>
+									</td>
+									<td data-colwidth="225" width="225" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									Две цифры перед десятичной точкой</p>
+									</td>
+									<td data-colwidth="180" width="180" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									5.892</p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									05.892</p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="147" width="147" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									{0:0,0.00}</strong></p>
+									</td>
+									<td data-colwidth="225" width="225" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									Разделитель тысяч</p>
+									</td>
+									<td data-colwidth="180" width="180" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									83745.892</p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									83,745.89</p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="147" width="147" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									{0:0.0}</strong></p>
+									</td>
+									<td data-colwidth="225" width="225" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									Преобразование дробных чисел к виду с нулем</p>
+									</td>
+									<td data-colwidth="180" width="180" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									0.5</p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									0.5</p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="147" width="147" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									{0:#.0}</strong></p>
+									</td>
+									<td data-colwidth="225" width="225" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									Преобразование дробных чисел к виду без нуля</p>
+									</td>
+									<td data-colwidth="180" width="180" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									0.5</p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									.5</p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="147" width="147" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									{0,10:0.0}</strong></p>
+									</td>
+									<td data-colwidth="225" width="225" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									Выравнивание числа по пробелам</p>
+									</td>
+									<td data-colwidth="180" width="180" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									120.5</p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									“ 120.5”</p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="147" width="147" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									{0,10:0.0}</strong></p>
+									</td>
+									<td data-colwidth="225" width="225" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									Выравнивание числа по пробелам</p>
+									</td>
+									<td data-colwidth="180" width="180" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									120.5</p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									“120.5 Hello”</p>
+									</td>
+								</tr>
+								<tr style="box-sizing: border-box;">
+									<td data-colwidth="147" width="147" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									<strong style="box-sizing: border-box; font-weight: bold;">
+									{0:###-##-####}</strong></p>
+									</td>
+									<td data-colwidth="225" width="225" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									Формат номера телефона</p>
+									</td>
+									<td data-colwidth="180" width="180" style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									123456789</p>
+									</td>
+									<td style="box-sizing: border-box;">
+									<p style="box-sizing: border-box; margin: 0px 0px 18px;">
+									123-45-6789</p>
+									</td>
+								</tr>
+						</table>
+					</div>
+				</div>
+				<h4 style="box-sizing: border-box; font-family: Ubuntu, Arial, sans-serif; font-weight: 500; line-height: 20px; color: rgb(51, 51, 51); margin: 0px 0px 13px; font-size: 20px; letter-spacing: normal; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример</h4>
+				<pre style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; white-space: pre-wrap; display: block; padding: 9.5px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245); border: 1px solid rgb(204, 204, 204); border-radius: 4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="cs" style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: inherit; padding: 0px; color: inherit; background-color: transparent; border-radius: 0px; white-space: pre-wrap;">using System;
+ 
+namespace StringFormat_Double
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            //Start Formation
+            Console.WriteLine(&quot;Current Output : {0}&quot;, 83745.892);
+            Console.WriteLine(string.Format(&quot;Two decimal places : {0:0.00}&quot;,83745.892));
+            Console.WriteLine(string.Format(&quot;Three decimal places : {0:0.000}&quot;,83745.82));
+            Console.WriteLine(string.Format(&quot;Maximum Two decimal places : {0:0.##}&quot;,83745.892));
+            Console.WriteLine(string.Format(&quot;Two digits before decimal point : {0:00.00}&quot;,5.892));
+            Console.WriteLine(string.Format(&quot;Thousands Separator : {0:0,0.00}&quot;,83745.892));
+            Console.WriteLine(string.Format(&quot;Point number conversion with zero : {0:0.0}&quot;,0.5));
+            Console.WriteLine(string.Format(&quot;Point number conversion without zero : {0:#.0}&quot;,0.5));
+            Console.WriteLine(string.Format(&quot;Align Number with Spaces : {0,10:0.0}&quot;,120.5));
+            Console.WriteLine(string.Format(&quot;Align Number with Spaces : {0,-10:0.0} Hello&quot;,120.5));
+           Console.WriteLine(string.Format(&quot;Phone Number format {0:###-##-####}&quot;,123456789));
+        }
+    }
+}</code></pre>
+				<p style="box-sizing: border-box; margin: 0px 0px 18px; color: rgb(51, 51, 51); font-family: Ubuntu, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; font-weight: bold;">Вывод</strong></p>
+				<pre style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; white-space: pre-wrap; display: block; padding: 9.5px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245); border: 1px solid rgb(204, 204, 204); border-radius: 4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="cs" style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: inherit; padding: 0px; color: inherit; background-color: transparent; border-radius: 0px; white-space: pre-wrap;">Current Output : 83745.892
+Two decimal places : 83745.89
+Three decimal places : 83745.820
+Maximum Two decimal places : 83745.89
+Two digits before decimal point : 05.89
+Thousands Separator : 83,745.89
+Point number conversion with zero : 0.5
+Point number conversion without zero : .5
+Align Number with Spaces : 120.5
+Align Number with Spaces : 120.5 Hello
+Phone Number format 123-45-6789
+_</code></pre>
+				</span></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2008 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les17.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les17/6.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:00:38 GMT -->
+</html>

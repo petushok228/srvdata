@@ -1,0 +1,545 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les52/2.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 12:06:28 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+				font-size: small;
+}
+    .style3 {
+				font-size: small;
+				text-align: left;
+				color: rgb(0, 0, 255);
+}
+    .style4 {
+	color: rgb(255, 0, 0);
+}
+.style5 {
+	font-size: small;
+	color: rgb(0, 0, 255);
+}
+.style6 {
+	color: rgb(255, 0, 0);
+	text-decoration: underline;
+}
+.style7 {
+	color: #0000FF;
+}
+    .style8 {
+	color: #0000FF;
+	font-size: small;
+	margin-left: 40px;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 2. Атрибуты класса в Python. Режимы доступа public, private, protected. Сеттеры и геттеры.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				На прошлых занятиях мы научились с вами создавать экземпляры 
+				классов и объявлять в них атрибуты и методы. Пришла пора сделать 
+				следующий шаг и познакомиться с механизмом ограничения доступа к 
+				данным и методам класса извне. Это основа механизма<span>&nbsp;</span><b>инкапсуляции</b>.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Давайте предположим, что мы описываем класс представления точки 
+				на плоскости:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">class</span><span class="style2"> Point:
+    </span><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">def</span> <span style="color: rgb(0, 0, 205);" class="style2">__init__</span><span style="color: black;" class="style2">(</span><span style="color: rgb(0, 128, 0);" class="style2">self</span><span style="color: rgb(102, 204, 102);" class="style2">,</span><span class="style2"> x</span><span style="color: rgb(102, 204, 102);" class="style2">=</span><span style="color: rgb(255, 69, 0);" class="style2">0</span><span style="color: rgb(102, 204, 102);" class="style2">,</span><span class="style2"> y</span><span style="color: rgb(102, 204, 102);" class="style2">=</span><span style="color: rgb(255, 69, 0);" class="style2">0</span><span style="color: black;" class="style2">)</span>:<span class="style2">
+        </span><span style="color: rgb(0, 128, 0);" class="style2">self</span>.<span style="color: black;" class="style2">x</span> <span style="color: rgb(102, 204, 102);" class="style2">=</span><span class="style2"> x
+        </span><span style="color: rgb(0, 128, 0);" class="style2">self</span>.<span style="color: black;" class="style2">y</span> <span style="color: rgb(102, 204, 102);" class="style2">=</span><span class="style2"> y</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Когда создается экземпляр этого класса:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span class="style2">pt </span><span style="color: rgb(102, 204, 102);" class="style2">=</span><span class="style2"> Point</span><span style="color: black;" class="style2">(</span><span style="color: rgb(255, 69, 0);" class="style2">1</span><span style="color: rgb(102, 204, 102);" class="style2">,</span> <span style="color: rgb(255, 69, 0);" class="style2">2</span><span style="color: black;" class="style2">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				то имеется полный доступ ко всем его локальным атрибутам:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">print</span><span style="color: black;" class="style2">(</span><span class="style2">pt.</span><span style="color: black;" class="style2">x</span><span style="color: rgb(102, 204, 102);" class="style2">,</span> <span class="style2">pt.</span><span style="color: black;" class="style2">y)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				а, значит, их всегда можно изменить через ссылку pt:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span class="style2">pt.</span><span style="color: black;" class="style2">x</span> <span style="color: rgb(102, 204, 102);" class="style2">=</span> <span style="color: rgb(255, 69, 0);" class="style2">200</span><span class="style2">
+</span><span class="style2">pt.</span><span style="color: black;" class="style2">y</span> <span style="color: rgb(102, 204, 102);" class="style2">=</span> <span style="color: rgb(72, 61, 139);">&quot;<span class="style2">coord_y&quot;</span></span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				и присвоить любые значения, в том числе и недопустимые 
+				(например, строку).</p>
+				<p style="font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+				<strong>Атрибуты класса в Python.</strong></p>
+				<span class="style2">Все атрибуты можно разделить на 2 группы:<br style="box-sizing: content-box;" />
+																												<ol style="box-sizing: content-box; padding-left: 22px; margin-top: 0px; margin-bottom: 10px;">
+																																<li style="box-sizing: content-box;">Встроенные(служебные) атрибуты</li>
+																																<li style="box-sizing: content-box;">Пользовательские атрибуты</li>
+																												</ol>
+																												Предлагаем отдельно поговорить о каждой из этих групп:</span><p style="font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+																<img class="t107__widthauto t-img loaded" src="Pic/Smartiqa_OOP_1_attri.png" data-original="../../../static.tildacdn.com/tild6138-6561-4832-b338-643132333364/Smartiqa_OOP_1_attri.png" imgfield="img" alt="Python. ООП Атрибуты класса" style="box-sizing: content-box; margin: 0px auto; padding: 0px; border: 0px; display: block; width: auto; max-width: 100%;" /></p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Так вот, чтобы указать программисту (пользователю класса), чтобы 
+				он не обращался напрямую к атрибутам, их следует делать 
+				«закрытыми». В Python возможны 
+				следующие варианты доступа к данным:</p>
+				<ul style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+								<li><span class="style4"><strong>attribute</strong></span> (без одного или двух подчеркиваний 
+								вначале) – публичное свойство (<b>public</b>);</li>
+								<li><span class="style4"><strong>_attribute</strong></span> (с одним подчеркиванием) – режим 
+								доступа<span>&nbsp;</span><b>protected</b><span>&nbsp;</span>(служит 
+								для обращения внутри класса и во всех его 
+								дочерних классах)</li>
+								<li><span class="style4"><strong>__attribute</strong></span> (с двумя подчеркиваниями) – 
+								режим доступа<span>&nbsp;</span><b>private</b><span>&nbsp;</span>(служит 
+								для обращения только внутри класса).</li>
+				</ul>
+				<p style="font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+				<strong>Встроенные атрибуты</strong></p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+																												Называть данную группу атрибутов встроенными - это своего рода условность, и сейчас мы объясним почему. Суть в том, что на самом деле все классы в Python (начиная с 3-й версии) имеют один общий родительский класс -<span>&nbsp;</span><strong style="box-sizing: content-box; font-weight: 700;"><span data-redactor-tag="span" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 124, 119);">object</span></strong>. 
+				<span class="style6"><strong><em>Это значит, что когда вы создаете новый класс, вы неявно наследуете его от класса</em></strong></span><span>&nbsp;</span><strong style="box-sizing: content-box; font-weight: 700;"><span data-redactor-tag="span" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 124, 119);">object</span></strong>, и потому свежесозданный класс наследует его атрибуты. Именно их мы и называем встроенными(служебными). Вот некоторые из них(заметьте, что в списке есть как поля, так и методы):</p>
+																												<table class="t431__table " data-table-width="30%;50%;20%" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px solid rgb(204, 204, 204); vertical-align: baseline; text-align: inherit; border-collapse: collapse; table-layout: auto; width: 60%;" align="center">
+																																<thead class="t431__thead" style="box-sizing: content-box;">
+																																				<tr style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px;">
+																																								<th class="t431__th t-title" style="border-left: 1px solid rgb(14, 125, 120); border-right: 1px solid rgb(14, 125, 120); border-top: 0px solid rgb(14, 125, 120); border-bottom: 1px solid rgb(14, 125, 120); box-sizing: content-box; margin: 0px; padding: 20px; border-image: initial; font-family: Roboto, Arial, sans-serif; font-weight: 600; color: rgb(255, 255, 255); vertical-align: top; text-align: inherit; background: rgb(14, 125, 120); font-size: 16px; width: 27%;">Атрибут</th>
+																																								<th class="t431__th t-title" style="border-left: 1px solid rgb(14, 125, 120); border-right: 1px solid rgb(14, 125, 120); border-top: 0px solid rgb(14, 125, 120); border-bottom: 1px solid rgb(14, 125, 120); box-sizing: content-box; margin: 0px; padding: 20px; border-image: initial; font-family: Roboto, Arial, sans-serif; font-weight: 600; color: rgb(255, 255, 255); vertical-align: top; text-align: inherit; background: rgb(14, 125, 120); font-size: 16px; width: 56%;">Назначение</th>
+																																								<th class="t431__th t-title" width="20%" style="box-sizing: content-box; margin: 0px; padding: 20px; border-width: 0px 1px 1px; border-style: solid; border-color: rgb(14, 125, 120); border-image: initial; font-family: Roboto, Arial, sans-serif; font-weight: 600; color: rgb(255, 255, 255); vertical-align: top; text-align: inherit; background: rgb(14, 125, 120); font-size: 16px;">Тип</th>
+																																				</tr>
+																																</thead>
+																																<tbody class="t431__tbody" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px solid rgb(204, 204, 204); vertical-align: middle; text-align: inherit; overflow-y: auto; height: inherit;">
+																																				<tr class="style2" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; background: rgb(255, 255, 255);">
+																																								<td class="t431__td t-text" style="box-sizing: content-box; margin: 0px; padding: 20px; border-top: 0px; border-right: 1px solid rgb(217, 217, 217); border-bottom: 1px solid rgb(217, 217, 217); border-left: 1px solid rgb(217, 217, 217); border-image: initial; font-family: Roboto, Arial, sans-serif; font-weight: 300; color: rgb(77, 76, 76); vertical-align: top; text-align: inherit; width: 27%;">__new__(cls[, ...])</td>
+																																								<td class="t431__td t-text" style="box-sizing: content-box; margin: 0px; padding: 20px; border-top: 0px; border-right: 1px solid rgb(217, 217, 217); border-bottom: 1px solid rgb(217, 217, 217); border-left: 1px solid rgb(217, 217, 217); border-image: initial; font-family: Roboto, Arial, sans-serif; font-weight: 300; color: rgb(77, 76, 76); vertical-align: top; text-align: inherit; width: 56%;"><span class="style4"><strong>Конструктор</strong></span>. Создает экземпляр(объект) класса. Сам класс передается в качестве аргумента.</td>
+																																								<td class="t431__td t-text" width="20%" style="box-sizing: content-box; margin: 0px; padding: 20px; border-top: 0px !important; border-right: 1px solid rgb(217, 217, 217); border-bottom: 1px solid rgb(217, 217, 217); border-left: 1px solid rgb(217, 217, 217); border-image: initial; font-family: Roboto, Arial, sans-serif; font-weight: 300; color: rgb(77, 76, 76); vertical-align: top; text-align: inherit;">Функция</td>
+																																				</tr>
+																																				<tr class="style2" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; background: rgb(238, 238, 238);">
+																																								<td class="t431__td t-text" style="box-sizing: content-box; margin: 0px; padding: 20px; border: 1px solid rgb(217, 217, 217); font-family: Roboto, Arial, sans-serif; font-weight: 300; color: rgb(77, 76, 76); vertical-align: top; text-align: inherit; width: 27%;">__init__(self[, ...])</td>
+																																								<td class="t431__td t-text" style="box-sizing: content-box; margin: 0px; padding: 20px; border: 1px solid rgb(217, 217, 217); font-family: Roboto, Arial, sans-serif; font-weight: 300; color: rgb(77, 76, 76); vertical-align: top; text-align: inherit; width: 56%;"><span class="style4"><strong>Инициализатор</strong></span>. Принимает свежесозданный объект класса из конструктора.</td>
+																																								<td class="t431__td t-text" width="20%" style="box-sizing: content-box; margin: 0px; padding: 20px; border: 1px solid rgb(217, 217, 217); font-family: Roboto, Arial, sans-serif; font-weight: 300; color: rgb(77, 76, 76); vertical-align: top; text-align: inherit;">Функция</td>
+																																				</tr>
+																																				<tr class="style2" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; background: rgb(255, 255, 255);">
+																																								<td class="t431__td t-text" style="box-sizing: content-box; margin: 0px; padding: 20px; border: 1px solid rgb(217, 217, 217); font-family: Roboto, Arial, sans-serif; font-weight: 300; color: rgb(77, 76, 76); vertical-align: top; text-align: inherit; width: 27%;">__del__(self)</td>
+																																								<td class="t431__td t-text" style="box-sizing: content-box; margin: 0px; padding: 20px; border: 1px solid rgb(217, 217, 217); font-family: Roboto, Arial, sans-serif; font-weight: 300; color: rgb(77, 76, 76); vertical-align: top; text-align: inherit; width: 56%;"><span class="style4"><strong>Деструктор</strong></span>. Вызывается при удалении объекта сборщиком мусора</td>
+																																								<td class="t431__td t-text" width="20%" style="box-sizing: content-box; margin: 0px; padding: 20px; border: 1px solid rgb(217, 217, 217); font-family: Roboto, Arial, sans-serif; font-weight: 300; color: rgb(77, 76, 76); vertical-align: top; text-align: inherit;">Функция</td>
+																																				</tr>
+																																				<tr class="style2" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; background: rgb(238, 238, 238);">
+																																								<td class="t431__td t-text" style="box-sizing: content-box; margin: 0px; padding: 20px; border: 1px solid rgb(217, 217, 217); font-family: Roboto, Arial, sans-serif; font-weight: 300; color: rgb(77, 76, 76); vertical-align: top; text-align: inherit; width: 27%;">__str__(self)</td>
+																																								<td class="t431__td t-text" style="box-sizing: content-box; margin: 0px; padding: 20px; border: 1px solid rgb(217, 217, 217); font-family: Roboto, Arial, sans-serif; font-weight: 300; color: rgb(77, 76, 76); vertical-align: top; text-align: inherit; width: 56%;">Возвращает строковое представление объекта.</td>
+																																								<td class="t431__td t-text" width="20%" style="box-sizing: content-box; margin: 0px; padding: 20px; border: 1px solid rgb(217, 217, 217); font-family: Roboto, Arial, sans-serif; font-weight: 300; color: rgb(77, 76, 76); vertical-align: top; text-align: inherit;">Функция</td>
+																																				</tr>
+																																				<tr class="style2" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; background: rgb(255, 255, 255);">
+																																								<td class="t431__td t-text" style="box-sizing: content-box; margin: 0px; padding: 20px; border: 1px solid rgb(217, 217, 217); font-family: Roboto, Arial, sans-serif; font-weight: 300; color: rgb(77, 76, 76); vertical-align: top; text-align: inherit; width: 27%;">__hash__(self)</td>
+																																								<td class="t431__td t-text" style="box-sizing: content-box; margin: 0px; padding: 20px; border: 1px solid rgb(217, 217, 217); font-family: Roboto, Arial, sans-serif; font-weight: 300; color: rgb(77, 76, 76); vertical-align: top; text-align: inherit; width: 56%;">Возвращает хэш-сумму объекта.</td>
+																																								<td class="t431__td t-text" width="20%" style="box-sizing: content-box; margin: 0px; padding: 20px; border: 1px solid rgb(217, 217, 217); font-family: Roboto, Arial, sans-serif; font-weight: 300; color: rgb(77, 76, 76); vertical-align: top; text-align: inherit;">Функция</td>
+																																				</tr>
+																																				<tr class="style2" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; background: rgb(238, 238, 238);">
+																																								<td class="t431__td t-text" style="box-sizing: content-box; margin: 0px; padding: 20px; border: 1px solid rgb(217, 217, 217); font-family: Roboto, Arial, sans-serif; font-weight: 300; color: rgb(77, 76, 76); vertical-align: top; text-align: inherit; width: 27%;">__setattr__(self, attr, val)</td>
+																																								<td class="t431__td t-text" style="box-sizing: content-box; margin: 0px; padding: 20px; border: 1px solid rgb(217, 217, 217); font-family: Roboto, Arial, sans-serif; font-weight: 300; color: rgb(77, 76, 76); vertical-align: top; text-align: inherit; width: 56%;">Создает новый атрибут для объекта класса с именем attr и значением val</td>
+																																								<td class="t431__td t-text" width="20%" style="box-sizing: content-box; margin: 0px; padding: 20px; border: 1px solid rgb(217, 217, 217); font-family: Roboto, Arial, sans-serif; font-weight: 300; color: rgb(77, 76, 76); vertical-align: top; text-align: inherit;">Функция</td>
+																																				</tr>
+																																				<tr class="style2" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; background: rgb(255, 255, 255);">
+																																								<td class="t431__td t-text" style="box-sizing: content-box; margin: 0px; padding: 20px; border: 1px solid rgb(217, 217, 217); font-family: Roboto, Arial, sans-serif; font-weight: 300; color: rgb(77, 76, 76); vertical-align: top; text-align: inherit; width: 27%;">__doc__</td>
+																																								<td class="t431__td t-text" style="box-sizing: content-box; margin: 0px; padding: 20px; border: 1px solid rgb(217, 217, 217); font-family: Roboto, Arial, sans-serif; font-weight: 300; color: rgb(77, 76, 76); vertical-align: top; text-align: inherit; width: 56%;">Документация класса.</td>
+																																								<td class="t431__td t-text" width="20%" style="box-sizing: content-box; margin: 0px; padding: 20px; border: 1px solid rgb(217, 217, 217); font-family: Roboto, Arial, sans-serif; font-weight: 300; color: rgb(77, 76, 76); vertical-align: top; text-align: inherit;">Строка (тип str)</td>
+																																				</tr>
+																																				<tr class="style2" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; background: rgb(238, 238, 238);">
+																																								<td class="t431__td t-text" style="box-sizing: content-box; margin: 0px; padding: 20px; border: 1px solid rgb(217, 217, 217); font-family: Roboto, Arial, sans-serif; font-weight: 300; color: rgb(77, 76, 76); vertical-align: top; text-align: inherit; width: 27%;">__dict__</td>
+																																								<td class="t431__td t-text" style="box-sizing: content-box; margin: 0px; padding: 20px; border: 1px solid rgb(217, 217, 217); font-family: Roboto, Arial, sans-serif; font-weight: 300; color: rgb(77, 76, 76); vertical-align: top; text-align: inherit; width: 56%;">Словарь, в котором хранится пространство имен класса</td>
+																																								<td class="t431__td t-text" width="20%" style="box-sizing: content-box; margin: 0px; padding: 20px; border: 1px solid rgb(217, 217, 217); font-family: Roboto, Arial, sans-serif; font-weight: 300; color: rgb(77, 76, 76); vertical-align: top; text-align: inherit;">Словарь (тип dict)</td>
+																																				</tr>
+																												</table>
+																								<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				В теории ООП<span>&nbsp;</span><strong style="box-sizing: content-box; font-weight: 700;">конструктор<span>&nbsp;</span></strong>класса - это специальный блок инструкций, который вызывается при создании объекта. При работе с питоном может возникнуть мнение, что метод<span>&nbsp;</span><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 124, 119);"><strong style="box-sizing: content-box; font-weight: 700;">__init__(self)</strong><span>&nbsp;</span></span>- 
+				<span class="style6"><strong>это и есть конструктор, но это не совсем так</strong></span>. На самом деле, при создании объекта в Python вызывается метод<span>&nbsp;</span><strong style="box-sizing: content-box; font-weight: 700;"><span data-redactor-tag="span" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 124, 119);">__new__(cls, *args, **kwargs)</span></strong><span>&nbsp;</span><span class="style6"><strong>и именно он является конструктором класса.</strong></span><br style="box-sizing: content-box;" />
+																												<br style="box-sizing: content-box;" />
+																												Также обратите внимание, что<span>&nbsp;</span><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 124, 119);"><strong style="box-sizing: content-box; font-weight: 700;">__new__()</strong><span>&nbsp;</span></span>- это метод класса, поэтому его первый параметр<span>&nbsp;</span><strong style="box-sizing: content-box; font-weight: 700;"><span data-redactor-tag="span" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 124, 119);">cls</span></strong><span>&nbsp;</span>- ссылка на текущий класс. В свою очередь, метод<span>&nbsp;</span><strong style="box-sizing: content-box; font-weight: 700;"><span data-redactor-tag="span" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 124, 119);">__init__()</span></strong><span>&nbsp;</span>является так называемым<span>&nbsp;</span><strong style="box-sizing: content-box; font-weight: 700;"><span data-redactor-tag="span" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px;">инициализатором</span></strong><span>&nbsp;</span>класса. Именно этот метод первый принимает созданный конструктором объект. Как вы уже, наверное, не раз замечали, метод<span>&nbsp;</span><strong style="box-sizing: content-box; font-weight: 700;"><span data-redactor-tag="span" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 124, 119);">__init__()</span><span>&nbsp;</span></strong>часто переопределяется внутри класса самим программистом. Это позволяет со всем удобством задавать параметры будущего объекта при его создании.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Часто при работе с объектами в Python возникает потребность в представлении объектов в виде строк. Это может быть полезно для отладки, логирования или просто для вывода информации о объекте. В Python для этого существуют два специальных метода: __str__ и __repr__.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				&nbsp;</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Важно отметить, что если для класса определен только метод __repr__, то он будет использован и при вызове str(). Однако, если определены оба метода, __str__ и __repr__, то при вызове str() будет использован __str__, а при вызове repr() — __repr__.
+
+</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+								Итак, главное отличие между __str__ и __repr__ в Python заключается в их назначении: __str__ предназначен для создания «приятного» для чтения представления объекта, в то время как __repr__ предназначен для создания «официального» представления, которое может быть использовано для воссоздания объекта.&nbsp;</p>
+				<pre class="style8"><strong>class Person:
+    r=0 
+    name='Иванов'
+    age = 16
+    __doc__ ='Документация класса.'
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def __str__(self):
+        return f'Метод __str__ класса Person name={self.name} age={self.age})'
+    def __repr__(self):
+        return f'Метод __repr__ класса Person (name={self.name!r}, age={self.age!r})' 
+
+
+
+def main():
+    person = Person('ssss',44)
+    s = person.__dir__()  #в пустом классе есть только встроенные атрибуты
+    print(s)
+    print()
+    #__str__(self) Возвращает строковое представление объекта.
+    print(person)
+    #__repr__ метод возвращает строку, описывающую точное, однозначное представление объекта. 
+    print(repr(person))
+    print()
+    #person.__doc__ ='kkkkkkkkkkkkkkkkkkk'
+    d = person.__doc__
+    print(d)</strong></pre>
+				<p style="font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+				<strong>Пользовательские атрибуты</strong></p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Это атрибуты, которые непосредственно составляют основной 
+				функционал класса. Если служебные атрибуты наследуются от 
+				базового класса<span>&nbsp;</span><strong style="box-sizing: content-box; font-weight: 700;"><span data-redactor-tag="span" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 124, 119);">object</span></strong>, то пользовательские - пишутся программистом во время реализации начинки класса и дальнейшей работы с ним.<br style="box-sizing: content-box;" />
+																												<br style="box-sizing: content-box;" />
+																												Список атрибутов класса / объекта можно получить с помощью команды<span>&nbsp;</span><strong style="box-sizing: content-box; font-weight: 700;"><span data-redactor-tag="span" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 124, 119);">dir()</span></strong>. Если взять самый простой класс:</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				<code class="python hljs" style="box-sizing: content-box; margin: 0px; padding: 0.5em; border: 0px; display: block; overflow-x: auto; color: rgb(51, 51, 51); background: rgb(248, 248, 248); text-size-adjust: none;"><span class="hljs-class" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px;"><span class="hljs-keyword" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(51, 51, 51); font-weight: bold;">class</span>&nbsp;<span class="hljs-title" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(68, 85, 136); font-weight: bold;">Phone</span>:</span><br />
+&nbsp;&nbsp;&nbsp;
+    <span class="hljs-keyword" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(51, 51, 51); font-weight: bold;">pass</span></code></p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+																												То мы получим вот такой список атрибутов:</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				<code class="python hljs" style="box-sizing: content-box; margin: 0px; padding: 0.5em; border: 0px; display: block; overflow-x: auto; color: rgb(51, 51, 51); background: rgb(248, 248, 248); text-size-adjust: none;">[<span class="hljs-string" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(221, 17, 68);">&#39;__class__&#39;</span>, <span class="hljs-string" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(221, 17, 68);">&#39;__delattr__&#39;</span>, <span class="hljs-string" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(221, 17, 68);">&#39;__dict__&#39;</span>, <span class="hljs-string" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(221, 17, 68);">&#39;__dir__&#39;</span>, <span class="hljs-string" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(221, 17, 68);">&#39;__doc__&#39;</span>, <span class="hljs-string" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(221, 17, 68);">&#39;__eq__&#39;</span>, <span class="hljs-string" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(221, 17, 68);">&#39;__format__&#39;</span>, <span class="hljs-string" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(221, 17, 68);">&#39;__ge__&#39;</span>, <span class="hljs-string" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(221, 17, 68);">&#39;__getattribute__&#39;</span>, <span class="hljs-string" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(221, 17, 68);">&#39;__gt__&#39;</span>, <span class="hljs-string" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(221, 17, 68);">&#39;__hash__&#39;</span>, <span class="hljs-string" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(221, 17, 68);">&#39;__init__&#39;</span>, <span class="hljs-string" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(221, 17, 68);">&#39;__init_subclass__&#39;</span>, <span class="hljs-string" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(221, 17, 68);">&#39;__le__&#39;</span>, <span class="hljs-string" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(221, 17, 68);">&#39;__lt__&#39;</span>, <span class="hljs-string" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(221, 17, 68);">&#39;__module__&#39;</span>, <span class="hljs-string" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(221, 17, 68);">&#39;__ne__&#39;</span>, <span class="hljs-string" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(221, 17, 68);">&#39;__new__&#39;</span>, <span class="hljs-string" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(221, 17, 68);">&#39;__reduce__&#39;</span>, <span class="hljs-string" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(221, 17, 68);">&#39;__reduce_ex__&#39;</span>, <span class="hljs-string" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(221, 17, 68);">&#39;__repr__&#39;</span>, <span class="hljs-string" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(221, 17, 68);">&#39;__setattr__&#39;</span>, <span class="hljs-string" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(221, 17, 68);">&#39;__sizeof__&#39;</span>, <span class="hljs-string" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(221, 17, 68);">&#39;__str__&#39;</span>, <span class="hljs-string" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(221, 17, 68);">&#39;__subclasshook__&#39;</span>, <span class="hljs-string" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(221, 17, 68);">&#39;__weakref__&#39;</span>]</code></p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+																												Как видим, 
+				<span class="style4"><strong>в нем есть только встроенные атрибуты</strong></span>, которые наш класс по-умолчанию унаследовал от базового класса<span>&nbsp;</span><strong style="box-sizing: content-box; font-weight: 700;"><span data-redactor-tag="span" style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 124, 119);">object</span></strong>. А теперь добавим ему функционала:</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Итого по атрибутам класса </p>
+																												<ol style="box-sizing: content-box; padding-left: 22px; margin-top: 0px; margin-bottom: 10px;" class="style2">
+																																<li style="box-sizing: content-box;"><span class="style7"><strong>Атрибутами называем совокупность полей и методов класса / объекта.</strong></li>
+																																<li style="box-sizing: content-box;"><strong>Атрибуты делятся на встроенные и пользовательские.</strong></li>
+																																<li style="box-sizing: content-box;"><strong>Все классы в Python имеют общий родительский класс - он называется</strong><span><strong>&nbsp;</strong></span></span><strong style="box-sizing: content-box; font-weight: 700;"><span data-redactor-tag="span" style="border-style: none; border-color: inherit; border-width: 0px; box-sizing: content-box; margin: 0px; padding: 0px; " class="style7">object</span></strong><span class="style7"><strong>.</strong></li>
+																																<li style="box-sizing: content-box;"><strong>Класс</strong><span><strong>&nbsp;</strong></span></span><strong style="box-sizing: content-box; font-weight: 700;"><span data-redactor-tag="span" style="border-style: none; border-color: inherit; border-width: 0px; box-sizing: content-box; margin: 0px; padding: 0px; " class="style7">object</span></strong><span class="style7"><strong>&nbsp;предоставляет всем своим потомкам набор служебных атрибутов (как переменных (например,</strong><span><strong>&nbsp;</strong></span></span><span style="border-style: none; border-color: inherit; border-width: 0px; box-sizing: content-box; margin: 0px; padding: 0px; " class="style7"><strong style="box-sizing: content-box; font-weight: 700;">__dict__</strong><span><strong>&nbsp;</strong></span></span>и<span class="style7"><strong>&nbsp;</strong></span><strong style="box-sizing: content-box; font-weight: 700;"><span data-redactor-tag="span" style="border-style: none; border-color: inherit; border-width: 0px; box-sizing: content-box; margin: 0px; padding: 0px; " class="style7">__doc__</span><span class="style7">&nbsp;</span></strong><span class="style7"><strong>), так и методов (например,</strong><span><strong>&nbsp;</strong></span></span><strong style="box-sizing: content-box; font-weight: 700;"><span data-redactor-tag="span" style="border-style: none; border-color: inherit; border-width: 0px; box-sizing: content-box; margin: 0px; padding: 0px; " class="style7">__str__<span>&nbsp;</span></span></strong><span class="style7"><strong>) ).</strong></li>
+																																<li style="box-sizing: content-box;"><strong>Многие из служебных атрибутов можно переопределить внутри своего класса.</strong></li>
+																																<li style="box-sizing: content-box;"><strong>Поля и методы, которые описываются программистом в теле класса, являются пользовательскими и добавляются в общий список атрибутов наряду со встроенными атрибутами.</strong></span></li>
+																												</ol>
+																								<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				&nbsp;</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Давайте разберем это подробнее. До сих пор все атрибуты в 
+				классе, либо в экземплярах класса мы делали публичными, то есть, 
+				не использовали одно или два подчеркивания перед их именами. 
+				Давайте посмотрим, что изменится, если добавить одно 
+				подчеркивание перед локальными атрибутами x и y:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">class</span><span class="style2"> Point:
+    </span><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">def</span> <span style="color: rgb(0, 0, 205);" class="style2">__init__</span><span style="color: black;" class="style2">(</span><span style="color: rgb(0, 128, 0);" class="style2">self</span><span style="color: rgb(102, 204, 102);" class="style2">,</span><span class="style2"> x</span><span style="color: rgb(102, 204, 102);" class="style2">=</span><span style="color: rgb(255, 69, 0);" class="style2">0</span><span style="color: rgb(102, 204, 102);" class="style2">,</span><span class="style2"> y</span><span style="color: rgb(102, 204, 102);" class="style2">=</span><span style="color: rgb(255, 69, 0);" class="style2">0</span><span style="color: black;" class="style2">)</span>:<span class="style2">
+        </span><span style="color: rgb(0, 128, 0);"><span class="style2">self</span></span><span class="style2">._x </span><span style="color: rgb(102, 204, 102);" class="style2">=</span><span class="style2"> x
+        </span><span style="color: rgb(0, 128, 0);"><span class="style2">self</span></span><span class="style2">._y </span><span style="color: rgb(102, 204, 102);" class="style2">=</span><span class="style2"> y</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Так реализуется режим protected в Python. Если кто из вас 
+				программирует на других языках, например, С++ или Java, то 
+				сейчас ожидают, что мы не сможем обращаться к свойствам _x и _y 
+				через ссылку pt, так как они определены как защищенные 
+				(protected). Давайте проверим и попробуем вывести их в консоль:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">print</span><span style="color: black;" class="style2">(</span><span class="style2">pt._x</span><span style="color: rgb(102, 204, 102);" class="style2">,</span> <span class="style2">pt._y</span><span style="color: black;" class="style2">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Как видим, никаких ошибок не возникает и все работает так, 
+				словно это публичные свойства экземпляра класса. Но тогда зачем 
+				нам писать это нижнее подчеркивание, если оно не играет никакой 
+				роли? Одна роль у этого префикса все-таки есть: нижнее 
+				подчеркивание должно предостерегать программиста от 
+				использования этого свойства вне класса. Впоследствии это может 
+				стать причиной непредвиденных ошибок. Например, изменится версия 
+				класса и такое свойство может перестать существовать, т.к. никто 
+				не предполагал доступа к нему извне. Так что, к таким атрибутам 
+				лучше не обращаться напрямую – одно нижнее подчеркивание 
+				указывает нам, что это внутренние, служебные переменные.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Давайте теперь посмотрим, как работает режим доступа private. 
+				Пропишем у локальных свойств два подчеркивания:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">class</span><span class="style2"> Point:
+    </span><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">def</span> <span style="color: rgb(0, 0, 205);" class="style2">__init__</span><span style="color: black;" class="style2">(</span><span style="color: rgb(0, 128, 0);" class="style2">self</span><span style="color: rgb(102, 204, 102);" class="style2">,</span><span class="style2"> x</span><span style="color: rgb(102, 204, 102);" class="style2">=</span><span style="color: rgb(255, 69, 0);" class="style2">0</span><span style="color: rgb(102, 204, 102);" class="style2">,</span><span class="style2"> y</span><span style="color: rgb(102, 204, 102);" class="style2">=</span><span style="color: rgb(255, 69, 0);" class="style2">0</span><span style="color: black;" class="style2">)</span>:<span class="style2">
+        </span><span style="color: rgb(0, 128, 0);"><span class="style2">self</span></span><span class="style2">.__x </span><span style="color: rgb(102, 204, 102);" class="style2">=</span><span class="style2"> x
+        </span><span style="color: rgb(0, 128, 0);"><span class="style2">self</span></span><span class="style2">.__y </span><span style="color: rgb(102, 204, 102);" class="style2">=</span><span class="style2"> y</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				и также попробуем обратиться к ним напрямую:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">print</span><span style="color: black;" class="style2">(</span><span class="style2">pt.__x</span><span style="color: rgb(102, 204, 102);" class="style2">,</span> <span class="style2">pt.__y</span><span style="color: black;" class="style2">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				После запуска программы видим ошибку, что такие свойства не 
+				определены. Это говорит о том, что извне, через переменную pt мы 
+				не можем напрямую к ним обращаться. А вот внутри класса доступ к 
+				ним открыт.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Пропишем метод set_coord, который будет менять локальные 
+				свойства __x и __y экземпляра класса:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span class="style2">    </span><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">def</span> <span class="style2">set_coord</span><span style="color: black;" class="style2">(</span><span style="color: rgb(0, 128, 0);" class="style2">self</span><span style="color: rgb(102, 204, 102);" class="style2">,</span><span class="style2"> x</span><span style="color: rgb(102, 204, 102);" class="style2">,</span><span class="style2"> y</span><span style="color: black;" class="style2">)</span>:<span class="style2">
+        </span><span style="color: rgb(0, 128, 0);"><span class="style2">self</span></span><span class="style2">.__x </span><span style="color: rgb(102, 204, 102);" class="style2">=</span><span class="style2"> x
+        </span><span style="color: rgb(0, 128, 0);"><span class="style2">self</span></span><span class="style2">.__y </span><span style="color: rgb(102, 204, 102);" class="style2">=</span><span class="style2"> y</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				А ниже, вызовем его для экземпляра pt:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span class="style2">pt.</span><span style="color: black;" class="style2">set_coord(</span><span style="color: rgb(255, 69, 0);" class="style2">1</span><span style="color: rgb(102, 204, 102);" class="style2">,</span> <span style="color: rgb(255, 69, 0);" class="style2">2</span><span style="color: black;" class="style2">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Как видите, никаких ошибок не возникает и чтобы убедиться в 
+				изменении локальных приватных свойств, определим еще один метод:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span class="style2">    </span><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">def</span><span class="style2"> get_сoord</span><span style="color: black;" class="style2">(</span><span style="color: rgb(0, 128, 0);" class="style2">self</span><span style="color: black;" class="style2">)</span>:<span class="style2">
+        </span><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">return</span> <span style="color: rgb(0, 128, 0);"><span class="style2">self</span></span><span class="style2">.__x</span><span style="color: rgb(102, 204, 102);" class="style2">,</span> <span style="color: rgb(0, 128, 0);"><span class="style2">self</span></span><span class="style2">.__y</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				И вызовем его:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">print</span><span style="color: black;" class="style2">(</span><span class="style2">pt.</span><span style="color: black;" class="style2">get_</span>с<span class="style2">oord</span><span style="color: black;" class="style2">())</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				После запуска программы видим измененные координаты точки. В 
+				результате, мы с вами определили два вспомогательных метода: 
+				set_coord и get_coord, через которые предполагается работа с 
+				защищенными данными класса. Такие методы в ООП называются<span>&nbsp;</span><b>сеттерами<span>&nbsp;</span></b>и<b><span>&nbsp;</span>геттерами</b><span>&nbsp;</span>или 
+				еще<span>&nbsp;</span><b>интерфейсными методами</b>.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Зачем понадобилось в классах создавать приватные атрибуты да еще 
+				и определять дополнительно методы для работы с ними извне. Я об 
+				этом уже говорил на самом первом занятии по ООП, когда объяснял 
+				принцип инкапсуляции. Но, скажу еще раз. Класс в ООП следует 
+				воспринимать как некое единое целое, и чтобы случайно или 
+				намеренно не нарушить целостность работы алгоритма внутри этого 
+				класса, то следует взаимодействовать с ним только через 
+				публичные свойства и методы. В этом суть принципа инкапсуляции. 
+				Опять же, представьте автомобиль, в котором согласованно 
+				работают тысячи узлов. А управление им предполагается только 
+				через разрешенные интерфейсы: руль, коробка передач, педали газа 
+				и тормоза и т.п. Если во время движения вмешиваться напрямую в 
+				его узлы, например, будем на ходу спускать воздух из шин, то, 
+				наверное, ничего хорошего не получится. То же самое, можно 
+				сказать и о программисте, который намеренно обходит запрет и 
+				обращается к скрытым атрибутам класса напрямую, а не через 
+				сеттеры или геттеры. Так делать не нужно.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Назначение интерфейсных методов не только передавать значения 
+				между приватными атрибутами класса, но и проверять их 
+				корректность. Например, в нашем случае координаты должны быть 
+				числами. Поэтому, прежде чем обновлять значения переменных, 
+				следует проверить их тип данных. Для этого можно воспользоваться 
+				функцией type и записать сеттер следующим образом:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span class="style2">    </span><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">def</span> <span class="style2">set_coord</span><span style="color: black;" class="style2">(</span><span style="color: rgb(0, 128, 0);" class="style2">self</span><span style="color: rgb(102, 204, 102);" class="style2">,</span><span class="style2"> x</span><span style="color: rgb(102, 204, 102);" class="style2">,</span><span class="style2"> y</span><span style="color: black;" class="style2">)</span>:<span class="style2">
+        </span><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">if</span> <span style="color: rgb(0, 128, 0);" class="style2">type</span><span style="color: black;" class="style2">(</span>x<span style="color: black;" class="style2">)</span> <span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">in</span> <span style="color: black;" class="style2">(</span><span style="color: rgb(0, 128, 0);" class="style2">int</span><span style="color: rgb(102, 204, 102);" class="style2">,</span> <span style="color: rgb(0, 128, 0);" class="style2">float</span><span style="color: black;" class="style2">)</span> <span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">and</span> <span style="color: rgb(0, 128, 0);" class="style2">type</span><span style="color: black;" class="style2">(</span>y<span style="color: black;" class="style2">)</span> <span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">in</span> <span style="color: black;" class="style2">(</span><span style="color: rgb(0, 128, 0);" class="style2">int</span><span style="color: rgb(102, 204, 102);" class="style2">,</span> <span style="color: rgb(0, 128, 0);" class="style2">float</span><span style="color: black;" class="style2">)</span>:<span class="style2">
+            </span><span style="color: rgb(0, 128, 0);"><span class="style2">self</span></span><span class="style2">.__x </span><span style="color: rgb(102, 204, 102);" class="style2">=</span><span class="style2"> x
+            </span><span style="color: rgb(0, 128, 0);"><span class="style2">self</span></span><span class="style2">.__y </span><span style="color: rgb(102, 204, 102);" class="style2">=</span><span class="style2"> y
+        </span><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">else</span>:<span class="style2">
+            </span><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">raise</span> <span style="color: rgb(0, 128, 0);" class="style2">ValueError</span><span style="color: black;" class="style2">(</span><span style="color: rgb(72, 61, 139);" class="style2">&quot;Координаты должны быть числами&quot;</span><span style="color: black;" class="style2">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Здесь мы проверяем, что обе переданные переменные x и y должны 
+				иметь тип int или float и только после этого приватным атрибутам 
+				экземпляра класса присваиваются новые значения. Иначе, 
+				генерируется исключение ValueError. Об исключениях мы с вами еще 
+				будем говорить.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Теперь, если передавать недопустимые значения координат:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span class="style2">pt.</span><span style="color: black;" class="style2">set_coord(</span><span style="color: rgb(72, 61, 139);" class="style2">&#39;1&#39;</span><span style="color: rgb(102, 204, 102);" class="style2">,</span> <span style="color: rgb(255, 69, 0);" class="style2">2</span><span style="color: black;" class="style2">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				то увидим ошибку ValueError.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Продолжим совершенствовать наш класс Point и добавим приватный 
+				метод для проверки корректности координат. Приватный метод 
+				объявляется также как и приватная переменная – двумя 
+				подчеркиваниями и, кроме того, сделаем его методом уровня класса 
+				(о декораторе classmethod мы с вами говорили на предыдущем 
+				занятии):</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span class="style2">    </span><span style="color: rgb(102, 204, 102);" class="style2">@</span><span style="color: rgb(0, 128, 0);" class="style2">classmethod</span><span class="style2">
+    </span><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">def</span><span class="style2"> __check_value </span><span style="color: black;" class="style2">(</span><span class="style2">cls</span><span style="color: rgb(102, 204, 102);" class="style2">,</span><span class="style2"> x</span><span style="color: black;" class="style2">)</span>:<span class="style2">
+        </span><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">return</span> <span style="color: rgb(0, 128, 0);" class="style2">type</span><span style="color: black;" class="style2">(</span>x<span style="color: black;" class="style2">)</span> <span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">in</span> <span style="color: black;" class="style2">(</span><span style="color: rgb(0, 128, 0);" class="style2">int</span><span style="color: rgb(102, 204, 102);" class="style2">,</span> <span style="color: rgb(0, 128, 0);" class="style2">float</span><span style="color: black;" class="style2">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Соответственно, в сеттере и в инициализаторе воспользуемся этим 
+				методом:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span class="style2">    </span><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">def</span> <span style="color: rgb(0, 0, 205);" class="style2">__init__</span><span style="color: black;" class="style2">(</span><span style="color: rgb(0, 128, 0);" class="style2">self</span><span style="color: rgb(102, 204, 102);" class="style2">,</span><span class="style2"> x</span><span style="color: rgb(102, 204, 102);" class="style2">=</span><span style="color: rgb(255, 69, 0);" class="style2">0</span><span style="color: rgb(102, 204, 102);" class="style2">,</span><span class="style2"> y</span><span style="color: rgb(102, 204, 102);" class="style2">=</span><span style="color: rgb(255, 69, 0);" class="style2">0</span><span style="color: black;" class="style2">)</span>:<span class="style2">
+        </span><span style="color: rgb(0, 128, 0);"><span class="style2">self</span></span><span class="style2">.__x </span><span style="color: rgb(102, 204, 102);" class="style2">=</span> <span style="color: rgb(0, 128, 0);"><span class="style2">self</span></span><span class="style2">.__y </span><span style="color: rgb(102, 204, 102);" class="style2">=</span> <span style="color: rgb(255, 69, 0);" class="style2">0</span><span class="style2">
+</span>&nbsp;<span class="style2">
+        </span><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">if</span> <span style="color: rgb(0, 128, 0);"><span class="style2">self</span></span><span class="style2">.__check_value </span><span style="color: black;" class="style2">(</span>x<span style="color: black;" class="style2">)</span> <span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">and</span> <span style="color: rgb(0, 128, 0);"><span class="style2">self</span></span><span class="style2">.__check_value </span><span style="color: black;" class="style2">(</span>y<span style="color: black;" class="style2">)</span>:<span class="style2">
+            </span><span style="color: rgb(0, 128, 0);"><span class="style2">self</span></span><span class="style2">.__x </span><span style="color: rgb(102, 204, 102);" class="style2">=</span><span class="style2"> x
+            </span><span style="color: rgb(0, 128, 0);"><span class="style2">self</span></span><span class="style2">.__y </span><span style="color: rgb(102, 204, 102);" class="style2">=</span><span class="style2"> y
+</span>&nbsp;<span class="style2">
+    </span><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">def</span> <span class="style2">set_coord</span><span style="color: black;" class="style2">(</span><span style="color: rgb(0, 128, 0);" class="style2">self</span><span style="color: rgb(102, 204, 102);" class="style2">,</span><span class="style2"> x</span><span style="color: rgb(102, 204, 102);" class="style2">,</span><span class="style2"> y</span><span style="color: black;" class="style2">)</span>:<span class="style2">
+        </span><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">if</span> <span style="color: rgb(0, 128, 0);"><span class="style2">self</span></span><span class="style2">.__check_value </span><span style="color: black;" class="style2">(</span>x<span style="color: black;" class="style2">)</span> <span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">and</span> <span style="color: rgb(0, 128, 0);"><span class="style2">self</span></span><span class="style2">.__check_value </span><span style="color: black;" class="style2">(</span>y<span style="color: black;" class="style2">)</span>:<span class="style2">
+            </span><span style="color: rgb(0, 128, 0);"><span class="style2">self</span></span><span class="style2">.__x </span><span style="color: rgb(102, 204, 102);" class="style2">=</span><span class="style2"> x
+            </span><span style="color: rgb(0, 128, 0);"><span class="style2">self</span></span><span class="style2">.__y </span><span style="color: rgb(102, 204, 102);" class="style2">=</span><span class="style2"> y
+        </span><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">else</span>:<span class="style2">
+            </span><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">raise</span> <span style="color: rgb(0, 128, 0);" class="style2">ValueError</span><span style="color: black;" class="style2">(</span><span style="color: rgb(72, 61, 139);" class="style2">&quot;Координаты должны быть числами&quot;</span><span style="color: black;" class="style2">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Запускаем программу и видим, что все работает. Но, при этом, 
+				доступа к этому методу извне нет, он приватный.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				На самом деле, в Python можно относительно легко обратиться и к 
+				приватным атрибутам извне. Если распечатать все атрибуты 
+				экземпляра:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">print</span><span style="color: black;" class="style2">(</span><span style="color: rgb(0, 128, 0);" class="style2">dir</span><span style="color: black;" class="style2">(</span><span class="style2">pt</span><span style="color: black;" class="style2">))</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				то среди прочих мы увидим, следующие:</p>
+				<p style="font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<strong>&#39;_Point__x&#39;, &#39;_Point__y&#39;</strong></p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Это и есть кодовые имена приватных атрибутов, к которым мы можем 
+				обратиться через ссылку pt:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">print</span><span style="color: black;" class="style2">(</span><span class="style2">pt._Point__x</span><span style="color: rgb(102, 204, 102);" class="style2">,</span> <span class="style2">pt._Point__y</span><span style="color: black;" class="style2">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				и менять их. Однако, так делать крайне не рекомендуется и 
+				двойное подчеркивание должно сигнализировать программисту, что 
+				работать с такими атрибутами нужно только через разрешенные 
+				интерфейсные методы. Иначе, возможны непредвиденные ошибки.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Если у вас появилась необходимость лучше защитить методы класса 
+				от доступа извне, то это можно сделать с помощью модуля 
+				accessify. Для его установки нужно выполнить команду:</p>
+				<p style="font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<strong>pip install accessify</strong></p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				И, затем, импортировать из него два декоратора:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">from</span> <span class="style2">accessify </span><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">import</span><span class="style2"> private</span><span style="color: rgb(102, 204, 102);" class="style2">,</span><span class="style2"> protected</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Далее, нужный декоратор просто применяем к методу и он 
+				становится либо приватным (private), либо защищенным 
+				(protected):</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span class="style2">    </span><span style="color: rgb(102, 204, 102);" class="style2">@</span><span class="style2">private
+    </span><span style="color: rgb(102, 204, 102);" class="style2">@</span><span style="color: rgb(0, 128, 0);" class="style2">classmethod</span><span class="style2">
+    </span><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">def</span> <span class="style2">check_value</span><span style="color: black;" class="style2">(</span><span class="style2">cls</span><span style="color: rgb(102, 204, 102);" class="style2">,</span><span class="style2"> x</span><span style="color: black;" class="style2">)</span>:<span class="style2">
+        </span><span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">return</span> <span style="color: rgb(0, 128, 0);" class="style2">type</span><span style="color: black;" class="style2">(</span>x<span style="color: black;" class="style2">)</span> <span style="color: rgb(255, 119, 0); font-weight: bold;" class="style2">in</span> <span style="color: black;" class="style2">(</span><span style="color: rgb(0, 128, 0);" class="style2">int</span><span style="color: rgb(102, 204, 102);" class="style2">,</span> <span style="color: rgb(0, 128, 0);" class="style2">float</span><span style="color: black;" class="style2">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Все, теперь мы можем обратиться к check_value только внутри 
+				класса, но не извне:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span class="style2">pt.</span><span style="color: black;" class="style2">check_value(</span><span style="color: rgb(255, 69, 0);" class="style2">5</span><span style="color: black;" class="style2">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Я, думаю, из этого занятия вам стало понятно, как реализуются 
+				режимы доступа public, protected и private, а также, как 
+				правильно обращаться к скрытым атрибутам через интерфейсные 
+				методы – сеттеры и геттеры.</p>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les52.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les52/2.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 12:06:55 GMT -->
+</html>

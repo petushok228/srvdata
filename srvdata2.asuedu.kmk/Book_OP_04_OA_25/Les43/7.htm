@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les43/7.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:50:48 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: small;
+}
+    .style3 {
+	color: rgb(255, 0, 0);
+	font-size: medium;
+}
+.style4 {
+	color: rgb(255, 0, 0);
+}
+    .style5 {
+	font-size: medium;
+	color: #0000FF;
+}
+    .style6 {
+	color: rgb(0, 0, 255);
+}
+    .style7 {
+	color: rgb(128, 0, 0);
+	font-size: medium;
+}
+.style8 {
+	color: #800000;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom: thin double #800000; font-size: small;">
+                Тема 1 Преобразовать строку в массив слов.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p _msttexthash="1298601850" _msthash="44" style="box-sizing: border-box; margin: 15px 0px; font-size: 18px; line-height: 30px; color: rgb(33, 37, 41); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Строки и массивы<span>&nbsp;</span>являются фундаментальными 
+				структурами данных в программировании, и возможность 
+				преобразования между ними является общей задачей во многих 
+				приложениях. В этой статье мы углубимся в различные методы, 
+				доступные в<span>&nbsp;</span>C#<span>&nbsp;</span>для 
+				преобразования строк в<span>&nbsp;</span>массивы. 
+				Мы рассмотрим различные подходы, предоставим примеры кода, 
+				объясним выходные данные и предложим идеи о том, когда следует 
+				использовать каждый метод. К концу у вас будет четкое 
+				представление о методах преобразования строк в массив в C#.</p>
+				<h2 _msttexthash="7828314" _msthash="45" style="box-sizing: border-box; margin: 15px 0px; font-weight: 600; line-height: 2; font-size: 21px; color: rgb(27, 110, 183); border-bottom: 2px dashed rgb(220, 233, 237); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Способ 1: Использование метода <span class="style4">ToCharArray()</span></h2>
+				<p style="box-sizing: border-box; margin: 15px 0px; font-size: 18px; line-height: 30px; color: rgb(33, 37, 41); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<font _mstmutation="1" _msttexthash="138515312" _msthash="46" style="box-sizing: border-box;">
+				Метод является удобным способом преобразования строки в 
+				<span class="style4">массив 
+				символов</span>. Этот метод возвращает новый массив символов, 
+				содержащий символы строки. Вот пример:</font><code style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; overflow-wrap: break-word;" class="style3">ToCharArray()</code></p>
+				<pre class="style5">string input = "<span class="style8"><strong>Hello, World!</strong></span>";
+char[] charArray = input.ToCharArray();</pre>
+				<h3 _msttexthash="812448" _msthash="47" style="box-sizing: border-box; margin: 20px 0px; font-weight: normal; line-height: 1.1; font-size: 18px; color: rgb(33, 37, 41); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вывод:</h3>
+				<p style="box-sizing: border-box; margin: 15px 0px; font-size: 18px; line-height: 30px; color: rgb(33, 37, 41); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<font _mstmutation="1" _msttexthash="10360402" _msthash="48" style="box-sizing: border-box;">
+				Результирующая будет содержать <span class="style7">[&#39;H&#39;, &#39;e&#39;, &#39;l&#39;, &#39;l&#39;, &#39;o&#39;, &#39;,&#39;, &#39; 
+				&#39;, &#39;W&#39;, &#39;o&#39;, &#39;r&#39;, &#39;l&#39;, &#39;d&#39;, &#39;!&#39;]</span><span class="style3">.</span></font><code style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; overflow-wrap: break-word;" class="style3">charArray</code></p>
+				<p _msttexthash="87459957" _msthash="49" style="box-sizing: border-box; margin: 15px 0px; font-size: 18px; line-height: 30px; color: rgb(33, 37, 41); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Метод<span>&nbsp;</span><code _istranslated="1" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; overflow-wrap: break-word;" class="style3">ToCharArray()</code><span>&nbsp;</span>перебирает 
+				каждый символ в строке и создает новый массив символов с той же 
+				последовательностью символов.</p>
+				<h2 _msttexthash="7527338" _msthash="50" style="box-sizing: border-box; margin: 15px 0px; font-weight: 600; line-height: 2; font-size: 21px; color: rgb(27, 110, 183); border-bottom: 2px dashed rgb(220, 233, 237); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Способ 2: Использование метода <span class="style3">split()</span></h2>
+				<p _msttexthash="211282474" _msthash="51" style="box-sizing: border-box; margin: 15px 0px; font-size: 18px; line-height: 30px; color: rgb(33, 37, 41); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<code _istranslated="1" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; overflow-wrap: break-word;" class="style3">
+				Метод Split()</code><span>&nbsp;</span>полезен, когда вы хотите 
+				разбить строку на массив на основе определенного разделителя. 
+				Этот метод принимает разделитель в качестве аргумента и 
+				<span class="style6"><strong>возвращает массив подстрок.</strong></span> Вот пример:</p>
+				<pre class="style5">string input = "<span class="style8"><strong>apple,banana,orange</strong></span>";
+string[] fruits = input.Split(',');p</pre>
+				<h3 _msttexthash="812448" _msthash="52" style="box-sizing: border-box; margin: 20px 0px; font-weight: normal; line-height: 1.1; font-size: 18px; color: rgb(33, 37, 41); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вывод:</h3>
+				<p style="box-sizing: border-box; margin: 15px 0px; font-size: 18px; line-height: 30px; color: rgb(33, 37, 41); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<font _mstmutation="1" _msttexthash="26431613" _msthash="53" style="box-sizing: border-box;">
+				Результирующий массив будет содержать <span class="style7">[&quot;яблоко&quot;, &quot;банан&quot;, 
+				&quot;апельсин&quot;].</span></font><code style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; overflow-wrap: break-word;" class="style3">fruits</code></p>
+				<p _msttexthash="54256995" _msthash="54" style="box-sizing: border-box; margin: 15px 0px; font-size: 18px; line-height: 30px; color: rgb(33, 37, 41); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В этом примере мы разбиваем входную строку на каждый символ 
+				запятой (&#39;,&#39;) и получаем массив подстрок.</p>
+				<h2 _msttexthash="8893690" _msthash="55" style="box-sizing: border-box; margin: 15px 0px; font-weight: 600; line-height: 2; font-size: 21px; color: rgb(27, 110, 183); border-bottom: 2px dashed rgb(220, 233, 237); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Способ 3: Использование <span class="style4">LINQ</span> и метода
+				<span class="style4">ToCharArray()</span></h2>
+				<p _msttexthash="140023949" _msthash="56" style="box-sizing: border-box; margin: 15px 0px; font-size: 18px; line-height: 30px; color: rgb(33, 37, 41); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В тех случаях, когда необходимо преобразовать строку в массив 
+				символов при выполнении дополнительных операций, LINQ может 
+				стать мощным инструментом. Вот пример:</p>
+				<pre class="style5">using System.Linq;
+
+string input = "<span class="style8"><strong>Hello, World!</strong></span>";
+char[] charArray = input.Select(c => c).ToArray();Выпуск:</pre>
+				<p style="box-sizing: border-box; margin: 15px 0px; font-size: 18px; line-height: 30px; color: rgb(33, 37, 41); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<font _mstmutation="1" _msttexthash="10360402" _msthash="58" style="box-sizing: border-box;">
+				Результирующая будет содержать [<span class="style8"><strong>&#39;H&#39;, &#39;e&#39;, &#39;l&#39;, &#39;l&#39;, &#39;o&#39;, &#39;,&#39;, &#39; 
+				&#39;, &#39;W&#39;, &#39;o&#39;, &#39;r&#39;, &#39;l&#39;, &#39;d&#39;, &#39;!&#39;</strong></span><span class="style3">].</span></font><code style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; overflow-wrap: break-word;" class="style3">charArray</code></p>
+				<p style="box-sizing: border-box; margin: 15px 0px; font-size: 18px; line-height: 30px; color: rgb(33, 37, 41); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<font _mstmutation="1" _msttexthash="208574821" _msthash="59" style="box-sizing: border-box;">
+				В этом примере мы используем метод LINQ для перебора каждого 
+				символа в строке и создания новой последовательности символов. 
+				Наконец, мы преобразуем последовательность обратно в массив с 
+				помощью<span>&nbsp;</span><code _istranslated="1" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; overflow-wrap: break-word;" class="style3"><strong>ToArray().</strong></code></font><code style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; overflow-wrap: break-word;" class="style3"><strong>Select()</strong></code></p>
+                <p class="style2">&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les53.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les43/7.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:50:48 GMT -->
+</html>

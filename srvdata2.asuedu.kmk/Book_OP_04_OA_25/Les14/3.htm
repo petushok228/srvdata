@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les14/3.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 10:55:10 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: #FF0000;
+}
+.style3 {
+	color: #0000FF;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 1. Массивы в C#. </td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text" style="font-size: small">
+                <p><img alt="" src="Pic/img1.jpg" width="800" height="600" /></p>
+				<p><img alt="" src="Pic/img4.jpg" width="1024" height="768" /></p>
+				<p>Массивы в C#&nbsp; являются ссылочным типом данных. Это означает, что их значения хранятся в куче, а имя переменной массива является ссылкой на соответствующую область памяти.</p>
+				<p>Массив представляет набор однотипных данных. Объявление 
+				массива похоже на объявление переменной за тем исключением, что 
+				после указания типа ставятся квадратные скобки:</p>
+				<p><span class="style2"><strong>тип_переменной[] название_массива;</strong></span></p>
+				<p><br />
+				Например, определим массив целых чисел:</p>
+				<p class="style3">				<strong><em>int[] numbers;</em></strong></p>
+				<p>				<br />
+				После определения переменной массива мы можем присвоить ей 
+				определенное значение:</p>
+				<p class="style3">				<strong><em>int[] nums = new int[4];</em></strong></p>
+				<p>				Здесь вначале мы объявили массив nums, который будет хранить 
+				данные типа int. Далее используя операцию new, мы выделили 
+				память для 4 элементов массива: new int[4]. Число 4 еще 
+				называется длиной массива. При таком определении все элементы 
+				получают значение по умолчанию, которое предусмотренно для их 
+				типа. Для типа int значение по умолчанию - 0.</p>
+				<p>				Также мы сразу можем указать значения для этих элементов:</p><p>				
+				<span class="style3"><strong><em>int[] nums2 = new int[4] { 1, 2, 3, 5 };</em></strong></p><p>				
+				<strong><em>int[] nums3 = new int[] { 1, 2, 3, 5 };</em></strong></p><p>				
+				<strong><em>int[] nums4 = new[] { 1, 2, 3, 5 };</em></strong></p><p>				
+				<strong><em>int[] nums5 = { 1, 2, 3, 5 };</em></strong></span></p>
+				<p>				<br />
+				Все перечисленные выше способы будут равноценны.</p><p>				Подобным образом можно определять массивы и других типов, 
+				например, массив значений типа string:</p><p class="style3">				
+				<strong><em>string[] people = { &quot;Tom&quot;, &quot;Sam&quot;, &quot;Bob&quot; };</em></strong></p>
+				<p class="ZagT">				Индексы и получение элементов массива</p>
+				<p>				Для обращения к элементам массива используются индексы. Индекс 
+				представляет номер элемента в массиве, при этом нумерация 
+				начинается с нуля, поэтому индекс первого элемента будет равен 
+				0, индекс четвертого элемента - 3.</p><p>				Используя индексы, мы можем получить элементы массива:</p>
+				<p class="style3">				<strong><em>int[] numbers = { 1, 2, 3, 5 };</em></strong></p><p>				
+				<span class="style3"><strong><em>// получение элемента массива<br />
+				</em></strong><strong><em>Console.WriteLine(numbers[3]); // 5</em></strong></p><p>				
+				<strong><em>// получение элемента массива в переменную<br />
+				</em></strong><strong><em>var n = numbers[1]; // 2<br />
+				</em></strong><strong><em>Console.WriteLine(n); // 2</em></strong></p>
+				<p>				</span><br />
+				Также мы можем изменить элемент массива по индексу:</p><p>				
+				<span class="style3"><strong><em>int[] numbers = { 1, 2, 3, 5 };</em></strong></p><p>				
+				<strong><em>// изменим второй элемент массива<br />
+				numbers[1] = 505;</em></strong></p><p>				<strong><em>Console.WriteLine(numbers[1]); // 505</em></strong></span></p>
+				<p>				<br />
+				И так как у нас массив определен только для 4 элементов, то мы 
+				не можем обратиться, например, к шестому элементу. Если мы так 
+				попытаемся сделать, то мы получим ошибку во время выполнения:</p>
+				<p class="style3">				<strong><em>int[] numbers = { 1, 2, 3, 5 };</em></strong></p><p>				Console.WriteLine(numbers[6]); // ! Ошибка - в массиве только 4 
+				элемента<br />
+				Свойство Length и длина массива<br />
+				каждый массив имеет свойство Length, которое хранит длину 
+				массива. Например, получим длину выше созданного массива 
+				numbers:</p><p>				<span class="style3"><strong><em>int[] numbers = { 1, 2, 3, 5 };</em></strong></p><p>				
+				<strong><em>Console.WriteLine(numbers.Length); // 4</em></strong></span></p>
+				<p>				<br />
+				Для получения длины массива после названия массива через точку 
+				указывается свойство Length: numbers.Length.</p><p>				Получение элементов с конца массива<br />
+				Благодаря наличию свойства Length, мы можем вычислить индекс 
+				последнего элемента массива - это длина массива - 1. Например, 
+				если длина массива - 4 (то есть массив имеет 4 элемента), то 
+				индекс последнего элемента будет равен 3. И, используя свойство 
+				Length, мы можем легко получить элементы с конца массива:</p><p>				<br />
+				<span class="style3"><strong><em>int[] numbers = { 1, 2, 3, 5};</em></strong></span></p>
+				<p class="style3">				<strong><em>Console.WriteLine(numbers[numbers.Length - 1]); // 5 - первый с 
+				конца или последний элемент<br />
+				</em></strong><strong><em>Console.WriteLine(numbers[numbers.Length - 2]); // 3 - второй с 
+				конца или предпоследний элемент<br />
+				</em></strong><strong><em>Console.WriteLine(numbers[numbers.Length - 3]); // 2 - третий 
+				элемент с конца</em></strong></p>
+				<p>				<br />
+				Однако при подобном подходе выражения типа numbers.Length - 1, 
+				смысл которых состоит в том, чтобы получить какой-то 
+				определенный элемент с конца массива, утяжеляют код. И, начиная, 
+				с версии C# 8.0 в язык был добавлен специальный оператор ^, с 
+				помощью которого можно задать индекс относительно конца 
+				коллекции.</p><p>				Перепишем предыдущий пример, применяя оператор ^:</p><p>				
+				<span class="style3"><strong><em>int[] numbers = { 1, 2, 3, 5};</em></strong></p><p>				
+				<strong><em>Console.WriteLine(numbers[^1]); // 5 - первый с конца или 
+				последний элемент<br />
+				</em></strong><strong><em>Console.WriteLine(numbers[^2]); // 3 - второй с конца или 
+				предпоследний элемент<br />
+				</em></strong><strong><em>Console.WriteLine(numbers[^3]); // 2 - третий элемент с конца</em></strong></span></p>
+				<p class="ZagT">				<br />
+				Перебор массивов</p>
+				<p>				<br />
+				Для перебора массивов мы можем использовать различные типы 
+				циклов. Например, цикл foreach:</p><p class="style3">				
+				<strong><em>int[] numbers = { 1, 2, 3, 4, 5 };<br />
+				</em></strong><strong><em>foreach (int i in numbers)<br />
+				</em></strong>{<strong><em><br />
+				</em></strong><strong><em>Console.WriteLine(i);<br />
+				}</em></strong></p>
+				<p>				Здесь в качестве контейнера выступает массив данных типа int. 
+				Поэтому мы объявляем переменную с типом int</p><p>				Подобные действия мы можем сделать и с помощью цикл for:</p><p>				
+				<span class="style3"><strong><em>int[] numbers = { 1, 2, 3, 4, 5 };<br />
+				for (int i = 0; i &lt; numbers.Length; i++)<br />
+				</em></strong>{<strong><em><br />
+				</em></strong><strong><em>Console.WriteLine(numbers[i]);<br />
+				</em></strong></span>}</p>
+				<p>				<br />
+				В то же время цикл for более гибкий по сравнению с foreach. Если 
+				foreach последовательно извлекает элементы контейнера и только 
+				для чтения, то в цикле for мы можем перескакивать на несколько 
+				элементов вперед в зависимости от приращения счетчика, а также 
+				можем изменять элементы:</p><p>				
+				<span class="style3"><strong><em>int[] numbers = { 1, 2, 3, 4, 5 };<br />
+				for (int i = 0; i &lt; numbers.Length; i++)<br />
+				</em></strong>{<strong><em><br />
+				numbers[i] = numbers[i] * 2;<br />
+				</em></strong><strong><em>Console.WriteLine(numbers[i]);<br />
+				</em></strong></span>}</p>
+				<p>				<br />
+				Также можно использовать и другие виды циклов, например, while:</p><p>				
+				<span class="style3"><strong><em>int[] numbers = { 1, 2, 3, 4, 5 };<br />
+				</em></strong><strong><em>int i = 0;<br />
+				while(i &lt; numbers.Length)<br />
+				</em></strong>{<strong><em><br />
+				</em></strong><strong><em>Console.WriteLine(numbers[i]);<br />
+				</em></strong><strong><em>i++;<br />
+				</em></strong></span>}</p>
+				<p class="ZagT">				<br />
+				Многомерные массивы</p>
+				<p>				Массивы характеризуются таким понятием как ранг или количество 
+				измерений. Выше мы рассматривали массивы, которые имеют одно 
+				измерение (то есть их ранг равен 1) - такие массивы можно 
+				представлять в виде ряда (строки или столбца) элемента. Но 
+				массивы также бывают многомерными. У таких массивов количество 
+				измерений (то есть ранг) больше 1.</p><p>				Массивы которые имеют два измерения (ранг равен 2) называют 
+				двухмерными. Например, создадим одномерный и двухмерный массивы, 
+				которые имеют одинаковые элементы:</p><p>				
+				<span class="style3"><strong><em>int[] nums1 = new int[] { 0, 1, 2, 3, 4, 5 };</em></strong></p><p>				
+				<strong><em>int[,] nums2 = { { 0, 1, 2 }, { 3, 4, 5 } };</em></strong></span></p>
+				<p>				<br />
+				Визуально оба массива можно представить следующим образом:</p>
+				<p>				
+				<img alt="" src="Pic/array%201.png" width="235" height="338" /></p><p>				Поскольку массив nums2 двухмерный, он представляет собой простую 
+				таблицу. Все возможные способы определения двухмерных массивов:</p>
+				<p class="style3">				<strong><em>int[,] nums1;<br />
+				</em></strong><strong><em>int[,] nums2 = new int[2, 3];<br />
+				</em></strong><strong><em>int[,] nums3 = new int[2, 3] { { 0, 1, 2 }, { 3, 4, 5 } };<br />
+				</em></strong><strong><em>int[,] nums4 = new int[,] { { 0, 1, 2 }, { 3, 4, 5 } };<br />
+				</em></strong><strong><em>int[,] nums5 = new [,]{ { 0, 1, 2 }, { 3, 4, 5 } };<br />
+				</em></strong><strong><em>int[,] nums6 = { { 0, 1, 2 }, { 3, 4, 5 } };</em></strong></p>
+				<p>				<br />
+				Массивы могут иметь и большее количество измерений. Объявление 
+				трехмерного массива могло бы выглядеть так:</p>
+				<p class="style3">				<strong><em>int[,,] nums3 = new int[2, 3, 4];</em></strong></p>
+				<p>				Соответственно могут быть и четырехмерные массивы и массивы с 
+				большим количеством измерений. Но на практике обычно 
+				используются одномерные и двухмерные массивы.</p>
+				<p>				Определенную сложность может представлять перебор многомерного 
+				массива. Прежде всего надо учитывать, что длина такого массива - 
+				это совокупное количество элементов.</p><p class="style3">				
+				<strong><em>int[,] numbers = { { 1, 2, 3 }, { 4, 5, 6 }};<br />
+				</em></strong><strong><em>foreach (int i in numbers)<br />
+				</em></strong><strong><em>Console.Write($&quot;{i} &quot;);</em></strong></p>
+				<p>				<br />
+				В данном случае длина массива numbers равна 6. И цикл foreach 
+				выводит все элементы массива в строку:</p><p class="style3">				
+				<strong>1 2 3 4 5 6</strong></p>
+				<p>				<br />
+				Но что если мы хотим отдельно пробежаться по каждой строке в 
+				таблице? В этом случае надо получить количество элементов в 
+				размерности. В частности, у каждого массива есть метод 
+				GetUpperBound(номер_размерности), который возвращает индекс 
+				последнего элемента в определенной размерности. И если мы 
+				говорим непосредственно о двухмерном массиве, то первая 
+				размерность (с индексом 0) по сути это и есть таблица. И с 
+				помощью выражения</p><p>				<br />
+				<span class="style3"><strong><em>numbers.GetUpperBound(0) + 1</em></strong></span></p>
+				<p>				<br />
+				можно получить количество строк таблицы, представленной 
+				двухмерным массивом. А через</p><p class="style3">				
+				<strong><em>numbers.Length / количество_строк</em></strong></p>
+				<p>				<br />
+				можно получить количество элементов в каждой строке:</p>
+				<p>				<br />
+				<span class="style3"><strong><em>int[,] numbers = { { 1, 2, 3 }, { 4, 5, 6 }};</em></strong></p><p>				
+				<strong><em>int rows = numbers.GetUpperBound(0) + 1; // количество строк<br />
+				</em></strong><strong><em>int columns = numbers.Length / rows; // количество столбцов<br />
+				// или так<br />
+				// int columns = numbers.GetUpperBound(1) + 1;</em></strong></p><p>				
+				<strong><em>for (int i = 0; i &lt; rows; i++)<br />
+				</em></strong>{<strong><em><br />
+				for (int j = 0; j &lt; columns; j++)<br />
+				</em></strong>{<strong><em><br />
+				</em></strong><strong><em>Console.Write($&quot;{numbers[i, j]} \t&quot;);<br />
+				</em></strong>}<strong><em><br />
+				</em></strong><strong><em>Console.WriteLine();<br />
+				</em></strong></span>}</p>
+				<p class="style3">				<strong><br />
+				1 2 3<br />
+				4 5 6</strong></p>
+				<p>				<br />
+				Массив массивов<br />
+				От многомерных массивов надо отличать массив массивов или так 
+				называемый &quot;зубчатый массив&quot;:</p><p class="style3">				
+				<strong><em>int[][] nums = new int[3][];<br />
+				</em></strong><strong><em>nums[0] = new int[2] { 1, 2 }; // выделяем память для первого 
+				подмассива<br />
+				</em></strong><strong><em>nums[1] = new int[3] { 1, 2, 3 }; // выделяем память для второго 
+				подмассива<br />
+				</em></strong><strong><em>nums[2] = new int[5] { 1, 2, 3, 4, 5 }; // выделяем память для 
+				третьего подмассива</em></strong></p>
+				<p>				<br />
+				Здесь две группы квадратных скобок указывают, что это массив 
+				массивов, то есть такой массив, который в свою очередь содержит 
+				в себе другие массивы. Причем длина массива указывается только в 
+				первых квадратных скобках, все последующие квадратные скобки 
+				должны быть пусты: new int[3][]. В данном случае у нас массив 
+				nums содержит три массива. Причем размерность каждого из этих 
+				массивов может не совпадать.</p><p>				Альтернативное определение массива массивов:</p><p>				<br />
+				<span class="style3"><strong><em>int[][] numbers = { <br />
+				new int[] { 1, 2 }, <br />
+				new int[] { 1, 2, 3 }, <br />
+				new int[] { 1, 2, 3, 4, 5 } <br />
+				};</em></strong></span></p>
+				<p>				<br />
+				Зубчатый массив nums<br />
+				</p>
+				<p>				
+				<img alt="" src="Pic/array%202.png" width="156" height="234" /></p>
+				<p>				Используя вложенные циклы, можно перебирать зубчатые массивы. 
+				Например:</p><p>				<span class="style3"><strong>
+				<em>int[][] numbers = new int[3][];<br />
+				numbers[0] = new int[] { 1, 2 };<br />
+				numbers[1] = new int[] { 1, 2, 3 };<br />
+				numbers[2] = new int[] { 1, 2, 3, 4, 5 };<br />
+				foreach(int[] row in numbers)<br />
+				</em></strong>{<strong><em><br />
+				foreach(int number in row)<br />
+				</em></strong>{<strong><em><br />
+				Console.Write($&quot;{number} \t&quot;);<br />
+				</em></strong>}<strong><em><br />
+				Console.WriteLine();<br />
+				}</em></strong></p><p>				<strong><em>// перебор с помощью цикла for<br />
+				for (int i = 0; i&lt;numbers.Length;i++)<br />
+				</em></strong>{<strong><em><br />
+				for (int j =0; j&lt;numbers[i].Length; j++)<br />
+				</em></strong>{<strong><em><br />
+				</em></strong><strong><em>Console.Write($&quot;{numbers[i][j]} \t&quot;);<br />
+				</em></strong>}<strong><em><br />
+				</em></strong><strong><em>Console.WriteLine();<br />
+				</em></strong></span>}</p>
+				<p class="ZagT">				Основные понятия массивов</p>
+				<p>				<br />
+				Суммируем основные понятия массивов:</p>
+				<ul>
+					<li>Ранг (rank): количество измерений массива</li>
+					<li>Длина измерения (dimension length): длина отдельного измерения 
+				массива</li>
+					<li>Длина массива (array length): количество всех элементов массива</li>
+				</ul>
+				<p>				Например, возьмем массив</p>
+				<p>				<br />
+				<span class="style3"><strong><em>int[,] numbers = new int[3, 4];</em></strong></span></p>
+				<p>				<br />
+				Массив numbers двухмерный, то есть он имеет два измерения, 
+				поэтому его ранг равен 2. Длина первого измерения - 3, длина 
+				второго измерения - 4. Длина массива (то есть общее количество 
+				элементов) - 12.</p>
+			</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les14.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les14/3.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 10:55:20 GMT -->
+</html>

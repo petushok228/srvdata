@@ -1,0 +1,606 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les42/2.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:49:04 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: #0000FF;
+	margin-left: 40px;
+}
+    .style3 {
+	color: #0000FF;
+	margin-left: 80px;
+}
+    .style4 {
+	color: #0000FF;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 1. Класс Array и массивы.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p _msttexthash="111806500" _msthash="101" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; background-color: rgb(255, 255, 255);">
+				Все массивы в C# построены на основе класса<span>&nbsp;</span><span class="b" style="font-weight: bold;">Array</span><span>&nbsp;</span>из 
+				пространства имен System.</p>
+				<p _msttexthash="111806500" _msthash="101" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; background-color: rgb(255, 255, 255);">
+				В обычно переменна<span>я&nbsp;</span>используется для хранения 
+				литерального значения, тогда как массив используется для 
+				хранения нескольких литеральных значений.</p>
+				<p _msttexthash="189312630" _msthash="102" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; background-color: rgb(255, 255, 255);">
+				Массив — это структура данных, в которой хранится фиксированное 
+				количество литеральных значений (элементов) одного и того<span>&nbsp;</span>же 
+				типа данных. Элементы массива хранятся в памяти непрерывно.</p>
+				<p _msttexthash="67273687" _msthash="103" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; background-color: rgb(255, 255, 255);">
+				В C# массив может быть трех типов: одномерный, многомерный и 
+				зубчатый. Здесь вы узнаете об одномерном массиве.</p>
+				<p _msttexthash="19107790" _msthash="104" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; background-color: rgb(255, 255, 255);">
+				На следующем рисунке показано представление массива.</p>
+				<figure style="font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; display: block; margin: 5px 0px 10px; text-align: center; border: 0px; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; background-color: rgb(255, 255, 255);">
+				<a target="_blank" style="box-sizing: border-box; color: rgb(0, 123, 255); text-decoration: none; background-color: transparent;" href="Pic/array.png">
+				<img class="img-fluid" alt="" src="Pic/array.png" style="box-sizing: border-box; vertical-align: middle; border-style: none; max-width: 100%; height: auto;" /></a><figcaption _msttexthash="4631081" _msthash="105" style="box-sizing: border-box; display: block; text-align: center; padding: 5px; color: rgb(94, 96, 97) !important; font-size: 16px !important;">Представление 
+				массива</figcaption></figure><p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif;">
+				&nbsp;Этот класс определяет ряд свойств и методов, которые мы можем 
+				использовать при работе с массивами. Основные свойства и методы:</p>
+				<ul style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif;">
+					<li>
+					<p class="style5" style="font-size: small; line-height: 1.56; overflow-wrap: break-word;">
+					Свойство<span>&nbsp;</span><span class="b" style="font-weight: bold;">Length</span><span>&nbsp;</span>возвращает 
+					длину массива</p>
+					</li>
+					<li>
+					<p class="style5" style="font-size: small; line-height: 1.56; overflow-wrap: break-word;">
+					Свойство<span>&nbsp;</span><span class="b" style="font-weight: bold;">Rank</span><span>&nbsp;</span>возвращает 
+					размерность массива</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">
+					<span class="style5" style="font-size: small;">int 
+					BinarySearch (Array array, object? value)</span></span><span><span class="style5" style="font-size: small;">&nbsp;</span></span><span class="style5" style="font-size: small;">выполняет 
+					бинарный поиск в отсортированном массиве и возвращает индекс 
+					найденного элемента</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">
+					<span class="style5" style="font-size: small;">void Clear 
+					(Array array)</span></span><span><span class="style5" style="font-size: small;">&nbsp;</span></span><span class="style5" style="font-size: small;">очищает 
+					массив, устанавливая для всех его элементов значение по 
+					умолчанию</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">
+					<span class="style5" style="font-size: small;">void Copy 
+					(Array sourceArray, int sourceIndex, Array destinationArray, 
+					int destinationIndex, int length)</span></span><span><span class="style5" style="font-size: small;">&nbsp;</span></span><span class="style5" style="font-size: small;">копирует 
+					из массива sourceArray начиная с индекс sourceIndex length 
+					элементов в массив destinationArray начиная с индекса 
+					destinationIndex</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">
+					<span class="style5" style="font-size: small;">bool 
+					Exists&lt;T&gt; (T[] array, Predicate&lt;T&gt; match)</span></span><span><span class="style5" style="font-size: small;">&nbsp;</span></span><span class="style5" style="font-size: small;">проверяет, 
+					содержит ли массив array элементы, которые удовлеворяют 
+					условию делегата match</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">
+					<span class="style5" style="font-size: small;">void Fill&lt;T&gt; 
+					(T[] array, T value)</span></span><span><span class="style5" style="font-size: small;">&nbsp;</span></span><span class="style5" style="font-size: small;">заполняет 
+					массив array значением value</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">
+					<span class="style5" style="font-size: small;">T? Find&lt;T&gt; 
+					(T[] array, Predicate&lt;T&gt; match)</span></span><span><span class="style5" style="font-size: small;">&nbsp;</span></span><span class="style5" style="font-size: small;">находит 
+					первый элемент, который удовлеворяет определенному условию 
+					из делегата match. Если элемент не найден, то возвращается 
+					null</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">
+					<span class="style5" style="font-size: small;">T? FindLast&lt;T&gt; 
+					(T[] array, Predicate&lt;T&gt; match)</span></span><span><span class="style5" style="font-size: small;">&nbsp;</span></span><span class="style5" style="font-size: small;">находит 
+					последний элемент, который удовлеворяет определенному 
+					условию из делегата match. Если элемент не найден, то 
+					возвращается null</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">
+					<span class="style5" style="font-size: small;">int FindIndex&lt;T&gt; 
+					(T[] array, Predicate&lt;T&gt; match)</span></span><span><span class="style5" style="font-size: small;">&nbsp;</span></span><span class="style5" style="font-size: small;">возвращает 
+					индекс первого вхождения элемента, который удовлеворяет 
+					определенному условию делегата match</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">
+					<span class="style5" style="font-size: small;">int 
+					FindLastIndex&lt;T&gt; (T[] array, Predicate&lt;T&gt; match)</span></span><span><span class="style5" style="font-size: small;">&nbsp;</span></span><span class="style5" style="font-size: small;">возвращает 
+					индекс последнего вхождения элемента, который удовлеворяет 
+					определенному условию</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">
+					<span class="style5" style="font-size: small;">T[] FindAll&lt;T&gt; 
+					(T[] array, Predicate&lt;T&gt; match)</span></span><span><span class="style5" style="font-size: small;">&nbsp;</span></span><span class="style5" style="font-size: small;">возвращает 
+					все элементы в виде массива, которые удовлеворяет 
+					определенному условию из делегата match</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">
+					<span class="style5" style="font-size: small;">int IndexOf 
+					(Array array, object? value)</span></span><span><span class="style5" style="font-size: small;">&nbsp;</span></span><span class="style5" style="font-size: small;">возвращает 
+					индекс первого вхождения элемента в массив</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">
+					<span class="style5" style="font-size: small;">int 
+					LastIndexOf (Array array, object? value)</span></span><span><span class="style5" style="font-size: small;">&nbsp;</span></span><span class="style5" style="font-size: small;">возвращает 
+					индекс последнего вхождения элемента в массив</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">
+					<span class="style5" style="font-size: small;">void 
+					Resize&lt;T&gt; (ref T[]? array, int newSize)</span></span><span><span class="style5" style="font-size: small;">&nbsp;</span></span><span class="style5" style="font-size: small;">изменяет 
+					размер одномерного массива</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">
+					<span class="style5" style="font-size: small;">void Reverse 
+					(Array array)</span></span><span><span class="style5" style="font-size: small;">&nbsp;</span></span><span class="style5" style="font-size: small;">располагает 
+					элементы массива в обратном порядке</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">
+					<span class="style5" style="font-size: small;">void Sort 
+					(Array array)</span></span><span><span class="style5" style="font-size: small;">&nbsp;</span></span><span class="style5" style="font-size: small;">сортирует 
+					элементы одномерного массива</span></p>
+					</li>
+				</ul>
+				<h2 _msttexthash="9594481" _msthash="364" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 2rem 0px 1rem; font-family: &quot;Segoe UI&quot;, Verdana, sans-serif; font-weight: 400; line-height: 1.2; color: rgb(24, 23, 23); font-size: 28px; text-align: left; background-color: rgb(255, 255, 255);">
+				Объявление массива и инициализация</h2>
+				<p _msttexthash="41536209" _msthash="365" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; background-color: rgb(255, 255, 255);">
+				Массив может быть объявлен с помощью, указав тип его элементов в 
+				квадратных скобках.</p>
+				<div class="card code-panel" style="font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; position: relative; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; min-width: 0px; overflow-wrap: break-word; background-color: rgb(216, 229, 238); background-clip: border-box; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0px; margin-bottom: 1.25rem; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; text-align: justify;">
+					<div class="card-header example-title" _msttexthash="6067984" _msthash="366" style="box-sizing: border-box; padding: 5px 0px 5px 5px; margin-bottom: 0px; border-bottom: 1px solid rgba(0, 0, 0, 0.125); color: rgb(44, 71, 88); font-size: 16px; min-height: 38px; line-height: 1.7em; border-radius: calc(-1px + 0.25rem) calc(-1px + 0.25rem) 0px 0px; background-color: transparent !important;">
+						Пример: объявление массива</div>
+					<div class="panel-body" style="box-sizing: border-box; color: rgb(16, 16, 16);">
+						<pre class="csharpcode" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 15px; margin: 0px; overflow: auto; display: block; color: rgb(0, 0, 0); border: 0px; background: rgb(255, 255, 255); padding: 10px 0px 10px 5px; overflow-wrap: initial;"><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: inherit; word-break: normal; padding: 0px; white-space: inherit; line-height: 1.5rem;"><span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">int</span>[] evenNums;  <span class="rem" style="box-sizing: border-box; color: green;">// integer array</span>
+
+<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">string</span>[] cities; <span class="rem" style="box-sizing: border-box; color: green;">// string array</span>
+</code></pre>
+					</div>
+					<div class="card-footer example-footer" style="box-sizing: border-box; padding: 0px; background-color: transparent; border: 0px; border-radius: 0px 0px calc(-1px + 0.25rem) calc(-1px + 0.25rem);">
+					</div>
+				</div>
+				<p _msttexthash="36753639" _msthash="367" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; background-color: rgb(255, 255, 255);">
+				Следующий оператор объявляет и добавляет значения в массив в 
+				одном операторе.</p>
+				<div class="card code-panel" style="font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; position: relative; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; min-width: 0px; overflow-wrap: break-word; background-color: rgb(216, 229, 238); background-clip: border-box; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0px; margin-bottom: 1.25rem; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; text-align: justify;">
+					<div class="card-header example-title" _msttexthash="13455325" _msthash="368" style="box-sizing: border-box; padding: 5px 0px 5px 5px; margin-bottom: 0px; border-bottom: 1px solid rgba(0, 0, 0, 0.125); color: rgb(44, 71, 88); font-size: 16px; min-height: 38px; line-height: 1.7em; border-radius: calc(-1px + 0.25rem) calc(-1px + 0.25rem) 0px 0px; background-color: transparent !important;">
+						Пример: Объявление массива и инициализация</div>
+					<div class="panel-body" style="box-sizing: border-box; color: rgb(16, 16, 16);">
+						<pre class="csharpcode" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 15px; margin: 0px; overflow: auto; display: block; color: rgb(0, 0, 0); border: 0px; background: rgb(255, 255, 255); padding: 10px 0px 10px 5px; overflow-wrap: initial;"><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: inherit; word-break: normal; padding: 0px; white-space: inherit; line-height: 1.5rem;"><span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">int</span>[] evenNums = <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">new int</span>[5]{ 2, 4, 6, 8, 10 }; 
+
+<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">string</span>[] cities = <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">new string</span>[3]{ <span class="str" style="box-sizing: border-box; color: rgb(163, 21, 21);">&quot;Mumbai&quot;</span>, <span class="str" style="box-sizing: border-box; color: rgb(163, 21, 21);">&quot;London&quot;</span>, <span class="str" style="box-sizing: border-box; color: rgb(163, 21, 21);">&quot;New York&quot;</span> };
+</code></pre>
+					</div>
+					<div class="card-footer example-footer" style="box-sizing: border-box; padding: 0px; background-color: transparent; border: 0px; border-radius: 0px 0px calc(-1px + 0.25rem) calc(-1px + 0.25rem);">
+					</div>
+				</div>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; background-color: rgb(255, 255, 255);">
+				<font _mstmutation="1" _msttexthash="288835560" _msthash="369" style="box-sizing: border-box;">
+				Выше массив может хранить до пяти целых чисел. Число 5 в 
+				квадратных скобках определяет размер массива. Точно так же 
+				размер массива равен трем. Элементы массива добавляются в виде 
+				списка, разделенного запятыми, внутри фигурных скобок { }.<span>&nbsp;</span></font><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: rgb(0, 0, 0); word-break: break-word; background-color: rgb(217, 229, 243); padding: 1px 5px; border-radius: 2px;">evenNumsnew 
+				int[5]cities</code></p>
+				<p _msttexthash="38880855" _msthash="370" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; background-color: rgb(255, 255, 255);">
+				Переменные типа массивов могут быть объявлены с помощью<span>&nbsp;</span><a target="_blank" _istranslated="1" style="box-sizing: border-box; color: rgb(0, 123, 255); text-decoration: underline; background-color: transparent; font-size: 17px;" href="https://www.tutorialsteacher.com/csharp/csharp-var-implicit-typed-local-variable">var</a><span>&nbsp;</span>без 
+				квадратных скобок.</p>
+				<div class="card code-panel" style="font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; position: relative; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; min-width: 0px; overflow-wrap: break-word; background-color: rgb(216, 229, 238); background-clip: border-box; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0px; margin-bottom: 1.25rem; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; text-align: justify;">
+					<div class="card-header example-title" _msttexthash="10150283" _msthash="371" style="box-sizing: border-box; padding: 5px 0px 5px 5px; margin-bottom: 0px; border-bottom: 1px solid rgba(0, 0, 0, 0.125); color: rgb(44, 71, 88); font-size: 16px; min-height: 38px; line-height: 1.7em; border-radius: calc(-1px + 0.25rem) calc(-1px + 0.25rem) 0px 0px; background-color: transparent !important;">
+						Пример: Объявление массива с помощью var</div>
+					<div class="panel-body" style="box-sizing: border-box; color: rgb(16, 16, 16);">
+						<pre class="csharpcode" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 15px; margin: 0px; overflow: auto; display: block; color: rgb(0, 0, 0); border: 0px; background: rgb(255, 255, 255); padding: 10px 0px 10px 5px; overflow-wrap: initial;"><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: inherit; word-break: normal; padding: 0px; white-space: inherit; line-height: 1.5rem;"><span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">var</span> evenNums = <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">new int</span>[]{ 2, 4, 6, 8, 10}; 
+
+<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">var</span> cities = <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">new string</span>[]{ <span class="str" style="box-sizing: border-box; color: rgb(163, 21, 21);">&quot;Mumbai&quot;</span>, <span class="str" style="box-sizing: border-box; color: rgb(163, 21, 21);">&quot;London&quot;</span>, <span class="str" style="box-sizing: border-box; color: rgb(163, 21, 21);">&quot;New York&quot;</span> }; 
+</code></pre>
+					</div>
+					<div class="card-footer example-footer" style="box-sizing: border-box; padding: 0px; background-color: transparent; border: 0px; border-radius: 0px 0px calc(-1px + 0.25rem) calc(-1px + 0.25rem);">
+					</div>
+				</div>
+				<p _msttexthash="217596717" _msthash="372" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; background-color: rgb(255, 255, 255);">
+				Если вы добавляете элементы массива во время объявления, то 
+				размер не является обязательным. Компилятор определит его размер 
+				на основе количества элементов внутри фигурных скобок, как 
+				показано ниже.</p>
+				<div class="card code-panel" style="font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; position: relative; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; min-width: 0px; overflow-wrap: break-word; background-color: rgb(216, 229, 238); background-clip: border-box; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0px; margin-bottom: 1.25rem; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; text-align: justify;">
+					<div class="card-header example-title" _msttexthash="14746368" _msthash="373" style="box-sizing: border-box; padding: 5px 0px 5px 5px; margin-bottom: 0px; border-bottom: 1px solid rgba(0, 0, 0, 0.125); color: rgb(44, 71, 88); font-size: 16px; min-height: 38px; line-height: 1.7em; border-radius: calc(-1px + 0.25rem) calc(-1px + 0.25rem) 0px 0px; background-color: transparent !important;">
+						Пример: Краткий синтаксис объявления массива</div>
+					<div class="panel-body" style="box-sizing: border-box; color: rgb(16, 16, 16);">
+						<pre class="csharpcode" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 15px; margin: 0px; overflow: auto; display: block; color: rgb(0, 0, 0); border: 0px; background: rgb(255, 255, 255); padding: 10px 0px 10px 5px; overflow-wrap: initial;"><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: inherit; word-break: normal; padding: 0px; white-space: inherit; line-height: 1.5rem;"><span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">int</span>[] evenNums = { 2, 4, 6, 8, 10}; 
+
+<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">string</span>[] cities = { <span class="str" style="box-sizing: border-box; color: rgb(163, 21, 21);">&quot;Mumbai&quot;</span>, <span class="str" style="box-sizing: border-box; color: rgb(163, 21, 21);">&quot;London&quot;</span>, <span class="str" style="box-sizing: border-box; color: rgb(163, 21, 21);">&quot;New York&quot;</span> }
+</code></pre>
+					</div>
+					<div class="card-footer example-footer" style="box-sizing: border-box; padding: 0px; background-color: transparent; border: 0px; border-radius: 0px 0px calc(-1px + 0.25rem) calc(-1px + 0.25rem);">
+					</div>
+				</div>
+				<p _msttexthash="26386607" _msthash="374" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; background-color: rgb(255, 255, 255);">
+				В следующем примере показаны недопустимые объявления массивов.</p>
+				<div class="card code-panel" style="font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; position: relative; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; min-width: 0px; overflow-wrap: break-word; background-color: rgb(216, 229, 238); background-clip: border-box; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0px; margin-bottom: 1.25rem; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; text-align: justify;">
+					<div class="card-header example-title" _msttexthash="8879559" _msthash="375" style="box-sizing: border-box; padding: 5px 0px 5px 5px; margin-bottom: 0px; border-bottom: 1px solid rgba(0, 0, 0, 0.125); color: rgb(44, 71, 88); font-size: 16px; min-height: 38px; line-height: 1.7em; border-radius: calc(-1px + 0.25rem) calc(-1px + 0.25rem) 0px 0px; background-color: transparent !important;">
+						Пример: Неверное создание массива</div>
+					<div class="panel-body" style="box-sizing: border-box; color: rgb(16, 16, 16);">
+						<pre class="csharpcode" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 15px; margin: 0px; overflow: auto; display: block; color: rgb(0, 0, 0); border: 0px; background: rgb(252, 240, 246); padding: 10px 0px 10px 5px; overflow-wrap: initial;"><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: inherit; word-break: normal; padding: 0px; white-space: inherit; line-height: 1.5rem;"><span class="rem" style="box-sizing: border-box; color: green;">//must specify the size </span>
+<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">int</span>[] evenNums = <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">new</span> <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">int</span>[]; 
+
+<span class="rem" style="box-sizing: border-box; color: green;">//number of elements must be equal to the specified size </span>
+<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">int</span>[] evenNums = <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">new</span> <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">int</span>[5] { 2, 4 };
+
+<span class="rem" style="box-sizing: border-box; color: green;">//cannot use var with array initializer</span>
+<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">var</span> evenNums = { 2, 4, 6, 8, 10}; 
+</code></pre>
+					</div>
+					<div class="card-footer example-footer" style="box-sizing: border-box; padding: 0px; background-color: transparent; border: 0px; border-radius: 0px 0px calc(-1px + 0.25rem) calc(-1px + 0.25rem);">
+					</div>
+				</div>
+				<h2 _msttexthash="4651439" _msthash="376" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 2rem 0px 1rem; font-family: &quot;Segoe UI&quot;, Verdana, sans-serif; font-weight: 400; line-height: 1.2; color: rgb(24, 23, 23); font-size: 28px; text-align: left; background-color: rgb(255, 255, 255);">
+				Поздняя инициализация</h2>
+				<p _msttexthash="141118393" _msthash="377" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; background-color: rgb(255, 255, 255);">
+				Нет необходимости объявлять и инициализировать массив в одном 
+				операторе. Вы можете сначала объявить массив, а затем 
+				инициализировать его с помощью оператора new.</p>
+				<div class="card code-panel" style="font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; position: relative; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; min-width: 0px; overflow-wrap: break-word; background-color: rgb(216, 229, 238); background-clip: border-box; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0px; margin-bottom: 1.25rem; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; text-align: justify;">
+					<div class="card-header example-title" _msttexthash="7439120" _msthash="378" style="box-sizing: border-box; padding: 5px 0px 5px 5px; margin-bottom: 0px; border-bottom: 1px solid rgba(0, 0, 0, 0.125); color: rgb(44, 71, 88); font-size: 16px; min-height: 38px; line-height: 1.7em; border-radius: calc(-1px + 0.25rem) calc(-1px + 0.25rem) 0px 0px; background-color: transparent !important;">
+						Пример: поздняя инициализация</div>
+					<div class="panel-body" style="box-sizing: border-box; color: rgb(16, 16, 16);">
+						<pre class="csharpcode" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 15px; margin: 0px; overflow: auto; display: block; color: rgb(0, 0, 0); border: 0px; background: rgb(255, 255, 255); padding: 10px 0px 10px 5px; overflow-wrap: initial;"><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: inherit; word-break: normal; padding: 0px; white-space: inherit; line-height: 1.5rem;"><span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">int</span>[] evenNums;
+
+evenNums = <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">new</span> <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">int</span>[5];
+<span class="rem" style="box-sizing: border-box; color: green;">// or</span>
+evenNums = <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">new</span> <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">int</span>[]{ 2, 4, 6, 8, 10 };
+</code></pre>
+					</div>
+					<div class="card-footer example-footer" style="box-sizing: border-box; padding: 0px; background-color: transparent; border: 0px; border-radius: 0px 0px calc(-1px + 0.25rem) calc(-1px + 0.25rem);">
+					</div>
+				</div>
+				<h2 _msttexthash="5821491" _msthash="379" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 2rem 0px 1rem; font-family: &quot;Segoe UI&quot;, Verdana, sans-serif; font-weight: 400; line-height: 1.2; color: rgb(24, 23, 23); font-size: 28px; text-align: left; background-color: rgb(255, 255, 255);">
+				Доступ к элементам массива</h2>
+				<p _msttexthash="151519628" _msthash="380" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; background-color: rgb(255, 255, 255);">
+				Доступ к элементам массива можно получить с помощью индекса. 
+				Индекс - это число, связанное с каждым элементом массива, 
+				начиная с индекса 0 и заканчивая размером массива - 1.</p>
+				<p _msttexthash="53186367" _msthash="381" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; background-color: rgb(255, 255, 255);">
+				В следующем примере добавление/обновление и извлечение элементов 
+				массива с помощью индексов.</p>
+				<div class="card code-panel" style="font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; position: relative; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; min-width: 0px; overflow-wrap: break-word; background-color: rgb(216, 229, 238); background-clip: border-box; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0px; margin-bottom: 1.25rem; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; text-align: justify;">
+					<div class="card-header example-title" _msttexthash="18952908" _msthash="382" style="box-sizing: border-box; padding: 5px 0px 5px 5px; margin-bottom: 0px; border-bottom: 1px solid rgba(0, 0, 0, 0.125); color: rgb(44, 71, 88); font-size: 16px; min-height: 38px; line-height: 1.7em; border-radius: calc(-1px + 0.25rem) calc(-1px + 0.25rem) 0px 0px; background-color: transparent !important;">
+						Пример: доступ к элементам массива с помощью индексов</div>
+					<div class="panel-body" style="box-sizing: border-box; color: rgb(16, 16, 16);">
+						<pre class="csharpcode" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 15px; margin: 0px; overflow: auto; display: block; color: rgb(0, 0, 0); border: 0px; background: rgb(255, 255, 255); padding: 10px 0px 10px 5px; overflow-wrap: initial;"><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: inherit; word-break: normal; padding: 0px; white-space: inherit; line-height: 1.5rem;"><span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">int</span>[] evenNums = <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">new</span> <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">int</span>[5];
+evenNums[0] = 2;
+evenNums[1] = 4;
+<span class="rem" style="box-sizing: border-box; color: green;">//evenNums[6] = 12;  //Throws run-time exception IndexOutOfRange</span>
+
+<span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">Console</span>.WriteLine(evenNums[0]);  <span class="rem" style="box-sizing: border-box; color: green;">//prints 2</span>
+<span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">Console</span>.WriteLine(evenNums[1]);  <span class="rem" style="box-sizing: border-box; color: green;">//prints 4</span>
+</code></pre>
+					</div>
+					<div class="card-footer example-footer" style="box-sizing: border-box; padding: 0px; background-color: transparent; border: 0px; border-radius: 0px 0px calc(-1px + 0.25rem) calc(-1px + 0.25rem);">
+					</div>
+				</div>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; background-color: rgb(255, 255, 255);">
+				<font _mstmutation="1" _msttexthash="40024920" _msthash="384" style="box-sizing: border-box;">
+				Обратите внимание, что попытка добавить больше элементов, чем 
+				указано, приведет к .</font><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: rgb(0, 0, 0); word-break: break-word; background-color: rgb(217, 229, 243); padding: 1px 5px; border-radius: 2px;">IndexOutOfRangeException</code></p>
+				<h2 _msttexthash="7771777" _msthash="385" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 2rem 0px 1rem; font-family: &quot;Segoe UI&quot;, Verdana, sans-serif; font-weight: 400; line-height: 1.2; color: rgb(24, 23, 23); font-size: 28px; text-align: left; background-color: rgb(255, 255, 255);">
+				Доступ к массиву с помощью цикла for</h2>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; background-color: rgb(255, 255, 255);">
+				<font _mstmutation="1" _msttexthash="67794246" _msthash="386" style="box-sizing: border-box;">
+				Используйте цикл для доступа к элементам массива. Используйте 
+				свойство массива в условном выражении цикла for.<span>&nbsp;</span></font><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: rgb(0, 0, 0); word-break: break-word; background-color: rgb(217, 229, 243); padding: 1px 5px; border-radius: 2px;">forlength</code></p>
+				<div class="card code-panel" style="font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; position: relative; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; min-width: 0px; overflow-wrap: break-word; background-color: rgb(216, 229, 238); background-clip: border-box; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0px; margin-bottom: 1.25rem; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; text-align: justify;">
+					<div class="card-header example-title" _msttexthash="17016389" _msthash="387" style="box-sizing: border-box; padding: 5px 0px 5px 5px; margin-bottom: 0px; border-bottom: 1px solid rgba(0, 0, 0, 0.125); color: rgb(44, 71, 88); font-size: 16px; min-height: 38px; line-height: 1.7em; border-radius: calc(-1px + 0.25rem) calc(-1px + 0.25rem) 0px 0px; background-color: transparent !important;">
+						Пример: Доступ к элементам массива с помощью цикла for</div>
+					<div class="panel-body" style="box-sizing: border-box; color: rgb(16, 16, 16);">
+						<pre class="csharpcode" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 15px; margin: 0px; overflow: auto; display: block; color: rgb(0, 0, 0); border: 0px; background: rgb(255, 255, 255); padding: 10px 0px 10px 5px; overflow-wrap: initial;"><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: inherit; word-break: normal; padding: 0px; white-space: inherit; line-height: 1.5rem;"><span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">int</span>[] evenNums = { 2, 4, 6, 8, 10 };
+
+<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">for</span>(<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">int</span> i = 0; i &lt; evenNums.Length; i++)
+            <span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">Console</span>.WriteLine(evenNums[i]);  
+
+<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">for</span>(<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">int</span> i = 0; i &lt; evenNums.Length; i++)
+    evenNums[i] = evenNums[i] + 10;  <span class="rem" style="box-sizing: border-box; color: green;">// update the value of each element by 10</span>
+</code></pre>
+					</div>
+					<div class="card-footer example-footer" style="box-sizing: border-box; padding: 0px; background-color: transparent; border: 0px; border-radius: 0px 0px calc(-1px + 0.25rem) calc(-1px + 0.25rem);">
+						<a class="btn tryitLink" target="_blank" title="Try this example code yourself" _msttexthash="1617941" _msthash="388" style="box-sizing: border-box; color: rgb(255, 255, 255); text-decoration: none; background: rgb(36, 110, 185); display: inline-block; font-weight: 400; text-align: center; white-space: nowrap; vertical-align: middle; user-select: none; border: 1px solid transparent; padding: 0.375rem 0.75rem; font-size: 1rem; line-height: 1.5; border-radius: 0px; transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; cursor: pointer;" href="https://www.tutorialsteacher.com/codeeditor?cid=cs-Z55rX6">
+						Попробуйте</a></div>
+				</div>
+				<h2 _msttexthash="7972549" _msthash="389" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 2rem 0px 1rem; font-family: &quot;Segoe UI&quot;, Verdana, sans-serif; font-weight: 400; line-height: 1.2; color: rgb(24, 23, 23); font-size: 28px; text-align: left; background-color: rgb(255, 255, 255);">
+				Доступ к массиву с помощью цикла foreach</h2>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; background-color: rgb(255, 255, 255);">
+				<font _mstmutation="1" _msttexthash="42021928" _msthash="390" style="box-sizing: border-box;">
+				Используйте цикл для чтения значений элементов массива без 
+				использования индекса.<span>&nbsp;</span></font><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: rgb(0, 0, 0); word-break: break-word; background-color: rgb(217, 229, 243); padding: 1px 5px; border-radius: 2px;">foreach</code></p>
+				<div class="card code-panel" style="font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; position: relative; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; min-width: 0px; overflow-wrap: break-word; background-color: rgb(216, 229, 238); background-clip: border-box; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0px; margin-bottom: 1.25rem; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; text-align: justify;">
+					<div class="card-header example-title" _msttexthash="11514165" _msthash="391" style="box-sizing: border-box; padding: 5px 0px 5px 5px; margin-bottom: 0px; border-bottom: 1px solid rgba(0, 0, 0, 0.125); color: rgb(44, 71, 88); font-size: 16px; min-height: 38px; line-height: 1.7em; border-radius: calc(-1px + 0.25rem) calc(-1px + 0.25rem) 0px 0px; background-color: transparent !important;">
+						Пример: Доступ к массиву с помощью цикла foreach</div>
+					<div class="panel-body" style="box-sizing: border-box; color: rgb(16, 16, 16);">
+						<pre class="csharpcode" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 15px; margin: 0px; overflow: auto; display: block; color: rgb(0, 0, 0); border: 0px; background: rgb(255, 255, 255); padding: 10px 0px 10px 5px; overflow-wrap: initial;"><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: inherit; word-break: normal; padding: 0px; white-space: inherit; line-height: 1.5rem;"><span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">int</span>[] evenNums = { 2, 4, 6, 8, 10}; 
+<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">string</span>[] cities = { <span class="str" style="box-sizing: border-box; color: rgb(163, 21, 21);">&quot;Mumbai&quot;</span>, <span class="str" style="box-sizing: border-box; color: rgb(163, 21, 21);">&quot;London&quot;</span>, <span class="str" style="box-sizing: border-box; color: rgb(163, 21, 21);">&quot;New York&quot;</span> }; 
+
+<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">foreach</span>(<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">var</span> item <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">in</span> evenNums)
+            <span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">Console</span>.WriteLine(item);   
+
+<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">foreach</span>(<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">var</span> city <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">in</span> cities)
+            <span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">Console</span>.WriteLine(city);  
+</code></pre>
+					</div>
+					<div class="card-footer example-footer" style="box-sizing: border-box; padding: 0px; background-color: transparent; border: 0px; border-radius: 0px 0px calc(-1px + 0.25rem) calc(-1px + 0.25rem);">
+						<a class="btn tryitLink" target="_blank" title="Try this example code yourself" _msttexthash="1617941" _msthash="392" style="box-sizing: border-box; color: rgb(255, 255, 255); text-decoration: none; background: rgb(36, 110, 185); display: inline-block; font-weight: 400; text-align: center; white-space: nowrap; vertical-align: middle; user-select: none; border: 1px solid transparent; padding: 0.375rem 0.75rem; font-size: 1rem; line-height: 1.5; border-radius: 0px; transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; cursor: pointer;" href="https://www.tutorialsteacher.com/codeeditor?cid=cs-b0GhA7">
+						Попробуйте</a></div>
+				</div>
+				<h2 _msttexthash="859950" _msthash="393" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 2rem 0px 1rem; font-family: &quot;Segoe UI&quot;, Verdana, sans-serif; font-weight: 400; line-height: 1.2; color: rgb(24, 23, 23); font-size: 28px; text-align: left; background-color: rgb(255, 255, 255);">
+				Методы LINQ</h2>
+				<p _msttexthash="32469411" _msthash="394" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; background-color: rgb(255, 255, 255);">
+				Все массивы в C# являются производными от абстрактного базового 
+				класса<span>&nbsp;</span><a target="_blank" class="external-link" _istranslated="1" style="box-sizing: border-box; color: rgb(0, 123, 255); text-decoration: underline; background-color: transparent; font-size: 17px;" href="https://docs.microsoft.com/en-us/dotnet/api/system.array?view=netframework-4.7.2">System.Array</a>.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; background-color: rgb(255, 255, 255);">
+				<font _mstmutation="1" _msttexthash="137932522" _msthash="395" style="box-sizing: border-box;">
+				Класс Array реализует интерфейс, поэтому вы можете использовать 
+				методы расширения LINQ, такие как , , , и т. д. Список всех 
+				методов расширения<span>&nbsp;</span><a target="_blank" class="external-link" _mstmutation="1" _istranslated="1" style="box-sizing: border-box; color: rgb(0, 123, 255); text-decoration: underline; background-color: transparent; font-size: 17px;" href="https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable?view=netframework-4.8">можно 
+				посмотреть здесь</a>.<span>&nbsp;</span></font><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: rgb(0, 0, 0); word-break: break-word; background-color: rgb(217, 229, 243); padding: 1px 5px; border-radius: 2px;">IEnumerableMax()Min()Sum()reverse()</code></p>
+				<div class="card code-panel" style="font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; position: relative; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; min-width: 0px; overflow-wrap: break-word; background-color: rgb(216, 229, 238); background-clip: border-box; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0px; margin-bottom: 1.25rem; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; text-align: justify;">
+					<div class="card-header example-title" _msttexthash="2293460" _msthash="396" style="box-sizing: border-box; padding: 5px 0px 5px 5px; margin-bottom: 0px; border-bottom: 1px solid rgba(0, 0, 0, 0.125); color: rgb(44, 71, 88); font-size: 16px; min-height: 38px; line-height: 1.7em; border-radius: calc(-1px + 0.25rem) calc(-1px + 0.25rem) 0px 0px; background-color: transparent !important;">
+						Пример: методы LINQ</div>
+					<div class="panel-body" style="box-sizing: border-box; color: rgb(16, 16, 16);">
+						<pre class="csharpcode" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 15px; margin: 0px; overflow: auto; display: block; color: rgb(0, 0, 0); border: 0px; background: rgb(255, 255, 255); padding: 10px 0px 10px 5px; overflow-wrap: initial;"><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: inherit; word-break: normal; padding: 0px; white-space: inherit; line-height: 1.5rem;"><span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">int</span>[] nums = <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">new</span> <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">int</span>[5]{ 10, 15, 16, 8, 6 };
+
+nums.Max(); <span class="rem" style="box-sizing: border-box; color: green;">// returns 16</span>
+nums.Min(); <span class="rem" style="box-sizing: border-box; color: green;">// returns 6</span>
+nums.Sum(); <span class="rem" style="box-sizing: border-box; color: green;">// returns 55</span>
+nums.Average(); <span class="rem" style="box-sizing: border-box; color: green;">// returns 55</span>
+</code></pre>
+					</div>
+					<div class="card-footer example-footer" style="box-sizing: border-box; padding: 0px; background-color: transparent; border: 0px; border-radius: 0px 0px calc(-1px + 0.25rem) calc(-1px + 0.25rem);">
+						<a class="btn tryitLink" target="_blank" title="Try this example code yourself" _msttexthash="1617941" _msthash="397" style="box-sizing: border-box; color: rgb(255, 255, 255); text-decoration: none; background: rgb(36, 110, 185); display: inline-block; font-weight: 400; text-align: center; white-space: nowrap; vertical-align: middle; user-select: none; border: 1px solid transparent; padding: 0.375rem 0.75rem; font-size: 1rem; line-height: 1.5; border-radius: 0px; transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; cursor: pointer;" href="https://www.tutorialsteacher.com/codeeditor?cid=cs-XTD7fR">
+						Попробуйте</a></div>
+				</div>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; background-color: rgb(255, 255, 255);">
+				<font _mstmutation="1" _msttexthash="93472223" _msthash="398" style="box-sizing: border-box;">
+				Класс также включает методы для создания, обработки, поиска и 
+				сортировки массивов. Список всех методов Array<span>&nbsp;</span><a target="_blank" class="external-link" _mstmutation="1" _istranslated="1" style="box-sizing: border-box; color: rgb(0, 123, 255); text-decoration: underline; background-color: transparent; font-size: 17px;" href="https://docs.microsoft.com/en-us/dotnet/api/system.array?view=netcore-3.1#methods">можно 
+				посмотреть здесь</a>.<span>&nbsp;</span></font><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: rgb(0, 0, 0); word-break: break-word; background-color: rgb(217, 229, 243); padding: 1px 5px; border-radius: 2px;">System.Array</code></p>
+				<div class="card code-panel" style="font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; position: relative; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; min-width: 0px; overflow-wrap: break-word; background-color: rgb(216, 229, 238); background-clip: border-box; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0px; margin-bottom: 1.25rem; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; text-align: justify;">
+					<div class="card-header example-title" _msttexthash="4467151" _msthash="399" style="box-sizing: border-box; padding: 5px 0px 5px 5px; margin-bottom: 0px; border-bottom: 1px solid rgba(0, 0, 0, 0.125); color: rgb(44, 71, 88); font-size: 16px; min-height: 38px; line-height: 1.7em; border-radius: calc(-1px + 0.25rem) calc(-1px + 0.25rem) 0px 0px; background-color: transparent !important;">
+						Пример: методы массива</div>
+					<div class="panel-body" style="box-sizing: border-box; color: rgb(16, 16, 16);">
+						<pre class="csharpcode" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 15px; margin: 0px; overflow: auto; display: block; color: rgb(0, 0, 0); border: 0px; background: rgb(255, 255, 255); padding: 10px 0px 10px 5px; overflow-wrap: initial;"><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: inherit; word-break: normal; padding: 0px; white-space: inherit; line-height: 1.5rem;"><span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">int</span>[] nums = <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">new</span> <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">int</span>[5]{ 10, 15, 16, 8, 6 };
+
+<span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">Array</span>.Sort(nums); <span class="rem" style="box-sizing: border-box; color: green;">// sorts array </span>
+<span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">Array</span>.Reverse(nums); <span class="rem" style="box-sizing: border-box; color: green;">// sorts array in descending order</span>
+<span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">Array</span>.ForEach(nums, n =&gt; Console.WriteLine(n)); <span class="rem" style="box-sizing: border-box; color: green;">// iterates array</span>
+<span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">Array</span>.BinarySearch(nums, 5);<span class="rem" style="box-sizing: border-box; color: green;">// binary search </span>
+</code></pre>
+					</div>
+					<div class="card-footer example-footer" style="box-sizing: border-box; padding: 0px; background-color: transparent; border: 0px; border-radius: 0px 0px calc(-1px + 0.25rem) calc(-1px + 0.25rem);">
+						<a class="btn tryitLink" target="_blank" title="Try this example code yourself" _msttexthash="1617941" _msthash="400" style="box-sizing: border-box; color: rgb(255, 255, 255); text-decoration: none; background: rgb(36, 110, 185); display: inline-block; font-weight: 400; text-align: center; white-space: nowrap; vertical-align: middle; user-select: none; border: 1px solid transparent; padding: 0.375rem 0.75rem; font-size: 1rem; line-height: 1.5; border-radius: 0px; transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; cursor: pointer;" href="https://www.tutorialsteacher.com/codeeditor?cid=cs-pyunE4">
+						Попробуйте</a></div>
+				</div>
+				<h2 _msttexthash="10663185" _msthash="401" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 2rem 0px 1rem; font-family: &quot;Segoe UI&quot;, Verdana, sans-serif; font-weight: 400; line-height: 1.2; color: rgb(24, 23, 23); font-size: 28px; text-align: left; background-color: rgb(255, 255, 255);">
+				Передача массива в качестве аргумента</h2>
+				<p _msttexthash="142794171" _msthash="402" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; background-color: rgb(255, 255, 255);">
+				Массив может быть передан в качестве аргумента параметру метода. 
+				Массивы являются ссылочными типами, поэтому метод может изменять 
+				значение элементов массива.</p>
+				<div class="card code-panel" style="font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; position: relative; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; min-width: 0px; overflow-wrap: break-word; background-color: rgb(216, 229, 238); background-clip: border-box; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0px; margin-bottom: 1.25rem; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; text-align: justify;">
+					<div class="card-header example-title" _msttexthash="14721863" _msthash="403" style="box-sizing: border-box; padding: 5px 0px 5px 5px; margin-bottom: 0px; border-bottom: 1px solid rgba(0, 0, 0, 0.125); color: rgb(44, 71, 88); font-size: 16px; min-height: 38px; line-height: 1.7em; border-radius: calc(-1px + 0.25rem) calc(-1px + 0.25rem) 0px 0px; background-color: transparent !important;">
+						Пример: передача массива в качестве аргумента</div>
+					<div class="panel-body" style="box-sizing: border-box; color: rgb(16, 16, 16);">
+						<pre class="csharpcode" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 15px; margin: 0px; overflow: auto; display: block; color: rgb(0, 0, 0); border: 0px; background: rgb(255, 255, 255); padding: 10px 0px 10px 5px; overflow-wrap: initial;"><code style="box-sizing: border-box; font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace, serif; font-size: 16px; color: inherit; word-break: normal; padding: 0px; white-space: inherit; line-height: 1.5rem;"><span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">public static void</span> Main(){
+            <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">int</span>[] nums = { 1, 2, 3, 4, 5 };
+
+    UpdateArray(nums); 
+
+            <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">foreach</span>(<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">var</span> item <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">in</span> nums)
+            <span class="userclass" style="box-sizing: border-box; color: rgb(43, 145, 175);">Console</span>.WriteLine(item);   
+}
+                    
+<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">public static void</span> UpdateArray(<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">int</span>[] arr)
+{
+            <span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">for</span>(<span class="kwrd" style="box-sizing: border-box; color: rgb(0, 0, 255);">int</span> i = 0; i &lt; arr.Length; i++)
+        arr[i] = arr[i] + 10;   
+}
+</code></pre>
+					</div>
+					<div class="card-footer example-footer" style="box-sizing: border-box; padding: 0px; background-color: transparent; border: 0px; border-radius: 0px 0px calc(-1px + 0.25rem) calc(-1px + 0.25rem);">
+						<a class="btn tryitLink" target="_blank" title="Try this example code yourself" _msttexthash="1617941" _msthash="404" style="box-sizing: border-box; color: rgb(255, 255, 255); text-decoration: none; background: rgb(36, 110, 185); display: inline-block; font-weight: 400; text-align: center; white-space: nowrap; vertical-align: middle; user-select: none; border: 1px solid transparent; padding: 0.375rem 0.75rem; font-size: 1rem; line-height: 1.5; border-radius: 0px; transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; cursor: pointer;" href="https://www.tutorialsteacher.com/codeeditor?cid=cs-Y7pRWn">
+						Попробуйте</a></div>
+				</div>
+				<p _msttexthash="22200516" _msthash="405" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; background-color: rgb(255, 255, 255);">
+				Подробне</p>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif;">
+				&nbsp;</p>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif;">
+				&nbsp;</p>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif;">
+				Разберем самые используемые методы.</p>
+				<h3 style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif;">
+				Сортировка массива</h3>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif;">
+				Отсортируем массив с помощью метода<span>&nbsp;</span><span class="b" style="font-weight: bold;">Sort()</span>:</p>
+				<pre class="style6" style="color: rgb(0, 0, 255); margin-left: 40px; font-size: small; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong>string[] people =  { &quot;Tom&quot;, &quot;Sam&quot;, &quot;Bob&quot;, &quot;Kate&quot;, &quot;Tom&quot;, &quot;Alice&quot; };&nbsp;
+Array.Sort(people);&nbsp;
+foreach (var person in people) Console.Write($&quot;{person} &quot;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Alice Bob Kate Sam Tom Tom</strong></pre>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif;">
+				Этот метод имеет много перегрузок. Например, одна из версий 
+				позволяет отсортировать только часть массива:</p>
+				<pre class="style3" style="color: rgb(0, 0, 255); margin-left: 80px; font-size: small; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong>string[] people =  { &quot;Tom&quot;, &quot;Sam&quot;, &quot;Bob&quot;, &quot;Kate&quot;, &quot;Tom&quot;, &quot;Alice&quot; };&nbsp;
+// сортируем с 1 индекса 3 элемента
+Array.Sort(people, 1, 3);&nbsp;
+foreach (var person in people) &nbsp;&nbsp;&nbsp;&nbsp;Console.Write($&quot;{person} &quot;);&nbsp;&nbsp;&nbsp;// Tom Bob Kate Sam Tom Alice</strong></pre>
+				<h3 style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif;">
+				Поиск индекса элемента</h3>
+				<pre class="style6" style="color: rgb(0, 0, 255); margin-left: 40px; font-size: small; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong>string[] people = { &quot;Tom&quot;, &quot;Sam&quot;, &quot;Bob&quot;, &quot;Kate&quot;, &quot;Tom&quot;, &quot;Alice&quot; };&nbsp;
+// находим индекс первого элемента &quot;Tom&quot;
+int tomFirstIndex = Array.IndexOf(people, &quot;Tom&quot;);
+// находим индекс последнего элемента &quot;Tom&quot;
+int tomLastIndex = Array.LastIndexOf(people, &quot;Tom&quot;);
+// находим индекс первого элемента, у которого длина строки больше 3
+int lengthFirstIndex = Array.FindIndex(people, person =&gt; person.Length &gt; 3);
+// находим индекс последнего элемента, у которого длина строки больше 3
+int lengthLastIndex = Array.FindLastIndex(people, person =&gt; person.Length &gt; 3);&nbsp;
+Console.WriteLine($&quot;tomFirstIndex: {tomFirstIndex}&quot;);       // 0
+Console.WriteLine($&quot;tomLastIndex: {tomLastIndex}&quot;);         // 4
+Console.WriteLine($&quot;lengthFirstIndex: {lengthFirstIndex}&quot;); // 3
+Console.WriteLine($&quot;lengthLastIndex: {lengthLastIndex}&quot;);   // 5&nbsp;&nbsp;
+// находим индекс элемента &quot;Bob&quot;
+// для бинарного поиска коллекцию нужно отсортировать
+Array.Sort(people); // Alice Bob Kate Sam Tom Tomint bob
+Index = Array.BinarySearch(people, &quot;Bob&quot;);
+Console.WriteLine($&quot;bobIndex: {bobIndex}&quot;);                 // 1</strong></pre>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif;">
+				Если элемент не найден в массиве, то методы возвращают -1.</p>
+				<h3 style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif;">
+				Поиск элемента по условию</h3>
+				<pre class="style6" style="color: rgb(0, 0, 255); margin-left: 40px; font-size: small; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong>string[] people =  { &quot;Tom&quot;, &quot;Sam&quot;, &quot;Bob&quot;, &quot;Kate&quot;, &quot;Tom&quot;, &quot;Alice&quot; };&nbsp;
+// находим первый и последний элементы
+// где длина строки больше 3 символов
+string first = Array.Find(people, person =&gt; person.Length &gt; 3);
+Console.WriteLine(first); // Kate
+string last = Array.FindLast(people, person =&gt; person.Length &gt; 3);
+Console.WriteLine(last); // Alice&nbsp;
+// находим элементы, у которых длина строки равна 3
+string[] group = Array.FindAll(people, person =&gt; person.Length == 3);
+foreach (var person in group) Console.WriteLine(person);// Tom Sam Bob Tom</strong></pre>
+				<h3 style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif;">
+				Изменение порядка элементов массива</h3>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif;">
+				Например, изменим порядок элементов:</p>
+				<pre class="style6" style="color: rgb(0, 0, 255); margin-left: 40px; font-size: small; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong>string[] people =  { &quot;Tom&quot;, &quot;Sam&quot;, &quot;Bob&quot;, &quot;Kate&quot;, &quot;Tom&quot;, &quot;Alice&quot; };&nbsp;
+Array.Reverse(people);&nbsp;
+foreach (var person in people) &nbsp;&nbsp;&nbsp;&nbsp;Console.Write($&quot;{person} &quot;);
+// &quot;Alice&quot;, &quot;Tom&quot;, &quot;Kate&quot;, &quot;Bob&quot;, &quot;Sam&quot;, &quot;Tom&quot;</strong></pre>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif;">
+				Также можно изменить порядок только части элементов:</p>
+				<pre class="style6" style="color: rgb(0, 0, 255); margin-left: 40px; font-size: small; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong>string[] people =  { &quot;Tom&quot;, &quot;Sam&quot;, &quot;Bob&quot;, &quot;Kate&quot;, &quot;Tom&quot;, &quot;Alice&quot; };&nbsp;
+// изменяем порядок 3 элементов начиная c индекса 1  
+Array.Reverse(people, 1, 3);&nbsp;
+foreach (var person in people) &nbsp;&nbsp;&nbsp;&nbsp;Console.Write($&quot;{person} &quot;);
+// &quot;Tom&quot;, &quot;Kate&quot;, &quot;Bob&quot;, &quot;Sam&quot;, &quot;Tom&quot;, &quot;Alice&quot;</strong></pre>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif;">
+				В данном случае изменяем порядок только 3 элементов начиная c 
+				индекса 1.</p>
+				<h3 style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif;">
+				Изменение размера массива</h3>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif;">
+				Для изменения размера массива применяется метод Resize. Его 
+				первый параметр - изменяемый массив, а второй параметр - 
+				количество элементов, которые должны быть в массиве. Если второй 
+				параметр меньше длины массива, то массив усекается. Если 
+				значение параметра, наоборот, больше, то массив дополняется 
+				дополнительными элементами, которые имеют значение по умолчанию. 
+				Причем первый параметр передается по ссылке:</p>
+				<pre class="style4" style="color: rgb(0, 0, 255); font-size: small; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong>string[] people =  { &quot;Tom&quot;, &quot;Sam&quot;, &quot;Bob&quot;, &quot;Kate&quot;, &quot;Tom&quot;, &quot;Alice&quot; };&nbsp;
+// уменьшим массив до 4 элементов
+Array.Resize(ref people, 4);&nbsp;
+foreach (var person in people) &nbsp;&nbsp;&nbsp;&nbsp;Console.Write($&quot;{person} &quot;);
+// &quot;Tom&quot;, &quot;Sam&quot;, &quot;Bob&quot;, &quot;Kate&quot;</strong></pre>
+				<h3 style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif;">
+				Копирование массива</h3>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif;">
+				Метод<span>&nbsp;</span><span class="b" style="font-weight: bold;">Copy</span><span>&nbsp;</span>копирует 
+				часть одного массива в другой:</p>
+				<pre class="style6" style="color: rgb(0, 0, 255); margin-left: 40px; font-size: small; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong>string[] people =  { &quot;Tom&quot;, &quot;Sam&quot;, &quot;Bob&quot;, &quot;Kate&quot;, &quot;Tom&quot;, &quot;Alice&quot; };&nbsp;
+var employees = new string[3];&nbsp;
+// копируем 3 элемента из массива people c индекса 1  
+// и вставляем их в массив employees начиная с индекса 0
+Array.Copy(people,1, employees,0, 3);&nbsp;
+foreach (var person in employees) &nbsp;&nbsp;&nbsp;&nbsp;Console.Write($&quot;{person} &quot;);
+// Sam Bob Kate</strong></pre>
+				<p style="color: rgb(0, 0, 0); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif;">
+				В данном случае копируем 3 элемента из массива people начиная c 
+				индекса 1 и вставляем их в массив employees начиная с индекса 0.</p>
+				<p _msttexthash="111806500" _msthash="101" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-sizing: border-box; margin: 1.5rem 0px; text-align: justify; font-size: 17px; line-height: 1.8rem; letter-spacing: 0.014em; color: rgb(24, 23, 23); font-family: Verdana, sans-serif, Geneva; font-weight: 300; background-color: rgb(255, 255, 255);">
+				&nbsp;</p>
+			</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les42.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les42/2.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:49:10 GMT -->
+</html>

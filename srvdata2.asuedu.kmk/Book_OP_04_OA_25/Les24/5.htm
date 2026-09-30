@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les24/5.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:10:19 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: medium;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Записи при работе с файлами</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text" style="font-size: small">
+                <p>
+				
+				<strong>Пример:</strong> Пусть 
+				требуется создать файл из записей, данные которых вводятся с 
+				клавиатуры.<br/>
+				
+				Структура записи файла следующая:<br/>
+				
+				— фамилия;<br/>
+				
+				— телефон.</p>
+				<p>Решение:</p>
+				<pre class="pascal" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">type</span><span class="style2">
+    t_subscriber </span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">=</span> <span style="box-sizing: border-box; color: rgb(0, 0, 102); font-weight: bold;" class="style2">record</span><span class="style2">
+      surname</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">:</span> <span style="box-sizing: border-box; color: rgb(0, 0, 102); font-weight: bold;" class="style2">string</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">[</span><span style="box-sizing: border-box; color: rgb(204, 102, 204);" class="style2">20</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">]</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+      tel</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">:</span> <span style="box-sizing: border-box; color: rgb(0, 0, 102); font-weight: bold;" class="style2">LongInt</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+    </span><span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">end</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+</span>&nbsp;<span class="style2">
+</span><span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">var</span><span class="style2">
+    subscriber</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">:</span> <span class="style2">t_subscriber</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+    f</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">:</span> <span style="box-sizing: border-box; color: rgb(0, 0, 102); font-weight: bold;" class="style2">file</span> <span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">of</span> <span class="style2">t_subscriber</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+    i</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">:</span> <span style="box-sizing: border-box; color: rgb(0, 0, 102); font-weight: bold;" class="style2">Integer</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+</span>&nbsp;<span class="style2">
+</span><span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">begin</span><span class="style2">
+  Assign</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">(</span>f<span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">,</span><span style="box-sizing: border-box; color: rgb(255, 0, 0);" class="style2">&#39;notebook.dat&#39;</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">)</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+  Rewrite</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">(</span>f<span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">)</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+  </span><span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">for</span> <span class="style2">i</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">:=</span><span style="box-sizing: border-box; color: rgb(204, 102, 204);" class="style2">1</span> <span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">to</span> <span style="box-sizing: border-box; color: rgb(204, 102, 204);" class="style2">5</span> <span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">do</span> <span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">begin</span><span class="style2">
+    </span><span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">with</span><span class="style2"> subscriber </span><span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">do</span> <span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">begin</span><span class="style2">
+      </span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">Write</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">(</span><span style="box-sizing: border-box; color: rgb(255, 0, 0);" class="style2">&#39;Surname: &#39;</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">)</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+      </span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">ReadLn</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">(</span><span class="style2">surname</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">)</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+      </span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">Write</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">(</span><span style="box-sizing: border-box; color: rgb(255, 0, 0);" class="style2">&#39;Phone: &#39;</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">)</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+      </span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">ReadLn</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">(</span><span class="style2">tel</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">)</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+    </span><span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">end</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+    </span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">Write</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">(</span>f<span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">,</span><span class="style2"> subscriber</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">)</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+  </span><span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">end</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+  Close</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">(</span>f<span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">)</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+</span><span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">end</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);">.</span></pre>
+				<p>
+				
+				<strong>Пример:&nbsp; </strong>В анкету подписчиков сначала записать данные (фамилия, телефон), а 
+				затем считать эти данные. Если номер телефона указан без двойки 
+				впереди, то добавить к нему двойку: если номер<span>&nbsp;</span>236244475<span>&nbsp;</span>— 
+				ничего с ним не делать, если же номер<span>&nbsp;</span></span>36233357, 
+				то необходимо получить номер<span>&nbsp;</span></span>236233357. 
+				Исправленную информацию выводить на экран.</span></p>
+				<pre class="pascal" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">type</span><span class="style2">
+    t_subscriber </span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">=</span> <span style="box-sizing: border-box; color: rgb(0, 0, 102); font-weight: bold;" class="style2">record</span><span class="style2">
+      surname</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">:</span> <span style="box-sizing: border-box; color: rgb(0, 0, 102); font-weight: bold;" class="style2">string</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">[</span><span style="box-sizing: border-box; color: rgb(204, 102, 204);" class="style2">20</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">]</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+      tel</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">:</span> <span style="box-sizing: border-box; color: rgb(0, 0, 102); font-weight: bold;" class="style2">integer</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+    </span><span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">end</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+</span>&nbsp;<span class="style2">
+</span><span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">var</span><span class="style2">
+    subscriber</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">:</span> <span class="style2">t_subscriber</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+    f</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">:</span> <span style="box-sizing: border-box; color: rgb(0, 0, 102); font-weight: bold;" class="style2">file</span> <span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">of</span> <span class="style2">t_subscriber</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+    s</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">:</span> <span style="box-sizing: border-box; color: rgb(0, 0, 102); font-weight: bold;" class="style2">string</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+</span>&nbsp;<span class="style2">
+</span><span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">begin</span><span class="style2">
+  Assign</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">(</span>f<span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">,</span><span style="box-sizing: border-box; color: rgb(255, 0, 0);" class="style2">&#39;z:\pascal.dat&#39;</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">)</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+  rewrite</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">(</span>f<span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">)</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+  subscriber</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">.</span><span style="box-sizing: border-box; color: rgb(0, 102, 0);" class="style2">surname</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">:=</span><span style="box-sizing: border-box; color: rgb(255, 0, 0);">&#39;<span class="style2">ivanov&#39;</span></span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+  subscriber</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">.</span><span style="box-sizing: border-box; color: rgb(0, 102, 0);" class="style2">tel</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">:=</span><span style="box-sizing: border-box; color: rgb(204, 102, 204);" class="style2">36233357</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+  </span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">write</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">(</span>f<span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">,</span><span class="style2">subscriber</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">)</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+  subscriber</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">.</span><span style="box-sizing: border-box; color: rgb(0, 102, 0);" class="style2">surname</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">:=</span><span style="box-sizing: border-box; color: rgb(255, 0, 0);">&#39;<span class="style2">petrov&#39;</span></span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+  subscriber</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">.</span><span style="box-sizing: border-box; color: rgb(0, 102, 0);" class="style2">tel</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">:=</span><span style="box-sizing: border-box; color: rgb(204, 102, 204);" class="style2">236244475</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+  </span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">write</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">(</span>f<span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">,</span><span class="style2">subscriber</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">)</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+  close</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">(</span>f<span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">)</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+  Reset</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">(</span>f<span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">)</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+  </span><span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">while</span> <span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">not</span> <span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">Eof</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">(</span>f<span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">)</span> <span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">do</span> <span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">begin</span><span class="style2">
+    </span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">Read</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">(</span>f<span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">,</span><span class="style2"> subscriber</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">)</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+    </span><span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">with</span><span class="style2"> subscriber </span><span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">do</span> <span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">begin</span><span class="style2">
+      Str</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">(</span><span class="style2">tel</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">,</span>s<span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">)</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+      </span><span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">if</span><span class="style2"> Copy</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">(</span>s<span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">,</span><span style="box-sizing: border-box; color: rgb(204, 102, 204);" class="style2">1</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">,</span><span style="box-sizing: border-box; color: rgb(204, 102, 204);" class="style2">3</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">)</span> <span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">=</span> <span style="box-sizing: border-box; color: rgb(255, 0, 0);" class="style2">&#39;362&#39;</span> <span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">then</span><span class="style2">
+        tel </span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">:=</span><span class="style2"> tel</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">+</span><span style="box-sizing: border-box; color: rgb(204, 102, 204);" class="style2">2000000</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+    </span><span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">end</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+    Seek</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">(</span>f<span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">,</span><span class="style2">FilePos</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">(</span>f<span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">)</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">-</span><span style="box-sizing: border-box; color: rgb(204, 102, 204);" class="style2">1</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">)</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span> <span style="box-sizing: border-box; color: rgb(128, 128, 128); font-style: italic;" class="style2">// возврат указателя назад</span><span class="style2">
+    </span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">Write</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">(</span>f<span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">,</span><span class="style2">subscriber</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">)</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+    </span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">Writeln</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">(</span><span class="style2">subscriber</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">.</span><span style="box-sizing: border-box; color: rgb(0, 102, 0);" class="style2">surname</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">,</span> <span style="box-sizing: border-box; color: rgb(255, 0, 0);" class="style2">&#39; &#39;</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">,</span><span class="style2">subscriber</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">.</span><span style="box-sizing: border-box; color: rgb(0, 102, 0);" class="style2">tel</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">)</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+  </span><span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">end</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+  Close</span><span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">(</span>f<span style="box-sizing: border-box; color: rgb(0, 153, 0);" class="style2">)</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+</span><span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">end</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);">.</span></pre>
+				<p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les23.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les24/5.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:10:19 GMT -->
+</html>

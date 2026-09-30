@@ -1,0 +1,354 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les24/7.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:10:19 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                 Тема 6. Последовательности: Список в Python.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px; text-align: justify; color: rgb(64, 64, 64); font-family: Lato, proxima-nova, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(252, 252, 252); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<a class="reference external" target="_blank" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer;" href="https://ru.wikipedia.org/wiki/Список_(информатика)">
+				Список</a><span>&nbsp;</span>(<a class="reference internal" title="list" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer;" href="https://www.yuripetrov.ru/edu/python/ch_03_01.html#id47"><code class="xref py py-class docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(64, 64, 64); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">list</span></code></a>) 
+				- это упорядоченная изменяемая последовательность элементов.</p>
+				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px; text-align: justify; color: rgb(64, 64, 64); font-family: Lato, proxima-nova, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(252, 252, 252); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Особенности:</p>
+				<ul class="simple" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: disc; text-align: justify; line-height: 24px; color: rgb(64, 64, 64); font-family: Lato, proxima-nova, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(252, 252, 252); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li style="box-sizing: border-box; text-align: justify; list-style: disc; margin-left: 24px;">
+								<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px; text-align: justify;">
+								может содержать элементы разного типа;</p>
+								</li>
+								<li style="box-sizing: border-box; text-align: justify; list-style: disc; margin-left: 24px;">
+								<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px; text-align: justify;">
+								поддерживает операторы сравнения: при этом 
+								сравнивание производится поэлементно (и 
+								рекурсивно, при наличии вложенных элементов).</p>
+								</li>
+				</ul>
+				<dl class="py class" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none; color: rgb(64, 64, 64); font-family: Lato, proxima-nova, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(252, 252, 252); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<dt id="list" style="box-sizing: border-box; font-weight: 700; margin: 0px 0px 6px; display: table; font-size: 14.4px; line-height: normal; background: rgb(231, 242, 250); color: rgb(27, 122, 65); border-top: 3px solid rgb(106, 176, 222); padding: 6px; position: relative;">
+								<em class="property" style="box-sizing: border-box; display: inline-block; padding-right: 8px;">
+								class</em><code class="sig-name descname" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 14.4px; white-space: nowrap; max-width: 100%; background: transparent; border: none; padding: 0px; color: rgb(0, 0, 0); overflow-x: auto; font-weight: 700;">list</code><span class="sig-paren" style="box-sizing: border-box;">(</span><span class="optional" style="box-sizing: border-box; display: inline-block; padding: 0px 4px; color: rgb(0, 0, 0); font-weight: 700;">[</span><em class="sig-param" style="box-sizing: border-box;">iterable</em><span class="optional" style="box-sizing: border-box; display: inline-block; padding: 0px 4px; color: rgb(0, 0, 0); font-weight: 700;">]</span><span class="sig-paren" style="box-sizing: border-box;">)</span><a class="headerlink" title="Ссылка на это определение" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14.4px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_03_01.html#list"></a></dt>
+								<dd style="box-sizing: border-box; margin: 0px 0px 12px 24px; text-align: justify; line-height: 24px;">
+								<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+								Конструктор класса<span>&nbsp;</span><a class="reference external" target="_blank" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer;" href="https://docs.python.org/3/library/functions.html#func-list">list</a>.</p>
+								</dd>
+				</dl>
+				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px; text-align: justify; color: rgb(64, 64, 64); font-family: Lato, proxima-nova, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(252, 252, 252); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Создать список можно несколькими способами (Листинг&nbsp;1.).</p>
+				<div class="literal-block-wrapper docutils container" id="id90" style="box-sizing: border-box; color: rgb(64, 64, 64); font-family: Lato, proxima-nova, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(252, 252, 252); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="code-block-caption" style="box-sizing: border-box; font-weight: bold; font-size: 13.6px; font-style: italic; line-height: 1; padding: 1em 0px; text-align: left;">
+												<span class="caption-text" style="box-sizing: border-box;">
+												Листинг&nbsp;1. - Создание списка</span><a class="headerlink" title="Постоянная ссылка на код" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_03_01.html#id90"></a></div>
+								<div class="highlight-pycon notranslate" style="box-sizing: border-box; border: 1px solid rgb(225, 228, 229); overflow-x: auto; margin: 1px 0px 24px;">
+												<div class="highlight" style="box-sizing: border-box; background: rgb(248, 248, 248); border: none; overflow-x: auto; margin: 0px; padding: 0px;">
+																<pre style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; white-space: pre; line-height: 1.4; margin: 0px; padding: 12px; display: block; overflow: auto;" class="style2"><span class="go" style="box-sizing: border-box; color: rgb(136, 136, 136);"># 1. Пустой список создается с помощью пустых квадратных скобок или функции list()</span>
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="p" style="box-sizing: border-box;">[]</span>
+<span class="go" style="box-sizing: border-box; color: rgb(136, 136, 136);">[]</span>
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">list</span><span class="p" style="box-sizing: border-box;">()</span>
+<span class="go" style="box-sizing: border-box; color: rgb(136, 136, 136);">[]</span>
+
+<span class="go" style="box-sizing: border-box; color: rgb(136, 136, 136);"># 2.  Инициализировать список элементами можно одним из следующих способов:</span>
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="p" style="box-sizing: border-box;">[</span><span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">1</span><span class="p" style="box-sizing: border-box;">,</span> <span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;text&quot;</span><span class="p" style="box-sizing: border-box;">,</span> <span class="mf" style="box-sizing: border-box; color: rgb(102, 102, 102);">2.0</span><span class="p" style="box-sizing: border-box;">]</span>
+<span class="go" style="box-sizing: border-box; color: rgb(136, 136, 136);">[1, &#39;text&#39;, 2.0]</span>
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">list</span><span class="p" style="box-sizing: border-box;">(</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;text&quot;</span><span class="p" style="box-sizing: border-box;">)</span>
+<span class="go" style="box-sizing: border-box; color: rgb(136, 136, 136);">[&#39;t&#39;, &#39;e&#39;, &#39;x&#39;, &#39;t&#39;]</span>
+</pre>
+												</div>
+								</div>
+				</div>
+				<div class="section" id="id46" style="box-sizing: border-box; color: rgb(64, 64, 64); font-family: Lato, proxima-nova, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(252, 252, 252); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<h5 style="box-sizing: border-box; margin-top: 0px; font-weight: 700; font-family: &quot;Roboto Slab&quot;, ff-tisa-web-pro, Georgia, Arial, sans-serif; font-size: 17.6px;">
+								<a class="toc-backref" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer;" href="https://www.yuripetrov.ru/edu/python/ch_03_01.html#id121">
+								<span class="section-number" style="box-sizing: border-box;">
+								<span>&nbsp;</span></span>Характерные операции</a><a class="headerlink" title="Ссылка на этот заголовок" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_03_01.html#id46"></a></h5>
+								<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px; text-align: justify;">
+								Списки поддерживают все общие операции для 
+								последовательностей, и имеют ряд дополнительных 
+								методов.</p>
+								<dl class="py class" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none;">
+												<dt id="id47" style="box-sizing: border-box; font-weight: 700; margin: 0px 0px 6px; display: table; font-size: 14.4px; line-height: normal; background: rgb(231, 242, 250); color: rgb(27, 122, 65); border-top: 3px solid rgb(106, 176, 222); padding: 6px; position: relative;">
+												<em class="property" style="box-sizing: border-box; display: inline-block; padding-right: 8px;">
+												class</em><code class="sig-name descname" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 14.4px; white-space: nowrap; max-width: 100%; background: transparent; border: none; padding: 0px; color: rgb(0, 0, 0); overflow-x: auto; font-weight: 700;">list</code><a class="headerlink" title="Ссылка на это определение" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14.4px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_03_01.html#id47"></a></dt>
+												<dd style="box-sizing: border-box; margin: 0px 0px 12px 24px; text-align: justify; line-height: 24px;">
+												<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+												Пусть<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">lst</span></code><span>&nbsp;</span>- 
+												список, на котором вызывается 
+												метод.</p>
+												<dl class="py method" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none;">
+																<dt id="list.append" style="box-sizing: border-box; font-weight: 700; margin: 0px 0px 6px; display: table; font-size: 14.4px; line-height: normal; background: rgb(240, 240, 240); color: rgb(85, 85, 85); border-top: none; padding: 6px; position: relative; border-right: none; border-bottom: none; border-image: initial; border-left: 3px solid rgb(204, 204, 204);">
+																<code class="sig-name descname" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 14.4px; white-space: nowrap; max-width: 100%; background: transparent; border: none; padding: 0px; color: rgb(0, 0, 0); overflow-x: auto; font-weight: 700;">
+																append</code><span class="sig-paren" style="box-sizing: border-box;">(</span><em class="sig-param" style="box-sizing: border-box;"><span class="n" style="box-sizing: border-box;">x</span></em><span class="sig-paren" style="box-sizing: border-box;">)</span><a class="headerlink" title="Ссылка на это определение" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14.4px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_03_01.html#list.append"></a></dt>
+																<dd style="box-sizing: border-box; margin: 0px 0px 12px 24px; text-align: justify; line-height: 24px;">
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+																Добавляет 
+																элемент<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">x</span></code><span>&nbsp;</span>в 
+																конец списка<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">lst</span></code>.</p>
+																</dd>
+												</dl>
+												<dl class="py method" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none;">
+																<dt id="list.extend" style="box-sizing: border-box; font-weight: 700; margin: 0px 0px 6px; display: table; font-size: 14.4px; line-height: normal; background: rgb(240, 240, 240); color: rgb(85, 85, 85); border-top: none; padding: 6px; position: relative; border-right: none; border-bottom: none; border-image: initial; border-left: 3px solid rgb(204, 204, 204);">
+																<code class="sig-name descname" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 14.4px; white-space: nowrap; max-width: 100%; background: transparent; border: none; padding: 0px; color: rgb(0, 0, 0); overflow-x: auto; font-weight: 700;">
+																extend</code><span class="sig-paren" style="box-sizing: border-box;">(</span><em class="sig-param" style="box-sizing: border-box;"><span class="n" style="box-sizing: border-box;">m</span></em><span class="sig-paren" style="box-sizing: border-box;">)</span><a class="headerlink" title="Ссылка на это определение" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14.4px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_03_01.html#list.extend"></a></dt>
+																<dt style="box-sizing: border-box; font-weight: 700; margin: 6px 0px; display: table; font-size: 14.4px; line-height: normal; background: rgb(240, 240, 240); color: rgb(85, 85, 85); border-top: none; padding: 6px; position: relative; border-right: none; border-bottom: none; border-image: initial; border-left: 3px solid rgb(204, 204, 204);">
+																<code class="sig-name descname" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 14.4px; white-space: nowrap; max-width: 100%; background: transparent; border: none; padding: 0px; color: rgb(0, 0, 0); overflow-x: auto; font-weight: 700;">
+																lst += m</code></dt>
+																<dd style="box-sizing: border-box; margin: 0px 0px 12px 24px; text-align: justify; line-height: 24px;">
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+																Добавляет в 
+																конец списка<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">lst</span></code><span>&nbsp;</span>все 
+																элементы 
+																коллекции<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">m</span></code>.</p>
+																</dd>
+												</dl>
+												<dl class="py method" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none;">
+																<dt id="list.insert" style="box-sizing: border-box; font-weight: 700; margin: 0px 0px 6px; display: table; font-size: 14.4px; line-height: normal; background: rgb(240, 240, 240); color: rgb(85, 85, 85); border-top: none; padding: 6px; position: relative; border-right: none; border-bottom: none; border-image: initial; border-left: 3px solid rgb(204, 204, 204);">
+																<code class="sig-name descname" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 14.4px; white-space: nowrap; max-width: 100%; background: transparent; border: none; padding: 0px; color: rgb(0, 0, 0); overflow-x: auto; font-weight: 700;">
+																insert</code><span class="sig-paren" style="box-sizing: border-box;">(</span><em class="sig-param" style="box-sizing: border-box;"><span class="n" style="box-sizing: border-box;">i</span></em>,<span>&nbsp;</span><em class="sig-param" style="box-sizing: border-box;"><span class="n" style="box-sizing: border-box;">x</span></em><span class="sig-paren" style="box-sizing: border-box;">)</span><a class="headerlink" title="Ссылка на это определение" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14.4px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_03_01.html#list.insert"></a></dt>
+																<dd style="box-sizing: border-box; margin: 0px 0px 12px 24px; text-align: justify; line-height: 24px;">
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+																Вставляет 
+																элемент<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">х</span></code><span>&nbsp;</span>в 
+																список<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">lst</span></code><span>&nbsp;</span>в 
+																позицию<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">i</span></code>.</p>
+																</dd>
+												</dl>
+												<dl class="py method" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none;">
+																<dt id="list.remove" style="box-sizing: border-box; font-weight: 700; margin: 0px 0px 6px; display: table; font-size: 14.4px; line-height: normal; background: rgb(240, 240, 240); color: rgb(85, 85, 85); border-top: none; padding: 6px; position: relative; border-right: none; border-bottom: none; border-image: initial; border-left: 3px solid rgb(204, 204, 204);">
+																<code class="sig-name descname" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 14.4px; white-space: nowrap; max-width: 100%; background: transparent; border: none; padding: 0px; color: rgb(0, 0, 0); overflow-x: auto; font-weight: 700;">
+																remove</code><span class="sig-paren" style="box-sizing: border-box;">(</span><em class="sig-param" style="box-sizing: border-box;"><span class="n" style="box-sizing: border-box;">x</span></em><span class="sig-paren" style="box-sizing: border-box;">)</span><a class="headerlink" title="Ссылка на это определение" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14.4px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_03_01.html#list.remove"></a></dt>
+																<dd style="box-sizing: border-box; margin: 0px 0px 12px 24px; text-align: justify; line-height: 24px;">
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+																Удаляет из 
+																списка<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">lst</span></code><span>&nbsp;</span>первый 
+																элемент со 
+																значением<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">x</span></code>.</p>
+																</dd>
+												</dl>
+												<dl class="py method" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none;">
+																<dt id="list.pop" style="box-sizing: border-box; font-weight: 700; margin: 0px 0px 6px; display: table; font-size: 14.4px; line-height: normal; background: rgb(240, 240, 240); color: rgb(85, 85, 85); border-top: none; padding: 6px; position: relative; border-right: none; border-bottom: none; border-image: initial; border-left: 3px solid rgb(204, 204, 204);">
+																<code class="sig-name descname" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 14.4px; white-space: nowrap; max-width: 100%; background: transparent; border: none; padding: 0px; color: rgb(0, 0, 0); overflow-x: auto; font-weight: 700;">
+																pop</code><span class="sig-paren" style="box-sizing: border-box;">(</span><span class="optional" style="box-sizing: border-box; display: inline-block; padding: 0px 4px; color: rgb(0, 0, 0); font-weight: 700;">[</span><em class="sig-param" style="box-sizing: border-box;">i</em><span class="optional" style="box-sizing: border-box; display: inline-block; padding: 0px 4px; color: rgb(0, 0, 0); font-weight: 700;">]</span><span class="sig-paren" style="box-sizing: border-box;">)</span><a class="headerlink" title="Ссылка на это определение" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14.4px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_03_01.html#list.pop"></a></dt>
+																<dd style="box-sizing: border-box; margin: 0px 0px 12px 24px; text-align: justify; line-height: 24px;">
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+																Возвращает 
+																последний или<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">i</span></code>-й 
+																элемент, удаляя 
+																его из 
+																последовательности.</p>
+																</dd>
+												</dl>
+												<dl class="py method" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none;">
+																<dt id="list.clear" style="box-sizing: border-box; font-weight: 700; margin: 0px 0px 6px; display: table; font-size: 14.4px; line-height: normal; background: rgb(240, 240, 240); color: rgb(85, 85, 85); border-top: none; padding: 6px; position: relative; border-right: none; border-bottom: none; border-image: initial; border-left: 3px solid rgb(204, 204, 204);">
+																<code class="sig-name descname" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 14.4px; white-space: nowrap; max-width: 100%; background: transparent; border: none; padding: 0px; color: rgb(0, 0, 0); overflow-x: auto; font-weight: 700;">
+																clear</code><span class="sig-paren" style="box-sizing: border-box;">()</span><a class="headerlink" title="Ссылка на это определение" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14.4px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_03_01.html#list.clear"></a></dt>
+																<dd style="box-sizing: border-box; margin: 0px 0px 12px 24px; text-align: justify; line-height: 24px;">
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+																Удаляет из 
+																списка<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">lst</span></code><span>&nbsp;</span>все 
+																элементы 
+																(очищает 
+																список).</p>
+																</dd>
+												</dl>
+												<dl class="py method" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none;">
+																<dt id="list.sort" style="box-sizing: border-box; font-weight: 700; margin: 0px 0px 6px; display: table; font-size: 14.4px; line-height: normal; background: rgb(240, 240, 240); color: rgb(85, 85, 85); border-top: none; padding: 6px; position: relative; border-right: none; border-bottom: none; border-image: initial; border-left: 3px solid rgb(204, 204, 204);">
+																<code class="sig-name descname" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 14.4px; white-space: nowrap; max-width: 100%; background: transparent; border: none; padding: 0px; color: rgb(0, 0, 0); overflow-x: auto; font-weight: 700;">
+																sort</code><span class="sig-paren" style="box-sizing: border-box;">(</span><em class="sig-param" style="box-sizing: border-box;"><span class="n" style="box-sizing: border-box;">lst</span></em>,<span>&nbsp;</span><em class="sig-param" style="box-sizing: border-box;"><span class="n" style="box-sizing: border-box;">key</span><span class="o" style="box-sizing: border-box;">=</span><span class="default_value" style="box-sizing: border-box;">None</span></em>,<span>&nbsp;</span><em class="sig-param" style="box-sizing: border-box;"><span class="n" style="box-sizing: border-box;">reverse</span><span class="o" style="box-sizing: border-box;">=</span><span class="default_value" style="box-sizing: border-box;">None</span></em><span class="sig-paren" style="box-sizing: border-box;">)</span><a class="headerlink" title="Ссылка на это определение" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14.4px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_03_01.html#list.sort"></a></dt>
+																<dd style="box-sizing: border-box; margin: 0px 0px 12px 24px; text-align: justify; line-height: 24px;">
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+																Выполняет 
+																сортировку 
+																списка<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">lst</span></code>. 
+																Отличается от 
+																функции<span>&nbsp;</span><a class="reference internal" title="sorted" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer;" href="https://www.yuripetrov.ru/edu/python/ch_04_01.html#sorted"><code class="xref py py-func docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(64, 64, 64); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">sorted()</span></code></a><span>&nbsp;</span>тем, 
+																что сортирует 
+																исходный объект, 
+																а не возвращает 
+																новый.</p>
+																<dl class="field-list simple" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none; display: grid; grid-template-columns: max-content auto;">
+																				<dt class="field-odd" style="box-sizing: border-box; font-weight: 700; margin-bottom: 0px; padding-left: 1rem;">Параметры</dt>
+																				<dd class="field-odd" style="box-sizing: border-box; margin: 0px 0px 0px 24px; text-align: justify; line-height: 24px;">
+																				<ul class="simple" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: disc; text-align: justify; line-height: 24px;">
+																								<li style="box-sizing: border-box; text-align: justify; list-style: disc; margin-left: 24px;">
+																								<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px; text-align: justify;"><strong style="box-sizing: border-box; font-weight: 700;">key</strong><span>&nbsp;</span>– функция сортировки (по умолчанию не учитывается, сортировка осуществляется поэлементно);</p>
+																								</li>
+																								<li style="box-sizing: border-box; text-align: justify; list-style: disc; margin-left: 24px;">
+																								<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px; text-align: justify;"><strong style="box-sizing: border-box; font-weight: 700;">reverse</strong><span>&nbsp;</span>– если равен<span>&nbsp;</span><a class="reference internal" title="True" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer;" href="https://www.yuripetrov.ru/edu/python/ch_03_01.html#True"><code class="xref py py-data docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(64, 64, 64); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">True</span></code></a>, сортировка осуществляется в обратном порядке.</p>
+																								</li>
+																				</ul>
+																				</dd>
+																</dl>
+																</dd>
+												</dl>
+												<dl class="py method" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none;">
+																<dt id="list.reverse" style="box-sizing: border-box; font-weight: 700; margin: 0px 0px 6px; display: table; font-size: 14.4px; line-height: normal; background: rgb(240, 240, 240); color: rgb(85, 85, 85); border-top: none; padding: 6px; position: relative; border-right: none; border-bottom: none; border-image: initial; border-left: 3px solid rgb(204, 204, 204);">
+																<code class="sig-name descname" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 14.4px; white-space: nowrap; max-width: 100%; background: transparent; border: none; padding: 0px; color: rgb(0, 0, 0); overflow-x: auto; font-weight: 700;">
+																reverse</code><span class="sig-paren" style="box-sizing: border-box;">()</span><a class="headerlink" title="Ссылка на это определение" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14.4px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_03_01.html#list.reverse"></a></dt>
+																<dd style="box-sizing: border-box; margin: 0px 0px 12px 24px; text-align: justify; line-height: 24px;">
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+																Переворачивает 
+																элементы списка<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">lst</span></code>.</p>
+																</dd>
+												</dl>
+												</dd>
+								</dl>
+								<dl class="py function" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none;">
+												<dt style="box-sizing: border-box; font-weight: 700; margin: 0px 0px 6px; display: table; font-size: 14.4px; line-height: normal; background: rgb(231, 242, 250); color: rgb(27, 122, 65); border-top: 3px solid rgb(106, 176, 222); padding: 6px; position: relative;">
+												<code class="sig-name descname" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 14.4px; white-space: nowrap; max-width: 100%; background: transparent; border: none; padding: 0px; color: rgb(0, 0, 0); overflow-x: auto; font-weight: 700;">
+												del lst[i[:j]]</code></dt>
+												<dd style="box-sizing: border-box; margin: 0px 0px 12px 24px; text-align: justify; line-height: 24px;">
+												<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+												Удаляет из списка<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">lst</span></code><span>&nbsp;</span>элемент 
+												с индексом<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">i</span></code><span>&nbsp;</span>(или 
+												несколько элементов, если задан 
+												индекс<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">j</span></code>).</p>
+												</dd>
+								</dl>
+								<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px; text-align: justify;">
+								В Листинге&nbsp;2. приведен пример использования 
+								методов списков.</p>
+								<div class="literal-block-wrapper docutils container" id="id91" style="box-sizing: border-box;">
+												<div class="code-block-caption" style="box-sizing: border-box; font-weight: bold; font-size: 13.6px; font-style: italic; line-height: 1; padding: 1em 0px; text-align: left;">
+																<span class="caption-text" style="box-sizing: border-box;">
+																Листинг&nbsp;2. - 
+																Работа со 
+																списками</span><a class="headerlink" title="Постоянная ссылка на код" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_03_01.html#id91"></a></div>
+												<div class="highlight-pycon notranslate" style="box-sizing: border-box; border: 1px solid rgb(225, 228, 229); overflow-x: auto; margin: 1px 0px 24px;">
+																<div class="highlight" style="box-sizing: border-box; background: rgb(248, 248, 248); border: none; overflow-x: auto; margin: 0px; padding: 0px;">
+																				<pre style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; white-space: pre; line-height: 1.4; margin: 0px; padding: 12px; display: block; overflow: auto;" class="style2"><span class="go" style="box-sizing: border-box; color: rgb(136, 136, 136);"># 1. Методы списка</span>
+
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">a</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="p" style="box-sizing: border-box;">[</span><span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">8</span><span class="p" style="box-sizing: border-box;">,</span> <span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">7</span><span class="p" style="box-sizing: border-box;">,</span> <span class="mf" style="box-sizing: border-box; color: rgb(102, 102, 102);">5.5</span><span class="p" style="box-sizing: border-box;">,</span> <span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">1000</span><span class="p" style="box-sizing: border-box;">,</span> <span class="mf" style="box-sizing: border-box; color: rgb(102, 102, 102);">3.50</span><span class="p" style="box-sizing: border-box;">,</span> <span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">200</span><span class="p" style="box-sizing: border-box;">]</span>
+
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">a</span><span class="p" style="box-sizing: border-box;">[</span><span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">0</span><span class="p" style="box-sizing: border-box;">]</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">7</span>
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">a</span>
+<span class="go" style="box-sizing: border-box; color: rgb(136, 136, 136);">[7, 7, 5.5, 1000, 3.50, 200]</span>
+
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">a</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">index</span><span class="p" style="box-sizing: border-box;">(</span><span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">7</span><span class="p" style="box-sizing: border-box;">)</span>
+<span class="go" style="box-sizing: border-box; color: rgb(136, 136, 136);">0</span>
+
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">a</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">count</span><span class="p" style="box-sizing: border-box;">(</span><span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">7</span><span class="p" style="box-sizing: border-box;">)</span>
+<span class="go" style="box-sizing: border-box; color: rgb(136, 136, 136);">2</span>
+
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">a</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">insert</span><span class="p" style="box-sizing: border-box;">(</span><span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">2</span><span class="p" style="box-sizing: border-box;">,</span> <span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">1000</span><span class="p" style="box-sizing: border-box;">)</span>
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">a</span>
+<span class="go" style="box-sizing: border-box; color: rgb(136, 136, 136);">[7, 7, 1000, 5.5, 1000, 3.5, 200]</span>
+
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">a</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">append</span><span class="p" style="box-sizing: border-box;">(</span><span class="mf" style="box-sizing: border-box; color: rgb(102, 102, 102);">5.5</span><span class="p" style="box-sizing: border-box;">)</span>
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">a</span>
+<span class="go" style="box-sizing: border-box; color: rgb(136, 136, 136);">[7, 7, 1000, 5.5, 1000, 3.5, 200, 5.5]</span>
+
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">a</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">+=</span> <span class="p" style="box-sizing: border-box;">[</span><span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">0</span><span class="p" style="box-sizing: border-box;">,</span> <span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">0</span><span class="p" style="box-sizing: border-box;">]</span>
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">a</span>
+<span class="go" style="box-sizing: border-box; color: rgb(136, 136, 136);">[7, 7, 1000, 5.5, 1000, 3.5, 200, 5.5, 0, 0]</span>
+
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">b</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="n" style="box-sizing: border-box;">a</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">pop</span><span class="p" style="box-sizing: border-box;">()</span>
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">b</span>
+<span class="go" style="box-sizing: border-box; color: rgb(136, 136, 136);">0</span>
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">a</span>
+<span class="go" style="box-sizing: border-box; color: rgb(136, 136, 136);">[7, 7, 1000, 5.5, 1000, 3.5, 200, 5.5, 0]</span>
+
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">a</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">sort</span><span class="p" style="box-sizing: border-box;">()</span>
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">a</span>
+<span class="go" style="box-sizing: border-box; color: rgb(136, 136, 136);">[0, 3.5, 5.5, 5.5, 7, 7, 200, 1000, 1000]</span>
+
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">a</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">remove</span><span class="p" style="box-sizing: border-box;">(</span><span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">1000</span><span class="p" style="box-sizing: border-box;">)</span>
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">a</span>
+<span class="go" style="box-sizing: border-box; color: rgb(136, 136, 136);">[0, 3.5, 5.5, 5.5, 7, 7, 200, 1000]</span>
+
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">del</span> <span class="n" style="box-sizing: border-box;">a</span><span class="p" style="box-sizing: border-box;">[</span><span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">2</span><span class="p" style="box-sizing: border-box;">:</span><span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">4</span><span class="p" style="box-sizing: border-box;">]</span>
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">a</span>
+<span class="go" style="box-sizing: border-box; color: rgb(136, 136, 136);">[0, 3.5, 7, 7, 200, 1000]</span>
+
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">a</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">reverse</span><span class="p" style="box-sizing: border-box;">()</span>
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">a</span>
+<span class="go" style="box-sizing: border-box; color: rgb(136, 136, 136);">[1000, 200, 7, 7, 3.5, 0]</span>
+
+<span class="go" style="box-sizing: border-box; color: rgb(136, 136, 136);"># 2. Сравнения и равенство</span>
+<span class="go" style="box-sizing: border-box; color: rgb(136, 136, 136);"># Простое сравнение</span>
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">a</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="p" style="box-sizing: border-box;">[</span><span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">1</span><span class="p" style="box-sizing: border-box;">,</span> <span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">5</span><span class="p" style="box-sizing: border-box;">,</span> <span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">10</span><span class="p" style="box-sizing: border-box;">]</span>
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">b</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="p" style="box-sizing: border-box;">[</span><span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">1</span><span class="p" style="box-sizing: border-box;">,</span> <span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">5</span><span class="p" style="box-sizing: border-box;">,</span> <span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">10</span><span class="p" style="box-sizing: border-box;">]</span>
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">a</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">==</span> <span class="n" style="box-sizing: border-box;">b</span>
+<span class="go" style="box-sizing: border-box; color: rgb(136, 136, 136);">True</span>
+
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">b</span><span class="p" style="box-sizing: border-box;">[</span><span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">0</span><span class="p" style="box-sizing: border-box;">]</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">5</span>
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">b</span>
+<span class="go" style="box-sizing: border-box; color: rgb(136, 136, 136);">[5, 5, 10]</span>
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">a</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">&lt;</span> <span class="n" style="box-sizing: border-box;">b</span>
+<span class="go" style="box-sizing: border-box; color: rgb(136, 136, 136);">True</span>
+
+<span class="go" style="box-sizing: border-box; color: rgb(136, 136, 136);"># Вложенное сравнение</span>
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">a</span><span class="p" style="box-sizing: border-box;">[</span><span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">0</span><span class="p" style="box-sizing: border-box;">]</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="p" style="box-sizing: border-box;">[</span><span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">3</span><span class="p" style="box-sizing: border-box;">,</span> <span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;aaa&quot;</span><span class="p" style="box-sizing: border-box;">]</span>
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">b</span><span class="p" style="box-sizing: border-box;">[</span><span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">0</span><span class="p" style="box-sizing: border-box;">]</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="p" style="box-sizing: border-box;">[</span><span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">3</span><span class="p" style="box-sizing: border-box;">,</span> <span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;bb&quot;</span><span class="p" style="box-sizing: border-box;">]</span>
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">a</span><span class="p" style="box-sizing: border-box;">,</span> <span class="n" style="box-sizing: border-box;">b</span>
+<span class="go" style="box-sizing: border-box; color: rgb(136, 136, 136);">([[3, &#39;aaa&#39;], 5, 10], [[3, &#39;bb&#39;], 5, 10])</span>
+<span class="gp" style="box-sizing: border-box; color: rgb(0, 0, 128); font-weight: bold; user-select: none; pointer-events: none;">&gt;&gt;&gt; </span><span class="n" style="box-sizing: border-box;">a</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">&lt;</span> <span class="n" style="box-sizing: border-box;">b</span>
+<span class="go" style="box-sizing: border-box; color: rgb(136, 136, 136);">True</span></pre>
+																</div>
+												</div>
+								</div>
+				</div>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les24.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les24/7.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:10:19 GMT -->
+</html>

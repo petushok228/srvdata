@@ -1,0 +1,598 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les48/3.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:58:40 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style3 {
+	font-size: medium;
+	color: #0000FF;
+}
+    .style4 {
+	color: rgb(255, 0, 0);
+}
+.style5 {
+	font-weight: bold;
+}
+    .style6 {
+	font-size: small;
+	color: #0000FF;
+	margin-left: 40px;
+}
+    .style7 {
+	font-size: small;
+	color: #0000FF;
+	text-align: left;
+	margin-left: 40px;
+}
+    .style8 {
+	font-size: small;
+	color: #0000FF;
+}
+    .style9 {
+	color: rgb(0, 0, 255);
+}
+    .style10 {
+	font-size: small;
+	color: #0000FF;
+	margin-left: 80px;
+}
+.style11 {
+	color: rgb(0, 0, 255);
+	font-size: large;
+}
+    .style12 {
+	margin-left: 40px;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom: thin double #800000; height: 23px;">
+                Тема 3. Свойства классов.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text" style="height: 8377px">
+                <p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Кроме обычных методов в языке C# предусмотрены 
+				<span class="style4"><b>специальные 
+				методы доступа, которые называют<span>&nbsp;</span></b><span class="style5">свойства</span></span>. 
+				Они обеспечивают простой доступ к полям классов и структур, 
+				узнать их значение или выполнить их установку.</p>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Определение свойств</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Стандартное описание свойства имеет следующий синтаксис:</p>
+				<pre class="style3"><strong>[модификаторы] тип_свойства название_свойства
+	{    
+		get { действия, выполняемые при получении значения свойства}    
+		set { действия, выполняемые при установке значения свойства}
+	}</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вначале определения свойства могут идти различные модификаторы, 
+				в частности, модификаторы доступа. Затем указывается тип 
+				свойства, после которого идет название свойства. Полное 
+				определение свойства содержит два блока:<span>&nbsp;</span><span class="b" style="font-weight: bold;">get</span><span>&nbsp;</span>и<span>&nbsp;</span><span class="b" style="font-weight: bold;">set</span>.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В блоке<span>&nbsp;</span><span class="b" style="font-weight: bold;">get</span><span>&nbsp;</span>выполняются 
+				действия по получению значения свойства. В этом блоке с помощью 
+				оператора<span>&nbsp;</span><span class="b" style="font-weight: bold;">return</span><span>&nbsp;</span>возвращаем 
+				некоторое значение.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В блоке<span>&nbsp;</span><span class="b" style="font-weight: bold;">set</span><span>&nbsp;</span>устанавливается 
+				значение свойства. В этом блоке с помощью параметра<span>&nbsp;</span><span class="b" style="font-weight: bold;">value</span><span>&nbsp;</span>мы 
+				можем получить значение, которое передано свойству.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Блоки<span>&nbsp;</span><span class="b" style="font-weight: bold;">get</span><span>&nbsp;</span>и<span>&nbsp;</span><span class="b" style="font-weight: bold;">set</span><span>&nbsp;</span>еще 
+				называются акссесорами или методами доступа (к значению 
+				свойства), а также геттером и сеттером.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Рассмотрим пример:</p>
+				<pre class="style6"><strong>Person person = new Person(); 
+// Устанавливаем свойство - срабатывает блок Set
+// значение "Tom" и есть передаваемое в свойство value
+person.Name = "Tom"; //<span lang="ru">инициализация поля свойство </span>set <span lang="ru">метода </span>Name
+// Получаем значение свойства и присваиваем его переменной - срабатывает блок Get
+string personName = person.Name;
+Console.WriteLine(person.Name);  // Tom 
+class Person
+{    
+	<span class="style4">private</span> string name = "Undefined";     
+	public string Name    
+	{        get { return name;// возвращаем значение свойства }       
+	 	 set  { name = value;  // устанавливаем новое значение свойства }    
+	}
+}</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Здесь в классе Person определено приватное поле<span>&nbsp;</span><code style="font-family: monospace;">name</code>, 
+				которая хранит имя пользователя, и есть общедоступное свойство<span>&nbsp;</span><code style="font-family: monospace;">Name</code>. 
+				Хотя они имеют практически одинаковое название за исключением 
+				регистра, но это не более чем стиль, названия у них могут быть 
+				произвольные и не обязательно должны совпадать.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Через это свойство мы можем управлять доступом к переменной<span>&nbsp;</span><code style="font-family: monospace;">name</code>. 
+				В свойстве в блоке<span>&nbsp;</span><span class="b" style="font-weight: bold;">get</span><span>&nbsp;</span>возвращаем 
+				значение поля:</p>
+				<pre class="style6"><strong>get { return name; }</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				А в блоке<span>&nbsp;</span><span class="b" style="font-weight: bold;">set</span><span>&nbsp;</span>устанавливаем 
+				значение переменной name. Параметр<span>&nbsp;</span><span class="b" style="font-weight: bold;">value</span><span>&nbsp;</span>представляет 
+				передаваемое значение, которое передается переменной name.</p>
+				<pre class="style6"><strong>set { name = value; }</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В программе мы можем обращаться к этому свойству, как к обычному 
+				полю. Если мы ему присваиваем какое-нибудь значение, то 
+				срабатывает блок<span>&nbsp;</span><span class="b" style="font-weight: bold;">set</span>, 
+				а передаваемое значение передается в параметр<span>&nbsp;</span><span class="b" style="font-weight: bold;">value</span>:</p>
+				<pre class="style7"><strong>person.<span class="style4">Name</span> = "Tom";  //<span lang="ru">Это метод свойства поле с маленькой буквы, а метод с заглавной</span></strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если мы получаем значение свойства, то срабатывает блок<span>&nbsp;</span><span class="b" style="font-weight: bold;">get</span>, 
+				который по сути возвращает значение переменной name:</p>
+				<pre class="style6"><strong>string personName = person.Name; </strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				То есть по сути <span class="style4"><strong><em>свойство Name ничего не хранит, оно выступает в 
+				роли посредника между внешним кодом и переменной name</em></strong></span>.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Возможно, может возникнуть вопрос, зачем нужны свойства, если мы 
+				можем в данной ситуации обходиться обычными полями класса? Но 
+				свойства позволяют вложить дополнительную логику, которая может 
+				быть необходима при установке или получении значения. 
+				<span class="style4"><strong>Например, 
+				нам надо установить проверку по возрасту:</strong></span></p>
+				<pre class="style8"><strong>Person person = new Person(); 
+Console.WriteLine(person.Age);  // 1
+// изменяем значение свойства
+person.Age = 37;
+Console.WriteLine(person.Age);  // 37
+// пробуем передать недопустимое значение
+person.Age = -23;               
+// Возраст должен быть в диапазоне от 1 до 120
+Console.WriteLine(person.Age);  // 37 - возраст не изменился 
+class Person
+{    
+	int age = 1;
+	public int Age    
+	{        set  { 
+			if (value < 1 || value > 120)
+				Console.WriteLine("Возраст должен быть в диапазоне от 1 до 120"); 
+				           else
+				                age = value;        }        
+				get { return age; }    
+	}
+}</strong></pre>
+				<pre>&nbsp;</pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В данном случае переменная age хранит возраст пользователя. 
+				Напрямую мы не можем обратиться к этой переменной - только через 
+				свойство Age. Причем в блоке<span>&nbsp;</span><span class="b" style="font-weight: bold;">set</span><span>&nbsp;</span>мы 
+				устанавливаем значение, если оно соответствует некоторому 
+				разумному диапазону. Поэтому при передаче свойству Age значения, 
+				которое не входит в этот диапазон, значение переменной не будет 
+				изменяться:</p>
+				<pre class="style6"><strong>person.Age = -23;</strong></pre>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<span style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(247, 247, 250); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+				Консольный вывод программы:</span><p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-48-23.png" width="1111" height="632" /></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Таким образом, свойство позволяет опосредовать и контролировать 
+				доступ к данным объекта.</p>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Свойства только для чтения и записи</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Блоки set и get не обязательно одновременно должны 
+				присутствовать в свойстве. Если свойство определяет только блок<span>&nbsp;</span><span class="b" style="font-weight: bold;">get</span>, 
+				то такое свойство доступно только<span>&nbsp;</span><span class="b" style="font-weight: bold;">для 
+				чтения</span><span>&nbsp;</span>- мы можем получить его значение, но 
+				не установить.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				И, наоборот, если свойство имеет только блок<span>&nbsp;</span><span class="b" style="font-weight: bold;">set</span>, 
+				тогда это свойство доступно только для записи - можно только 
+				установить значение, но нельзя получить:</p>
+				<pre class="style8"><strong>Person person = new Person(); 
+// свойство для чтения - можно получить значение
+Console.WriteLine(person.Name);  // Tom
+// но нельзя установить// 
+person.Name = "Bob";    // ! Ошибка 
+// свойство для записи - можно устновить значение
+person.Age = 37;
+// но нелзя получить// 
+Console.WriteLine(person.Age);  // ! Ошибка 
+person.Print(); 
+class Person
+{    
+	string name = "Tom";    
+	int age = 1;    // свойство только для записи    
+	public int Age    
+	{ set { age = value; }}  // свойство только для чтения  
+				    
+	public string Name    
+	{  get { return name; }}     
+	public void Print()=> Console.WriteLine($"Name: {name}  Age: {age}");
+}</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-48-24.png" width="1111" height="638" /></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Здесь свойство Name доступно только для чтения, поскольку оно 
+				имеет только блок<span>&nbsp;</span><span class="b" style="font-weight: bold;">get</span>:</p>
+				<pre class="style8"><strong>public string Name{ get { return name; }}</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Мы можем получить его значение, но НЕ можем установить:</p>
+				<pre class="style6"><strong>Console.WriteLine(person.Name);  // получить можно
+person.Name = "Bob";    // ! Ошибка - установить нельзя</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				А свойство Age, наоборот, доступно только для записи, поскольку 
+				оно имеет только блок<span>&nbsp;</span><span class="b" style="font-weight: bold;">set</span>:</p>
+				<pre class="style6"><strong>public int Age{ set { age = value; }}</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Можно установить его значение, но нельзя получить:</p>
+				<pre class="style6"><strong>person.Age = 37; // установить можно
+Console.WriteLine(person.Age);  // ! Ошибка - получить значение нельзя</strong></pre>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вычисляемые свойства</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Свойства необязательно связаны с определенной переменной. Они 
+				могут вычисляться на основе различных выражений</p>
+				<pre class="style6"><strong>Person tom = new("Tom", "Smith");
+Console.WriteLine(tom.Name);    // Tom Smith
+class Person
+{    
+	string firstName;    
+	string lastName;    
+	public string Name    
+		{        
+			get { return  $"{firstName} {lastName}"; }    
+		}    
+	public Person(string firstName, string lastName)    
+		{        
+			this.firstName = firstName;         
+			this.lastName = lastName;    
+		}
+}</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В данном случае класс Person имеет свойство Name, которое 
+				доступно только для чтения и которое возвращает общее значение 
+				на основе значений переменных firstName и lastName.</p>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Модификаторы доступа</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Мы можем применять модификаторы доступа не только ко всему 
+				свойству, но и к отдельным блокам get и set:</p>
+				<pre class="style6"><strong>Person tom = new Person("Tom&quot;);&nbsp;/
+tom.Name = "Bob";// Ошибка - set объявлен с модификатором private/
+Console.WriteLine(tom.Name);    // Tom
+class Person
+{    
+	string name = "";    
+	public string Name    
+	{        get { return name; }         
+	private set { name = value; }    
+	}    
+	public Person(string name) => Name = name;
+}</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Теперь закрытый блок set мы сможем использовать только в данном 
+				классе - в его методах, свойствах, конструкторе, но никак не в 
+				другом классе:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При использовании модификаторов в свойствах следует учитывать 
+				ряд ограничений:</p>
+				<ul style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					Модификатор для блока set или get можно установить, если 
+					свойство имеет оба блока (и set, и get)</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					Только один блок set или get может иметь модификатор 
+					доступа, но не оба сразу</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					Модификатор доступа блока set или get должен быть более 
+					ограничивающим, чем модификатор доступа свойства. Например, 
+					если свойство имеет модификатор public, то блок set/get 
+					может иметь только модификаторы protected internal, 
+					internal, protected, private protected и private</p>
+					</li>
+				</ul>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Автоматические свойства</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style4"><strong>Свойства управляют доступом к полям класса</strong></span>. Однако что, если у 
+				нас с десяток и более полей, то определять каждое поле и писать 
+				для него однотипное свойство было бы утомительно. Поэтому в .NET 
+				были добавлены <span class="style4"><strong>автоматические свойства. Они имеют сокращенное 
+				объявление:</strong></span></p>
+				<pre class="style6"><strong>class Person
+{    
+	public string Name { get; set; }    
+	public int Age { get; set; }             
+	public Person(string name, int age)    
+	{        Name = name;
+	        Age = age;    }
+	}</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				На самом деле тут также создаются поля для свойств, только их 
+				создает не программист в коде, а компилятор автоматически 
+				генерирует при компиляции.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В чем преимущество автосвойств, если по сути они просто 
+				обращаются к автоматически создаваемой переменной, почему бы 
+				напрямую не обратиться к переменной без автосвойств? Дело в том, 
+				что в любой момент времени при необходимости мы можем развернуть 
+				автосвойство в обычное свойство, добавить в него какую-то 
+				определенную логику.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Стоит учитывать, что нельзя создать автоматическое свойство 
+				только для записи, как в случае со стандартными свойствами.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Автосвойствам можно присвоить значения по умолчанию 
+				(инициализация автосвойств):</p>
+				<pre class="style6"><strong>Person tom = new(); 
+Console.WriteLine(tom.Name);    // Tom
+Console.WriteLine(tom.Age);    // 37 
+class Person
+{    
+	public string Name { get; set; } = "Tom";    
+	public int Age { get; set; } = 37;
+}</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				И если мы не укажем для объекта Person значения свойств Name и 
+				Age, то будут действовать значения по умолчанию.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Автосвойства также могут иметь модификаторы доступа:</p>
+				<pre class="style6"><strong>class Person
+{    
+	public string Name { private set; get;}    
+	public Person(string name) => Name = name;
+}</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Мы можем убрать блок set и сделать автосвойство доступным только 
+				для чтения. В этом случае для хранения значения этого свойства 
+				для него неявно будет создаваться поле с модификатором readonly, 
+				поэтому следует учитывать, что подобные get-свойства можно 
+				установить либо из конструктора класса, как в примере выше, либо 
+				при инициализации свойства:</p>
+				<pre class="style8"><strong>class Person
+{    
+// через инициализацию свойства    
+	public string Name { get; } = "Tom";    // через конструктор    
+	public Person(string name) => Name = name;
+}</strong></pre>
+				<h3 style="font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style9">
+				Блок init</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style4"><b>Начиная с версии C# 9.0 сеттеры в свойствах могут определяться с 
+				помощью оператора<span>&nbsp;</span></b><span class="style5">init&nbsp;</span><b>(от 
+				слова &quot;инициализация&quot; - это есть блок init призван 
+				инициализировать свойство).</b></span> Для установки значений свойств с<span>&nbsp;</span><span class="b" style="font-weight: bold;">init</span><span>&nbsp;</span>можно 
+				использовать только инициализатор, либо конструктор, либо при 
+				объявлении указать для него значение. После инициализации 
+				значений подобных свойств их значения изменить нельзя - они 
+				доступны только для чтения. В этом плане init-свойства 
+				сближаются со свойствами для чтения. Разница состоит в том, что 
+				init-свойства мы также можем установить в инициализаторе 
+				(свойства для чтения установить в инициализаторе нельзя). 
+				Например:</p>
+				<pre class="style6"><strong>Person person = new();
+//person.Name = "Bob";    //! Ошибка - после инициализации изменить значение нельзя 
+Console.WriteLine(person.Name); // Undefined
+public class Person
+{    
+	public string Name { get; init; } = "Undefined";
+}</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В данном случае класс Person для свойства Name вместо сеттера 
+				использует оператор<span>&nbsp;</span><span class="b" style="font-weight: bold;">init</span>. 
+				В итоге на строке</p>
+				<pre class="style6"><strong>Person person = new();</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				предполагается создание объекта с инициализацией всех его 
+				свойств. В данном случае свойство Name получит в качестве 
+				значения строку &quot;Undefined&quot;. Однако поскольку инициализация 
+				свойства уже произошла, то на строке</p>
+				<pre class="style6"><strong>person.Name = "Bob";    // Ошибка</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				мы получим ошибку.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Как можно установить подобное свойство? Выше продемонстрирован 
+				один из способов - установка значения при определении свойства. 
+				Второй способ - через конструктор:</p>
+				<pre class="style6"><strong>Person person = new("Tom");
+Console.WriteLine(person.Name); // Tom
+public class Person
+{    
+	public Person(string name) => Name = name;    
+	public string Name { get; init; }
+}</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Третий способ - через инициализатор:</p>
+				<pre class="style8"><strong>Person person = new("Tom");
+Console.WriteLine(person.Name); // Tom
+public class Person
+{    
+	public Person(string name) => Name = name;    
+	public string Name { get; init; }
+}</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В принцпе есть еще четвертый способ - установка через другое 
+				свойство с модификатором<span>&nbsp;</span><span class="b" style="font-weight: bold;">init</span>:</p>
+				<pre class="style10"><strong>var person = new Person() { Name = "Sam" };
+Console.WriteLine(person.Name);     // Sam
+Console.WriteLine(person.Email);    // Sam@gmail.com
+public class Person
+{    
+	string name = "";    
+	public string Name    
+	{        
+		get { return name; }        
+		init        
+			{            
+				name = value;            
+				Email = $"{value}@gmail.com";        
+			}    
+	}    
+	public string Email { get; init; } = "";
+}</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В данном случае свойство Name управляет полем для чтения<span>&nbsp;</span><code style="font-family: monospace;">name</code>. 
+				Благодаря этому перед установкой значения свойства мы можем 
+				произвести некоторую предобработку. Кроме того, в выражении init 
+				устанавливается другое init-свойство - Email, которое для 
+				установки значения использует значение свойства Name - из имени 
+				получаем значение для электронного адреса.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Причем если при объявлении свойства указано значение, то в 
+				конструкторе мы можем его изменить. Значение, установленное в 
+				конструкторе, можно изменить в инициализаторе. Однако дальше 
+				процесс инициализации заканчивается. И значение не может быть 
+				изменено.</p>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Сокращенная запись свойств</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Как и методы, мы можем сокращать определения свойств. Поскольку 
+				блоки<span>&nbsp;</span><span class="b" style="font-weight: bold;">get</span><span>&nbsp;</span>и<span>&nbsp;</span><span class="b" style="font-weight: bold;">set</span><span>&nbsp;</span>представляют 
+				специальные методы, то как и обычные методы, если они содержат 
+				одну инструкцию, то мы их можем сократить с помощью оператора<span>&nbsp;</span><span class="style11" style="font-weight: bold;">=&gt;</span>:</p>
+				<pre class="style6"><strong>class Person
+{    
+	string name;    
+	public string Name     
+	{         get => name;        set => name = value; }    
+				
+	}</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Также можно сокращать все свойство в целом:</p>
+				<pre class="style8"><strong>class Person
+{    
+	string name;         // эквивалентно 
+	public string Name { get { return name; } }    
+	public string Name => name;
+}</strong></pre>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				модификатор required</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Модификатор<span>&nbsp;</span><span class="b" style="font-weight: bold;">required</span><span>&nbsp;</span>(добавлен 
+				в C# 11) указывает, что поле или свойства с этим модификатором 
+				обязательно должны быть инициализированы. Например, в следующем 
+				примере мы получим ошибку:</p>
+				<pre class="style6"><strong>Person tom = new Person();  // ошибка - свойства Name и Age не инициализированы
+public class Person
+{    
+	public required string Name { get; set;}    
+	public required int Age { get; set; }
+}</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Здесь свойства Name и Age отмечены как обязательные для 
+				инициализации с помощью модификатора<span>&nbsp;</span><span class="b" style="font-weight: bold;">required</span>, 
+				поэтому необходимо использовать инициализатор для их 
+				инициализации:</p>
+				<pre class="style6"><strong>Person tom = new Person { Name = "Tom", Age = 38 }; // ошибки нет</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Причем не важно, устанавливаем эти свойства в конструкторе или 
+				инициализируем при определении, все равно надо использовать 
+				инициализатор для установки их значений. Например, в следующем 
+				примере мы получим ошибку:</p>
+				<pre class="style6"><strong>Person bob = new Person("Bob"); // ошибка - свойства Name и Age все равно надо установить в инициализаторе 
+public class Person
+{    
+	public Person(string name)    {        Name = name;    }    
+	public required string Name { get; set; }    
+	public required int Age { get; set; } = 22;
+}</strong></pre>
+<p>В простых случаях, когда свойства get и set методы доступа не выполняют никаких других операций, кроме установки или извлечения значения в закрытом поле резервного копирования, можно воспользоваться поддержкой компилятора C# для автоматически реализованных свойств. В следующем примере реализуется Hours как автоматически реализованное свойство.
+</p><Pre class="style12"><span class="style9"><strong>class TimePeriod3
+</strong></span>{<span class="style9"><strong>
+    public double Hours { get; set; }
+</strong></span>}</Pre><p>Метод доступа get часто состоит из одного оператора, который возвращает значение, как в предыдущем примере. Метод доступа get можно реализовывать как элемент,<span class="style4"><strong> воплощающий выражение</strong></span>. В приведенном ниже примере методы доступа get и set реализуются как члены, воплощающие выражение.
+</p><pre class="style12"><span class="style9"><strong>class TimePeriod2
+</strong></span>{<span class="style9"><strong>
+    private double _seconds;
+
+    public double Seconds
+    {
+        get => _seconds;
+        set => _seconds = value;
+    }
+</strong></span>}
+</pre><p>В приведенном ниже примере определен как метод доступа get, так и метод доступа set для свойства с именем Seconds. Для возвращения значения свойства в нем используется закрытое поле с именем _seconds.
+</p><pre class="style12"><span class="style9"><strong>class TimePeriod
+</strong></span>{<span class="style9"><strong>
+    private double _seconds;
+
+    public double Seconds
+    {
+        get { return _seconds; }
+        set
+        {
+            if (value < 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(value), &quot;</strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="0:9" style="white-space: pre-wrap;">Значение</span><span style="white-space: pre-wrap;"> </span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="13:3:22:6" style="white-space: pre-wrap;">периода</span><span style="white-space: pre-wrap;"> </span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="17:4" style="white-space: pre-wrap;">времени</span><span style="white-space: pre-wrap;"> </span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="29:4" style="white-space: pre-wrap;">должно</span><span style="white-space: pre-wrap;"> </span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="34:2" style="white-space: pre-wrap;">быть</span><span style="white-space: pre-wrap;"> </span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="37:12" style="white-space: pre-wrap;">неотрицательным</span><span class="style9"><strong>.");
+            }
+            _seconds = value;
+        }
+    }
+</strong></span>}</pre><p>p
+</p>
+				</td>
+        </tr>
+        <tr>
+            <td>
+                <br />
+			</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les3.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les48/3.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:58:50 GMT -->
+</html>

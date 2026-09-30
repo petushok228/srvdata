@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les50/1.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 12:00:50 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: medium;
+}
+.style3 {
+	color: #0000FF;
+}
+.style4 {
+	margin-left: 40px;
+}
+.style5 {
+	margin-left: 80px;
+}
+.style7 {
+	color: #800000;
+}
+.style8 {
+	color: #0000FF;
+	font-size: medium;
+	margin-left: 40px;
+}
+.style9 {
+	color: #0000FF;
+	font-size: medium;
+	margin-left: 80px;
+}
+.style10 {
+	font-size: medium;
+	color: #0000FF;
+}
+.style11 {
+	font-size: medium;
+	color: #800000;
+	margin-left: 80px;
+}
+    .style12 {
+	color: #FF0000;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 1. Создания класса Human.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <span class="style2">
+<p>Рассмотрим пример создания класса Human. В качестве полей будем 
+использовать фамилию, имя, отчество и возраст сотрудника. Для их 
+хранения будем использовать поля lastname, name, secondname, age.
+</p>
+				<p>Для работы с этими полями создадим <span class="style12">свойства</span> LastName, Name, 
+SecondName, Age. Первые три будем использовать только для ввода, а 
+последнее - и для ввода, и для чтения. Кроме того, опишем <span class="style12">свойство FullName</span>, которое будет выводить полное имя сотрудника.
+</p>
+				<p>Создадим метод Info(), суть которого будет заключаться в выводе
+на консоль данных о сотруднике.</p>
+<p>Получим следующий код, который нужно разместить в теле класса 
+Human:</p>
+				<p><img alt="" src="Pic/r-51-1.png" width="1189" height="527" /></p>
+<p>Конструкторы класса</p>
+<p>Рассмотрим подробнее оператор</p>
+<pre class="style8"><strong>Human hmn1 = new Human();</strong></pre>
+<p>Его можно разбить на два оператора</p>
+<pre class="style9"><strong>Human hmn1;
+hmn1 = new Human();</strong></pre>
+<p>Первый из них предназначен для описания переменной hmn1 типа 
+Human, а второй представляет собой вызов функции Human(), результат 
+выполнения которой присваивается переменной hmn1. Эта функция 
+называется конструктором данного класса, и ее назначение – создание 
+нового экземпляра этого класса. Здесь мы использовали конструктор по 
+умолчанию, который присутствует в каждом классе. </p>
+<p>Как видим, имя конструктора совпадает с именем класса, и 
+конструктор по умолчанию не имеет параметров. Конструктор – это метод 
+класса. Как любой метод, его <span class="style12">можно перегрузить</span>, т.е. 
+<span class="style12">создать другие 
+реализации конструктора, отличающиеся количеством параметров или их 
+типом.</span> Количество перегрузок может быть любым. Обычно параметры 
+используются для инициализации всех или части полей класса. Описание 
+конструктора аналогично описанию других методов. Единственное 
+отличие – его имя совпадает с именем класса и у него не определен тип.</p>
+<p>Добавим в класс конструктор</p>
+				<p>&nbsp;</p>
+				<p><img alt="" src="Pic/r-51-2.png" width="871" height="223" /></p>
+				<p><span class="style2">Создадим метод Info(), суть которого будет заключаться в выводе
+на консоль данных о сотруднике.</span></p>
+				<p><img alt="" src="Pic/r-51-3.png" width="917" height="521" /></p>
+<pRE class="style5"><span class="style3"><span class="style2"><strong>// описание полей
+private string name;
+private string secondname;
+</strong></span></span></pRE>
+<p>В процедуру Main() запишем следующий код</p>
+				<p><img alt="" src="Pic/r-51-4.png" width="865" height="469" /></p>
+<p>Создали два экземпляра объектов hmn1, hnm2. Полям этих объектов 
+присвоили соответствующие значения. Затем данные по первому объекту 
+вывели непосредственно в процедуре Main(), а для вывода данных по 
+второму объекту использовали метод Info(). В результате после 
+выполнения кода получим строки</p>
+<pre class="style7"><strong>Сотрудник Иванов Василий Петрович, возраст 45
+Сидоров Александр Михайлович, 42 года</strong></pre>
+<p>В описании конструктора мы использовали имена формальных 
+параметров, совпадающие с именами полей. Поэтому, чтобы их отличить 
+было необходимо к именам полей добавить слово this., которое 
+подчеркивает, что это поле класса. Можно было для формальных 
+параметров использовать другие имена. Тогда необходимость в слове 
+this. отпадает.</p>
+<p>Заметим, что при введении конструктора с параметрами конструктор 
+без параметров аннулируется. Если мы хотим сохранить этот конструктор, 
+то следует описать его реализацию в виде</p>
+<pre class="style4"><span class="style10"><strong>public Human()
+{ 
+</strong></span>}</pre>
+<p>Теперь, после описания конструктора с параметрами, первые пять 
+операторов в процедуре Main()</p>
+<pre class="style11"><strong>Human hmn1 = new Human();
+hmn1.LastName = "Иванов";
+hmn1.Name = "Василий";
+hmn1.SecondName = "Петрович";
+hmn1.Age = 45;
+можно заменить одним
+Human hmn1 = new Human("Иванов","Василий","Петрович",45);</strong></pre>
+<p>После выполнения кода мы получим тот же самый результат, 
+который указан выше.<p>
+<img alt="" src="Pic/r-51-5.png" width="622" height="221" /><p>В новом варианте программы мы для создания объекта hmn1
+используем конструктор с параметрами, а для создания объекта hmn2 –
+конструктор без параметро</span><span lang="ru">в</span></p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les50.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les50/1.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 12:01:38 GMT -->
+</html>

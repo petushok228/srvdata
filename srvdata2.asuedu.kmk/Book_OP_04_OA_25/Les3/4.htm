@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les3/4.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 10:31:34 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 3. Структура программы Pascal. </td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+            <BR><FONT color=#800040 size=3><STRONG><FONT color=#ff0000 size=4><U>СТРУКТУРА 
+ПРОГРАММЫ.</U></FONT><BR><BR>На рисунке 1 приводится блок схема структуры 
+программы.<BR><BR><IMG align=bottom height=469 src="structura.files/Str_Prg.gif" 
+width=671><BR><BR>
+<UL><LH>Структура любой программной единицы (программы, процедуры или функции) 
+  должна быть такой:</LH><BR><FONT color=#ff0000 size=4>
+  <LI>Program Prim1; - "Объявление программной единицы" 
+  <UL>
+    <LI>Uses - (Раздел описаний) 
+    <LI>Type 
+    <LI>Const 
+    <LI>Var 
+    <LI>Label 
+    <LI>Function 
+    <LI>Procedure 
+    <UL>
+      <LI>Begin<BR>(Раздел исполняемых операторов)<BR>
+      <LI>end. - "символ конца программной единицы" 
+  </LI></UL></FONT></LI></UL><BR><FONT color=#ff0000 size=4><U>Пояснения к 
+  структуре программы.</U></FONT><BR>«Обьявление программной единицы» – это 
+  заголовок программы, процедуры или функции; <BR>заголовок программы можно 
+  опускать без каких – либо последствий для программы; для процедур и функций 
+  наличие заголовка обязательно;<BR>«символ конца программной единицы» – символ 
+  " . " для программы или символ " ; " – для процедуры и функции.<BR>Любой из 
+  двух разделов программной единицы – раздел описаний или исполняемых 
+  операторов, или оба одновременно могут быть пустыми, т.е. не содержать никаких 
+  описаний или исполняемых операторов.<BR>В разделе описаний должны содержаться 
+  описания всех идентификаторов, используемых в разделе исполняемых операторов. 
+  Исключением являются идентификаторы, определенные в интерфейсных частях 
+  программных модулей (библиотек), а также глобальные для процедуры или функции 
+  идентификаторы.<BR>Если программная единица использует идентификатор из 
+  интерфейсной части какого – либо модуля , в начале программы в предложении 
+  <FONT color=#ff0000 size=4><U>USES</U></FONT>необходимо указать имя этого 
+  модуля.<BR>Последнее не относится к идентификаторам, определенным в 
+  стандартном модуле <FONT color=#ff0000 size=4><U>SYSTEM,</U></FONT> т.е. имя 
+  зтого модуля в предложении <FONT color=#ff0000 size=4><U>USES</U>указывать не 
+  нужно. Более того, модуль</FONT><FONT color=#ff0000 size=4><U>SYSTEM 
+  </U></FONT>считается предварительно объявленным, поэтому объявление<BR><PRE><FONT color=#ff0000 size=4>                  Uses System;</FONT><BR>
+</PRE><BR>компилятор расценит как попытку двойного объявления модуля System и 
+  выдаст соответствующее сообщение об ошибке.<BR>В разделе описаний объявляются 
+  идентификаторы типов, объектов, констант, переменных, а также метки, процедуры 
+  и функции.<BR>Описанию типов и объектов должно предшествовать 
+  зарезервированное слово<FONT color=#ff0000 
+  size=4><U>ТУРЕ,</U></FONT><BR>описанию констант – <FONT color=#ff0000 
+  size=4><U>CONST,</U></FONT><BR>переменных <FONT color=#ff0000 size=4><U>– 
+  VAR</U></FONT><BR>и меток <FONT color=#ff0000 size=4><U>– 
+  LABEL,</U></FONT><BR>например:<BR><PRE><FONT color=#ff0000 size=4>
+       Type
+          DigType = set of '0' .. '9';
+          StrType = String [40]; 
+       Const
+          N = 100;
+          ESP = 1e-9;
+       Var
+          х,у : rеа1;
+          st : StrType;
+       LаЬеl
+          Lb1, Lb2;</FONT>
+</PRE><BR>В отличие от стандартного Паскаля разделы <FONT color=#ff0000 
+  size=4><U>Type, Const, Var , Label</U></FONT><BR>могут следовать друг за 
+  другом в любом порядке и встречаться в разделе описаний сколько угодно 
+  раз.<BR>Описание процедуры или функции заключается в указании заголовка зтой 
+  процедуры (функции) и ее тела .<BR></STRONG></FONT>
+  <CENTER>
+
+                <p>р</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les3.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les3/4.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 10:31:35 GMT -->
+</html>

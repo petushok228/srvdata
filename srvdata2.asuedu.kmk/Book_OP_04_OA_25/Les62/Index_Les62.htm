@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les62/Index_Les62.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 10:26:41 GMT -->
+<head>
+    <title>Untitled Page</title>
+    
+	<link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+	
+	<style type="text/css">
+.style1 {
+	font-size: small;
+}
+.style2 {
+	color: #FF0000;
+}
+.style3 {
+	color: #FF0000;
+	font-size: small;
+}
+.style4 {
+	font-size: small;
+	color: #0000FF;
+}
+.style5 {
+	color: #0000FF;
+}
+</style>
+	
+</head>
+<body>
+
+    <table class="style1">
+		<tr>
+			<td class="zag" colSpan="3">Урок 62. Назначение интерфейсов. Особенности применения интерфейсов в C#.</td>
+		</tr>
+		<tr>
+			<td width="60%">&nbsp;</td>
+			<td width="20%">&nbsp;</td>
+			<td class="og" id="Con" onmouseover="return Con_onmouseover()" onclick="return Con_onclick()" onmouseout="return Con_onmouseout()" align="middle" width="20%">
+			Оглавление</td>
+		</tr>
+	</table>
+	<table class="style1">
+		<tr>
+			<td colSpan="2">&nbsp;</td>
+		</tr>
+		<tr>
+			<td colSpan="2"><div class="example">
+			    Интерфейс описывает функциональные возможности без конкретной 
+				реализации. Иными словами интерфейс <span class="style3">
+				<strong>определяет спецификацию но не реализацию</strong></span>.<br />
+				Интерфейс в языке программирования C# — <span class="style3">
+				<strong>это ссылочный тип</strong></span>, который определяет 
+				некоторый функционал — набор методов и свойств без реализации. 
+				Затем этот функционал реализуют классы и структуры, которые 
+				применяют интерфейс. <br />
+				Интерфейс - это структура кода, которая подобна
+				<span class="style3"><strong>абстрактному классу</strong></span>, 
+				не имеющему конкретных членов.<br />
+				Особенности интерфейсов:<br />
+&nbsp; * Могут содержать методы, свойства, индексаторы и события. <br />
+&nbsp; * Не могут содержать нестатические переменные. <br />
+				С версии C# 8.0 интерфейсы поддерживают реализацию методов и 
+				свойств по умолчанию. <br />
+				Объявление<br />
+				Для объявления интерфейса используется ключевое слово
+				<span class="style2"><strong><span class="style1">interface</span>.</strong></span> 
+				Как правило, названия интерфейсов в C# начинаются с заглавной 
+				буквы <span class="style3"><strong>I,</strong></span> например,
+				<span class="style4"><strong>IComparable, IEnumerable 
+				(венгерская нотация). </strong></span><br />
+				Упрощённая форма объявления интерфейса: <br />
+				<span class="style1"><span class="style5"><strong>interface имя 
+				{ возвращаемый_тип имя_метода_1 (список_параметров); <br />
+				</strong><strong>возвращаемый_тип имя_метода_2 (список_параметров); 
+				// ... <br />
+				</strong><strong>возвращаемый_тип имя_метода_N (список_параметров); 
+				}. </strong></span></span><br />
+				<br />
+				Важно: в объявлении методов интерфейса используются только их 
+				возвращаемый тип и сигнатура, они, по существу, являются 
+				абстрактными методами. <br />
+				<br />
+				Реализация<br />
+				Интерфейс может быть реализован в одном или нескольких классах. 
+				Общая форма реализации интерфейса в классе:<br />
+				<span class="style4"><strong>class имя_класса : имя_интерфейса { 
+				// тело класса }. </strong></span><br />
+				Некоторые особенности реализации:<br />
+				Если интерфейс реализуется в классе, это должно быть сделано 
+				полностью, реализовать интерфейс выборочно и только по частям 
+				нельзя.<br />
+				В классе допускается реализовывать несколько интерфейсов — в 
+				этом случае все реализуемые интерфейсы указываются списком через 
+				запятую.<br />
+				Методы, реализующие интерфейс, должны быть объявлены как
+				<span class="style3"><strong>public</strong></span> — в самом 
+				интерфейсе эти методы неявно подразумеваются как открытые, 
+				поэтому их реализация также должна быть открытой. </div></td>
+		</tr>
+		<tr><P></P></tr>
+
+		<tr>
+			<td style="BORDER-RIGHT: #ff0000 thin double; BORDER-TOP: #ff0000 thin double; BORDER-LEFT: #ff0000 thin double; BORDER-BOTTOM: #ff0000 thin double; BACKGROUND-COLOR: #ffffcc" width="60%">
+			<ol style="FONT-WEIGHT: 100; FONT-SIZE: 10px; COLOR: #000080; FONT-FAMILY: 'Comic Sans MS'">
+				<span class="style1"><li id="t1" onmouseover="return t1_onmouseover()" onclick="return t1_onclick()" onmouseout="return t1_onmouseout()">
+				Тема 1. Назначение интерфейсов. Особенности применения интерфейсов в C#. </li>
+				<li id="t2" onmouseover="return t2_onmouseover()" onclick="return t2_onclick()" onmouseout="return t2_onmouseout()">
+				Тема 2. Простой пример реализации интерфейса. </li>
+				<li id="t3" onmouseover="return t3_onmouseover()" onclick="return t3_onclick()" onmouseout="return t3_onmouseout()">
+				Тема 3. . </li>
+				<li id="t4" onmouseover="return t4_onmouseover()" onclick="return t4_onclick()" onmouseout="return t4_onmouseout()">
+				Тема 4. Самостоятельная работа по теме реализация интерфейса.</li>
+				<li id="t5" onmouseover="return t5_onmouseover()" onclick="return t5_onclick()" onmouseout="return t5_onmouseout()">
+				Тема 5.  .</li>
+				<li id="t6" onmouseover="return t6_onmouseover()" onclick="return t6_onclick()" onmouseout="return t6_onmouseout()">
+				 <span lang="ru">Подготовка к экзамену. Решение задач.</span></li></span>
+
+			</ol>
+			</td>
+		</tr>
+	</table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Con_onmouseover() {
+Con.style.fontSize=12;
+Con.style.cursor="hand"
+}
+
+function Con_onmouseout() {
+Con.style.fontSize=10;
+Con.style.cursor="none"
+}
+
+function Con_onclick() {
+window.location="../index-2.htm"
+}
+
+function t1_onmouseover() {
+t1.style.fontSize=12;
+t1.style.color="#FF0000"
+t1.style.cursor="hand"
+}
+
+function t1_onmouseout() {
+t1.style.fontSize=10;
+t1.style.color="#000080"
+t1.style.cursor="none"
+}
+
+function t1_onclick() {
+window.location="1.htm"
+}
+
+function t2_onmouseover() {
+t2.style.fontSize=12;
+t2.style.color="#FF0000"
+t2.style.cursor="hand"
+}
+
+function t2_onmouseout() {
+t2.style.fontSize=10;
+t2.style.color="#000080"
+t2.style.cursor="none"
+}
+
+function t2_onclick() {
+window.location="2.htm"
+}
+
+function t3_onmouseover() {
+t3.style.fontSize=12;
+t3.style.color="#FF0000"
+t3.style.cursor="hand"
+}
+
+function t3_onmouseout() {
+t3.style.fontSize=10;
+t3.style.color="#000080"
+t3.style.cursor="none"
+}
+
+function t3_onclick() {
+window.location="3.htm"
+}
+
+function t4_onmouseover() {
+t4.style.fontSize=12;
+t4.style.color="#FF0000"
+t4.style.cursor="hand"
+}
+
+function t4_onmouseout() {
+t4.style.fontSize=10;
+t4.style.color="#000080"
+t4.style.cursor="none"
+}
+
+function t4_onclick() {
+window.location="4.htm"
+}
+
+function t5_onmouseover() {
+t5.style.fontSize=12;
+t5.style.color="#FF0000"
+t5.style.cursor="hand"
+}
+
+function t5_onmouseout() {
+t5.style.fontSize=10;
+t5.style.color="#000080"
+t5.style.cursor="none"
+}
+
+function t5_onclick() {
+window.location="5.htm"
+}
+function t6_onmouseover() {
+t6.style.fontSize=12;
+t6.style.color="#FF0000"
+t6.style.cursor="hand"
+}
+
+function t6_onmouseout() {
+t6.style.fontSize=10;
+t6.style.color="#000080"
+t6.style.cursor="none"
+}
+
+function t6_onclick() {
+window.location="Pz23.htm"
+}
+
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les62/Index_Les62.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 10:26:43 GMT -->
+</html>

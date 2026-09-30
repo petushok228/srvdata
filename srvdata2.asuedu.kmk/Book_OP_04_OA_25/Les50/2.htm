@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les50/2.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 12:01:43 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: #000080;
+}
+.style3 {
+	color: #800000;
+}
+.style4 {
+	color: #FF0000;
+}
+.style5 {
+	color: #0000FF;
+}
+.style6 {
+	color: #800000;
+	text-decoration: underline;
+}
+    .style10 {
+	color: #800000;
+	margin-left: 40px;
+}
+    .style11 {
+	color: #FF0000;
+	text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 1 Классы как поля других классов.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text" style="font-size: medium">
+                <p>При описании полей классов мы использовали встроенные типы. 
+				<span class="style2"><em>Естественно можно использовать и типы, определенные пользователем</em></span>. 
+</p>
+				<p>Сейчас мы рассмотрим вопросы создания классов, у которых 
+				<span class="style3"><strong>поля сами 
+являются экземплярами ранее нами созданных классов</strong></span>. 
+				<span class="style4"><strong>Отметим, что нет принципиальной разницы, используем ли мы 
+встроенные типы или определенные пользователем.</strong></span> Необходимо только 
+учитывать, что <strong>типы, определенные пользователем, относятся к 
+ссылочным</strong>. <span class="style4"><strong>Поэтому при инициализации такого поля приходится 
+использовать конструктор соответствующего класса. </strong></span>Этот конструктор 
+может использоваться либо при создании класса, либо в вызывающей 
+процедуре, например, Main(). </p>
+				<p>Рассмотрим пример, в котором будут 
+присутствовать <span class="style5">оба варианта</span>.</p>
+<p><span class="style4"><strong>Создадим класс Office</strong></span> для обозначения подразделений вуза. В 
+качестве полей будем использовать <span class="style5">name </span>– название подразделения,
+<span class="style5">countworker</span> – количество работающих, 
+<span class="style5">boss</span> – информация о 
+руководителе, <span class="style6">причем </span> <span class="style11"><strong>
+boss</strong></span><span class="style6"> объявим типа Human</span> и воспользуемся 
+свойствами и методами этого класса. </p>
+<p>Итак, получим следующий код&nbsp; <span class="style4"><strong>&nbsp;класса Office</strong></span></p>
+				<p><img alt="" src="Pic/r-51-6.png" width="1164" height="483" /></p>
+				<p><span class="style3"><strong>Создадим два конструктора</strong></span>. </p>
+				<p><em>Первый 
+конструктор </em>– без параметров. Для инициализации полей создадим 
+соответствующие свойства. </p>
+				<p><em>Второй конструктор</em> – с шестью параметрами.</p>
+<p>Также <em>опишем метод Info() </em>для вывода информации на экран, причем 
+данные о руководителе будем выводить с помощью метода <span class="style5">
+<strong>Info() класса 
+Human</strong></span>, а название подразделения&nbsp; и количество работающих выведем непосредственно.</p> 
+<p><img alt="" src="Pic/r-51-7.png" width="1156" height="239" /></p>
+				<p>&nbsp;</p>
+				<p>Как видим, при создании второго конструктора Office для 
+инициализации поля boss мы использовали конструктор Human.</p>
+<p>Теперь в процедуру Main() запишем код</p>
+				<p><img alt="" src="Pic/r-51-8.png" width="985" height="272" /></p>
+<p>Здесь мы объект off1 создали с помощью конструктора без параметров, и 
+нам пришлось для инициализации свойства Boss использовать 
+конструктор Human. Объект off2 создали с помощью второго 
+конструктора.</p>
+<p>После выполнения кода получим</p>
+<pre class="style10"><strong>Подразделение: кафедра математики, работающих 12 человек
+Иванов Петр Николаевич, 46 лет
+Подразделение: кафедра физики, работающих 15 человек
+Алексеев Семен Михайлович, 53 года</strong></pre>
+<p>Заметим, что классы Human и Office имеют <span class="style4"><strong>одноименные поля name, 
+свойства Name и методы Info().</strong></span> Однако это не вызывает проблем. Только 
+при описании конструктора класса Office с параметрами нам пришлось для 
+обозначения параметров использовать имена name и name1</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les51.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les50/2.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 12:02:03 GMT -->
+</html>

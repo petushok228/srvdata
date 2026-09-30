@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les5/9.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 10:40:26 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 9. Управление памятью и сборщик мусора. </td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <div class="section" id="id3" style="box-sizing: border-box; color: rgb(64, 64, 64); font-family: Lato, proxima-nova, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(252, 252, 252); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="section" id="id12" style="box-sizing: border-box;">
+												<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px; text-align: justify;">
+												Создание объекта любого типа 
+												подразумевает выделение памяти 
+												для размещения данных об этом 
+												объекте. Когда объект больше не 
+												нужен - его необходимо удалить, 
+												очистив занимаемую память. 
+												Python - язык с встроенным 
+												менеджером управления памятью и 
+												выполняет данные операции 
+												автоматически за счет наличия<span>&nbsp;</span><em style="box-sizing: border-box;">сборщика 
+												мусора</em><span>&nbsp;</span>(<em style="box-sizing: border-box;">англ.</em><span>&nbsp;</span>Garbage 
+												Collection, GC).</p>
+												<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px; text-align: justify;">
+												<a class="reference external" target="_blank" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer;" href="https://ru.wikipedia.org/wiki/Сборка_мусора">
+												Сборка мусора</a><span>&nbsp;</span>- 
+												технология, позволяющая, с одной 
+												стороны, упростить 
+												программирование, избавив 
+												программиста от необходимости 
+												вручную удалять объекты, 
+												созданные в динамической памяти, 
+												с другой - устранить ошибки, 
+												вызванные неправильным ручным 
+												управлением памятью. Алгоритм, 
+												используемый сборщиком мусора 
+												называется<span>&nbsp;</span><a class="reference external" target="_blank" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer;" href="https://ru.wikipedia.org/wiki/Подсчёт_ссылок">подсчетом 
+												ссылок</a><span>&nbsp;</span>(<em style="box-sizing: border-box;">англ.</em><span>&nbsp;</span>Reference 
+												Counting). Python хранит журнал 
+												ссылок на каждый объект и 
+												автоматически уничтожает объект, 
+												как только на него больше нет 
+												ссылок (Рисунок 1.).</p>
+												<div class="figure align-default" id="id78" style="box-sizing: border-box; margin-bottom: 24px; text-align: center;">
+																<a class="reference external image-reference" data-lightbox="_images/03_01_02.html" target="_blank" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer;" href="Pic/03_01_02.gif">
+																<img alt="_images/03_01_02.gif" src="Pic/03_01_02.gif" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto;" /></a><p class="caption" style="box-sizing: border-box; line-height: 24px; font-size: 13.6px; margin: 0px; text-align: center; font-weight: bold;">
+																<span class="caption-text" style="box-sizing: border-box;">
+																Рисунок 1. - 
+																Примерная схема 
+																работы сборщика 
+																мусора</span><a class="headerlink" title="Постоянная ссылка на рисунок" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_03_01.html#id78"></a></p>
+												</div>
+												<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px; text-align: justify;">
+												Время между созданием и 
+												уничтожением объекта - его<span>&nbsp;</span><strong style="box-sizing: border-box; font-weight: 700;">жизненный 
+												цикл</strong>.</p>
+												<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px; text-align: justify;">
+												Объекты, которые имеют на 
+												протяжении своего жизненного 
+												цикла одно неменяющееся и 
+												характеризующее их значение, а 
+												также умеют сравниваться, 
+												называются<span>&nbsp;</span><strong style="box-sizing: border-box; font-weight: 700;">хешируемыми</strong>. 
+												К хешируемым объектам относятся 
+												все немутирующие типы данных, а 
+												также пользовательские объекты.</p>
+								</div>
+				</div>
+                <p></p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les5.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les5/9.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 10:40:48 GMT -->
+</html>

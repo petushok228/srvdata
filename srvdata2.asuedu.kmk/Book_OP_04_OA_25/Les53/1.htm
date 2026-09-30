@@ -1,0 +1,379 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les53/1.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 12:07:33 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: small;
+}
+.style3 {
+	color: #0000FF;
+}
+    .style4 {
+	font-size: medium;
+	color: #0000FF;
+}
+.style5 {
+	margin-left: 40px;
+}
+.style6 {
+	font-size: medium;
+}
+    .style7 {
+	color: #0000FF;
+	font-size: medium;
+	margin-left: 40px;
+}
+    .style8 {
+	color: #FF0000;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 1 Структуры.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p class="style2">Наряду с классами структуры представляют 
+				<span class="style3"><strong>еще 
+				один способ создания собственных типов данных в C#</strong></span>. Более того 
+				многие примитивные типы, например, int, double и т.д., по сути 
+				являются структурами.</p>
+				<h3 class="style4">Определение структуры</h3>
+				<p><span class="style2">Для определения структуры применяется 
+				ключевое слово <span class="style3"><strong>struct:</strong></span></span></p>
+				<pre class="style5"><span class="style4"><strong>struct имя_структуры
+</strong>{<strong>
+    // элементы структуры
+</strong></span><span class="style6">}</span></pre>
+				<p><span class="style2">После слова <span class="b">struct</span> идет название 
+				структуры и далее в фигурных скобках размещаются 
+				<span class="style3"><strong>элементы структуры - поля, </span> 
+				<span class="style8">методы</span><span class="style3"> и т.д.</span></strong></p>
+				<p>Например, определим структуру, которая будет называться 
+				Person и которая будет представлять человека:</p>
+				</span>
+				<pre class="style7"><strong>struct Person
+	{
+	}</strong></pre>
+				<span class="style2">
+				<p>Как и классы, структуры могут хранить состояние в виде полей 
+				(переменных) и определять поведение в виде методов. Например, 
+				добавим в структуру Person пару полей и метод:&#39;</p>
+				</span>
+				<pre class="style7"><strong>struct Person
+{    public string name;    
+	public int age;     
+	public void Print()    
+	{Console.WriteLine($"Имя: {name}  Возраст: {age}");    
+	}
+</strong>}</pre>
+				<span class="style2">
+				<div>
+					<div class="syntaxhighlighter  c#" id="highlighter_207892">
+						<table border="0" cellspacing="0" cellpadding="0">
+							</table>
+					</div>
+				</div>
+				<p>В данном случае определены две переменные - name и age для 
+				хранения соответственно имени и возраста человека и метод Print 
+				для вывода информации о человеке на консоль.</p>
+				<p>И как и в случае с классами, для обращения к функциональности 
+				структуры - полям, методам и другим компонентам структуры 
+				применяется точечная нотация - после объекта структуры ставится 
+				точка, а затем указывается компонент структуры:</p>
+				</span>
+				<pre class="style7"><strong>объект.поле_структуры</strong><strong>
+объект.метод_структуры(параметры_метода)</strong></pre>
+				<span class="style2">
+				<h3 class="style6">Создание объекта структуры</h3>
+				<h4 class="style2">Инициализация с помощью конструктора</h4>
+				<p><span class="style2">Для использования структуры ее 
+				необходимо 
+				инициализировать. Для инициализации создания объектов структуры, 
+				как и в случае с классами, <strong><span class="style3">применяется вызов 
+				конструктора с 
+				оператором</span><span class="style8"> </span></strong>
+				<span class="style8"> <span class="b"><strong>new</strong></span></span>. 
+				<span class="style8"><em>Даже если в коде структуры 
+				не определено ни одного конструктора, тем не менее имеет как 
+				минимум один конструктор - <strong>конструктор по умолчанию</strong></em></span>, который 
+				генерируется компилятором. Этот конструктор не принимает 
+				параметров и создает объект структуры со значениями по 
+				умолчанию.</span></p>
+				</span>
+				<pre class="style7">new название_структуры();</pre>
+				<span class="style2">
+				<p>Например, создадим объект структуры Person с помощью 
+				конструктора по умолчанию:</p>
+				</span>
+				<pre class="style7">Person tom = new Person();  // вызов конструктора// 
+	или так // 
+	Person tom = new(); 
+	tom.name = "Tom";   // изменяем значение по умолчанию в поле name 
+	tom.Print();    // Имя: Tom  Возраст: 0 
+	struct Person
+	{    
+		public string name;    
+		public int age;    
+		 public void Print()   
+		 {       
+			 Console.WriteLine($"Имя: {name}  Возраст: {age}");    
+		}
+	}</pre>
+				<span class="style2">
+				<div>
+					<div class="syntaxhighlighter  c#" id="highlighter_611826">
+						<div class="toolbar">
+							<span>
+							<a class="toolbar_item command_help help" href="https://metanit.com/sharp/tutorial/2.13.php#">
+							?</a></span></div>
+					</div>
+				</div>
+				<p>В данном случае создается объект tom. Для его создания 
+				вызывается конструктор по умолчанию, который устанавливает 
+				значения по умолчанию для его полей. Для числовых данных это 
+				значение 0, поэтому поле <code>age</code> будет иметь значение 
+				0. Для строк это значение <code>null</code>, которое указывает 
+				на отсутствие значения. Но далее, если поля доступны (а в данном 
+				случае поскольку они имеют модификатор <code>public</code> они 
+				доступны), мы можем изменить их значения. Так, здесь полю <code>
+				name</code> присваивается строка &quot;Tom&quot;. Соответственно при 
+				выполнении метода <code>Print()</code> мы получим следующий 
+				консольный вывод:</p>
+				</span>
+				<pre class="style7">Имя: Tom  Возраст: 0</pre>
+				<span class="style2">
+				<h4 class="style2">Непосредственная инициализация полей</h4>
+				<p><span class="style2">Если все поля структуры доступны (как в 
+				случае с полями структуры Person, который имеют модификатор
+				<span class="b">public</span>), то структуру можно 
+				инициализировать без вызова конструктора. В этом случае 
+				необходимо присвоить значения всем полям структуры перед 
+				получением значений полей и обращением к методам структуры. 
+				Например:</span></p>
+				</span>
+				<pre class="style7">Person tom;         // не вызываем конструктор
+// инициализация полей
+tom.name = "Sam";
+tom.age = 37; 
+tom.Print();    
+// Имя: Sam  Возраст: 37
+struct Person{    
+ public string name;    
+ public int age;     
+ public void Print()    
+    {        
+	Console.WriteLine($"Имя: {name}  Возраст: {age}");   
+    }
+}</pre>
+				<span class="style2">
+				<h3 class="style2">Инициализация полей по умолчанию</h3>
+				<p><span class="style2">Стоит отметить, что начиная с версии C# 
+				10, мы можем напрямую инициализировать поля структуры при их 
+				определении (до C# 10 это делать было нельзя):</span></p>
+				</span>
+				<pre class="style7">Person tom = new Person();
+tom.Print();    
+// Имя:Tom  Возраст: 1 
+struct Person
+{    
+// инициализация полей значениями по умолчанию - доступна с C#10   
+ public string name = "Tom";    
+ public int age = 1;    
+ public Person() { }    
+ public void Print() =>Console.WriteLine($"Имя: {name}  Возраст: {age}");
+}</pre>
+				<span class="style2">
+				<p>Однако даже в этом случае, несмотря на значения по умолчанию, 
+				необходимо явно определить и вызывать конструктор, если мы хотим 
+				использовать эти значения.</p>
+				<h3 class="style2">Конструкторы структуры</h3>
+				<p><span class="style2">Как и класс, структура может определять 
+				конструкторы. Например, добавим в структуру Person конструктор:</span></p>
+				</span>
+				<pre class="style7">Person tom = new();
+Person bob = new("Bob");
+	Person sam = new("Sam", 25); 
+	tom.Print();    
+	// !!!! Имя:   Возраст: 0
+bob.Print();    
+// Имя: Bob  Возраст: 1
+sam.Print();    
+// Имя: Sam  Возраст: 25 
+struct Person
+ {   
+  public string name;    
+  public int age;    
+  public Person(string name = "Tom", int age = 1)    
+ {        this.name = name;        this.age = age;    }    
+  public void Print() => Console.WriteLine($"Имя: {name}  Возраст: {age}");
+}</pre>
+				<span class="style2">
+				<p>В данном случае в структуре Person определен конструктор с 
+				двумя параметрами, для которых предоставлены значения по 
+				умолчания. Однако обратите внимание на создание первого объекта 
+				структуры:</p>
+				</span>
+				<pre class="style4"><strong>Person tom = new(); // по прежнему используется конструктор без параметров по умолчанию
+tom.Print();    // !!!! Имя:   Возраст: 0</strong></pre>
+				<span class="style2">
+				<p>Здесь по-прежнему применяется конструктор по умолчанию, тогда 
+				как при инициализации остальных двух переменных структуры 
+				применяется явно определенный конструктор.</p>
+				<p>Однако начиная с версии C# 10 мы можем определить свой 
+				конструктор без параметров:</p>
+				</span>
+				<pre class="style7"><strong>Person tom = new(); 
+tom.Print();    
+// Имя: Tom  Возраст: 37 
+struct Person
+	{    
+		public string name;   
+		public int age;
+		public Person()   
+      {        
+		name = "Tom";        
+		age = 37;    
+	}    		
+       public void Print() => Console.WriteLine($"Имя: {name}  Возраст: {age}");
+	}</strong></pre>
+				<span class="style2">
+				<p>Стоит отметить, что до версии C# 11 при определении 
+				конструктора структуру в нем необходимо было инициализировать 
+				все поля структуры, начиная с версии C# 11 это делать 
+				необязательно.</p>
+				<p>В случае если нам необходимо вызывать конструкторы с 
+				различным количеством параметров, то мы можем, как и в случае с 
+				классами, вызывать их по цепочке:</p>
+				</span>
+				<pre class="style7"><strong>Person tom = new();
+Person bob = new("Bob");
+Person sam = new("Sam", 25); 
+tom.Print();    
+// Имя: Tom  Возраст: 1
+bob.Print();    
+// Имя: Bob  Возраст: 1 
+sam.Print();    
+// Имя: Sam  Возраст: 25 
+struct Person
+	{    
+		public string name;    
+		public int age;     
+		public Person() : this("Tom")    { }    
+		public Person(string name) : this(name, 1)    { }    
+		public Person(string name, int age)    
+	{ 
+	this.name = name;        
+	this.age = age;    
+}    
+	public void Print() => Console.WriteLine($"Имя: {name}  Возраст: {age}");
+}</strong></pre>
+				<span class="style2">
+				<div>
+				</div>
+				<p>Консольный вывод программы:</p>
+				<div class="console">
+					<pre class="consoletext">Имя: Tom  Возраст: 1
+Имя: Bob  Возраст: 1 
+Имя: Sam  Возраст: 25
+</pre>
+				</div>
+				<h3 class="style2">Инициализатор структуры</h3>
+				<p><span class="style2">Также, как и для класса, можно 
+				использовать инициализатор для создания структуры:</span></p>
+				</span>
+				<pre class="style7">Person tom = new Person { name = "Tom", age = 22 }; 
+tom.Print();    
+// Имя: Tom  Возраст: 22 
+struct Person{    
+	public string name;
+	public int age;    
+	public void Print() => Console.WriteLine($"Имя: {name}  Возраст: {age}");
+				}</pre>
+				<span class="style2">
+				<div>
+					<div class="syntaxhighlighter  c#" id="highlighter_824892">
+						<table border="0" cellspacing="0" cellpadding="0">
+							</table>
+					</div>
+				</div>
+				<p>При использовании инициализатора сначала вызывается 
+				конструктор без параметров: если мы явным образом не определили 
+				конструктор без параметров, то вызывается конструктор по 
+				умолчанию. А затем его полям присваиваются соответствующие 
+				значения.</p>
+				<h3 class="style2">Копирование структуры с помощью with</h3>
+				<p><span class="style2">Если нам необходимо скопировать в один 
+				объект структуры значения из другого с небольшими изменениями, 
+				то мы можем использовать оператор <span class="b">with</span>:</span></p>
+				</span>
+				<pre class="style4">Person tom = new Person { name = "Tom", age = 22 };
+Person bob = tom with { name = "Bob" };
+bob.Print();    // Имя: Bob  Возраст: 22</pre>
+				<span class="style2">
+				<p>В данном случае объект bob получает все значения объекта tom, 
+				а затем после оператора <span class="b">with</span> в фигурных 
+				скобках указывается поля со значениями, которые мы хотим 
+				изменить.</p>
+                <p></p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les53.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les53/1.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 12:07:33 GMT -->
+</html>

@@ -1,0 +1,788 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les17/9.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:00:38 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: #0000FF;
+	font-size: medium;
+}
+    .style3 {
+	color: #0000FF;
+}
+    .style4 {
+	font-size: medium;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 9. Примеры решения задач по теме строки..</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+               <p class="style2"><strong>Частота встречаемости символа в строке</strong></p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Определить, как часто встречается определенный символ в строке.</p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Описание переменных:</p>
+				<ul style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="margin-top: 1em; margin-bottom: 1em;">
+					<var style="padding: 2px; color: var(--color-text-h1);">s</var><span>&nbsp;</span>– 
+					строка;</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">
+					<var style="padding: 2px; color: var(--color-text-h1);">c</var><span>&nbsp;</span>– 
+					символ;</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">
+					<var style="padding: 2px; color: var(--color-text-h1);">
+					count</var><span>&nbsp;</span>– количество найденных символов в 
+					строке;</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">
+					<var style="padding: 2px; color: var(--color-text-h1);">freq</var><span>&nbsp;</span>– 
+					частота встречаемости, определяемая по формуле<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">(n 
+					/ len) * 100</code>.</li>
+				</ul>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Алгоритм решения задачи:</p>
+				<ol style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="margin-top: 1em; margin-bottom: 1em;">Получить 
+					строку и символ.</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">Определить 
+					длину строки.</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">Перебрать 
+					каждый символ в строке:<ol type="a" style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em;">
+						<li style="margin-top: 1em; margin-bottom: 1em;">если 
+						очередной символ строки совпадает с заданным символом, 
+						то увеличить счетчик символов count&nbsp;на единицу.</li>
+					</ol>
+					</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">Вычислить 
+					значение частоты встречаемости и вывести ее на экран.</li>
+				</ol>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Программа на языке Паскаль:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">var</span></span><span class="style4">
+    s: <span class="hljs-keyword" style="font-weight: 700;">string</span>;
+    c: char;
+    count, i: byte;
+    freq: real;
+  &nbsp;&nbsp;
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    <span class="hljs-keyword" style="font-weight: 700;">write</span>(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;String: &#39;</span>);
+    readln(s);
+    <span class="hljs-keyword" style="font-weight: 700;">write</span>(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;Char: &#39;</span>);
+    readln(c);
+
+    count := <span class="hljs-number">0</span>;
+
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> length(s) <span class="hljs-keyword" style="font-weight: 700;">do</span>
+        <span class="hljs-keyword" style="font-weight: 700;">if</span> s[i] = c <span class="hljs-keyword" style="font-weight: 700;">then</span>
+            count := count + <span class="hljs-number">1</span>;
+
+    freq := (count / length(s)) * <span class="hljs-number">100</span>;
+
+    writeln(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;Frequency: &#39;</span>, freq:<span class="hljs-number">5</span>:<span class="hljs-number">2</span>, <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;%&#39;</span>);
+</span><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">end</span></span>.</code></pre>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример выполнения:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="hljs language-delphi" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="style4" style="font-weight: 700;">String</span><span class="style4">: hello world
+Char: l
+Frequency: </span><span class="hljs-number"><span class="style4">27.27</span></span>%</code></pre>
+				<p class="style2"><strong>Четные и нечетные символы разделить по разным строкам&nbsp;</strong></p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Создайте из четных символов строки<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">str1</var><span>&nbsp;</span>строку<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">str2</var><span>&nbsp;</span>и 
+				из нечетных символов - строку<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">str3</var>.</p>
+				<ol style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="margin-top: 1em; margin-bottom: 1em;">Измерим 
+					длину строки.</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">В цикле 
+					перебираем символы от 1-го до последнего (его индекс равен 
+					значению длины строки).</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">Если индекс 
+					очередного символа нечетный, то добавляем этот символ в 
+					конец строки<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">str3</var>.</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">Иначе - 
+					добавляем к<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">str2</var>.</li>
+				</ol>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">var</span></span><span class="style4">
+    str1,str2,str3: <span class="hljs-keyword" style="font-weight: 700;">string</span>;
+    l,i: byte;    
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    readln(str1);
+    str2 := <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;&#39;</span>;
+    str3 := <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;&#39;</span>;
+    l := length(str1);
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> l <span class="hljs-keyword" style="font-weight: 700;">do</span>
+        <span class="hljs-keyword" style="font-weight: 700;">if</span> odd(i) <span class="hljs-keyword" style="font-weight: 700;">then</span>
+            str3 := str3 + str1[i]
+        <span class="hljs-keyword" style="font-weight: 700;">else</span>
+            str2 := str2 + str1[i];
+    writeln(str2);
+    writeln(str3);
+</span><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">end</span></span>.</code></pre>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример выполнения программы:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4"><code class="language-plaintext hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;">Pascal 1234567890
+acl13579
+Psa 24680</code></pre>
+				<p class="style2"><strong>Количество цифр в строке&nbsp;</strong></p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Написать программу, которая подсчитывает, сколько содержится 
+				цифр в строке.</p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Введем переменную<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">n</var><span>&nbsp;</span>для 
+				хранения количества найденных цифр. В цикле будем извлекать 
+				каждый символ строки и находить его порядковый номер в таблице 
+				символов.</p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Известно, что символы цифр в этой таблице имеют порядковые 
+				номера от 48 (для нуля) до 57 (для девятки) включительно. Если 
+				номер очередного извлеченного из строки символа попадает в 
+				данный диапазон, значит перед нами цифра. В этом случае следует 
+				увеличить на единицу счетчик цифр, то есть переменную<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">n</var>.</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">var</span></span><span class="style4">
+    s: <span class="hljs-keyword" style="font-weight: 700;">string</span>;
+    i, n, len: byte;
+
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    readln(s);
+    len := length(s);
+
+    n := <span class="hljs-number">0</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> len <span class="hljs-keyword" style="font-weight: 700;">do</span> 
+        <span class="hljs-keyword" style="font-weight: 700;">if</span> (ord(s[i]) &gt; <span class="hljs-number">47</span>) <span class="hljs-keyword" style="font-weight: 700;">and</span> (ord(s[i]) &lt; <span class="hljs-number">58</span>) <span class="hljs-keyword" style="font-weight: 700;">then</span> 
+            n := n + <span class="hljs-number">1</span>;
+
+    writeln(n);
+</span><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">end</span></span>.</code></pre>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример выполнения:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="hljs language-undefined" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="style4">one 5 t60
+</span>3</code></pre>
+				<p class="style2"><strong>Переворот строки&nbsp;</strong></p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Перевернуть строку, то есть последние символы должны стать 
+				первыми, а первые последними.</p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Перебрать символы строки от начала до ее середины:</p>
+				<ol style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="margin-top: 1em; margin-bottom: 1em;">очередной 
+					символ сохранить в переменной<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">c</var>;</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">на его 
+					место записать противоположный с конца;</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">на место 
+					противоположного записать сохраненный в<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">c</var>.</li>
+				</ol>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">var</span></span><span class="style4">
+    s: <span class="hljs-keyword" style="font-weight: 700;">string</span>; <span class="hljs-comment" style="color: rgb(115, 129, 145);">// строка</span>
+    len: byte; <span class="hljs-comment" style="color: rgb(115, 129, 145);">// длина строки</span>
+    c: char; <span class="hljs-comment" style="color: rgb(115, 129, 145);">// для временного хранения символа</span>
+    i: byte;
+
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    <span class="hljs-keyword" style="font-weight: 700;">write</span>(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;Введите строку: &#39;</span>);
+    readln(s);
+    len := length(s);
+
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i := <span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> len <span class="hljs-keyword" style="font-weight: 700;">div</span> <span class="hljs-number">2</span> <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        c := s[i];
+        s[i] := s[len-i+<span class="hljs-number">1</span>];
+        s[len-i+<span class="hljs-number">1</span>] := c;
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+
+    writeln(s);
+</span><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">end</span></span>.</code></pre>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Другой способ решения - это не менять исходную строку, а создать 
+				новую с обратным порядком символов. При этом исходная строка 
+				перебирается с конца.</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">var</span></span><span class="style4"> 
+    a, b: <span class="hljs-keyword" style="font-weight: 700;">string</span>;
+    i: integer;
+
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    readln(a);
+
+    b := <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;&#39;</span>;
+
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i := length(a) <span class="hljs-keyword" style="font-weight: 700;">downto</span> <span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">do</span> 
+        b := b + a[i];
+
+    writeln(b); 
+</span><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">end</span></span>.</code></pre>
+				<p class="style2"><strong>Является ли строка палиндром?&nbsp;</strong></p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Определить, является ли строка палиндромом.</p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<em>Палиндром</em><span>&nbsp;</span>– это число, слово или фраза, 
+				одинаково читающиеся в обоих направления.</p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Алгоритм решения задачи:</p>
+				<ol style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="margin-top: 1em; margin-bottom: 1em;">Брать 
+					очередной символ с начала строки и сравнивать его с 
+					противоположным.<ol type="a" style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em;">
+						<li style="margin-top: 1em; margin-bottom: 1em;">Если 
+						символы не равны, то выдать сообщение &quot;не палиндром&quot;, 
+						изменить значение флага и остановить сравнение.</li>
+					</ol>
+					</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">Если 
+					значение флага не было изменено, то выдать сообщение 
+					&quot;палиндром&quot;.</li>
+				</ol>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Программа на языке Паскаль:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">var</span></span><span class="style4">
+    s: <span class="hljs-keyword" style="font-weight: 700;">string</span>;
+    f: boolean;
+    len, i: byte;
+ 
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    <span class="hljs-keyword" style="font-weight: 700;">write</span>(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;Строка: &#39;</span>);
+    readln(s);
+    len := length(s);
+ 
+    f := True;
+ 
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i := <span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> len <span class="hljs-keyword" style="font-weight: 700;">div</span> <span class="hljs-number">2</span> <span class="hljs-keyword" style="font-weight: 700;">do</span>
+        <span class="hljs-keyword" style="font-weight: 700;">if</span> s[i] &lt;&gt; s[len-i+<span class="hljs-number">1</span>] <span class="hljs-keyword" style="font-weight: 700;">then</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+            f := False;
+            <span class="hljs-keyword" style="font-weight: 700;">break</span>;
+        <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+ 
+    <span class="hljs-keyword" style="font-weight: 700;">if</span> f = True <span class="hljs-keyword" style="font-weight: 700;">then</span>
+        writeln(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;Палиндром&#39;</span>)
+    <span class="hljs-keyword" style="font-weight: 700;">else</span>
+        writeln(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;Не палиндром&#39;</span>);
+</span><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">end</span></span>.</code></pre>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Примеры выполнения:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="hljs language-undefined" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="style4">Строка: banana
+Не палиндром</span></code><span class="style4"></pre>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"></span><code class="hljs language-undefined" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="style4">Строка: banab
+Палиндром</span></code></pre>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Другой вариант решения задачи - перезаписать символы строки в 
+				обратном порядке в другую строку и сравнить строки. Если они 
+				окажутся равными, значит перед нами палиндром.</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">var</span></span><span class="style4">
+    s, s1: <span class="hljs-keyword" style="font-weight: 700;">string</span>;
+    i: integer;
+
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    readln(s);
+
+    s1 := <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;&#39;</span>;
+
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i := length(s) <span class="hljs-keyword" style="font-weight: 700;">downto</span> <span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">do</span>
+        s1 := s1 + s[i];
+
+    <span class="hljs-keyword" style="font-weight: 700;">if</span> s = s1 <span class="hljs-keyword" style="font-weight: 700;">then</span> 
+        writeln(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;Палиндром&#39;</span>) 
+    <span class="hljs-keyword" style="font-weight: 700;">else</span> 
+        writeln(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;Не палиндром&#39;</span>);
+</span><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">end</span></span>.</code></pre>
+				<p class="style2"><strong>Подсчет количества слов в строке&nbsp;</strong></p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Подсчитать количество слов во введенной пользователем строке. 
+				Считаем, что слова разделяются исключительно одним пробелом, а 
+				первый и последний символы строки не являются пробелами.</p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Описание переменных:</p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<var style="padding: 2px; color: var(--color-text-h1);">str&nbsp;</var>-&nbsp;строка;<br />
+				<var style="padding: 2px; color: var(--color-text-h1);">len</var><span>&nbsp;</span>- 
+				длина строки;<br />
+				<var style="padding: 2px; color: var(--color-text-h1);">count</var><span>&nbsp;</span>- 
+				счетчик слов в строке.</p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Алгоритм решения задачи:</p>
+				<ol style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="margin-top: 1em; margin-bottom: 1em;">Измеряем 
+					длину введенной пользователем строки.</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">
+					Устанавливаем счетчик слов в значение 0.</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">В цикле 
+					посимвольно перебираем строку. Если очередной символ 
+					является пробелом, увеличиваем счетчик слов.</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">Поскольку в 
+					цикле не было учтено последнее слово (после него нет 
+					пробела), мы должны после цикла увеличить счетчик слов на 
+					единицу. Однако, если была введена пустая строка, то этого 
+					делать не надо. Поэтому перед увеличением счетчика добавляем 
+					проверку, что длина строки больше нуля.</li>
+				</ol>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Программа на языке Паскаль:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">var</span></span><span class="style4">
+    str: <span class="hljs-keyword" style="font-weight: 700;">string</span>;
+    len, count, i: integer;
+
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    readln(str);
+    len := length(str);&nbsp;
+    count := <span class="hljs-number">0</span>;
+
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i := <span class="hljs-number">0</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> len <span class="hljs-keyword" style="font-weight: 700;">do</span>
+        <span class="hljs-keyword" style="font-weight: 700;">if</span> str[i] = <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39; &#39;</span> <span class="hljs-keyword" style="font-weight: 700;">then</span>
+            count := count + <span class="hljs-number">1</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">if</span> len &gt; <span class="hljs-number">0</span> <span class="hljs-keyword" style="font-weight: 700;">then</span>&nbsp;
+        count := count + <span class="hljs-number">1</span>;
+
+    writeln(count);
+</span><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">end</span></span>.</code></pre>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример выполнения:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="hljs language-undefined" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="style4">one two three
+</span>3</code></pre>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Примечание. Программа не будет корректно работать, если слова 
+				разделены больше, чем одним пробелом.</p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Второй вариант задачи:<span>&nbsp;</span><strong>подсчитать 
+				количество слов в строке и вывести длину каждого слова</strong>.</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">var</span></span><span class="style4">
+    str, s: <span class="hljs-keyword" style="font-weight: 700;">string</span>;
+    arr: <span class="hljs-keyword" style="font-weight: 700;">array</span>[<span class="hljs-number">1</span>..<span class="hljs-number">255</span>] <span class="hljs-keyword" style="font-weight: 700;">of</span> <span class="hljs-keyword" style="font-weight: 700;">string</span>;
+    n,i,l: byte;
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    readln(str);
+    l := length(str);
+    n := <span class="hljs-number">0</span>;
+    s := <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;&#39;</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> l <span class="hljs-keyword" style="font-weight: 700;">do</span> 
+        <span class="hljs-keyword" style="font-weight: 700;">if</span> ((str[i] = <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39; &#39;</span>) <span class="hljs-keyword" style="font-weight: 700;">or</span> (i = l)) <span class="hljs-keyword" style="font-weight: 700;">and</span> (s &lt;&gt; <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;&#39;</span>) <span class="hljs-keyword" style="font-weight: 700;">then</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+            n := n + <span class="hljs-number">1</span>;
+            <span class="hljs-keyword" style="font-weight: 700;">if</span> (i = l) <span class="hljs-keyword" style="font-weight: 700;">and</span> (str[i] &lt;&gt; <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39; &#39;</span>) <span class="hljs-keyword" style="font-weight: 700;">then</span> s := s + str[i];
+            arr[n] := s;
+            s := <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;&#39;</span>;
+        <span class="hljs-keyword" style="font-weight: 700;">end</span>
+        <span class="hljs-keyword" style="font-weight: 700;">else</span>
+            <span class="hljs-keyword" style="font-weight: 700;">if</span> str[i] &lt;&gt; <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39; &#39;</span> <span class="hljs-keyword" style="font-weight: 700;">then</span>
+                s := s + str[i];
+    writeln(n);
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> n <span class="hljs-keyword" style="font-weight: 700;">do</span> 
+        writeln(arr[i],<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39; - &#39;</span>, length(arr[i]));
+</span><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">end</span></span>.</code></pre>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример выполнения программы:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4"><code class="hljs language-undefined" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;">  one two     three   
+3
+one - 3
+two - 3
+three - 5</code></pre>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Третий вариант задачи:<span>&nbsp;</span><strong>Подсчитать 
+				количество слов в строке и вывести все слова в столбик.</strong></p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">var</span></span><span class="style4">
+    s, w: <span class="hljs-keyword" style="font-weight: 700;">string</span>;
+    l,i: byte;
+    count: byte;
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    readln(s);
+    l := length(s);
+    w := <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;&#39;</span>;
+    count := <span class="hljs-number">0</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> l <span class="hljs-keyword" style="font-weight: 700;">do</span>
+        <span class="hljs-keyword" style="font-weight: 700;">if</span> s[i] &lt;&gt; <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39; &#39;</span> <span class="hljs-keyword" style="font-weight: 700;">then</span> w := w + s[i]
+        <span class="hljs-keyword" style="font-weight: 700;">else</span>
+            <span class="hljs-keyword" style="font-weight: 700;">if</span> w &lt;&gt; <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;&#39;</span> <span class="hljs-keyword" style="font-weight: 700;">then</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+                writeln(w);
+                w := <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;&#39;</span>;
+                count := count + <span class="hljs-number">1</span>;
+            <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">if</span> w &lt;&gt; <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;&#39;</span> <span class="hljs-keyword" style="font-weight: 700;">then</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span> <span class="hljs-comment" style="color: rgb(115, 129, 145);">// последнее слово после которого нет пробела</span>
+        writeln(w); 
+        count := count + <span class="hljs-number">1</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+    writeln(count);    
+</span><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">end</span></span>.</code></pre>
+				<p class="style2"><strong>Определить длину самого короткого слова в строке&nbsp;</strong></p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Дана строка, состоящая из английских слов, разделенных пробелами 
+				и знаками препинания. Определить длину самого короткого слова.</p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Описание переменных:</p>
+				<ul style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="margin-top: 1em; margin-bottom: 1em;">
+					<var style="padding: 2px; color: var(--color-text-h1);">w</var><span>&nbsp;</span>- 
+					длина очередного слова</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">
+					<var style="padding: 2px; color: var(--color-text-h1);">min</var><span>&nbsp;</span>- 
+					длина самого короткого слова</li>
+				</ul>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Алгоритм решения задачи:</p>
+				<ol style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="margin-top: 1em; margin-bottom: 1em;">Если 
+					очередной символ строки является буквой, то увеличить 
+					значение переменной<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">w</var>.</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">Иначе<ol type="a" style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em;">
+						<li style="margin-top: 1em; margin-bottom: 1em;">
+						проверить не меньше ли значение<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">w</var><span>&nbsp;</span>(при 
+						этом значение<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">w</var><span>&nbsp;</span>не 
+						должно быть равно 0) чем<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">min</var>; 
+						если это так, то перезаписать значение<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">min</var>;</li>
+						<li style="margin-top: 1em; margin-bottom: 1em;">
+						обнулить значение<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">w</var>.</li>
+					</ol>
+					</li>
+				</ol>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Программа на языке Паскаль:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">var</span></span><span class="style4">
+    s: <span class="hljs-keyword" style="font-weight: 700;">string</span>;
+    i, w, min: byte;
+&nbsp;
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    readln(s);
+    min := <span class="hljs-number">255</span>;
+
+    w := <span class="hljs-number">0</span>; <span class="hljs-comment" style="color: rgb(115, 129, 145);">// длина очередного слова</span>
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> length(s) <span class="hljs-keyword" style="font-weight: 700;">do</span>&nbsp;
+        <span class="hljs-keyword" style="font-weight: 700;">if</span> (s[i] &gt;= <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;a&#39;</span>) <span class="hljs-keyword" style="font-weight: 700;">and</span> (s[i] &lt;= <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;z&#39;</span>) <span class="hljs-keyword" style="font-weight: 700;">then</span>&nbsp;
+            w := w + <span class="hljs-number">1</span>
+        <span class="hljs-keyword" style="font-weight: 700;">else</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+            <span class="hljs-keyword" style="font-weight: 700;">if</span> (w &lt; min) <span class="hljs-keyword" style="font-weight: 700;">and</span> (w &lt;&gt; <span class="hljs-number">0</span>) <span class="hljs-keyword" style="font-weight: 700;">then</span>&nbsp;
+                min := w;
+            w := <span class="hljs-number">0</span> &nbsp;
+        <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+
+    <span class="hljs-comment" style="color: rgb(115, 129, 145);">// проверка последнего слова</span>
+    <span class="hljs-keyword" style="font-weight: 700;">if</span> (w &lt; min) <span class="hljs-keyword" style="font-weight: 700;">and</span> (w &lt;&gt; <span class="hljs-number">0</span>) <span class="hljs-keyword" style="font-weight: 700;">then</span>
+        min := w;
+&nbsp;
+    writeln(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;The shortest length of word: &#39;</span>, min);
+</span><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">end</span></span>.</code></pre>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример выполнения программы:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4"><code class="hljs language-undefined" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;">blue, color red!
+The shortest length of word: 3</code></pre>
+				<p class="style2"><strong>Замена подстроки в строке&nbsp;</strong></p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Найти в строке определенную последовательность символов 
+				(подстроку) и заменить ее другой.</p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Описание переменных:</p>
+				<ul style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="margin-top: 1em; margin-bottom: 1em;">
+					<var style="padding: 2px; color: var(--color-text-h1);">s</var>,<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">s_old</var>,<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">s_new</var><span>&nbsp;</span>- 
+					исходная строка, заменяемая подстрока, вставляемая 
+					подстрока;</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">
+					<var style="padding: 2px; color: var(--color-text-h1);">i</var><span>&nbsp;</span>– 
+					номер символа строки, с которого начинается подстрока;</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">
+					<var style="padding: 2px; color: var(--color-text-h1);">
+					l_old</var><span>&nbsp;</span>– длина заменяемой подстроки.</li>
+				</ul>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Алгоритм решения задачи:</p>
+				<ol style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="margin-top: 1em; margin-bottom: 1em;">Ввести 
+					строку, подстроку, которую требуется заменить, и подстроку, 
+					которую требуется вставить на место прежней.</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">Найти место 
+					вхождения подстроки в строку с помощью функции<span>&nbsp;</span><strong>pos()</strong>.</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">Удалить 
+					старую подстроку с помощью процедуры<span>&nbsp;</span><strong>delete()</strong>.</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">Вставить 
+					новую подстроку, используя процедуру<span>&nbsp;</span><strong>insert()</strong>.</li>
+				</ol>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Программа на языке Паскаль:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">var</span></span><span class="style4">
+    s,s_old,s_new: <span class="hljs-keyword" style="font-weight: 700;">string</span>;
+    i,l_old: byte;
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    <span class="hljs-keyword" style="font-weight: 700;">write</span>(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;Insert string: &#39;</span>);
+    readln(s);
+    <span class="hljs-keyword" style="font-weight: 700;">write</span>(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;What change? &#39;</span>);
+    readln(s_old);
+    l_old := length(s_old);
+    <span class="hljs-keyword" style="font-weight: 700;">write</span>(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;What to replace? &#39;</span>);
+    readln(s_new);
+    i := pos(s_old,s);
+    delete(s,i,l_old);
+    insert(s_new,s,i);
+    writeln(s);
+
+</span><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">end</span></span>.</code></pre>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Функция<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">pos(subs, 
+				s)</code><span>&nbsp;</span>ищет вхождение подстроки<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">subs</var><span>&nbsp;</span>в 
+				строке<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">s</var><span>&nbsp;</span>и 
+				возвращает номер первого символа<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">subs</var><span>&nbsp;</span>в<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">s</var><span>&nbsp;</span>или 
+				нуль, если<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">subs</var><span>&nbsp;</span>не 
+				содержится в<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">s</var>.</p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Процедура<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">delete(s, 
+				start, len)</code><span>&nbsp;</span>удаляет из строки<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">s</var>, 
+				начиная с позиции<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">start</var>, 
+				подстроку длиной<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">len</var>.</p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Процедура<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">insert(subs, 
+				s, start)</code><span>&nbsp;</span>вставляет в строку<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">s</var><span>&nbsp;</span>подстроку<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">subs</var>, 
+				начиная с позиции<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">start</var>.</p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если в строке несколько одинаковых подстрок, которые требуется 
+				заменить на новую подстроку, то следует воспользоваться циклом:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">var</span></span><span class="style4">
+    s, s_old, s_new: <span class="hljs-keyword" style="font-weight: 700;">string</span>;
+    i, l_old: byte;
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    <span class="hljs-comment" style="color: rgb(115, 129, 145);">{Input}</span>
+    <span class="hljs-keyword" style="font-weight: 700;">write</span>(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;Введите строку: &#39;</span>);
+    readln(s);
+    <span class="hljs-keyword" style="font-weight: 700;">write</span>(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;Введите подстроку, которую требуется заменить: &#39;</span>);
+    readln(s_old);
+    l_old := length(s_old);
+    <span class="hljs-keyword" style="font-weight: 700;">write</span>(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;Введите новую подстроку: &#39;</span>);
+    readln(s_new);
+    <span class="hljs-comment" style="color: rgb(115, 129, 145);">{Solution}</span>
+    i := <span class="hljs-number">1</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">while</span> i &lt;&gt; <span class="hljs-number">0</span> <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        i := pos(s_old, s);
+        <span class="hljs-keyword" style="font-weight: 700;">if</span> i &lt;&gt; <span class="hljs-number">0</span> <span class="hljs-keyword" style="font-weight: 700;">then</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+            delete(s, i, l_old);
+            insert(s_new, s, i);
+        <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+    <span class="hljs-comment" style="color: rgb(115, 129, 145);">{Output}</span>
+    writeln(s);
+</span><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">end</span></span>.</code></pre>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример работы программы:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="hljs language-undefined" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="style4">Введите строку: wsfgw sfkjsfii sf ...
+Введите подстроку, которую требуется заменить: sf
+Введите новую подстроку: 0000
+w0000gw 0000kj0000ii 0000 ..</span>.</code></pre>
+				<p><span class="style2"><strong>Удаление одинаковых символов</strong></span>&nbsp;</p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Оставить в строке только один экземпляр каждого встречающегося 
+				символа.</p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Описание переменных:</p>
+				<ul style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="margin-top: 1em; margin-bottom: 1em;">
+					<var style="padding: 2px; color: var(--color-text-h1);">s</var><span>&nbsp;</span>– 
+					исходная строка;</li>
+				<li style="margin-top: 1em; margin-bottom: 1em;">
+				<var style="padding: 2px; color: var(--color-text-h1);">s_new</var><span>&nbsp;</span>– 
+				конечная строка;</li>
+				<li style="margin-top: 1em; margin-bottom: 1em;">
+				<var style="padding: 2px; color: var(--color-text-h1);">c</var><span>&nbsp;</span>– 
+				переменная для очередного символа.</li>
+				</ul>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Алгоритм решения задачи:</p>
+				<ol style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="margin-top: 1em; margin-bottom: 1em;">Взять 
+					очередной символ из<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">s</var>.</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">Если он не 
+					содержится в<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">s_new</var>, 
+					присоединить его к этой строке.</li>
+				</ol>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">var</span></span><span class="style4">
+    s, s_new: <span class="hljs-keyword" style="font-weight: 700;">string</span>;
+    c: char;
+    i: byte;
+
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    readln(s);
+    s_new := <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;&#39;</span>;
+
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> length(s) <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        c := s[i];
+        <span class="hljs-keyword" style="font-weight: 700;">if</span> pos(c, s_new) = <span class="hljs-number">0</span> <span class="hljs-keyword" style="font-weight: 700;">then</span>
+            s_new := s_new + c
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+  &nbsp;&nbsp;
+    writeln(s_new);
+</span><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">end</span></span>.</code></pre>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример выполнения:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4"><code class="hljs language-undefined" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;">hello world
+helo wrd</code></pre>
+				<p><span class="style3"><strong>Вывести слова строки в обратном порядке</strong></span>&nbsp;</p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вводится строка слов. Вывести слова в обратном порядке.</p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Описание переменных:</p>
+				<ul style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="margin-top: 1em; margin-bottom: 1em;">
+					<var style="padding: 2px; color: var(--color-text-h1);">str</var><span>&nbsp;</span>- 
+					строка;</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">
+					<var style="padding: 2px; color: var(--color-text-h1);">len</var><span>&nbsp;</span>- 
+					длина строки;</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">
+					<var style="padding: 2px; color: var(--color-text-h1);">a</var><span>&nbsp;</span>- 
+					длина очередного слова;</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">
+					<var style="padding: 2px; color: var(--color-text-h1);">i</var><span>&nbsp;</span>- 
+					текущая позиция в строке.</li>
+				</ul>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Алгоритм решения задачи:</p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Будем перебирать символы строки с конца и измерять количество 
+				подряд идущих непробельных символов. Если очередной символ - 
+				пробел, следует вывести на экран отрезок строки от предыдущего с 
+				конца символа (<code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">i 
+				+ 1</code>) на длину подряд идущих непробельных символов. Это 
+				делается с помощью функции<span>&nbsp;</span><strong>copy</strong>. 
+				После того как слово будет выведено, надо обнулить фиксируемую 
+				длину слова (<code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">a 
+				= 0</code>).</p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Поскольку вывод слова &quot;срабатывает&quot;, только когда встречается 
+				пробел, то первое слово строки (последнее из найденных при 
+				поиске с конца) выведено не будет, если перед ним нет пробела. 
+				Поэтому в программе за циклом предусмотрен отдельный вывод 
+				последней найденной подстроки.</p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Программа на языке Паскаль:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">var</span></span><span class="style4">
+    str: <span class="hljs-keyword" style="font-weight: 700;">string</span>;
+    len, i, a: byte;
+&nbsp;
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    readln(str);
+    len := length(str);
+
+    a := <span class="hljs-number">0</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=len <span class="hljs-keyword" style="font-weight: 700;">downto</span> <span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        <span class="hljs-keyword" style="font-weight: 700;">if</span> str[i] = <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39; &#39;</span> <span class="hljs-keyword" style="font-weight: 700;">then</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+            <span class="hljs-keyword" style="font-weight: 700;">write</span>(copy(str, i+<span class="hljs-number">1</span>, a), <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39; &#39;</span>);
+            a := <span class="hljs-number">0</span>;
+        <span class="hljs-keyword" style="font-weight: 700;">end</span>
+        <span class="hljs-keyword" style="font-weight: 700;">else</span>&nbsp;
+            a := a + <span class="hljs-number">1</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">write</span>(copy(str, i, a));
+    writeln;
+</span><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">end</span></span>.</code></pre>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример работы программы:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4"><code class="hljs language-undefined" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;">one two three
+three two one</code></pre>
+				<p class="style2"><strong>Сортировка массива строк по алфавиту&nbsp;</strong></p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Отсортировать массив строк по алфавиту. Учитывать только первый 
+				символ каждой строки.</p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Решение данной задачи мало чем отличается от сортировки чисел, 
+				так как буквы алфавита в таблице кодов символов следуют друг за 
+				другом. Это значит, например, что буква &#39;a&#39; имеет код на единицу 
+				меньше, чем &#39;b&#39;. При этом в Паскале не обязательно получать коды 
+				букв, можно непосредственно сравнивать сами буквы.</p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для того чтобы получить первую букву строки, являющейся 
+				элементом массива, надо учесть, что строка сама по себе является 
+				своеобразным массивом. Другими словами, мы имеем дело с 
+				двумерным массивом. Чтобы извлечь первый элемент вложенных 
+				массивов, надо указать второй индекс равный 1. Например,<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">str[i][1]</code>, 
+				где<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">i</var><span>&nbsp;</span>- 
+				это текущий элемент массива строк, а 1 - первый символ.</p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В задаче ниже выбрана<span>&nbsp;</span><a style="color: var(--color-a); text-decoration: none; border-bottom: 1px dashed;" href="https://pas1.ru/bubbles">сортировка 
+				пузырьком</a>. Строки, начинающиеся с букв, которые стоят позже 
+				по алфавиту, постепенно переставляются в конец массива.</p>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Программа на языке Паскаль:&nbsp;</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">const</span></span><span class="style4">&nbsp;
+    N = <span class="hljs-number">5</span>;
+
+<span class="hljs-keyword" style="font-weight: 700;">var</span>&nbsp;
+    str: <span class="hljs-keyword" style="font-weight: 700;">array</span>[<span class="hljs-number">1</span>..N] <span class="hljs-keyword" style="font-weight: 700;">of</span> <span class="hljs-keyword" style="font-weight: 700;">string</span>[<span class="hljs-number">20</span>];
+    s: <span class="hljs-keyword" style="font-weight: 700;">string</span>[<span class="hljs-number">20</span>];
+    i, j: byte;
+
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span>&nbsp;
+        readln(str[i]);&nbsp;
+
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N-<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">do</span>
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> j:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N-i <span class="hljs-keyword" style="font-weight: 700;">do</span>
+            <span class="hljs-keyword" style="font-weight: 700;">if</span> str[j][<span class="hljs-number">1</span>] &gt; str[j+<span class="hljs-number">1</span>][<span class="hljs-number">1</span>] <span class="hljs-keyword" style="font-weight: 700;">then</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+                s := str[j];
+                str[j] := str[j+<span class="hljs-number">1</span>];
+                str[j+<span class="hljs-number">1</span>] := s;
+            <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+&nbsp;
+    writeln;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span>&nbsp;
+        <span class="hljs-keyword" style="font-weight: 700;">write</span>(str[i], <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39; &#39;</span>);
+    writeln;
+</span><span class="hljs-keyword" style="font-weight: 700;"><span class="style4">end</span></span>.</code></pre>
+				<p style="font-size: 14pt; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример выполнения программы:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="hljs language-undefined" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="style4">one
+two
+three
+four
+five
+
+four five one two three</span>&nbsp;</code></pre>
+				<p>&nbsp;</p> </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2008 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les17.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les17/9.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:00:38 GMT -->
+</html>

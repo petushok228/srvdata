@@ -1,0 +1,501 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les25/5.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:14:18 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style3 {
+	color: rgb(0, 0, 255);
+	margin-left: 40px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.style4 {
+	margin-left: 40px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.style5 {
+	font-size: medium;
+	color: rgb(128, 0, 0);
+}
+.style7 {
+	color: rgb(0, 0, 128);
+	margin-left: 40px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.style8 {
+	color: rgb(128, 0, 0);
+}
+.style9 {
+	color: rgb(128, 0, 128);
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 5. Обработка исключительных ситуаций.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p style="color: rgb(44, 45, 46); font: 400 12px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px;">
+				<span style="font-family: &quot;.SFUI-Semibold&quot;; font-weight: bold; text-decoration: underline;" class="style5">
+				Как реализовать обработку исключений</span><span style="font-family: &quot;.SFUI-Regular&quot;;">&nbsp;</span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 12px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px; min-height: 14.3px;">
+				<br />
+				</p>
+				<p style="color: rgb(44, 45, 46); font: 400 12px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px;">
+				<span style="font-family: &quot;.SFUI-Regular&quot;;">Обработка 
+				исключений в C# необходима для правильного управления ошибками, 
+				возникающими во время выполнения программы. Она позволяет 
+				перехватывать ошибки и выполнять соответствующие действия, чтобы 
+				программа не завершалась аварийно. Рассмотрим основные 
+				конструкции для обработки исключений:<span>&nbsp;</span></span><span style="font-family: Menlo-Regular; font-size: 13px;">try</span><span style="font-family: &quot;.SFUI-Regular&quot;; font-size: 13px;">,<span>&nbsp;</span></span><span style="font-family: Menlo-Regular; font-size: 13px;">catch</span><span style="font-family: &quot;.SFUI-Regular&quot;; font-size: 13px;">,<span>&nbsp;</span></span><span style="font-family: Menlo-Regular; font-size: 13px;">finally</span><span style="font-family: &quot;.SFUI-Regular&quot;; font-size: 13px;">, 
+				и<span>&nbsp;</span></span><span style="font-family: Menlo-Regular; font-size: 13px;">throw</span><span style="font-family: &quot;.SFUI-Regular&quot;; font-size: 13px;">.</span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px; min-height: 15.5px;">
+				<br />
+				</p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px;">
+				<span style="font-family: &quot;.SFUI-Semibold&quot;; font-weight: bold;">
+				Конструкция try-catch</span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px;">
+				<span style="font-family: &quot;.SFUI-Regular&quot;;">
+				Конструкция<span>&nbsp;</span></span><span style="font-family: Menlo-Regular;">try-catch</span><span style="font-family: &quot;.SFUI-Regular&quot;;"><span>&nbsp;</span>используется 
+				для перехвата и обработки исключений. Код, который может вызвать 
+				исключение, помещается в блок<span>&nbsp;</span></span><span style="font-family: Menlo-Regular;">try</span><span style="font-family: &quot;.SFUI-Regular&quot;;">, 
+				а код для обработки исключения - в блок<span>&nbsp;</span></span><span style="font-family: Menlo-Regular;">catch</span><span style="font-family: &quot;.SFUI-Regular&quot;;">.&nbsp;</span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>try</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>{</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				// Код, который может вызвать исключение</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				int result = 10 / 0;</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>}</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>catch (DivideByZeroException 
+				ex)</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>{</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				// Обработка исключения</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				Console.WriteLine(&quot;Произошло деление на ноль: &quot; + ex.Message);</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>}</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>catch 
+				(Exception ex)</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>{</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				// Обработка других исключений</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				Console.WriteLine(&quot;Произошла ошибка: &quot; + ex.Message);</strong></span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<span style="font-family: Menlo-Regular;">}</span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px; min-height: 15.5px;">
+				<br />
+				</p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px;">
+				<span style="font-family: &quot;.SFUI-Semibold&quot;; font-weight: bold;">
+				Конструкция finally</span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px;">
+				<span style="font-family: &quot;.SFUI-Regular&quot;;">Блок<span>&nbsp;</span></span><span style="font-family: Menlo-Regular;">finally</span><span style="font-family: &quot;.SFUI-Regular&quot;;"><span>&nbsp;</span>выполняется 
+				в любом случае после завершения блоков<span>&nbsp;</span></span><span style="font-family: Menlo-Regular;">try</span><span style="font-family: &quot;.SFUI-Regular&quot;;"><span>&nbsp;</span>и<span>&nbsp;</span></span><span style="font-family: Menlo-Regular;">catch</span><span style="font-family: &quot;.SFUI-Regular&quot;;">, 
+				независимо от того, возникло исключение или нет. Он часто 
+				используется для освобождения ресурсов, таких как файловые 
+				дескрипторы или сетевые подключения.&nbsp;</span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>try</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>{</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				// Код, который может вызвать исключение</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				using (StreamReader sr = new StreamReader(&quot;file.txt&quot;))</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				{</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				// Чтение файла</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				}</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>}</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>catch (FileNotFoundException 
+				ex)</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>{</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				// Обработка исключения</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				Console.WriteLine(&quot;Файл не найден: &quot; + ex.Message);</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>}</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>finally</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>{</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				// Очистка ресурсов</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				Console.WriteLine(&quot;Закрытие файла.&quot;);</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>}</strong></span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px; min-height: 15.5px;">
+				<br />
+				</p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px;">
+				<span style="font-family: &quot;.SFUI-Semibold&quot;; font-weight: bold;">
+				Генерация исключений с помощью throw</span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px;">
+				<span style="font-family: &quot;.SFUI-Regular&quot;;">Ключевое 
+				слово<span>&nbsp;</span></span><span style="font-family: Menlo-Regular;">throw</span><span style="font-family: &quot;.SFUI-Regular&quot;;"><span>&nbsp;</span>используется 
+				для генерации исключений. Оно может быть использовано как для 
+				передачи возникшего исключения дальше по цепочке вызовов, так и 
+				для создания нового исключения.&nbsp;</span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>void 
+				ProcessNumber(int number)</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>{</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				if (number &lt; 0)</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				{</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				throw new ArgumentOutOfRangeException(&quot;number&quot;, &quot;Число должно 
+				быть неотрицательным&quot;);</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				}</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; min-height: 15.1px;" class="style3">
+				<strong><br />
+				</strong></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				// Продолжение обработки</strong></span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<span style="font-family: Menlo-Regular;">}</span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px; min-height: 15.5px;">
+				<br />
+				</p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px;">
+				<span style="font-family: &quot;.SFUI-Semibold&quot;; font-weight: bold;">
+				Вложенные и повторные исключения</span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px;">
+				<span style="font-family: &quot;.SFUI-Regular&quot;;">Вложенные 
+				исключения позволяют захватывать одно исключение и генерировать 
+				новое, сохраняя информацию о первоначальном исключении.&nbsp;</span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px;">
+				<span style="font-family: Menlo-Regular;">try</span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>{</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				// Код, который может вызвать исключение</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				MethodThatThrows();</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>}</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>catch 
+				(Exception ex)</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>{</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				throw new InvalidOperationException(&quot;Ошибка в процессе 
+				выполнения&quot;, ex);</strong></span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<span style="font-family: Menlo-Regular;">}</span></p>
+				<br class="Apple-interchange-newline" />
+				<p style="color: rgb(44, 45, 46); font: 400 12px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px;">
+				<span style="font-family: .SFUI-Regular">&nbsp;</span><span style="font-family: &quot;.SFUI-Semibold&quot;; font-weight: bold; text-decoration: underline;" class="style5">Почему 
+				лучше использовать ExceptionX обычный?</span><span style="font-family: &quot;.SFUI-Regular&quot;;">&nbsp;</span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 12px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px; min-height: 14.3px;">
+				<br />
+				</p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px;">
+				<span style="font-family: &quot;.SFUI-Regular&quot;; font-size: 12px;">
+				Использование специализированных исключений, таких как<span>&nbsp;</span></span><span style="font-family: Menlo-Regular;">ArgumentException</span><span style="font-family: &quot;.SFUI-Regular&quot;;">,<span>&nbsp;</span></span><span style="font-family: Menlo-Regular;">InvalidOperationException</span><span style="font-family: &quot;.SFUI-Regular&quot;;">, 
+				или пользовательских исключений (например,<span>&nbsp;</span></span><span style="font-family: Menlo-Regular;">MyCustomException</span><span style="font-family: &quot;.SFUI-Regular&quot;;">), 
+				лучше, чем использование общего исключения<span>&nbsp;</span></span><span style="font-family: Menlo-Regular;">Exception</span><span style="font-family: &quot;.SFUI-Regular&quot;;">. 
+				Это позволяет более точно и детально управлять ошибками.</span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px; min-height: 15.5px;">
+				<br />
+				</p>
+				<p style="font: 400 13px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px;" class="style8">
+				<span style="font-family: &quot;.SFUI-Semibold&quot;; font-weight: bold;">
+				Почему это важно:</span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px; min-height: 15.5px;">
+				<br />
+				</p>
+				<p style="font: 400 13px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px;" class="style9">
+				<span style="font-family: &quot;.SFUI-Semibold&quot;; font-weight: bold;">
+				Уточнение причины ошибки</span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px;">
+				<span style="font-family: &quot;.SFUI-Regular&quot;;">
+				Специализированные исключения помогают точнее определить, что 
+				именно пошло не так. Например,<span>&nbsp;</span></span><span style="font-family: Menlo-Regular;">ArgumentNullException</span><span style="font-family: &quot;.SFUI-Regular&quot;;"><span>&nbsp;</span>ясно 
+				указывает, что переданный аргумент был<span>&nbsp;</span></span><span style="font-family: Menlo-Regular;">null</span><span style="font-family: &quot;.SFUI-Regular&quot;;">, 
+				в то время как<span>&nbsp;</span></span><span style="font-family: Menlo-Regular;">Exception</span><span style="font-family: &quot;.SFUI-Regular&quot;;"><span>&nbsp;</span>может 
+				означать любую ошибку.&nbsp;</span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<span style="font-family: Menlo-Regular;"><strong>void 
+				ProcessData(string data)</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<span style="font-family: Menlo-Regular;"><strong>{</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				if (data == null)</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				{</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				throw new ArgumentNullException(nameof(data), &quot;Data cannot be 
+				null&quot;);</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				}</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				// Обработка данных</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<span style="font-family: Menlo-Regular;"><strong>}</strong></span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px; min-height: 15.5px;">
+				<br />
+				</p>
+				<p style="font: 400 13px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px;" class="style9">
+				<span style="font-family: &quot;.SFUI-Semibold&quot;; font-weight: bold;">
+				Улучшение читаемости кода</span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px;">
+				<span style="font-family: &quot;.SFUI-Regular&quot;;">
+				Использование конкретных исключений делает код более читаемым и 
+				поддерживаемым. Разработчики, читающие код, сразу понимают, 
+				какие именно ошибки могут возникнуть и как с ними справляться.&nbsp;</span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<span style="font-family: Menlo-Regular;"><strong>try</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<span style="font-family: Menlo-Regular;"><strong>{</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				// Код, который может вызвать исключение</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<span style="font-family: Menlo-Regular;"><strong>}</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<span style="font-family: Menlo-Regular;"><strong>catch (ArgumentNullException 
+				ex)</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<span style="font-family: Menlo-Regular;"><strong>{</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				// Обработка ситуации, когда аргумент был null</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<span style="font-family: Menlo-Regular;"><strong>}</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<span style="font-family: Menlo-Regular;"><strong>catch (InvalidOperationException 
+				ex)</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<span style="font-family: Menlo-Regular;"><strong>{</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				// Обработка некорректного состояния операции</strong></span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<span style="font-family: Menlo-Regular;">}</span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px; min-height: 15.5px;">
+				<br />
+				</p>
+				<p style="font: 400 13px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px;" class="style9">
+				<span style="font-family: &quot;.SFUI-Semibold&quot;; font-weight: bold;">
+				Улучшение отладки</span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px;">
+				<span style="font-family: &quot;.SFUI-Regular&quot;;">
+				Специализированные исключения предоставляют больше информации 
+				для отладки. Это позволяет быстрее найти и исправить ошибки, так 
+				как разработчики получают более точные сообщения об ошибках.&nbsp;</span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<span style="font-family: Menlo-Regular;"><strong>try</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<span style="font-family: Menlo-Regular;"><strong>{</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				// Код, который может вызвать исключение</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<span style="font-family: Menlo-Regular;"><strong>}</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<span style="font-family: Menlo-Regular;"><strong>catch 
+				(Exception ex)</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<span style="font-family: Menlo-Regular;"><strong>{</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				// Общее исключение, трудно определить причину</strong></span></p>
+				<p style="font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				Console.WriteLine(&quot;Произошла ошибка: &quot; + ex.Message);</strong></span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<span style="font-family: Menlo-Regular;">}</span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px; min-height: 15.5px;">
+				<br />
+				</p>
+				<p style="font: 400 13px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px;" class="style9">
+				<span style="font-family: &quot;.SFUI-Semibold&quot;; font-weight: bold;">
+				Гранулированная обработка исключений</span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px;">
+				<span style="font-family: &quot;.SFUI-Regular&quot;;">С помощью 
+				специализированных исключений можно различать разные типы ошибок 
+				и применять к ним разные стратегии обработки. Это делает 
+				обработку ошибок более гибкой и точной.&nbsp;</span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<span style="font-family: Menlo-Regular;"><strong>try</strong></span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<span style="font-family: Menlo-Regular;"><strong>{</strong></span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				// Код, который может вызвать исключение</strong></span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<span style="font-family: Menlo-Regular;"><strong>}</strong></span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<span style="font-family: Menlo-Regular;"><strong>catch (ArgumentNullException 
+				ex)</strong></span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<span style="font-family: Menlo-Regular;"><strong>{</strong></span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				Console.WriteLine(&quot;Обязательный аргумент не был передан: &quot; + 
+				ex.Message);</strong></span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				// Специфическая обработка для отсутствующего аргумента</strong></span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<span style="font-family: Menlo-Regular;"><strong>}</strong></span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<span style="font-family: Menlo-Regular;"><strong>catch (ArgumentException 
+				ex)</strong></span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<span style="font-family: Menlo-Regular;"><strong>{</strong></span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				Console.WriteLine(&quot;Аргумент некорректен: &quot; + ex.Message);</strong></span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<span style="font-family: Menlo-Regular;"><strong>&nbsp;&nbsp;&nbsp; 
+				// Специфическая обработка для некорректного аргумента</strong></span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<span style="font-family: Menlo-Regular;"><strong>}</strong></span></p>
+				<p style="font: 400 13px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px; min-height: 15.5px;" class="style9">
+				<span style="font-family: &quot;.SFUI-Semibold&quot;; font-weight: bold;">
+				Создание пользовательских исключений</span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px &quot;.SF UI&quot;; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<span style="font-family: &quot;.SFUI-Regular&quot;;">В сложных 
+				приложениях можно создавать пользовательские исключения, которые 
+				более точно описывают уникальные ошибки, специфичные для вашего 
+				приложения.&nbsp;</span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<span style="font-family: Menlo-Regular;">public class 
+				MyCustomException : Exception</span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<span style="font-family: Menlo-Regular;">{</span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<span style="font-family: Menlo-Regular;">&nbsp;&nbsp;&nbsp; 
+				public MyCustomException(string message) : base(message) { }</span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<span style="font-family: Menlo-Regular;">}</span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; min-height: 15.1px;" class="style4">
+				<br />
+				</p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<span style="font-family: Menlo-Regular;">void DoSomething()</span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<span style="font-family: Menlo-Regular;">{</span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<span style="font-family: Menlo-Regular;">&nbsp;&nbsp;&nbsp; 
+				throw new MyCustomException(&quot;Произошла специфическая ошибка.&quot;);</span></p>
+				<p style="color: rgb(44, 45, 46); font: 400 13px Menlo; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<span style="font-family: Menlo-Regular;">}</span></p>
+                <p></p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les25.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les25/5.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:14:19 GMT -->
+</html>

@@ -1,0 +1,532 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les28/2.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:17:13 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+				font-size: medium;
+}
+    .style3 {
+	font-size: small;
+}
+.style4 {
+	font-size: medium;
+	color: rgb(255, 0, 0);
+}
+.style5 {
+	color: rgb(255, 0, 0);
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 2. Операции с файлами.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <div class="section" id="id3" style="box-sizing: border-box; color: rgb(64, 64, 64); font-family: Lato, proxima-nova, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(252, 252, 252); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="section" id="id14" style="box-sizing: border-box;">
+												<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px; text-align: justify;">
+												Все операции с файлами можно 
+												подразделить на 2 группы:</p>
+												<ul class="simple" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: disc; text-align: justify; line-height: 24px;">
+																<li style="box-sizing: border-box; text-align: justify; list-style: disc; margin-left: 24px;">
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px; text-align: justify;">
+																связанные с его 
+																открытием: 
+																открытие, 
+																закрытие файла, 
+																запись, чтение, 
+																перемещение по 
+																файлу и др.</p>
+																</li>
+																<li style="box-sizing: border-box; text-align: justify; list-style: disc; margin-left: 24px;">
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px; text-align: justify;">
+																выполняющиеся 
+																без его 
+																открытия: работа 
+																с файлом как 
+																элементом 
+																файловой системы 
+																- 
+																переименование, 
+																копирование, 
+																получение 
+																атрибутов и др.</p>
+																</li>
+												</ul>
+												<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px; text-align: justify;">
+												При открытии файла, как правило, 
+												указываются:</p>
+												<ul class="simple" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: disc; text-align: justify; line-height: 24px;">
+																<li style="box-sizing: border-box; text-align: justify; list-style: disc; margin-left: 24px;">
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px; text-align: justify;">
+																имя файла;</p>
+																</li>
+																<li style="box-sizing: border-box; text-align: justify; list-style: disc; margin-left: 24px;">
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px; text-align: justify;">
+																права доступа</p>
+																</li>
+												</ul>
+												<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px; text-align: justify;">
+												после чего операционная система 
+												возвращает специальный<span>&nbsp;</span><a class="reference external" target="_blank" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer;" href="https://ru.wikipedia.org/wiki/Файловый_дескриптор">дескриптор 
+												файла</a><span>&nbsp;</span>(идентификатор), 
+												однозначно определяющий, с каким 
+												файлом далее будут выполняться 
+												операции. После открытия 
+												доступен файловый указатель - 
+												число, определяющее позицию 
+												относительно начала файла.</p>
+								</div>
+								<div class="section" id="id16" style="box-sizing: border-box;">
+												<h3 style="box-sizing: border-box; margin-top: 0px; font-weight: 700; font-family: &quot;Roboto Slab&quot;, ff-tisa-web-pro, Georgia, Arial, sans-serif; font-size: 20px;">
+												<a class="toc-backref" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#id54">
+												Виды файлов</a><a class="headerlink" title="Ссылка на этот заголовок" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#id16"></a></h3>
+												<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px; text-align: justify;">
+												По способу организации файлы 
+												делятся на файлы с<span>&nbsp;</span><a class="reference external" target="_blank" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer;" href="https://ru.wikipedia.org/wiki/Файлы_с_произвольным_доступом">последовательным</a><span>&nbsp;</span>и<span>&nbsp;</span><a class="reference external" target="_blank" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer;" href="https://ru.wikipedia.org/wiki/Файлы_с_произвольным_доступом">произвольным</a><span>&nbsp;</span>доступом 
+												(Рисунок&nbsp;3, Таблица&nbsp;1).</p>
+												<div class="figure align-default" id="id37" style="box-sizing: border-box; margin-bottom: 24px; text-align: center;">
+																<a class="reference external image-reference" data-lightbox="_images/08_01_03.html" target="_blank" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer;" href="../Les27/08_01_03.html">
+																<img alt="pic/08_01_03.png" src="pic/08_01_03.png" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto;" /></a><p class="caption" style="box-sizing: border-box; line-height: 24px; font-size: 13.6px; margin: 0px; text-align: center; font-weight: bold;">
+																<span class="caption-text" style="box-sizing: border-box;">
+																Рисунок&nbsp;3 - 
+																Файлы с 
+																последовательным 
+																и произвольным 
+																доступом<span>&nbsp;</span><a class="footnote-reference brackets" id="id19" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer; vertical-align: baseline; position: relative; top: -0.4em; line-height: 0; font-size: 12.24px;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#figure-08-01-03">8</a></span><a class="headerlink" title="Постоянная ссылка на рисунок" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#id37"></a></p>
+												</div>
+												<div class="wy-table-responsive" style="box-sizing: border-box; margin-bottom: 24px; max-width: 100%; overflow: auto;">
+																<table class="colwidths-given docutils align-default" id="id38" style="box-sizing: border-box; border-collapse: collapse; border-spacing: 0px; margin-bottom: 24px; empty-cells: show; border: 1px solid rgb(225, 228, 229);">
+																				<caption style="box-sizing: border-box; color: rgb(0, 0, 0); font: italic 13.6px / 1 arial, sans-serif; padding: 1em 0px; text-align: center;"><span class="caption-text" style="box-sizing: border-box;">Таблица&nbsp;1 - Разница в доступе к файлам с последовательным и произвольным доступом</span><a class="headerlink" title="Постоянная ссылка на таблицу" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#id38"></a></caption>
+																				<colgroup style="box-sizing: border-box;">
+																								<col style="box-sizing: border-box; width: 49.9531px;" /><col style="box-sizing: border-box; width: 142.438px;" /><col style="box-sizing: border-box; width: 184.062px;" /><col style="box-sizing: border-box; width: 169.016px;" />
+																				</colgroup>
+																				<thead style="box-sizing: border-box; color: rgb(0, 0, 0); text-align: left; vertical-align: bottom; white-space: nowrap;">
+																								<tr class="row-odd" style="box-sizing: border-box;">
+																												<th class="head" style="box-sizing: border-box; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; border: 1px solid rgb(225, 228, 229); font-weight: 700;">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">№</p>
+																												</th>
+																												<th class="head" style="box-sizing: border-box; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; border: 1px solid rgb(225, 228, 229); font-weight: 700;">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">Характеристика</p>
+																												</th>
+																												<th class="head" style="box-sizing: border-box; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; border: 1px solid rgb(225, 228, 229); font-weight: 700;">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">Последовательный доступ</p>
+																												</th>
+																												<th class="head" style="box-sizing: border-box; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; border: 1px solid rgb(225, 228, 229); font-weight: 700;">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">Произвольный доступ</p>
+																												</th>
+																								</tr>
+																				</thead>
+																				<tbody style="box-sizing: border-box;">
+																								<tr class="row-even" style="box-sizing: border-box;">
+																												<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: rgb(243, 246, 246); border-bottom: 1px solid rgb(225, 228, 229); border-left: 0px solid rgb(225, 228, 229);">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">1</p>
+																												</td>
+																												<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: rgb(243, 246, 246); border-bottom: 1px solid rgb(225, 228, 229); border-left: 1px solid rgb(225, 228, 229);">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">Метафора</p>
+																												</td>
+																												<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: rgb(243, 246, 246); border-bottom: 1px solid rgb(225, 228, 229); border-left: 1px solid rgb(225, 228, 229);">
+																												<div class="figure align-default" style="box-sizing: border-box; margin-bottom: 24px; text-align: center;">
+																																<img alt="_images/08_01_01_i.png" src="Pic/08_01_01_i.png" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto;" /></div>
+																												</td>
+																												<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: rgb(243, 246, 246); border-bottom: 1px solid rgb(225, 228, 229); border-left: 1px solid rgb(225, 228, 229);">
+																												<div class="figure align-default" style="box-sizing: border-box; margin-bottom: 24px; text-align: center;">
+																																<img alt="_images/08_01_02_i.png" src="Pic/08_01_02_i.png" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto;" /></div>
+																												</td>
+																								</tr>
+																								<tr class="row-odd" style="box-sizing: border-box;">
+																												<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: transparent; border-bottom: 1px solid rgb(225, 228, 229); border-left: 0px solid rgb(225, 228, 229);">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">2</p>
+																												</td>
+																												<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: transparent; border-bottom: 1px solid rgb(225, 228, 229); border-left: 1px solid rgb(225, 228, 229);">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">Как хранят информацию?</p>
+																												</td>
+																												<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: transparent; border-bottom: 1px solid rgb(225, 228, 229); border-left: 1px solid rgb(225, 228, 229);">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">В неструктурированном виде (текстовом)</p>
+																												</td>
+																												<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: transparent; border-bottom: 1px solid rgb(225, 228, 229); border-left: 1px solid rgb(225, 228, 229);">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">В структурированном виде (двоичном)</p>
+																												</td>
+																								</tr>
+																								<tr class="row-even" style="box-sizing: border-box;">
+																												<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: rgb(243, 246, 246); border-bottom: 1px solid rgb(225, 228, 229); border-left: 0px solid rgb(225, 228, 229);">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">2</p>
+																												</td>
+																												<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: rgb(243, 246, 246); border-bottom: 1px solid rgb(225, 228, 229); border-left: 1px solid rgb(225, 228, 229);">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">Поиск</p>
+																												</td>
+																												<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: rgb(243, 246, 246); border-bottom: 1px solid rgb(225, 228, 229); border-left: 1px solid rgb(225, 228, 229);">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">Для поиска или обращения к определенному участку в файле необходимо его последовательно прочитать с начала</p>
+																												</td>
+																												<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: rgb(243, 246, 246); border-bottom: 1px solid rgb(225, 228, 229); border-left: 1px solid rgb(225, 228, 229);">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">Разрешен непосредственный переход к любой из записи</p>
+																												</td>
+																								</tr>
+																								<tr class="row-odd" style="box-sizing: border-box;">
+																												<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: transparent; border-bottom: 1px solid rgb(225, 228, 229); border-left: 0px solid rgb(225, 228, 229);">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">3</p>
+																												</td>
+																												<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: transparent; border-bottom: 1px solid rgb(225, 228, 229); border-left: 1px solid rgb(225, 228, 229);">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">Можно править в текстовом редакторе?</p>
+																												</td>
+																												<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: transparent; border-bottom: 1px solid rgb(225, 228, 229); border-left: 1px solid rgb(225, 228, 229);">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">Да</p>
+																												</td>
+																												<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: transparent; border-bottom: 1px solid rgb(225, 228, 229); border-left: 1px solid rgb(225, 228, 229);">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">Нет, необходима специальная программа</p>
+																												</td>
+																								</tr>
+																								<tr class="row-even" style="box-sizing: border-box;">
+																												<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: rgb(243, 246, 246); border-bottom: 1px solid rgb(225, 228, 229); border-left: 0px solid rgb(225, 228, 229);">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">4</p>
+																												</td>
+																												<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: rgb(243, 246, 246); border-bottom: 1px solid rgb(225, 228, 229); border-left: 1px solid rgb(225, 228, 229);">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">Плюсы</p>
+																												</td>
+																												<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: rgb(243, 246, 246); border-bottom: 1px solid rgb(225, 228, 229); border-left: 1px solid rgb(225, 228, 229);">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">Компактность</p>
+																												</td>
+																												<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: rgb(243, 246, 246); border-bottom: 1px solid rgb(225, 228, 229); border-left: 1px solid rgb(225, 228, 229);">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">Скорость доступа</p>
+																												</td>
+																								</tr>
+																								<tr class="row-odd" style="box-sizing: border-box;">
+																												<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: transparent; border-bottom: 1px solid rgb(225, 228, 229); border-left: 0px solid rgb(225, 228, 229);">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">5</p>
+																												</td>
+																												<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: transparent; border-bottom: 1px solid rgb(225, 228, 229); border-left: 1px solid rgb(225, 228, 229);">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">Основное применение</p>
+																												</td>
+																												<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: transparent; border-bottom: 1px solid rgb(225, 228, 229); border-left: 1px solid rgb(225, 228, 229);">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">Файлы конфигурации, документы</p>
+																												</td>
+																												<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: transparent; border-bottom: 1px solid rgb(225, 228, 229); border-left: 1px solid rgb(225, 228, 229);">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">Файлы баз данных и их производные</p>
+																												</td>
+																								</tr>
+																								<tr class="row-even" style="box-sizing: border-box;">
+																												<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: rgb(243, 246, 246); border-bottom: 0px solid rgb(225, 228, 229); border-left: 0px solid rgb(225, 228, 229);">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">6</p>
+																												</td>
+																												<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: rgb(243, 246, 246); border-bottom: 0px solid rgb(225, 228, 229); border-left: 1px solid rgb(225, 228, 229);">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">Пример</p>
+																												</td>
+																												<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: rgb(243, 246, 246); border-bottom: 0px solid rgb(225, 228, 229); border-left: 1px solid rgb(225, 228, 229);">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">Текстовый файл (<code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 10.8px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto;"><span class="pre" style="box-sizing: border-box;">*.txt</span></code><span>&nbsp;</span>и др.)</p>
+																												</td>
+																												<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: rgb(243, 246, 246); border-bottom: 0px solid rgb(225, 228, 229); border-left: 1px solid rgb(225, 228, 229);">
+																												<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">База данных (<code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 10.8px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto;"><span class="pre" style="box-sizing: border-box;">*.mdb</span></code><span>&nbsp;</span>и др.)</p>
+																												</td>
+																								</tr>
+																</table>
+												</div>
+								</div>
+				</div>
+				<div class="section" id="python" style="box-sizing: border-box; color: rgb(64, 64, 64); font-family: Lato, proxima-nova, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(252, 252, 252); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<h2 style="box-sizing: border-box; margin-top: 0px; font-weight: 700; font-family: &quot;Roboto Slab&quot;, ff-tisa-web-pro, Georgia, Arial, sans-serif; font-size: 24px;">
+								<a class="toc-backref" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#id55">
+								Файловый объект в Python</a><a class="headerlink" title="Ссылка на этот заголовок" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#python"></a></h2>
+								<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px; text-align: justify;">
+								В Python работа с файлами осуществляется через 
+								специальный абстрактный файловый объект. В 
+								зависимости от способа создания такого объекта, 
+								он может быть привязан как к физическому файлу 
+								на диске, так и другому устройству, 
+								поддерживающему схожие операции (стандартный 
+								ввод/вывод и пр.).</p>
+								<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px; text-align: justify;">
+								Стандартный способ создания файлового объекта - 
+								функция<span>&nbsp;</span><a class="reference internal" title="open" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#open"><code class="xref py py-func docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(64, 64, 64); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">open()</span></code></a>:</p>
+								<dl class="py function" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none;">
+												<dt id="open" style="box-sizing: border-box; font-weight: 700; margin: 0px 0px 6px; display: table; font-size: 14.4px; line-height: normal; background: rgb(231, 242, 250); color: rgb(27, 122, 65); border-top: 3px solid rgb(106, 176, 222); padding: 6px; position: relative;">
+												<code class="style4" style="border-style: none; border-color: inherit; border-width: medium; box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; white-space: nowrap; max-width: 100%; background: transparent; padding: 0px; overflow-x: auto; font-weight: 700;">
+												open</code><span class="style5"><span class="sig-paren" style="box-sizing: border-box;"><span class="style2">(</span></span><span class="style2"><em class="sig-param" style="box-sizing: border-box;"><span class="n" style="box-sizing: border-box;">file</span></em>,<span>&nbsp;</span><em class="sig-param" style="box-sizing: border-box;"><span class="n" style="box-sizing: border-box;">mode</span><span class="o" style="box-sizing: border-box;">=</span><span class="default_value" style="box-sizing: border-box;">&#39;r&#39;</span></em>,<span>&nbsp;</span><em class="sig-param" style="box-sizing: border-box;"><span class="n" style="box-sizing: border-box;">buffering</span><span class="o" style="box-sizing: border-box;">=</span><span class="default_value" style="box-sizing: border-box;">- 
+												1</span></em>,<span>&nbsp;</span><em class="sig-param" style="box-sizing: border-box;"><span class="n" style="box-sizing: border-box;">encoding</span><span class="o" style="box-sizing: border-box;">=</span><span class="default_value" style="box-sizing: border-box;">None</span></em>,<span>&nbsp;</span><em class="sig-param" style="box-sizing: border-box;"><span class="n" style="box-sizing: border-box;">errors</span><span class="o" style="box-sizing: border-box;">=</span><span class="default_value" style="box-sizing: border-box;">None</span></em>,<span>&nbsp;</span><em class="sig-param" style="box-sizing: border-box;"><span class="n" style="box-sizing: border-box;">newline</span><span class="o" style="box-sizing: border-box;">=</span><span class="default_value" style="box-sizing: border-box;">None</span></em>,<span>&nbsp;</span><em class="sig-param" style="box-sizing: border-box;"><span class="n" style="box-sizing: border-box;">closefd</span><span class="o" style="box-sizing: border-box;">=</span><span class="default_value" style="box-sizing: border-box;">True</span></em>,<span>&nbsp;</span><em class="sig-param" style="box-sizing: border-box;"><span class="n" style="box-sizing: border-box;">opener</span><span class="o" style="box-sizing: border-box;">=</span><span class="default_value" style="box-sizing: border-box;">None</span></em></span><span class="sig-paren" style="box-sizing: border-box;"><span class="style2">)</span></span></span><a class="style4" title="Ссылка на это определение" style="box-sizing: border-box; text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-stretch: normal; line-height: 1; font-family: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#open"></a></dt>
+												<dd style="box-sizing: border-box; margin: 0px 0px 12px 24px; text-align: justify; line-height: 24px;">
+												<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+												Открывает файл и возвращает 
+												файловый объект. Если файл не 
+												может быть открыт, возбуждается 
+												исключение<span>&nbsp;</span><code class="xref py py-exc docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(64, 64, 64); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">OSError</span></code><span>&nbsp;</span>и 
+												его потомки (<code class="style2" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(64, 64, 64); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">FileNotFoundError</span></code><span>&nbsp;</span>и 
+												др.).</p>
+												<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+												Некоторые из параметров:</p>
+												<dl class="field-list simple" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none; display: grid; grid-template-columns: max-content auto;">
+																<dt class="field-odd" style="box-sizing: border-box; font-weight: 700; margin-bottom: 0px; padding-left: 1rem;">
+																Параметры</dt>
+																<dd class="field-odd" style="box-sizing: border-box; margin: 0px 0px 0px 24px; text-align: justify; line-height: 24px;">
+																<ul class="simple" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: disc; text-align: justify; line-height: 24px;">
+																				<li style="box-sizing: border-box; text-align: justify; list-style: disc; margin-left: 24px;">
+																				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px; text-align: justify;"><strong style="box-sizing: border-box; font-weight: 700;">file</strong><span>&nbsp;</span>– путь к файлу (например, строка) или файловый дескриптор;</p>
+																				</li>
+																				<li style="box-sizing: border-box; text-align: justify; list-style: disc; margin-left: 24px;">
+																				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px; text-align: justify;"><strong style="box-sizing: border-box; font-weight: 700;">mode</strong><span>&nbsp;</span>–</p>
+																				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px; text-align: justify;">режим открытия файла:</p>
+																				<div class="wy-table-responsive" style="box-sizing: border-box; margin-bottom: 0px; max-width: 100%; overflow: auto; margin-top: 0px;">
+																								<table class="docutils align-default" style="box-sizing: border-box; border-collapse: collapse; border-spacing: 0px; margin-bottom: 24px; empty-cells: show; border: 1px solid rgb(225, 228, 229);">
+																												<colgroup style="box-sizing: border-box;">
+																																<col style="box-sizing: border-box; width: 85.1719px;" /><col style="box-sizing: border-box; width: 282.016px;" />
+																												</colgroup>
+																												<thead style="box-sizing: border-box; color: rgb(0, 0, 0); text-align: left; vertical-align: bottom; white-space: nowrap;">
+																																<tr class="row-odd" style="box-sizing: border-box;">
+																																				<th class="head" style="box-sizing: border-box; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; border: 1px solid rgb(225, 228, 229); font-weight: 700;">
+																																				<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">Символ</p>
+																																				</th>
+																																				<th class="head" style="box-sizing: border-box; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; border: 1px solid rgb(225, 228, 229); font-weight: 700;">
+																																				<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">Описание</p>
+																																				</th>
+																																</tr>
+																												</thead>
+																												<tbody style="box-sizing: border-box;">
+																																<tr class="row-even" style="box-sizing: border-box;">
+																																				<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: rgb(243, 246, 246); border-bottom: 1px solid rgb(225, 228, 229); border-left: 0px solid rgb(225, 228, 229);">
+																																				<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;"><code class="style2" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">&#39;r&#39;</span></code></p>
+																																				</td>
+																																				<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: rgb(243, 246, 246); border-bottom: 1px solid rgb(225, 228, 229); border-left: 1px solid rgb(225, 228, 229);">
+																																				<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">Открыть для чтения (по умолчанию)</p>
+																																				</td>
+																																</tr>
+																																<tr class="row-odd" style="box-sizing: border-box;">
+																																				<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: transparent; border-bottom: 1px solid rgb(225, 228, 229); border-left: 0px solid rgb(225, 228, 229);">
+																																				<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;"><code class="style2" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">&#39;w&#39;</span></code></p>
+																																				</td>
+																																				<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: transparent; border-bottom: 1px solid rgb(225, 228, 229); border-left: 1px solid rgb(225, 228, 229);">
+																																				<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">Открыть для записи (если файл существует, то очищается)</p>
+																																				</td>
+																																</tr>
+																																<tr class="row-even" style="box-sizing: border-box;">
+																																				<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: rgb(243, 246, 246); border-bottom: 1px solid rgb(225, 228, 229); border-left: 0px solid rgb(225, 228, 229);">
+																																				<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;"><code class="style2" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">&#39;x&#39;</span></code></p>
+																																				</td>
+																																				<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: rgb(243, 246, 246); border-bottom: 1px solid rgb(225, 228, 229); border-left: 1px solid rgb(225, 228, 229);">
+																																				<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">Открыть для создания с эксклюзивными правами (ошибка, если файл существует)</p>
+																																				</td>
+																																</tr>
+																																<tr class="row-odd" style="box-sizing: border-box;">
+																																				<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: transparent; border-bottom: 1px solid rgb(225, 228, 229); border-left: 0px solid rgb(225, 228, 229);">
+																																				<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;"><code class="style2" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">&#39;a&#39;</span></code></p>
+																																				</td>
+																																				<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: transparent; border-bottom: 1px solid rgb(225, 228, 229); border-left: 1px solid rgb(225, 228, 229);">
+																																				<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">Открыть для добавления (если файл существует)</p>
+																																				</td>
+																																</tr>
+																																<tr class="row-even" style="box-sizing: border-box;">
+																																				<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: rgb(243, 246, 246); border-bottom: 1px solid rgb(225, 228, 229); border-left: 0px solid rgb(225, 228, 229);">
+																																				<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;"><code class="style2" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">&#39;+&#39;</span></code></p>
+																																				</td>
+																																				<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: rgb(243, 246, 246); border-bottom: 1px solid rgb(225, 228, 229); border-left: 1px solid rgb(225, 228, 229);">
+																																				<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">Открыть для чтения и записи</p>
+																																				</td>
+																																</tr>
+																																<tr class="row-odd" style="box-sizing: border-box;">
+																																				<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: transparent; border-bottom: 1px solid rgb(225, 228, 229); border-left: 0px solid rgb(225, 228, 229);">
+																																				<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;"><code class="style2" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">&#39;t&#39;</span></code></p>
+																																				</td>
+																																				<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: transparent; border-bottom: 1px solid rgb(225, 228, 229); border-left: 1px solid rgb(225, 228, 229);">
+																																				<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">Текстовый режим (по умолчанию)</p>
+																																				</td>
+																																</tr>
+																																<tr class="row-even" style="box-sizing: border-box;">
+																																				<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: rgb(243, 246, 246); border-bottom: 0px solid rgb(225, 228, 229); border-left: 0px solid rgb(225, 228, 229);">
+																																				<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;"><code class="style2" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">&#39;b&#39;</span></code></p>
+																																				</td>
+																																				<td style="box-sizing: border-box; vertical-align: middle; white-space: normal; font-size: 14.4px; margin: 0px; overflow: visible; padding: 8px 16px; background-color: rgb(243, 246, 246); border-bottom: 0px solid rgb(225, 228, 229); border-left: 1px solid rgb(225, 228, 229);">
+																																				<p style="box-sizing: border-box; line-height: 1rem; font-size: 0.9rem; margin: 0px; text-align: justify;">Двоичный режим</p>
+																																				</td>
+																																</tr>
+																								</table>
+																				</div>
+																				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px; text-align: justify;">Двоичный/текстовый режимы могут быть скомбинированы с другими: например, режим<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">&#39;rb&#39;</span></code><span>&nbsp;</span>позволит открыть на чтение бинарный файл;</p>
+																				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;"></p>
+																				</li>
+																				<li style="box-sizing: border-box; text-align: justify; list-style: disc; margin-left: 24px;">
+																				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px; text-align: justify;"><strong style="box-sizing: border-box; font-weight: 700;">encoding</strong><span>&nbsp;</span>– наименование кодировки, используемой при чтении/записи файла (например,<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">&#39;utf-8&#39;</span></code>); параметр имеет смысл только для текстового режима.</p>
+																				</li>
+																</ul>
+																</dd>
+												</dl>
+												</dd>
+								</dl>
+								<div class="admonition warning" style="box-sizing: border-box; -webkit-font-smoothing: antialiased; padding: 12px; line-height: 24px; margin-bottom: 24px; background: rgb(255, 237, 204); clear: both;">
+												<p class="admonition-title" style="box-sizing: border-box; line-height: 1; font-size: inherit; margin: -12px -12px 12px; text-align: justify; display: block; font-style: normal; font-variant: normal; font-weight: 700; font-stretch: normal; font-family: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; color: rgb(255, 255, 255); background: rgb(240, 179, 126); padding: 6px 12px;">
+												Предупреждение</p>
+												<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px; text-align: justify;">
+												Кодировка файла</p>
+												<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px; text-align: justify;">
+												При открытии файла Python по 
+												умолчанию использует кодировку, 
+												предпочитаемую операционной 
+												системой. Для определения 
+												кодировки по умолчанию выполните 
+												код:</p>
+												<div class="highlight-python notranslate" style="box-sizing: border-box; border: 1px solid rgb(225, 228, 229); overflow-x: auto; margin: 1px 0px 24px;">
+																<div class="highlight" style="box-sizing: border-box; background: rgb(248, 248, 248); border: none; overflow-x: auto; margin: 0px; padding: 0px;">
+																				<pre style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: pre; line-height: 1.4; margin: 0px; padding: 12px; display: block; overflow: auto;"><span class="kn" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;"><span class="style3">import</span></span><span class="style3"> <span class="nn" style="box-sizing: border-box; color: rgb(0, 0, 255); font-weight: bold;">locale</span>
+<span class="n" style="box-sizing: border-box;">locale</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">getpreferredencoding</span><span class="p" style="box-sizing: border-box;">(</span><span class="kc" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">False</span></span><span class="p" style="box-sizing: border-box;"><span class="style3">)</span></span><span class="style3">  </span><span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;"><span class="style3"># &#39;cp1251&#39; на российской сборке ОС Windows</span></span>
+</pre>
+																</div>
+												</div>
+												<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px; text-align: justify;">
+												Старайтесь указывать кодировку 
+												файла явно, например,<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto;"><span class="pre" style="box-sizing: border-box;">encoding=&quot;utf-8&quot;</span></code>, 
+												особенно если есть вероятность 
+												работы программы на различных 
+												ОС.</p>
+								</div>
+								<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px; text-align: justify;">
+								Открытие файлов связано с 
+								потреблением/резервированием ресурсов, поэтому 
+								после выполнения необходимых операций его 
+								следует закрыть.</p>
+								<dl class="py class" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none;">
+												<dt id="file" style="box-sizing: border-box; font-weight: 700; margin: 0px 0px 6px; display: table; font-size: 14.4px; line-height: normal; background: rgb(231, 242, 250); color: rgb(27, 122, 65); border-top: 3px solid rgb(106, 176, 222); padding: 6px; position: relative;">
+												<em class="property" style="box-sizing: border-box; display: inline-block; padding-right: 8px;">
+												class</em><code class="sig-name descname" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 14.4px; white-space: nowrap; max-width: 100%; background: transparent; border: none; padding: 0px; color: rgb(0, 0, 0); overflow-x: auto; font-weight: 700;">file</code><a class="headerlink" title="Ссылка на это определение" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14.4px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#file"></a></dt>
+												<dd style="box-sizing: border-box; margin: 0px 0px 12px 24px; text-align: justify; line-height: 24px;">
+												<dl class="py method" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none;">
+																<dt id="file.close" style="box-sizing: border-box; font-weight: 700; margin: 0px 0px 6px; display: table; font-size: 14.4px; line-height: normal; background: rgb(240, 240, 240); color: rgb(85, 85, 85); border-top: none; padding: 6px; position: relative; border-right: none; border-bottom: none; border-image: initial; border-left: 3px solid rgb(204, 204, 204);">
+																<code class="sig-name descname" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 14.4px; white-space: nowrap; max-width: 100%; background: transparent; border: none; padding: 0px; color: rgb(0, 0, 0); overflow-x: auto; font-weight: 700;">
+																close</code><span class="sig-paren" style="box-sizing: border-box;">()</span><a class="headerlink" title="Ссылка на это определение" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14.4px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#file.close"></a></dt>
+																<dd style="box-sizing: border-box; margin: 0px 0px 12px 24px; text-align: justify; line-height: 24px;">
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+																Закрывает файл. 
+																После этого 
+																работа с файлом 
+																невозможна 
+																(чтение, запись 
+																и др.).</p>
+																</dd>
+												</dl>
+												</dd>
+								</dl>
+								<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px; text-align: justify;">
+								Общий цикл работы с файлом может выглядеть 
+								следующим образом (Листинг&nbsp;8.1.1).</p>
+								<div class="literal-block-wrapper docutils container" id="id39" style="box-sizing: border-box;">
+												<div class="code-block-caption" style="box-sizing: border-box; font-weight: bold; font-size: 13.6px; font-style: italic; line-height: 1; padding: 1em 0px; text-align: left;">
+																<span class="caption-text" style="box-sizing: border-box;">
+																Листинг&nbsp;1 - 
+																Пример цикла 
+																работы с файлом
+																</span>
+																<a class="headerlink" title="Постоянная ссылка на код" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#id39">
+																</a></div>
+												<div class="highlight-default notranslate" style="box-sizing: border-box; border: 1px solid rgb(225, 228, 229); overflow-x: auto; margin: 1px 0px 24px;">
+																<div class="highlight" style="box-sizing: border-box; background: rgb(248, 248, 248); border: none; overflow-x: auto; margin: 0px; padding: 0px;">
+																				<pre style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: pre; line-height: 1.4; margin: 0px; padding: 12px; display: block; overflow: auto;"><span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;"><span class="style3"># При работе с файлами всегда целесообразно использовать исключения</span></span><span class="style3">
+
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;"># 1. Стандартный способ открытия файла с обработкой исключений</span>
+<span class="n" style="box-sizing: border-box;">fh</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="kc" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">None</span>
+<span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">try</span><span class="p" style="box-sizing: border-box;">:</span>
+    <span class="n" style="box-sizing: border-box;">fh</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">open</span><span class="p" style="box-sizing: border-box;">(</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;data.txt&quot;</span><span class="p" style="box-sizing: border-box;">,</span> <span class="n" style="box-sizing: border-box;">encoding</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;utf-8&quot;</span><span class="p" style="box-sizing: border-box;">)</span>
+    <span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;">#</span>
+    <span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;"># Чтение и запись файла</span>
+    <span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;">#</span>
+<span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">except</span> <span class="ne" style="box-sizing: border-box; color: rgb(210, 65, 58); font-weight: bold;">Exception</span> <span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">as</span> <span class="n" style="box-sizing: border-box;">e</span><span class="p" style="box-sizing: border-box;">:</span>
+    <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">print</span><span class="p" style="box-sizing: border-box;">(</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;Ошибка при работе с файлом:&quot;</span><span class="p" style="box-sizing: border-box;">,</span> <span class="n" style="box-sizing: border-box;">e</span><span class="p" style="box-sizing: border-box;">)</span>
+<span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">finally</span><span class="p" style="box-sizing: border-box;">:</span>
+    <span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="n" style="box-sizing: border-box;">fh</span><span class="p" style="box-sizing: border-box;">:</span>  <span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;"># Если файл не открылся, значит &#39;fh&#39; == None и закрывать его не нужно</span>
+        <span class="n" style="box-sizing: border-box;">fh</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">close</span><span class="p" style="box-sizing: border-box;">()</span>
+
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;"># 2. Для упрощения кода по выделению и высвобождению ресурсов в Python</span>
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;">#    предусмотрены специальные объекты - менеджеры контекста,</span>
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;">#    которые могут самостоятельно следить за использованием ресурсов</span>
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;">#</span>
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;">#    Наиболее часто менеджеры контекста вызываются с использованием ключевого слова with</span>
+
+<span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">try</span><span class="p" style="box-sizing: border-box;">:</span>
+    <span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">with</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">open</span><span class="p" style="box-sizing: border-box;">(</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;data2.txt&quot;</span><span class="p" style="box-sizing: border-box;">,</span> <span class="n" style="box-sizing: border-box;">encoding</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;utf-8&quot;</span><span class="p" style="box-sizing: border-box;">)</span> <span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">as</span> <span class="n" style="box-sizing: border-box;">fh</span><span class="p" style="box-sizing: border-box;">:</span>
+        <span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;">#</span>
+        <span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;"># Чтение и запись файла</span>
+        <span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;">#</span>
+<span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">except</span> <span class="ne" style="box-sizing: border-box; color: rgb(210, 65, 58); font-weight: bold;">Exception</span> <span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">as</span> <span class="n" style="box-sizing: border-box;">e</span><span class="p" style="box-sizing: border-box;">:</span>
+    <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">print</span><span class="p" style="box-sizing: border-box;">(</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;Ошибка при работе с файлом:&quot;</span><span class="p" style="box-sizing: border-box;">,</span> </span><span class="n" style="box-sizing: border-box;"><span class="style3">e</span></span><span class="p" style="box-sizing: border-box;">)</span>
+</pre>
+																</div>
+												</div>
+								</div>
+								<div class="admonition note" style="box-sizing: border-box; -webkit-font-smoothing: antialiased; padding: 12px; line-height: 24px; margin-bottom: 24px; background: rgb(231, 242, 250); clear: both;">
+												<p class="admonition-title" style="box-sizing: border-box; line-height: 1; font-size: inherit; margin: -12px -12px 12px; text-align: justify; display: block; font-style: normal; font-variant: normal; font-weight: 700; font-stretch: normal; font-family: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; color: rgb(255, 255, 255); background: rgb(106, 176, 222); padding: 6px 12px;">
+												Примечание</p>
+												<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px; text-align: justify;">
+												В большинстве примеров данной 
+												темы подробная обработка 
+												исключений опущена для того, 
+												чтобы сосредоточиться на 
+												демонстрации конкретных 
+												возможностей.</p>
+												<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px; text-align: justify;">
+												При самостоятельном написании 
+												программ не следует забывать 
+												добавлять обработку исключений - 
+												программа должна адекватно 
+												реагировать на возможные 
+												нестандартные ситуации 
+												(используемые файлы может 
+												изменить пользователь или другая 
+												программа).</p>
+								</div>
+				</div>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les28.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les28/2.htm by HTTrack Website Copier/3.x [XR&CO], Wed, 30 Sep 2026 11:17:34 GMT -->
+</html>
