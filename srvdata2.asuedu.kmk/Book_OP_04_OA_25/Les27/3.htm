@@ -1,0 +1,784 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les27/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:57:44 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 3 Арифметические операции</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				На этом занятии рассмотрим виды и работу арифметических 
+				операторов в Python. И как уже говорили, в этом языке имеется 
+				три базовых типа для представления чисел:</p>
+				<ul style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li>int – для целочисленных значений;</li>
+								<li>float – для вещественных;</li>
+								<li>complex – для комплексных.</li>
+				</ul>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				С этими числами можно выполнять следующие арифметические 
+				операции:</p>
+				<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; border-collapse: collapse; border: none;">
+								<tr style="height: 16.2pt;">
+												<td width="195" valign="top" style="width: 145.95pt; border: 1pt solid black; background: rgb(229, 229, 229); padding: 0cm 5.4pt; height: 16.2pt;">
+												<p style="margin: 0px;">Оператор</p>
+												</td>
+												<td width="195" valign="top" style="width: 145.95pt; border-top: 1pt solid black; border-right: 1pt solid black; border-bottom: 1pt solid black; border-image: initial; border-left: none; background: rgb(229, 229, 229); padding: 0cm 5.4pt; height: 16.2pt;">
+												<p style="margin: 0px;">Описание</p>
+												</td>
+												<td width="195" valign="top" style="width: 145.95pt; border-top: 1pt solid black; border-right: 1pt solid black; border-bottom: 1pt solid black; border-image: initial; border-left: none; background: rgb(229, 229, 229); padding: 0cm 5.4pt; height: 16.2pt;">
+												<p style="margin: 0px;">
+												Приоритет</p>
+												</td>
+								</tr>
+								<tr style="height: 15.55pt;">
+												<td width="195" valign="top" style="width: 145.95pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt; height: 15.55pt;">
+												<p style="margin: 0px;">+</p>
+												</td>
+												<td width="195" valign="top" style="width: 145.95pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt; height: 15.55pt;">
+												<p style="margin: 0px;">сложение</p>
+												</td>
+												<td width="195" valign="top" style="width: 145.95pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt; height: 15.55pt;">
+												<p style="margin: 0px;">2</p>
+												</td>
+								</tr>
+								<tr style="height: 16.2pt;">
+												<td width="195" valign="top" style="width: 145.95pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt; height: 16.2pt;">
+												<p style="margin: 0px;">-</p>
+												</td>
+												<td width="195" valign="top" style="width: 145.95pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt; height: 16.2pt;">
+												<p style="margin: 0px;">
+												вычитание</p>
+												</td>
+												<td width="195" valign="top" style="width: 145.95pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt; height: 16.2pt;">
+												<p style="margin: 0px;">2</p>
+												</td>
+								</tr>
+								<tr style="height: 16.2pt;">
+												<td width="195" valign="top" style="width: 145.95pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt; height: 16.2pt;">
+												<p style="margin: 0px;">*</p>
+												</td>
+												<td width="195" valign="top" style="width: 145.95pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt; height: 16.2pt;">
+												<p style="margin: 0px;">
+												умножение</p>
+												</td>
+												<td width="195" valign="top" style="width: 145.95pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt; height: 16.2pt;">
+												<p style="margin: 0px;">3</p>
+												</td>
+								</tr>
+								<tr style="height: 15.55pt;">
+												<td width="195" valign="top" style="width: 145.95pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt; height: 15.55pt;">
+												<p style="margin: 0px;">/, //</p>
+												</td>
+												<td width="195" valign="top" style="width: 145.95pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt; height: 15.55pt;">
+												<p style="margin: 0px;">деление</p>
+												</td>
+												<td width="195" valign="top" style="width: 145.95pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt; height: 15.55pt;">
+												<p style="margin: 0px;">3</p>
+												</td>
+								</tr>
+								<tr style="height: 16.8pt;">
+												<td width="195" valign="top" style="width: 145.95pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt; height: 16.8pt;">
+												<p style="margin: 0px;">%</p>
+												</td>
+												<td width="195" valign="top" style="width: 145.95pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt; height: 16.8pt;">
+												<p style="margin: 0px;">остаток 
+												деления</p>
+												</td>
+												<td width="195" valign="top" style="width: 145.95pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt; height: 16.8pt;">
+												<p style="margin: 0px;">3</p>
+												</td>
+								</tr>
+								<tr style="height: 16.8pt;">
+												<td width="195" valign="top" style="width: 145.95pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt; height: 16.8pt;">
+												<p style="margin: 0px;">**</p>
+												</td>
+												<td width="195" valign="top" style="width: 145.95pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt; height: 16.8pt;">
+												<p style="margin: 0px;">
+												возведение в степень</p>
+												</td>
+												<td width="195" valign="top" style="width: 145.95pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt; height: 16.8pt;">
+												<p style="margin: 0px;">4</p>
+												</td>
+								</tr>
+				</table>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				И введем несколько определений:</p>
+				<div class="quote" style="background: url('Pic/blockquote.png') no-repeat 0px 10px; padding: 5px 5px 5px 70px; font-family: sans-serif, Arial, Tahoma; font-style: italic; color: rgb(0, 0, 0); font-size: 20px; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<p><b>Операнд</b><span>&nbsp;</span>– то, к чему 
+								применяется оператор. Например, в умножении 5 * 
+								2 есть два операнда: левый операнд равен 5, а 
+								правый операнд равен 2. Иногда их называют 
+								«аргументами» вместо «операндов».</p>
+								<p><b>Унарным</b><span>&nbsp;</span>называется 
+								оператор, который применяется к одному операнду.</p>
+				</div>
+				<span style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+				Например, оператор унарный минус &quot;-&quot; меняет знак числа на 
+				противоположный:</span><div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(128, 128, 128); font-style: italic;">#унарный минус</span>
+a<span style="color: rgb(102, 204, 102);">=</span><span style="color: rgb(255, 69, 0);">1</span><span style="color: rgb(102, 204, 102);">;</span> a<span style="color: rgb(102, 204, 102);">=</span>-a 
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>a<span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Обратите внимание как записаны два оператора в одну строчку: они 
+				разделены точкой с запятой. Так тоже можно делать. Если каждый 
+				оператор начинается с новой строки, то точку с запятой ставить 
+				не обязательно, если пишем несколько операторов в одну строчку, 
+				то они разделяются точкой с запятой.</p>
+				<div class="quote" style="background: url('Pic/blockquote.png') no-repeat 0px 10px; padding: 5px 5px 5px 70px; font-family: sans-serif, Arial, Tahoma; font-style: italic; color: rgb(0, 0, 0); font-size: 20px; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<p><b>Бинарным</b><span>&nbsp;</span>называется 
+								оператор, который применяется к двум операндам.</p>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Тот же минус существует и в бинарной форме:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">a <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(255, 69, 0);">1</span><span style="color: rgb(102, 204, 102);">;</span> b <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(255, 69, 0);">2</span>
+c <span style="color: rgb(102, 204, 102);">=</span> b-a <span style="color: rgb(128, 128, 128); font-style: italic;">#бинарный минус</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>c<span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Раз мы начали говорить об операциях + и -, то продолжим и 
+				отметим, что, в общем случае, можно использовать унарный плюс и 
+				минус, например:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">a<span style="color: rgb(102, 204, 102);">=</span><span style="color: rgb(255, 69, 0);">2</span><span style="color: rgb(102, 204, 102);">;</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>+a<span style="color: rgb(102, 204, 102);">,</span> -a<span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Конечно, +a это то же самое, что и a, поэтому, в основном, 
+				используется унарный минус. По приоритету унарные операции выше 
+				бинарных операций. Например, вот такая запись:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>-a+b<span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				означает, что число –a возводится в степень 2, то есть, унарный 
+				минус имеет больший приоритет, чем бинарная операция ** 
+				возведения в степень.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если же используются бинарные сложение и вычитание:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">a<span style="color: rgb(102, 204, 102);">=</span><span style="color: rgb(255, 69, 0);">2</span><span style="color: rgb(102, 204, 102);">;</span> b<span style="color: rgb(102, 204, 102);">=</span>-<span style="color: rgb(255, 69, 0);">10</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>a+b<span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>a-b<span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				то их приоритет становится наименьшим среди всех арифметических 
+				операций (они выполняются в последнюю очередь).</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Следующая бинарная операция умножение работает так, как мы 
+				привыкли ее использовать в математике:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">a<span style="color: rgb(102, 204, 102);">=</span><span style="color: rgb(255, 69, 0);">2</span><span style="color: rgb(102, 204, 102);">;</span> b<span style="color: rgb(102, 204, 102);">=</span>-<span style="color: rgb(255, 69, 0);">5.8</span><span style="color: rgb(102, 204, 102);">;</span> c<span style="color: rgb(102, 204, 102);">=</span><span style="color: rgb(255, 69, 0);">2.3</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span> a+b*c <span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Здесь сначала выполнится умножение, а затем – сложение. Если 
+				необходимо изменить приоритет выполнения операций, то 
+				используются круглые скобки:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span> <span style="color: black;">(</span>a+b<span style="color: black;">)</span>*c <span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Далее, деление двух чисел (или переменных) можно выполнить двумя 
+				способами. Первый – традиционный, делает деление, привычное в 
+				математике, например:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(255, 69, 0);">3</span>/<span style="color: rgb(255, 69, 0);">2</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				получим ожидаемый результат 1,5. Однако те из вас, кто имеет 
+				опыт программирования на таких языках как С++ или Java, знают, 
+				что при делении двух целочисленных значений, результат также 
+				получался целочисленным. Но в Python это не так! Его 
+				арифметические операции работают в соответствии с классическими 
+				правилами математики и деление здесь – это всегда полноценное 
+				деление двух значений, какими бы они ни были.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Однако, если все же требуется выполнить целочисленное деление 
+				(то есть, с отбрасыванием дробной части), то используется такой 
+				оператор:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(255, 69, 0);">3</span>//<span style="color: rgb(255, 69, 0);">2</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				И, как видите, теперь результат 1, а не 1,5. Причем, это 
+				целочисленное деление будет выполняться и с вещественными 
+				числами:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(255, 69, 0);">3.2</span>//<span style="color: rgb(255, 69, 0);">2</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вот такие два оператора деления существуют в Python.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если же хотим вычислить остаток от целочисленного деления, то 
+				используется оператор:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">x % y</pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				С положительными целыми числами он работает также как и во 
+				многих других языках программирования. Например,</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(255, 69, 0);">4</span> % <span style="color: rgb(255, 69, 0);">5</span>  <span style="color: rgb(128, 128, 128); font-style: italic;"># 4</span>
+<span style="color: rgb(255, 69, 0);">7</span> % <span style="color: rgb(255, 69, 0);">5</span> <span style="color: rgb(128, 128, 128); font-style: italic;"># 2</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				и так далее, мы будем получать числа от 0 до 4. Но с 
+				отрицательными числами вычисления будут отличаться от того же 
+				языка С++. Например,</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">-<span style="color: rgb(255, 69, 0);">9</span> % <span style="color: rgb(255, 69, 0);">5</span> <span style="color: rgb(128, 128, 128); font-style: italic;"># (в С++ это -4, а в Python – это 1)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Почему так? Дело в том, что когда то давно инженеры фирмы Intell 
+				неверно математически реализовали данную операцию. И язык С++ 
+				как наследник этой интеловской архитектуры реализует данную 
+				операцию путем вынесения знака «-» за скобки и вычисления 
+				обычного остатка от деления. Язык же Python делает это так, как 
+				принято в математике. Сначала находится ближайшее наименьшее 
+				число кратное 5. Это число -10 (для числа -9) и остаток берется 
+				как разность между этими числами:</p>
+				<p align="center" style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img width="606" height="262" id="Рисунок 8" src="Pic/image001.jpg" style="max-width: 600px; height: auto;" /></p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				то есть, остатки всегда будут положительными в диапазоне от 0 до 
+				4, как это и должно быть по математике.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Все рассмотренные операторы (*, /, //, %) имеют одинаковый 
+				приоритет и выполняются слева-направо. То есть, если записать</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">a/b*c</pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				то это следует интерпретировать как формулу</p>
+				<p align="center" style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img width="31" height="41" src="Pic/image002.gif" style="max-width: 600px; height: auto;" /></p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Следующая операция – возведение в степень. В самом простом 
+				варианте она записывается так:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">x<span style="color: rgb(102, 204, 102);">=</span><span style="color: rgb(255, 69, 0);">2</span><span style="color: rgb(102, 204, 102);">;</span> y<span style="color: rgb(102, 204, 102);">=</span><span style="color: rgb(255, 69, 0);">5</span><span style="color: rgb(102, 204, 102);">;</span>
+x**y</pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				здесь x, y могут быть и дробными числами. Например:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">x<span style="color: rgb(102, 204, 102);">=</span><span style="color: rgb(255, 69, 0);">1.96</span><span style="color: rgb(102, 204, 102);">;</span> y<span style="color: rgb(102, 204, 102);">=</span><span style="color: rgb(255, 69, 0);">0.5</span><span style="color: rgb(102, 204, 102);">;</span>
+x**y</pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Это будет соответствовать извлечению квадратного корня из 1,96. 
+				Если запишем такую конструкцию:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(255, 69, 0);">27</span>**<span style="color: black;">(</span><span style="color: rgb(255, 69, 0);">1</span>/<span style="color: rgb(255, 69, 0);">3</span><span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				то получим кубический корень из 27. Причем, обратите внимание, 
+				круглые скобки у степени здесь обязательны, т.к. приоритет 
+				операции ** выше, чем у деления. Если записать вот так:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(255, 69, 0);">27</span>**<span style="color: rgb(255, 69, 0);">1</span>/<span style="color: rgb(255, 69, 0);">3</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				то это будет эквивалентно такому выражению:</p>
+				<p align="center" style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img width="51" height="45" src="Pic/image003.gif" style="max-width: 600px; height: auto;" /></p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вот на это следует обращать внимание. И еще один нюанс. Операция 
+				возведения в степень выполняется справа-налево. То есть, если 
+				записать вот такую строчку:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(255, 69, 0);">2</span>**<span style="color: rgb(255, 69, 0);">3</span>**<span style="color: rgb(255, 69, 0);">2</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Это будет эквивалентно степени:</p>
+				<p align="center" style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img width="94" height="25" src="Pic/image004.gif" style="max-width: 600px; height: auto;" /></p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Сначала (справа) вычисляется 3**2 = 9, а затем, 2**9 = 512. Все 
+				остальные арифметические операции работают слева-направо.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Используя оператор присваивания совместно с арифметическими 
+				операторами, можно выполнять некоторые полезные арифметические 
+				преобразования переменных. Например, очень часто требуется 
+				увеличить или уменьшить некую переменную на определенное число. 
+				Это можно сделать вот так:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">i <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(255, 69, 0);">5</span><span style="color: rgb(102, 204, 102);">;</span> j <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(255, 69, 0);">3</span>
+i <span style="color: rgb(102, 204, 102);">=</span> i+<span style="color: rgb(255, 69, 0);">1</span>
+j <span style="color: rgb(102, 204, 102);">=</span> j-<span style="color: rgb(255, 69, 0);">2</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>i<span style="color: rgb(102, 204, 102);">,</span> j<span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Но, можно и короче, вот так:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">i <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(255, 69, 0);">5</span><span style="color: rgb(102, 204, 102);">;</span> j <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(255, 69, 0);">3</span>
+i +<span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(255, 69, 0);">1</span>
+j -<span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(255, 69, 0);">2</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>i<span style="color: rgb(102, 204, 102);">,</span> j<span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Они довольно часто используются в программировании. Также, 
+				помимо сложения и вычитания, можно записывать и такие выражения:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">i *<span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(255, 69, 0);">3</span>
+j /<span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(255, 69, 0);">4</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>i<span style="color: rgb(102, 204, 102);">,</span> j<span style="color: black;">)</span>
+&nbsp;
+a <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(255, 69, 0);">5</span><span style="color: rgb(102, 204, 102);">;</span> b <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(255, 69, 0);">10</span>
+a **<span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(255, 69, 0);">2</span>
+b //<span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(255, 69, 0);">3</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>a<span style="color: rgb(102, 204, 102);">,</span> b<span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				То есть, здесь до оператора присваивания можно записывать любую 
+				арифметическую операцию.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Все рассмотренные арифметические операции можно выполнять и с 
+				комплексными числами:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">a <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(255, 69, 0);">1</span> + 2j
+b <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(255, 69, 0);">2</span> - 3j
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>a+b<span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>a-b<span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>a*b<span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>a/b<span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>a**b<span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Кроме операции целочисленного деления // и вычисления остатка от 
+				деления %. Дополнительно у объектов комплексных чисел есть 
+				свойства:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">a <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(255, 69, 0);">1</span> + 2j
+b <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(255, 69, 0);">2</span> - 3j
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>a.<span style="color: black;">real)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>b.<span style="color: black;">imag)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				для взятия действительной и мнимой части. И полезный метод:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">sa <span style="color: rgb(102, 204, 102);">=</span> a.<span style="color: black;">conjugate()</span><span style="color: rgb(102, 204, 102);">;</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>sa<span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				для получения комплексно-сопряженного числа.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В языке Python имеются встроенные функции для работы с числами. 
+				Наиболее полезные, следующие:</p>
+				<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; border-collapse: collapse; border: none;">
+								<tr style="height: 26.3125px;">
+												<td width="168" valign="top" style="width: 125.9pt; border: 1pt solid black; background: rgb(229, 229, 229); padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">Название</p>
+												</td>
+												<td width="470" valign="top" style="width: 352.65pt; border-top: 1pt solid black; border-right: 1pt solid black; border-bottom: 1pt solid black; border-image: initial; border-left: none; background: rgb(229, 229, 229); padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">Описание</p>
+												</td>
+								</tr>
+								<tr style="height: 26.3125px;">
+												<td width="168" valign="top" style="width: 125.9pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">abs(x)</p>
+												</td>
+												<td width="470" valign="top" style="width: 352.65pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												вычисляет модуль числа x</p>
+												</td>
+								</tr>
+								<tr style="height: 26.3125px;">
+												<td width="168" valign="top" style="width: 125.9pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">round(x)</p>
+												</td>
+												<td width="470" valign="top" style="width: 352.65pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												округляет x до ближайшего целого</p>
+												</td>
+								</tr>
+								<tr style="height: 26.3125px;">
+												<td width="168" valign="top" style="width: 125.9pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">min(x1, 
+												x2,…,x_n)</p>
+												</td>
+												<td width="470" valign="top" style="width: 352.65pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">находит 
+												минимальное, среди указанных 
+												чисел</p>
+												</td>
+								</tr>
+								<tr style="height: 26.3125px;">
+												<td width="168" valign="top" style="width: 125.9pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">max(x1, 
+												x2,…,x_n)</p>
+												</td>
+												<td width="470" valign="top" style="width: 352.65pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">находит 
+												максимальное, среди указанных 
+												чисел</p>
+												</td>
+								</tr>
+								<tr style="height: 26.3125px;">
+												<td width="168" valign="top" style="width: 125.9pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">pow(x, 
+												y)</p>
+												</td>
+												<td width="470" valign="top" style="width: 352.65pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">возводит 
+												x в степень y</p>
+												</td>
+								</tr>
+				</table>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Также в языке Python имеется стандартная библиотека math, 
+				которая содержит большое количество стандартных математических 
+				функций. Чтобы ей воспользоваться, необходимо вначале программы 
+				подключить эту библиотеку. Делается это с помощью ключевого 
+				слова import, за которым указывается имя библиотеки:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(255, 119, 0); font-weight: bold;">import</span> <span style="color: rgb(220, 20, 60);">math</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				После этого становятся доступными следующие полезные функции:</p>
+				<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; border-collapse: collapse; border: none;">
+								<tr style="height: 26.3125px;">
+												<td width="168" valign="top" style="width: 125.9pt; border: 1pt solid black; background: rgb(229, 229, 229); padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">Название</p>
+												</td>
+												<td width="470" valign="top" style="width: 352.65pt; border-top: 1pt solid black; border-right: 1pt solid black; border-bottom: 1pt solid black; border-image: initial; border-left: none; background: rgb(229, 229, 229); padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">Описание</p>
+												</td>
+								</tr>
+								<tr style="height: 26.3125px;">
+												<td width="168" valign="top" style="width: 125.9pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												math.ceil(x)</p>
+												</td>
+												<td width="470" valign="top" style="width: 352.65pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												возвращает ближайшее наибольшее 
+												целое для x</p>
+												</td>
+								</tr>
+								<tr style="height: 26.3125px;">
+												<td width="168" valign="top" style="width: 125.9pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												math.floor(x)</p>
+												</td>
+												<td width="470" valign="top" style="width: 352.65pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												возвращает ближайшее наименьшее 
+												целое для x</p>
+												</td>
+								</tr>
+								<tr style="height: 26.3125px;">
+												<td width="168" valign="top" style="width: 125.9pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												math.fabs(x)</p>
+												</td>
+												<td width="470" valign="top" style="width: 352.65pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												возвращает модуль числа x</p>
+												</td>
+								</tr>
+								<tr style="height: 26.3125px;">
+												<td width="168" valign="top" style="width: 125.9pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												math.factorial(x)</p>
+												</td>
+												<td width="470" valign="top" style="width: 352.65pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												вычисляет факториал x!</p>
+												</td>
+								</tr>
+								<tr style="height: 26.3125px;">
+												<td width="168" valign="top" style="width: 125.9pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												math.exp(x)</p>
+												</td>
+												<td width="470" valign="top" style="width: 352.65pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												вычисляет e**x</p>
+												</td>
+								</tr>
+								<tr style="height: 26.3125px;">
+												<td width="168" valign="top" style="width: 125.9pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												math.log2(x)</p>
+												</td>
+												<td width="470" valign="top" style="width: 352.65pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												вычисляет логарифм по основанию 
+												2</p>
+												</td>
+								</tr>
+								<tr style="height: 26.3125px;">
+												<td width="168" valign="top" style="width: 125.9pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												math.log10(x)</p>
+												</td>
+												<td width="470" valign="top" style="width: 352.65pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												вычисляет логарифм по основанию 
+												10</p>
+												</td>
+								</tr>
+								<tr style="height: 76.3125px;">
+												<td width="168" valign="top" style="width: 125.9pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												math.log(x, [base])</p>
+												</td>
+												<td width="470" valign="top" style="width: 352.65pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												вычисляет логарифм по указанному 
+												основанию base (по умолчанию 
+												base = e – натуральный логарифм)</p>
+												</td>
+								</tr>
+								<tr style="height: 26.3125px;">
+												<td width="168" valign="top" style="width: 125.9pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												math.pow(x, y)</p>
+												</td>
+												<td width="470" valign="top" style="width: 352.65pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">возводит 
+												число x в степень y</p>
+												</td>
+								</tr>
+								<tr style="height: 26.3125px;">
+												<td width="168" valign="top" style="width: 125.9pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												math.sqrt(x)</p>
+												</td>
+												<td width="470" valign="top" style="width: 352.65pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												вычисляет квадратный корень из x</p>
+												</td>
+								</tr>
+								<tr style="height: 26.3125px;">
+												<td width="638" colspan="2" valign="top" style="width: 478.55pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; background: rgb(229, 229, 229); padding: 0cm 5.4pt;">
+												<p align="center" style="margin: 0px;">
+												Тригонометрические функции</p>
+												</td>
+								</tr>
+								<tr style="height: 26.3125px;">
+												<td width="168" valign="top" style="width: 125.9pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												math.cos(x)</p>
+												</td>
+												<td width="470" valign="top" style="width: 352.65pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												вычисляет косинус x</p>
+												</td>
+								</tr>
+								<tr style="height: 26.3125px;">
+												<td width="168" valign="top" style="width: 125.9pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												math.sin(x)</p>
+												</td>
+												<td width="470" valign="top" style="width: 352.65pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												вычисляет синус x</p>
+												</td>
+								</tr>
+								<tr style="height: 26.3125px;">
+												<td width="168" valign="top" style="width: 125.9pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												math.tan(x)</p>
+												</td>
+												<td width="470" valign="top" style="width: 352.65pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												вычисляет тангенс x</p>
+												</td>
+								</tr>
+								<tr style="height: 26.3125px;">
+												<td width="168" valign="top" style="width: 125.9pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												math.acos(x)</p>
+												</td>
+												<td width="470" valign="top" style="width: 352.65pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												вычисляет арккосинус x</p>
+												</td>
+								</tr>
+								<tr style="height: 26.3125px;">
+												<td width="168" valign="top" style="width: 125.9pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												math.asin(x)</p>
+												</td>
+												<td width="470" valign="top" style="width: 352.65pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												вычисляет арксинус x</p>
+												</td>
+								</tr>
+								<tr style="height: 26.3125px;">
+												<td width="168" valign="top" style="width: 125.9pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												math.atan(x)</p>
+												</td>
+												<td width="470" valign="top" style="width: 352.65pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">
+												вычисляет арктангенс x</p>
+												</td>
+								</tr>
+								<tr style="height: 26.3125px;">
+												<td width="638" colspan="2" valign="top" style="width: 478.55pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; background: rgb(229, 229, 229); padding: 0cm 5.4pt;">
+												<p align="center" style="margin: 0px;">
+												Математические константы</p>
+												</td>
+								</tr>
+								<tr style="height: 26.3125px;">
+												<td width="168" valign="top" style="width: 125.9pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">math.pi</p>
+												</td>
+												<td width="470" valign="top" style="width: 352.65pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">число пи</p>
+												</td>
+								</tr>
+								<tr style="height: 26.3125px;">
+												<td width="168" valign="top" style="width: 125.9pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">math.e</p>
+												</td>
+												<td width="470" valign="top" style="width: 352.65pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">число e</p>
+												</td>
+								</tr>
+				</table>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Помимо этих есть и другие математические функции. При 
+				необходимости, о них можно почитать в официальной документации 
+				языка Python.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Применение этих функций вполне очевидно, например, их можно 
+				вызвать вот так:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(255, 119, 0); font-weight: bold;">import</span> <span style="color: rgb(220, 20, 60);">math</span>
+a <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(255, 69, 0);">2.4</span>
+b <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(220, 20, 60);">math</span>.<span style="color: black;">cos(</span>a<span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>b<span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span> <span style="color: rgb(220, 20, 60);">math</span>.<span style="color: black;">floor(</span><span style="color: rgb(255, 69, 0);">1.7</span><span style="color: black;">)</span> <span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span> <span style="color: rgb(220, 20, 60);">math</span>.<span style="color: black;">ceil(</span><span style="color: rgb(255, 69, 0);">1.7</span><span style="color: black;">)</span> <span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span> <span style="color: rgb(220, 20, 60);">math</span>.<span style="color: black;">sqrt(</span><span style="color: rgb(255, 69, 0);">2.56</span><span style="color: black;">)</span> <span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				И так далее. Вот так работают арифметические операции в Python и 
+				вот такие математические функции имеются в стандартной 
+				библиотеке math.</p>
+                <p></p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les27.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les27/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:58:00 GMT -->
+</html>

@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les12/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:25:33 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: #0000FF;
+}
+.style3 {
+	margin-left: 40px;
+}
+    .style4 {
+	margin-left: 80px;
+	font-size: medium;
+}
+.style5 {
+	color: #FF0000;
+}
+    .style6 {
+	margin-left: 80px;
+	color: #0000FF;
+	font-size: medium;
+}
+    .style7 {
+	font-size: medium;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 2. Пример решения задачи в классе. </td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p class="style7">Постановка задачи. Напечатать ряд из 20 повторяющихся чисел 
+				20 в виде:<br />
+				а) строки: 20 20 20 20 20 20 20 20 20 20<br />
+				b) таблицы 4х5<br />
+				20 20 20 20 <br />
+				20 20 20 20 <br />
+				20 20 20 20 <br />
+				20 20 20 20 <br />
+				20 20 20 20<br />
+				1. Ввести переменную для числа 20 digA = 20<br />
+				2. Вывести число digA в строку<br />
+				3. Вывести число digA в таблицу по 5 чисел в строке, 4 строк</p>
+				<p class="style7">Пример реализации в <span lang="en-us">Pascal</span></p>
+				<pre class="style3"><span class="style2"><span class="style7">program Ur11;
+
+{$APPTYPE CONSOLE}
+//Урок 11. Циклы: с постусловием, с предусловием, с параметром.
+{$R *.res}
+// Задача 2. Напечатать ряд из 10 повторяющихся чисел 20 в виде: 20 20 20 20 20 20 20 20 20 20
+uses
+  System.SysUtils;
+ //1. Ввести переменную для числа 20  digA = 20
+</span></span><span class="style7"> </span><span class="style2"><span class="style7">var
+      digA: byte = 20;
+      i: byte;  //объявили переменную для счетныый цикл
+      j: byte;  // объявили переменную для Цикла while с предусловием
+      L: byte;  // объявили переменную для Цикла repeat  с ПОСТУСЛОВИЕМ
+
+begin
+  WriteLn('Работа 11 студент Иванов А.');
+  for I := 1 to 20 do   //цикл повторяется 10 раз  счетныый цикл
+   begin
+     Write(digA,' ');
+     {
+      if i = 4 then  WriteLn;
+      if i = 8 then  WriteLn;
+      if i = 12 then  WriteLn;
+      if i = 16 then  WriteLn;
+      }
+      case i of
+      4:  WriteLn;
+      8:  WriteLn;
+      12: WriteLn;
+      16: WriteLn;
+      end;
+   end;
+    WriteLn;
+    WriteLn('Цикл while с предусловием');
+   //Цикл while с предусловием    while(i > 0) { тело }
+   j:=20; //определили количество итераций
+    while(j > 0) do { тело }
+       begin
+         Write(digA,' ');
+           case j of
+              5:  WriteLn;
+              9:  WriteLn;
+              13: WriteLn;
+              17: WriteLn;
+            end;
+         j:=j-1;  //уменьшаем количество итераций на 1
+       end;
+
+    //Цикл repeat  с ПОСТУСЛОВИЕМ    repeat   оператор1;  . . .;  операторN
+   //until условие {до тех пор, пока условие не станет истинным}
+   WriteLn;
+    WriteLn('Цикл repeat с ПОСТУСЛОВИЕМ');
+   L:=20;   //определили количество итераций
+     repeat
+          Write(digA,' ');
+          l:=l-1;  //уменьшаем количество итераций на 1
+          case l of
+              4:  WriteLn;
+              8:  WriteLn;
+              12: WriteLn;
+              16: WriteLn;
+            end;
+     until (L <= 0);
+
+
+
+  Readln; </span></span><span class="style7">//точка останова
+<span class="style2">end.</span>
+</span></pre>
+				<p class="style7">Пример реализации в C#</p>
+				<pre class="style4"><span class="style2">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+//Задача 2. Напечатать ряд из 20 повторяющихся чисел 20 в виде: 20 20 20 20 20 20 20 20 20 20
+namespace Ur11_ABD
+</span>{<span class="style2">
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Урок 11 Циклы  работа студента Иванова А");
+            //Ввести переменную   числа digA = 20 20 раз
+            int digA = 20;
+            // 2.Вывести число digA в строку
+            </span><span class="style5">for (int i = 0; i < 20; i++) </span><span class="style2">
+            {
+                Console.Write($"{digA}  ");
+                if (i == 3) { Console.WriteLine(); }
+                if (i == 7)  {Console.WriteLine();}
+                if (i == 11) { Console.WriteLine();}
+                if (i == 15) { Console.WriteLine(); }
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Цикл while");
+            int j = 20;
+            </span><span class="style5">while (j > 0)</span><span class="style2">
+            {
+                Console.Write($"{digA}  ");
+                if (j == 5) { Console.WriteLine(); }
+                if (j == 9) { Console.WriteLine(); }
+                if (j == 13) { Console.WriteLine(); }
+                if (j == 17) { Console.WriteLine(); }   
+                j--;
+            }
+            Console.WriteLine();
+            Console.WriteLine("Цикл do..while");
+            int d = 20;
+            </span><span class="style5"><strong>do</strong></span><span class="style2">
+            {
+                Console.Write($"{digA}  ");
+                switch (d)
+                {
+                    case 5:
+                        Console.WriteLine();
+                        break;
+                    case 9:
+                        Console.WriteLine();
+                        break;
+                    case 13:
+                        Console.WriteLine();
+                        break;
+                    case 17:
+                        Console.WriteLine();
+                        break;
+
+                }
+                d--;
+            }
+            </span><span class="style5">while (d > 0);</span><span class="style2">
+           
+            
+            Console.ReadLine();
+        }
+    }
+</span>}
+</pre>
+				<p class="style7">Пример реализации в Python.</p>
+				<pre class="style6">print('Урок 11 Циклы');
+print('Работа студента Иванова И.');
+#Задача 2. Напечатать ряд из 20 повторяющихся чисел 20 в виде: 20 20 20 20 20 20 20 20 20 20
+print('Цикл for - счетный')
+diga = 20
+print(f'Элемент 5  range(10)[5] =  {range(10)[5]}')
+
+<span class="style5">for i in range(20):</span>
+    print(diga, end=" ") 
+    if i==3: print()
+    if i==7: print()
+    if i==11: print()
+    if i==15: print()
+print()
+print('Цикл while')
+n = 20
+<span class="style5">while n > 0:</span>
+    print(diga, end=" ") 
+    if n==5: print()
+    if n==9: print()
+    if n==13: print()
+    if n==17: print()
+    n -= 1  #деинкремент 
+
+input()</pre></td>
+        </tr>
+        <tr>
+            <td>
+                				
+				<br />
+			</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les12.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les12/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:25:33 GMT -->
+</html>

@@ -1,0 +1,562 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les24/8.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:50:50 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
+     <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style3 {
+				font-size: small;
+}
+.style4 {
+				color: blue;
+				margin-left: 40px;
+}
+    .style5 {
+				font-size: small;
+				margin-left: 40px;
+}
+.style6 {
+				margin-left: 40px;
+}
+.style7 {
+				color: blue;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 7. Работа со списками (list) в Python.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p class="ZagT">Базовая работа со списками</p>
+<p class="ZagT">Объявление списка</p>
+<p>
+<img alt="" src="Pic/r-6-2.png" width="295" height="136" /></p>
+				<p>Объявление списка — самый первый и главный этап его создания. Для объявления списка в Python существует несколько способов.</p>
+<p class="style4">Вариант №1: Через литерал (выражение, создающее объект):</p>
+<pre class="style5">
+>>> elements = [1, 3, 5, 6]
+
+>>> type(elements)
+<class 'list'>
+
+>>> print(elements)
+[1, 3, 5, 6]</pre>
+<p>В данном примере мы создали список с заранее известными данными. Если нужен пустой список, в квадратных скобках ничего не указывается — elements = [].&nbsp;</p>
+				<p class="style4">Вариант №2: Через функцию list():</p>
+<pre class="style5">
+>>> elements = list()
+
+>>> type(elements)
+<class 'list'>
+
+>>> print(elements)
+[]</pre>
+<p>В этом примере создается пустой список.</p>
+<p class="ZagT">Обращение к элементу списка в Python</p>
+<p>
+<img alt="" src="Pic/r-6-3.png" width="602" height="204" /></p>
+				<p>Чтобы обратиться к элементу списка, достаточно указать его индекс:</p>
+<pre class="style5">
+>>> elements = [1, 2, 3, 'word']
+
+>>> elements[3]
+'word'</pre>
+<p>Индекс — это порядковый номер элемента в списке. В примере выше индексы (позиции в списке) соответственно будут: 0, 1, 2, 3.</p>
+<p>Нумерация элементов списка в Python начинается с нуля.</p>
+<p>Существует также отрицательный индекс, рассмотрим на примере:</p>
+				<p class="style6">
+<pr>
+				<span class="style3"><span class="style7">>>> elements = [1, 2, 3, 'word']
+
+				</span></span></p>
+				<p class="style6">
+				<pr>
+				<span class="style3"><span class="style7">>>> elements[-4]
+1
+
+</span></span></p>
+				<p class="style6">
+				<pr>
+				<span class="style3"><span class="style7">>>> elements[-1]
+'word'</span>&nbsp;</span></p>
+</pre>
+<p>Отрицательные индексы работают справа налево (то есть индекс значения '1' — -4, а отрицательный индекс 'word' — -1.</p>
+<p>Отрицательным индексом удобно пользоваться, когда необходимо обратиться к последнему элементу в списке, не высчитывая его номер. Любой конечный элемент будет с индексом, равным -1.</p>
+<p class="ZagT">Добавление в список</p>
+<p>В списках доступно добавление, изменение, удаление элементов. Рассмотрим каждый способ изменения элементов на примерах.</p>
+				<p>
+				<img alt="" src="Pic/r-6-4.png" width="621" height="258" /></p>
+<p>Для того чтобы добавить новый элемент в список, используется list.append(x), где list — список, x — нужное значение.</p>
+<pre class="style5">>>> elements = [1, 2, 3, 'word']
+>>> elements.append('meow')
+
+>>> print(elements)
+[1, 2, 3, 'word', 'meow']</pre>
+<p>Для простого примера, рассмотрим создание списка с нуля с помощью метода append() :</p>
+<pre class="style5">>>> elements = []
+>>> elements.append(1)
+>>> elements.append('word')
+>>> elements.append('meow')
+
+>>> print(elements)
+[1, 'word', 'meow']</pre>
+<p class="ZagT">Добавление в список на указанную позицию</p>
+<p>
+<img alt="" src="Pic/r-6-5.png" width="980" height="283" /></p>
+				<p>Немаловажно обратить внимание на метод list.insert(i, x), где list — список, i — позиция, x — нужное значение.</p>
+<pre class="style5">>>> elements = [1, 2, 4]
+>>> print(elements)
+[1, 2, 4]
+
+>>> elements.insert(2, 3)
+>>> print(elements)
+[1, 2, 3, 4]</pre>
+<p class="ZagT">Изменение элементов списка</p>
+<p>
+<img alt="" src="Pic/r-6-6.png" width="656" height="304" /></p>
+				<p>Изменение элементов списка происходит следующим образом: нужно выбрать элемент по индексу (порядковому номеру элемента) и присвоить новое значение.</p>
+<pre class="style5">
+>>> elements = [2, 4, 6]
+>>> elements[2] = 8
+
+>>> print(elements)
+[2, 4, 8]</pre>
+<p>В примере выше мы заменили 6 на 8.</p>
+<p>Не забывайте, что счёт начинается с нуля, и в данном списке цифра 6 это 2-й элемент</p>
+<p class="ZagT" >Удаление элемента из списка</p>
+<p>
+<img alt="" src="Pic/r-6-7.png" width="662" height="261" /></p>
+				<p>Для удаление из списка используют инструкцию del list[i], где list — список, i — индекс (позиция) элемента в списке:</p>
+<pre class="style5">>>> elements = [1, "test", 5, 7]
+>>> del elements[1]
+>>> print(elements)
+[1, 5, 7]</pre>
+<p>Удалять можно как из текущего списка, так и из вложенных списков:</p>
+<pre class="style5">
+>>> my_list = ["hello", "world", "!"]
+>>> elements = [1, my_list, "ok"]
+>>> del elements[1][2]
+
+>>> print(elements)
+[1, ['hello', 'world'], 'ok']</pre>
+<p>Можно удалять целыми диапазонами:</p>
+<pre class="style6">
+<span class="style3">>>> elements = [2, 4, 6, 8, 12]
+>>> del elements[2:]  # удаляем все элементы после 2-го элемента (включительно)
+>>> print(elements)
+[2, 4]
+</pre>
+<pre class="style6">>>> elements = [2, 4, 6, 8, 12]
+>>> del elements[:3]  # удаляем все элементы до 3-го элемента
+>>> print(elements)
+[8, 12]
+
+>>> elements = [2, 4, 6, 8, 12]
+>>> del elements[1:3]  # удаляем от 1-го элемента включительно до 3-го элемента
+>>> print(elements)
+[2, 8, 12]</span></pre>
+<p>Еще один способ удаления из списка — list.remove(x), где list — список, x — значение, которое нужно удалить:</p>
+<pre class="style5">>>> elements = [2, "test", 4]
+>>> elements.remove("test")
+>>> print(elements)
+[2, 4]</pre>
+<p class="ZagT">Как проверить наличие элемента в списке</p>
+				<p>
+				<img alt="" src="Pic/r-6-8.png" width="958" height="261" /></p>
+<p>Для того чтобы проверить существование какого-либо элемента в списке, нужно воспользоваться оператором in. Рассмотрим на примере:</p>
+<pre class="style5">
+>>> elements = ['слон', 'кот', 'лошадь', 'змея', 'рыба']
+>>> if 'кот' in elements:
+	print('meow')	
+
+meow</pre>
+<p class="ZagT">Объединение списков</p>
+<p>
+<img alt="" src="Pic/r-6-9.png" width="847" height="264" /></p>
+				<p>Списки в Python можно объединять с помощью оператора + или метода extend . Выглядит это так:</p>
+<pre class="style5">
+>>> a = [1, 3, 5]
+>>> b = [1, 2, 4, 6]
+>>> print(a + b)
+[1, 3, 5, 1, 2, 4, 6]
+
+>>> hello = ["h", "e", "l", "l", "o"]
+>>> world = ["w", "o", "r", "l", "d"]
+>>> hello.extend(world)  # extends не возвращает новый список, а дополняет текущий
+>>> print(hello)
+['h', 'e', 'l', 'l', 'o', 'w', 'o', 'r', 'l', 'd']</pre>
+<p class="ZagT">Копирование списка Python</p>
+<p>
+<img alt="" src="Pic/r-6-10.png" width="1033" height="265" /></p>
+				<p>Если вы захотите скопировать список оператором =, вы скопируете не сам список, а только его ссылку.</p>
+<pre class="style5">>>> a = [1, 2, 3]
+>>> b = a  # переменной b присваивается не значение списка a, а его адрес
+
+>>> print(id(a), id(b))
+56466376 56466376  # a и b ссылаются на один и тот же список
+
+>>> b.append(4)
+>>> print(a, b)
+[1, 2, 3, 4] [1, 2, 3, 4]</pre>
+<p>Для копирования списков можно использовать несколько вариантов:</p>
+<pre class="style5">
+elements.copy() — встроенный метод copy (доступен с Python 3.3);
+list(elements) — через встроенную функцию list() ;
+copy.copy(elements) — функция copy() из пакета copy;
+elements[:] — через создание среза (устаревший синтаксис).</pre>
+<p>Рассмотрим на примере каждый из этих способов:</p>
+<pre class="style5">
+>>> a = ["кот", "слон", "змея"]
+
+>>> b = a.copy()
+>>> print(id(a), id(b), a, b)
+56467336 56467016 ['кот', 'слон', 'змея'] ['кот', 'слон', 'змея']
+
+>>> d = list(a)
+>>> print(id(a), id(d), a, d)
+56467336 60493768 ['кот', 'слон', 'змея'] ['кот', 'слон', 'змея']
+
+>>> import copy
+>>> e = copy.copy(a)  # 
+>>> print(id(a), id(e), a, e)
+56467336 60491304 ['кот', 'слон', 'змея'] ['кот', 'слон', 'змея']
+
+>>> f = copy.deepcopy(a) 
+>>> print(id(a), id(f), a, f)
+56467336 56467400 ['кот', 'слон', 'змея'] ['кот', 'слон', 'змея']
+
+>>> c = a[:]  # устаревший синтаксис
+>>> print(id(a), id(c), a, c)
+56467336 60458408 ['кот', 'слон', 'змея'] ['кот', 'слон', 'змея']</pre>
+<p>Важно: copy.copy(a) делает поверхностное копирование. Объекты внутри списка будут скопированы как ссылки на них (как в случае с оператором =). Если необходимо рекурсивно копировать всех элементов в списке, используйте copy.deepcopy(a)</p>
+<p>Скопировать часть списка можно с помощью срезов. Есть несколько вариантов использования:</p>
+<pre class="style5">
+>>> a = ["кот", "слон", "змея"]
+
+>>> b = a[2:]  # с 2-го элемента (включительно) до конца списка
+>>> print(b)
+['змея']
+
+>>> c = a[:2]  #  с начала списка по 2-й элемент
+>>> print(c)
+['кот', 'слон']
+
+>>> d = a[1:2]  #  с 1-го элемента (включительно) по 2-й элемент
+>>> print(d)
+['слон']
+
+>>> a = [1, 2, 3, 4, 5, 6, 7, 8]
+>>> e = a[0:8:2]  # c 0-го элемента по 8-й элемент с шагом 2
+>>> print(e)
+[1, 3, 5, 7]</pre>
+<p class="ZagT">Цикл по списку</p>
+<p>
+<img alt="" src="Pic/r-6-11.png" width="619" height="245" /></p>
+				<p>Для перебора списков в Python есть два цикла: for и while.</p>
+<pre class="style5">
+elements = [1, 2, 3, "meow"]
+for el in elements:
+    print(el)</pre>
+<p>Результат выполнения:</p>
+<pre class="style5">
+1   
+2   
+3   
+meow</pre>
+<p>Попробуем построить цикл while. Он выполняется, когда есть какое-либо определённое условие:</p>
+<pre class="style5">
+elements = [1, 2, 3, "meow"]
+elements_len = len(elements)
+i = 0
+while i < elements_len:
+    print(elements[i])
+    i += 1
+Результат выполнения:
+
+1   
+2   
+3   
+meow</pre>
+<p>Из примеров выше можем сделать вывод, что конструкция for выглядит заметно компактнее, чем while.</p>
+<p class="ZagT">Методы списков</p>
+				<ul class="style3">
+								<li>list.append(x) — позволяет добавлять элемент 
+								в конец списка;</li>
+								<li>list1.extend(list2) — предназначен для сложения списков;</li>
+								<li>list.insert(i, x) — служит для добавления элемента на указанную позицию(i — позиция, x — элемент);</li>
+								<li>list.remove(x) — удаляет элемент из списка (только первое вхождение);</li>
+								<li>list.clear() — предназначен для удаления всех элементов (после этой операции список становится пустым []);</li>
+								<li>list.copy() — служит для копирования списков.</li>
+								<li>list.count(x) — посчитает количество элементов x в списке;</li>
+								<li>list.index(x) — вернет позицию первого найденного элемента x в списке;</li>
+								<li>list.pop(i) — удалит элемент из позиции i ;</li>
+								<li>list.reverse() — меняет порядок элементов в списке на противоположный;</li>
+								<li>list.sort() — сортирует список. </li>
+				</ul>
+<p>Пример использования методов:</p>
+<pre class="style5">
+# append
+>>> a = [1, 2, 3]
+>>> a.append(4)
+print(a)
+[1, 2, 3, 4]
+
+# extend
+>>> elements = [1, 2, 3, "meow"]
+>>> elements.extend([4, 5, "gaf"])
+>>> print(elements)
+[1, 2, 3, 'meow', 4, 5, 'gaf']
+
+# insert
+>>> a = [1, 3, 4]
+>>> a.insert(1, 2)  # insert добавит на позицию 1 цифру 2
+>>> print(a)
+[1, 2, 3, 4]
+
+# remove
+>>> elements = [1, "meow", 3, "meow"]
+>>> elements.remove("meow")  # remove удалит только первое вхождение
+>>> print(elements)
+[1, 3, 'meow']
+
+# clear
+>>> a = [1, 2, 3]
+>>> a.clear()
+>>> print(a)
+[]
+
+# copy
+>>> a = [1, 2, 3]
+>>> b = a.copy()
+>>> print(id(a), id(b), a, b)
+60458408 60491880 [1, 2, 3] [1, 2, 3]
+
+# count
+>>> elements = ["one", "two", "three", "one", "two", "one"]
+>>> print(elements.count("one"))
+3
+
+# index
+>>> elements = ["one", "two", "three", "one", "two", "three"]
+>>> print(elements.index("three"))  # index вернет первый найденный индекс
+2
+
+# pop (положительный индекс)
+>>> elements = [1, "meow", 3, "wow"]
+>>> elements.pop(1)  # удаляет элемент с индексом 1
+'meow'  # pop возвращает удаленный элемент списка
+>>> print(elements)
+[1, 3, 'wow']
+
+# pop (отрицательный индекс) [удаление с конца списка, начиная с -1]
+elements = ["hello", "world", "!"]
+elements.pop(-2)
+'world'
+>>> print(elements)
+['hello', '!']
+
+# pop (без индекса) [удалит из списка последний элемент]
+>>> elements = [1, 2, 3]
+>>> elements.pop()  # по умолчанию, в методе pop индекс равен -1
+3
+>>> print(elements)
+[1, 2]
+
+# reverse
+>>> a = [1, 2, 3]
+>>> a.reverse()
+>>> print(a)
+[3, 2, 1]
+
+# sort (по возрастанию)
+>>> elements = [3, 19, 0, 3, 102, 3, 1]
+>>> elements.sort()
+>>> print(elements)
+[0, 1, 3, 3, 3, 19, 102]
+
+# sort (по убыванию)
+>>> elements = [3, 19, 0, 3, 102, 3, 1]
+>>> elements.sort(reverse = True)
+>>> print(elements)
+[102, 19, 3, 3, 3, 1, 0]</pre>
+<p  class="ZagT">Вложенные списки</p>
+<p>Список может содержать объекты разных типов: числовые, буквенные, а также списки. Список списков выглядит следующим образом:</p>
+<pre class="style5">
+>>> elements = [1, 2, [0.1, 0.2, 0.3]]
+Для обращения к элементу вложенного списка нужно использовать два индекса: первый указывает на индекс главного списка, второй — индекс элемента во вложенном списке. Вот пример:
+
+>>> elements = [["яблоки", 50], ["апельсины", 190], ["груши", 100]]
+
+>>> print(elements[0])
+['яблоки', 50]
+
+>>> print(elements[1][0])
+апельсины</pre>
+<p class="ZagT">Срезы</p>
+<p>Срезы (slices) — это подмножества элементов списка. Срезу нужны, когда необходимо извлечь часть списка из полного списка.</p>
+<p>У них есть свой собственный синтаксис. Записывается срез так же, как обращение к элементу, используя индекс. Пример:</p>
+<pre class="style5">
+elements[START:STOP:STEP]</pre>
+<p>В этом случае берётся срез от номера start (включительно) до stop (не включая его), а step — это шаг. По умолчанию start и stop равны 0, step равен 1.</p>
+<pre class="style5">
+>>> elements = [0.1, 0.2, 1, 2, 3, 4, 0.3, 0.4]
+>>> int_elements = elements[2:6]  # с 2-го элемента включительно по 6-й элемент
+
+>>> print(id(elements), id(int_elements))  # elements и int_elements - 2 разных списка
+53219112 53183848
+
+>>> print(elements)
+[0.1, 0.2, 1, 2, 3, 4, 0.3, 0.4]  # срез не модифицирует исходный список
+
+>>> print(int_elements)
+[1, 2, 3, 4]</pre>
+<p class="ZagT">Генераторы списков</p>
+<p>Генератором списка называется способ построения списка с применением выражения к каждому элементу, входящему в последовательность. Есть схожесть генератора списка и цикла for. На этом примере мы рассмотрим простейший генератор списков:</p>
+<pre class="style5">
+>>> c = [c * 3 for c in 'list']
+
+>>> print(c)
+['lll', 'iii', 'sss', 'ttt']</pre>
+<p>Таким образом мы получили отдельно взятые утроенные буквы слова, введённого в кавычки. Есть множество вариантов применения генератора списков. </p>
+<p>Пример генератора списка:</p>
+<pre class="style5">
+>>> nums = [i for i in range(1, 15)]
+>>> print(nums)
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]</pre>
+<p>Пример посложнее:</p>
+<pre class="style3">
+>>> c = [c + d for c in 'list' if c != 'i' for d in 'spam' if d != 'a']
+>>> print(c)
+['ls', 'lp', 'lm', 'ss', 'sp', 'sm', 'ts', 'tp', 'tm']</pre>
+<p>Это усложнённая конструкция генератора списков, в которой мы сделали все возможные наборы сочетаний букв из введённых слов. Буквы-исключения видны по циклу, где стоит знак != для одной переменной и другой.</p>
+				<p class="ZagT">Решения практических задач, с которыми так или иначе сталкивается Python-разработчик.&nbsp;</p>
+				<p>Как получить список в обратном порядке</p>
+<p class="ZagT">Изменить порядок размещения элементов в списке помогает функция list.reverse():</p>
+<pre class="style5">
+>>> elements = [1, 2, 3, 4, 5, 6]
+>>> elements.reverse()
+
+>>> print(elements)
+[6, 5, 4, 3, 2, 1]</pre>
+<p class="ZagT">Как перевести список в другой формат?</p>
+<p>Иногда требуется перевести список в строку, в словарь или в JSON. Для этого нужно будет вывести список без скобок.</p>
+<p>Перевод списка в строку осуществляется с помощью функции join(). На примере это выглядит так:</p>
+<pre class="style5">
+>>> fruits = ["яблоко", "груша", "ананас"]
+
+>>> print(', '.join(fruits))
+яблоко, груша, ананас</pre>
+<p>В данном случае в качестве разделителя используется запятая.</p>
+<p>Словарь в Python — это такая же встроенная структура данных, наряду со списком. Преобразование списка в словарь — задача тоже несложная. 
+<span class="style7"><em>Для этого потребуется воспользоваться функцией dict(). 
+</em></span>Вот пример преобразования:</p>
+<pre class="style5">
+>>> elements = [['1', 'a'],['2', 'b'],['3', 'c']]
+>>> my_dict = dict(elements)
+
+>>> print(my_dict)
+{'1': 'a', '2': 'b', '3': 'c'}</pre>
+<p>JSON — это JavaScript Object Notation. <span class="style7"><em>В Python находится встроенный модуль json для кодирования и декодирования данных JSON</em></span>. С применением метода json.dumps(x) можно запросто преобразовать список в строку JSON.</p>
+<pre class="style5">
+>>> import json
+>>> json.dumps(['word', 'eye', 'ear'])
+'["word", "eye", "ear"]'</pre>
+<p class="ZagT">Как узнать индекс элемента в списке?</p>
+<p>Узнать позицию элемента в последовательности списка бывает необходимым, когда элементов много, вручную их не сосчитать, и нужно обращение по индексу. 
+<span class="style7"><em>Для того чтобы узнать индекс элемента, используют функцию list.index(x).</em></span></p>
+<pre class="style6">
+<span class="style3">>>> elements = [1, 3, 6, 9, 55]
+
+>>> print(elements.index(9))
+</span>3</pre>
+<p>В качестве аргумента передаем значение, а на выходе получаем его индекс.</p>
+<p class="ZagT">Как посчитать количество уникальных элементов в списке?</p>
+<p>Самый простой способ — приведение списка к set (множеству). После этого останутся только уникальные элементы, которые мы посчитаем функцией len():</p>
+<pre class="style6">
+<span class="style3">>>> words = ["one", "two", "one", "three", "one"]
+>>> len(set(words))
+</span>3</pre>
+<p class="ZagT">Как проверить список на пустоту?</p>
+<pre class="style5">>>> a = []
+>>> if not a:
+	print("список пуст!")
+список пуст!</pre>
+<p class="ZagT" >Как создать список числовых элементов с шагом</p>
+<p>Создание списка числовых элементов с шагом может понадобиться не так и часто, но мы рассмотрим пример построения такого списка.</p>
+<p>Шагом называется переход от одного элемента к другому. Если шаг отрицательный, произойдёт реверс массива, то есть отсчёт пойдёт справа налево. Вот так выглядит список с шагом.</p>
+<pre class="style5">
+>>> elements = [1, 2, 3, 4, 5, 8, 9, 10, 11, 14, 20]
+>>> print(elements[0:11:2])
+[1, 3, 5, 9, 11, 20]</pre>
+<p>Еще один вариант — воспользоваться генератором списков:</p>
+<pre class="style5">
+>>> elements = [c for c in range(0, 10, 2)]  # от 0 (включительно) до 10 с шагом 2
+
+>>> print(elements)
+[0, 2, 4, 6, 8]</pre></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les24.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les24/8.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:52:37 GMT -->
+</html>

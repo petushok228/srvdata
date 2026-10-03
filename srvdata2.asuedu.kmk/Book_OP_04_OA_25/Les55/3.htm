@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les55/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:47:16 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+				color: rgb(255, 0, 0);
+}
+    .style3 {
+	font-size: medium;
+}
+.style4 {
+	color: #0000FF;
+	margin-left: 40px;
+}
+    .style5 {
+	color: #0000FF;
+}
+.style6 {
+	margin-left: 80px;
+}
+.style7 {
+	color: rgb(255, 0, 0);
+	font-size: medium;
+}
+.style8 {
+	color: rgb(128, 0, 0);
+}
+    .style9 {
+	font-size: small;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 3. Перегрузка индексаторов. </td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p><span class="style3">Индексатор может быть перегружен. В этом случае для выполнения выбирается тот вариант индексатора, в котором точнее соблюдается соответствие его параметра и аргумента, указываемого в качестве индекса.</p>
+<p><span class="style3">Имейте в виду, что индексаторы могут быть перегружены в отдельном классе или структуре. То есть если имеет смысл позволить вызывающему коду обращаться к подэлементам с использованием числового индекса или строкового значения, в одном и том же типе можно определить несколько индексаторов. Например, если вы когда-либо программировали с применением ADO.NET (встроенный API-интерфейс .NET для доступа к базам данных), то вспомните, что тип DataSet поддерживает свойство по имени Tables, которое возвращает строго типизированную коллекцию DataTableCollection. В свою очередь, в DataTableCollection определены три индексатора для получения объектов DataTable — по порядковому номеру, по дружественным строковым именам и необязательному пространству имен.</span></p>
+<p><span class="style3">Давайте рассмотрим пример использования перегрузки индексаторов:</span></p>
+<pre class="style4"><strong>using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication1
+</strong>{<strong>
+    class MyArr
+    {
+        int[] arr;
+        public int Length;
+
+        public MyArr(int Size)
+        {
+            arr = new int[Size];
+            Length = Size;
+        }
+
+        public int this[<span class="style2">int index</span>]  
+        {
+            get
+            {
+                return arr[index];
+            }
+
+            set
+            {
+                arr[index] = value;
+            }
+        }
+
+        // Перегружаем индексатор
+        public int this[<span class="style2">double </span><span class="style8">index</span>]  //</strong><span lang="ru"><strong>индексатор из вещественного числа</strong></span><strong>
+        {
+            get
+            {
+                return arr[(int)</strong><span class="style7"><strong>Math.Round</strong></span><strong>(<span class="style8">index</span>)];
+            }
+
+            set
+            {
+                arr[(int)<span class="style7">Math.Round</span>(<span class="style8">index</span>)] = value;  //</strong><span lang="ru"><strong>метод округляет до целого числа</strong></span><strong>
+            }
+        }
+    }
+</strong></span></pre>
+				<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: rgb(34, 34, 34); font-family: system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;>
+ text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style2">
+				<code style="box-sizing: border-box; font-family: var(--bs-font-monospace); color: var(--bs-code-color); overflow-wrap: break-word;" class="style3">
+				<strong>Math.Round</strong></code></span><span class="style3">&nbsp;— это метод округления к 
+				ближайшему числу или к ближайшему числу с заданным количеством 
+				знаков после запятой. Работает с типами</span><span><span class="style3">&nbsp;</span></span><code style="box-sizing: border-box; font-family: var(--bs-font-monospace); color: var(--bs-code-color); overflow-wrap: break-word;" class="style3">decimal</code><span><span class="style3">&nbsp;</span></span><span class="style3">и</span><span><span class="style3">&nbsp;</span></span><code style="box-sizing: border-box; font-family: var(--bs-font-monospace); color: var(--bs-code-color); overflow-wrap: break-word;" class="style3">double</code><span class="style3">, 
+				в параметрах можно встретить три вида параметров:</span></p>
+				<ul style="box-sizing: border-box; padding-left: 2rem; margin-top: 0px; margin-bottom: 1rem; color: rgb(34, 34, 34); font-family: system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;>
+ text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li style="box-sizing: border-box;">
+								<code style="box-sizing: border-box; font-family: var(--bs-font-monospace); color: var(--bs-code-color); overflow-wrap: break-word; " class="style3">
+								value</code><span class="style3">: округляемое число</span></li>
+								<li style="box-sizing: border-box;">
+								<code style="box-sizing: border-box; font-family: var(--bs-font-monospace); color: var(--bs-code-color); overflow-wrap: break-word; " class="style3">
+								digits</code><span class="style3">: количество знаков в дробной 
+								части, которые нужно оставить</span></li>
+								<li style="box-sizing: border-box;">
+								<code style="box-sizing: border-box; font-family: var(--bs-font-monospace); color: var(--bs-code-color); overflow-wrap: break-word; " class="style3">
+								mode</code><span class="style3">: параметр, который определяет в 
+								какую сторону округлять число, которое находится 
+								ровно посередине между двумя вариантами</span></li>
+				</ul>
+				<pre class="style6">
+<span class="style3">   <span class="style5"><strong> class Program
+    {
+        static void Main(string[] args)
+        {
+            MyArr arr = new MyArr(5);
+            arr[0] = 5;
+            arr[1.235] = 12;
+            arr[2] = 3;
+            arr[3.045] = 18;
+            arr[3.9] = 1;
+
+            Console.WriteLine("Получившийся массив: ");
+            for (int i = 0; i < arr.Length; i++)
+                Console.Write("{0}\t",arr[i]);
+
+                Console.ReadLine();
+        }
+    }
+</strong></span>}</pre>
+<p class="style9">Применение перегрузки индексаторов в C#</p>
+				<p><img alt="" src="Pic/img6692.png" width="677" height="102" /></p>
+<p class="style9">Представленный выше пример программы наглядно демонстрирует правомочность перегрузки индексаторов, но на практике она применяется нечасто. Как правило, индексаторы перегружаются для того, чтобы использовать объект определенного класса в качестве индекса, вычисляемого каким-то особым образом.</p>
+<p class="style9">Следует отметить, что множество типов из библиотек базовых классов поддерживают индексаторы. Поэтому, даже если текущий проект не требует построения специальных индексаторов для классов и структур, помните, что многие типы уже поддерживают этот синтаксис.</span></p>
+                </td></tr>
+
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les55.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les55/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:47:25 GMT -->
+</html>

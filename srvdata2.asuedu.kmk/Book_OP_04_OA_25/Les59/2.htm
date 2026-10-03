@@ -1,0 +1,430 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les59/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:50:16 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+				color: rgb(0, 0, 255);
+				text-decoration: underline;
+}
+    .style3 {
+				color: rgb(255, 0, 0);
+}
+.style4 {
+				text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 1. Делегаты (дополнительный материал).</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Делегаты представляют такие объекты, которые указывают на 
+				методы. То есть делегаты - <span class="style2"><em>это 
+				указатели на методы и с помощью делегатов мы можем вызвать 
+				данные методы.</em></span></p>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Определение делегатов</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для объявления делегата используется ключевое слово<span>&nbsp;</span><span class="b" style="font-weight: bold;">delegate</span>, 
+				после которого идет возвращаемый тип, название и параметры. 
+				Например:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-5.png" width="236" height="28" /></p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Делегат Message в качестве возвращаемого типа имеет тип void (то 
+				есть ничего не возвращает) и не принимает никаких параметров. 
+				Это значит, что этот делегат может указывать на любой метод, 
+				который не принимает никаких параметров и ничего не возвращает.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Рассмотрим применение этого делегата:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-6.png" width="608" height="159" /></p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Прежде всего сначала необходимо определить сам делегат:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-7.png" width="422" height="34" /></p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для использования делегата объявляется переменная этого 
+				делегата:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-8.png" width="422" height="34" />&nbsp;</p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Далее в делегат передается адрес определенного метода (в нашем 
+				случае метода Hello). Обратите внимание, что данный метод имеет 
+				тот же возвращаемый тип и тот же набор параметров (в данном 
+				случае отсутствие параметров), что и делегат.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-9.png" width="541" height="34" /></p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Затем через делегат вызываем метод, на который ссылается данный 
+				делегат:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-10.png" width="274" height="34" /></p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вызов делегата производится подобно вызову метода.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При этом делегаты необязательно могут указывать только на 
+				методы, которые определены в том же классе, где определена 
+				переменная делегата. Это могут быть также методы из других 
+				классов и структур.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-11.png" width="560" height="349" /></p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Место определения делегата</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если мы определяем делегат в программах верхнего уровня 
+				(top-level program), которую по умолчанию представляет файл 
+				Program.cs начиная с версии C# 10, как в примере выше, то, как и 
+				другие типы, делегат определяется в конце кода. Но в принципе 
+				делегат можно определять внутри класса:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-12.png" width="680" height="261" /></p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Либо вне класса:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-13.png" width="674" height="264" /></p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Параметры и результат делегата</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Рассмотрим определение и применение делегата, который принимает 
+				параметры и возвращает результат:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-14.png" width="675" height="286" /></p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В данном случае делегат Operation возвращает значение типа int и 
+				имеет два параметра типа int. Поэтому этому делегату 
+				соответствует любой метод, который возвращает значение типа int 
+				и принимает два параметра типа int. В данном случае это методы 
+				Add и Multiply. То есть мы можем присвоить переменной делегата 
+				любой из этих методов и вызывать.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Поскольку делегат принимает два параметра типа int, то при его 
+				вызове необходимо передать значения для этих параметров:<span>&nbsp;</span><code style="font-family: monospace;">operation(4,5)</code>.</p>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Присвоение ссылки на метод</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Выше переменной делегата напрямую присваивался метод. Есть еще 
+				один способ - создание объекта делегата с помощью конструктора, 
+				в который передается нужный метод:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-15.png" width="388" height="139" /></p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Оба способа равноценны.</p>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Соответствие методов делегату</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Как было написано выше, <span class="style3"><em>методы соответствуют делегату, если они 
+				имеют один и тот же возвращаемый тип и один и тот же набор 
+				параметров( </em><span class="style4">
+				<strong>Функция (метод), добавляемая к делегатам, должна иметь 
+				тот же тип и сигнатуру, что и делегат</strong></span><em>)</em></span>. Но надо учитывать, что во внимание также принимаются 
+				модификаторы<span>&nbsp;</span><span class="b" style="font-weight: bold;">ref</span>,<span>&nbsp;</span><span class="b" style="font-weight: bold;">in</span><span>&nbsp;</span>и<span>&nbsp;</span><span class="b" style="font-weight: bold;">out</span>. 
+				Например, пусть у нас есть делегат:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-16.png" width="388" height="40" /></p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Этому делегату соответствует, например, следующий метод:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-17.png" width="346" height="38" /></p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				А следующие методы НЕ соответствуют:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-18.png" width="461" height="95" /></p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Здесь метод SomeMethod2 имеет другой возвращаемый тип, отличный 
+				от типа делегата. SomeMethod3 имеет другой набор параметров. 
+				Параметры SomeMethod4 и SomeMethod5 также отличаются от 
+				параметров делегата, поскольку имеют модификаторы ref и out.</p>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Добавление методов в делегат</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В примерах выше переменная делегата указывала на один метод. В 
+				реальности же делегат может указывать на множество методов, 
+				которые имеют ту же сигнатуру и возвращаемые тип. Все методы в 
+				делегате попадают в специальный список - список вызова или 
+				invocation list. И при вызове делегата все методы из этого 
+				списка последовательно вызываются. И мы можем добавлять в этот 
+				список не один, а несколько методов. Для добавления методов в 
+				делегат применяется операция<span>&nbsp;</span><span class="b" style="font-weight: bold;">+=</span>:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-19.png" width="594" height="181" /></p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В данном случае в список вызова делегата message добавляются два 
+				метода - Hello и HowAreYou. И при вызове message вызываются 
+				сразу оба этих метода.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Однако стоит отметить, что в реальности будет происходить 
+				создание нового объекта делегата, который получит методы старой 
+				копии делегата и новый метод, и новый созданный объект делегата 
+				будет присвоен переменной message.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При добавлении делегатов следует учитывать, что мы можем 
+				добавить ссылку на один и тот же метод несколько раз, и в списке 
+				вызова делегата тогда будет несколько ссылок на один и то же 
+				метод. Соответственно при вызове делегата добавленный метод 
+				будет вызываться столько раз, сколько он был добавлен:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-20.png" width="282" height="142" /></p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Консольный вывод:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-21.png" width="148" height="142" /></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Подобным образом мы можем удалять методы из делегата с помощью 
+				операций<span>&nbsp;</span><span class="b" style="font-weight: bold;">-=</span>:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-22.png" width="503" height="119" /></p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При удалении методов из делегата фактически будет создаваться 
+				новый делегат, который в списке вызова методов будет содержать 
+				на один метод меньше.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Стоит отметить, что при удалении метода может сложиться 
+				ситуация, что в делегате не будет методов, и тогда переменная 
+				будет иметь значение null. Поэтому в данном случае переменная 
+				определена не просто как переменная типа<span>&nbsp;</span><code style="font-family: monospace;">Message</code>, 
+				а именно<span>&nbsp;</span><span class="b" style="font-weight: bold;">Message?</span>, 
+				то есть типа, который может представлять как делегат Message, 
+				так и значение null.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Кроме того, перед вторым вызовом мы проверяем переменную на 
+				значение null.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При удалении следует учитывать, что если делегат содержит 
+				несколько ссылок на один и тот же метод, то операция -= начинает 
+				поиск с конца списка вызова делегата и удаляет только первое 
+				найденное вхождение. Если подобного метода в списке вызова 
+				делегата нет, то операция -= не имеет никакого эффекта.</p>
+				<h4 style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Объединение делегатов</h4>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Делегаты можно объединять в другие делегаты. Например:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-23.png" width="503" height="203" /></p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В данном случае объект mes3 представляет объединение делегатов 
+				mes1 и mes2. Объединение делегатов значит, что в список вызова 
+				делегата mes3 попадут все методы из делегатов mes1 и mes2. И при 
+				вызове делегата mes3 все эти методы одновременно будут вызваны.</p>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вызов делегата</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В примерах выше делегат вызывался как обычный метод. Если 
+				делегат принимал параметры, то при его вызове для параметров 
+				передавались необходимые значения:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-24.png" width="409" height="245" /></p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Другой способ вызова делегата представляет метод<span>&nbsp;</span><span class="b" style="font-weight: bold;">Invoke()</span>:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-25.png" width="423" height="243" /></p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если делегат принимает параметры, то в метод Invoke передаются 
+				значения для этих параметров.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Следует учитывать, что если делегат пуст, то есть в его списке 
+				вызова нет ссылок ни на один из методов (то есть делегат равен 
+				Null), то при вызове такого делегата мы получим исключение, как, 
+				например, в следующем случае:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-26.png" width="503" height="141" /></p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Поэтому при вызове делегата всегда лучше проверять, не равен ли 
+				он null. Либо можно использовать метод Invoke и оператор 
+				условного null:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-27.png" width="724" height="141" /></p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если делегат возвращает некоторое значение, то возвращается 
+				значение последнего метода из списка вызова (если в списке 
+				вызова несколько методов). Например:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-28.png" width="465" height="229" /></p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Обобщенные делегаты</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Делегаты, как и другие типы, могут быть обобщенными, например:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-29.png" width="444" height="265" /></p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Здесь делегат Operation типизируется двумя параметрами типов. 
+				Параметр T представляет тип возвращаемого значения. А параметр K 
+				представляет тип передаваемого в делегат параметра. Таким 
+				образом, этому делегату соответствует метод, который принимает 
+				параметр любого типа и возвращает значение любого типа.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В прогамме мы можем определить переменные делегата под 
+				определенный метод. Например, делегату<span>&nbsp;</span><code style="font-family: monospace;">Operation&lt;decimal, 
+				int&gt;</code><span>&nbsp;</span>соответствует метод, который принимает 
+				число int и возвращает число типа decimal. А делегату<span>&nbsp;</span><code style="font-family: monospace;">Operation&lt;int, 
+				int&gt;</code><span>&nbsp;</span>соответствует метод, который принимает 
+				и возвращает число типа int.</p>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Делегаты как параметры методов</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Также делегаты могут быть параметрами методов. Благодаря этому 
+				один метод в качестве параметров может получать действия - 
+				другие методы. Например:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-30.png" width="401" height="289" /></p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Здесь метод<span>&nbsp;</span><span class="b" style="font-weight: bold;">DoOperation</span><span>&nbsp;</span>в 
+				качестве параметров принимает два числа и некоторое действие в 
+				виде делегата Operation. В внутри метода вызываем делегат 
+				Operation, передавая ему числа из первых двух параметров.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При вызове метода DoOperation мы можем передать в него в 
+				качестве третьего параметра метод, который соответствует 
+				делегату Operation.</p>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Возвращение делегатов из метода</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Также делегаты можно возвращать из методов. То есть мы можем 
+				возвращать из метода какое-то действие в виде другого метода. 
+				Например:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-31.png" width="532" height="605" /></p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В данном случае метод<span>&nbsp;</span><code style="font-family: monospace;">SelectOperation()</code><span>&nbsp;</span>в 
+				качестве параметра принимает перечисление типа OperationType. 
+				Это перечисление хранит три константы, каждая из которых 
+				соответствует определенной арифметической операции. И в самом 
+				методе в зависимости от значения параметра возвращаем 
+				определенный метод. Причем поскольку возвращаемый тип метода - 
+				делегат Operation, то метод должен возвратить метод, который 
+				соответствует этому делегату - в нашем случае это методы Add, 
+				Subtract, Multiply. То есть если параметр метода SelectOperation 
+				равен<span>&nbsp;</span><code style="font-family: monospace;">OperationType.Add</code>, 
+				то возвращается метод Add, который выолняет сложение двух чисел:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-32.png" width="351" height="33" /></p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При вызове метода SelectOperation мы можем получить из него 
+				нужное действие в переменную operation:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-33.png" width="540" height="36" /></p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				И при вызове переменной operation фактически будет вызываться 
+				полученный из SelectOperation метод:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-34.png" width="723" height="59" /></p>
+			</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les62.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les59/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:51:53 GMT -->
+</html>

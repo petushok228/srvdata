@@ -1,0 +1,1032 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les27/6.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:58:12 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	text-align: left;
+}
+.style3 {
+	font-size: large;
+}
+.style4 {
+	text-align: left;
+	font-size: large;
+}
+.style5 {
+	color: rgb(255, 0, 0);
+}
+.style6 {
+	font-size: small;
+}
+.style7 {
+	text-align: left;
+	color: rgb(0, 0, 255);
+}
+.style8 {
+	text-align: left;
+	font-size: small;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 1 Основы работы со строками</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В Python есть несколько способов задания строк. С первыми двумя 
+				способами мы уже немного познакомились на предыдущих занятиях:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">str1 <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(72, 61, 139);">&#39;Hello1&#39;</span>
+str2 <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(72, 61, 139);">&quot;Hello2&quot;</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				А другие два позволяют задавать многострочные данные:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">str3 <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(72, 61, 139);">&#39;&#39;&#39;Многострочные
+строки 1&#39;&#39;&#39;</span><span style="color: rgb(102, 204, 102);">;</span>
+&nbsp;
+str4 <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(72, 61, 139);">&quot;&quot;&quot;Многострочные
+строки2&quot;&quot;&quot;</span><span style="color: rgb(102, 204, 102);">;</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>str1<span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>str2<span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>str3<span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>str4<span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				То есть, синтаксис из трех кавычек задает множественные строки. 
+				Причем, смотрите, если мы непосредственно в консоли напишем:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(72, 61, 139);">&#39;&#39;&#39;hello
+world&#39;&#39;&#39;</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				то при выводе после hello увидим символ \n, который и означает 
+				перевод строки. Функция print обрабатывая этот символ делает 
+				перевод строки:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: rgb(72, 61, 139);">&#39;hello<span style="color: rgb(0, 0, 153); font-weight: bold;">\n</span>world&#39;</span><span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если в кавычках ничего не записано:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">str0 <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(72, 61, 139);">&quot;&quot;</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				то это будет пустая строка, не содержащая никаких символов.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При работе с переменными в Python всегда следует помнить, что 
+				это лишь ссылки на соответствующие объекты. Из этого следует, 
+				что если у нас определена некая строка:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">str1 <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(72, 61, 139);">&quot;сообщение&quot;</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				и мы другой переменной присвоим первую:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">str2 <span style="color: rgb(102, 204, 102);">=</span> str1</pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				то получим две ссылки на один и тот же объект (одну строку). То 
+				есть, копирование строки здесь не происходит!</p>
+				<p align="center" style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img width="572" height="89" id="Рисунок 3" src="Pic/image001.jpg" style="max-width: 600px; height: auto;" /></p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Как создавать копии строк вы узнаете дальше из этого занятия.</p>
+				<h2 style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Операторы и функции для строк</h2>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Первый оператор + – это соединение двух строк (или как еще 
+				говорят,<span>&nbsp;</span><b>конкатенация</b><span>&nbsp;</span>строк). 
+				Он используется так:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">str1 <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(72, 61, 139);">&#39;Hello&#39;</span>
+str2 <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(72, 61, 139);">&quot;world!&quot;</span>
+msg <span style="color: rgb(102, 204, 102);">=</span> str1+str2
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>msg<span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Здесь сначала будут идти символы первой строки, а затем – 
+				второй. В результате у нас формируется новый объект, содержащий 
+				эти символы. Но у нас оба слова слились в одно. Как можно было 
+				бы добавить между ними пробел? Это можно сделать так:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">msg <span style="color: rgb(102, 204, 102);">=</span> str1+<span style="color: rgb(72, 61, 139);">&quot; &quot;</span>+str2</pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				то есть, мы можем последовательно соединять множество строк 
+				между собой. И здесь важно знать, что соединять между собой 
+				можно только строки. Например, вот такая операция приведет к 
+				ошибке:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">dig <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(255, 69, 0);">5</span>
+msg <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(72, 61, 139);">&quot;число = &quot;</span>+dig
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>msg<span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				так как dig здесь число, а не строка. Поправить программу можно 
+				преобразовав число в строку с помощью функции</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(102, 204, 102);">&lt;</span>p align<span style="color: rgb(102, 204, 102);">=</span>center<span style="color: rgb(102, 204, 102);">&gt;</span><span style="color: rgb(0, 128, 0);">str</span><span style="color: black;">(</span><span style="color: rgb(102, 204, 102);">&lt;</span>аргумент<span style="color: rgb(102, 204, 102);">&gt;</span><span style="color: black;">)</span>
+msg <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(72, 61, 139);">&quot;число = &quot;</span>+<span style="color: rgb(0, 128, 0);">str</span><span style="color: black;">(</span>dig<span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Теперь все сработает. Причем, с помощью str можно 
+				преобразовывать самые разные типы данных в строки – это 
+				универсальный инструмент.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Далее, в Python довольно просто выполняется дублирование строки. 
+				Предположим у нас есть вот такая строка:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">one <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(72, 61, 139);">&#39;ай &#39;</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				и мы хотим ее размножить n раз. Это можно сделать так:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">msg <span style="color: rgb(102, 204, 102);">=</span> one*<span style="color: rgb(255, 69, 0);">10</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>msg<span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Разумеется, число копий должно определяться исключительно целыми 
+				числами, т.е. делать вот такую операцию</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">msg <span style="color: rgb(102, 204, 102);">=</span> one*<span style="color: rgb(255, 69, 0);">3.5</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				нельзя, произойдет ошибка.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Далее, для определения длины строки, то есть, числа символов в 
+				строке (включая управляющие символы), используется функция</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				len(&lt;строка&gt;)</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Например:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">N <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(0, 128, 0);">len</span><span style="color: black;">(</span>msg<span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>msg<span style="color: rgb(102, 204, 102);">,</span> N<span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Затем, для проверки наличия в строке той или иной подстроки, 
+				используется оператор in:</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				&lt;подстрока&gt; in &lt;строка&gt;</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Он возвращает True, если подстрока присутствует и False, если 
+				отсутствует. Например:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">s <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(72, 61, 139);">&quot;abcdefg0123&quot;</span>
+<span style="color: rgb(72, 61, 139);">&quot;abc&quot;</span> <span style="color: rgb(255, 119, 0); font-weight: bold;">in</span> s
+<span style="color: rgb(72, 61, 139);">&#39;0&#39;</span> <span style="color: rgb(255, 119, 0); font-weight: bold;">in</span> s
+<span style="color: rgb(72, 61, 139);">&#39;43&#39;</span> <span style="color: rgb(255, 119, 0); font-weight: bold;">in</span> s</pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для сравнения строк между собой можно использовать оператор 
+				сравнения</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				&lt;строка 1&gt; == &lt;строка 2&gt;</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Данный оператор возвращает True, если строки равны и False, если 
+				не равны. Пример:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(72, 61, 139);">&quot;abc&quot;</span> <span style="color: rgb(102, 204, 102);">==</span> <span style="color: rgb(72, 61, 139);">&#39;abc&#39;</span>
+<span style="color: rgb(72, 61, 139);">&quot;ABC&quot;</span> <span style="color: rgb(102, 204, 102);">==</span> <span style="color: rgb(72, 61, 139);">&#39;abc&#39;</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Обратите внимание, строка, записанная заглавными буквами – это в 
+				Python уже другая строка и оператор сравнения для них возвращает 
+				False.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для сравнения неравенства строк используется оператор не равно:</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				&lt;строка 1&gt; != &lt;строка 2&gt;</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Он возвращает True, если строки не равны и False в противном 
+				случае.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Разумеется, эти операции сравнения обычно используются в 
+				условном операторе if или операторах циклов while и for, о 
+				которых мы уже с вами говорили. Например, можно записать такую 
+				программу:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">psw <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(72, 61, 139);">&quot;pass&quot;</span>
+in_psw <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(72, 61, 139);">&quot;&quot;</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">while</span> psw <span style="color: rgb(102, 204, 102);">!=</span> in_psw:
+&nbsp;&nbsp;&nbsp;in_psw <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(0, 128, 0);">input</span><span style="color: black;">(</span><span style="color: rgb(72, 61, 139);">&quot;Введите пароль: &quot;</span><span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: rgb(72, 61, 139);">&quot;Вход в систему разрешен&quot;</span><span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Здесь пользователь будет вводить пароль, пока не введет 
+				заданный, то есть, строку pass.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Также строки можно сравнивать на больше и меньше:</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				&lt;строка 1&gt; &lt; &lt;строка 2&gt;<br />
+				&lt;строка 1&gt; &gt; &lt;строка 2&gt;</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Здесь используется лексикографический порядок при определении: 
+				какая строка больше, а какая меньше. Мы об этом подробно 
+				говорили, когда рассматривали условный оператор if.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Следующая функция</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				ord(&lt;символ&gt;)</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				возвращает код указанного символа в строке, например:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(0, 128, 0);">ord</span><span style="color: black;">(</span><span style="color: rgb(72, 61, 139);">&quot;a&quot;</span><span style="color: black;">)</span>
+<span style="color: rgb(0, 128, 0);">ord</span><span style="color: black;">(</span><span style="color: rgb(72, 61, 139);">&#39;A&#39;</span><span style="color: black;">)</span>
+<span style="color: rgb(0, 128, 0);">ord</span><span style="color: black;">(</span><span style="color: rgb(72, 61, 139);">&#39;0&#39;</span><span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<h4 class="style5" style="font-size: small; color: rgb(0, 0, 255); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				Управляющие последовательности в строке</h4>
+				<p class="style2" style="font-size: small; color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Строка может содержать ряд специальных символов - управляющих 
+				последовательностей или escape-последовательности. Некоторые из 
+				них:</p>
+				<ul style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px;">
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style5" style="font-size: small; color: rgb(0, 0, 255); font-weight: bold;">
+					\</span><span class="style2" style="font-size: small;">: 
+					позволяет добавить внутрь строки слеш</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style5" style="font-size: small; color: rgb(0, 0, 255); font-weight: bold;">
+					\&#39;</span><span class="style2" style="font-size: small;">: 
+					позволяет добавить внутрь строки одинарную кавычку</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style5" style="font-size: small; color: rgb(0, 0, 255); font-weight: bold;">
+					\&quot;</span><span class="style2" style="font-size: small;">: 
+					позволяет добавить внутрь строки двойную кавычку</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style5" style="font-size: small; color: rgb(0, 0, 255); font-weight: bold;">
+					\n</span><span class="style2" style="font-size: small;">: 
+					осуществляет переход на новую строку</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style5" style="font-size: small; color: rgb(0, 0, 255); font-weight: bold;">
+					\t</span><span class="style2" style="font-size: small;">: 
+					добавляет табуляцию (4 отступа)</span></p>
+					</li>
+				</ul>
+				<p class="style2" style="font-size: small; color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Используем некоторые последовательностей:</p>
+				<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small; color: rgb(0, 0, 128); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">text = &quot;Message:\n\&quot;Hello World\&quot;&quot;
+print(text)
+		</pre>
+				<h3 class="style5" style="font-size: small; color: rgb(0, 0, 255); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif;">
+				Вставка значений в строку</h3>
+				<p class="style2" style="font-size: small; color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Python позволяет встравивать в строку значения других 
+				переменных. Для этого внутри строки переменные размещаются в 
+				фигурных скобках {}, а перед всей строкой ставится символ<span>&nbsp;</span><span class="style9" style="color: rgb(0, 0, 255); font-weight: bold;">f</span>:</p>
+				<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small; color: rgb(0, 0, 128); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">path = r&quot;C:\python\name.txt&quot;
+print(path)</pre>
+				<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small; color: rgb(0, 0, 128); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">userName = &quot;Tom&quot;
+userAge = 37
+user = f&quot;name: {userName}  age: {userAge}&quot;print(user)   # name: Tom  age: 37
+										</pre>
+				<table class="style1" style="width: 1456.8px; font-size: small; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<tr>
+						<td colspan="3" class="text" style="font-family: Verdana; font-size: 10px; color: rgb(0, 0, 128); background-color: rgb(255, 255, 204); border: thin double rgb(0, 0, 128);">
+						<h3 class="style5" style="font-size: small; color: rgb(0, 0, 255); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Перебор строки</h3>
+						<p class="style2" style="font-size: small;">С помощью 
+						цикла<span>&nbsp;</span><span class="b" style="font-weight: bold;">for</span><span>&nbsp;</span>можно 
+						перебрать все символы строки:</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">string = &quot;hello world&quot;
+<span class="style5">for char in</span> string:
+	print(char)
+												&nbsp;</pre>
+						<h3 class="style5" style="font-size: small; color: rgb(0, 0, 255); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Получение подстроки</h3>
+						<p class="style2" style="font-size: small;">При 
+						необходимости мы можем получить из строки не только 
+						отдельные символы, но и подстроку. Для этого 
+						используется следующий синтаксис:</p>
+						<ul>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<code style="font-family: monospace;">
+							<span class="style4">string[:end]</span></code><span class="style4">: 
+							извлекается последовательность символов начиная с 
+							0-го индекса по индекс end (не включая)</span></p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<code style="font-family: monospace;">
+							<span class="style3">string[start:end]</span></code><span class="style3">: 
+							извлекается последовательность символов начиная с 
+							индекса start по индекс end (не включая)</p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<code style="font-family: monospace;">string[start:end:step]</code>: 
+							извлекается последовательность символов начиная с 
+							индекса start по индекс end (не включая) через шаг 
+							step</span></p>
+							</li>
+						</ul>
+						<p style="line-height: 1.56; overflow-wrap: break-word;">
+						</p>
+						<p class="style2" style="font-size: small;">Используем 
+						все варианты получения подстроки:</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">string = &quot;hello world&quot;&nbsp;# с 0 до 5 индекса
+sub_string1 = string[:5]
+print(sub_string1)      # hello&nbsp;
+# со 2 до 5 индекса
+sub_string2 = string[2:5]
+print(sub_string2)      # llo&nbsp;
+# с 2 по 9 индекса через один символ
+sub_string3 = string[2:9:2]
+print(sub_string3)      # lowr
+												&nbsp;</pre>
+						<h3 class="style5" style="font-size: small; color: rgb(0, 0, 255); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Объединение строк</h3>
+						<p class="style2" style="font-size: small;">Одной из 
+						самых распространенных операций со строками является их 
+						объединение или конкатенация. Для объединения строк 
+						применяется операция сложения:</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">name = &quot;Tom&quot;
+surname = &quot;Smith&quot;
+fullname = name + &quot; &quot; + surname
+print(fullname)  # Tom Smith
+												&nbsp;</pre>
+						<p class="style2" style="font-size: small;">С 
+						объединением двух строк все просто, но что, если нам 
+						надо сложить строку и число? В этом случае необходимо 
+						привести число к строке с помощью функции<span>&nbsp;</span><span class="b" style="font-weight: bold;">str()</span>:</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">name = &quot;Tom&quot;
+age = 33
+info = &quot;Name: &quot; + name + &quot; 
+Age: &quot; + str(age)
+print(info)  # Name: Tom 
+Age: 33
+												&nbsp;</pre>
+						<h3 class="style5" style="font-size: small; color: rgb(0, 0, 255); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Повторение строки</h3>
+						<p class="style2" style="font-size: small;">Для 
+						повторения строки определенное количество раз 
+						применяется операция умножения:</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">print(&quot;a&quot; * 3)  # aaa
+print(&quot;he&quot; * 4)  # hehehehe												&nbsp;</pre>
+						<h3 class="style5" style="font-size: small; color: rgb(0, 0, 255); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Сравнение строк</h3>
+						<p class="style2" style="font-size: small;">Особо 
+						следует сказать о сравнении строк. При сравнении строк 
+						принимается во внимание символы и их регистр. Так, 
+						цифровой символ условно меньше, чем любой алфавитный 
+						символ. Алфавитный символ в верхнем регистре условно 
+						меньше, чем алфавитные символы в нижнем регистре. 
+						Например:</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">str1 = &quot;1a&quot;str2 = &quot;aa&quot;
+str3 = &quot;Aa&quot;
+print(str1 &gt; str2)  # False, так как первый символ в str1 - цифра
+print(str2 &gt; str3)  # True, так как первый символ в str2 - в нижнем регистре
+												&nbsp;</pre>
+						<p><span class="style2" style="font-size: small;">
+						Поэтому строка &quot;1a&quot; условно меньше, чем строка &quot;aa&quot;. 
+						Вначале сравнение идет по первому символу. Если 
+						начальные символы обоих строк представляют цифры, то 
+						меньшей считается меньшая цифра, например, &quot;1a&quot; меньше, 
+						чем &quot;2a&quot;.</span></p>
+						<p><span class="style6">Если начальные символы 
+						представляют алфавитные символы в одном и том же 
+						регистре, то смотрят по алфавиту. Так, &quot;aa&quot; меньше, чем 
+						&quot;ba&quot;, а &quot;ba&quot; меньше, чем &quot;ca&quot;.</p>
+						<p>Если первые символы одинаковые, в расчет берутся 
+						вторые символы при их наличии.</p>
+						<p>Зависимость от регистра не всегда желательна, так как 
+						по сути мы имеем дело с одинаковыми строками. В этом 
+						случае перед сравнением мы можем привести обе строки к 
+						одному из регистров.</p>
+						<p>Функция<span>&nbsp;</span><span class="b" style="font-weight: bold;">lower()</span><span>&nbsp;</span>приводит 
+						строку к нижнему регистру, а функция<span>&nbsp;</span><span class="b" style="font-weight: bold;">upper()</span><span>&nbsp;</span>- 
+						к верхнему.</p>
+						<pre style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;;">str2 = &quot;tom&quot;str1 = &quot;Tom&quot;
+print(str1 == str2)  # False - строки не равны&nbsp;
+print(str1.lower() == str2.lower())  # True</span>												</pre>
+						<h3 class="style5" style="font-size: small; color: rgb(0, 0, 255); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Функции ord и len</h3>
+						<p class="style2" style="font-size: small;">Поскольку 
+						строка содержит символы Unicode, то с помощью функции<span>&nbsp;</span><span class="b" style="font-weight: bold;">ord()</span><span>&nbsp;</span>мы 
+						можем получить числовое значение для символа в кодировке 
+						Unicode:</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">print(ord(&quot;A&quot;))     # 65
+												&nbsp;</pre>
+						<p class="style2" style="font-size: small;">Для 
+						получения длины строки можно использовать функцию<span>&nbsp;</span><span class="b" style="font-weight: bold;">len()</span>:</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">string = &quot;hello world&quot;
+length = len(string)
+print(length)   # 11
+												&nbsp;</pre>
+						<h3 class="style5" style="font-size: small; color: rgb(0, 0, 255); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Поиск в строке</h3>
+						<p class="style2" style="font-size: small;">С помощью 
+						выражения<span>&nbsp;</span><code style="font-family: monospace;">term 
+						in string</code><span>&nbsp;</span>можно найти подстроку term 
+						в строке string. Если подстрока найдена, то выражение 
+						вернет значение<span>&nbsp;</span><code style="font-family: monospace;">True</code>, 
+						иначе возвращается значение<span>&nbsp;</span><code style="font-family: monospace;">False</code>:</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">string = &quot;hello world&quot;
+exist = &quot;hello&quot; in string
+print(exist)    # True&nbsp;
+exist = &quot;sword&quot; in string
+print(exist)    # False
+												&nbsp;</pre>
+						<h2 class="style5" style="font-size: small; color: rgb(0, 0, 255); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Основные методы строк</h2>
+						<p class="style2" style="font-size: small;">Рассмотрим 
+						основные методы строк, которые мы можем применить в 
+						приложениях:</p>
+						<ul style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<span class="style2" style="font-size: small; font-weight: bold;">
+							isalpha()</span><span class="style2" style="font-size: small;">: 
+							возвращает True, если строка состоит только из 
+							алфавитных символов</span></p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<span class="b" style="font-weight: bold;">islower()</span>: 
+							возвращает True, если строка состоит только из 
+							символов в нижнем регистре</p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<span class="b" style="font-weight: bold;">isupper()</span>: 
+							возвращает True, если все символы строки в верхнем 
+							регистре</p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<span class="b" style="font-weight: bold;">isdigit()</span>: 
+							возвращает True, если все символы строки - цифры</p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<span class="b" style="font-weight: bold;">isnumeric()</span>: 
+							возвращает True, если строка представляет собой 
+							число</p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<span class="b" style="font-weight: bold;">
+							startswith(str)</span>: возвращает True, если строка 
+							начинается с подстроки str</p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<span class="b" style="font-weight: bold;">endswith(str)</span>: 
+							возвращает True, если строка заканчивается на 
+							подстроку str</p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<span class="b" style="font-weight: bold;">lower()</span>: 
+							переводит строку в нижний регистр</p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<span class="b" style="font-weight: bold;">upper()</span>: 
+							переводит строку в вехний регистр</p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<span class="b" style="font-weight: bold;">title()</span>: 
+							начальные символы всех слов в строке переводятся в 
+							верхний регистр</p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<span class="b" style="font-weight: bold;">
+							capitalize()</span>: переводит в верхний регистр 
+							первую букву только самого первого слова строки</p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<span class="b" style="font-weight: bold;">lstrip()</span>: 
+							удаляет начальные пробелы из строки</p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<span class="b" style="font-weight: bold;">rstrip()</span>: 
+							удаляет конечные пробелы из строки</p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<span class="b" style="font-weight: bold;">strip()</span>: 
+							удаляет начальные и конечные пробелы из строки</p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<span class="b" style="font-weight: bold;">ljust(width)</span>: 
+							если длина строки меньше параметра width, то справа 
+							от строки добавляются пробелы, чтобы дополнить 
+							значение width, а сама строка выравнивается по 
+							левому краю</p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<span class="b" style="font-weight: bold;">rjust(width)</span>: 
+							если длина строки меньше параметра width, то слева 
+							от строки добавляются пробелы, чтобы дополнить 
+							значение width, а сама строка выравнивается по 
+							правому краю</p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<span class="b" style="font-weight: bold;">
+							center(width)</span>: если длина строки меньше 
+							параметра width, то слева и справа от строки 
+							равномерно добавляются пробелы, чтобы дополнить 
+							значение width, а сама строка выравнивается по 
+							центру</p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<span class="b" style="font-weight: bold;">find(str[, 
+							start [, end])</span>: возвращает индекс подстроки в 
+							строке. Если подстрока не найдена, возвращается 
+							число -1</p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<span class="b" style="font-weight: bold;">
+							replace(old, new[, num])</span>: заменяет в строке 
+							одну подстроку на другую</p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<span class="b" style="font-weight: bold;">split([delimeter[, 
+							num]])</span>: разбивает строку на подстроки в 
+							зависимости от разделителя</p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<span class="b" style="font-weight: bold;">join(strs)</span>: 
+							объединяет строки в одну строку, вставляя между ними 
+							определенный разделитель</p>
+							</li>
+						</ul>
+						<p class="style2" style="font-size: small;">Например, 
+						если мы ожидаем ввод с клавиатуры числа, то перед 
+						преобразованием введенной строки в число можно 
+						проверить, с помощью <span class="style5"><strong>метода 
+						isnumeric()</strong></span> введено ли в 
+						действительности число, и если так, то выполнить 
+						операцию преобразования:</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">string = input(&quot;Введите число: &quot;)
+if string.isnumeric():&nbsp;&nbsp;&nbsp;&nbsp;
+	number = int(string)&nbsp;&nbsp;&nbsp;&nbsp;
+print(number)
+				&nbsp;</pre>
+						<p class="style2" style="font-size: small;">Проверка, 
+						начинается или оканчивается строка на определенную 
+						подстроку:</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">file_name = &quot;hello.py&quot;&nbsp;
+starts_with_hello = file_name.startswith(&quot;hello&quot;) # True
+ends_with_exe = file_name.endswith(&quot;exe&quot;)           # False
+				&nbsp;</pre>
+						<p class="style7" style="font-size: small;"><strong>
+						Удаление пробелов в начале и в конце строки:</strong></p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">string = &quot;   hello  world!  &quot;
+string = string.strip()
+print(string)           # hello  world!				&nbsp;</pre>
+						<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						</div>
+						<p class="style2" style="font-size: small;">Дополнение 
+						строки пробелами и выравнивание:</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">print(&quot;iPhone 7:&quot;, &quot;52000&quot;.rjust(10))
+print(&quot;Huawei P10:&quot;, &quot;36000&quot;.rjust(10))
+				&nbsp;</pre>
+						<p class="style5" style="font-size: small; color: rgb(0, 0, 255);">
+						Консольный вывод:</p>
+						<pre style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;;"><span class="style6">iPhone 7:      52000
+Huawei P10:      36000</span>
+				&nbsp;</pre>
+						<h3 class="style5" style="font-size: small; color: rgb(0, 0, 255); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Поиск в строке</h3>
+						<p class="style2" style="font-size: small;">Для поиска 
+						подстроки в строке в Python применяется метод<span>&nbsp;</span><span class="b" style="font-weight: bold;">find()</span>, 
+						который возвращает индекс первого вхождения подстроки в 
+						строку и имеет три формы:</p>
+						<ul style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<code style="font-family: monospace;">
+							<span class="style2" style="font-size: small;">find(str)</span></code><span class="style2" style="font-size: small;">: 
+							поиск подстроки str ведется с начала строки до ее 
+							конца</span></p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<code style="font-family: monospace;">find(str, 
+							start)</code>: параметр start задает начальный 
+							индекс, с которого будет производиться поиск</p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<code style="font-family: monospace;">find(str, 
+							start, end)</code>: параметр end задает конечный 
+							индекс, до которого будет идти поиск</p>
+							</li>
+						</ul>
+						<p class="style2" style="font-size: small;">Если 
+						подстрока не найдена, метод возвращает -1:</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">welcome = &quot;Hello world! Goodbye world!&quot;
+index = welcome.find(&quot;wor&quot;)
+print(index)       # 6&nbsp;
+# поиск с 10-го индекса
+index = welcome.find(&quot;wor&quot;,10)
+print(index)       # 21&nbsp;
+# поиск с 10 по 15 индекс
+index = welcome.find(&quot;wor&quot;,10,15)
+print(index)       # -1
+				&nbsp;</pre>
+						<h3 class="style5" style="font-size: small; color: rgb(0, 0, 255); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Замена в строке</h3>
+						<p class="style2" style="font-size: small;">Для замены в 
+						строке одной подстроки на другую применяется метод<span>&nbsp;</span><span class="b" style="font-weight: bold;">replace()</span>:</p>
+						<ul style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<code style="font-family: monospace;">
+							<span class="style2" style="font-size: small;">
+							replace(old, new)</span></code><span class="style2" style="font-size: small;">: 
+							заменяет подстроку old на new</span></p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<code style="font-family: monospace;">replace(old, 
+							new, num)</code>: параметр num указывает, сколько 
+							вхождений подстроки old надо заменить на new</p>
+							</li>
+						</ul>
+						<pre style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;;" class="style6">phone = &quot;+1-234-567-89-10&quot;&nbsp;# замена дефисов на пробелe
+dited_phone = phone.replace(&quot;-&quot;, &quot; &quot;)
+print(edited_phone)     # +1 234 567 89 10&nbsp;
+# удаление дефисов
+edited_phone = phone.replace(&quot;-&quot;, &quot;&quot;)
+print(edited_phone)     # +12345678910&nbsp;
+# замена только первого дефиса
+edited_phone = phone.replace(&quot;-&quot;, &quot;&quot;, 1)
+print(edited_phone)     # +1234-567-89-10&nbsp;</pre>
+						<h3 class="style5" style="font-size: small; color: rgb(0, 0, 255); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Разделение на подстроки</h3>
+						<p class="style2" style="font-size: small;">Метод<span>&nbsp;</span><span class="b" style="font-weight: bold;">split()</span><span>&nbsp;</span>разбивает 
+						строку на список подстрок в зависимости от разделителя. 
+						В качестве разделителя может выступать любой символ или 
+						последовательность символов. Данный метод имеет 
+						следующие формы:</p>
+						<ul style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<code style="font-family: monospace;">
+							<span class="style2" style="font-size: small;">
+							split()</span></code><span class="style2" style="font-size: small;">: 
+							в качестве разделителя используется пробел</span></p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<code style="font-family: monospace;">split(delimeter)</code>: 
+							в качестве разделителя используется delimeter</p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<code style="font-family: monospace;">split(delimeter, 
+							num)</code>: параметр num указывает, сколько 
+							вхождений delimeter используется для разделения. 
+							Оставшаяся часть строки добавляется в список без 
+							разделения на подстроки</p>
+							</li>
+						</ul>
+						<pre style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;;" class="style6">text = &quot;Это был огромный, в два обхвата дуб, с обломанными ветвями и с обломанной корой&quot;
+# разделение по пробелам
+splitted_text = text.split()
+print(splitted_text)
+print(splitted_text[6])     # дуб,&nbsp;
+# разбиение по запятым
+splitted_text = text.split(&quot;,&quot;)
+print(splitted_text)
+print(splitted_text[1])     # в два обхвата дуб&nbsp;
+# разбиение по первым пяти пробелам
+splitted_text = text.split(&quot; &quot;, 5)
+print(splitted_text)        
+print(splitted_text[5])     # обхвата дуб, с обломанными ветвями и с обломанной корой&nbsp;</pre>
+						<h3 class="style5" style="font-size: small; color: rgb(0, 0, 255); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Соединение строк</h3>
+						<p class="style2" style="font-size: small;">При 
+						рассмотрении простейших операций со строками было 
+						показано, как объединять строки с помощью операции 
+						сложения. Другую возможность для соединения строк 
+						представляет метод<span>&nbsp;</span><span class="b" style="font-weight: bold;">join()</span>: 
+						он объединяет список строк. Причем текущая строка, у 
+						которой вызывается данный метод, используется в качестве 
+						разделителя:</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">words = [&quot;Let&quot;, &quot;me&quot;, &quot;speak&quot;, &quot;from&quot;, &quot;my&quot;, &quot;heart&quot;, &quot;in&quot;, &quot;English&quot;]&nbsp;
+# разделитель - пробел
+sentence = &quot; &quot;.join(words)
+print(sentence)  # Let me speak from my heart in English&nbsp;
+# разделитель - вертикальная черта
+sentence = &quot; | &quot;.join(words)
+print(sentence)  # Let | me | speak | from | my | heart | in | English
+				&nbsp;</pre>
+						<p class="style2" style="font-size: small;">Вместо 
+						списка в метод join можно передать простую строку, тогда 
+						разделитель будет вставляться между символами этой 
+						строки:</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">word = &quot;hello&quot;
+joined_word = &quot;|&quot;.join(word)
+print(joined_word)      # h|e|l|l|o
+				&nbsp;</pre>
+						<h2 class="style5" style="font-size: small; color: rgb(0, 0, 255); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Форматирование</h2>
+						<p class="style2" style="font-size: small;">В прошлых 
+						темах было рассмотрено, как можно вставлять в строку 
+						некоторые значения, предваряя строку символом<span>&nbsp;</span><span class="b" style="font-weight: bold;">f</span>:</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">first_name=&quot;Tom&quot;
+text = f&quot;Hello, {first_name}.&quot;
+print(text)     # Hello, Tom.&nbsp;name=&quot;Bob&quot;
+age=23
+info = f&quot;Name: {name}\t Age: {age}&quot;
+print(info)     # Name: Bob&nbsp;Age: 23
+				&nbsp;</pre>
+						<p><span class="style2" style="font-size: small;">Но 
+						также в Python есть альтернативный способ, который 
+						предоставляет метод<span>&nbsp;</span><span class="b" style="font-weight: bold;">format()</span>. 
+						Этот метод позволяет форматировать строку, вставляя в 
+						нее на место плейсхолдеров определенные значения.</span></p>
+						<p class="style6">Для вставки в строку используются 
+						специальные параметры, которые обрамляются фигурными 
+						скобками ({}).</p>
+						<h3 class="style5" style="font-size: small; color: rgb(0, 0, 255); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Именованные параметры</h3>
+						<p class="style2" style="font-size: small;">В 
+						форматируемой строке мы можем определять параметры, в 
+						методе<span>&nbsp;</span><code style="font-family: monospace;">format()</code><span>&nbsp;</span>передавать 
+						для этих параметров значения:</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">text = &quot;Hello, {first_name}.&quot;.format(first_name=&quot;Tom&quot;)
+print(text)     # Hello, Tom.&nbsp;
+info = &quot;Name: {name}\t Age: {age}&quot;.format(name=&quot;Bob&quot;, age=23)
+print(info)     # Name: Bob  Age: 23
+				&nbsp;</pre>
+						<p class="style2" style="font-size: small;">Причем в 
+						метод формат аргументы определяются с тем же именем, что 
+						и параметры в строке. Так, если параметр называется<span>&nbsp;</span><code style="font-family: monospace;">first_name</code>, 
+						как в первом случае, то аргумент, которому присваивается 
+						значение, также называется<span>&nbsp;</span><code style="font-family: monospace;">first_name</code>.</p>
+						<h3 class="style5" style="font-size: small; color: rgb(0, 0, 255); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Параметры по позиции</h3>
+						<p class="style2" style="font-size: small;">Мы также 
+						можем последовательно передавать в метод format набор 
+						аргументов, а в самой форматируемой строке вставлять эти 
+						аргумента, указывая в фигурных скобках их номер 
+						(нумерация начинается с нуля):</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">info = &quot;Name: {0}\t Age: {1}&quot;.format(&quot;Bob&quot;, 23)
+print(info)     # Name: Bob  Age: 23
+				&nbsp;</pre>
+						<p class="style2" style="font-size: small;">При этом 
+						аргументы можно вставлять в строку множество раз:</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">text = &quot;Hello, {0} {0} {0}.&quot;.format(&quot;Tom&quot;)
+				&nbsp;</pre>
+						<h3 class="style5" style="font-size: small; color: rgb(0, 0, 255); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Подстановки</h3>
+						<p class="style2" style="font-size: small;">Еще один
+						<span class="style5"><strong>способ передачи 
+						форматируемых значений в строку</strong></span> 
+						представляет использование подстановок или специальных 
+						плейсхолдеров, на место которых вставляются определенные 
+						значения. Для форматирования мы можем использовать 
+						следующие плейсхолдеры:</p>
+						<ul style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<span class="style2" style="font-size: small; font-weight: bold;">
+							s</span><span class="style8">: для вставки строк</span></p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<span class="style6" style="font-weight: bold;">d</span><span class="style6">: 
+							для вставки целых чисел</p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<span class="b" style="font-weight: bold;">f</span>: 
+							для вставки дробных чисел. Для этого типа также 
+							можно определить через точку количество знаков в 
+							дробной части.</p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<span class="b" style="font-weight: bold;">%</span>: 
+							умножает значение на 100 и добавляет знак процента</p>
+							</li>
+							<li>
+							<p style="line-height: 1.56; overflow-wrap: break-word;">
+							<span class="b" style="font-weight: bold;">e</span>: 
+							выводит число в экспоненциальной записи</span></p>
+							</li>
+						</ul>
+						<p class="style2" style="font-size: small;">Общий 
+						синтаксис плейсхолдера следующий:</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">text = &quot;Hello, {0} {0} {0}.&quot;.format(&quot;Tom&quot;)</pre>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">{:плейсхолдер}				&nbsp;</pre>
+						<p class="style2" style="font-size: small;">В 
+						зависимости от плейсхолдера можно добавлять 
+						дополнительные параметры. Например, для форматирования 
+						чисел float можно использовать следующие параметры</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">{:[количество_символов][запятая][.число_знаков_в_дробной_части] плейсхолдер}
+				&nbsp;</pre>
+						<p class="style2" style="font-size: small;">При вызове 
+						метода format в него в качестве аргументов передаются 
+						значения, которые вставляются на место плейсхолдеров:</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">welcome = &quot;Hello {:s}&quot;
+name = &quot;Tom&quot;formatted_welcome = welcome.format(name)
+print(formatted_welcome)        # Hello Tom				&nbsp;</pre>
+						<p><span class="style2" style="font-size: small;">В 
+						качестве результата метод<span>&nbsp;</span><code style="font-family: monospace;">format()</code><span>&nbsp;</span>возвращает 
+						новую отформатированную строку.</span></p>
+						<p>Форматирование целых чисел:</p>
+						<pre style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;;"><span class="style6">number = 5
+source = &quot;{:d} символов&quot;
+target = source.format(number)
+print(target)   # 5 символов
+		</span>		</pre>
+						<p class="style2" style="font-size: small;">Если 
+						форматируемое число больше 999, то мы можем указать в 
+						определении плейсхолдера, что мы хотим использовать 
+						запятую в качестве разделителя разрядов:</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">source = &quot;{:,d} символов&quot;
+print(source.format(5000))   # 5,000 символов				&nbsp;</pre>
+						<p class="style2" style="font-size: small;">Причем 
+						плейсхолдеры можно использовать и в f-строках:</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">source = &quot;{:,d} символов&quot;
+print(source.format(5000))   # 5,000 символов
+				&nbsp;</pre>
+						<p class="style2" style="font-size: small;">Для дробных 
+						чисел, то есть таких, которые представляют тип float, 
+						перед кодом плейсхолдера после точки можно указать, 
+						сколько знаков в дробной части мы хотим вывести:</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">number = 23.8589578print(&quot;{:.2f}&quot;.format(number))   # 23.86
+print(&quot;{:.3f}&quot;.format(number))   # 23.859
+print(&quot;{:.4f}&quot;.format(number))   # 23.8590
+print(&quot;{:,.2f}&quot;.format(10001.23554))    # 10,001.24
+				&nbsp;</pre>
+						<p class="style2" style="font-size: small;">Еще один 
+						параметр позволяет установить минимальную ширину 
+						форматируемого значения в символах:</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">print(&quot;{:10.2f}&quot;.format(23.8589578))    #     23.86
+print(&quot;{:8d}&quot;.format(25))               #      25				&nbsp;</pre>
+						<p class="style2" style="font-size: small;">Аналогичный 
+						пример с f-строками:</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">n1 = 23.8589578
+print(f&quot;{n1:10.2f}&quot;)    #     23.86
+n2 = 25
+print(f&quot;{n2:8d}&quot;)       #      25
+				&nbsp;</pre>
+						<p class="style2" style="font-size: small;">Для вывода 
+						процентов лучше воспользоваться кодом &quot;%&quot;:</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">number = .12345
+print(&quot;{:%}&quot;.format(number))        # 12.345000%
+print(&quot;{:.0%}&quot;.format(number))      # 12%
+print(&quot;{:.1%}&quot;.format(number))      # 12.3%&nbsp;
+print(f&quot;{number:%}&quot;)        # 12.345000%
+print(f&quot;{number:.0%}&quot;)      # 12%
+print(f&quot;{number:.1%}&quot;)      # 12.3%				&nbsp;</pre>
+						<p class="style2" style="font-size: small;">Для вывода 
+						числа в экспоненциальной записи применяется плейсхолдер 
+						&quot;e&quot;:</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">number = 12345.6789
+print(&quot;{:e}&quot;.format(number))        # 1.234568e+04
+print(&quot;{:.0e}&quot;.format(number))      # 1e+04
+print(&quot;{:.1e}&quot;.format(number))      # 1.2e+04&nbsp;
+print(f&quot;{number:e}&quot;)        # 1.234568e+04
+print(f&quot;{number:.0e}&quot;)      # 1e+04
+print(f&quot;{number:.1e}&quot;)      # 1.2e+04				&nbsp;</pre>
+						<h3 class="style5" style="font-size: small; color: rgb(0, 0, 255); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Форматирование без метода format</h3>
+						<p class="style2" style="font-size: small;">Существует 
+						также еще один способ форматирования с помощью 
+						следующего синтаксиса:</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">строка%(параметр1, параметр2,..параметрN)
+				&nbsp;</pre>
+						<p class="style2" style="font-size: small;">То есть в 
+						начале идет строка, которая содержит те же плейсхолдеры, 
+						которые были рассмотрены выше (за исключением 
+						плейсхолдера %), после строки ставится знак процента %, 
+						а затем список значений, которые вставляются в строку. 
+						Фактически знак процента представляют операцию, в 
+						результате которой образуется новая строка:</p>
+						<pre class="style2" style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;; font-size: small;">info = &quot;Имя: %s \t Возраст: %d&quot; % (&quot;Tom&quot;, 35)
+print(info)   # Имя: Tom     Возраст: 35
+				&nbsp;</pre>
+						<p class="style2" style="font-size: small;">Рядом с 
+						плейсхолдером указывается знак процента и в отличие от 
+						функции format здесь не требуются фигурные скобки.</p>
+						<p><span class="style6">Причем способы форматирования 
+						чисел здесь также применяются:</p>
+						<pre style="padding: 10px; margin: 0px; font-family: &quot;courier new&quot;;">number = 23.8589578
+print(&quot;%0.2f  - %e&quot; % (number, number))   # 23.86  - 2.385896e+01		</span>	&nbsp;</pre>
+						</td>
+					</tr>
+					
+				</table>
+				
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les27.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les27/6.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:58:12 GMT -->
+</html>

@@ -1,0 +1,1880 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les150/1.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:17:21 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 1. Документирование кода в Python. PEP 8.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <header style="color: rgb(0, 0, 0); font-family: &quot;TT Commons&quot;; font-size: 21.12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<h1 style="margin-top: 0.1rem; text-align: center; font-size: 1.75rem; line-height: 1.75rem;">
+				PEP 8 - руководство по написанию кода</h1>
+				</header>
+				<div style="color: rgb(0, 0, 0); font-family: &quot;TT Commons&quot;; font-size: 21.12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<p style="margin: 0.5rem 0px;">Этот документ описывает 
+					соглашение о том, как писать код для языка Python, включая 
+					стандартную библиотеку, входящую в состав Python.</p>
+					<p style="margin: 0.5rem 0px;">Этот документ и PEP 257 (Docstring 
+					Conventions) были адаптированы из оригинальных рекомендаций 
+					Гвидо ван Россума &quot;Руководство по стилю Python&quot;, с 
+					некоторыми дополнениями из руководства по стилю Барри.</p>
+					<p style="margin: 0.5rem 0px;">Ключевая идея Гвидо такова: 
+					код читается намного больше раз, чем пишется. Приведенные 
+					здесь рекомендации призваны улучшить читабельность кода и 
+					сделать его единообразным в широком спектре кода Python. Как 
+					говорится в PEP 20, &quot;Читабельность имеет значение&quot;. В 
+					идеале, весь код будет написан в едином стиле, и любой 
+					сможет легко его прочесть.</p>
+					<p style="margin: 0.5rem 0px;">Это руководство о 
+					согласованности и единстве. Согласованность с этим 
+					руководством очень важна. Согласованность внутри одного 
+					проекта еще важнее. А согласованность внутри модуля или 
+					функции — самое важное. Но важно помнить, что иногда это 
+					руководство неприменимо, и понимать, когда можно отойти от 
+					рекомендаций. Когда вы сомневаетесь, просто посмотрите на 
+					другие примеры и решите, какой выглядит лучше. И не 
+					стесняйтесь спрашивать!</p>
+					<p style="margin: 0.5rem 0px;">В частности: не нарушайте 
+					обратную совместимость только для того, чтобы 
+					соответствовать этому PEP!</p>
+					<p style="margin: 0.5rem 0px;">Веские причины для того, 
+					чтобы нарушить данные правила:</p>
+					<ol class="arabic simple">
+						<li style="margin: 0.5rem 0px;">Применение правила 
+						сделает код менее читаемым даже для того, кто привык 
+						читать код, который следует этим правилам</li>
+						<li style="margin: 0.5rem 0px;">Чтобы писать в едином 
+						стиле с кодом, который уже есть в проекте и который 
+						нарушает правила (возможно, в силу исторических причин) 
+						— впрочем, это возможность переписать чужой код</li>
+						<li style="margin: 0.5rem 0px;">Код, о котором идет 
+						речь, появился до введения этого руководства, и нет 
+						других причин для его изменения</li>
+						<li style="margin: 0.5rem 0px;">Код должен оставаться 
+						совместимым со старыми версиями Python, которые не 
+						поддерживают функцию, рекомендуемую руководством по 
+						стилю</li>
+					</ol>
+					<div class="section" id="section-1">
+						<h2 style="margin-top: 1rem; text-align: center; font-size: 1.5rem; line-height: 1.5rem;">
+						Содержание</h2>
+						<ul class="simple">
+							<li style="margin: 0.5rem 0px;">
+							<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-2">
+							Внешний вид кода</a><ul>
+								<li style="margin: 0.5rem 0px;">
+								<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-3">
+								Отступы</a></li>
+								<li style="margin: 0.5rem 0px;">
+								<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-4">
+								Табуляция или пробелы?</a></li>
+								<li style="margin: 0.5rem 0px;">
+								<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-5">
+								Максимальная длина строки</a></li>
+								<li style="margin: 0.5rem 0px;">
+								<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-6">
+								Должна ли строка переноситься до или после 
+								бинарного оператора?</a></li>
+								<li style="margin: 0.5rem 0px;">
+								<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-7">
+								Пустые строки</a></li>
+								<li style="margin: 0.5rem 0px;">
+								<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-8">
+								Кодировка исходного файла</a></li>
+								<li style="margin: 0.5rem 0px;">
+								<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-9">
+								Импорты</a></li>
+								<li style="margin: 0.5rem 0px;">
+								<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-10">
+								Имена &quot;дандеры&quot; на уровне модуля</a></li>
+							</ul>
+							</li>
+							<li style="margin: 0.5rem 0px;">
+							<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-11">
+							Кавычки литерала строки</a></li>
+							<li style="margin: 0.5rem 0px;">
+							<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-12">
+							Пробелы в выражениях и инструкциях</a><ul>
+								<li style="margin: 0.5rem 0px;">
+								<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-13">
+								Домашние питомцы</a></li>
+								<li style="margin: 0.5rem 0px;">
+								<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-14">
+								Другие рекомендации</a></li>
+							</ul>
+							</li>
+							<li style="margin: 0.5rem 0px;">
+							<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-15">
+							Когда использовать запятые в конце строки</a></li>
+							<li style="margin: 0.5rem 0px;">
+							<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-16">
+							Комментарии</a><ul>
+								<li style="margin: 0.5rem 0px;">
+								<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-17">
+								Блоки комментариев</a></li>
+								<li style="margin: 0.5rem 0px;">
+								<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-18">
+								Внутристрочные комментарии</a></li>
+								<li style="margin: 0.5rem 0px;">
+								<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-19">
+								Строки документации</a></li>
+							</ul>
+							</li>
+							<li style="margin: 0.5rem 0px;">
+							<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-20">
+							Соглашения по именованию</a><ul>
+								<li style="margin: 0.5rem 0px;">
+								<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-21">
+								Главный принцип</a></li>
+								<li style="margin: 0.5rem 0px;">
+								<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-22">
+								Описание: Стили наименования</a></li>
+								<li style="margin: 0.5rem 0px;">
+								<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-23">
+								Предписания: соглашения по именованию</a><ul>
+									<li style="margin: 0.5rem 0px;">
+									<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-24">
+									Имена, которых следует избегать</a></li>
+									<li style="margin: 0.5rem 0px;">
+									<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#ascii">
+									ASCII совместимость</a></li>
+									<li style="margin: 0.5rem 0px;">
+									<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-25">
+									Имена модулей и пакетов</a></li>
+									<li style="margin: 0.5rem 0px;">
+									<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-26">
+									Имена классов</a></li>
+									<li style="margin: 0.5rem 0px;">
+									<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-27">
+									Имена переменных типа</a></li>
+									<li style="margin: 0.5rem 0px;">
+									<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-28">
+									Имена исключений</a></li>
+									<li style="margin: 0.5rem 0px;">
+									<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-29">
+									Имена глобальных переменных</a></li>
+									<li style="margin: 0.5rem 0px;">
+									<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-30">
+									Имена функций и переменных</a></li>
+									<li style="margin: 0.5rem 0px;">
+									<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-31">
+									Аргументы функций и методов</a></li>
+									<li style="margin: 0.5rem 0px;">
+									<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-32">
+									Имена методов и переменных экземпляров 
+									классов</a></li>
+									<li style="margin: 0.5rem 0px;">
+									<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-33">
+									Константы</a></li>
+									<li style="margin: 0.5rem 0px;">
+									<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-34">
+									Проектирование наследования</a></li>
+								</ul>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-35">
+								Публичные и внутренние интерфейсы</a></li>
+							</ul>
+							</li>
+							<li style="margin: 0.5rem 0px;">
+							<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-36">
+							Общие рекомендации</a><ul>
+								<li style="margin: 0.5rem 0px;">
+								<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-37">
+								Аннотации функций</a></li>
+								<li style="margin: 0.5rem 0px;">
+								<a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/pep-0008.html#section-38">
+								Аннотации переменных</a></li>
+							</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="section" id="section-2">
+						<h2 style="margin-top: 1rem; text-align: center; font-size: 1.5rem; line-height: 1.5rem;">
+						Внешний вид кода</h2>
+						<div class="section" id="section-3">
+							<h3 style="margin-top: 0.75rem; text-align: center; font-size: 1.25rem; line-height: 1.25rem;">
+							Отступы</h3>
+							<p style="margin: 0.5rem 0px;">Используйте 4 пробела 
+							на каждый уровень отступа.</p>
+							<p style="margin: 0.5rem 0px;">Продолжительные 
+							строки должны выравнивать обернутые элементы либо 
+							вертикально, используя неявную линию в скобках 
+							(круглых, квадратных или фигурных), либо с 
+							использованием висячего отступа. При использовании 
+							висячего отступа следует применять следующие 
+							соображения: на первой строке не должно быть 
+							аргументов, а остальные строки должны четко 
+							восприниматься как продолжение.</p>
+							<p style="margin: 0.5rem 0px;">Правильно:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="c1" style="color: rgb(61, 123, 123); font-style: italic;"># Выровнено по открывающему разделителю</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">foo</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="n">long_function_name</span><span class="p">(</span><span class="n">var_one</span><span class="p">,</span> <span class="n">var_two</span><span class="p">,</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>                         <span class="n">var_three</span><span class="p">,</span> <span class="n">var_four</span><span class="p">)</span><span class="w" style="color: rgb(187, 187, 187);">
+
+</span><span class="c1" style="color: rgb(61, 123, 123); font-style: italic;"># Добавлено 4 пробела (следующий уровень отступа) для выделения аргумента от остальных</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">def</span> <span class="nf" style="color: rgb(0, 0, 255);">long_function_name</span><span class="p">(</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>        <span class="n">var_one</span><span class="p">,</span> <span class="n">var_two</span><span class="p">,</span> <span class="n">var_three</span><span class="p">,</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>        <span class="n">var_four</span><span class="p">):</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="nb" style="color: rgb(0, 128, 0);">print</span><span class="p">(</span><span class="n">var_one</span><span class="p">)</span>
+</pre>
+							<p style="margin: 0.5rem 0px;">Неправильно:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="c1" style="color: rgb(61, 123, 123); font-style: italic;"># Аргументы на первой строке запрещены, если не используется вертикальное выравнивание</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">foo</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="n">long_function_name</span><span class="p">(</span><span class="n">var_one</span><span class="p">,</span> <span class="n">var_two</span><span class="p">,</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="n">var_three</span><span class="p">,</span> <span class="n">var_four</span><span class="p">)</span><span class="w" style="color: rgb(187, 187, 187);">
+
+</span><span class="c1" style="color: rgb(61, 123, 123); font-style: italic;"># Больше отступов требуется для выделения аргумента от остальных</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">def</span> <span class="nf" style="color: rgb(0, 0, 255);">long_function_name</span><span class="p">(</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="n">var_one</span><span class="p">,</span> <span class="n">var_two</span><span class="p">,</span> <span class="n">var_three</span><span class="p">,</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="n">var_four</span><span class="p">):</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="nb" style="color: rgb(0, 128, 0);">print</span><span class="p">(</span><span class="n">var_one</span><span class="p">)</span>
+</pre>
+							<p style="margin: 0.5rem 0px;">Правило 4 пробелов 
+							опционально для строк-продолжений. Опционально:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="c1" style="color: rgb(61, 123, 123); font-style: italic;"># Висячие отступы *могут* быть отступом, отличным от 4 пробелов.</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">foo</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="n">long_function_name</span><span class="p">(</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>  <span class="n">var_one</span><span class="p">,</span> <span class="n">var_two</span><span class="p">,</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>  <span class="n">var_three</span><span class="p">,</span> <span class="n">var_four</span><span class="p">)</span>
+</pre>
+							<p style="margin: 0.5rem 0px;">Если условная часть 
+							if-выражения достаточно длинная и требует написания 
+							нескольких строк, стоит отметить, что комбинация из 
+							двух символов ключевого слова (т. е. if), плюс один 
+							пробел, плюс открывающая скобка создает естественный 
+							отступ из 4 пробелов для последующих строк 
+							многострочного условного выражения. Это может 
+							привести к визуальному конфликту с отступом набора 
+							кода, вложенного внутрь if-выражения, который также 
+							естественно будет отступать на 4 пробела. Данный PEP 
+							не занимает четкой позиции относительно того, как (и 
+							нужно ли) дополнительно визуально отличать такие 
+							условные строки от вложенного набора внутри 
+							if-выражения. Приемлемые варианты в этой ситуации 
+							включают, но не ограничиваются следующими примерами:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="c1" style="color: rgb(61, 123, 123); font-style: italic;"># Без дополнительных отступов</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="p">(</span><span class="n">this_is_one_thing</span> <span class="ow" style="color: rgb(170, 34, 255); font-weight: bold;">and</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="n">that_is_another_thing</span><span class="p">):</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="n">do_something</span><span class="p">()</span><span class="w" style="color: rgb(187, 187, 187);">
+
+</span><span class="c1" style="color: rgb(61, 123, 123); font-style: italic;"># Добавьте комментарий, который обеспечит некоторое разграничение в редакторах, поддерживающих подсветку синтаксиса</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="p">(</span><span class="n">this_is_one_thing</span> <span class="ow" style="color: rgb(170, 34, 255); font-weight: bold;">and</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="n">that_is_another_thing</span><span class="p">):</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="n">do_something</span><span class="p">()</span><span class="w" style="color: rgb(187, 187, 187);">
+
+</span><span class="c1" style="color: rgb(61, 123, 123); font-style: italic;"># Добавьте несколько дополнительных отступов в строке продолжении</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="p">(</span><span class="n">this_is_one_thing</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>        <span class="ow" style="color: rgb(170, 34, 255); font-weight: bold;">and</span> <span class="n">that_is_another_thing</span><span class="p">):</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="n">do_something</span><span class="p">()</span>
+</pre>
+							<p style="margin: 0.5rem 0px;">(Также см. ниже 
+							обсуждение вопроса о том, следует ли разбивать до 
+							или после бинарных операторов.)</p>
+							<p style="margin: 0.5rem 0px;">Закрывающие 
+							круглые/квадратные/фигурные скобки в многострочных 
+							конструкциях могут находиться под первым 
+							непробельным символом последней строки списка, 
+							например:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="n">my_list</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="p">[</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="mi" style="color: rgb(102, 102, 102);">1</span><span class="p">,</span> <span class="mi" style="color: rgb(102, 102, 102);">2</span><span class="p">,</span> <span class="mi" style="color: rgb(102, 102, 102);">3</span><span class="p">,</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="mi" style="color: rgb(102, 102, 102);">4</span><span class="p">,</span> <span class="mi" style="color: rgb(102, 102, 102);">5</span><span class="p">,</span> <span class="mi" style="color: rgb(102, 102, 102);">6</span><span class="p">,</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="p">]</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">result</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="n">some_function_that_takes_arguments</span><span class="p">(</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="s1" style="color: rgb(186, 33, 33);">&#39;a&#39;</span><span class="p">,</span> <span class="s1" style="color: rgb(186, 33, 33);">&#39;b&#39;</span><span class="p">,</span> <span class="s1" style="color: rgb(186, 33, 33);">&#39;c&#39;</span><span class="p">,</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="s1" style="color: rgb(186, 33, 33);">&#39;d&#39;</span><span class="p">,</span> <span class="s1" style="color: rgb(186, 33, 33);">&#39;e&#39;</span><span class="p">,</span> <span class="s1" style="color: rgb(186, 33, 33);">&#39;f&#39;</span><span class="p">,</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="p">)</span>
+</pre>
+							<p style="margin: 0.5rem 0px;">либо быть под первым 
+							символом строки, начинающей многострочную 
+							конструкцию:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="n">my_list</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="p">[</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="mi" style="color: rgb(102, 102, 102);">1</span><span class="p">,</span> <span class="mi" style="color: rgb(102, 102, 102);">2</span><span class="p">,</span> <span class="mi" style="color: rgb(102, 102, 102);">3</span><span class="p">,</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="mi" style="color: rgb(102, 102, 102);">4</span><span class="p">,</span> <span class="mi" style="color: rgb(102, 102, 102);">5</span><span class="p">,</span> <span class="mi" style="color: rgb(102, 102, 102);">6</span><span class="p">,</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="p">]</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">result</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="n">some_function_that_takes_arguments</span><span class="p">(</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="s1" style="color: rgb(186, 33, 33);">&#39;a&#39;</span><span class="p">,</span> <span class="s1" style="color: rgb(186, 33, 33);">&#39;b&#39;</span><span class="p">,</span> <span class="s1" style="color: rgb(186, 33, 33);">&#39;c&#39;</span><span class="p">,</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="s1" style="color: rgb(186, 33, 33);">&#39;d&#39;</span><span class="p">,</span> <span class="s1" style="color: rgb(186, 33, 33);">&#39;e&#39;</span><span class="p">,</span> <span class="s1" style="color: rgb(186, 33, 33);">&#39;f&#39;</span><span class="p">,</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="p">)</span>
+</pre>
+						</div>
+						<div class="section" id="section-4">
+							<h3 style="margin-top: 0.75rem; text-align: center; font-size: 1.25rem; line-height: 1.25rem;">
+							Табуляция или пробелы?</h3>
+							<p style="margin: 0.5rem 0px;">Пробелы - самый 
+							предпочтительный метод отступов.</p>
+							<p style="margin: 0.5rem 0px;">Табуляция должна 
+							использоваться только для поддержки кода, 
+							написанного с отступами с помощью табуляции.</p>
+							<p style="margin: 0.5rem 0px;">Python запрещает 
+							смешивание табуляции и пробелов в отступах.</p>
+						</div>
+						<div class="section" id="section-5">
+							<h3 style="margin-top: 0.75rem; text-align: center; font-size: 1.25rem; line-height: 1.25rem;">
+							Максимальная длина строки</h3>
+							<p style="margin: 0.5rem 0px;">Ограничьте длину 
+							строки максимум 79 символами.</p>
+							<p style="margin: 0.5rem 0px;">Для более длинных 
+							блоков текста с меньшими структурными ограничениями 
+							(строки документации или комментарии), длину строки 
+							следует ограничить 72 символами.</p>
+							<p style="margin: 0.5rem 0px;">Ограничение 
+							необходимой ширины окна редактора позволяет иметь 
+							несколько открытых файлов бок о бок, и хорошо 
+							работает при использовании инструментов анализа 
+							кода, которые предоставляют две версии в соседних 
+							столбцах.</p>
+							<p style="margin: 0.5rem 0px;">Некоторые команды 
+							предпочитают большую длину строки. Для кода, 
+							поддерживающегося исключительно или преимущественно 
+							этой группой, в которой могут прийти к согласию по 
+							этому вопросу, нормально увеличение длины строки с 
+							80 до 100 символов (фактически увеличивая 
+							максимальную длину до 99 символов), при условии, что 
+							комментарии и строки документации все еще будут 72 
+							символа.</p>
+							<p style="margin: 0.5rem 0px;">Стандартная 
+							библиотека Python консервативна и требует 
+							ограничения длины строки в 79 символов (а строк 
+							документации/комментариев в 72).</p>
+							<p style="margin: 0.5rem 0px;">Предпочтительный 
+							способ переноса длинных строк является использование 
+							подразумеваемых продолжений строк Python внутри 
+							круглых, квадратных и фигурных скобок. Длинные 
+							строки могут быть разбиты на несколько строк, 
+							обернутые в скобки. Это предпочтительнее 
+							использования обратной косой черты для продолжения 
+							строки.</p>
+							<p style="margin: 0.5rem 0px;">Обратная косая черта 
+							все еще может быть использована время от времени. 
+							Например, длинная конструкция with до Python версии 
+							3.10 не может использовать неявные продолжения, так 
+							что обратная косая черта является приемлемой:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">with</span> <span class="nb" style="color: rgb(0, 128, 0);">open</span><span class="p">(</span><span class="s1" style="color: rgb(186, 33, 33);">&#39;/path/to/some/file/you/want/to/read&#39;</span><span class="p">)</span> <span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">as</span> <span class="n">file_1</span><span class="p">,</span> \
+        <span class="nb" style="color: rgb(0, 128, 0);">open</span><span class="p">(</span><span class="s1" style="color: rgb(186, 33, 33);">&#39;/path/to/some/file/being/written&#39;</span><span class="p">,</span> <span class="s1" style="color: rgb(186, 33, 33);">&#39;w&#39;</span><span class="p">)</span> <span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">as</span> <span class="n">file_2</span><span class="p">:</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="n">file_2</span><span class="o" style="color: rgb(102, 102, 102);">.</span><span class="n">write</span><span class="p">(</span><span class="n">file_1</span><span class="o" style="color: rgb(102, 102, 102);">.</span><span class="n">read</span><span class="p">())</span>
+</pre>
+							<p style="margin: 0.5rem 0px;">Ещё один случай - 
+							assert.</p>
+						</div>
+						<div class="section" id="section-6">
+							<h3 style="margin-top: 0.75rem; text-align: center; font-size: 1.25rem; line-height: 1.25rem;">
+							Должна ли строка переноситься до или после бинарного 
+							оператора?</h3>
+							<p style="margin: 0.5rem 0px;">На протяжении 
+							десятилетий рекомендовалось разрывать строку после 
+							бинарных операторов. Но это может ухудшить 
+							читабельность в двух отношениях: операторы обычно 
+							разбросаны по разным колонкам экрана, и каждый 
+							оператор перемещается от своего операнда на 
+							предыдущую строку. Глазу приходится проделывать 
+							дополнительную работу, чтобы определить, какие 
+							элементы складываются, а какие вычитаются:</p>
+							<p style="margin: 0.5rem 0px;">Неправильно:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="c1" style="color: rgb(61, 123, 123); font-style: italic;"># Операторы находятся далеко от своих операндов</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">income</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="p">(</span><span class="n">gross_wages</span> <span class="o" style="color: rgb(102, 102, 102);">+</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>          <span class="n">taxable_interest</span> <span class="o" style="color: rgb(102, 102, 102);">+</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>          <span class="p">(</span><span class="n">dividends</span> <span class="o" style="color: rgb(102, 102, 102);">-</span> <span class="n">qualified_dividends</span><span class="p">)</span> <span class="o" style="color: rgb(102, 102, 102);">-</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>          <span class="n">ira_deduction</span> <span class="o" style="color: rgb(102, 102, 102);">-</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>          <span class="n">student_loan_interest</span><span class="p">)</span>
+</pre>
+							<p style="margin: 0.5rem 0px;">Чтобы решить эту 
+							проблему читабельности, математики и их издатели 
+							придерживаются противоположного соглашения. Дональд 
+							Кнут объясняет традиционное правило в своей серии 
+							&quot;Компьютеры и набор текста&quot;: &quot;Хотя формулы внутри 
+							абзаца всегда обрываются после бинарных операций и 
+							отношений, отображаемые формулы всегда обрываются 
+							перед бинарными операциями&quot;.</p>
+							<p style="margin: 0.5rem 0px;">Следование традициям 
+							математики обычно приводит к созданию более 
+							читабельного кода:</p>
+							<p style="margin: 0.5rem 0px;">Правильно:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="c1" style="color: rgb(61, 123, 123); font-style: italic;"># Легко сопоставлять операторы с операндами</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">income</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="p">(</span><span class="n">gross_wages</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>          <span class="o" style="color: rgb(102, 102, 102);">+</span> <span class="n">taxable_interest</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>          <span class="o" style="color: rgb(102, 102, 102);">+</span> <span class="p">(</span><span class="n">dividends</span> <span class="o" style="color: rgb(102, 102, 102);">-</span> <span class="n">qualified_dividends</span><span class="p">)</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>          <span class="o" style="color: rgb(102, 102, 102);">-</span> <span class="n">ira_deduction</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>          <span class="o" style="color: rgb(102, 102, 102);">-</span> <span class="n">student_loan_interest</span><span class="p">)</span>
+</pre>
+							<p style="margin: 0.5rem 0px;">В коде Python 
+							допускается перенос перед или после двоичного 
+							оператора, если это поведение согласовано на 
+							локальном уровне. Для нового кода рекомендуется 
+							использовать стиль Кнута.</p>
+						</div>
+						<div class="section" id="section-7">
+							<h3 style="margin-top: 0.75rem; text-align: center; font-size: 1.25rem; line-height: 1.25rem;">
+							Пустые строки</h3>
+							<p style="margin: 0.5rem 0px;">Отделяйте функции 
+							верхнего уровня и определения классов двумя пустыми 
+							строками.</p>
+							<p style="margin: 0.5rem 0px;">Определения методов 
+							внутри класса разделяются одной пустой строкой.</p>
+							<p style="margin: 0.5rem 0px;">Дополнительные пустые 
+							строки возможно использовать для разделения 
+							различных групп похожих функций. Пустые строки могут 
+							быть опущены между несколькими связанными 
+							однострочниками (например, набор фиктивных 
+							реализаций).</p>
+							<p style="margin: 0.5rem 0px;">Используйте пустые 
+							строки в функциях, чтобы указать логические разделы.</p>
+							<p style="margin: 0.5rem 0px;">Python расценивает 
+							символ control+L как незначащий (whitespace), и вы 
+							можете использовать его, потому что многие редакторы 
+							обрабатывают его как разрыв страницы — таким образом 
+							логические части в файле будут на разных страницах. 
+							Однако, не все редакторы распознают control+L и 
+							могут на его месте отображать другой символ.</p>
+						</div>
+						<div class="section" id="section-8">
+							<h3 style="margin-top: 0.75rem; text-align: center; font-size: 1.25rem; line-height: 1.25rem;">
+							Кодировка исходного файла</h3>
+							<p style="margin: 0.5rem 0px;">Кодировка Python 
+							должна быть UTF-8, и не должны содержать объявления 
+							кодировки.</p>
+							<p style="margin: 0.5rem 0px;">В стандартной 
+							библиотеке, нестандартные кодировки должны 
+							использоваться только для целей тестирования.</p>
+							<p style="margin: 0.5rem 0px;">Используйте символы, 
+							отличные от ASCII, редко, желательно только для 
+							обозначения мест и имен людей. Если в качестве 
+							данных используются не ASCII-символы, избегайте 
+							неприятных символов Unicode, таких как 
+							z̯̯͡a̧͎̺l̡͓̫g̹̲o̡̼̘ и знаки порядка байтов.</p>
+							<p style="margin: 0.5rem 0px;">Все идентификаторы в 
+							стандартной библиотеке Python ДОЛЖНЫ использовать 
+							идентификаторы только ASCII и ДОЛЖНЫ использовать 
+							английские слова везде, где это возможно (во многих 
+							случаях используются аббревиатуры и технические 
+							термины, которые не являются английскими).</p>
+							<p style="margin: 0.5rem 0px;">Проектам с открытым 
+							исходным кодом, ориентированным на глобальную 
+							аудиторию, рекомендуется придерживаться аналогичной 
+							политики.</p>
+						</div>
+						<div class="section" id="section-9">
+							<h3 style="margin-top: 0.75rem; text-align: center; font-size: 1.25rem; line-height: 1.25rem;">
+							Импорты</h3>
+							<ul>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								Каждый импорт, как правило, должен быть на 
+								отдельной строке.</p>
+								<p style="margin: 0.5rem 0px;">Правильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="kn" style="color: rgb(0, 128, 0); font-weight: bold;">import</span> <span class="nn" style="color: rgb(0, 0, 255); font-weight: bold;">os</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="kn" style="color: rgb(0, 128, 0); font-weight: bold;">import</span> <span class="nn" style="color: rgb(0, 0, 255); font-weight: bold;">sys</span>
+</pre>
+								<p style="margin: 0.5rem 0px;">Неправильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="kn" style="color: rgb(0, 128, 0); font-weight: bold;">import</span> <span class="nn" style="color: rgb(0, 0, 255); font-weight: bold;">sys</span><span class="o" style="color: rgb(102, 102, 102);">,</span> <span class="nn" style="color: rgb(0, 0, 255); font-weight: bold;">os</span>
+</pre>
+								<p style="margin: 0.5rem 0px;">В то же время, 
+								можно писать так:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="kn" style="color: rgb(0, 128, 0); font-weight: bold;">from</span> <span class="nn" style="color: rgb(0, 0, 255); font-weight: bold;">subprocess</span> <span class="kn" style="color: rgb(0, 128, 0); font-weight: bold;">import</span> <span class="n">Popen</span><span class="p">,</span> <span class="n">PIPE</span>
+</pre>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								Импорты всегда помещаются в начале файла, сразу 
+								после комментариев к модулю и строк 
+								документации, и перед объявлением констант.</p>
+								<p style="margin: 0.5rem 0px;">Импорты должны 
+								быть сгруппированы в следующем порядке:</p>
+								<ol class="arabic simple">
+									<li style="margin: 0.5rem 0px;">импорты из 
+									стандартной библиотеки</li>
+									<li style="margin: 0.5rem 0px;">импорты 
+									сторонних библиотек</li>
+									<li style="margin: 0.5rem 0px;">импорты 
+									модулей текущего проекта</li>
+								</ol>
+								<p style="margin: 0.5rem 0px;">Вставляйте пустую 
+								строку между каждой группой импортов.</p>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								Рекомендуется абсолютное импортирование, так как 
+								оно обычно более читаемо и ведет себя лучше 
+								(или, по крайней мере, даёт понятные сообщения 
+								об ошибках), если импортируемая система 
+								настроена неправильно (например, когда каталог 
+								внутри пакета заканчивается на sys.path):</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="kn" style="color: rgb(0, 128, 0); font-weight: bold;">import</span> <span class="nn" style="color: rgb(0, 0, 255); font-weight: bold;">mypkg.sibling</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="kn" style="color: rgb(0, 128, 0); font-weight: bold;">from</span> <span class="nn" style="color: rgb(0, 0, 255); font-weight: bold;">mypkg</span> <span class="kn" style="color: rgb(0, 128, 0); font-weight: bold;">import</span> <span class="n">sibling</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="kn" style="color: rgb(0, 128, 0); font-weight: bold;">from</span> <span class="nn" style="color: rgb(0, 0, 255); font-weight: bold;">mypkg.sibling</span> <span class="kn" style="color: rgb(0, 128, 0); font-weight: bold;">import</span> <span class="n">example</span>
+</pre>
+								<p style="margin: 0.5rem 0px;">Тем не менее, 
+								явный относительный импорт является приемлемой 
+								альтернативой абсолютному импорту, особенно при 
+								работе со сложными пакетами, где использование 
+								абсолютного импорта было бы излишне подробным:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="kn" style="color: rgb(0, 128, 0); font-weight: bold;">from</span> <span class="nn" style="color: rgb(0, 0, 255); font-weight: bold;">.</span> <span class="kn" style="color: rgb(0, 128, 0); font-weight: bold;">import</span> <span class="n">sibling</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="kn" style="color: rgb(0, 128, 0); font-weight: bold;">from</span> <span class="nn" style="color: rgb(0, 0, 255); font-weight: bold;">.sibling</span> <span class="kn" style="color: rgb(0, 128, 0); font-weight: bold;">import</span> <span class="n">example</span>
+</pre>
+								<p style="margin: 0.5rem 0px;">В стандартной 
+								библиотеке следует избегать сложной структуры 
+								пакетов и всегда использовать абсолютные 
+								импорты.</p>
+								<p style="margin: 0.5rem 0px;">Неявные 
+								относительно импорты никогда не должны быть 
+								использованы, и были удалены в Python 3.</p>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								Когда вы импортируете класс из модуля, вполне 
+								можно писать вот так:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="kn" style="color: rgb(0, 128, 0); font-weight: bold;">from</span> <span class="nn" style="color: rgb(0, 0, 255); font-weight: bold;">myclass</span> <span class="kn" style="color: rgb(0, 128, 0); font-weight: bold;">import</span> <span class="n">MyClass</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="kn" style="color: rgb(0, 128, 0); font-weight: bold;">from</span> <span class="nn" style="color: rgb(0, 0, 255); font-weight: bold;">foo.bar.yourclass</span> <span class="kn" style="color: rgb(0, 128, 0); font-weight: bold;">import</span> <span class="n">YourClass</span>
+</pre>
+								<p style="margin: 0.5rem 0px;">Если такое 
+								написание вызывает конфликт имен, тогда пишите:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="kn" style="color: rgb(0, 128, 0); font-weight: bold;">import</span> <span class="nn" style="color: rgb(0, 0, 255); font-weight: bold;">myclass</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="kn" style="color: rgb(0, 128, 0); font-weight: bold;">import</span> <span class="nn" style="color: rgb(0, 0, 255); font-weight: bold;">foo.bar.yourclass</span>
+</pre>
+								<p style="margin: 0.5rem 0px;">И используйте 
+								&quot;myclass.MyClass&quot; и 
+								&quot;foo.bar.yourclass.YourClass&quot;.</p>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								wildcard-импорты (<tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">from 
+								&lt;module&gt; import *</tt>) следует избегать, так 
+								как они делают неясным то, какие имена 
+								присутствуют в глобальном пространстве имён, что 
+								вводит в заблуждение как читателей, так и многие 
+								автоматизированные средства. Существует один 
+								оправданный пример использования шаблона 
+								импорта, который заключается в опубликовании 
+								внутреннего интерфейса как часть общественного 
+								API (например, переписав реализацию на чистом 
+								Python в модуле акселератора (и не будет заранее 
+								известно, какие именно функции будут 
+								перезаписаны).</p>
+								</li>
+							</ul>
+						</div>
+						<div class="section" id="section-10">
+							<h3 style="margin-top: 0.75rem; text-align: center; font-size: 1.25rem; line-height: 1.25rem;">
+							Имена &quot;дандеры&quot; на уровне модуля</h3>
+							<p style="margin: 0.5rem 0px;">&quot;Дандеры&quot; (т.е. имена 
+							с двумя ведущими и двумя завершающими 
+							подчеркиваниями), такие как<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">__all__</tt>,<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">__author__</tt>,<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">__version__</tt><span>&nbsp;</span>и 
+							т.д., должны располагаться после строки документации 
+							модуля, но перед любым выражением import, за 
+							исключением импортов<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">__future__</tt>. 
+							Python предписывает, что импорты<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">__future__</tt><span>&nbsp;</span>должны 
+							появляться в модуле перед любым другим кодом, за 
+							исключением строки документации.</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="sd" style="color: rgb(186, 33, 33); font-style: italic;">&quot;&quot;&quot;This is the example module.
+
+This module does stuff.
+&quot;&quot;&quot;</span><span class="w" style="color: rgb(187, 187, 187);">
+
+</span><span class="kn" style="color: rgb(0, 128, 0); font-weight: bold;">from</span> <span class="nn" style="color: rgb(0, 0, 255); font-weight: bold;">__future__</span> <span class="kn" style="color: rgb(0, 128, 0); font-weight: bold;">import</span> <span class="n">barry_as_FLUFL</span><span class="w" style="color: rgb(187, 187, 187);">
+
+</span><span class="n">__all__</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="p">[</span><span class="s1" style="color: rgb(186, 33, 33);">&#39;a&#39;</span><span class="p">,</span> <span class="s1" style="color: rgb(186, 33, 33);">&#39;b&#39;</span><span class="p">,</span> <span class="s1" style="color: rgb(186, 33, 33);">&#39;c&#39;</span><span class="p">]</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">__version__</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="s1" style="color: rgb(186, 33, 33);">&#39;0.1&#39;</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">__author__</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="s1" style="color: rgb(186, 33, 33);">&#39;Cardinal Biggles&#39;</span><span class="w" style="color: rgb(187, 187, 187);">
+
+</span><span class="kn" style="color: rgb(0, 128, 0); font-weight: bold;">import</span> <span class="nn" style="color: rgb(0, 0, 255); font-weight: bold;">os</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="kn" style="color: rgb(0, 128, 0); font-weight: bold;">import</span> <span class="nn" style="color: rgb(0, 0, 255); font-weight: bold;">sys</span>
+</pre>
+						</div>
+					</div>
+					<div class="section" id="section-11">
+						<h2 style="margin-top: 1rem; text-align: center; font-size: 1.5rem; line-height: 1.5rem;">
+						Кавычки литерала строки</h2>
+						<p style="margin: 0.5rem 0px;">В Python строки с 
+						одинарными и двойными кавычками - это одно и то же. В 
+						данном PEP нет рекомендаций на этот счет. Выберите 
+						правило и придерживайтесь его. Однако, если строка 
+						содержит символы одинарной или двойной кавычки, 
+						используйте вторую, чтобы избежать обратных слешей в 
+						строке. Это улучшает читаемость кода.</p>
+						<p style="margin: 0.5rem 0px;">Для строк с тройными 
+						кавычками всегда используйте двойные кавычки, чтобы 
+						соответствовать соглашению о docstring в PEP 257.</p>
+					</div>
+					<div class="section" id="section-12">
+						<h2 style="margin-top: 1rem; text-align: center; font-size: 1.5rem; line-height: 1.5rem;">
+						Пробелы в выражениях и инструкциях</h2>
+						<div class="section" id="section-13">
+							<h3 style="margin-top: 0.75rem; text-align: center; font-size: 1.25rem; line-height: 1.25rem;">
+							Домашние питомцы</h3>
+							<p style="margin: 0.5rem 0px;">Избегайте 
+							использования пробелов в следующих ситуациях:</p>
+							<ul>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								Непосредственно внутри круглых, квадратных или 
+								фигурных скобок.</p>
+								<p style="margin: 0.5rem 0px;">Правильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="n">spam</span><span class="p">(</span><span class="n">ham</span><span class="p">[</span><span class="mi" style="color: rgb(102, 102, 102);">1</span><span class="p">],</span> <span class="p">{</span><span class="n">eggs</span><span class="p">:</span> <span class="mi" style="color: rgb(102, 102, 102);">2</span><span class="p">})</span>
+</pre>
+								<p style="margin: 0.5rem 0px;">Неправильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="n">spam</span><span class="p">(</span> <span class="n">ham</span><span class="p">[</span> <span class="mi" style="color: rgb(102, 102, 102);">1</span> <span class="p">],</span> <span class="p">{</span> <span class="n">eggs</span><span class="p">:</span> <span class="mi" style="color: rgb(102, 102, 102);">2</span> <span class="p">}</span> <span class="p">)</span>
+</pre>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								Между запятой и последующей закрытой скобкой.</p>
+								<p style="margin: 0.5rem 0px;">Правильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="n">foo</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="p">(</span><span class="mi" style="color: rgb(102, 102, 102);">0</span><span class="p">,)</span>
+</pre>
+								<p style="margin: 0.5rem 0px;">Неправильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="n">bar</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="p">(</span><span class="mi" style="color: rgb(102, 102, 102);">0</span><span class="p">,</span> <span class="p">)</span>
+</pre>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								Непосредственно перед запятой, точкой с запятой 
+								или двоеточием.</p>
+								<p style="margin: 0.5rem 0px;">Правильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="n">x</span> <span class="o" style="color: rgb(102, 102, 102);">==</span> <span class="mi" style="color: rgb(102, 102, 102);">4</span><span class="p">:</span> <span class="nb" style="color: rgb(0, 128, 0);">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span>
+</pre>
+								<p style="margin: 0.5rem 0px;">Неправильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="n">x</span> <span class="o" style="color: rgb(102, 102, 102);">==</span> <span class="mi" style="color: rgb(102, 102, 102);">4</span> <span class="p">:</span> <span class="nb" style="color: rgb(0, 128, 0);">print</span><span class="p">(</span><span class="n">x</span> <span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="p">;</span> <span class="n">x</span> <span class="p">,</span> <span class="n">y</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="n">y</span> <span class="p">,</span> <span class="n">x</span>
+</pre>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								Однако в<span>&nbsp;</span><a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/slice.html">срезе</a><span>&nbsp;</span>двоеточие 
+								действует как бинарный оператор и должно иметь 
+								равное количество пробелов с обеих сторон 
+								(рассматривая его как оператор с наименьшим 
+								приоритетом). В расширенном срезе оба двоеточия 
+								должны иметь одинаковое количество интервалов. 
+								Исключение: если параметр среза опущен, пробел 
+								не ставится.</p>
+								<p style="margin: 0.5rem 0px;">Правильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="n">ham</span><span class="p">[</span><span class="mi" style="color: rgb(102, 102, 102);">1</span><span class="p">:</span><span class="mi" style="color: rgb(102, 102, 102);">9</span><span class="p">],</span> <span class="n">ham</span><span class="p">[</span><span class="mi" style="color: rgb(102, 102, 102);">1</span><span class="p">:</span><span class="mi" style="color: rgb(102, 102, 102);">9</span><span class="p">:</span><span class="mi" style="color: rgb(102, 102, 102);">3</span><span class="p">],</span> <span class="n">ham</span><span class="p">[:</span><span class="mi" style="color: rgb(102, 102, 102);">9</span><span class="p">:</span><span class="mi" style="color: rgb(102, 102, 102);">3</span><span class="p">],</span> <span class="n">ham</span><span class="p">[</span><span class="mi" style="color: rgb(102, 102, 102);">1</span><span class="p">::</span><span class="mi" style="color: rgb(102, 102, 102);">3</span><span class="p">],</span> <span class="n">ham</span><span class="p">[</span><span class="mi" style="color: rgb(102, 102, 102);">1</span><span class="p">:</span><span class="mi" style="color: rgb(102, 102, 102);">9</span><span class="p">:]</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">ham</span><span class="p">[</span><span class="n">lower</span><span class="p">:</span><span class="n">upper</span><span class="p">],</span> <span class="n">ham</span><span class="p">[</span><span class="n">lower</span><span class="p">:</span><span class="n">upper</span><span class="p">:],</span> <span class="n">ham</span><span class="p">[</span><span class="n">lower</span><span class="p">::</span><span class="n">step</span><span class="p">]</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">ham</span><span class="p">[</span><span class="n">lower</span><span class="o" style="color: rgb(102, 102, 102);">+</span><span class="n">offset</span> <span class="p">:</span> <span class="n">upper</span><span class="o" style="color: rgb(102, 102, 102);">+</span><span class="n">offset</span><span class="p">]</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">ham</span><span class="p">[:</span> <span class="n">upper_fn</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">:</span> <span class="n">step_fn</span><span class="p">(</span><span class="n">x</span><span class="p">)],</span> <span class="n">ham</span><span class="p">[::</span> <span class="n">step_fn</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">ham</span><span class="p">[</span><span class="n">lower</span> <span class="o" style="color: rgb(102, 102, 102);">+</span> <span class="n">offset</span> <span class="p">:</span> <span class="n">upper</span> <span class="o" style="color: rgb(102, 102, 102);">+</span> <span class="n">offset</span><span class="p">]</span>
+</pre>
+								<p style="margin: 0.5rem 0px;">Неправильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="n">ham</span><span class="p">[</span><span class="n">lower</span> <span class="o" style="color: rgb(102, 102, 102);">+</span> <span class="n">offset</span><span class="p">:</span><span class="n">upper</span> <span class="o" style="color: rgb(102, 102, 102);">+</span> <span class="n">offset</span><span class="p">]</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">ham</span><span class="p">[</span><span class="mi" style="color: rgb(102, 102, 102);">1</span><span class="p">:</span> <span class="mi" style="color: rgb(102, 102, 102);">9</span><span class="p">],</span> <span class="n">ham</span><span class="p">[</span><span class="mi" style="color: rgb(102, 102, 102);">1</span> <span class="p">:</span><span class="mi" style="color: rgb(102, 102, 102);">9</span><span class="p">],</span> <span class="n">ham</span><span class="p">[</span><span class="mi" style="color: rgb(102, 102, 102);">1</span><span class="p">:</span><span class="mi" style="color: rgb(102, 102, 102);">9</span> <span class="p">:</span><span class="mi" style="color: rgb(102, 102, 102);">3</span><span class="p">]</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">ham</span><span class="p">[</span><span class="n">lower</span> <span class="p">:</span> <span class="p">:</span> <span class="n">step</span><span class="p">]</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">ham</span><span class="p">[</span> <span class="p">:</span> <span class="n">upper</span><span class="p">]</span>
+</pre>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								Сразу перед открывающей скобкой, после которой 
+								начинается список аргументов при вызове функции.</p>
+								<p style="margin: 0.5rem 0px;">Правильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="n">spam</span><span class="p">(</span><span class="mi" style="color: rgb(102, 102, 102);">1</span><span class="p">)</span>
+</pre>
+								<p style="margin: 0.5rem 0px;">Неправильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="n">spam</span> <span class="p">(</span><span class="mi" style="color: rgb(102, 102, 102);">1</span><span class="p">)</span>
+</pre>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								Сразу перед открывающей скобкой, после которой 
+								следует индекс или срез.</p>
+								<p style="margin: 0.5rem 0px;">Правильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="nb" style="color: rgb(0, 128, 0);">dict</span><span class="p">[</span><span class="s1" style="color: rgb(186, 33, 33);">&#39;key&#39;</span><span class="p">]</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="nb" style="color: rgb(0, 128, 0);">list</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+</pre>
+								<p style="margin: 0.5rem 0px;">Неправильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="nb" style="color: rgb(0, 128, 0);">dict</span> <span class="p">[</span><span class="s1" style="color: rgb(186, 33, 33);">&#39;key&#39;</span><span class="p">]</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="nb" style="color: rgb(0, 128, 0);">list</span> <span class="p">[</span><span class="n">index</span><span class="p">]</span>
+</pre>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								Использование более одного пробела вокруг 
+								оператора присваивания (или любого другого) для 
+								того, чтобы выровнять его с другим.</p>
+								<p style="margin: 0.5rem 0px;">Правильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="n">x</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="mi" style="color: rgb(102, 102, 102);">1</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">y</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="mi" style="color: rgb(102, 102, 102);">2</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">long_variable</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="mi" style="color: rgb(102, 102, 102);">3</span>
+</pre>
+								<p style="margin: 0.5rem 0px;">Неправильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="n">x</span>             <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="mi" style="color: rgb(102, 102, 102);">1</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">y</span>             <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="mi" style="color: rgb(102, 102, 102);">2</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">long_variable</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="mi" style="color: rgb(102, 102, 102);">3</span>
+</pre>
+								</li>
+							</ul>
+						</div>
+						<div class="section" id="section-14">
+							<h3 style="margin-top: 0.75rem; text-align: center; font-size: 1.25rem; line-height: 1.25rem;">
+							Другие рекомендации</h3>
+							<ul>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								Всегда окружайте эти бинарные операторы одним 
+								пробелом с каждой стороны: присваивания (=, +=, 
+								-= и другие), сравнения (==, &lt;, &gt;, !=, &lt;&gt;, &lt;=, 
+								&gt;=, in, not in, is, is not), логические (and, 
+								or, not).</p>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								Если используются операторы с разными 
+								приоритетами, попробуйте добавить пробелы вокруг 
+								операторов с самым низким приоритетом. 
+								Используйте свои собственные суждения, однако, 
+								никогда не используйте более одного пробела, и 
+								всегда используйте одинаковое количество 
+								пробелов по обе стороны бинарного оператора.</p>
+								<p style="margin: 0.5rem 0px;">Правильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="n">i</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="n">i</span> <span class="o" style="color: rgb(102, 102, 102);">+</span> <span class="mi" style="color: rgb(102, 102, 102);">1</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">submitted</span> <span class="o" style="color: rgb(102, 102, 102);">+=</span> <span class="mi" style="color: rgb(102, 102, 102);">1</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">x</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="n">x</span><span class="o" style="color: rgb(102, 102, 102);">*</span><span class="mi" style="color: rgb(102, 102, 102);">2</span> <span class="o" style="color: rgb(102, 102, 102);">-</span> <span class="mi" style="color: rgb(102, 102, 102);">1</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">hypot2</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="n">x</span><span class="o" style="color: rgb(102, 102, 102);">*</span><span class="n">x</span> <span class="o" style="color: rgb(102, 102, 102);">+</span> <span class="n">y</span><span class="o" style="color: rgb(102, 102, 102);">*</span><span class="n">y</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">c</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="p">(</span><span class="n">a</span><span class="o" style="color: rgb(102, 102, 102);">+</span><span class="n">b</span><span class="p">)</span> <span class="o" style="color: rgb(102, 102, 102);">*</span> <span class="p">(</span><span class="n">a</span><span class="o" style="color: rgb(102, 102, 102);">-</span><span class="n">b</span><span class="p">)</span>
+</pre>
+								<p style="margin: 0.5rem 0px;">Неправильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="n">i</span><span class="o" style="color: rgb(102, 102, 102);">=</span><span class="n">i</span><span class="o" style="color: rgb(102, 102, 102);">+</span><span class="mi" style="color: rgb(102, 102, 102);">1</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">submitted</span> <span class="o" style="color: rgb(102, 102, 102);">+=</span><span class="mi" style="color: rgb(102, 102, 102);">1</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">x</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="n">x</span> <span class="o" style="color: rgb(102, 102, 102);">*</span> <span class="mi" style="color: rgb(102, 102, 102);">2</span> <span class="o" style="color: rgb(102, 102, 102);">-</span> <span class="mi" style="color: rgb(102, 102, 102);">1</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">hypot2</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="n">x</span> <span class="o" style="color: rgb(102, 102, 102);">*</span> <span class="n">x</span> <span class="o" style="color: rgb(102, 102, 102);">+</span> <span class="n">y</span> <span class="o" style="color: rgb(102, 102, 102);">*</span> <span class="n">y</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">c</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="p">(</span><span class="n">a</span> <span class="o" style="color: rgb(102, 102, 102);">+</span> <span class="n">b</span><span class="p">)</span> <span class="o" style="color: rgb(102, 102, 102);">*</span> <span class="p">(</span><span class="n">a</span> <span class="o" style="color: rgb(102, 102, 102);">-</span> <span class="n">b</span><span class="p">)</span>
+</pre>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								Аннотации функций должны использовать обычные 
+								правила для двоеточий и всегда иметь пробелы 
+								вокруг стрелки -&gt;, если она присутствует.</p>
+								<p style="margin: 0.5rem 0px;">Правильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">def</span> <span class="nf" style="color: rgb(0, 0, 255);">munge</span><span class="p">(</span><span class="nb" style="color: rgb(0, 128, 0);">input</span><span class="p">:</span> <span class="n">AnyStr</span><span class="p">):</span> <span class="o" style="color: rgb(102, 102, 102);">...</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">def</span> <span class="nf" style="color: rgb(0, 0, 255);">munge</span><span class="p">()</span> <span class="o" style="color: rgb(102, 102, 102);">-&gt;</span> <span class="n">PosInt</span><span class="p">:</span> <span class="o" style="color: rgb(102, 102, 102);">...</span>
+</pre>
+								<p style="margin: 0.5rem 0px;">Неправильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">def</span> <span class="nf" style="color: rgb(0, 0, 255);">munge</span><span class="p">(</span><span class="nb" style="color: rgb(0, 128, 0);">input</span><span class="p">:</span><span class="n">AnyStr</span><span class="p">):</span> <span class="o" style="color: rgb(102, 102, 102);">...</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">def</span> <span class="nf" style="color: rgb(0, 0, 255);">munge</span><span class="p">()</span><span class="o" style="color: rgb(102, 102, 102);">-&gt;</span><span class="n">PosInt</span><span class="p">:</span> <span class="o" style="color: rgb(102, 102, 102);">...</span>
+</pre>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">Не 
+								используйте пробелы вокруг знака =, если он 
+								используется для обозначения именованного 
+								аргумента или значения параметров по умолчанию.</p>
+								<p style="margin: 0.5rem 0px;">Правильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">def</span> <span class="nf" style="color: rgb(0, 0, 255);">complex</span><span class="p">(</span><span class="n">real</span><span class="p">,</span> <span class="n">imag</span><span class="o" style="color: rgb(102, 102, 102);">=</span><span class="mf" style="color: rgb(102, 102, 102);">0.0</span><span class="p">):</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">return</span> <span class="n">magic</span><span class="p">(</span><span class="n">r</span><span class="o" style="color: rgb(102, 102, 102);">=</span><span class="n">real</span><span class="p">,</span> <span class="n">i</span><span class="o" style="color: rgb(102, 102, 102);">=</span><span class="n">imag</span><span class="p">)</span>
+</pre>
+								<p style="margin: 0.5rem 0px;">Неправильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">def</span> <span class="nf" style="color: rgb(0, 0, 255);">complex</span><span class="p">(</span><span class="n">real</span><span class="p">,</span> <span class="n">imag</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="mf" style="color: rgb(102, 102, 102);">0.0</span><span class="p">):</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">return</span> <span class="n">magic</span><span class="p">(</span><span class="n">r</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="n">real</span><span class="p">,</span> <span class="n">i</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="n">imag</span><span class="p">)</span>
+</pre>
+								<p style="margin: 0.5rem 0px;">Однако при 
+								объединении аннотации аргумента со значением по 
+								умолчанию используйте пробелы вокруг знака =.</p>
+								<p style="margin: 0.5rem 0px;">Правильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">def</span> <span class="nf" style="color: rgb(0, 0, 255);">munge</span><span class="p">(</span><span class="n">sep</span><span class="p">:</span> <span class="n">AnyStr</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="kc" style="color: rgb(0, 128, 0); font-weight: bold;">None</span><span class="p">):</span> <span class="o" style="color: rgb(102, 102, 102);">...</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">def</span> <span class="nf" style="color: rgb(0, 0, 255);">munge</span><span class="p">(</span><span class="nb" style="color: rgb(0, 128, 0);">input</span><span class="p">:</span> <span class="n">AnyStr</span><span class="p">,</span> <span class="n">sep</span><span class="p">:</span> <span class="n">AnyStr</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="kc" style="color: rgb(0, 128, 0); font-weight: bold;">None</span><span class="p">,</span> <span class="n">limit</span><span class="o" style="color: rgb(102, 102, 102);">=</span><span class="mi" style="color: rgb(102, 102, 102);">1000</span><span class="p">):</span> <span class="o" style="color: rgb(102, 102, 102);">...</span>
+</pre>
+								<p style="margin: 0.5rem 0px;">Неправильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">def</span> <span class="nf" style="color: rgb(0, 0, 255);">munge</span><span class="p">(</span><span class="nb" style="color: rgb(0, 128, 0);">input</span><span class="p">:</span> <span class="n">AnyStr</span><span class="o" style="color: rgb(102, 102, 102);">=</span><span class="kc" style="color: rgb(0, 128, 0); font-weight: bold;">None</span><span class="p">):</span> <span class="o" style="color: rgb(102, 102, 102);">...</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">def</span> <span class="nf" style="color: rgb(0, 0, 255);">munge</span><span class="p">(</span><span class="nb" style="color: rgb(0, 128, 0);">input</span><span class="p">:</span> <span class="n">AnyStr</span><span class="p">,</span> <span class="n">limit</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="mi" style="color: rgb(102, 102, 102);">1000</span><span class="p">):</span> <span class="o" style="color: rgb(102, 102, 102);">...</span>
+</pre>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">Не 
+								используйте составные инструкции (несколько 
+								команд в одной строке).</p>
+								<p style="margin: 0.5rem 0px;">Правильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="n">foo</span> <span class="o" style="color: rgb(102, 102, 102);">==</span> <span class="s1" style="color: rgb(186, 33, 33);">&#39;blah&#39;</span><span class="p">:</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="n">do_blah_thing</span><span class="p">()</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">do_one</span><span class="p">()</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">do_two</span><span class="p">()</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">do_three</span><span class="p">()</span>
+</pre>
+								<p style="margin: 0.5rem 0px;">Неправильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="n">foo</span> <span class="o" style="color: rgb(102, 102, 102);">==</span> <span class="s1" style="color: rgb(186, 33, 33);">&#39;blah&#39;</span><span class="p">:</span> <span class="n">do_blah_thing</span><span class="p">()</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">do_one</span><span class="p">();</span> <span class="n">do_two</span><span class="p">();</span> <span class="n">do_three</span><span class="p">()</span>
+</pre>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								Иногда можно писать тело циклов while, for или 
+								ветку if в той же строке, если команда короткая, 
+								но если команд несколько, никогда так не пишите. 
+								А также избегайте длинных строк!</p>
+								<p style="margin: 0.5rem 0px;">Точно 
+								неправильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="n">foo</span> <span class="o" style="color: rgb(102, 102, 102);">==</span> <span class="s1" style="color: rgb(186, 33, 33);">&#39;blah&#39;</span><span class="p">:</span> <span class="n">do_blah_thing</span><span class="p">()</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">for</span> <span class="n">x</span> <span class="ow" style="color: rgb(170, 34, 255); font-weight: bold;">in</span> <span class="n">lst</span><span class="p">:</span> <span class="n">total</span> <span class="o" style="color: rgb(102, 102, 102);">+=</span> <span class="n">x</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">while</span> <span class="n">t</span> <span class="o" style="color: rgb(102, 102, 102);">&lt;</span> <span class="mi" style="color: rgb(102, 102, 102);">10</span><span class="p">:</span> <span class="n">t</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="n">delay</span><span class="p">()</span>
+</pre>
+								<p style="margin: 0.5rem 0px;">Вероятно, 
+								неправильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="n">foo</span> <span class="o" style="color: rgb(102, 102, 102);">==</span> <span class="s1" style="color: rgb(186, 33, 33);">&#39;blah&#39;</span><span class="p">:</span> <span class="n">do_blah_thing</span><span class="p">()</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">else</span><span class="p">:</span> <span class="n">do_non_blah_thing</span><span class="p">()</span><span class="w" style="color: rgb(187, 187, 187);">
+
+</span><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">try</span><span class="p">:</span> <span class="n">something</span><span class="p">()</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">finally</span><span class="p">:</span> <span class="n">cleanup</span><span class="p">()</span><span class="w" style="color: rgb(187, 187, 187);">
+
+</span><span class="n">do_one</span><span class="p">();</span> <span class="n">do_two</span><span class="p">();</span> <span class="n">do_three</span><span class="p">(</span><span class="n">long</span><span class="p">,</span> <span class="n">argument</span><span class="p">,</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>                             <span class="nb" style="color: rgb(0, 128, 0);">list</span><span class="p">,</span> <span class="n">like</span><span class="p">,</span> <span class="n">this</span><span class="p">)</span><span class="w" style="color: rgb(187, 187, 187);">
+
+</span><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="n">foo</span> <span class="o" style="color: rgb(102, 102, 102);">==</span> <span class="s1" style="color: rgb(186, 33, 33);">&#39;blah&#39;</span><span class="p">:</span> <span class="n">one</span><span class="p">();</span> <span class="n">two</span><span class="p">();</span> <span class="n">three</span><span class="p">()</span>
+</pre>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="section" id="section-15">
+						<h2 style="margin-top: 1rem; text-align: center; font-size: 1.5rem; line-height: 1.5rem;">
+						Когда использовать запятые в конце строки</h2>
+						<p style="margin: 0.5rem 0px;">Конечные запятые обычно 
+						необязательны, но они обязательны при создании кортежа 
+						из одного элемента. Для ясности рекомендуется заключать 
+						их в (технически лишние) круглые скобки.</p>
+						<p style="margin: 0.5rem 0px;">Правильно:</p>
+						<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="n">FILES</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="p">(</span><span class="s1" style="color: rgb(186, 33, 33);">&#39;setup.cfg&#39;</span><span class="p">,)</span>
+</pre>
+						<p style="margin: 0.5rem 0px;">Неправильно:</p>
+						<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="n">FILES</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="s1" style="color: rgb(186, 33, 33);">&#39;setup.cfg&#39;</span><span class="p">,</span>
+</pre>
+						<p style="margin: 0.5rem 0px;">Хотя запятые в конце 
+						строки являются лишними, они часто полезны при 
+						использовании системы контроля версий, когда ожидается, 
+						что список значений, аргументов или импортируемых 
+						элементов будет расширяться с течением времени. Обычно 
+						каждое значение (и т. д.) помещается в отдельную строку, 
+						всегда добавляя запятую в конце, а закрывающая скобка 
+						добавляется на следующей строке. Однако не имеет смысла 
+						располагать запятую в той же строке, что и закрывающий 
+						разделитель (за исключением описанного выше случая 
+						одноэлементных кортежей).</p>
+						<p style="margin: 0.5rem 0px;">Правильно:</p>
+						<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="n">FILES</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="p">[</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="s1" style="color: rgb(186, 33, 33);">&#39;setup.cfg&#39;</span><span class="p">,</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="s1" style="color: rgb(186, 33, 33);">&#39;tox.ini&#39;</span><span class="p">,</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="p">]</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">initialize</span><span class="p">(</span><span class="n">FILES</span><span class="p">,</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>           <span class="n">error</span><span class="o" style="color: rgb(102, 102, 102);">=</span><span class="kc" style="color: rgb(0, 128, 0); font-weight: bold;">True</span><span class="p">,</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>           <span class="p">)</span>
+</pre>
+						<p style="margin: 0.5rem 0px;">Неправильно:</p>
+						<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="n">FILES</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="p">[</span><span class="s1" style="color: rgb(186, 33, 33);">&#39;setup.cfg&#39;</span><span class="p">,</span> <span class="s1" style="color: rgb(186, 33, 33);">&#39;tox.ini&#39;</span><span class="p">,]</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">initialize</span><span class="p">(</span><span class="n">FILES</span><span class="p">,</span> <span class="n">error</span><span class="o" style="color: rgb(102, 102, 102);">=</span><span class="kc" style="color: rgb(0, 128, 0); font-weight: bold;">True</span><span class="p">,)</span>
+</pre>
+					</div>
+					<div class="section" id="section-16">
+						<h2 style="margin-top: 1rem; text-align: center; font-size: 1.5rem; line-height: 1.5rem;">
+						Комментарии</h2>
+						<p style="margin: 0.5rem 0px;">Комментарии, 
+						противоречащие коду, хуже, чем отсутствие комментариев. 
+						Всегда исправляйте комментарии, если меняете код!</p>
+						<p style="margin: 0.5rem 0px;">Комментарии должны 
+						являться законченными предложениями. Если комментарий — 
+						фраза или предложение, первое слово должно быть написано 
+						с большой буквы, если только это не имя переменной, 
+						которая начинается с маленькой буквы (никогда не 
+						изменяйте регистр переменных!).</p>
+						<p style="margin: 0.5rem 0px;">Блок комментариев обычно 
+						состоит из одного или более абзацев, составленных из 
+						полноценных предложений, поэтому каждое предложение 
+						должно оканчиваться точкой.</p>
+						<p style="margin: 0.5rem 0px;">В комментариях, состоящих 
+						из нескольких предложений, следует использовать один или 
+						два пробела после точки, завершающей предложение, за 
+						исключением последнего предложения.</p>
+						<p style="margin: 0.5rem 0px;">Убедитесь, что ваши 
+						комментарии ясны и понятны людям, говорящим на языке, на 
+						котором вы пишете.</p>
+						<p style="margin: 0.5rem 0px;">Программисты, из 
+						неанглоязычных стран: пожалуйста, пишите комментарии на 
+						английском, если только вы не уверены на 120%, что ваш 
+						код никогда не будут читать люди, не знающие вашего 
+						родного языка.</p>
+						<div class="section" id="section-17">
+							<h3 style="margin-top: 0.75rem; text-align: center; font-size: 1.25rem; line-height: 1.25rem;">
+							Блоки комментариев</h3>
+							<p style="margin: 0.5rem 0px;">Блок комментариев 
+							обычно объясняет код (весь, или только некоторую 
+							часть), идущий после блока, и должен иметь тот же 
+							отступ, что и сам код. Каждая строчка такого блока 
+							должна начинаться с символа # и одного пробела после 
+							него (если только сам текст комментария не имеет 
+							отступа).</p>
+							<p style="margin: 0.5rem 0px;">Абзацы внутри блока 
+							комментариев разделяются строкой, состоящей из 
+							одного символа #.</p>
+						</div>
+						<div class="section" id="section-18">
+							<h3 style="margin-top: 0.75rem; text-align: center; font-size: 1.25rem; line-height: 1.25rem;">
+							Внутристрочные комментарии</h3>
+							<p style="margin: 0.5rem 0px;">Старайтесь реже 
+							использовать подобные комментарии.</p>
+							<p style="margin: 0.5rem 0px;">Такой комментарий 
+							находится в той же строке, что и инструкция. 
+							Внутристрочные комментарии должны отделяться по 
+							крайней мере двумя пробелами от инструкции. Они 
+							должны начинаться с символа<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">#</tt><span>&nbsp;</span>и 
+							одного пробела.</p>
+							<p style="margin: 0.5rem 0px;">Комментарии в строке 
+							с кодом не нужны и только отвлекают от чтения, если 
+							они объясняют очевидное. Не пишите вот так:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="n">x</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="n">x</span> <span class="o" style="color: rgb(102, 102, 102);">+</span> <span class="mi" style="color: rgb(102, 102, 102);">1</span>  <span class="c1" style="color: rgb(61, 123, 123); font-style: italic;"># Increment x</span>
+</pre>
+							<p style="margin: 0.5rem 0px;">Впрочем, такие 
+							комментарии иногда полезны:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="n">x</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="n">x</span> <span class="o" style="color: rgb(102, 102, 102);">+</span> <span class="mi" style="color: rgb(102, 102, 102);">1</span>  <span class="c1" style="color: rgb(61, 123, 123); font-style: italic;"># Компенсация границы</span>
+</pre>
+						</div>
+						<div class="section" id="section-19">
+							<h3 style="margin-top: 0.75rem; text-align: center; font-size: 1.25rem; line-height: 1.25rem;">
+							Строки документации</h3>
+							<p style="margin: 0.5rem 0px;">Соглашения по 
+							написанию хороших строк документации (они же 
+							&quot;docstrings&quot;) увековечены в PEP 257.</p>
+							<ul>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								Пишите документацию для всех публичных модулей, 
+								функций, классов, методов. Строки документации 
+								необязательны для приватных методов, но лучше 
+								написать, что делает метод. Комментарий нужно 
+								писать после строки с def</p>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">PEP 
+								257 объясняет, как правильно и хорошо 
+								документировать. Заметьте, очень важно, чтобы 
+								закрывающие кавычки стояли на отдельной строке. 
+								А еще лучше, если перед ними будет ещё и пустая 
+								строка, например</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="sd" style="color: rgb(186, 33, 33); font-style: italic;">&quot;&quot;&quot;Return a foobang
+
+Optional plotz says to frobnicate the bizbaz first.
+
+&quot;&quot;&quot;</span>
+</pre>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">Для 
+								однострочной документации оставляйте закрывающие 
+								кавычки на той же строке</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="sd" style="color: rgb(186, 33, 33); font-style: italic;">&quot;&quot;&quot;Return an ex-parrot.&quot;&quot;&quot;</span>
+</pre>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="section" id="section-20">
+						<h2 style="margin-top: 1rem; text-align: center; font-size: 1.5rem; line-height: 1.5rem;">
+						Соглашения по именованию</h2>
+						<p style="margin: 0.5rem 0px;">Соглашения по именованию 
+						переменных в python немного туманны, поэтому их список 
+						никогда не будет полным — тем не менее, ниже мы приводим 
+						список рекомендаций, действующих на данный момент. Новые 
+						модули и пакеты должны быть написаны согласно этим 
+						стандартам, но если в какой-либо уже существующей 
+						библиотеке эти правила нарушаются, предпочтительнее 
+						писать в едином с ней стиле.</p>
+						<div class="section" id="section-21">
+							<h3 style="margin-top: 0.75rem; text-align: center; font-size: 1.25rem; line-height: 1.25rem;">
+							Главный принцип</h3>
+							<p style="margin: 0.5rem 0px;">Имена, которые видны 
+							пользователю как часть общественного API должны 
+							следовать конвенциям, которые отражают 
+							использование, а не реализацию.</p>
+						</div>
+						<div class="section" id="section-22">
+							<h3 style="margin-top: 0.75rem; text-align: center; font-size: 1.25rem; line-height: 1.25rem;">
+							Описание: Стили наименования</h3>
+							<p style="margin: 0.5rem 0px;">Существует много 
+							разных стилей. Поможем вам распознать, какой стиль 
+							именования используется, независимо от того, для 
+							чего он используется.</p>
+							<p style="margin: 0.5rem 0px;">Обычно различают 
+							следующие стили:</p>
+							<ul class="simple">
+								<li style="margin: 0.5rem 0px;">b (одиночная 
+								маленькая буква)</li>
+								<li style="margin: 0.5rem 0px;">B (одиночная 
+								заглавная буква)</li>
+								<li style="margin: 0.5rem 0px;">lowercase (слово 
+								в нижнем регистре)</li>
+								<li style="margin: 0.5rem 0px;">
+								lower_case_with_underscores (слова из маленьких 
+								букв с подчеркиваниями)</li>
+								<li style="margin: 0.5rem 0px;">UPPERCASE 
+								(заглавные буквы)</li>
+								<li style="margin: 0.5rem 0px;">
+								UPPER_CASE_WITH_UNDERSCORES (слова из заглавных 
+								букв с подчеркиваниями)</li>
+								<li style="margin: 0.5rem 0px;">CapitalizedWords 
+								(слова с заглавными буквами, или CapWords, или 
+								CamelCase). Замечание: когда вы используете 
+								аббревиатуры в таком стиле, пишите все буквы 
+								аббревиатуры заглавными — HTTPServerError лучше, 
+								чем HttpServerError.</li>
+								<li style="margin: 0.5rem 0px;">mixedCase 
+								(отличается от CapitalizedWords тем, что первое 
+								слово начинается с маленькой буквы!)</li>
+								<li style="margin: 0.5rem 0px;">
+								Capitalized_Words_With_Underscores (слова с 
+								заглавными буквами и подчеркиваниями — 
+								уродливо!)</li>
+							</ul>
+							<p style="margin: 0.5rem 0px;">Ещё существует стиль, 
+							в котором имена, принадлежащие одной логической 
+							группе, имеют один короткий префикс. Этот стиль 
+							редко используется в python, но мы упоминаем его для 
+							полноты. Например, функция os.stat() возвращает 
+							кортеж, имена в котором традиционно имеют вид 
+							st_mode, st_size, st_mtime и так далее. (Так 
+							сделано, чтобы подчеркнуть соответствие этих полей 
+							структуре системных вызовов POSIX, что помогает 
+							знакомым с ней программистам).</p>
+							<p style="margin: 0.5rem 0px;">В библиотеке X11 
+							используется префикс Х для всех public-функций. В 
+							python этот стиль считается излишним, потому что 
+							перед полями и именами методов стоит имя объекта, а 
+							перед именами функций стоит имя модуля.</p>
+							<p style="margin: 0.5rem 0px;">В дополнение к этому, 
+							используются следующие специальные формы записи имен 
+							с добавлением символа подчеркивания в начало или 
+							конец имени:</p>
+							<ul>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								_single_leading_underscore: слабый индикатор 
+								того, что имя используется для внутренних нужд. 
+								Например, from M import * не будет импортировать 
+								объекты, чьи имена начинаются с символа 
+								подчеркивания.</p>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								single_trailing_underscore_: используется по 
+								соглашению для избежания конфликтов с ключевыми 
+								словами языка python, например:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="n">tkinter</span><span class="o" style="color: rgb(102, 102, 102);">.</span><span class="n">Toplevel</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">class_</span><span class="o" style="color: rgb(102, 102, 102);">=</span><span class="s1" style="color: rgb(186, 33, 33);">&#39;ClassName&#39;</span><span class="p">)</span>
+</pre>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								__double_leading_underscore: изменяет имя 
+								атрибута класса, то есть в классе FooBar поле 
+								__boo становится _FooBar__boo.</p>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								__double_leading_and_trailing_underscore__ 
+								(двойное подчеркивание в начале и в конце 
+								имени): магические методы или атрибуты, которые 
+								находятся в пространствах имен, управляемых 
+								пользователем. Например, __init__, __import__ 
+								или __file__. Не изобретайте такие имена, 
+								используйте их только так, как написано в 
+								документации.</p>
+								</li>
+							</ul>
+						</div>
+						<div class="section" id="section-23">
+							<h3 style="margin-top: 0.75rem; text-align: center; font-size: 1.25rem; line-height: 1.25rem;">
+							Предписания: соглашения по именованию</h3>
+							<div class="section" id="section-24">
+								<h4 style="margin-top: 0.75rem; text-align: center;">
+								Имена, которых следует избегать</h4>
+								<p style="margin: 0.5rem 0px;">Никогда не 
+								используйте символы l (маленькая латинская буква 
+								«эль»), O (заглавная латинская буква «о») или I 
+								(заглавная латинская буква «ай») как 
+								однобуквенные идентификаторы.</p>
+								<p style="margin: 0.5rem 0px;">В некоторых 
+								шрифтах эти символы неотличимы от цифры один и 
+								нуля. Если очень нужно l, пишите вместо неё 
+								заглавную L.</p>
+							</div>
+							<div class="section" id="ascii">
+								<h4 style="margin-top: 0.75rem; text-align: center;">
+								ASCII совместимость</h4>
+								<p style="margin: 0.5rem 0px;">Идентификаторы, 
+								используемые в стандартной библиотеке, должны 
+								быть совместимы с ASCII, как описано в разделе 
+								политики PEP 3131.</p>
+							</div>
+							<div class="section" id="section-25">
+								<h4 style="margin-top: 0.75rem; text-align: center;">
+								Имена модулей и пакетов</h4>
+								<p style="margin: 0.5rem 0px;">Модули должны 
+								иметь короткие имена, состоящие только из 
+								маленьких букв. Можно использовать символы 
+								подчеркивания, если это улучшает читабельность. 
+								То же самое относится и к именам пакетов, однако 
+								в именах пакетов не рекомендуется использовать 
+								символ подчёркивания.</p>
+								<p style="margin: 0.5rem 0px;">Когда модуль 
+								расширения, написанный на С или C++, имеет 
+								сопутствующий python-модуль (содержащий 
+								интерфейс высокого уровня), С/С++ модуль 
+								начинается с символа подчеркивания, например, 
+								_socket.</p>
+							</div>
+							<div class="section" id="section-26">
+								<h4 style="margin-top: 0.75rem; text-align: center;">
+								Имена классов</h4>
+								<p style="margin: 0.5rem 0px;">Имена классов 
+								должны обычно следовать соглашению CapWords.</p>
+								<p style="margin: 0.5rem 0px;">Вместо этого 
+								могут использоваться соглашения для именования 
+								функций, если интерфейс документирован и 
+								используется в основном как функции.</p>
+								<p style="margin: 0.5rem 0px;">Обратите 
+								внимание, что существуют отдельные соглашения о 
+								встроенных именах: большинство встроенных имен - 
+								одно слово (либо два слитно написанных слова), а 
+								соглашение CapWords используется только для 
+								именования исключений и встроенных констант.</p>
+							</div>
+							<div class="section" id="section-27">
+								<h4 style="margin-top: 0.75rem; text-align: center;">
+								Имена переменных типа</h4>
+								<p style="margin: 0.5rem 0px;">В именах 
+								переменных типов, введенных в PEP 484, обычно 
+								следует использовать CapWords, предпочитая 
+								короткие имена: T, AnyStr, Num. Рекомендуется 
+								добавлять суффиксы<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">_co</tt><span>&nbsp;</span>или<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">_contra</tt><span>&nbsp;</span>к 
+								переменным, используемым для объявления 
+								ковариантного или контравариантного поведения 
+								соответственно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="kn" style="color: rgb(0, 128, 0); font-weight: bold;">from</span> <span class="nn" style="color: rgb(0, 0, 255); font-weight: bold;">typing</span> <span class="kn" style="color: rgb(0, 128, 0); font-weight: bold;">import</span> <span class="n">TypeVar</span><span class="w" style="color: rgb(187, 187, 187);">
+
+</span><span class="n">VT_co</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s1" style="color: rgb(186, 33, 33);">&#39;VT_co&#39;</span><span class="p">,</span> <span class="n">covariant</span><span class="o" style="color: rgb(102, 102, 102);">=</span><span class="kc" style="color: rgb(0, 128, 0); font-weight: bold;">True</span><span class="p">)</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">KT_contra</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s1" style="color: rgb(186, 33, 33);">&#39;KT_contra&#39;</span><span class="p">,</span> <span class="n">contravariant</span><span class="o" style="color: rgb(102, 102, 102);">=</span><span class="kc" style="color: rgb(0, 128, 0); font-weight: bold;">True</span><span class="p">)</span>
+</pre>
+							</div>
+							<div class="section" id="section-28">
+								<h4 style="margin-top: 0.75rem; text-align: center;">
+								Имена исключений</h4>
+								<p style="margin: 0.5rem 0px;">Так как 
+								исключения являются классами, к исключениям 
+								применяется стиль именования классов. Однако вы 
+								можете добавить Error в конце имени (если, 
+								конечно, исключение действительно является 
+								ошибкой).</p>
+							</div>
+							<div class="section" id="section-29">
+								<h4 style="margin-top: 0.75rem; text-align: center;">
+								Имена глобальных переменных</h4>
+								<p style="margin: 0.5rem 0px;">(Будем надеяться, 
+								что глобальные переменные используются только 
+								внутри одного модуля.) Руководствуйтесь теми же 
+								соглашениями, что и для имен функций.</p>
+								<p style="margin: 0.5rem 0px;">Добавляйте в 
+								модули, которые написаны так, чтобы их 
+								использовали с помощью<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">from 
+								M import *</tt>, механизм<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">__all__</tt>, 
+								чтобы предотвратить экспортирование глобальных 
+								переменных. Или же, используйте старое 
+								соглашение, добавляя перед именами таких 
+								глобальных переменных один символ подчеркивания 
+								(которым вы можете обозначить те глобальные 
+								переменные, которые используются только внутри 
+								модуля).</p>
+							</div>
+							<div class="section" id="section-30">
+								<h4 style="margin-top: 0.75rem; text-align: center;">
+								Имена функций и переменных</h4>
+								<p style="margin: 0.5rem 0px;">Имена функций 
+								должны состоять из маленьких букв, а слова 
+								разделяться символами подчеркивания, если это 
+								необходимо для того, чтобы улучшить 
+								читабельность.</p>
+								<p style="margin: 0.5rem 0px;">Имена переменных 
+								следуют тем же соглашениям, что и названия 
+								функций.</p>
+								<p style="margin: 0.5rem 0px;">Стиль mixedCase 
+								допускается в тех местах, где уже преобладает 
+								такой стиль, для сохранения обратной 
+								совместимости.</p>
+							</div>
+							<div class="section" id="section-31">
+								<h4 style="margin-top: 0.75rem; text-align: center;">
+								Аргументы функций и методов</h4>
+								<p style="margin: 0.5rem 0px;">Всегда 
+								используйте<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">self</tt><span>&nbsp;</span>в 
+								качестве первого аргумента метода экземпляра 
+								объекта.</p>
+								<p style="margin: 0.5rem 0px;">Всегда 
+								используйте<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">cls</tt><span>&nbsp;</span>в 
+								качестве первого аргумента метода класса.</p>
+								<p style="margin: 0.5rem 0px;">Если имя 
+								аргумента конфликтует с зарезервированным 
+								ключевым словом python, обычно лучше добавить в 
+								конец имени символ подчеркивания, чем исказить 
+								написание слова или использовать аббревиатуру. 
+								Таким образом,<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">class_</tt><span>&nbsp;</span>лучше, 
+								чем<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">clss</tt>. 
+								(Возможно, хорошим вариантом будет подобрать 
+								синоним).</p>
+							</div>
+							<div class="section" id="section-32">
+								<h4 style="margin-top: 0.75rem; text-align: center;">
+								Имена методов и переменных экземпляров классов</h4>
+								<p style="margin: 0.5rem 0px;">Используйте тот 
+								же стиль, что и для имен функций: имена должны 
+								состоять из маленьких букв, а слова разделяться 
+								символами подчеркивания.</p>
+								<p style="margin: 0.5rem 0px;">Используйте один 
+								символ подчёркивания перед именем для 
+								непубличных методов и атрибутов.</p>
+								<p style="margin: 0.5rem 0px;">Чтобы избежать 
+								конфликтов имен с подклассами, используйте два 
+								ведущих подчеркивания.</p>
+								<p style="margin: 0.5rem 0px;">Python искажает 
+								эти имена: если класс Foo имеет атрибут с именем 
+								__a, он не может быть доступен как<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">Foo.__a</tt>. 
+								(Настойчивый пользователь все еще может получить 
+								доступ, вызвав<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">Foo._Foo__a</tt>.) 
+								Вообще, два ведущих подчеркивания должны 
+								использоваться только для того, чтобы избежать 
+								конфликтов имен с атрибутами классов, 
+								предназначенных для наследования.</p>
+								<p style="margin: 0.5rem 0px;">Примечание: есть 
+								некоторые разногласия по поводу использования 
+								__имя (см. ниже).</p>
+							</div>
+							<div class="section" id="section-33">
+								<h4 style="margin-top: 0.75rem; text-align: center;">
+								Константы</h4>
+								<p style="margin: 0.5rem 0px;">Константы обычно 
+								объявляются на уровне модуля и записываются 
+								только заглавными буквами, а слова разделяются 
+								символами подчеркивания. Например: MAX_OVERFLOW, 
+								TOTAL.</p>
+							</div>
+							<div class="section" id="section-34">
+								<h4 style="margin-top: 0.75rem; text-align: center;">
+								Проектирование наследования</h4>
+								<p style="margin: 0.5rem 0px;">Обязательно 
+								решите, каким должен быть метод класса или 
+								экземпляра класса (далее - атрибут) — публичный 
+								или непубличный. Если вы сомневаетесь, выберите 
+								непубличный атрибут. Потом будет проще сделать 
+								его публичным, чем наоборот.</p>
+								<p style="margin: 0.5rem 0px;">Публичные 
+								атрибуты — это те, которые будут использовать 
+								другие программисты, и вы должны быть уверены в 
+								отсутствии обратной несовместимости. Непубличные 
+								атрибуты, в свою очередь, не предназначены для 
+								использования третьими лицами, поэтому вы можете 
+								не гарантировать, что не измените или не удалите 
+								их.</p>
+								<p style="margin: 0.5rem 0px;">Мы не используем 
+								термин &quot;приватный атрибут&quot;, потому что на самом 
+								деле в python таких не бывает.</p>
+								<p style="margin: 0.5rem 0px;">Другой тип 
+								атрибутов классов принадлежит так называемому 
+								API подклассов (в других языках они часто 
+								называются protected). Некоторые классы 
+								проектируются так, чтобы от них наследовали 
+								другие классы, которые расширяют или 
+								модифицируют поведение базового класса. Когда вы 
+								проектируете такой класс, решите и явно укажите, 
+								какие атрибуты являются публичными, какие 
+								принадлежат API подклассов, а какие используются 
+								только базовым классом.</p>
+								<p style="margin: 0.5rem 0px;">Теперь 
+								сформулируем рекомендации:</p>
+								<ul>
+									<li style="margin: 0.5rem 0px;">
+									<p class="first" style="margin: 0.5rem 0px;">
+									Публичные атрибуты не должны иметь в начале 
+									имени символа подчеркивания.</p>
+									</li>
+									<li style="margin: 0.5rem 0px;">
+									<p class="first" style="margin: 0.5rem 0px;">
+									Если имя открытого атрибута конфликтует с 
+									ключевым словом языка, добавьте в конец 
+									имени один символ подчеркивания. Это более 
+									предпочтительно, чем аббревиатура или 
+									искажение написания (однако, у этого правила 
+									есть исключение — аргумента, который 
+									означает класс, и особенно первый аргумент 
+									метода класса (class method) должен иметь 
+									имя cls).</p>
+									</li>
+									<li style="margin: 0.5rem 0px;">
+									<p class="first" style="margin: 0.5rem 0px;">
+									Назовите простые публичные атрибуты 
+									понятными именами и не пишите сложные методы 
+									доступа и изменения (accessor/mutator, 
+									get/set, — прим. перев.) Помните, что в 
+									python очень легко добавить их потом, если 
+									потребуется. В этом случае используйте 
+									свойства (properties), чтобы скрыть 
+									функциональную реализацию за синтаксисом 
+									доступа к атрибутам.</p>
+									<p style="margin: 0.5rem 0px;">Примечание 1: 
+									Постарайтесь избавиться от побочных 
+									эффектов, связанным с функциональным 
+									поведением; впрочем, такие вещи, как 
+									кэширование, вполне допустимы.</p>
+									<p style="margin: 0.5rem 0px;">Примечание 2: 
+									Избегайте использования вычислительно 
+									затратных операций, потому что из-за записи 
+									с помощью атрибутов создается впечатление, 
+									что доступ происходит (относительно) быстро.</p>
+									</li>
+									<li style="margin: 0.5rem 0px;">
+									<p class="first" style="margin: 0.5rem 0px;">
+									Если вы планируете класс таким образом, 
+									чтобы от него наследовались другие классы, 
+									но не хотите, чтобы подклассы унаследовали 
+									некоторые атрибуты, добавьте в имена два 
+									символа подчеркивания в начало, и ни одного 
+									— в конец. Механизм изменения имен в python 
+									сработает так, что имя класса добавится к 
+									имени такого атрибута, что позволит избежать 
+									конфликта имен с атрибутами подклассов.</p>
+									<p style="margin: 0.5rem 0px;">Примечание 1: 
+									Будьте внимательны: если подкласс будет 
+									иметь то же имя класса и имя атрибута, то 
+									вновь возникнет конфликт имен.</p>
+									<p style="margin: 0.5rem 0px;">Примечание 2: 
+									Механизм изменения имен может затруднить 
+									отладку или работу с __getattr__(), однако 
+									он хорошо документирован и легко реализуется 
+									вручную.</p>
+									<p style="margin: 0.5rem 0px;">Примечание 3: 
+									Не всем нравится этот механизм, поэтому 
+									старайтесь достичь компромисса между 
+									необходимостью избежать конфликта имен и 
+									возможностью доступа к этим атрибутам.</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="section" id="section-35">
+							<h3 style="margin-top: 0.75rem; text-align: center; font-size: 1.25rem; line-height: 1.25rem;">
+							Публичные и внутренние интерфейсы</h3>
+							<p style="margin: 0.5rem 0px;">Любые гарантии 
+							обратной совместимости распространяются только на 
+							публичные интерфейсы. Соответственно, важно, чтобы 
+							пользователи могли четко различать публичные и 
+							внутренние интерфейсы.</p>
+							<p style="margin: 0.5rem 0px;">Документированные 
+							интерфейсы считаются общедоступными, если только в 
+							документации они явно не объявлены временными или 
+							внутренними интерфейсами, на которые не 
+							распространяются обычные гарантии обратной 
+							совместимости. Все недокументированные интерфейсы 
+							должны считаться внутренними.</p>
+							<p style="margin: 0.5rem 0px;">Чтобы лучше 
+							поддерживать интроспекцию, модули должны явно 
+							объявлять имена в своем публичном API с помощью 
+							атрибута<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">__all__</tt>. 
+							Установка<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">__all__</tt><span>&nbsp;</span>в 
+							пустой список означает, что модуль не имеет 
+							публичного API.</p>
+							<p style="margin: 0.5rem 0px;">Даже если<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">__all__</tt><span>&nbsp;</span>установлен 
+							соответствующим образом, внутренние интерфейсы 
+							(пакеты, модули, классы, функции, атрибуты или 
+							другие имена) все равно должны иметь префикс с одним 
+							ведущим подчеркиванием.</p>
+							<p style="margin: 0.5rem 0px;">Интерфейс также 
+							считается внутренним, если любое содержащее его 
+							пространство имен (пакет, модуль или класс) 
+							считается внутренним.</p>
+							<p style="margin: 0.5rem 0px;">Импортированные имена 
+							всегда должны рассматриваться как детали реализации. 
+							Другие модули не должны полагаться на косвенный 
+							доступ к таким импортированным именам, если только 
+							они не являются явно документированной частью API 
+							содержащего модуля, например,<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">os.path</tt><span>&nbsp;</span>или 
+							модуль<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">__init__</tt><span>&nbsp;</span>пакета, 
+							который раскрывает функциональность подмодулей.</p>
+						</div>
+					</div>
+					<div class="section" id="section-36">
+						<h2 style="margin-top: 1rem; text-align: center; font-size: 1.5rem; line-height: 1.5rem;">
+						Общие рекомендации</h2>
+						<ul>
+							<li style="margin: 0.5rem 0px;">
+							<p class="first" style="margin: 0.5rem 0px;">Код 
+							должен быть написан так, чтобы не зависеть от разных 
+							реализаций языка (PyPy, Jython, IronPython, Pyrex, 
+							Psyco и пр.).</p>
+							<p style="margin: 0.5rem 0px;">Например, не 
+							полагайтесь на эффективную реализацию в CPython 
+							конкатенации строк в выражениях типа a+=b или a=a+b. 
+							Такие инструкции выполняются значительно медленнее в 
+							Jython. В критичных к времени выполнения частях 
+							программы используйте &#39;&#39;.join() — таким образом 
+							склеивание строк будет выполнено за линейное время 
+							независимо от реализации python.</p>
+							</li>
+							<li style="margin: 0.5rem 0px;">
+							<p class="first" style="margin: 0.5rem 0px;">
+							Сравнения с None должны обязательно выполняться с 
+							использованием операторов is или is not, а не с 
+							помощью операторов сравнения. Кроме того, не пишите 
+							if x, если имеете в виду if x is not None — если, к 
+							примеру, при тестировании такая переменная может 
+							принять значение другого типа, отличного от None, но 
+							при приведении типов может получиться False!</p>
+							</li>
+							<li style="margin: 0.5rem 0px;">
+							<p class="first" style="margin: 0.5rem 0px;">
+							Используйте оператор<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">is 
+							not</tt>, а не<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">not 
+							... is</tt>. Хотя оба выражения функционально 
+							идентичны, первое более читабельно и 
+							предпочтительно:</p>
+							<p style="margin: 0.5rem 0px;">Правильно:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="n">foo</span> <span class="ow" style="color: rgb(170, 34, 255); font-weight: bold;">is</span> <span class="ow" style="color: rgb(170, 34, 255); font-weight: bold;">not</span> <span class="kc" style="color: rgb(0, 128, 0); font-weight: bold;">None</span><span class="p">:</span>
+</pre>
+							<p style="margin: 0.5rem 0px;">Неправильно:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="ow" style="color: rgb(170, 34, 255); font-weight: bold;">not</span> <span class="n">foo</span> <span class="ow" style="color: rgb(170, 34, 255); font-weight: bold;">is</span> <span class="kc" style="color: rgb(0, 128, 0); font-weight: bold;">None</span><span class="p">:</span>
+</pre>
+							</li>
+							<li style="margin: 0.5rem 0px;">
+							<p class="first" style="margin: 0.5rem 0px;">При 
+							реализации методов сравнения, лучше всего 
+							реализовать все 6 операций сравнения (__eq__, 
+							__ne__, __lt__, __le__, __gt__, __ge__), чем 
+							полагаться на то, что другие программисты будут 
+							использовать только конкретный вид сравнения.</p>
+							<p style="margin: 0.5rem 0px;">Для минимизации 
+							усилий можно воспользоваться<span>&nbsp;</span><a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/decorators.html">декоратором</a><span>&nbsp;</span>functools.total_ordering() 
+							для реализации недостающих методов.</p>
+							<p style="margin: 0.5rem 0px;">PEP 207 указывает, 
+							что интерпретатор может поменять y &gt; х на х &lt; y, y 
+							&gt;= х на х &lt;= y, и может поменять местами аргументы х 
+							== y и х != y. Гарантируется, что операции sort() и 
+							min() используют оператор &lt;, а max() использует 
+							оператор &gt;. Однако, лучше всего определить все шесть 
+							операций, чтобы не возникало путаницы в других 
+							местах.</p>
+							</li>
+							<li style="margin: 0.5rem 0px;">
+							<p class="first" style="margin: 0.5rem 0px;">Всегда 
+							используйте выражение def, а не присваивание 
+							лямбда-выражения к имени.</p>
+							<p style="margin: 0.5rem 0px;">Правильно:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">def</span> <span class="nf" style="color: rgb(0, 0, 255);">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">return</span> <span class="mi" style="color: rgb(102, 102, 102);">2</span><span class="o" style="color: rgb(102, 102, 102);">*</span><span class="n">x</span>
+</pre>
+							<p style="margin: 0.5rem 0px;">Неправильно:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="n">f</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi" style="color: rgb(102, 102, 102);">2</span><span class="o" style="color: rgb(102, 102, 102);">*</span><span class="n">x</span>
+</pre>
+							<p style="margin: 0.5rem 0px;">Первая форма 
+							означает, что имя результирующего объекта функции 
+							будет конкретно<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">f</tt>, 
+							а не общее<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">&lt;lambda&gt;</tt>. 
+							Это более удобно для трассировки и строкового 
+							представления в целом. Использование оператора 
+							присваивания устраняет единственное преимущество 
+							лямбда-выражения перед явным оператором def (т. е. 
+							его можно встраивать внутрь более крупного 
+							выражения).</p>
+							</li>
+							<li style="margin: 0.5rem 0px;">
+							<p class="first" style="margin: 0.5rem 0px;">
+							Наследуйте свой класс исключения от Exception, а не 
+							от BaseException. Прямое наследование от 
+							BaseException зарезервировано для исключений, 
+							которые не следует перехватывать.</p>
+							</li>
+							<li style="margin: 0.5rem 0px;">
+							<p class="first" style="margin: 0.5rem 0px;">
+							Используйте цепочки исключений соответствующим 
+							образом. Следует использовать<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">raise 
+							X from Y</tt><span>&nbsp;</span>для указания явной замены 
+							без потери отладочной информации.</p>
+							<p style="margin: 0.5rem 0px;">Когда намеренно 
+							заменяется исключение (использование<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">raise 
+							X from None</tt>), проследите, чтобы соответствующая 
+							информация передалась в новое исключение (такие, как 
+							сохранение имени атрибута при преобразовании 
+							KeyError в AttributeError или вложение текста 
+							исходного исключения в сообщение нового).</p>
+							</li>
+							<li style="margin: 0.5rem 0px;">
+							<p class="first" style="margin: 0.5rem 0px;">Когда 
+							код перехватывает исключения, перехватывайте 
+							конкретные ошибки вместо простого выражения<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">except:</tt>.</p>
+							<p style="margin: 0.5rem 0px;">К примеру, пишите вот 
+							так:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">try</span><span class="p">:</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="kn" style="color: rgb(0, 128, 0); font-weight: bold;">import</span> <span class="nn" style="color: rgb(0, 0, 255); font-weight: bold;">platform_specific_module</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">except</span> <span class="ne" style="color: rgb(203, 63, 56); font-weight: bold;">ImportError</span><span class="p">:</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="n">platform_specific_module</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="kc" style="color: rgb(0, 128, 0); font-weight: bold;">None</span>
+</pre>
+							<p style="margin: 0.5rem 0px;">Простое написание<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">except:</tt><span>&nbsp;</span>также 
+							перехватит и SystemExit, и KeyboardInterrupt, что 
+							породит проблемы, например, сложнее будет завершить 
+							программу нажатием control+C. Если вы действительно 
+							собираетесь перехватить все исключения, пишите<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">except 
+							Exception:</tt>.</p>
+							<p style="margin: 0.5rem 0px;">Хорошим правилом 
+							является ограничение использования<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">except:</tt>, 
+							кроме двух случаев:</p>
+							<ol class="arabic simple">
+								<li style="margin: 0.5rem 0px;">Если обработчик 
+								выводит пользователю всё о случившейся ошибке; 
+								по крайней мере, пользователь будет знать, что 
+								произошла ошибка.</li>
+								<li style="margin: 0.5rem 0px;">Если нужно 
+								выполнить некоторый код после перехвата 
+								исключения, а потом вновь &quot;бросить&quot; его для 
+								обработки где-то в другом месте с помощью<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">raise</tt>. 
+								Обычно же лучше пользоваться конструкцией<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;"><span class="pre">try...finally</span></tt>.</li>
+							</ol>
+							</li>
+							<li style="margin: 0.5rem 0px;">
+							<p class="first" style="margin: 0.5rem 0px;">При 
+							перехвате ошибок операционной системы, предпочитайте 
+							использовать явную иерархию исключений, введенную в 
+							Python 3.3, вместо анализа значений errno.</p>
+							</li>
+							<li style="margin: 0.5rem 0px;">
+							<p class="first" style="margin: 0.5rem 0px;">
+							Постарайтесь заключать в каждый блок<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">try</tt><span>&nbsp;</span>минимум 
+							кода, чтобы легче отлавливать ошибки. Опять же, это 
+							позволяет избежать замаскированных ошибок.</p>
+							<p style="margin: 0.5rem 0px;">Правильно:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">try</span><span class="p">:</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="n">value</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="n">collection</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">except</span> <span class="ne" style="color: rgb(203, 63, 56); font-weight: bold;">KeyError</span><span class="p">:</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">return</span> <span class="n">key_not_found</span><span class="p">(</span><span class="n">key</span><span class="p">)</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">else</span><span class="p">:</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">return</span> <span class="n">handle_value</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre>
+							<p style="margin: 0.5rem 0px;">Неправильно:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">try</span><span class="p">:</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="c1" style="color: rgb(61, 123, 123); font-style: italic;"># Здесь много действий!</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">return</span> <span class="n">handle_value</span><span class="p">(</span><span class="n">collection</span><span class="p">[</span><span class="n">key</span><span class="p">])</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">except</span> <span class="ne" style="color: rgb(203, 63, 56); font-weight: bold;">KeyError</span><span class="p">:</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="c1" style="color: rgb(61, 123, 123); font-style: italic;"># Здесь также перехватится KeyError, который может быть сгенерирован handle_value()</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">return</span> <span class="n">key_not_found</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+</pre>
+							</li>
+							<li style="margin: 0.5rem 0px;">
+							<p class="first" style="margin: 0.5rem 0px;">Когда 
+							ресурс является локальным на участке кода, 
+							используйте<span>&nbsp;</span><a class="reference external" style="text-decoration: underline; text-underline-offset: 3px; color: rgb(15, 15, 155); text-shadow: rgba(185, 155, 255, 0.2) 1px 1px 1px;" href="https://pyplanet.ru/article/with-as.html">выражение 
+							with</a><span>&nbsp;</span>для того, чтобы после 
+							выполнения он был очищен оперативно и надёжно.<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;"><span class="pre">try...finally</span></tt><span>&nbsp;</span>тоже 
+							подойдёт.</p>
+							</li>
+							<li style="margin: 0.5rem 0px;">
+							<p class="first" style="margin: 0.5rem 0px;">
+							Менеджеры контекста следует вызывать с помощью 
+							отдельной функции или метода, всякий раз, когда они 
+							делают что-то другое, чем получение и освобождение 
+							ресурсов. Например:</p>
+							<p style="margin: 0.5rem 0px;">Правильно:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">with</span> <span class="n">conn</span><span class="o" style="color: rgb(102, 102, 102);">.</span><span class="n">begin_transaction</span><span class="p">():</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="n">do_stuff_in_transaction</span><span class="p">(</span><span class="n">conn</span><span class="p">)</span>
+</pre>
+							<p style="margin: 0.5rem 0px;">Неправильно:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">with</span> <span class="n">conn</span><span class="p">:</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="n">do_stuff_in_transaction</span><span class="p">(</span><span class="n">conn</span><span class="p">)</span>
+</pre>
+							<p style="margin: 0.5rem 0px;">Последний пример не 
+							дает никакой информации, указывающей на то, что 
+							__enter__ и __exit__ делают что-то кроме закрытия 
+							соединения после транзакции. Быть явным важно в 
+							данном случае.</p>
+							</li>
+							<li style="margin: 0.5rem 0px;">
+							<p class="first" style="margin: 0.5rem 0px;">Будьте 
+							последовательны в операторах<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">return</tt>. 
+							Либо все операторы return в функции должны 
+							возвращать выражение, либо ни один из них. Если 
+							любой оператор<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">return</tt><span>&nbsp;</span>возвращает 
+							выражение, то все операторы<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">return</tt>, 
+							в которых не возвращается значение, должны явно 
+							указывать на это как на return None, а в конце 
+							функции (если это возможно) должен присутствовать 
+							явный оператор<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">return</tt>:</p>
+							<p style="margin: 0.5rem 0px;">Правильно:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">def</span> <span class="nf" style="color: rgb(0, 0, 255);">foo</span><span class="p">(</span><span class="n">x</span><span class="p">):</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="n">x</span> <span class="o" style="color: rgb(102, 102, 102);">&gt;=</span> <span class="mi" style="color: rgb(102, 102, 102);">0</span><span class="p">:</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>        <span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">return</span> <span class="n">math</span><span class="o" style="color: rgb(102, 102, 102);">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">else</span><span class="p">:</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>        <span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">return</span> <span class="kc" style="color: rgb(0, 128, 0); font-weight: bold;">None</span><span class="w" style="color: rgb(187, 187, 187);">
+
+</span><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">def</span> <span class="nf" style="color: rgb(0, 0, 255);">bar</span><span class="p">(</span><span class="n">x</span><span class="p">):</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="n">x</span> <span class="o" style="color: rgb(102, 102, 102);">&lt;</span> <span class="mi" style="color: rgb(102, 102, 102);">0</span><span class="p">:</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>       <span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">return</span> <span class="kc" style="color: rgb(0, 128, 0); font-weight: bold;">None</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">return</span> <span class="n">math</span><span class="o" style="color: rgb(102, 102, 102);">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre>
+							<p style="margin: 0.5rem 0px;">Неправильно:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">def</span> <span class="nf" style="color: rgb(0, 0, 255);">foo</span><span class="p">(</span><span class="n">x</span><span class="p">):</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="n">x</span> <span class="o" style="color: rgb(102, 102, 102);">&gt;=</span> <span class="mi" style="color: rgb(102, 102, 102);">0</span><span class="p">:</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>        <span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">return</span> <span class="n">math</span><span class="o" style="color: rgb(102, 102, 102);">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w" style="color: rgb(187, 187, 187);">
+
+</span><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">def</span> <span class="nf" style="color: rgb(0, 0, 255);">bar</span><span class="p">(</span><span class="n">x</span><span class="p">):</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="n">x</span> <span class="o" style="color: rgb(102, 102, 102);">&lt;</span> <span class="mi" style="color: rgb(102, 102, 102);">0</span><span class="p">:</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>        <span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">return</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">return</span> <span class="n">math</span><span class="o" style="color: rgb(102, 102, 102);">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre>
+							</li>
+							<li style="margin: 0.5rem 0px;">
+							<p class="first" style="margin: 0.5rem 0px;">
+							Пользуйтесь &#39;&#39;.startswith() и &#39;&#39;.endswith() вместо 
+							обработки срезов строк для проверки суффиксов или 
+							префиксов.</p>
+							<p style="margin: 0.5rem 0px;">startswith() и 
+							endswith() выглядят чище и порождают меньше ошибок. 
+							Например:</p>
+							<p style="margin: 0.5rem 0px;">Правильно:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="n">foo</span><span class="o" style="color: rgb(102, 102, 102);">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1" style="color: rgb(186, 33, 33);">&#39;bar&#39;</span><span class="p">):</span>
+</pre>
+							<p style="margin: 0.5rem 0px;">Неправильно:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="n">foo</span><span class="p">[:</span><span class="mi" style="color: rgb(102, 102, 102);">3</span><span class="p">]</span> <span class="o" style="color: rgb(102, 102, 102);">==</span> <span class="s1" style="color: rgb(186, 33, 33);">&#39;bar&#39;</span><span class="p">:</span>
+</pre>
+							</li>
+							<li style="margin: 0.5rem 0px;">
+							<p class="first" style="margin: 0.5rem 0px;">
+							Сравнение типов объектов нужно делать с помощью 
+							isinstance(), а не прямым сравнением типов:</p>
+							<p style="margin: 0.5rem 0px;">Правильно:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="nb" style="color: rgb(0, 128, 0);">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb" style="color: rgb(0, 128, 0);">int</span><span class="p">):</span>
+</pre>
+							<p style="margin: 0.5rem 0px;">Неправильно:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="nb" style="color: rgb(0, 128, 0);">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="ow" style="color: rgb(170, 34, 255); font-weight: bold;">is</span> <span class="nb" style="color: rgb(0, 128, 0);">type</span><span class="p">(</span><span class="mi" style="color: rgb(102, 102, 102);">1</span><span class="p">):</span>
+</pre>
+							</li>
+							<li style="margin: 0.5rem 0px;">
+							<p class="first" style="margin: 0.5rem 0px;">Для 
+							последовательностей (строк, списков, кортежей) 
+							используйте тот факт, что пустая последовательность 
+							есть false:</p>
+							<p style="margin: 0.5rem 0px;">Правильно:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="ow" style="color: rgb(170, 34, 255); font-weight: bold;">not</span> <span class="n">seq</span><span class="p">:</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="n">seq</span><span class="p">:</span>
+</pre>
+							<p style="margin: 0.5rem 0px;">Неправильно:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="nb" style="color: rgb(0, 128, 0);">len</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="ow" style="color: rgb(170, 34, 255); font-weight: bold;">not</span> <span class="nb" style="color: rgb(0, 128, 0);">len</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
+</pre>
+							</li>
+							<li style="margin: 0.5rem 0px;">
+							<p class="first" style="margin: 0.5rem 0px;">Не 
+							пользуйтесь строковыми константами, которые имеют 
+							важные пробелы в конце — они невидимы, а многие 
+							редакторы (а теперь и reindent.py) обрезают их.</p>
+							</li>
+							<li style="margin: 0.5rem 0px;">
+							<p class="first" style="margin: 0.5rem 0px;">Не 
+							сравнивайте логические типы с True и False с помощью 
+							==:</p>
+							<p style="margin: 0.5rem 0px;">Правильно:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="n">greeting</span><span class="p">:</span>
+</pre>
+							<p style="margin: 0.5rem 0px;">Неправильно:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="n">greeting</span> <span class="o" style="color: rgb(102, 102, 102);">==</span> <span class="kc" style="color: rgb(0, 128, 0); font-weight: bold;">True</span><span class="p">:</span>
+</pre>
+							<p style="margin: 0.5rem 0px;">Совсем неправильно:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="n">greeting</span> <span class="ow" style="color: rgb(170, 34, 255); font-weight: bold;">is</span> <span class="kc" style="color: rgb(0, 128, 0); font-weight: bold;">True</span><span class="p">:</span>
+</pre>
+							</li>
+							<li style="margin: 0.5rem 0px;">
+							<p class="first" style="margin: 0.5rem 0px;">
+							Использование управляющих операторов<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">return/break/continue</tt><span>&nbsp;</span>внутри 
+							набора<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">finally</tt><span>&nbsp;</span>в<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;"><span class="pre">try...finally</span></tt>, 
+							где управляющий оператор выходил бы за пределы 
+							набора<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">finally</tt>, 
+							не рекомендуется. Это связано с тем, что такие 
+							операторы неявно отменяют любое активное исключение, 
+							распространяющееся через<span>&nbsp;</span><tt class="docutils literal" style="white-space: nowrap; background: rgba(128, 182, 255, 0.15); font-size: 1rem; padding: 0.06rem 0.12rem; border-radius: 0.25rem;">finally</tt>.</p>
+							<p style="margin: 0.5rem 0px;">Неправильно:</p>
+							<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">def</span> <span class="nf" style="color: rgb(0, 0, 255);">foo</span><span class="p">():</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">try</span><span class="p">:</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>        <span class="mi" style="color: rgb(102, 102, 102);">1</span> <span class="o" style="color: rgb(102, 102, 102);">/</span> <span class="mi" style="color: rgb(102, 102, 102);">0</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">finally</span><span class="p">:</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>        <span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">return</span> <span class="mi" style="color: rgb(102, 102, 102);">42</span>
+</pre>
+							</li>
+						</ul>
+						<div class="section" id="section-37">
+							<h3 style="margin-top: 0.75rem; text-align: center; font-size: 1.25rem; line-height: 1.25rem;">
+							Аннотации функций</h3>
+							<p style="margin: 0.5rem 0px;">С принятием PEP 484 
+							правила стиля для аннотаций функций изменились.</p>
+							<ul>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								Аннотации функций должны использовать синтаксис 
+								PEP 484 (некоторые рекомендации по 
+								форматированию аннотаций приведены в предыдущем 
+								разделе).</p>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								Эксперименты со стилями аннотаций, которые 
+								рекомендовались ранее в этом PEP, больше не 
+								поощряются.</p>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								Однако за пределами stdlib эксперименты в рамках 
+								правил PEP 484 теперь поощряются. Например, 
+								разметка большой сторонней библиотеки или 
+								приложения с аннотациями типов в стиле PEP 484, 
+								анализ того, насколько легко было добавить эти 
+								аннотации, и наблюдение за тем, повышает ли их 
+								наличие понятность кода.</p>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								Стандартная библиотека Python должна быть 
+								консервативна в принятии таких аннотаций, но их 
+								использование разрешено для нового кода и для 
+								больших рефакторингов.</p>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">Для 
+								кода, который хочет по-другому использовать 
+								аннотации функций, рекомендуется поместить 
+								комментарий вида:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="c1" style="color: rgb(61, 123, 123); font-style: italic;"># type: ignore</span>
+</pre>
+								<p style="margin: 0.5rem 0px;">в верхней части 
+								файла; это указывает программам проверки типов 
+								игнорировать все аннотации. (Более тонкие 
+								способы отключения жалоб от средств проверки 
+								типов можно найти в PEP 484).</p>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">Как 
+								и линтеры, программы проверки типов являются 
+								необязательными, отдельными инструментами. 
+								Интерпретаторы Python по умолчанию не должны 
+								выдавать никаких сообщений из-за проверки типов 
+								и не должны изменять свое поведение на основе 
+								аннотаций.</p>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								Пользователи, которые не хотят использовать 
+								средства проверки типов, могут их игнорировать. 
+								Однако предполагается, что пользователи пакетов 
+								сторонних библиотек могут захотеть запустить 
+								проверку типов в этих пакетах. Для этого PEP 484 
+								рекомендует использовать файлы-заглушки: файлы .pyi, 
+								которые читаются программой проверки типов 
+								вместо соответствующих файлов .py. 
+								Файлы-заглушки могут распространяться вместе с 
+								библиотекой или отдельно (с разрешения автора 
+								библиотеки) через репозиторий typeshed.</p>
+								</li>
+							</ul>
+						</div>
+						<div class="section" id="section-38">
+							<h3 style="margin-top: 0.75rem; text-align: center; font-size: 1.25rem; line-height: 1.25rem;">
+							Аннотации переменных</h3>
+							<p style="margin: 0.5rem 0px;">В PEP 526 были 
+							введены аннотации переменных. Рекомендации по стилю 
+							для них аналогичны описанным выше для аннотаций 
+							функций:</p>
+							<ul>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								Аннотации для переменных уровня модуля, 
+								переменных класса и экземпляра, а также 
+								локальных переменных должны иметь один пробел 
+								после двоеточия.</p>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								Перед двоеточием не должно быть пробела.</p>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								Если у присваивания есть правая часть, то знак 
+								равенства должен иметь ровно один пробел с обеих 
+								сторон.</p>
+								<p style="margin: 0.5rem 0px;">Правильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="n">code</span><span class="p">:</span> <span class="nb" style="color: rgb(0, 128, 0);">int</span><span class="w" style="color: rgb(187, 187, 187);">
+
+</span><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">class</span> <span class="nc" style="color: rgb(0, 0, 255); font-weight: bold;">Point</span><span class="p">:</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="n">coords</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb" style="color: rgb(0, 128, 0);">int</span><span class="p">,</span> <span class="nb" style="color: rgb(0, 128, 0);">int</span><span class="p">]</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="n">label</span><span class="p">:</span> <span class="nb" style="color: rgb(0, 128, 0);">str</span> <span class="o" style="color: rgb(102, 102, 102);">=</span> <span class="s1" style="color: rgb(186, 33, 33);">&#39;&lt;unknown&gt;&#39;</span>
+</pre>
+								<p style="margin: 0.5rem 0px;">Неправильно:</p>
+								<pre class="code python3 literal-block" style="margin: 0.05rem 0px; overflow-x: auto; font: 400 0.95rem / 1.15rem monospace; background: rgb(232, 255, 216); padding: 0.5rem;"><span class="n">code</span><span class="p">:</span><span class="nb" style="color: rgb(0, 128, 0);">int</span><span class="w" style="color: rgb(187, 187, 187);">
+</span><span class="n">code</span> <span class="p">:</span> <span class="nb" style="color: rgb(0, 128, 0);">int</span><span class="w" style="color: rgb(187, 187, 187);">
+
+</span><span class="k" style="color: rgb(0, 128, 0); font-weight: bold;">class</span> <span class="nc" style="color: rgb(0, 0, 255); font-weight: bold;">Test</span><span class="p">:</span><span class="w" style="color: rgb(187, 187, 187);">
+</span>    <span class="n">result</span><span class="p">:</span> <span class="nb" style="color: rgb(0, 128, 0);">int</span><span class="o" style="color: rgb(102, 102, 102);">=</span><span class="mi" style="color: rgb(102, 102, 102);">0</span>
+</pre>
+								</li>
+								<li style="margin: 0.5rem 0px;">
+								<p class="first" style="margin: 0.5rem 0px;">
+								Хотя PEP 526 принят для Python 3.6, синтаксис 
+								аннотации переменных является предпочтительным 
+								синтаксисом для файлов-заглушек во всех версиях 
+								Python (подробнее см. PEP 484).</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les150.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les150/1.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:17:21 GMT -->
+</html>

@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les71/1.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 11:00:09 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+				color: rgb(0, 0, 255);
+}
+.style3 {
+				color: rgb(0, 0, 255);
+				font-style: italic;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 1. Основы форм. </td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Внешний вид приложения является нам преимущественно через формы. 
+				Формы являются основными строительными блоками. Они 
+				предоставляют контейнер для различных элементов управления. А 
+				механизм событий позволяет элементам формы отзываться на ввод 
+				пользователя, и, таким образом, взаимодействовать с 
+				пользователем.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При открытии проекта в Visual Studio в графическом редакторе мы 
+				можем увидеть визуальную часть формы - ту часть, которую мы 
+				видим после запуска приложения и куда мы переносим элементы с 
+				панели управления. Но на самом деле форма скрывает мощный 
+				функционал, состоящий из методов, свойств, событий и прочее. 
+				Рассмотрим основные свойства форм.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если мы запустим приложение, то нам отобразится одна пустая 
+				форма. Однако даже такой простой проект с пустой формой имеет 
+				несколько компонентов:</p>
+				<img src="Pic/2.3.png" alt="Все файлы в Windows Forms" style="max-width: 99%; height: auto; margin-bottom: 15px; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" /><p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Несмотря на то, что мы видим только форму, но стартовой точкой 
+				входа в графическое приложение является класс Program, 
+				расположенный в файле<span>&nbsp;</span><i>Program.cs</i>:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-66-1.jpg" width="585" height="433" /></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				&nbsp;</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Сначала программой запускается данный класс, затем с помощью 
+				выражения<span>&nbsp;</span><span class="style2"><code style="font-family: monospace;"><strong><em>Application.Run(new 
+				Form1())</em></strong></code></span><span>&nbsp;</span>он запускает форму Form1. Если 
+				вдруг мы захотим изменить стартовую форму в приложении на 
+				какую-нибудь другую, то нам надо изменить в этом выражении Form1 
+				на соответствующий класс формы.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span lang="ru">Для проверки этого добавим новую форму, и 
+				настроим ее соответствующим образом.</span></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				&nbsp;</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-66-3.png" width="393" height="201" /></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span lang="ru">Изменим код для определения главной формы при 
+				запуске приложения:</span></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-66-4.png" width="505" height="325" /></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span lang="ru">В результате:</span></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-66-5.png" width="488" height="419" /></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				&nbsp;</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Сама форма сложна по содержанию. Она делится на ряд компонентов. 
+				Так, в структуре проекта есть файл<span>&nbsp;</span><span class="style3"><strong>Form1.Designer.cs</strong></span>, 
+				который выглядит примерно так:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-66-6.png" width="873" height="524" /></p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Здесь объявляется частичный класс формы Form1, которая имеет два 
+				метода:<span>&nbsp;</span><span class="style2"><code style="font-family: monospace;"><strong>Dispose()</strong></code><strong>, 
+				</strong></span>который выполняет роль деструктора объекта, и<span>&nbsp;</span><span class="style2"><code style="font-family: monospace;"><strong>InitializeComponent()</strong></code></span>, 
+				который устанавливает начальные значения свойств формы.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-66-7.png" width="621" height="339" /></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При добавлении элементов управления, например, кнопок, их 
+				описание также добавляется в этот файл.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-66-9.png" width="538" height="426" />&nbsp;</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Но на практике мы редко будем сталкиваться с этим классом, так 
+				как они выполняет в основном дизайнерские функции - установка 
+				свойств объектов, установка переменных.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Еще один файл -<span>&nbsp;</span><span class="style2"><i><strong>Form1.resx</strong></i><span><strong>&nbsp;</strong></span><strong>- 
+				хранит ресурсы формы</strong></span>. Как правило, ресурсы используются для 
+				создания однообразных форм сразу для нескольких языковых 
+				культур.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				И более важный файл -<span>&nbsp;</span><i>Form1.cs</i>, который в 
+				структуре проекта называется просто Form1,<span class="style2"><em> содержит код или 
+				программную логику формы</em></span>:</p>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<br />
+								<img alt="" src="Pic/r-66-10.png" width="382" height="402" /></div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				По умолчанию здесь есть только конструктор формы, в котором 
+				просто вызывается метод<span>&nbsp;</span><span class="style2"><code style="font-family: monospace;"><strong>InitializeComponent()</strong></code></span>, 
+				объявленный в файле дизайнера<span>&nbsp;</span><i>Form1.Designer.cs</i>. 
+				Именно с этим файлом мы и будем больше работать.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span lang="ru">Например создадим обработчик </span>OnClick
+				<span lang="ru">по форме</span></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-66-11.png" width="617" height="244" /></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span lang="ru">В файл </span>-<span>&nbsp;</span><i>Form1.cs</i>,
+				<span lang="ru">добавится метод в который мы запишем следующий 
+				код</span></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-66-12.png" width="459" height="255" /></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span lang="ru">Результат:</span></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-66-13.png" width="510" height="265" /></p>
+			</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les71.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les71/1.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 11:01:23 GMT -->
+</html>
+r(--code-font-family) !important; font-weight: normal !important; font-style: normal !important; font-size: var(--code-font-size) !important; min-height: auto !important; white-space: pre !important;">
+																												13</div>
+																								<div class="line number14 index13 alt1" style="border-radius: 0px !important;

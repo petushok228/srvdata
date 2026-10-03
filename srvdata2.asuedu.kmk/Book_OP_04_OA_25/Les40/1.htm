@@ -1,0 +1,276 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les40/1.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:25:47 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+				color: rgb(128, 0, 128);
+}
+.style3 {
+				color: rgb(255, 0, 0);
+}
+    .style4 {
+	font-size: small;
+}
+.style5 {
+	margin-left: 40px;
+}
+    .style6 {
+	font-size: medium;
+	color: rgb(0, 0, 255);
+}
+    .style7 {
+	font-size: large;
+	color: rgb(0, 0, 255);
+}
+.style8 {
+	text-align: left;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 1 <b>Линейный двусвязный список</b></td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+              					<p style="margin-top: 1pt; font-size: 12pt; margin-bottom: 1pt; color: rgb(0, 0, 0); font-family: Arial, Helvetica, Geneva, serif;">Связные списки свободны от этих ограничений.<span class="style2"><strong> Они 
+								допускают гибкие методы доступа; извлечение 
+								(чтение) элемента из списка не приводит к 
+								удалению его из списка и потере данных</strong></span>. Для 
+								фактического удаления элемента из связного 
+								списка требуется<span class="style3"><strong> специальная процедура.</strong></span></p>
+								<p style="margin-top: 1pt; font-size: 12pt; margin-bottom: 1pt; color: rgb(0, 0, 0); font-family: Arial, Helvetica, Geneva, serif;">По направлению связей связные списки бывают 
+								односвязными (однонаправленными) и двусвязными 
+								(двунаправленными).</p>
+								<br />
+								<p style="margin-top: 1pt; font-size: 12pt; margin-bottom: 1pt; color: rgb(0, 0, 0); font-family: Arial, Helvetica, Geneva, serif;">По способу организации связей связные списки 
+								могут быть линейными и кольцевыми 
+								(циклическими).</p>
+								<center>
+								<h3><b>Линейный односвязный список</b></h3>
+								</center>
+								<p style="margin-top: 1pt; font-size: 12pt; margin-bottom: 1pt; color: rgb(0, 0, 0); font-family: Arial, Helvetica, Geneva, serif;">Как следует из названия, каждый элемент такого 
+								списка содержит указатель на следующий элемент. 
+								Таким образом, тип информации элемента должен 
+								быть записью (структурой). Односвязный список 
+								можно определить с помощью описаний типов (см. 
+								пример 1).</p>
+								<br />
+								<p style="margin-top: 1pt; font-size: 12pt; margin-bottom: 1pt; color: rgb(0, 0, 0); font-family: Arial, Helvetica, Geneva, serif;">В списке предусмотрено заглавное звено. 
+								Указатель списка (l1), значение которого - адрес 
+								заглавного звена, представляет список как единый 
+								объект.</p>
+								<br />
+								<p style="margin-top: 1pt; font-size: 12pt; margin-bottom: 1pt; color: rgb(0, 0, 0); font-family: Arial, Helvetica, Geneva, serif;">Указатель на следующий элемент в последнем звене 
+								списка имеет значение nil (NULL).</p>
+								<br />
+								<p style="margin-top: 1pt; font-size: 12pt; margin-bottom: 1pt; color: rgb(0, 0, 0); font-family: Arial, Helvetica, Geneva, serif;">Недостаток: По односвязному списку можно 
+								двигаться только от заглавного звена к 
+								последнему. Начинать можно с любого звена в 
+								списке, но если вдруг возникнет необходимость 
+								обратиться к предшествующим элементам, придется 
+								начинать с заглавного звена, что неудобно, 
+								нерационально и усложняет алгоритм обработки.</p>
+								<br />
+								<p style="margin-top: 1pt; font-size: 12pt; margin-bottom: 1pt; color: rgb(0, 0, 0); font-family: Arial, Helvetica, Geneva, serif;">Для списков, кроме операций, рассмотренных ранее 
+								для очередей и стеков, существуют операции:</p>
+								</li>
+								<li class="style5"><span class="style4">создание заглавного звена;</span></li>
+								<li class="style5"><span class="style4">вставка;</span></li>
+								<li class="style5"><span class="style4">удаление;</span></li>
+								<li class="style5"><span class="style4">поиск.</span><br />
+								<br />
+								<img alt="" src="Pic/r-41-1.png" width="684" height="161" /></li>
+								<li>
+								</li>
+								<p><span lang="ru" class="style4">Добавление элемента в начало 
+								списка</span></p>
+								<p>
+								<img alt="" src="Pic/r-41-2.png" width="605" height="142" /></p>
+								<p><span lang="ru"><span class="style4">Добавление элемента в конец 
+								списка</span></span><span class="style4"></p>
+								<p></span><span lang="ru"><span class="style4">Поиск элемента в списке и 
+								вывод на экран</span></span></p>
+								<p>&nbsp;</p>
+								<p>
+								<img alt="" src="Pic/r-41-4.png" width="661" height="194" /></p>
+								<p><span lang="ru" class="style4">Использование функции поиска 
+								и вывод на экран</span></p>
+								<p>
+								<img alt="" src="Pic/r-41-3.png" width="473" height="228" /></p>
+								<p><span lang="ru" class="style4">Вывод на экран всего списка</span></p>
+								<p>
+								<img alt="" src="Pic/r-41-5.png" width="349" height="284" /></p>
+								<center>
+								<h3><b>Линейный двусвязный список</b></h3>
+								<p style="margin-top: 1pt; font-size: 12pt; margin-bottom: 1pt; color: rgb(0, 0, 0); font-family: Arial, Helvetica, Geneva, serif;">
+								</p>
+								<br />
+								</center>
+								<p style="margin-top: 1pt; font-size: 12pt; margin-bottom: 1pt; color: rgb(0, 0, 0); font-family: Arial, Helvetica, Geneva, serif;">Свободен от недостатка, присущего односвязному 
+								списку. Для этого в каждое звено добавлен еще 
+								один указатель, значение которого - адрес 
+								предыдущего звена списка. Структура списка будет 
+								выглядеть следующим образом:</p>
+								<br />
+								<center>
+								<img src="Pic/IMGList003-02.png" width="458" height="180" /><br />
+								<br />
+								</center>
+								<p style="margin-top: 1pt; font-size: 12pt; margin-bottom: 1pt; color: rgb(0, 0, 0); font-family: Arial, Helvetica, Geneva, serif;">Преимущества двусвязного списка:</p>
+								<li><span class="style4">проще перестраивать поврежденный список;</li>
+								<li>проще выполняются некоторые операции 
+								(например удаление).</span><br />
+								<center>
+								<p style="margin-top: 1pt; font-size: 12pt; margin-bottom: 1pt; color: rgb(0, 0, 0); font-family: Arial, Helvetica, Geneva, serif;">&nbsp;</p>
+								</center>
+								<h3 class="style8"><b>Кольцевые списки</b></h3>
+								<center>
+								<br />
+								</center>
+								<p style="margin-top: 1pt; font-size: 12pt; margin-bottom: 1pt; color: rgb(0, 0, 0); font-family: Arial, Helvetica, Geneva, serif;">Если значение указателя последнего звена 
+								линейного односвязного списка заменить с nil на 
+								адрес заглавного звена, то линейный список 
+								превратится в односвязный кольцевой список.</p>
+								<br />
+								<p style="margin-top: 1pt; font-size: 12pt; margin-bottom: 1pt; color: rgb(0, 0, 0); font-family: Arial, Helvetica, Geneva, serif;">Для двусвязного списка, кроме того, нужно 
+								заменить с nil на адрес последнего звена 
+								значение второго указателя в заглавном звене. 
+								Получится двусвязный кольцевой (циклический) 
+								список.</p>
+								<br />
+								<p style="margin-top: 1pt; font-size: 12pt; margin-bottom: 1pt; color: rgb(0, 0, 0); font-family: Arial, Helvetica, Geneva, serif;">В односвязном кольцевом списке можно переходить 
+								от последнего звена к заглавному, а в двусвязном 
+								- еще и от заглавного к последнему.</p>
+								<p style="margin-top: 1pt; margin-bottom: 1pt; font-family: Arial, Helvetica, Geneva, serif;" class="style7"><tt>
+								<strong>Программа 
+																работы с 
+																двусвязным 
+																списком</strong></tt></p>
+								<pre class="style6"><strong>var a,l1:list1;</strong>
+</pre>
+								<pre class="style6">begin
+...
+new(l1);
+l1^.next:=nil;
+a:=l1;
+...
+
+rel2=^elem2;
+elem2=recordnext:rel1;
+prev:rel2;
+data:<Тип хранимых данных>end;
+list2=rel2;
+varl2:list2;
+procedure insert2(pred:rel2; info:<Тип>);
+varq:rel2;beginnew(q); {Создание нового звена}
+q^.data:=info;
+q^.next:=pred^.next;
+q^.prev:=pred^.next^.prev;
+pred^.next.prev:=q;
+pred^.next:=qend;
+
+procedure delete2(del:rel2);
+begindel^.next^.prev:=del^.prev;
+del^.prev^.next:=del^.next;
+dispose(del);end;
+
+function search2(list:rel2; info:<Тип>; var point:rel2):boolean;
+varp,q:rel2;
+b:boolean;beginb:=false;
+point:=nil;
+p:=list;
+q:=p^.next;
+while (p<>q) and (not b) do
+beginif q^.data=info then
+beginb:=true;
+point:=qend;
+q:=q^.nextend;
+search2:=bend;
+
+...
+...
+...
+
+varl2:list2;
+r:rel2;begin {Создание заглавного звена}new(r);
+r^.next:=r;
+r^.pred:=r;
+l2:=r;
+
+...
+...
+...
+
+end.</pre>
+								<br />
+								<br />
+								<br />
+								<p style="margin-top: 1pt; font-size: 12pt; margin-bottom: 1pt; color: rgb(0, 0, 0); font-family: Arial, Helvetica, Geneva, serif;">
+								</p>
+								<p style="margin-top: 1pt; font-size: 12pt; margin-bottom: 1pt; color: rgb(0, 0, 0); font-family: Arial, Helvetica, Geneva, serif;">Для двусвязного списка создание заглавного звена 
+								производится аналогично, за исключением двух 
+								указателей вместо одного.</p>
+								</li>
+				</ul>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les40.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les40/1.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:26:12 GMT -->
+</html>

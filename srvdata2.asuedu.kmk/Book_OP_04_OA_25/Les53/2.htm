@@ -1,0 +1,475 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les53/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:45:39 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: small;
+}
+    h3{font-size:24px}h3{margin-top:20px;margin-bottom:10px}h3{font-family:inherit;font-weight:500;line-height:1.1;color:inherit}*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}strong{font-weight:700}
+
+.highlight {
+    background-color: #f9f9f9;
+}
+
+.highlight  { background: #ffffff; }
+
+pre code {
+    border: none;
+    border-radius: 0;
+    background-color: #f9f9f9;
+    font-size: 0.85em;
+}
+
+pre code{padding:0;font-size:inherit;color:inherit;white-space:pre-wrap;background-color:transparent;border-radius:0}
+
+code {
+    color: inherit;
+}
+
+code {
+    border: none;
+    border-radius: 0;
+    background-color: #f9f9f9;
+    font-size: 0.85em;
+}
+
+code{padding:2px 4px;font-size:90%;color:#c7254e;background-color:#f9f2f4;border-radius:4px}code{font-family:Menlo,Monaco,Consolas,"Courier New",monospace}code{font-family:monospace,monospace;font-size:1em}
+.highlight .nb { color: #003388 } 
+.highlight .c1 { color: #888888 } 
+.highlight .mi { color: #0000DD; font-weight: bold } 
+.highlight .k { color: #008800; font-weight: bold } 
+.highlight .ow { color: #008800 } h4{font-size:18px}h4{margin-top:10px;margin-bottom:10px}h4{font-family:inherit;font-weight:500;line-height:1.1;color:inherit}a{color:#337ab7;text-decoration:none}a{background-color:transparent}
+
+th {
+  padding: .25rem .5rem;
+  border: 1px solid #e5e5e5;
+}
+th{text-align:left}th{padding:0}
+.highlight .kn { color: #008800; font-weight: bold } 
+.highlight .nn { color: #bb0066; font-weight: bold } 
+.highlight .s { color: #dd2200; background-color: #fff0f0 } 
+.highlight .mf { color: #0000DD; font-weight: bold } 
+.highlight .se { color: #0044dd; background-color: #fff0f0 } 
+.highlight .bp { color: #003388 } 
+.style4 {
+	font-size: medium;
+	color: #0000FF;
+}
+    .style5 {
+	color: #0000FF;
+	font-size: medium;
+	margin-left: 40px;
+}
+    .style6 {
+	margin-left: 40px;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 2. Структуры данных в Python</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p class="style2">Как и в любом языке программирования в Python 
+				существует несколько типов структур данных, это:</p>
+				<ul class="style2">
+					<li>Списки</li>
+					<li>Массивы</li>
+					<li>Кортежи</li>
+					<li>Словари (ассоциативные массивы)</li>
+					<li>Множества</li>
+				</ul>
+				<h3 id="списки" class="style4"><strong>Списки</strong></h3>
+				<p><span class="style2">Это динамическая структура данных, 
+				которая может хранить объекты разнородных типов с произвольным 
+				доступом к элементам (на самом деле он последовательный, но мы 
+				можем получить доступ к любому элементу по его индексу). <strong>
+				Индексация элементов списка начинается с нуля.</strong> Из 
+				операций над списками, на начальном этапе достаточно знать и 
+				уметь добавлять элементы в список и удалять их из него.</span></p>
+				<p>Создание объекта списка происходит так:</p>
+				
+				<pre class="style5"><strong>A=list() # пустой список
+B=[] #пустой список
+C=[12,13] # список из элементов [12, 13]</strong></pre>
+				<span class="style2">
+				<p class="style2">добавление и удаление элемента в/из списка 
+				происходит следующим образом:</p>
+				</span>
+				<pre class="style5"><strong>A.append(1) # A=[1]
+B=B+[1] #B=[1]
+</strong><strong>C.insert(1,2)# C=[12, 2, 13]
+# удаление первого вхождения элемента в список
+</strong><strong>C.remove(13)# C=[12,2]
+# доступ к элементу списка по  индексу
+print(C[0]) # 12
+# срез списка
+print(C[0:1])# 12
+# удаление элемента по его индексу
+del C[0] #C=[2]</strong></pre>
+				<span class="style2">
+				<p><span class="style2">Надо сказать, что все операции так 
+				называемые <em>in place</em>, то есть в результате ничего не 
+				возвращается и новый список не создается.</p>
+				<p>Чтобы добавить несколько элементов в список можно 
+				использовать оператор </span><code class="style2">+</code><span class="style2">, 
+				как в строке 2 </span><code class="style2"><span class="n">B</span><span class="o">=</span><span class="n">B</span><span class="o">+</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span></code><span class="style2">, 
+				тогда если изначальный список был </span><code class="style2">
+				<span class="n">B</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span></code><span class="style2"> 
+				, то посте операции он станет </span><code class="style2">
+				<span class="n">B</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span></code><span class="style2">.
+				<strong>Важно!!</strong> если вы используете </span>
+				<code class="style2"><span class="n">B</span><span class="p">.</span><span class="n">append</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span></code><span class="style2">, 
+				то получите </span><code class="style2"><span class="n">B</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]]</span></code><span class="style2">, 
+				то есть добавите список как объект в список. Чтобы результат был 
+				идентичен, вместо <em>append</em> нужно использовать <em>extend</em>:
+				</span><code class="style2"><span class="n">B</span><span class="p">.</span><span class="n">extend</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span></code><span class="style2">.</p>
+				<p>Также список поддерживает методы очистки </span>
+				<code class="style2"><span class="n">clear</span><span class="p">()</span></code><span class="style2"> 
+				и сортировки </span><code class="style2"><span class="n">sort</span><span class="p">()</span></code><span class="style2">.</span></p>
+				</span>
+				<pre class="style5"><strong>A.append(1) # A=[1]
+A=A+[1,2,5,6,3] #B=[1,1,2,5,6,3]
+</strong><strong>A.sort() #A=[1,1,2,3,5,6]
+</strong><strong>A.clear() #A=[]</strong></pre>
+				<span class="style2">
+				<p><span class="style2">Срез списка задается в формате <strong>
+				A[N:M]</strong>, при этом элемент с номером <em>N</em> 
+				включается в срез, а <em>M</em> - нет.</p>
+				<p>Для проверки наличия элемента в списке существует оператор
+				</span><code class="style2">in</code><span class="style2">, 
+				пример:</span></p>
+				</span>
+				<pre class="style6"><span class="style4"><strong>A.append(1) # A=[1]
+A=A+[1,2,5,6,3] #B=[1,1,2,5,6,3]
+1 in A # True
+10 in A # False</strong></span><span class="style2">
+				<h4 id="пример-список-четных-чисел" class="style2">Пример 
+				«список четных чисел»</h4>
+				<p class="style2">Создадим список, содержащий все четные числа 
+				от нуля до некоторого N</p>
+				</span>
+				<pre class="style5"><strong>A=[]
+N=10
+for i in range(N):
+    if i%2==0:
+        A.append(i)
+print(A)
+
+>>[0, 2, 4, 6, 8]</strong></pre>
+				<span class="style2">
+				<h3 id="массивы" class="style4"><strong>Массивы</strong></h3>
+				<p><span class="style2">Масивы в python подобны спискам, за 
+				исключением того, что хранят элементы одного и того же типа 
+				(basic type). Тип массив (array) реализован в пакете array, для 
+				его использования, сначала нужно его импортировать.</p>
+				<p>Конструктор массивов имеет формат:</span></p>
+				<p><code class="style2"><span class="n">array</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">typecode</span><span class="p">,[</span><span class="n">initializer</span><span class="p">])</span></code></p>
+				<p><span class="style2">typecode - один из типов
+				<a href="https://docs.python.org/3/library/array.html#module-array">
+				Типы</a></p>
+				<p>На 64-битной машине размер элементов в байтах будет следующим</p>
+				<table>
+					<thead>
+						<tr>
+							<th>Type code</th>
+							<th>C Type</th>
+							<th>Python type</th>
+							<th>Minimum size in bytes</th>
+						</tr>
+					</thead>
+					<tr>
+						<td>‘b’</td>
+						<td>signed char</td>
+						<td>int</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>‘B’</td>
+						<td>unsigned char</td>
+						<td>int</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>‘u’</td>
+						<td>Py_UNICODE</td>
+						<td>Unicode character</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>‘h’</td>
+						<td>signed short</td>
+						<td>int</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>‘H’</td>
+						<td>unsigned short</td>
+						<td>int</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>‘i’</td>
+						<td>signed int</td>
+						<td>int</td>
+						<td>4</td>
+					</tr>
+					<tr>
+						<td>‘I’</td>
+						<td>unsigned int</td>
+						<td>int</td>
+						<td>4</td>
+					</tr>
+					<tr>
+						<td>‘l’</td>
+						<td>signed long</td>
+						<td>int</td>
+						<td>8</td>
+					</tr>
+					<tr>
+						<td>‘L’</td>
+						<td>unsigned long</td>
+						<td>int</td>
+						<td>8</td>
+					</tr>
+					<tr>
+						<td>‘q’</td>
+						<td>signed long long</td>
+						<td>int</td>
+						<td>8</td>
+					</tr>
+					<tr>
+						<td>‘Q’</td>
+						<td>unsigned long long</td>
+						<td>int</td>
+						<td>8</td>
+					</tr>
+					<tr>
+						<td>‘f’</td>
+						<td>float</td>
+						<td>float</td>
+						<td>4</td>
+					</tr>
+					<tr>
+						<td>‘d’</td>
+						<td>double</td>
+						<td>float</td>
+						<td>8</span></td>
+					</tr>
+				</table>
+				</span></span>
+				<pre class="style5"><strong>import array
+a=array.array('i',[1,2,3,4]) # создаем массив двубайтовых целых чисел
+a[1]=12
+print(a)
+>> array('i',[1,12,3,4])</strong></pre>
+				<span class="style2">
+				<p class="style2">Массивы поддерживают те же операции, что и 
+				списки</p>
+				<h3 id="кортежи" class="style4"><strong>Кортежи</strong></h3>
+				<p class="style2">Кортежем или <em>tuple</em> называется 
+				неизменяемый список. Создается он следующим образом:</p>
+				</span>
+				<pre class="style5"><strong>A=tuple() # пустой кортеж
+B=()#пустой кортеж
+C=(12,13) # кортеж из элементов (12, 13)</strong></pre>
+				<span class="style2">
+				<p class="style2">И соответственно кортеж не поддерживает 
+				операции добавления, сортировки, вставки, удаления, расширения. 
+				Среди поддерживаемых операций - конкатенация</p>
+				</span>
+				<pre class="style5"><strong>A=tuple() # пустой кортеж
+A=A+(1,) #A=(1,)</strong></pre>
+				<span class="style2">
+				<p class="style2">Здесь стоит отметить, что в отличие от списка, 
+				где новый элемент просто добавляется в конец, происходит 
+				создание нового объекта.</p>
+				</span>
+				<pre class="style5"><strong>A=list() # пустой список
+B=A # список B и список A указывают на один и тот же объект
+B==A # True
+A=A+[1]
+B==A # True Ничего не изменилось, ссылка на объект осталась прежней, A и B идентичны
+
+A=tuple() # пустой кортеж
+B=A # кортеж B и кортеж A указывают на один и тот же объект
+B==A # True
+A=A+(1,)
+B==A # False Объект A - новый объект</strong></pre>
+				<span class="style2">
+				<p><span class="style2">Для кортежей доступ к элементу и 
+				выполнение срезов эквивалентно спискам, отсутствует лишь 
+				возможность изменять кортеж.</p>
+				<p>Для проверки наличия элемента в кортеже все аналогично 
+				спискам.</span></p>
+				<h3 id="словари" class="style4"><strong>Словари</strong></h3>
+				<p><em><span class="style2">Словари или ассоциативные массивы</span></em><span class="style2"> 
+				- это еще один способ представления данных, отличие словаря от 
+				списка в том, что индексами могут быть не только целые числа, но 
+				и любые объекты Python. В случае индексов - любые hashable 
+				объекты.</p>
+				<p>Создать ассоциативный массив просто:</p>
+				</span></span>
+				<pre class="style5"><strong>A=dict() # пустой словарь
+B={} # то же самое
+С={"A":0.1, "B":0} # словарь с двумя элементами "A"=>0.1, "B"=>0</strong></pre>
+				<span class="style2"> 
+				<p><span class="style2">Чтобы поместить значение в ассоциативный 
+				массив, достаточно присвоить значение выбранному индексу, 
+				например </span><code class="style2"><span class="n">B</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">=</span><span class="s">&#39;Hello&#39;</span></code><span class="style2"> 
+				или </span><code class="style2"><span class="n">B</span><span class="p">[</span><span class="s">&quot;12&quot;</span><span class="p">]</span><span class="o">=</span><span class="mi">12</span></code><span class="style2">.</p>
+				<p>Из этих примеров видно, что индекс может быть действительно 
+				любым объектом, равно как и присваиваемое значение.</p>
+				<p>У словаря есть два важных метода: </span>
+				<code class="style2">keys()</code><span class="style2"> и </span>
+				<code class="style2">values()</code><span class="style2">. 
+				Первый возвращает список ключей, второй - список значений.</p>
+				<p>В случае словаря </span><code class="style2">B</code><span class="style2">, 
+				при вызове </span><code class="style2">B.keys()</code><span class="style2"> 
+				мы получим </span><code class="style2">[10, &quot;12&quot;]</code><span class="style2">, 
+				а при вызове </span><code class="style2">B.values()</code><span class="style2"> 
+				- </span><code class="style2">[&#39;Hello&#39;, 12]</code></p>
+				<h3 id="важно" class="style2">Важно</h3>
+				<p><span class="style2">При добавлении элементов в список, 
+				кортеж или словарь имейте ввиду, для atomic (immutable) и basic 
+				типов, создается ссылка на новый объект и помещается в словарь, 
+				для остальных объектов в словарь помещается ссылка на 
+				существующий объект. Если он в дальнейшем изменяется, то 
+				изменяется и содержимое словаря, кортежа, списка.</p>
+				<p>Пример:</p>
+				</span></span>
+				<pre class="style5"><strong>import array
+
+A=dict() # созадим словарь
+B=[] # список
+</strong><strong>val=[1,2,3]
+</strong><strong>arr=array.array('d',[1,2,3])
+
+A['1']=arr
+A[2]=val
+</strong><strong>B.append(val)
+</strong><strong>B.append(arr)
+В=(val, arr, )
+print(A, '\n', B,'\n',D)
+
+>> {'1': array('d', [1.0, 2.0, 3.0]), 2: [1, 2, 3]} 
+>>  [[1, 2, 3], array('d', [1.0, 2.0, 3.0])]
+>>  ([1, 2, 3], array('d', [1.0, 2.0, 3.0]),)
+
+</strong><strong>arr[0]=12
+</strong><strong>val.append('1')
+
+print(A, '\n', B,'\n',D)
+
+>>{'1': array('d', [12.0, 2.0, 3.0]), 2: [1, 2, 3, '1']} 
+>> [[1, 2, 3, '1'], array('d', [12.0, 2.0, 3.0])]
+>> ([1, 2, 3, '1'], array('d', [12.0, 2.0, 3.0]),)</strong></pre>
+				<span class="style2">
+				<p class="style2">Как видите, изменение ссылочного объекта вне 
+				словаря/списка/кортежа ведет к изменению его в 
+				словаре/списке/кортеже</p>
+				<h3 id="множества" class="style4"><strong>Множества</strong></h3>
+				<p class="style2">Это динамическая структура, содержащая 
+				уникальные значения. Множество может содержать лишь <em>hashable</em> 
+				объекты. Определяется так:</p>
+				</span>
+				<pre class="style5"><strong>A=set()</strong></pre>
+				<span class="style2">
+				<p class="style2">Поддерживает все операции над множествами: 
+				включение, исключение, пересечение, объединение.</p>
+				</span>
+				<pre class="style6"><span class="style4"><strong># пусть имеем два множества
+a = {1,2,3}
+b = {2,3,4}
+
+# да-да, перечисление элементов в фигурных скобках означает инициализацию множества
+
+</strong><strong>a.difference(b)
+>> {1}
+</strong><strong>b.difference(a)
+>> {4}
+</strong><strong>a.union(b)
+>> {1,2,3,4}
+</strong><strong>a.intersection(b)
+>> {2,3}
+</strong><strong>a.issubset(b), a.issuperset(b)
+>> False, False
+</strong><strong>a.symmetric_difference(b)
+>> {1,4}</strong></span><span class="style2">
+</pre>
+				<p><span class="style2">Множества чрезвычайно полезны, если нам 
+				нужно получить количество различающихся элементов или вычислить 
+				спектр значений дискретной переменной.</p>
+				<p>Или в задачах где заведомо требуется уникальность каждого 
+				элемента в списке.</p>
+				<p>С помощью множества (точнее преобразования списка во 
+				множество) можно удалить дубликаты из исходной 
+				последовательности:</p>
+				</span></span>
+				<pre class="style5"><strong>a = [1,2,3,4,3,2,3,2,3,4]
+b = set(a)
+print(b)
+>> {1,2,3,4}</strong></pre>
+				<span class="style2">
+				<p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les53.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les53/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:45:39 GMT -->
+</html>

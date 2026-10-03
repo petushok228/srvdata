@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les54/4.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:46:39 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: #0000FF;
+}
+.style3 {
+	color: #FF0000;
+}
+.style5 {
+	color: #0000FF;
+	text-decoration: underline;
+}
+.style6 {
+	font-size: small;
+	color: #800000;
+}
+.style7 {
+	text-decoration: underline;
+}
+.style8 {
+	color: #FF0000;
+	text-decoration: underline;
+}
+    .style9 {
+	font-size: small;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 4. Свойства. (<span lang="ru">повторение)</span></td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p><span class="style9">Еще одной разновидностью члена класса является свойство. 
+				<span class="style3"><strong>Как правило, свойство сочетает в себе поле с методами доступа к нему.</strong></span></p>
+<p>Свойства очень похожи на индексаторы. В частности, свойство состоит из имени и аксессоров get и set. Аксессоры служат для получения и установки значения переменной. Главное преимущество свойства заключается в том, что его имя может быть использовано в выражениях и операторах присваивания аналогично имени обычной переменной, но в действительности при обращении к свойству по имени автоматически вызываются его аксессоры get и set.
+</span><em> 
+<span class="style3"><span class="style9">Аналогичным образом используются 
+</span> <strong>
+<span class="style9">аксессоры</span></strong><span class="style9"> </span> </span>
+<span class="style9"><span class="style2">
+<strong>get</strong></span><span class="style3"> и </span><span class="style2">
+<strong>set</strong></span><span class="style3"> индексатора.</span></span></em><span class="style9"></p>
+<p>Ниже приведена общая форма свойства:</p>
+<pre>
+<span class="style2"><strong>тип имя {
+   get
+   {
+        // код аксессора для чтения из поля
+   }
+
+   set 
+   {
+        // код аксессора для записи в поле
+   }
+</strong></span>}</pre>
+<p>где тип обозначает конкретный тип свойства, например int, а имя — присваиваемое свойству имя. Как только свойство будет определено, любое обращение к свойству по имени приведет к автоматическому вызову соответствующего аксессора. Кроме того, аксессор set принимает неявный параметр value, который содержит значение, присваиваемое свойству.</p>
+<p>Следует, однако, иметь в виду, что свойства не определяют место в памяти для хранения полей, а лишь управляют доступом к полям. Это означает, что само свойство не предоставляет поле, и поэтому поле должно быть определено независимо от свойства.</p>
+<pre><span class="style2"><strong>using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication1
+</strong></span>{<span class="style2"><strong>
+    class UserInfo
+    {
+        int a;
+        string s = "Alex";
+
+        // Создадим свойство, управляющее
+        // доступом к переменной a
+        public int Age
+        {
+            get
+            {
+                if (a <= 0)
+                    return 1;
+                return a;
+            }
+
+            set
+            {
+                a = value;
+            }
+        }
+
+        // Свойство только для чтения
+        // переменной s
+        // аксессор set отсутствует
+        public string Name
+        {
+            get
+            {
+                return s;
+            }
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            UserInfo ui = new UserInfo();
+            
+            // Доступ к закрытой переменной экземпляра только через свойство
+            ui.Age = 26;
+            // Переменная только для чтения
+            string myName = ui.Name;
+
+            Console.ReadLine();
+        }
+    }
+</strong></span>}</pre>
+<p>Свойствам присущ ряд существенных ограничений:</p>
+				<ul>
+					<li><span class="style5"><strong>Cвойство не определяет место для хранения данных</strong></span>, и поэтому не может быть передано методу в качестве параметра ref или out.</li>
+					<li><span class="style5"><strong>Cвойство не подлежит перегрузке.</strong></span> Наличие двух разных свойств с доступом к одной и той же переменной допускается, но это, скорее, исключение, чем правило.</li>
+					<li><span class="style2"><strong>Cвойство не должно изменять состояние базовой переменной при вызове аксессора get</strong></span>. И хотя это ограничительное правило не соблюдается компилятором, его нарушение считается семантической ошибкой.</li>
+					<li><span class="style2"><strong>Действие аксессора get не должно носить характер вмешательства в функционирование переменной</strong></span>.</span></li>
+				</ul>
+<p class="style6"><strong>Автоматически реализуемые свойства</strong></p>
+<p><span class="style9">Начиная с версии C# 3.0, появилась возможность для реализации очень простых свойств, не прибегая к явному определению переменной, которой управляет свойство. Вместо этого базовую переменную для свойства автоматически предоставляет компилятор. Такое свойство называется автоматически реализуемым и принимает следующую общую форму:</p>
+<pre class="style2"><strong>тип имя { get; set; }</strong></pre>
+<p>где <span class="style2">тип</span> обозначает конкретный тип свойства, а 
+<span class="style2"><strong>имя</strong></span> — присваиваемое свойству имя. </p>
+				<p><span class="style7"><em>Обратите внимание на то, что после обозначений аксессоров get и set сразу же следует точка с запятой, а тело у них отсутствует</em></span>. </p>
+				<p>Такой синтаксис предписывает компилятору создать автоматически переменную, иногда еще называемую поддерживающим полем, для хранения значения. Такая переменная недоступна непосредственно и не имеет имени. Но в то же время она может быть доступна через свойство.</p>
+<p><span class="style8"><em>Несмотря на очевидные удобства автоматически реализуемых свойств, их применение ограничивается в основном теми ситуациями, в которых не требуется управление установкой или получением значений из поддерживающих полей</em></span>. Напомним, что поддерживающее поле недоступно напрямую. Это означает, что на значение, которое может иметь автоматически реализуемое свойство, нельзя наложить никаких ограничений. Следовательно, имена автоматически реализуемых свойств просто заменяют собой имена самих полей, а зачастую именно это и требуется в программе. Автоматически реализуемые свойства могут оказаться полезными и в тех случаях, когда с помощью свойств функциональные возможности программы открываются для сторонних пользователей, и для этой цели могут даже применяться специальные средства проектирования.</span></p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les54.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les54/4.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:46:39 GMT -->
+</html>

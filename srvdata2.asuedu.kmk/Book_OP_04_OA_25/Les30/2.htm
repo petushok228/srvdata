@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les30/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:03:20 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+				color: rgb(0, 0, 255);
+}
+.style3 {
+				color: rgb(0, 0, 255);
+				text-decoration: underline;
+}
+.style4 {
+				color: rgb(255, 0, 0);
+}
+    .style5 {
+	text-align: center;
+}
+.style6 {
+	text-align: left;
+}
+    .style7 {
+	margin-left: 6px;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 2. Процедуры в Паскале. </td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; font-weight: bold;">
+				Подпрограмма</strong><span>&nbsp;</span>— это фрагмент кода, который 
+				имеет свое имя и создается в случае необходимости выполнять этот 
+				код несколько (много) раз. Подпрограмма описывается единожды 
+				перед началом основной программы (до<span>&nbsp;</span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 15.3px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">begin</code>). 
+				Компилятор пропускает данный фрагмент кода, пока в основной 
+				программе не встретит «вызов» подпрограммы, который выглядит как 
+				обращение к ней по имени (возможно, имени с аргументами, 
+				указанными в скобках).</p>
+				<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Во многих языках программирования подпрограммы существуют только 
+				в виде функций. Однако<span>&nbsp;</span><strong style="box-sizing: border-box; font-weight: bold;">в 
+				Паскале подпрограмма — и функция и процедура</strong>. Разница 
+				между ними станет очевидна в данном уроке.</p>
+				<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Итак, рассмотрим<span>&nbsp;</span><strong style="box-sizing: border-box; font-weight: bold;">синтаксис 
+				объявления и описания процедуры в Паскале</strong></p>
+				<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-30-1.png" width="416" height="178" class="style7" /></p>
+				<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; font-weight: bold;">
+				Пример:</strong><span>&nbsp;</span>Процедура без параметров, которая 
+				печатает 60 звездочек, каждую с новой строки</p>
+				<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-30-2.png" width="655" height="206" /></p>
+				<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В данном примере работы с процедурой в Паскале очевидно, что 
+				компилятор пропустит блок описания процедуры и дойдет до 
+				основной программы (9 строка кода). И только после того, как 
+				встретится вызов процедуры (10 строка), компилятор перейдет к ее 
+				выполнению, вернувшись к строке 1.<br style="box-sizing: border-box;" />
+				<a name="pascal7_" style="box-sizing: border-box; background-color: transparent; color: rgb(39, 179, 153); text-decoration: none; transition-property: all; transition-duration: 0.1s; transition-timing-function: ease-in-out;">
+				</a></p>
+				<h3 style="box-sizing: border-box; font-family: &quot;Open Sans&quot;, sans-serif; font-weight: 600; line-height: 1.1; color: rgb(85, 85, 85); margin: 20px 0px 24px; font-size: 20px; text-transform: uppercase; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span id="i-2" style="box-sizing: border-box;">ПРОЦЕДУРЫ С 
+				ПАРАМЕТРАМИ. ФАКТИЧЕСКИЕ И ФОРМАЛЬНЫЕ ПАРАМЕТРЫ</span></h3>
+				<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Рассмотрим пример необходимости использования процедуры.</p>
+				<div class="noteclassic" style="box-sizing: border-box; width: 750px; padding: 15px 20px 15px 80px; box-shadow: rgb(153, 153, 153) 2px 2px 3px; min-height: 40px; overflow: visible; position: relative; bottom: -10px; right: 6px; background-position: 10px 8px; background-repeat: no-repeat; text-align: justify; margin: 0px; height: auto !important; border: 2px solid rgb(238, 238, 255); background-image: url('../../../labs-org.ru/images/note.png'); color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<strong style="box-sizing: border-box; font-weight: bold;">
+								Пример:</strong><br style="box-sizing: border-box;" />
+								Построить фигуру<br style="box-sizing: border-box;" />
+								<a style="box-sizing: border-box; background-color: transparent; color: rgb(39, 179, 153); text-decoration: none; transition-property: all; transition-duration: 0.1s; transition-timing-function: ease-in-out;" href="Pic/1-54.png">
+								<img src="Pic/1-54.png" width="300" alt="построение треугольников в процедуре" class="aligncenter size-medium wp-image-5762" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; clear: both; display: block; margin: 7px auto 24px;" /></a><p style="box-sizing: border-box; margin: 0px 0px 24px;">
+								</p>
+								<p style="box-sizing: border-box; margin: 0px 0px 24px;">
+								<strong style="box-sizing: border-box; font-weight: bold;">
+								Особенность:</strong><span>&nbsp;</span>Три похожие 
+								фигуры.</p>
+								<li style="box-sizing: border-box;">
+								<strong style="box-sizing: border-box; font-weight: bold;">
+								общее:</strong><span>&nbsp;</span>размеры, угол 
+								поворота</li>
+								<li style="box-sizing: border-box;">
+								<strong style="box-sizing: border-box; font-weight: bold;">
+								отличия:</strong><span>&nbsp;</span>координаты, цвет</li>
+				</div>
+				<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; font-weight: bold;">
+				Алгоритм решения:</strong></p>
+				<ul style="box-sizing: border-box; margin: 0px 0px 24px 19px; list-style: disc; padding: 0px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+								выделить одинаковые или похожие действия (три 
+								фигуры);</li>
+								<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+								найти в них<span>&nbsp;</span><strong style="box-sizing: border-box; font-weight: bold;">общее<span>&nbsp;</span></strong>(размеры, 
+								форма, угол поворота) и<span>&nbsp;</span><strong style="box-sizing: border-box; font-weight: bold;">отличия<span>&nbsp;</span></strong>(координаты, 
+								цвет);</li>
+								<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+								отличия записать в виде неизвестных переменных, 
+								они будут<span>&nbsp;</span><strong style="box-sizing: border-box; font-weight: bold;">параметрами<span>&nbsp;</span></strong>процедуры.</li>
+				</ul>
+				<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<a style="box-sizing: border-box; background-color: transparent; color: rgb(39, 179, 153); text-decoration: none; transition-property: all; transition-duration: 0.1s; transition-timing-function: ease-in-out;" href="Pic/1_1-11.png">
+				<img src="Pic/1_1-11.png" width="300" alt="1_1" class="aligncenter size-medium wp-image-5763" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; clear: both; display: block; margin: 7px auto 24px;" /></a></p>
+				<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; font-weight: bold;">
+				Решение на паскале:</strong><br style="box-sizing: border-box;" />
+				<u style="box-sizing: border-box;">Процедура:&nbsp; описание.</u><br style="box-sizing: border-box;" />
+				</p>
+				<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+				<img alt="" src="Pic/r-30-r.png" width="500" height="223" /></p>
+				<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style6">
+				Решение:&nbsp; использование</p>
+				<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+				<img alt="" src="Pic/r-30-p.png" width="500" height="261" /></p>
+				<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style6">
+				&nbsp;</p>
+				<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+				<u style="box-sizing: border-box;">Программа:</u><br style="box-sizing: border-box;" />
+				</p>
+				<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-30-3.png" width="510" height="259" /></p>
+				<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Рассмотрим синтаксис объявления и описания процедуры<span>&nbsp;</span><strong style="box-sizing: border-box; font-weight: bold;">с 
+				параметрами</strong><span>&nbsp;</span>в Паскале.</p>
+				<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-30-4.png" width="659" height="203" /></p>
+				<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; font-weight: bold;">
+				<span class="style2">Параметры процедуры</span><span>&nbsp;</span></strong>(в некоторых языках 
+				они называются аргументами) указываются в скобках после ее имени 
+				(в объявлении).</p>
+				<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В данном примере в качестве введенного символа будем 
+				использовать параметр процедуры.<strong style="box-sizing: border-box; font-weight: bold;"><span>&nbsp;</span>Формальный 
+				параметр процедуры</strong><span>&nbsp;</span>указывается в скобках 
+				при ее описании. Обязательно необходимо указать тип формального 
+				параметра через двоеточие.</p>
+				<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; font-weight: bold;">
+				<span class="style2">Фактический параметр</span><span>&nbsp;</span></strong>— это то значение, 
+				которое указывается в скобках при вызове процедуры. 
+				<span class="style3"><em>Фактическим 
+				параметром может быть конкретное значение (литерал: число, 
+				символ, строка…) либо переменная,</em></span> которые компилятор подставит 
+				вместо формального параметра. Поэтому тип данных у формального и 
+				фактического параметра процедуры должен быть одинаковым.</p>
+				<img alt="" src="Pic/r-30-5.png" width="404" height="235" /><br />
+				<span style="color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+				В данном примере при вызове процедуры компилятор заменит 
+				формальный параметр<span>&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 15.3px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">a</code><span style="color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;"><span>&nbsp;</span>фактическим 
+				параметром<span>&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 15.3px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">s</code><span style="color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">, 
+				т.е. тем символом, который будет введен с клавиатуры. Оба 
+				параметра имеют тип данных<span>&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 15.3px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">char</code><span style="color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">.<br />
+				</span><br class="Apple-interchange-newline" />
+				<ul style="box-sizing: border-box; margin: 0px 0px 24px 19px; list-style: disc; padding: 0px; color: rgb(136, 136, 136); font-family: monospace; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+								число фактических параметров должно быть равно 
+								числу формальных параметров;</li>
+								<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+								соответствующие фактические и формальные 
+								параметры должны совпадать по порядку следования 
+								и по типу данных.</li>
+				</ul>
+				<h3 style="box-sizing: border-box; font-family: &quot;Open Sans&quot;, sans-serif; font-weight: 600; line-height: 1.1; color: rgb(85, 85, 85); margin: 20px 0px 24px; font-size: 20px; text-transform: uppercase; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span id="i-3" style="box-sizing: border-box;">ПРОЦЕДУРЫ С 
+				ПАРАМЕТРАМИ. ПАРАМЕТР-ПЕРЕМЕННАЯ<br style="box-sizing: border-box;" />
+				(ПЕРЕДАЧА ПАРАМЕТРА ПО ССЫЛКЕ)</span></h3>
+				<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-30-6.png" width="461" height="250" /></p>
+				<ol class="big" style="box-sizing: border-box; margin: 0px 0px 24px; list-style: inside decimal; padding: 0px; counter-reset: num 0; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<p style="box-sizing: border-box; margin: 0px 0px 24px;">
+								В примере <span class="style2">формальные 
+								параметры</span><span>&nbsp;</span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 15.3px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">a</code><span>&nbsp;</span>и<span>&nbsp;</span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 15.3px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">b</code><span>&nbsp;</span>служат 
+								для помещения в них сравниваемых чисел, а 
+								параметр-переменная<span>&nbsp;</span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 15.3px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">max</code><span>&nbsp;</span>— 
+								для сохранения в ней максимального из двух 
+								чисел.<strong style="box-sizing: border-box; font-weight: bold;"><span>&nbsp;</span><span class="style4">Параметр-переменная</span></strong><span>&nbsp;</span>или<span>&nbsp;</span><strong style="box-sizing: border-box; font-weight: bold;">выходной 
+								параметр</strong><span>&nbsp;</span>передает свое 
+								значение в основную программу (фактическому 
+								параметру<span>&nbsp;</span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 15.3px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">m</code>), 
+								т.е. возвращает значение, тогда как формальные<span>&nbsp;</span><strong style="box-sizing: border-box; font-weight: bold;">параметры-значения</strong><span>&nbsp;</span>(входной 
+								параметр), наоборот, принимают значения из 
+								основной программы (из фактических параметров<span>&nbsp;</span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 15.3px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">x</code><span>&nbsp;</span>и<span>&nbsp;</span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 15.3px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">y</code>). 
+								Для параметра-переменной (<code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 15.3px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">max</code>) 
+								используются те ячейки памяти, которые отведены 
+								под соответствующий параметр при вызове 
+								процедуры (ячейка<span>&nbsp;</span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 15.3px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">m</code>).</p>
+								<p style="box-sizing: border-box; margin: 0px 0px 24px;">
+								Таким образом, сформулируем понятия:</p>
+								<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(136, 136, 136); font-family: monospace; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								Если в качестве формального параметра указана 
+								обычная переменная с указанием ее типа, то такой 
+								параметр есть<span>&nbsp;</span><span class="style4"><strong style="box-sizing: border-box; font-weight: bold;">параметр-значение</strong></span><span>&nbsp;</span>или<span>&nbsp;</span><span class="style4"><strong style="box-sizing: border-box; font-weight: bold;">входной 
+								параметр</strong></span><span>&nbsp;</span>(<code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 15.3px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">a</code><span>&nbsp;</span>и<span>&nbsp;</span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 15.3px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">b</code><span>&nbsp;</span>в 
+								примере). Тип данных формального 
+								параметра-значения должен соответствовать типу 
+								данных его фактического параметра (<code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 15.3px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">a</code><span>&nbsp;</span>и<span>&nbsp;</span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 15.3px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">b</code><span>&nbsp;</span>должны 
+								попарно соответствовать типу данных<span>&nbsp;</span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 15.3px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">x</code><span>&nbsp;</span>и<span>&nbsp;</span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 15.3px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">y</code>).</p>
+								<p style="box-sizing: border-box; margin: 0px; color: rgb(136, 136, 136); font-family: monospace; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								Если перед именем формального параметра в 
+								объявлении процедуры стоит служебное слово<span>&nbsp;</span><span class="style4"><em style="box-sizing: border-box;"><strong>var</strong></em></span>, 
+								то такой параметр называется<span>&nbsp;</span><strong style="box-sizing: border-box; font-weight: bold;">параметром-переменной</strong><span>&nbsp;</span>или<span>&nbsp;</span><strong style="box-sizing: border-box; font-weight: bold;">выходным</strong><span>&nbsp;</span>параметром 
+								(<code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 15.3px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">max<span>&nbsp;</span></code>в 
+								примере). Для него используются те ячейки 
+								памяти, которые отведены под соответствующий 
+								параметр при вызове процедуры (<code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 15.3px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">m</code>). 
+								А передача такого параметра называется
+								<span class="style3"><em>передачей по ссылке</em></span> 
+								(ссылка на ту же ячейку в памяти). Фактический 
+								параметр, соответствующий параметру-переменной, 
+								может быть только переменной (не константой, не 
+								литералом и не выражением).</p>
+								<p style="box-sizing: border-box; margin: 0px 0px 24px;">
+								<span style="font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 204); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;" class="style4">
+								<strong>Использование параметров-переменных 
+								позволяет тратить меньше памяти</strong></span></p>
+				</ol>
+				<h3 style="box-sizing: border-box; font-family: &quot;Open Sans&quot;, sans-serif; font-weight: 600; line-height: 1.1; color: rgb(85, 85, 85); margin: 20px 0px 24px; font-size: 20px; text-transform: uppercase; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span id="i-4" style="box-sizing: border-box;">ПЕРЕДАЧА 
+				АРГУМЕНТОВ ПО ЗНАЧЕНИЮ И ПО ССЫЛКЕ</span></h3>
+				<ul style="box-sizing: border-box; margin: 0px 0px 24px 19px; list-style: disc; padding: 0px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								Рассмотрим более подробно два этих понятия:<p style="box-sizing: border-box; margin: 0px 0px 24px;">
+								</p>
+								<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+								<strong style="box-sizing: border-box; font-weight: bold;">
+								Передача по значению</strong>: Значение 
+								фактического параметра копируется в 
+								соответствующий формальный параметр. Изменение 
+								формального параметра не ведет к изменению 
+								фактического параметра<br />
+								<img alt="" src="Pic/r-30-7.png" width="736" height="181" /></li>
+								<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+								<span class="style4">
+								<strong style="box-sizing: border-box; font-weight: bold;">
+								Передача по ссылке</strong></span>: Оба параметра и 
+								формальный и фактический ссылаются на одно и то 
+								же расположение в памяти, поэтому все изменения 
+								в теле процедуры отражаются и на фактическом 
+								параметре.</li>
+								<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+								Изменение формального параметра изменяет и 
+								фактический параметр тоже:<br />
+								<img alt="" src="Pic/r-30-8.png" width="736" height="184" /></li>
+				</ul>
+				<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				&nbsp;</p>
+			</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les30.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les30/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:04:06 GMT -->
+</html>

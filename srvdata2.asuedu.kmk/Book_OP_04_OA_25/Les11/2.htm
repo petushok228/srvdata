@@ -1,0 +1,742 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les11/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:24:06 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: medium;
+}
+    .style3 {
+	font-size: small;
+}
+.style4 {
+	font-size: large;
+	color: rgb(255, 0, 0);
+}
+    .style5 {
+	text-align: center;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 2. Циклы Pascal-Паскаль. </td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При решении подавляющего большинства задач (в том числе и весьма 
+				несложных) в программе практически невозможно задать в явном 
+				виде все операции, которые необходимо выполнить. В самом деле, 
+				пусть необходимо вычислить сумму первых n членов гармонического 
+				ряда:</p>
+				<div class="example hljs ini" style="padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 15px; overflow-x: auto; overflow-y: hidden !important; display: block; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<span class="hljs-attr" style="padding: 0px; margin: 0px;">Y</span>=<span>&nbsp;</span><span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">1</span>+<span>&nbsp;</span><span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">1</span>/<span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">2</span>+<span>&nbsp;</span><span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">1</span>/<span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">3</span><span>&nbsp;</span>+ 
+					…+<span>&nbsp;</span><span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">1</span>/ 
+					n</div>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Очевидно, что с использованием только рассмотренных выше типов 
+				операторов можно составить программу лишь для фиксированного 
+				значения n. Например, при n=5 требуемые вычисления можно задать 
+				с помощью оператора присваивания вида:</p>
+				<div class="example hljs makefile" style="padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 15px; overflow-x: auto; overflow-y: hidden !important; display: block; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					Y:= 1+1/2+1/3+1/4+1/5</div>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если же значение n не фиксируется, а является исходным данным, 
+				вводимым в процессе выполнения программы (и даже константой, 
+				описанной в программе), то аналогичный оператор присваивания 
+				записать невозможно. Ибо запись вида Y:= &nbsp;1+1/2+1/3+…+1/ n в 
+				языках программирования недопустима.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для устранения возникающих трудностей служат<span>&nbsp;</span><b style="padding: 0px; margin: 0px;">операторы 
+				цикла</b>. Они позволяют повторять выполнение отдельных частей 
+				программы. </p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Можно выделить четыре<span>&nbsp;</span><b style="padding: 0px; margin: 0px;">оператора 
+				цикла</b>, присутствующих в том или ином виде во всех языках 
+				программирования:<span>&nbsp;</span></p>
+				<ul>
+					<li>
+					<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<b style="padding: 0px; margin: 0px;">простой 
+				арифметический оператор цикла</b><span>&nbsp;</span>(цикл с 
+				параметром с шагом 1),<span>&nbsp;</span><b style="padding: 0px; margin: 0px;"><br />
+					сложный 
+				арифметический оператор цикла</b><span>&nbsp;</span>(цикл с 
+				параметром произвольного шага),</p>
+					</li>
+					<li>
+					<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<b style="padding: 0px; margin: 0px;">итерационный 
+				оператор цикла с предусловием</b>,<span>&nbsp;</span><b style="padding: 0px; margin: 0px;"><br />
+					итерационный 
+				оператор цикла с постусловием</b>.</p>
+					</li>
+				</ul>
+				<a name="pascal-cycles_1" style="padding: 0px; margin: 0px; color: rgb(70, 122, 167); font-weight: bold; text-decoration: none; font-family: verdana, arial, sans-serif; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; ">
+				</a>
+				<h3 style="padding: 0px; margin: 0px 0px 0.5em; clear: both; font-family: &quot;trebuchet ms&quot;, arial, sans-serif; font-weight: normal; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<strong>Простой арифметический оператор цикла Паскаля (цикл с 
+				параметром)</strong></h3>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вернемся к рассмотренной выше задаче вычисления суммы первых n 
+				членов гармонического ряда, правила которой невозможно задать в 
+				виде арифметического выражения, если значение n заранее не 
+				фиксировано.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				На самом деле вычисление этой суммы можно осуществить по очень 
+				простому и компактному алгоритму: предварительно положим y=0 (с 
+				помощью оператора присваивания y:=0), а затем выполним оператор 
+				присваивания y:= y+1/ i для последовательных значений i= 1,2,…, 
+				n. При каждом очередном выполнении этого оператора к текущему 
+				значению y будет прибавляться очередное слагаемое. Как видно, в 
+				этом случае процесс вычислений будет носить циклический 
+				характер: оператор<span>&nbsp;</span><b style="padding: 0px; margin: 0px;">y:= 
+				y+1/i</b><span>&nbsp;</span>должен выполняться многократно, т.е. 
+				циклически, при различных значениях i.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Этот пример циклического вычислительного процесса является 
+				весьма типичным; его характерные особенности состоят в том, что</p>
+				<ul style="padding: 0px; margin: 0.5em 0px 1em; list-style: none; font-size: 8pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('../../../www.pascal.helpov.net/img/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; " class="style2">
+					число повторений цикла известно к началу его выполнения (в 
+					данном случае оно равно значению n, которое предполагается 
+					заданным к этому времени);</li>
+					<li style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('../../../www.pascal.helpov.net/img/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; " class="style2">
+					управление циклом осуществляется с помощью переменной 
+					порядкового типа, которая в этом циклическом процессе 
+					принимает последовательные значения от заданного начального 
+					до заданного конечного значений (в нашем случае – это 
+					целочисленная переменная i, принимающая последовательные 
+					значения от 1 до n).</li>
+				</ul>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для компактного задания подобного рода вычислительных процессов 
+				и служит<span>&nbsp;</span><b style="padding: 0px; margin: 0px;">оператор 
+				цикла с параметром</b>. Чаще всего используется следующий вид 
+				этого оператора В Паскале:</p>
+				<div class="example hljs delphi" style="padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 15px; overflow-x: auto; overflow-y: hidden !important; display: block; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					For</span><span>&nbsp;</span>V:= E1<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">to</span><span>&nbsp;</span>E2<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">do</span><span>&nbsp;</span>S,</div>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				где<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">for</strong><span>&nbsp;</span>(для),<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">to</strong><span>&nbsp;</span>(увеличиваясь 
+				к) и<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">do</strong><span>&nbsp;</span>(выполнять, 
+				делать) – служебные слова,<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">V</strong><span>&nbsp;</span>– 
+				переменная порядкового типа, называемая параметром цикла,<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">Е1</strong><span>&nbsp;</span>и<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">Е2</strong><span>&nbsp;</span>– 
+				выражения того же типа, что и параметр цикла,<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">S</strong><span>&nbsp;</span>– 
+				оператор, который и выполняется многократно в цикле, называемый 
+				телом цикла.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Заметим, что в Паскале после<span>&nbsp;</span><b style="padding: 0px; margin: 0px;">do</b><span>&nbsp;</span>должен 
+				стоять один оператор, если необходимо выполнить несколько 
+				действий, то они должны быть объединены в один составной 
+				оператор путем заключения в операторные скобки.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Этот оператор цикла Паскаля предусматривает присваивание 
+				параметру цикла V последовательных значений от начального 
+				значения, равного значению выражения Е1, до конечного значения, 
+				равного значению выражения Е2, т.е. при каждом повторении 
+				выполняется оператор присваивания<span>&nbsp;</span><b style="padding: 0px; margin: 0px;">V:= 
+				succ( V)</b>, и выполнение оператора S при каждом значении 
+				параметра цикла V. При этом значения выражений Е1 и Е2 
+				вычисляются один раз, при входе в оператор цикла, а значение 
+				параметра цикла V не должно изменяться в результате выполнения 
+				оператора S. Если заданное конечное значение меньше начального 
+				значения (что допустимо), то оператор S не выполняется ни разу.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В Паскале считается, что при нормальном завершении выполнения 
+				оператора цикла значение параметра цикла не определено.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				С использованием<span>&nbsp;</span><b style="padding: 0px; margin: 0px;">оператора 
+				цикла с параметром</b><span>&nbsp;</span>алгоритм вычисления суммы 
+				первых n членов гармонического ряда может быть задан следующим 
+				образом:</p>
+				<b class="exampleTitle" style="padding: 2px 6px; margin: 0px; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; border-image: initial; border-bottom: none; display: inline; background: rgb(100, 149, 237) url('../../../www.pascal.helpov.net/images/new-1.png'); font-weight: bold; font-size: 8pt; color: white; font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример кода программы для суммирования первых n членов 
+				гармонического ряда</b><div class="example hljs delphi" style="padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 45px; overflow-x: auto; overflow-y: hidden !important; display: block; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					Readln(n);<br style="padding: 0px; margin: 0px;" />
+					Y:=<span>&nbsp;</span><span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">0</span>;<br style="padding: 0px; margin: 0px;" />
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					For</span><span>&nbsp;</span>i:=<span>&nbsp;</span><span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">1</span><span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">to</span><span>&nbsp;</span>n<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">do</span><span>&nbsp;</span>y:= 
+					y+<span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">1</span>/i;</div>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В некоторых случаях бывает удобно, чтобы параметр цикла Паскаля 
+				принимал последовательные, но не возрастающие, а убывающие 
+				значения. Для таких случаев в Паскале предусмотрен оператор 
+				цикла с параметром следующего вида:</p>
+				<div class="example hljs delphi" style="padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 15px; overflow-x: auto; overflow-y: hidden !important; display: block; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					For</span><span>&nbsp;</span>V:= E1<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">downto</span><span>&nbsp;</span>E2<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">do</span><span>&nbsp;</span>S,</div>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				где<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">downto</strong><span>&nbsp;</span>(уменьшаясь 
+				к) – служебное слово, а все остальные слова и выражения имеют 
+				прежний смысл. Изменение параметра цикла от большего значения к 
+				меньшему происходит при выполнении присваивания V:=pred( V). 
+				Заметим, что начальное значение может быть меньше конечного 
+				значения. В этом случае оператор S не выполнится ни разу. 
+				Значение параметра цикла по завершении выполнения такого цикла 
+				так же считается неопределенным.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Следует запомнить и то, что для обоих вариантов записи<span>&nbsp;</span><b style="padding: 0px; margin: 0px;">цикла 
+				с параметром</b><span>&nbsp;</span>справедливо: если начальное и 
+				конечное значения равны, то тело цикла (оператор S) выполнится 
+				один раз.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Заметим так же, что<span>&nbsp;</span><b style="padding: 0px; margin: 0px;">параметр 
+				цикла</b><span>&nbsp;</span>может и не использоваться в теле цикла, 
+				так что основное его назначение – это управление числом 
+				повторений цикла. Например, значение y= x n, где n&gt;=0 – целое, 
+				можно вычислить по следующему алгоритму: предварительно положить 
+				y=1, а затем n раз домножить это значение на x:</p>
+				<b class="exampleTitle" style="padding: 2px 6px; margin: 0px; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; border-image: initial; border-bottom: none; display: inline; background: rgb(100, 149, 237) url('../../../www.pascal.helpov.net/images/new-1.png'); font-weight: bold; font-size: 8pt; color: white; font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример кода программы цикла Паскаля</b><div class="example hljs delphi" style="padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 60px; overflow-x: auto; overflow-y: hidden !important; display: block; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					Readln(n);<br style="padding: 0px; margin: 0px;" />
+					Readln(x);<br style="padding: 0px; margin: 0px;" />
+					Y:=<span>&nbsp;</span><span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">1</span>;<br style="padding: 0px; margin: 0px;" />
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					For</span><span>&nbsp;</span>i:=<span>&nbsp;</span><span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">1</span><span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">to</span><span>&nbsp;</span>n<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">do</span><span>&nbsp;</span>y:= 
+					y*x;</div>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Как видно, здесь параметр цикла i служит лишь для того, чтобы 
+				тело цикла (оператор y:= y* x) выполнилось нужное число раз.</p>
+				<a name="pascal-cycles_2" style="padding: 0px; margin: 0px; color: rgb(70, 122, 167); font-weight: bold; text-decoration: none; font-family: verdana, arial, sans-serif; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; ">
+				</a>
+				<h3 style="padding: 0px; margin: 0px 0px 0.5em; clear: both; font-family: &quot;trebuchet ms&quot;, arial, sans-serif; color: rgb(0, 0, 0); font-weight: normal; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Арифметический оператор цикла Паскаля с произвольным шагом</h3>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Естественным усложнением простого арифметического цикла Паскаля, 
+				является цикл, в котором параметр цикла изменяется не на 1, а на 
+				произвольную величину –<span>&nbsp;</span><b style="padding: 0px; margin: 0px;">шаг 
+				приращения</b>. При этом в процессе выполнения цикла шаг 
+				изменяется по заданному закону. Стандартные операторы для 
+				реализации такого цикла есть в Форте, в других языках их 
+				приходится организовывать из простейшего арифметического цикла.</p>
+				<a name="pascal-cycles_3" style="padding: 0px; margin: 0px; color: rgb(70, 122, 167); font-weight: bold; text-decoration: none; font-family: verdana, arial, sans-serif; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; ">
+				</a>
+				<h3 style="padding: 0px; margin: 0px 0px 0.5em; clear: both; font-family: &quot;trebuchet ms&quot;, arial, sans-serif; color: rgb(0, 0, 0); font-weight: normal; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Итерационные операторы цикла Паскаля</h3>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Итерационные циклы отличаются от циклов с параметром тем, что в 
+				них заранее неизвестно число повторений.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пусть мы отправляемся за грибами и возвращаемся домой, когда 
+				корзина наполнится. Все грибники делятся на 2 категории:</p>
+				<ul style="padding: 0px; margin: 0.5em 0px 1em; list-style: none; font-size: 8pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('../../../www.pascal.helpov.net/img/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; " class="style3">
+					Смотрят, есть ли место в корзине, а уже потом срывают грибы, 
+					если их можно поместить в корзину. (Правда, в жизни таких 
+					грибников встречать не приходилось)</li>
+					<li style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('../../../www.pascal.helpov.net/img/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; " class="style3">
+					Сначала срывают грибы, а уже потом думают, как их положить в 
+					корзину.</li>
+				</ul>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Отсюда получаются два варианта реализации итерационных циклов:<br style="padding: 0px; margin: 0px;" />
+				с предусловием и с постусловием.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В цикле с предусловием сначала проверяется условие, а потом 
+				делается шаг. Грибник придет с полной или почти полной корзиной. 
+				В цикле с постусловием – сначала шаг, а потом проверка. Как 
+				всякий нормальный грибник, этот принесет полную или слегка 
+				переполненную корзину.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Какой алгоритм выбрать? Это зависит от конкретной задачи.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если, сделав шаг без проверки, можно свалиться в яму, то лучше 
+				проверка вначале (как слепой с палочкой). Ну, а если шаг без 
+				проверки вас не пугает, то можно отложить ее до завершения шага.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Нужно также проанализировать событие, которого мы ожидаем. Если 
+				оно может случиться до первого шага, то нужен цикл с 
+				предусловием. А если событие не может случиться до первого шага, 
+				то нужен цикл с постусловием.</p>
+				<a name="pascal-cycles_4" style="padding: 0px; margin: 0px; color: rgb(70, 122, 167); font-weight: bold; text-decoration: none; font-family: verdana, arial, sans-serif; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; ">
+				</a>
+				<h3 style="padding: 0px; margin: 0px 0px 0.5em; clear: both; font-family: &quot;trebuchet ms&quot;, arial, sans-serif; color: rgb(0, 0, 0); font-weight: normal; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Оператор цикла Паскаля с постусловием</h3>
+				<ul style="box-sizing: border-box; margin: 0px 0px 24px 19px; list-style: disc; padding: 0px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+								<span class="style2">Цикл</span><span><span class="style2">&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;" class="style2">Repeat</code><span class="style2">&nbsp;в 
+								Паскале используется для организации повторений 
+								(<a target="_blank" rel="noopener" style="box-sizing: border-box; background-color: transparent; color: rgb(39, 179, 153); text-decoration: none; transition-property: all; transition-duration: 0.1s; transition-timing-function: ease-in-out;" href="https://labs-org.ru/pascal-2_3/#pascal2_4">итераций</a>) 
+								с заранее неизвестным их числом.</span></li>
+								<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+								<span class="style2">Цикл повторяется<span>&nbsp;</span></span><strong style="box-sizing: border-box; font-weight: bold;"><span class="style2">до 
+								тех пор, пока не станет истинным некоторое 
+								условие</span></strong>.</li>
+				</ul>
+				<blockquote style="box-sizing: border-box; padding: 30px 20px 21px 71px; margin: 0px 0px 24px; font-size: 17px; border-left: 5px solid rgb(39, 179, 153); font-family: monospace; position: relative; background: rgb(255, 255, 255); line-height: 1.2; min-height: 90px; color: rgb(136, 136, 136) !important; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: auto; position: relative;">
+												<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 652px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																<tbody style="box-sizing: border-box;">
+																				<tr style="box-sizing: border-box;">
+																								<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 652px;">
+																								<pre class="pascal" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">repeat</span><span class="style2">
+  оператор</span><span style="box-sizing: border-box; color: rgb(204, 102, 204);" class="style2">1</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+  оператор</span><span style="box-sizing: border-box; color: rgb(204, 102, 204);" class="style2">2</span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">;</span><span class="style2">
+  </span><span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">.</span> <span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">.</span> <span style="box-sizing: border-box; color: rgb(0, 0, 102);" class="style2">.;</span><span class="style2">
+  операторN
+</span><span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;" class="style2">until</span><span class="style2"> условие </span><span style="box-sizing: border-box; color: rgb(128, 128, 128); font-style: italic;" class="style2">{до тех пор, пока условие не станет истинным}</span></pre>
+																								</td>
+																				</tr>
+												</table>
+								</div>
+				</blockquote>
+				<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; font-weight: bold;">
+				Блок-схема решения примера:</strong></p>
+				<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+				<img alt="" src="Pic/r-41-4.png" width="500" height="381" /><br style="box-sizing: border-box;" />
+				</p>
+				<div id="yandex_rtb_R-A-219366-2" style="box-sizing: border-box; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="box-sizing: border-box; font-weight: bold;">
+				Решение на Паскале:</strong><br style="box-sizing: border-box;" />
+				</p>
+				<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+				<img alt="" src="Pic/r-41-5.png" width="500" height="234" /></p>
+				<ul style="box-sizing: border-box; margin: 0px 0px 24px 19px; list-style: disc; padding: 0px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+								Операторы образуют тело цикла и будут 
+								выполняться до тех пор, пока значение<span>&nbsp;</span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 15.3px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">&quot;условие&quot;</code><span>&nbsp;</span>не 
+								станет равно<span>&nbsp;</span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 15.3px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">true</code>, 
+								т.е. не станет истинным.</li>
+								<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+								Условием может быть переменная или<span>&nbsp;</span><a target="_blank" rel="noopener" style="box-sizing: border-box; background-color: transparent; color: rgb(39, 179, 153); text-decoration: none; transition-property: all; transition-duration: 0.1s; transition-timing-function: ease-in-out;" href="https://labs-org.ru/pascal-2/#1">логическое 
+								выражение</a>.</li>
+								<li style="box-sizing: border-box; margin: 0px 0px 12px; padding: 0px; position: relative;">
+								Проверка условия осуществляется уже после 
+								первого прохождения операторов тела структуры, 
+								т.е. после первой итерации, т.о. цикл с 
+								постусловием в Паскаль обязательно выполнится 
+								хотя бы один раз, независимо от истинности 
+								условия.</li>
+				</ul>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Рассмотрим теперь математическую задачу. Пусть нам необходимо 
+				вычислить сумму первых членов гармонического ряда, 
+				удовлетворяющих условию 1/i&gt;= e, где 0&lt; e&lt;1, а i=1,2,3…...Эту 
+				задачу можно решить по следующему алгоритму: положить 
+				предварительно y=0 и i=0, а затем в цикле увеличивать i на 1, к 
+				значению y добавлять очередное слагаемое 1/ i до тех пор, пока 
+				текущее значение 1/ i впервые окажется больше заданного значения 
+				0&lt; e&lt;1.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Очевидно, что число повторений этого цикла заранее не известно. 
+				В подобного рода случаях мы можем лишь сформулировать условие, 
+				при выполнении которого процесс добавления к сумме очередного 
+				слагаемого должен завершиться.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для задания таких вычислительных процессов и служит оператор 
+				цикла Паскаля с постусловием. Этот оператор имеет вид:</p>
+				<div class="example hljs delphi" style="padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 15px; overflow-x: auto; overflow-y: hidden !important; display: block; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					Repeat</span><span>&nbsp;</span>S1; S2;…; Si<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">until</span><span>&nbsp;</span>B,</div>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				где<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">repeat</strong><span>&nbsp;</span>(повторять) 
+				и<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">until</strong><span>&nbsp;</span>(до) 
+				– служебные слова, через<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">Si</strong><span>&nbsp;</span>обозначен 
+				любой оператор Паскаля, а через<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">В</strong><span>&nbsp;</span>– 
+				логическое выражение.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При выполнении этого оператора цикла последовательность 
+				операторов, находящихся между словами repeat и until, выполнится 
+				один или более раз. Этот процесс завершается, когда после 
+				очередного выполнения заданной последовательности операторов 
+				логическое выражение В примет (впервые) значение true. Таким 
+				образом, с помощью логического выражения В задается условие 
+				завершения выполнения оператора цикла. Поскольку в данном случае 
+				проверка условия производится после выполнения 
+				последовательности операторов (тела цикла), этот оператор цикла 
+				и называется оператором цикла с постусловием.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				С использованием этого вида оператора цикла Паскаля задача о 
+				суммировании первых членов гармонического ряда, удовлетворяющих 
+				заданному условию, может быть реализована следующим образом:</p>
+				<b class="exampleTitle" style="padding: 2px 6px; margin: 0px; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; border-image: initial; border-bottom: none; display: inline; background: rgb(100, 149, 237) url('../../../www.pascal.helpov.net/images/new-1.png'); font-weight: bold; font-size: 8pt; color: white; font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример кода оператора цикла Паскаля с постусловием</b><div class="example hljs delphi" style="padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 105px; overflow-x: auto; overflow-y: hidden !important; display: block; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<span class="style2">readln(e);<br style="padding: 0px; margin: 0px;" />
+					i:=<span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">0</span>;<br style="padding: 0px; margin: 0px;" />
+					y:=<span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">0</span>;<br style="padding: 0px; margin: 0px;" />
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					Repeat</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp; i:=i+<span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">1</span>;<br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp; y:=y+<span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">1</span>/i;<br style="padding: 0px; margin: 0px;" />
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					Until</span><span>&nbsp;</span><span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">1</span>/i&lt;e;</span><br style="padding: 0px; margin: 0px;" />
+				</div>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Заметим, что оператор цикла с постусловием является более общим, 
+				чем оператор цикла с параметром — любой циклический процесс, 
+				задаваемый с помощью цикла с параметром можно представить в виде 
+				цикла с постусловием. Обратное утверждение неверно. Например, 
+				задача о суммировании первых n членов гармонического ряда, 
+				рассмотренная ранее, с оператором цикла с постусловием будет 
+				выглядеть так:</p>
+				<b class="exampleTitle" style="padding: 2px 6px; margin: 0px; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; border-image: initial; border-bottom: none; display: inline; background: rgb(100, 149, 237) url('../../../www.pascal.helpov.net/images/new-1.png'); font-weight: bold; font-size: 8pt; color: white; font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример кода оператора цикла Паскаля с постусловием</b><div class="example hljs delphi" style="padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: medium; text-align: left; height: 105px; overflow-x: auto; overflow-y: hidden !important; display: block; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					Readln(n);<br style="padding: 0px; margin: 0px;" />
+					i:=<span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">0</span>;<br style="padding: 0px; margin: 0px;" />
+					y:=<span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">0</span>;<br style="padding: 0px; margin: 0px;" />
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					Repeat</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp; i:=i+<span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">1</span>;<br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp; y:=y+<span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">1</span>/i;<br style="padding: 0px; margin: 0px;" />
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					Until</span><span>&nbsp;</span>i&gt;n;</div>
+				<a name="pascal-cycles_5" style="padding: 0px; margin: 0px; color: rgb(70, 122, 167); font-weight: bold; text-decoration: none; font-family: verdana, arial, sans-serif; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; ">
+				</a>
+				<h3 style="padding: 0px; margin: 0px 0px 0.5em; clear: both; font-family: &quot;trebuchet ms&quot;, arial, sans-serif; color: rgb(0, 0, 0); font-weight: normal; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Оператор цикла Паскаля с предусловием</h3>
+				<h3>
+				Цикл While</h3>
+				<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Цикл<span>&nbsp;</span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 15.3px; padding: 2px 4px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">while</code><span>&nbsp;</span>в 
+				Паскале применяется для создания повторений<span>&nbsp;</span><strong style="box-sizing: border-box; font-weight: bold;">с 
+				неизвестным заранее их числом</strong>. Повторения (<a target="_blank" rel="noopener noreferrer" style="box-sizing: border-box; background-color: transparent; color: rgb(39, 179, 153); text-decoration: none; transition-property: all; transition-duration: 0.1s; transition-timing-function: ease-in-out;" href="https://labs-org.ru/pascal-2_3/#pascal2_4">итерации</a>) 
+				будут осуществляться,<span>&nbsp;</span><strong style="box-sizing: border-box; font-weight: bold;">пока 
+				истинно некоторое условие</strong>.</p>
+				<p style="box-sizing: border-box; margin: 0px 0px 24px; color: rgb(85, 85, 85); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Блок-схема, соответствующая циклу<span>&nbsp;</span><em style="box-sizing: border-box;">while</em><span>&nbsp;</span>в 
+				Паскале:<br style="box-sizing: border-box;" />
+				<img alt="" src="Pic/r-41-6.png" width="322" height="578" /></p>
+				<blockquote style="box-sizing: border-box; padding: 30px 20px 21px 71px; margin: 0px 0px 24px; font-size: 17px; border-left: 5px solid rgb(39, 179, 153); font-family: monospace; position: relative; background: rgb(255, 255, 255); line-height: 1.2; min-height: 90px; color: rgb(136, 136, 136) !important; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="wp_syntax" style="box-sizing: border-box; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; margin: 0px 0px 1.5em; overflow: auto hidden; width: auto; position: relative;">
+												<table style="box-sizing: border-box; border-collapse: collapse !important; border-spacing: 0px; background-color: transparent; margin: 0px !important; width: 652px; vertical-align: middle; border: none !important; padding: 0px !important;">
+																<tbody style="box-sizing: border-box;">
+																				<tr style="box-sizing: border-box;">
+																								<td class="code" style="box-sizing: border-box; padding: 0px !important; text-align: left !important; border: none !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 652px;">
+																								<pre class="pascal" style="box-sizing: border-box; overflow: visible !important; font-family: monospace; font-size: 14px !important; display: block; padding: 0px 4px !important; margin: 0px !important; line-height: 16px !important; word-break: break-all; overflow-wrap: break-word; color: rgb(51, 51, 51); background: transparent !important; border: none !important; border-radius: 0px !important; width: auto !important; float: none !important; clear: none !important; white-space: pre !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;"><span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;">while</span> условие <span style="box-sizing: border-box; color: rgb(0, 0, 0); font-weight: bold;">do</span> <span style="box-sizing: border-box; color: rgb(128, 128, 128); font-style: italic;">{Пока условие истинно выполняется оператор}</span>
+   оператор<span style="box-sizing: border-box; color: rgb(0, 0, 102);">;</span></pre>
+																								</td>
+																				</tr>
+												</table>
+								</div>
+				</blockquote>
+				<pre class="language-clike" tabindex="0" style="box-sizing: border-box; margin: 10px 0px; padding: 10px 1em; border-radius: 12px; color: var(--tp-secondary-color-text); background: var(--tp-tertiary-background-color); font-family: &quot;jetbrains mono&quot;, Consolas, Monaco, &quot;andale mono&quot;, &quot;ubuntu mono&quot;, monospace; font-variant-ligatures: none; text-align: left; white-space: pre; word-spacing: 0px; word-break: normal; overflow-wrap: normal; line-height: 1.5; tab-size: 42; hyphens: none; contain: content; overflow: auto; font-size: 18px; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="lazy-code entered language-clike exited" data-ll-status="entered" style="box-sizing: border-box; margin: 0px; padding: 0px; color: var(--tp-secondary-color-text); background: 0px 0px; font-family: &quot;jetbrains mono&quot;, Consolas, Monaco, &quot;andale mono&quot;, &quot;ubuntu mono&quot;, monospace; font-variant-ligatures: none; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; overflow-wrap: normal; line-height: 1.5; tab-size: 42; hyphens: none; contain: content;"><span class="token keyword" style="box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 119, 170);">while</span><span class="token punctuation" style="box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(153, 153, 153);">(</span>i<span class="token space" style="box-sizing: border-box; margin: 0px; padding: 0px;"> </span><span class="token operator" style="box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(154, 110, 58);">&lt;</span><span class="token space" style="box-sizing: border-box; margin: 0px; padding: 0px;"> </span><span class="token number" style="box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(153, 0, 85);">10</span><span class="token punctuation" style="box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(153, 153, 153);">)</span><span class="token space" style="box-sizing: border-box; margin: 0px; padding: 0px;"> </span><span class="token punctuation" style="box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(153, 153, 153);">{</span><span class="token space" style="box-sizing: border-box; margin: 0px; padding: 0px;"> </span>тело<span class="token space" style="box-sizing: border-box; margin: 0px; padding: 0px;"> </span><span class="token punctuation" style="box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(153, 153, 153);">}</span></code></pre>
+				<p style="box-sizing: border-box; margin: 16px 0px; padding: 0px; font-size: 18px; line-height: var(--tp-line-height-primary-text); letter-spacing: normal; word-break: break-word; color: rgb(15, 17, 17); font-family: Inter, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Относится к тому же типу циклов, что и For, — цикл с 
+				предусловием. С его помощью можно создать безусловный цикл, 
+				например while(1) — бесконечный цикл. Чтобы его закончить, нужно 
+				использовать служебное слово break.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В случае оператора цикла Паскаля с постусловием входящая в него 
+				последовательность операторов заведомо будет выполняться хотя бы 
+				один раз. Между тем довольно часто встречаются такие циклические 
+				процессы, когда число повторений цикла тоже неизвестно заранее, 
+				но при некоторых значениях исходных данных предусмотренные в 
+				цикле действия вообще не должны выполняться, и даже однократное 
+				выполнение этих действий может привести к неверным или 
+				неопределенным результатам.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пусть, например, дано вещественное число М. Требуется найти 
+				наименьшее целое неотрицательное число k, при котором 3 k&gt; M. 
+				Эту задачу можно решить по следующему алгоритму: предварительно 
+				положить y=1 и k=0; затем в цикле домножать значение y на 3 и 
+				увеличивать значение k на 1 до тех пор, пока текущее значение y 
+				впервые окажется больше значения М. На первый взгляд, здесь 
+				можно воспользоваться оператором цикла с постусловием:</p>
+				<b class="exampleTitle" style="padding: 2px 6px; margin: 0px; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; border-image: initial; border-bottom: none; display: inline; background: rgb(100, 149, 237) url('../../../www.pascal.helpov.net/images/new-1.png'); font-weight: bold; font-size: 8pt; color: white; font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример кода оператора цикла Паскаля с постусловием</b><div class="example hljs delphi" style="padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 75px; overflow-x: auto; overflow-y: hidden !important; display: block; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					y:=<span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">1</span>; 
+					k:=<span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">0</span>;<br style="padding: 0px; margin: 0px;" />
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					Repeat</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;y:=y*<span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">3</span>;<br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;k:=k+<span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">1</span>;<br style="padding: 0px; margin: 0px;" />
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					Until</span><span>&nbsp;</span>y&gt; M;</div>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Однако нетрудно убедиться в том, что при M&lt;1 будет получен 
+				неправильный результат k=1, тогда как должно быть получено k=0: 
+				в этом случае предварительно сформированное значение k=0 
+				является окончательным результатом и действия, предусмотренные в 
+				цикле, выполняться не должны.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для задания подобного рода вычислительных процессов, когда число 
+				повторений цикла заранее неизвестно и действия, предусмотренные 
+				в цикле, могут вообще не выполняться, и служит оператор цикла с 
+				предусловием. Этот оператор цикла имеет в Паскале следующий вид:</p>
+				<div class="example hljs delphi" style="padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 15px; overflow-x: auto; overflow-y: hidden !important; display: block; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					While</span><span>&nbsp;</span>B<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">do</span><span>&nbsp;</span>S,</div>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				где<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">while</strong><span>&nbsp;</span>(пока),<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">do</strong><span>&nbsp;</span>(делать, 
+				выполнять) – служебные слова,<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">В</strong><span>&nbsp;</span>– 
+				логическое выражение,<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">S</strong><span>&nbsp;</span>– 
+				оператор. Здесь оператор S выполняется ноль или более раз, но 
+				перед каждым очередным его выполнением вычисляется значение 
+				выражения В, и оператор S выполняется только в том случае, когда 
+				значение выражения В true. Выполнение оператора цикла 
+				завершается, когда выражение В впервые принимает значение false. 
+				Если это значение выражение В принимает при первом же его 
+				вычислении, то оператор S не выполнится ни разу.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В рассматриваемой нами задаче правильное значение k при любом 
+				значении М может быть получено следующим образом:</p>
+				<b class="exampleTitle" style="padding: 2px 6px; margin: 0px; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; border-image: initial; border-bottom: none; display: inline; background: rgb(100, 149, 237) url('../../../www.pascal.helpov.net/images/new-1.png'); font-weight: bold; font-size: 8pt; color: white; font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример кода оператора цикла Паскаля с предусловием</b><div class="example hljs delphi" style="padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 90px; overflow-x: auto; overflow-y: hidden !important; display: block; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					y:=<span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">1</span>; 
+					k:=<span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">0</span>;<br style="padding: 0px; margin: 0px;" />
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					While</span><span>&nbsp;</span>y&lt;=M<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">do</span><br style="padding: 0px; margin: 0px;" />
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					Begin</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;y:=y*<span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">3</span>;<br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;k:=k+<span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">1</span>;<br style="padding: 0px; margin: 0px;" />
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					End</span>;</div>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Оператор цикла Паскаля с предусловием можно считать наиболее 
+				универсальным – с использованием таких операторов можно задать и 
+				циклические процессы, определяемые операторами цикла с 
+				параметром и постусловием.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Отметим<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">отличия 
+				и особенности хорошего стиля работы</strong><span>&nbsp;</span>с 
+				рассмотренными циклическими операторами.</p>
+				<table border="1" cellspacing="0" cellpadding="0" width="100%" style="padding: 0px; margin: 2em 0px 0.2em 20px; clear: both; width: 701.094px; table-layout: fixed; border-collapse: collapse; empty-cells: show; background-color: rgb(233, 232, 244); color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<tbody style="padding: 0px; margin: 0px;">
+						<tr style="padding: 0px; margin: 0px;">
+							<td style="border: 2px solid rgb(255, 255, 255); padding: 2px 7px; margin: 0px; height: 3em; background-color: rgb(225, 225, 225); text-align: left; font-weight: normal; color: rgb(80, 80, 80); " class="style2">
+							<strong style="padding: 0px; margin: 0px;">Цикл с 
+							предусловием While (пока условие истинно)</strong></td>
+							<td style="border: 2px solid rgb(255, 255, 255); padding: 2px 7px; margin: 0px; height: 3em; background-color: rgb(225, 225, 225); text-align: left; font-weight: normal; color: rgb(80, 80, 80); width: 464px;" class="style2">
+							<strong style="padding: 0px; margin: 0px;">Цикл с 
+							постусловием Repeat (до истинности условия)</strong></td>
+						</tr>
+						<tr style="padding: 0px; margin: 0px;">
+							<td colspan="2" style="border: 2px solid rgb(255, 255, 255); padding: 2px 7px; margin: 0px; height: 3em; background-color: rgb(225, 225, 225); text-align: left; font-weight: normal; color: rgb(80, 80, 80); " class="style2">
+							<ul style="padding: 0px; margin: 0.5em 0px 1em; list-style: none; font-size: 8pt;">
+								<li type="1" style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('../../../www.pascal.helpov.net/img/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; " class="style2">
+								До начала цикла должны быть сделаны начальные 
+								установки переменных, управляющих условием 
+								цикла, для корректного входа в цикл</li>
+							</ul>
+							</td>
+						</tr>
+						<tr style="padding: 0px; margin: 0px;">
+							<td colspan="2" style="border: 2px solid rgb(255, 255, 255); padding: 2px 7px; margin: 0px; height: 3em; background-color: rgb(225, 225, 225); text-align: left; font-weight: normal; color: rgb(80, 80, 80); " class="style2">
+							<ul style="padding: 0px; margin: 0.5em 0px 1em; list-style: none; font-size: 8pt;">
+								<li type="1" value="2" style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('../../../www.pascal.helpov.net/img/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; " class="style2">
+								В теле цикла должны присутствовать операторы, 
+								изменяющие переменные условия так, чтобы цикл 
+								через некоторое число итераций завершился</li>
+							</ul>
+							</td>
+						</tr>
+						<tr style="padding: 0px; margin: 0px;">
+							<td style="border: 2px solid rgb(255, 255, 255); padding: 2px 7px; margin: 0px; height: 3em; background-color: rgb(225, 225, 225); text-align: left; font-weight: normal; color: rgb(80, 80, 80); " class="style2">
+							<ul style="padding: 0px; margin: 0.5em 0px 1em; list-style: none; font-size: 8pt;">
+								<li type="1" value="3" style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('../../../www.pascal.helpov.net/img/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; " class="style2">
+								Цикл работает пока условие истинно (пока True)</li>
+							</ul>
+							</td>
+							<td style="border: 2px solid rgb(255, 255, 255); padding: 2px 7px; margin: 0px; height: 3em; background-color: rgb(225, 225, 225); text-align: left; font-weight: normal; color: rgb(80, 80, 80); width: 464px;" class="style2">
+							<ul style="padding: 0px; margin: 0.5em 0px 1em; list-style: none; font-size: 8pt;">
+								<li type="1" value="3" style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('../../../www.pascal.helpov.net/img/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; " class="style2">
+								Цикл работает пока условие ложно (пока False)</li>
+							</ul>
+							</td>
+						</tr>
+						<tr style="padding: 0px; margin: 0px;">
+							<td style="border: 2px solid rgb(255, 255, 255); padding: 2px 7px; margin: 0px; height: 3em; background-color: rgb(225, 225, 225); text-align: left; font-weight: normal; color: rgb(80, 80, 80); " class="style2">
+							<ul style="padding: 0px; margin: 0.5em 0px 1em; list-style: none; font-size: 8pt;">
+								<li type="1" value="4" style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('../../../www.pascal.helpov.net/img/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; " class="style2">
+								Цикл завершается, когда условие становится 
+								ложным (до False)</li>
+							</ul>
+							</td>
+							<td style="border: 2px solid rgb(255, 255, 255); padding: 2px 7px; margin: 0px; height: 3em; background-color: rgb(225, 225, 225); text-align: left; font-weight: normal; color: rgb(80, 80, 80); width: 464px;" class="style2">
+							<ul style="padding: 0px; margin: 0.5em 0px 1em; list-style: none; font-size: 8pt;">
+								<li type="1" value="4" style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('../../../www.pascal.helpov.net/img/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; " class="style2">
+								Цикл завершается, когда условие становится 
+								истинным (до True)</li>
+							</ul>
+							</td>
+						</tr>
+						<tr style="padding: 0px; margin: 0px;">
+							<td style="border: 2px solid rgb(255, 255, 255); padding: 2px 7px; margin: 0px; height: 3em; background-color: rgb(225, 225, 225); text-align: left; font-weight: normal; color: rgb(80, 80, 80); " class="style2">
+							<ul style="padding: 0px; margin: 0.5em 0px 1em; list-style: none; font-size: 8pt;">
+								<li type="1" value="5" style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('../../../www.pascal.helpov.net/img/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; " class="style2">
+								Цикл может не выполниться ни разу, если исходное 
+								значение условия при входе в цикл False</li>
+							</ul>
+							</td>
+							<td style="border: 2px solid rgb(255, 255, 255); padding: 2px 7px; margin: 0px; height: 3em; background-color: rgb(225, 225, 225); text-align: left; font-weight: normal; color: rgb(80, 80, 80); width: 464px;" class="style2">
+							<ul style="padding: 0px; margin: 0.5em 0px 1em; list-style: none; font-size: 8pt;">
+								<li type="1" value="5" style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('../../../www.pascal.helpov.net/img/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; " class="style2">
+								Цикл обязательно выполнится как минимум один раз</li>
+							</ul>
+							</td>
+						</tr>
+						<tr style="padding: 0px; margin: 0px;">
+							<td style="border: 2px solid rgb(255, 255, 255); padding: 2px 7px; margin: 0px; height: 3em; background-color: rgb(225, 225, 225); text-align: left; font-weight: normal; color: rgb(80, 80, 80); " class="style2">
+							<ul style="padding: 0px; margin: 0.5em 0px 1em; list-style: none; font-size: 8pt;">
+								<li type="1" value="6" style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('../../../www.pascal.helpov.net/img/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; " class="style2">
+								Если в теле цикла требуется выполнить более 
+								одного оператора, то необходимо использовать 
+								составной оператор</li>
+							</ul>
+							</td>
+							<td style="border: 2px solid rgb(255, 255, 255); padding: 2px 7px; margin: 0px; height: 3em; background-color: rgb(225, 225, 225); text-align: left; font-weight: normal; color: rgb(80, 80, 80); width: 464px;" class="style2">
+							<ul style="padding: 0px; margin: 0.5em 0px 1em; list-style: none; font-size: 8pt;">
+								<li type="1" value="6" style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('../../../www.pascal.helpov.net/img/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; " class="style2">
+								Независимо от количества операторов в теле 
+								цикла, использование составного оператора не 
+								требуется</li>
+							</ul>
+							</td>
+						</tr>
+						<tr style="padding: 0px; margin: 0px;">
+							<td colspan="2" align="center" style="border: 2px solid rgb(255, 255, 255); padding: 2px 7px; margin: 0px; height: 3em; background-color: rgb(225, 225, 225); text-align: left; font-weight: normal; color: rgb(80, 80, 80); " class="style2">
+							<strong style="padding: 0px; margin: 0px;">Цикл со 
+							счетчиком (с параметром) For</strong></td>
+						</tr>
+						<tr style="padding: 0px; margin: 0px;">
+							<td colspan="2" style="border: 2px solid rgb(255, 255, 255); padding: 2px 7px; margin: 0px; height: 3em; background-color: rgb(225, 225, 225); text-align: left; font-weight: normal; color: rgb(80, 80, 80); " class="style2">
+							<ul style="padding: 0px; margin: 0.5em 0px 1em; list-style: none; font-size: 8pt;">
+								<li style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('../../../www.pascal.helpov.net/img/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; " class="style2">
+								Начальная установка переменной счетчика цикла до 
+								заголовка не требуется</li>
+							</ul>
+							</td>
+						</tr>
+						<tr style="padding: 0px; margin: 0px;">
+							<td colspan="2" style="border: 2px solid rgb(255, 255, 255); padding: 2px 7px; margin: 0px; height: 3em; background-color: rgb(225, 225, 225); text-align: left; font-weight: normal; color: rgb(80, 80, 80); " class="style2">
+							<ul style="padding: 0px; margin: 0.5em 0px 1em; list-style: none; font-size: 8pt;">
+								<li style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('../../../www.pascal.helpov.net/img/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; " class="style2">
+								Изменение в теле цикла значений переменных, 
+								стоящих в заголовке не допускается</li>
+							</ul>
+							</td>
+						</tr>
+						<tr style="padding: 0px; margin: 0px;">
+							<td colspan="2" style="border: 2px solid rgb(255, 255, 255); padding: 2px 7px; margin: 0px; height: 3em; background-color: rgb(225, 225, 225); text-align: left; font-weight: normal; color: rgb(80, 80, 80); " class="style2">
+							<ul style="padding: 0px; margin: 0.5em 0px 1em; list-style: none; font-size: 8pt;">
+								<li style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('../../../www.pascal.helpov.net/img/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; " class="style2">
+								Количество итераций цикла неизменно и точно 
+								определяется значениями нижней и верхней границ 
+								и шага приращения</li>
+							</ul>
+							</td>
+						</tr>
+						<tr style="padding: 0px; margin: 0px;">
+							<td colspan="2" style="border: 2px solid rgb(255, 255, 255); padding: 2px 7px; margin: 0px; height: 3em; background-color: rgb(225, 225, 225); text-align: left; font-weight: normal; color: rgb(80, 80, 80); " class="style2">
+							<ul style="padding: 0px; margin: 0.5em 0px 1em; list-style: none; font-size: 8pt;">
+								<li style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('../../../www.pascal.helpov.net/img/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; " class="style2">
+								Нормальный ход работы цикла может быть нарушен 
+								оператором goto или процедурами Break и Continue</li>
+							</ul>
+							</td>
+						</tr>
+						<tr style="padding: 0px; margin: 0px;">
+							<td colspan="2" style="border: 2px solid rgb(255, 255, 255); padding: 2px 7px; margin: 0px; height: 3em; background-color: rgb(225, 225, 225); text-align: left; font-weight: normal; color: rgb(80, 80, 80); " class="style2">
+							<ul style="padding: 0px; margin: 0.5em 0px 1em; list-style: none; font-size: 8pt;">
+								<li style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('../../../www.pascal.helpov.net/img/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; " class="style2">
+								Цикл может не выполниться ни разу, если шаг 
+								цикла будет изменять значение счетчика от нижней 
+								границы в направлении, противоположном верхней 
+								границе</li>
+							</ul>
+							</td>
+						</tr>
+				</table>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Оператор, который выполняется в цикле, сам может быть циклом. 
+				Это относится ко всем видам циклов. В результате мы получаем<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">вложенные 
+				циклы</strong>. Механизм работы вложенных циклов удобнее всего 
+				рассмотреть на примере вложенных циклов с параметром. Пусть нам 
+				нужно описать работу электронных часов, начиная с момента 
+				времени 0 часов, 0 минут, 0 секунд. Значение минут станет равным 
+				1 только после того, как секунды «пробегут» все последовательные 
+				значения от 0 до 59. Часы изменят свое значение на 1 только 
+				после того, как минуты «пробегут» все последовательные значения 
+				от 0 до 59. Таким образом, вывод всех значений времени от начала 
+				суток до конца суток может быть представлен следующим фрагментом 
+				программы:</p>
+				<div class="example hljs delphi" style="padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 60px; overflow-x: auto; overflow-y: hidden !important; display: block; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					For</span><span>&nbsp;</span>h:=<span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">0</span><span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">to</span><span>&nbsp;</span><span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">23</span><span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">do</span><br style="padding: 0px; margin: 0px;" />
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					For</span><span>&nbsp;</span>m:=<span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">0</span><span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">to</span><span>&nbsp;</span><span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">59</span><span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">do</span><br style="padding: 0px; margin: 0px;" />
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					For</span><span>&nbsp;</span>s:=<span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">0</span><span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">to</span><span>&nbsp;</span><span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">59</span><span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">do</span><br style="padding: 0px; margin: 0px;" />
+					Writeln(h,<span class="hljs-string" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">&#39;:&#39;</span>,m,<span class="hljs-string" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">&#39;:&#39;</span>,s);</div>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для удобства реализации циклических структур на Паскале в 
+				последних версиях языка введены операторы<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">break</strong><span>&nbsp;</span>и<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">continue</strong>, 
+				применяемые внутри циклов. Они расширяют возможности 
+				использования циклов и улучшают структуру программы.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В процессе выполнения тела цикла до полного завершения цикла 
+				могут возникнуть дополнительные условия, требующие завершения 
+				цикла. В этом случае цикл может быть прекращен оператором break.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В ходе выполнения цикла может возникнуть условие, при котором 
+				необходимо пропустить все или некоторые действия, 
+				предусмотренные в цикле, не прекращая работу цикла совсем. Для 
+				этого используется оператор continue, который передает 
+				управление в ту точку программы, где проверяется условие 
+				продолжения или прекращения цикла.</p>
+                <p></p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les11.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les11/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:24:51 GMT -->
+</html>

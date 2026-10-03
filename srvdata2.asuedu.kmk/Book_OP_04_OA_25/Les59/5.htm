@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les59/5.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:53:33 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style4 {
+				color: #FF0000;
+				text-decoration: underline;
+}
+    .style2 {
+				text-align: center;
+}
+    .style5 {
+				color: #0000FF;
+}
+    .style6 {
+	font-size: medium;
+}
+.style7 {
+	font-size: small;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Простейший пример объявления делегата и его использование в 
+				программе</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p>
+				<a target="_blank" rel="noopener noreferrer" style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(36, 137, 13); text-decoration: underline;" href="https://www.bestprog.net/ru/2017/10/21/an-example-of-solving-a-problem-that-calculates-the-characteristics-of-geometric-figures-using-delegates_ru/">
+				<strong style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: 700; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+				<u>
+				<span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 0);">Пример решения задачи, которая вычисляет 
+								характеристики геометрических фигур с 
+								использованием делегатов</span></u></strong></a></p>
+				<h3 style="border: 0px; font-family: Lato, sans-serif; font-size: 22px; font-style: normal; font-weight: 700; margin: 36px 0px 12px; outline: 0px; padding: 0px; vertical-align: baseline; clear: both; line-height: 1.09091; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="border: 0px; font-family: inherit; font-size: 22px; font-style: inherit; font-weight: 700; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+				<span style="border: 0px; font-family: inherit; font-size: 22px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 0);">
+				&nbsp;<span>&nbsp;</span></span></strong>1. Условие задачи</h3>
+				<p>
+				В приложении <span>&nbsp;</span>объявить тип делегата, 
+				который ссылается на метод. Требования к сигнатуре метода 
+				следующие:</p>
+				<ul style="box-sizing: border-box; border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px 20px; outline: 0px; padding: 0px; vertical-align: baseline; list-style: disc; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								метод получает входным параметром переменную 
+								типа<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">double</span>;</li>
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								метод возвращает значение типа<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">double</span>, 
+								которое есть результатом вычисления.</li>
+				</ul>
+				<p>
+				Реализовать вызов методов с помощью делегата, которые получают 
+				радиус<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);"><em style="border: 0px; font-family: inherit; font-size: 16px; font-style: italic; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">R</em></span><span>&nbsp;</span>и 
+				вычисляют:</p>
+				<p>
+				<img alt="" src="Pic/r-61-3.png" width="408" height="107" /></p>
+				<p>
+				Методы должны быть объявлены как статические (с использованием 
+				ключевого слова<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">static</span>).</p>
+				<h5 id="q05_2" style="border: 0px; font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-weight: 700; margin: 36px 0px 12px; outline: 0px; padding: 0px; vertical-align: baseline; clear: both; line-height: 1.33333; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				2. Размышления</h5>
+				<p>
+				Для работы программы выбираем такие имена:</p>
+				<ul style="box-sizing: border-box; border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px 20px; outline: 0px; padding: 0px; vertical-align: baseline; list-style: disc; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								название типа делегата –<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">CalcFigure</span>;</li>
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								название делегата (экземпляра объекта) –<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">CF</span>;</li>
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								название метода, который вычисляет длину 
+								окружности –<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">Get_Length()</span>;</li>
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								название метода, который вычисляет площадь круга 
+								–<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">Get_Area()</span>;</li>
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								название метода, который вычисляет объем шара –<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">Get_Volume()</span>.</li>
+				</ul>
+				<p>
+				<img alt="" src="Pic/r-61-42.png" width="222" height="274" /></p>
+				<h3 style="border: 0px; font-family: Lato, sans-serif; font-size: 22px; font-style: normal; font-weight: 700; margin: 36px 0px 12px; outline: 0px; padding: 0px; vertical-align: baseline; clear: both; line-height: 1.09091; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="border: 0px; font-family: inherit; font-size: 22px; font-style: inherit; font-weight: 700; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+				<span style="border: 0px; font-family: inherit; font-size: 22px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 0);">
+				&nbsp;</span></strong>3. Решение (фрагменты кода)</h3>
+				<h5 id="q05_3_1" style="border: 0px; font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-weight: 700; margin: 36px 0px 12px; outline: 0px; padding: 0px; vertical-align: baseline; clear: both; line-height: 1.33333; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				1. Объявление типа делегата</h5>
+				<p>
+				<span class="style7">Тип делегата объявляется в некотором классе. Это может быть, 
+				например, класс <span class="style5"><strong>FigureDelegat</strong></span>.</p>
+				<p>
+				В классе нужно объявить тип делегата с именем</span><span><span class="style7">&nbsp;</span></span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style7">CalcFigure</span><span class="style7">&nbsp;в 
+				соответствии с условием задачи. Фрагмент такого объявления 
+				приведен ниже:</span></p>
+				<pre style="border: 1px solid rgba(0, 0, 0, 0.1); font-family: monospace, serif; font-size: 15px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 12px; vertical-align: baseline; hyphens: none; line-height: 1.6; box-sizing: border-box; max-width: 100%; overflow: auto; white-space: pre-wrap; overflow-wrap: break-word; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// объявление типа делегата CalcFigure</span><span class="style6">
+</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">delegate double</span> <span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);" class="style6">CalcFigure</span>(<span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">double</span><span class="style6"> r);</span></pre>
+				<h3 style="border: 0px; font-family: Lato, sans-serif; font-size: 22px; font-style: normal; font-weight: 700; margin: 36px 0px 12px; outline: 0px; padding: 0px; vertical-align: baseline; clear: both; line-height: 1.09091; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-61-41.png" width="644" height="623" /></h3>
+				<h3 style="border: 0px; font-family: Lato, sans-serif; font-size: 22px; font-style: normal; font-weight: 700; margin: 36px 0px 12px; outline: 0px; padding: 0px; vertical-align: baseline; clear: both; line-height: 1.09091; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="border: 0px; font-family: inherit; font-size: 22px; font-style: inherit; font-weight: 700; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+				<span style="border: 0px; font-family: inherit; font-size: 22px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 0);">
+				&nbsp;</span></strong>2. Объявление методов в 
+				классе</h3>
+				<p>
+				<span class="style7">Методы в классе объявляются как статические с ключевым словом</span><span><span class="style7">&nbsp;</span></span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style7">static</span>.</p>
+				<pre style="border: 1px solid rgba(0, 0, 0, 0.1); font-family: monospace, serif; font-size: 15px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 12px; vertical-align: baseline; hyphens: none; line-height: 1.6; box-sizing: border-box; max-width: 100%; overflow: auto; white-space: pre-wrap; overflow-wrap: break-word; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// объявление статических методов в классе  </span><strong class="style4"><span class="style6">Функция (метод), добавляемая к делегатам, должна иметь тот же тип и сигнатуру, что и делегат;</span></strong><span class="style6">
+</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// длина окружности</span><span class="style6">
+</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">public static double</span> <span class="style6">Get_Length(</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">double</span><span class="style6"> r)
+{
+    </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">double</span><span class="style6"> length;
+    length = 2 * 3.1415 * r;
+    </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">return</span><span class="style6"> length;
+}
+
+</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// площадь круга</span><span class="style6">
+</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">public static double</span> <span class="style6">Get_Area(</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">double</span><span class="style6"> r)
+{
+    </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">double</span><span class="style6"> area;
+    area = 3.1415 * r * r;
+    </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">return</span><span class="style6"> area;
+}
+
+</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// объем шара</span><span class="style6">
+</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">public static double</span> <span class="style6">Get_Volume(</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">double</span><span class="style6"> r)
+{
+    </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">double</span><span class="style6"> volume;
+    volume = 3.1415 * r * r * r * 4.0 / 3.0;
+    </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">return</span><span class="style6"> volume;
+</span>}</pre>
+				<h5 id="q05_3_3" style="border: 0px; font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-weight: 700; margin: 36px 0px 12px; outline: 0px; padding: 0px; vertical-align: baseline; clear: both; line-height: 1.33333; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				&nbsp;</h5>
+				<h5 style="border: 0px; font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-weight: 700; margin: 36px 0px 12px; outline: 0px; padding: 0px; vertical-align: baseline; clear: both; line-height: 1.33333; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				3. Демонстрация вызова методов с помощью делегата</h5>
+				<p>
+				<strong style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: 700; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+				Демонстрация вызова методов с помощью делегата</strong><span>&nbsp;</span>из 
+				другого программного кода, </p>
+				<p>
+				<img alt="" src="Pic/r-61-40.png" width="810" height="477" /></p>
+				<p>
+				&nbsp;</p>
+				<p>
+				<span class="style7">На рисунке 3 схематично изображена работа делегата</span><span><span class="style7">&nbsp;</span></span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style7">CF</span>.</p>
+				<p class="style2">
+				<img alt="" src="Pic/r-61-4.png" width="1250" height="419" /></p>
+				<p style="border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: center;">
+				Рис. 3. Делегат<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">CF</span></p>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les62.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les59/5.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:53:46 GMT -->
+</html>

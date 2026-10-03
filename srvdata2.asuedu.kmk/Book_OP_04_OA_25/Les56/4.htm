@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les56/4.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:47:56 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: small;
+}
+    .style3 {
+	color: #0000FF;
+}
+.style4 {
+	color: #800000;
+}
+.style5 {
+	color: #0000FF;
+	margin-left: 40px;
+}
+.style6 {
+	margin-left: 40px;
+}
+.style7 {
+	color: #800000;
+	text-decoration: underline;
+	font-size: small;
+}
+.style8 {
+	color: #FF0000;
+	font-size: medium;
+}
+    .style9 {
+	font-size: medium;
+}
+.style10 {
+	color: #800000;
+	font-size: medium;
+}
+.style11 {
+	color: #0000FF;
+	font-size: medium;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 4.  Полиморфизм (повторение).</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p class="style2">Полиморфизм — одна из основных концепций объектно-ориентированного программирования (ООП), которая позволяет объектам разных классов использовать один и тот же интерфейс.
+</p><p>
+<span class="style2">В Python полиморфизм достигается через динамическую типизацию и наследование. Важным аспектом полиморфизма является перегрузка методов и замещение методов базового класса методами класса-наследника.
+</p><p class="style11">
+<strong>Основные концепции полиморфизма:
+</strong>
+</p><p class="style10">
+<strong>Единый интерфейс для различных объектов:
+</strong>
+</p><p class="style9">
+Полиморфизм позволяет использовать единый интерфейс для объектов разных классов, которые могут иметь различную реализацию методов.
+</p><p class="style10">
+<strong>Динамическая типизация:
+</strong>
+</p><p class="style9">
+В Python тип переменной определяется во время выполнения, что позволяет функции работать с объектами любого класса, если они поддерживают требуемый интерфейс.
+</p><p class="style10">
+<strong>Наследование:
+</strong>
+</p><p class="style9">
+Позволяет создавать иерархии классов, где подклассы наследуют свойства и методы базового класса, но могут переопределять их для своей специфической функциональности.
+</p><p class="style4">
+<strong><span class="style2">Примеры полиморфизма</span>:
+</strong>
+</p><p>
+<span class="style7"><strong>Простой пример полиморфизма: все три класса имеют метод с именем move()</strong></span><span class="style2">. Это значит, что мы можем написать код, который будет одновременно работать с этими объектами.
+</span>
+</p><pre class="style5">
+<strong>class Car:
+    def move(self):
+        pass
+
+class Human:
+    def move(self):
+        pass
+
+class Bird:
+    def move(self):
+        print("Кар!")
+
+car = Car()
+human = Human()
+bird = Bird()
+
+for it in [car, human, bird]:
+    it.move()</strong></pre><p class="style8">
+<strong>В данном случае «общим интерфейсом» является имя метода, ну или его сигнатура, если метод имеет параметры.
+</strong>
+</p><p class="style10">
+<strong>Переопределение методов</strong></p><p class="style9">
+Полиморфизм часто используется вместе с наследованием для создания иерархий классов, где базовый класс определяет общий интерфейс, а подклассы реализуют специфические детали.
+</p><pre class="style5">
+<strong>class Employee:
+    def get_salary(self):
+        return 1000
+
+class FullTimeEmployee(Employee):
+    def get_salary(self):
+        return 5000
+
+class PartTimeEmployee(Employee):
+    def get_salary(self):
+        return 3000
+
+class Intern(Employee):
+    pass
+
+def print_salary(employee):
+    print(employee.get_salary())
+
+employees = [FullTimeEmployee(), PartTimeEmployee(), Intern()]
+
+for employee in employees:
+    print_salary(employee)</strong></pre><p class="style9">
+Этот пример похож на предыдущий, но имеет важное отличие — наши классы не обязаны иметь метод get_salary, ведь он всегда есть у базового класса. Теперь «общим интерфейсом» всех классов является не просто метод get_salary(), а именно класс Employee со всеми его методами и атрибутами.
+</p><p class="style9">
+Вызов методов класса-наследника</p><p class="style9">
+Посмотрите внимательно на код ниже:</p><p class="style9">
+Мы вызываем метод print_salary(), который есть только у базового класса Employee, а он уже из базового класса вызывает другой метод базового класса — get_salary(). Так какие зарплаты будут выведены на экран?
+</p><pre class="style5">
+<strong>class Employee:
+    def print_salary(self):
+        salary = self.get_salary()
+        print(salary)
+
+    def get_salary(self):
+        return 1000
+
+class FullTimeEmployee(Employee):
+    def get_salary(self):
+        return 5000
+
+class PartTimeEmployee(Employee):
+    def get_salary(self):
+        return 3000
+
+class Intern(Employee):
+    pass
+
+employees = [FullTimeEmployee(), PartTimeEmployee(), Intern()]
+
+for employee in employees:
+    employee.print_salary()</strong></pre><p class="style9">
+Если мы вызовем метод print_salary(), например, у класса FullTimeEmployee, то вызовется метод базового класса, так как у самого класса такой метод не объявлен.
+</p><p class="style9">
+Но вот этот метод print_salary() будет вызывать метод get_salary() у объекта self, который имеет тип FullTimeEmployee, а не Employee. Поэтому вызовется именно метод get_salary() из класса FullTimeEmployee!
+</p><p class="style9">
+Более того, класс FullTimeEmployee может вызвать метод get_salary() базового класса для своих нужд. Например, мы хотим рассчитывать зарплату в процентах от базовой ставки:
+</p><pre class="style6">
+<span class="style3"><strong>class FullTimeEmployee(Employee):
+    def get_salary(self):
+        base_salary = super().get_salary()
+        return base_salary * 5  
+
+class PartTimeEmployee(Employee):
+    def get_salary(self):
+        base_salary = super().get_salary()
+        return base_salary * 3</strong></span>  </pre><p class="style10">
+<strong>Перегрузка методов</strong></p><p class="style9">
+Перегрузка методов (method overloading) в Python — это способность создавать несколько методов с одинаковым именем, но разными параметрами. Однако, в чистом виде перегрузка методов не поддерживается в Python, как это делается в других языках (например, C++ или Java).
+</p><p class="style9">
+В Python можно имитировать перегрузку методов через использование аргументов по умолчанию, *args и **kwargs.
+</p><p class="style9">
+Примеры перегрузки методов
+</p><p class="style9">
+Мы можем реализовать функцию, которая будет иметь разное поведение в зависимости от количества переданных аргументов. Сделать это можно разными способами, например, так:
+</p><pre class="style5">
+<strong>class Example:
+    def display(self, a=None, b=None):
+        if a is not None and b is not None:
+            print(a, b)
+        elif a is not None:
+            print(a)
+        else:
+            print("No arguments")
+
+
+</strong><strong>obj = Example()
+</strong><strong>obj.display(1, 2)  
+</strong><strong>obj.display(1)  
+</strong><strong>obj.display()  </strong></pre><p class="style9">
+Также можно учесть тип переданных данных — просто сделать проверку типа:</p>
+				<pre class="style6">
+
+<span class="style3"><strong>class Example:
+    def mod(self, a, b):
+        if type(a) == int and type(b) == int:
+            print(a % b)
+        elif type(a) == float or type(b) == float:
+            print(round(a / b))
+        else:
+            print("Help instruction: a and b should be int or float")
+
+
+</strong><strong>obj = Example()
+obj.mod(5, 2)  
+obj.mod(5.0, 2)  
+obj.mod("5", 2)</strong></span>  </pre><p>
+Если переданы неправильные типы данных, можно вывести инструкцию или даже ссылку на документацию в интернете — это тоже очень популярное решение.
+
+</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les56.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les56/4.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:47:56 GMT -->
+</html>

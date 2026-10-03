@@ -1,0 +1,392 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les22/4.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:49:53 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: small;
+}
+.style3 {
+	font-size: small;
+	color: maroon;
+}
+.style4 {
+	font-size: small;
+	color: #0000FF;
+}
+.style5 {
+	color: #0000FF;
+}
+.style6 {
+	font-size: small;
+	margin-left: 40px;
+}
+.style7 {
+	font-size: medium;
+	color: maroon;
+	margin-left: 40px;
+}
+.style8 {
+	font-size: small;
+	color: #0000FF;
+	margin-left: 40px;
+}
+.style9 {
+	margin-left: 80px;
+}
+.style10 {
+	color: maroon;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Бинарные файлы. BinaryWriter и BinaryReader</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p class="style2">Для работы с бинарными файлами предназначена пара классов BinaryWriter и BinaryReader. Эти классы позволяют читать и записывать данные в двоичном формате.
+</p><p class="style3">
+<strong>BinaryWriter</strong></p><p class="style2">
+Для создания объекта BinaryWriter можно применять ряд конструкторов. Возьмем наиболее простую:
+</p><pre class="style4">
+BinaryWriter(Stream stream)</pre><p class="style2">
+в его конструктор передается объект Stream (обычно это объект FileStream).
+</p><p class="style2">
+Основные методы класса <span class="style10"><strong>BinaryWriter </strong>
+</span>
+</p>
+				<ul>
+					<li>
+					<p class="style2">Close(): закрывает поток и освобождает ресурсы
+					</p>
+					</li>
+					<li>
+					<p class="style2">Flush(): очищает буфер, дописывая из него оставшиеся данные в файл
+					</p>
+					</li>
+					<li>
+					<p class="style2">Seek(): устанавливает позицию в потоке
+</p>
+					</li>
+					<li>
+					<p class="style2">Write(): записывает данные в поток. В качестве параметра этот метод может принимать значения примитивных данных:
+					</p>
+					<ul>
+						<li>
+						<p class="style2">Write(bool)
+</p>
+						</li>
+						<li>
+						<p class="style2">Write(byte)
+</p>
+						</li>
+						<li>
+						<p class="style2">Write(char)
+</p>
+						</li>
+						<li>
+						<p class="style2">Write(decimal)
+</p>
+						</li>
+						<li>
+						<p class="style2">Write(double)
+</p>
+						</li>
+						<li>
+						<p class="style2">Write(Half)
+</p>
+						</li>
+						<li>
+						<p class="style2">Write(short)
+</p>
+						</li>
+						<li>
+						<p class="style2">Write(int)
+</p>
+						</li>
+						<li>
+						<p class="style2">Write(long)
+</p>
+						</li>
+						<li>
+						<p class="style2">Write(sbyte)
+</p>
+						</li>
+						<li>
+						<p class="style2">Write(float)
+</p>
+						</li>
+						<li>
+						<p class="style2">Write(string)
+</p>
+						</li>
+						<li>
+						<p class="style2">Write(ushort)
+</p>
+						</li>
+						<li>
+						<p class="style2">Write(uint)
+</p>
+						</li>
+						<li>
+						<p class="style2">Write(ulong)
+</p>
+						</li>
+					</ul>
+					</li>
+					<li>
+					<p class="style2">Либо можно передать массивы типов byte и char
+					</p>
+					</li>
+					<ul>
+						<li>
+						<p class="style2">Write(byte[])
+</p>
+						</li>
+						<li>
+						<p class="style2">Write(char[])
+</p>
+						</li>
+						<li>
+						<p class="style2">Write(ReadOnlySpan<byte>/)
+</p>
+						</li>
+						<li>
+						<p class="style2">Write(ReadOnlySpan<char>)
+</p>
+						</li>
+					</ul>
+				</ul>
+				<p class="style2">
+При записи массива дополнительно можно указать, с кого элемента массива надо выполнять запись, а также число записываемых элементов массива:
+</p>
+				<ul>
+					<li>
+					<p class="style2">Write(byte[], int, int) </p>
+					</li>
+					<li>
+					<p class="style2">Write(char[], int, int) </p>
+					</li>
+				</ul>
+				<p class="style2">
+Рассмотрим простейшую запись бинарного файла:
+</p><pre class="style6">
+<span class="style5"><strong>string path = "person.dat";
+</strong> <strong>
+// создаем объект BinaryWriter
+using (BinaryWriter writer = new BinaryWriter(File.Open(path, FileMode.OpenOrCreate)))
+</strong>{<strong>
+    // записываем в файл строку
+    writer.Write("Tom");
+    // записываем в файл число int
+    writer.Write(37);
+    Console.WriteLine("File has been written");
+</strong></span>}</pre><p class="style2">
+Здесь в файл person.dat записываются два значения: строка "Tom" и число 37. Для создание объекта применяется вызов new BinaryWriter(File.Open(path, FileMode.OpenOrCreate))
+</p><p class="style2">
+Подобным образом можно сохранять более сложные данные. Например, сохраним в файл массив объектов:
+</p><pre class="style6">
+<span class="style5"><strong>string path = "people.dat";
+</strong> <strong>
+// массив для записи
+Person[] people =
+</strong>{<strong>
+    new Person("Tom", 37),
+    new Person("Bob", 41)
+};
+</strong> <strong>
+using (BinaryWriter writer = new BinaryWriter(File.Open(path, FileMode.OpenOrCreate)))
+</strong>{<strong>
+    // записываем в файл значение каждого свойства объекта
+    foreach (Person person in people)
+    {
+        writer.Write(person.Name);
+        writer.Write(person.Age);
+    }
+    Console.WriteLine("File has been written");
+</strong>}<strong>
+</strong> <strong>
+class Person
+</strong>{<strong>
+    public string Name { get; set; }
+    public int Age { get; set; }
+    public Person(string name, int age)
+    {
+        Name = name;
+        Age = age;
+    }
+</strong></span>}</pre><p class="style2">
+В данном случае последовательно сохраняем в файл people.dat данные объектов Person из массива people.
+</p><p class="style7">
+BinaryReader</p><p class="style2">
+Для создания объекта BinaryReader можно применять ряд конструкторов. Возьмем наиболее простую версию:
+</p><pre class="style8">
+<strong>Reader(Stream stream)</strong></pre><p class="style2">
+в его конструктор также передается объект Stream (также обычно это объект FileStream).
+</p><p class="style2">
+Основные методы класса <span class="style10"><strong>BinaryReader </strong>
+</span>
+</p>
+				<ul class="style9">
+					<li>
+					<p class="style4">Close(): закрывает поток и освобождает ресурсы
+					</p>
+					</li>
+					<li>
+					<p class="style4">ReadBoolean(): считывает значение bool и перемещает указатель на один байт
+					</p>
+					</li>
+					<li>
+					<p class="style4">ReadByte(): считывает один байт и перемещает указатель на один байт
+					</p>
+					</li>
+					<li>
+					<p class="style4">ReadChar(): считывает значение char, то есть один символ, и перемещает указатель на столько байтов, сколько занимает символ в текущей кодировке
+					</p>
+					</li>
+					<li>
+					<p class="style4">ReadDecimal(): считывает значение decimal и перемещает указатель на 16 байт
+					</p>
+					</li>
+					<li>
+					<p class="style4">ReadDouble(): считывает значение double и перемещает указатель на 8 байт
+					</p>
+					</li>
+					<li>
+					<p class="style4">ReadInt16(): считывает значение short и перемещает указатель на 2 байта
+					</p>
+					</li>
+					<li>
+					<p class="style4">ReadInt32(): считывает значение int и перемещает указатель на 4 байта
+					</p>
+					</li>
+					<li>
+					<p class="style4">ReadInt64(): считывает значение long и перемещает указатель на 8 байт
+					</p>
+					</li>
+					<li>
+					<p class="style4">ReadSingle(): считывает значение float и перемещает указатель на 4 байта
+					</p>
+					</li>
+					<li>
+					<p class="style4">ReadString(): считывает значение string. Каждая строка предваряется значением длины строки, которое представляет 7-битное целое число
+					</p>
+					</li>
+				</ul>
+				<p class="style2">
+С чтением бинарных данных все просто: соответствующий метод считывает данные определенного типа и перемещает указатель на размер этого типа в байтах, например, значение типа int занимает 4 байта, поэтому BinaryReader считает 4 байта и переместит указатель на эти 4 байта.
+</p><p class="style2">
+Например, выше в примере с BinaryWriter в файл person.dat записывалась строка и число. Считаем их с помощью BinaryReader:
+</p><pre class="style6">
+<span class="style5"><strong>using (BinaryReader reader = new BinaryReader(File.Open("person.dat", FileMode.Open)))
+</strong>{<strong>
+    // считываем из файла строку
+    string name = reader.ReadString();
+    // считываем из файла число 
+    int age = reader.ReadInt32();
+    Console.WriteLine($"Name: {name}  Age: {age}");
+</strong></span>}</pre><p class="style2">
+Конструктор класса BinaryReader также в качестве параметра принимает объект потока, только в данном случае устанавливаем в качестве режима FileMode.Open: new BinaryReader(File.Open("person.dat", FileMode.Open)).
+</p><p class="style2">
+В каком порядке данные были записаны в файл, в таком порядке мы их можем оттуда считать. То есть если сначала записывалась строка, а потом число, то в данном порядке мы их можем считать из файла.
+</p><p class="style2">
+Или подобным образом считаем данные из файла people.dat, который был записан в примере выше и который содержит данные объектов Person:
+</p><pre class="style6">
+<span class="style5"><strong>// список для считываемых данных
+List</strong><Person><strong> people = new List</strong><Person><strong>();
+</strong> <strong>
+// создаем объект BinaryWriter
+using (BinaryReader reader = new BinaryReader(File.Open("people.dat", FileMode.Open)))
+</strong>{<strong>
+    // пока не достигнут конец файла
+    // считываем каждое значение из файла
+    while (reader.PeekChar() > -1)
+    {
+        string name = reader.ReadString();
+        int age = reader.ReadInt32();
+        // по считанным данным создаем объект Person и добавляем в список
+        people.Add(new Person(name, age));
+    }
+</strong>}<strong>
+// выводим содержимое списка people на консоль
+</strong><strong>foreach(Person person in people)
+</strong>{<strong>
+    Console.WriteLine($"Name: {person.Name}  Age: {person.Age}");
+</strong>}<strong>
+</strong> <strong>
+class Person
+</strong>{<strong>
+    public string Name { get; set; }
+    public int Age { get; set; }
+    public Person(string name, int age)
+    {
+        Name = name;
+        Age = age;
+    }
+</strong></span>}</pre><p class="style2">
+Здесь в цикле while считываем данные. Чтобы узнать окончание потока, вызываем метод PeekChar(). Этот метод считывает следующий символ и возвращает его числовое представление. Если символ отсутствует, то метод возвращает -1, что будет означать, что мы достигли конца файла.
+</p><p class="style2">
+В цикле последовательно считываем значения для свойств объектов Person в том же порядке, в каком они записывались.
+</p><p>
+
+</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les22.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les22/4.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:49:53 GMT -->
+</html>

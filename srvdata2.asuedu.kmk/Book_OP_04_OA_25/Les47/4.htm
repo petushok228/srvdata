@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les47/4.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:33:23 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: small;
+}
+.style3 {
+	font-size: small;
+	color: rgb(0, 0, 255);
+	font-family: Verdana;
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: normal;
+	text-align: start;
+	text-indent: 0px;
+	text-transform: none;
+	word-spacing: 0px;
+	white-space: normal;
+	text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 4.
+				<span class="style1">Описание членов класса.</span>
+
+			</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style6" style="font-size: small;">Предположим, что 
+				есть некоторый объект, характеризующийся определенными 
+				параметрами, например, сотрудник фирмы. У него есть фамилия, 
+				имя, отчество, возраст и т. п. В таких случаях удобно каждого 
+				сотрудника описывать не рядом независимых переменных (строкового 
+				типа для фамилии, имени и отчества, целого типа для возраста), а 
+				одной переменной, например, типа Human, внутри которой и 
+				содержаться переменные для фамилии, имени, отчества и возраста. 
+				Этот факт здесь самый важный, что в переменной типа Human 
+				содержатся другие переменные. Типа Human нет среди встроенных 
+				типов данных, но его можно ввести. Для этого следует создать 
+				соответствующий класс Human.</span></p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Рассмотрим основные правила и примеры построения и использования 
+				классов.</p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Для создания класса нужно выбрать пункт меню Проект -&gt; Добавить 
+				класс.</p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				В открывшемся окне выбрать элемент Класс и ввести имя класса, 
+				например, Human. По умолчанию будут использоваться имена Class1 
+				и т.д. После этого нажать кнопку Добавить. В результате получим 
+				шаблон вида</p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				using System;</p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				using System.Collections.Generic;</p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				using System.Linq;</p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				using System.Text;</p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				using System.Threading.Tasks;</p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				namespace Project1</p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				&nbsp;{</p>
+				<p class="style2" style="color: rgb(0, 0, 255); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong>class Human { }</strong></p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				}</p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Здесь Project1 – имя пространства имен, в которое войдет наш 
+				класс Human.</p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Теперь надо во внутренних скобках записать код. Этот код обычно 
+				включает в себя следующие фрагменты:</p>
+				<ul style="color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+					<li class="style3" style="color: rgb(0, 0, 255); text-decoration: underline;">
+					<strong>• описание полей;</strong></li>
+					<li class="style3" style="color: rgb(0, 0, 255); text-decoration: underline;">
+					<strong>• описание свойств;</strong></li>
+					<li>
+					<span class="style3" style="color: rgb(0, 0, 255); text-decoration: underline;">
+					<strong>• описание методов</strong></span>.</li>
+				</ul>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Описанные здесь поля, свойства и методы называются членами 
+				класса. Могут быть и другие члены класса.</p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style2" style="color: rgb(0, 0, 255);">
+				<span class="style2">Поле класса</span></span><span><span class="style2">&nbsp;</span></span><span class="style2">(переменная-член) 
+				— переменная, связанная с классом или объектом. Все данные 
+				объекта хранятся в его полях. Доступ к полям осуществляется по 
+				их имени. Обычно тип данных каждого поля задаётся в описании 
+				класса, членом которого является поле.</span></p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style2" style="color: rgb(255, 0, 0);"><strong>Как 
+				правило, поля объявляются закрытыми</strong></span><span class="style2">, т.е. 
+				используется модификатор доступа<span class="style2" style="color: rgb(0, 0, 255);"><span>&nbsp;</span>private</span>.</span></p>
+				<p class="style2" style="color: rgb(255, 0, 0); text-decoration: underline; font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;">
+				<em>При необходимости значение поля можно инициализировать 
+				непосредственно в теле класса.</em></p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style2" style="color: rgb(0, 0, 255);">
+				<span class="style2">Свойства 
+				объекта</span></span><span><span class="style2">&nbsp;</span></span><span class="style2">– это средства доступа к полям, 
+				позволяющие изменять его данные и выполнять его код.</span></p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style2" style="color: rgb(255, 0, 0);"><strong><em>
+				Чтобы использовать свойства для изменения значений полей и их 
+				чтения</em></strong></span><span class="style2">, нужно описать, соответственно,<span>&nbsp;</span><span class="style2" style="color: rgb(0, 0, 255);"><strong>функции 
+				set и get</strong></span>.</span></p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong><em><span class="style2">Эти функции должны быть открытыми</span></em></strong><span class="style2">, 
+				т.е. иметь модификатора доступа<span>&nbsp;</span><span class="style4" style="color: rgb(255, 0, 0);"><strong>public</strong></span>.</span></p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style2" style="color: rgb(0, 0, 255);">
+				<span class="style2">Функция set</span></span><span><span class="style2">&nbsp;</span></span><span class="style2">присваивает 
+				значение value некоторому полю. При этом может, например, 
+				выполняться проверка допустимости вводимого значения.<span>&nbsp;</span><span class="style2" style="color: rgb(0, 0, 255);">Функция 
+				get</span><span>&nbsp;</span>возвращает некоторый результат, который 
+				получается на основе значений полей, а может быть просто 
+				значением некоторого поля.</span></p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Этот вариант чаще всего и используется.</p>
+				<p style="font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<em>&nbsp;Если поля объявить открытыми, т.е. использовать модификатор 
+				доступа public, то можно будет читать и изменять их значения 
+				непосредственно присваиванием из методов других классов.</em></p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				В этом случае необходимость описания свойств отпадает. Но это 
+				нецелесообразно. Так как именно свойства позволяют регулировать 
+				чтение или изменение поля, проверять допустимость новых значения 
+				полей и т.п. Необязательно должны присутствовать обе функции и 
+				set, и get. Например, свойство может быть только для чтения, 
+				тогда описывается только функция get. Методы представляют собой 
+				процедуры и функции, принадлежащие заданному объекту. Можно 
+				сказать, что методы определяют поведение объекта. Поэтому они, 
+				как правило, являются открытыми.</p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Можно использовать методы для чтения или изменения значений 
+				полей, вместо свойств. В этом случае придется описать одну 
+				функцию для чтения и другую – для изменения. Поэтому проще 
+				использовать именно свойства.</p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Рассмотрим пример создания класса Human. В качестве полей будем 
+				использовать фамилию, имя, отчество и возраст сотрудника. Для их 
+				хранения будем использовать поля lastname, name, secondname, 
+				age. Для работы с этими полями создадим свойства LastName, Name, 
+				SecondName, Age. Первые три будем использовать только для ввода, 
+				а последнее - и для ввода, и для чтения. Кроме того, опишем 
+				свойство FullName, которое будет выводить полное имя сотрудника. 
+				Создадим метод Info(), суть которого будет заключаться в выводе 
+				на консоль данных о сотруднике.</p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Получим следующий код, который нужно разместить в теле класса 
+				Human:а</p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-48-7.png" width="669" height="1777" /></p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span lang="ru">Результат выполнения программы:</span></p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-48-8.png" width="600" height="363" /></p>
+				<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				&nbsp;</p>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les47.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les47/4.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:33:36 GMT -->
+</html>

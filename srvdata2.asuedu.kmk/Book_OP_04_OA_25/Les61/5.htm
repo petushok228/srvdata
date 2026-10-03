@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les61/5.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:57:58 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style4 {
+				border: 1px solid #0000FF;
+}
+.style5 {
+				border: 1px solid #0000FF;
+				text-align: center;
+}
+.style6 {
+				border: 1px solid #0000FF;
+				text-align: left;
+}
+.style7 {
+				color: #0000FF;
+}
+.style8 {
+				border: 1px solid #0000FF;
+				text-align: center;
+				color: #800000;
+}
+    .style9 {
+	font-size: small;
+}
+.style10 {
+	font-family: "Times New Roman", serif;
+	font-size: small;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Самостоятельная работа по теме: Наследование. Создание дочерних классов. Полиморфизм.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p><span class="style9">Смоделировать структуру библиотеки:</p>
+				<table align="center" class="style4">
+								<tr>
+												<td class="style5" >
+												Классы </td>
+												<td class="style5">
+												Свойства</td>
+								</tr>
+								<tr>
+												<td class="style8" >
+												Библиотека </td>
+												<td class="style6">
+												название (get, set)</td>
+								</tr>
+								<tr>
+												<td class="style8" >
+												Отдел ( по жанрам )</td>
+												<td class="style6">
+												название жанра(get,set)<br />
+												количество изданий (get, set) </td>
+								</tr>
+								<tr>
+												<td class="style8" >
+												Издание</td>
+												<td class="style5">
+												&nbsp;название(get, set)<br />
+												автор (get, set)<br />
+												год издания (get, set)</td>
+								</tr>
+								</table>
+<p>&nbsp;</p>
+<p>        Предположим, что все Издания делятся на два типа:</p>
+				<ul>
+								<li>-	Книга – отличается наличием резюме (краткого описания)</li>
+								<li>-	Журнал – отличается наличием множества статей</li>
+				</ul>
+<p>Требуется формировать текстовое описание Издания в виде:</p>
+				<p class="style7">-	для Книги: </p>
+				<ul>
+								<li>«Автор: <автор>, </li>
+								<li>год издания: <год издания></li>
+								<li>название: <название></li>
+								<li>резюме: &lt;резюме&gt;&nbsp; (<span lang="ru">отличная, 
+								хорошая, посредственная)</span></li>
+				</ul>
+<p><span class="style7">-	для Журнала:</span> </p>
+				<ul>
+								<li>Автор: <автор>, </li>
+								<li>год издания: <год издания></li>
+								<li>название: <название>&nbsp; -<span lang="ru">журнала</span></li>
+								<li>название статьи</li>
+				</ul>
+<p>для этого выполнить следующие действия:</p>
+				<ul>
+								<li>- сделать класс Издание </li>
+								<li>-	добавить в класс Издание&nbsp; метод «сформировать описание
+								<span lang="ru">издательства</span>» </li>
+								<li>-	создать классы «Книга» и «Журнал», унаследовать их от класса Издание</li>
+								<li>-	добавить в класс Журнал&nbsp; свойство «названия статей» (get, 
+								set)</span></li>
+								<li>-	перегрузить метод «сформировать описание» в классах «Книга» и «Журнал».</li>
+				</ul>
+				<p>&nbsp;</p>
+<p><img alt="" src="Pic/r-59-14.png" width="903" height="528" /></p>
+				<ol>
+								<li>
+								<p class="MsoNormal">
+								<span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;" class="style9">&nbsp;Создать 
+								открытые (</span><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;
+mso-ansi-language:EN-US" class="style9">Public</span><span style="font-family:
+&quot;Times New Roman&quot;,&quot;serif&quot;" class="style9">) конструкторы для классов 
+								Библиотека, Отдел, Издание, Книга, Журнал.
+								</span></p>
+								</li>
+								<li>
+								<p class="style10">
+								Конструкторы должны принимать в 
+								качестве параметров значения простых (не 
+								множественных) свойств, описанных в 
+								соответствующем классе.
+								<o:p></o:p>
+								</p>
+								</li>
+								<li>
+								<p class="style10">
+								Конструкторы дочерних классов (Книга и Журнал) 
+								должны вызывать конструктор базового класса 
+								(Издание).<o:p></o:p></p>
+								</li>
+				</ol>
+				<p class="style9">
+				<o:p></o:p>В определенный отдел библиотеки (<span lang="ru">как 
+				минимум два отдела: научная, программирование)</span> добавить 
+				две книги и один журнал. </p>
+				<p class="MsoNormal">
+				<span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">
+				<span style="mso-tab-count:1" class="style9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</span></span>
+				<span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;" class="style9">
+				В основной программе (</span><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;
+mso-ansi-language:EN-US" class="style9">main</span><span style="font-family:
+&quot;Times New Roman&quot;,&quot;serif&quot;" class="style9">) при создании объектов задавать 
+				значения свойств. Проверить работу программы.<o:p></o:p></span></p>
+				<p class="MsoNormal">
+				<span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;" class="style9"><o:p>
+				&nbsp;</o:p></span><span class="style9">Используя цикл, сформировать и вывести на экран 
+				<span lang="ru">наличие книг и журналов для </span>каждого издания данного отдела.</span></p>
+			</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les59.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les61/5.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:58:10 GMT -->
+</html>

@@ -1,0 +1,348 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les53/4.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:45:39 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .entry-meta{font-size:85%;color:#999;margin-bottom:14px;line-height:1.7}*{-webkit-box-sizing:border-box;box-sizing:border-box}.entry-meta .b-share{position:relative;top:5px}.b-share{text-align:center}.entry-content{padding-left:0;word-wrap:break-word}a { color: #428bca;}a{color:#428bca;cursor:pointer;text-decoration:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}strong{font-weight:bolder}strong{font-weight:inherit}.entry-content h4 { font-family: "Roboto" ,"Helvetica Neue", Helvetica, Arial, sans-serif; }.entry-content h4{margin:1.5em 0 .5em;word-wrap:break-word}h4{margin-top:25px;margin-bottom:10px}h4{font-size:1.1em}h4{font-family:inherit;font-weight:700;line-height:1.1;color:inherit}h4{overflow-wrap:break-word}.table-responsive{display:block;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;-ms-overflow-style:-ms-autohiding-scrollbar}
+.style2 {
+	font-size: small;
+}
+.style4 {
+	text-align: center;
+	color: #FF0000;
+	background-color: #00FF00;
+}
+    .style5 {
+	text-align: center;
+	color: #FF0000;
+	background-color: #00FF00;
+	font-size: small;
+}
+.style6 {
+	color: #0000FF;
+	font-size: medium;
+	margin-left: 40px;
+}
+.style7 {
+	font-size: medium;
+	color: #0000FF;
+}
+.style8 {
+	margin-left: 40px;
+}
+.style9 {
+	color: #FF0000;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 4. Классы или структуры, в чем отличия.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <MAIN class="site-main" id="main"><ARTICLE class="post-491 post type-post status-publish format-standard  category-class1" id="post-491"><HEADER class="entry-header">                     </HEADER>
+				<!-- .entry-header -->            	 
+				<div class="entry-content" itemprop="articleBody">
+					<p><span class="style2">Чтобы лучше понять, когда 
+					использовать класс или структуру, рассмотрим различия между 
+					структурами и классами. Дополнительный пример см.
+					<a href="https://c-sharp.pro/?p=2689">здесь</a>.</p>
+					<p><a href="https://c-sharp.pro/?p=59">Структуры</a> 
+					синтаксически очень похожи на
+					<a href="https://c-sharp.pro/?p=657">классы</a>, но 
+					существует принципиальное отличие, которое заключается в 
+					том, что класс – является ссылочным типом (<em>reference 
+					type</em>), а структуры – значимым типом (<em>value type</em>) 
+					(см. статью «<a title="Типы данных в языке C#" href="http://c-sharp.pro/?p=647">Типы 
+					данных</a>«). Следовательно, классы всегда создаются в так 
+					называемой “куче” (<em>heap</em>), а структуры создаются в 
+					стеке (<em>stack</em>).</p>
+					<p>Но это справедливо в очень простых случаях, <em>главное 
+					отличие</em> структур и классов: структуры, указываемые в 
+					списке параметров метода, передаются по значению (то есть 
+					копируются), объекты классов — по ссылке. Именно это 
+					является главным различием в их поведении, а не то, где они 
+					хранятся. Примечание: структуру тоже можно передать по 
+					ссылке, используя модификаторы <em>out</em> и <em>ref</em>.</p>
+					<p>Чем больше вы будете использовать структуры вместо 
+					маленьких классов, тем менее затратным по ресурсам будет 
+					использование памяти.</p>
+					<p><span id="more-491"></span><br />
+					Так же как и классы, структуры могут иметь поля, методы и 
+					конструкторы. О конструкторах
+					<a title="Структуры в языке C#" href="http://c-sharp.pro/?p=59">
+					структур</a> уже говорилось, ибо это важный критерий при 
+					сравнивании классов и структур.</p>
+					<p>Мы выяснили, что все встроенные
+					<a title="Типы данных в языке C#" href="http://c-sharp.pro/?p=647">
+					типы значений</a> задаются структурами, например, числовые 
+					типы<em> int, long, float</em> определены структурами <em>
+					System.Int32, System.Int64 </em>и<em> System.Single</em> 
+					соответственно. Эти структуры имеют поля и методы. Мы уже 
+					вызывали методы у переменных этих типов. Например, каждая из 
+					перечисленных структур имеет метод <em>ToString( ).</em> 
+					Также у перечисленных структур есть статичные поля, 
+					например, <em>Int32.MaxValue</em> или <em>Int32.MinValue</em>. 
+					Получается, что мы уже многократно использовали структуры.</p>
+					<p>В отличие от классов, <span class="style9"><strong>использование публичных полей в 
+					структурах в большинстве случаев </strong> <em><strong>не рекомендуется</strong></em></span>, 
+					потому что не существует способа контролирования значений в 
+					них. Например, кто-либо может установить значение минут или 
+					секунд более 60. Более правильный вариант в данном случае 
+					использовать свойства, а в конструкторе осуществить 
+					проверку:</p>
+					</span><span class="style7">
+					<pre class="style8"><strong>using System;
+namespace ConsoleApplication1
+</strong>{<strong>
+   struct Time
+   {
+      private int hours, minutes, seconds;
+      public Time(int hh, int mm, int ss)
+      {
+         hours = hh % 24;
+         minutes = mm % 60;
+         seconds = ss % 60;
+      }
+      public int Hours()
+      {
+         return hours;
+      }
+   }
+   class Program
+   {
+      static void Main()
+      {
+         Time t = new Time(30,69,59);
+         Console.WriteLine(t.Hours());
+         Console.ReadKey();
+      }
+   }
+</strong></span><span class="style2">}</pre>
+					<p>В результате будет напечатано число часов:&nbsp; 6 
+					(остаток от деления 30 на 24).<br />
+					Заменим конструктор <em>Time(…)</em> конструктором без 
+					параметров:</p>
+					</span><span class="style7">
+					<pre class="style8"><strong>public Time()
+</strong>{<strong>
+   hours = 7;
+   minutes = 4;
+   seconds = 0;
+</strong></span><span class="style2">}</pre>
+					<p>Получим сообщение об ошибке:<br />
+					<em>«Структуры не могут содержать явных конструкторов без 
+					параметров»</em></p>
+					<p>Причина возникновения ошибки в том, что вы не можете 
+					использовать конструктор по умолчанию (без параметров) для 
+					структуры, потому что компилятор всегда генерирует его сам.</p>
+					<p>Что же касается класса, то компилятор создает конструктор 
+					по умолчанию только в том случае, если Вы его не создали. 
+					При объявлении класса нет проблем создать собственный 
+					конструктор без параметров (замените в программе ключевое 
+					слово <em>struct</em> на <em>class</em>, вы получите 
+					результат — 7).</p>
+					<p><strong>Еще один эксперимент</strong>. Замените снова <em>
+					class</em> на <em>struct</em> и удалите полностью 
+					конструктор<em> Time()</em>. Запустите программу, она будет 
+					выполнена, результат – 0. Вы получите три <em>предупреждения</em> 
+					типа:<br />
+					<em>«Полю «ConsoleApplication1.Time.hours» нигде не 
+					присваивается значение, поэтому оно всегда будет иметь 
+					значение по умолчанию 0».</em></p>
+					<p>Это означает, что был сгенерирован конструктор (без 
+					параметров) для структуры, который всегда устанавливает поля 
+					в 0, false или null (для объектов) – как и для классов. 
+					Поэтому Вы можете быть уверенными в том, что созданная 
+					структура всегда будет вести себя адекватно в соответствии 
+					со значениями по умолчанию в используемых типах.</p>
+					<p>Если Вы не хотите использовать значения по умолчанию, то 
+					можете инициализировать поля своими значениями в 
+					конструкторе с параметрами для инициализации.</p>
+					<p>Однако если в этом конструкторе не будет инициализировано 
+					какое-нибудь значение, компилятор не будет его 
+					инициализировать и покажет ошибку.</span></p>
+					<h4 class="style2">Два правила структур</h4>
+					<p><em><span class="style2">Первое правило</span></em><span class="style2"> 
+					структуры: Всегда все переменные должны быть 
+					инициализированы.<br />
+					В классах Вы можете инициализировать значение полей 
+					непосредственно при их объявлении. В структурах такого 
+					сделать нельзя, и поэтому данный код вызовет ошибку при 
+					компиляции. Поэтому:</p>
+					<p><em>Второе правило</em> структуры: Нельзя 
+					инициализировать переменные в том месте, где они 
+					объявляются.</span></p>
+					<h4 class="style2">&nbsp;Сравнение классов и структур в сжатом 
+					виде:</h4>
+					<div class="table-responsive">
+						<table>
+							<tr>
+								<td class="style4"><span class="style2"><strong>
+								Вопрос</strong></td>
+								<td class="style5"><strong>Структура</strong></td>
+								<td class="style5"><strong>Класс</strong></td>
+							</tr>
+							<tr class="style2">
+								<td><strong>Какого же типа экземпляр объекта?</strong></td>
+								<td><strong>Значимый (value) тип</strong></td>
+								<td><strong>Ссылочный (reference) тип</strong></td>
+							</tr>
+							<tr class="style2">
+								<td><strong>Где “живут” экземпляры этих объектов?</strong></td>
+								<td><strong>Экземпляры структуры называют значениями и 
+								“живут” они в стеке (stack).</strong></td>
+								<td><strong>Экземпляры классов называют объектами и 
+								“живут” они в куче (heap).</strong></td>
+							</tr>
+							<tr class="style2">
+								<td><strong>Можно ли создать конструктор по умолчанию?</strong></td>
+								<td><strong>Нет</strong></td>
+								<td><strong>Да</strong></td>
+							</tr>
+							<tr class="style2">
+								<td><strong>Если создается свой конструктор, будет ли 
+								компилятор генерировать конструктор по 
+								умолчанию?</strong></td>
+								<td><strong>Да</strong></td>
+								<td><strong>Нет</strong></td>
+							</tr>
+							<tr class="style2">
+								<td><strong>Если в своём конструкторе не будут 
+								инициализированы некоторые поля, будут ли они 
+								автоматически инициализированы компилятором?</strong></td>
+								<td><strong>Нет</strong></td>
+								<td><strong>Да</strong></td>
+							</tr>
+							<tr class="style2">
+								<td><strong>Разрешается ли инициализировать переменные 
+								там, где их объявляют?</strong></td>
+								<td><strong>Нет</strong></td>
+								<td><strong>ДА</strong></td>
+							</tr>
+						</table>
+					</div>
+					<p><span class="style2">Поля структуры могут быть инициализированы при 
+					использовании конструктора (если объект объявляется с 
+					помощью оператора <em>new</em>), причем не важно, какого 
+					«собственного» или «по умолчанию».</p>
+					<p>К особенностям структур можно отнести еще и тот факт, что 
+					вследствие того, что структуры являются значимым типом, то 
+					можно создать структуру без использования конструктора, 
+					например:</span></p>
+					<pre class="style6"><strong>using System;
+namespace ConsoleApplication1
+</strong>{<strong>
+   struct Time
+   {
+      public int hours, minutes, seconds;
+   }
+   class Program
+   {
+      static void Main()
+      {
+         Time t;
+         t.hours=7;
+         Console.WriteLine(t.hours.ToString());
+         Console.ReadKey();
+      }
+   }
+}</strong></pre>
+					<p class="style2">В таком случае, переменная t создается, но поля не будут 
+					инициализированы конструктором (нет оператора Time t = new 
+					Time();). Правда, теперь поля структуры придется объявлять
+					<strong>только с модификатором</strong> <em>public</em>.</span></p>
+					<h4 class="style2">Замечания, над которыми стоит подумать 
+					(проверить практикой):</h4>
+					<p><span class="style2">1. Используйте структуры, это 
+					признак хорошего тона в программировании на C#, хотя 
+					некоторые авторы наоборот рекомендуют как можно меньше 
+					использовать структуры, предпочитая классы.</p>
+					<p>2. Дополнения: структуры не могут быть абстрактными, 
+					структуры не имеют деструкторов, структуры не поддерживают 
+					наследование.</p>
+					<p>3. Главное отличие структур и классов: структуры 
+					передаются по значению (то есть копируются), объекты классов 
+					— по ссылке. Именно это является существенным различием в их 
+					поведении, а не то, где они хранятся.</p>
+					<p>4. Структуру тоже можно передать по ссылке, используя 
+					модификаторы <em>out</em> и <em>ref</em>.</p>
+					<p><strong><em>Примечание.</em> </strong>Как получить размер 
+					объекта в .Net.<br />
+					В .Net оператор <em>sizeof(тип)</em> умеет возвращать 
+					размеры только простых значимых типов. При попытке направить 
+					его на любой управляемый в куче объект вы получите ошибку. 
+					Единственный более-менее достоверный способ узнать объем 
+					памяти, занимаемый объектом, это сравнение размеров 
+					используемой памяти до инициализации объекта-массива и 
+					после, например:</p>
+					</span>
+					<pre class="style6"><strong>long mem = GC.GetTotalMemory(true);
+</strong> <strong>int[] intArray = new int[100000];
+</strong> <strong>mem = GC.GetTotalMemory(true) - mem;
+ // В mem - размер объекта в байтах: 4 х 100000 + 16 (?).</strong></pre>
+					<span class="style2">
+					<p>Ответ: 400016 байт. </span><em><span class="style2">Конец 
+					примечания</span></em>.</p>
+				</div>
+                <p></p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les53.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les53/4.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:45:39 GMT -->
+</html>

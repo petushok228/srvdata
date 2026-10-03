@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les32/5.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:08:19 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: #0000FF;
+	margin-left: 40px;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 5. Пример кода работа с одномерным массивом. </td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <font FACE="Cascadia Mono" SIZE="2" COLOR="#008000">
+				<p>Передача массивов в качестве аргументов и возврат массива из 
+				метода в C#.</p>
+				</font>
+                <pre class="style2"><strong>static void Main(string[] args)
+        {
+            Console.WriteLine("Передача массивов в качестве аргументов в C#.");
+            //Передача одномерных массивов в качестве аргументов методам
+            //1. объявляем и инициализируем массив
+            int[] arr = { 1, 2, 3, 4 };
+            // Объявляем метод  вывод на дисплей элементов массива
+            void Result(int[] arrn)
+            {
+                // вывод на дисплей элементов массива
+                for (int i = 0; i < arrn.Length; i++)
+                {
+                    Console.WriteLine("Элементы массива: " + arrn[i]);
+                }
+            }
+            // Формирование функции для вывода массива
+            int[] InMass (int n)
+            {
+                int[] newarray = new int[n];
+                for (int i = 0; i < newarray.Length; i++)
+                {
+                    Console.Write($"Введите элемнте {i} массива  = ");
+                    newarray[i] = int.Parse(Console.ReadLine());
+                }
+                return newarray;
+            }
+
+            //____________________________Реализация методов
+            Result(arr);
+            Console.WriteLine();
+            //Объявление, инициализация и передача массива методу в одной строке кода при вызове метода.
+            Result(new int[] { 11, 12, 13, 14 });
+            //Метод заполнения массива 
+            Console.Write($"Введите количество элемнтов массива  = ");
+            int nar = int.Parse(Console.ReadLine());  //количество элементов массива
+            int[] resarray = new int[nar];  //Сформировали массив для результата
+            resarray = InMass(nar); // заполнение массива 
+            Console.WriteLine($"Сформирован {nar} элементный массив");
+            Result(resarray); //вывод сформированного массива
+
+            Console.WriteLine("Завершение программы");
+            Console.ReadLine();
+        }</strong></pre></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les32.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les32/5.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:08:19 GMT -->
+</html>

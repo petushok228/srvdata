@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les18/8.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:46:12 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: medium;
+	color: #0000FF;
+}
+.style3 {
+	margin-left: 80px;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Пример решения задачи с множествами на C#.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text" 
+                >
+                <pre class="style3"><span class="style2"><strong>using System;
+using System.Collections.Generic;
+//В каждом из 3-х  вузов может изучаться множество языков
+//программирования: basic, pascal, prolog, clipper, cu, logo.
+//Ввести с клавиатуры множество языков, изучаемых в каждом из вузов.
+//Построить множество В, содержащее названия языков, изучаемых только в одном из 3-х вузов.
+
+namespace Ur18_zad26
+</strong>{<strong>
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            HashSet</strong><string><strong> L = new HashSet</strong><string><strong>();  //<span lang="ru">все изучаемые языки</span>
+            L.Add("basic");
+            L.Add("pascal");
+            L.Add("prolog");
+            L.Add("clipper");
+            L.Add("logo");
+            HashSet</strong><string><strong> v1 = new HashSet</strong><string><strong>();  //<span lang="ru">языки изучаемые в 1 вузе</span>
+            v1.Add("basic");
+            v1.Add("prolog");
+            v1.Add("clipper");
+            HashSet</strong><string><strong> v2 = new HashSet</strong><string><strong>();  </strong><strong>//<span lang="ru">языки изучаемые в 2 вузе</span></strong><string><string><string><string><string><string><strong>
+            v2.Add("basic");
+            v2.Add("prolog");
+            v2.Add("logo");
+            v2.Add("pascal");
+            HashSet</strong><string><strong> v3 = new HashSet</strong><string><strong>();  </strong><strong>//<span lang="ru">языки изучаемые в 3 вузе</span></strong><string><string><string><string><string><string><string><string><strong>
+            v3.Add("logo");
+            v3.Add("prolog");
+            v3.Add("basic");
+            //ожидаемый результат язык pascal изучается только в одном вузе v2
+            //используем метод пересечения
+            //найти все языки изучаемые в 3 вузах
+            HashSet</strong><string><strong> K1 = new HashSet</strong><string><strong>(); //Языки изучаемые в вузе v1 и v2
+            HashSet</strong><string><strong> K2 = new HashSet</strong><string><strong>(); //Языки изучаемые в вузе v1 и v3
+            HashSet</strong><string><strong> K3 = new HashSet</strong><string><strong>(); //Языки изучаемые в вузе v2 и v3
+            HashSet</strong><string><strong> R2 = new HashSet</strong><string><strong>(); //Одинаковые языки изучаемые в трех вузах v1 и v2 и v3
+            HashSet</strong><string><strong> R = new HashSet</strong><string><strong>();//Языки изучаемые в трех вузах
+            R.UnionWith(v1);
+            R.UnionWith(v2);
+            R.UnionWith(v3);
+            Console.Write("Языки изучаемые в трех вузах : ");
+            foreach (string i in R)
+            {
+                Console.Write($" {i} , ");
+            }
+            Console.WriteLine();
+            //изучается только в одном вузе v1 v2
+            K1.UnionWith(v1);
+            K1.IntersectWith(v2); 
+            Console.Write("Языки изучаемые в вузе 1 и 2");
+            foreach (string i in K1)
+            {
+                Console.Write($" {i} , ");
+            }
+            Console.WriteLine();
+            //изучается только в одном вузе v1 v3
+            K2.UnionWith(v1);
+            K2.IntersectWith(v3);
+            Console.Write("Языки изучаемые в вузе 1 и 3");
+            foreach (string i in K2)
+            {
+                Console.Write($" {i} , ");
+            }
+            //изучается только в одном вузе v1 v3
+            Console.WriteLine();
+            K3.UnionWith(v2);
+            K3.IntersectWith(v3);
+            Console.Write("Языки изучаемые в вузе 2 и 3");
+            foreach (string i in K3)
+            {
+                Console.Write($" {i} , ");
+            }
+            Console.WriteLine();
+            //Языки изучаемые в только в одном вузе v3
+            R2.UnionWith(R); //Языки изучаемые в трех вузах
+            R2.ExceptWith(v1);  //Языки изучаемые только в вузе 1
+            R2.ExceptWith(v2);  </strong><strong>//Языки изучаемые только в вузе </strong>2<string><string><string><string><string><string><string><string><string><string><string><string><string><string><string><string><string><string><strong>
+            Console.Write("Языки изучаемые только в вузе 3");
+            foreach (string i in R2)
+            {
+                Console.Write($" {i} , ");
+            }
+            Console.WriteLine();
+            //Языки изучаемые в только в одном вузе v2
+            R2.UnionWith(R); //Языки изучаемые в трех вузах
+            R2.ExceptWith(v1);  //Языки изучаемые только в вузе 1
+            R2.ExceptWith(v3);  </strong><strong>//Языки изучаемые только в вузе 3</strong><string><string><string><string><string><string><string><string><string><string><string><string><string><string><string><string><string><string><strong>
+            Console.Write("Языки изучаемые только в вузе 2");
+            foreach (string i in R2)
+            {
+                Console.Write($" {i} , ");
+            }
+            Console.WriteLine();
+            //Языки изучаемые в только в одном вузе v1
+            R2.UnionWith(R); //Языки изучаемые в трех вузах
+            R2.ExceptWith(v2);  //Языки изучаемые только в вузе 2
+            R2.ExceptWith(v3);   </strong><strong>//Языки изучаемые только в вузе 3</strong><string><string><string><string><string><string><string><string><string><string><string><string><string><string><string><string><string><string><strong>
+            Console.Write("Языки изучаемые только в вузе 1");
+            foreach (string i in R2)
+            {
+                Console.Write($" {i} , ");
+            }
+
+
+
+
+
+            Console.ReadKey();
+
+        }
+    }
+</strong></span>}</pre>
+				<pre class="style3"><img alt="" src="Pic/r-18-1.png" width="808" height="255" /><string><string><string><string><string><string><string><string><string><string><string><string><string><string><string><string><string><string>
+</pre></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2008 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les18.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les18/8.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:46:16 GMT -->
+</html>

@@ -1,0 +1,417 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les71/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 11:01:30 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 1 Свойства формы.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Мы уже увидели, что свойства могут изменяться как визуально, так 
+				и программно. Визуальные изменения дизайнер оформляет в коде 
+				метода InitializeComponent(). Если вы решили сами делать 
+				изменения свойств в коде, то это можно сделать в конструкторе и 
+				обязательно после вызова метода InitializeComponent(). Если 
+				написать код изменений до вызова этого метода, то они могут 
+				оказаться бессмысленными, если дизайнер в методе инициализации 
+				компонентов сгенерирует свой код.</p>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Откройте сейчас код формы (Form1.cs) и попробуйте в коде 
+				конструктора присвоить свойству Text текущей формы какое-нибудь 
+				значение — например, как показано в следующем примере:</p>
+				<pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; display: block; padding: 10px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(238, 238, 238); background: rgb(17, 17, 17); border: 1px solid rgb(204, 204, 204); border-radius: 4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">   public Form1()
+   {
+     InitializeComponent();
+
+     Text = &quot;Это изменение в коде&quot;;
+   }
+</pre>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Запустите приложение и убедитесь, что в заголовке окна 
+				отображается новое сообщение. Давайте вернемся в визуальный 
+				дизайнер и посмотрим, что еще у нас есть в панели Properties. 
+				Там очень много свойств, и все они наследуются нашей формой от 
+				класса Form. Мы можем наделить форму дополнительными свойствами, 
+				но у нас и так достаточно унаследованного, с чем нужно еще 
+				разобраться. По мере надобности мы станем рассматривать те 
+				свойства, которые будут нам нужны. Сейчас же ограничимся только 
+				самыми основными и самыми необходимыми — на мой взгляд:</p>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img src="Pic/5-6-choose-color.jpg" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; margin: 5px 12px 0px 0px;" /></p>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<i style="box-sizing: border-box;">Рис. 5.6. Панель выбора цвета</i></p>
+				<ul style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li style="box-sizing: border-box;">
+								BackgroundColor — цвет фона окна. Это свойство 
+								имеет тип класса Color. Если щелкнуть в поле 
+								напротив свойства, то появится кнопка 
+								выпадающего списка. Щелкните по ней, и вы 
+								увидите панель выбора цвета (рис. 5.6).<br style="box-sizing: border-box;" />
+								Панель состоит из трех вкладок: Custom 
+								(Произвольные), Web (Web-цвета) и System 
+								(Системные). Для окон желательно указывать один 
+								из системных цветов и лучше, если это будет 
+								Control для диалоговых окон и Window для окон, 
+								которые должны отображать данные;</li>
+								<li style="box-sizing: border-box;">Cursor — 
+								позволяет задать тип курсора, который будет 
+								отображаться в момент, когда курсор мыши 
+								находится над поверхностью окна. При изменении 
+								этого свойства в визуальном дизайнере появляется 
+								выпадающий список, в котором перечислены 
+								названия типов курсоров и даже показаны их 
+								изображения;</li>
+								<li style="box-sizing: border-box;">Enabled — 
+								позволяет задать доступность окна. Если свойство 
+								равно false, то компонент не станет реагировать 
+								на действия пользователя, т. е. будет 
+								недоступен;</li>
+								<li style="box-sizing: border-box;">Font — 
+								шрифт, который будет использоваться для вывода 
+								текста поверх окна. Для окна это, на первый 
+								взгляд, не очень актуально. Но большая 
+								актуальность этого свойства проявляется у 
+								компонентов, которые содержат надписи. Чтобы 
+								изменить шрифт, можно поступить двумя способами:<ul style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0px;">
+												<li style="box-sizing: border-box;">
+												выделить строку со свойством 
+												Font, и в правом углу появится 
+												кнопка с тремя точками. Щелкните 
+												по ней, и вы увидите стандартное 
+												окно задания свойств шрифта;</li>
+												<li style="box-sizing: border-box;">
+												свойство шрифта на самом деле 
+												является самостоятельным классом 
+												Font со своими свойствами. Вы 
+												можете редактировать их каждое в 
+												отдельности. Для этого нужно 
+												щелкнуть по кнопке с крестиком 
+												слева от имени свойства. В окне 
+												Properties свойства формы 
+												расступятся, уступив место 
+												свойствам шрифта (рис. 5.7);</li>
+								</ul>
+								</li>
+								<li style="box-sizing: border-box;">ForeColor — 
+								цвет переднего плана, который чаще всего 
+								используется в качестве цвета текста. Если вы 
+								посмотрите на доступные свойства шрифта, то 
+								заметите, что среди них нет цвета. Цвет текста 
+								задается через свойство ForeColor;</li>
+								<li style="box-sizing: border-box;">
+								FormBorderStyle — стиль контура формы. Это 
+								свойство является перечислением, и в редакторе 
+								свойств появляется выпадающий список для выбора 
+								из следующих элементов (рекомендую на реальном 
+								приложении попробовать установить каждое из 
+								свойств и посмотреть результат лично):<ul style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0px;">
+												<li style="box-sizing: border-box;">
+												None — контура не будет;</li>
+												<li style="box-sizing: border-box;">
+												FixedSingle — тоненький 
+												фиксированный контур, не 
+												позволяющий изменять размеры 
+												окна;</li>
+												<li style="box-sizing: border-box;">
+												Fixed3D — контур фиксированный, 
+												не позволяющий изменять размеры 
+												окна, но трехмерный, создающий 
+												эффект заглубленного окна;</li>
+												<li style="box-sizing: border-box;">
+												FixedDialog — похож на 
+												FixedSingle, только в заголовке 
+												окна не будет значка. Такой 
+												контур чаще всего используют для 
+												диалоговых окон;</li>
+												<li style="box-sizing: border-box;">
+												Sizable — стандартный контур, 
+												позволяющий изменять размеры 
+												окна;</li>
+												<li style="box-sizing: border-box;">
+												FixedToolWindow — контур с очень 
+												тоненьким заголовком окна, не 
+												позволяющий изменять размеры 
+												окна. Такие окна чаще всего 
+												используются для окон с кнопками 
+												— например, окно инструментов в 
+												Adobe Photoshop;</li>
+												<li style="box-sizing: border-box;">
+												SizableToolWindow — то же самое, 
+												что и FixedToolWindow, только с 
+												возможностью изменять размер 
+												окна;</li>
+								</ul>
+								</li>
+								<li style="box-sizing: border-box;">Icon — в 
+								этом свойстве можно задать значок для формы. 
+								Здесь тоже есть кнопка, которая вызывает 
+								стандартное окно для открытия файла. Загруженный 
+								значок попадет в RESX-файл формы;</li>
+								<li style="box-sizing: border-box;">Location — 
+								положение окна относительно левого верхнего угла 
+								экрана. Такое же свойство есть и у компонентов, 
+								но там расстояние отсчитывается от левого 
+								верхнего угла компонента родителя, на 
+								поверхности которого находится наш элемент 
+								управления. Данное свойство состоит из двух 
+								составляющих: X и Y, которые раскрываются, если 
+								щелкнуть по кнопке с крестиком слева от имени 
+								свойства;</li>
+								<li style="box-sizing: border-box;">
+								MainMenuStrip — в этом свойстве можно задать 
+								компонент меню, который будет использоваться в 
+								качестве главного меню для окна. Для этого на 
+								форме должен стоять компонент класса MenuStrip. 
+								Тогда этот компонент можно будет выбрать из 
+								выпадающего списка;</li>
+								<li style="box-sizing: border-box;">MaximizeBox 
+								— булево значение, которое определяет, должна ли 
+								отображаться в заголовке окна кнопка 
+								максимизации окна. Если у вас выбран стиль окна, 
+								не позволяющий изменять размеры окна, то 
+								убедитесь, что это свойство равно false, чтобы 
+								спрятать кнопку. Несмотря на то, что форма не 
+								разрешает изменение размеров, кнопка 
+								максимизации без проблем распахнет окошко на 
+								полный экран;</li>
+								<li style="box-sizing: border-box;">MaximumSize 
+								— позволяет задать максимальные ширину и высоту 
+								окна. Пользователь не сможет растянуть окно 
+								больше, чем на указанные размеры;</li>
+								<li style="box-sizing: border-box;">MinimizeBox 
+								— булево значение, определяющее, нужно ли 
+								отображать кнопку сворачивания окна;</li>
+								<li style="box-sizing: border-box;">MinimumSize 
+								— минимальные размеры окна, менее которых окно 
+								не может быть уменьшено. Такое ограничение может 
+								пригодиться, если слишком маленькие размеры 
+								портят дизайн окна;</li>
+								<li style="box-sizing: border-box;">Name — 
+								название формы и имя переменной объекта, которую 
+								вы можете использовать в коде для доступа к 
+								свойствам объекта и для вызова его методов;</li>
+								<li style="box-sizing: border-box;">Opacity — 
+								процент непрозрачности окна. По умолчанию 
+								свойство равно 100%, т. е. окно абсолютно 
+								непрозрачно. Если нужно наполовину просветить 
+								задний план, то можно установить значение в 50%;</li>
+								<li style="box-sizing: border-box;">Padding — 
+								отступы от краев окна. Свойство состоит из пяти 
+								значений: All, Left, Top, Right, Bottom, что 
+								соответствует отступам со всех сторон, слева, 
+								сверху, справа и снизу. Если установить левый 
+								отступ в значение 10, то левая кромка окна будет 
+								размером в 10 пикселов;</li>
+								<li style="box-sizing: border-box;">ShowIcon — 
+								булево значение, определяющее, нужно ли 
+								показывать значок в заголовке окна;</li>
+								<li style="box-sizing: border-box;">
+								ShowInTaskBar — нужно ли отображать окно в 
+								панели задач. Главное окно чаще всего нужно 
+								отображать в панели задач, а вот для дочерних и 
+								диалоговых окон это свойство лучше отключать, 
+								иначе для разных окон одного приложения в панели 
+								задач будет создаваться несколько меток. Как 
+								правило, этого не должно быть;</li>
+								<li style="box-sizing: border-box;">Size — 
+								размер окна, его ширина и высота;</li>
+								<li style="box-sizing: border-box;">
+								StartPosition — начальная позиция окна. У этого 
+								свойства есть выпадающий список для выбора 
+								одного из следующих значений:<ul style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0px;">
+												<li style="box-sizing: border-box;">
+												WindowsDefaultLocation — 
+												положение окна определяется ОС;</li>
+												<li style="box-sizing: border-box;">
+												WindowsDefaultBounds — система 
+												будет определять не только 
+												положение, но и размеры окна;</li>
+												<li style="box-sizing: border-box;">
+												CenterParent — расположить окно 
+												по центру родительского окна. На 
+												мой взгляд, это значение лучше 
+												всего использовать для всех 
+												дочерних окон;</li>
+												<li style="box-sizing: border-box;">
+												Manual — расположение будет 
+												задаваться программистом 
+												самостоятельно через свойство 
+												Location;</li>
+												<li style="box-sizing: border-box;">
+												CenterScreen — отцентрировать по 
+												центру экрана;</li>
+								</ul>
+								</li>
+								<li style="box-sizing: border-box;">Tag — очень 
+								интересное свойство, но оно абсолютно ни на что 
+								не влияет. А зачем тогда оно нужно? Вы можете 
+								сохранять в этом свойстве любую дополнительную 
+								информацию, потому что это свойство имеет тип 
+								Object;</li>
+								<li style="box-sizing: border-box;">Text — 
+								текстовый заголовок окна;</li>
+								<li style="box-sizing: border-box;">TopMost — 
+								булево значение, которое определяет, должно ли 
+								окно располагаться поверх других окон. Сразу 
+								хочу предупредить — не злоупотребляйте этим 
+								свойством в своих программах для главного окна, 
+								а если и решите расположить окно поверх других, 
+								то дайте пользователю возможность отключать эту 
+								особенность. Многих пользователей раздражают 
+								окна, которые перекрывают рабочую область. А вот 
+								использование этого свойства для дочерних окон 
+								приложения может быть очень удобным. Если окно 
+								показано не модально, это свойство позволит окну 
+								быть поверх остальных и не спрятаться за другими 
+								окнами;</li>
+								<li style="box-sizing: border-box;">WindowState 
+								— состояние окна. Здесь можно указать одно из 
+								трех значений:<ul style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0px;">
+												<li style="box-sizing: border-box;">
+												Normal — нормальное состояние;</li>
+												<li style="box-sizing: border-box;">
+												Maximized — окно должно быть 
+												развернуто на весь экран;</li>
+												<li style="box-sizing: border-box;">
+												Minimized — окно должно быть 
+												минимизировано.</li>
+								</ul>
+								</li>
+				</ul>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img src="Pic/5-7-font-properties.jpg" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; margin: 5px 12px 0px 0px;" /></p>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<i style="box-sizing: border-box;">Рис. 5.7. Свойства для 
+				настройки свойств шрифта</i></p>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Напоминаю, что эта книга — не справочник по функциям, такой 
+				справочник уже есть, и называется он MSDN. Мы рассматриваем 
+				только самое интересное и учимся программировать.</p>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Почему я рассмотрел указанные свойства? Большинство из них есть 
+				не только у форм, но и у любого типа визуальных компонентов. 
+				Просто они наследуются от общих для всех компонентов предков. К 
+				тому же, я выбрал разные типы, чтобы вы увидели, что в окне 
+				свойств для редактирования различных компонентов могут 
+				вызываться разные редакторы.</p>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Теперь давайте посмотрим, что скрывают под собой кнопки с 
+				крестиками слева от некоторых свойств. Крестики могут стоять у 
+				тех свойств, которые сами по себе являются объектами 
+				определенного класса. Например, свойство Font является классом 
+				Font. Раскрывая крестик у свойства Font, вы увидите свойства 
+				класса Font. А раскрыв шрифт Font, вы можете увидеть свойство 
+				Size — размер. Полный путь к размеру шрифта будет выглядеть так:</p>
+				<pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; display: block; padding: 10px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(238, 238, 238); background: rgb(17, 17, 17); border: 1px solid rgb(204, 204, 204); border-radius: 4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">   Control.Font.Size = 10;
+</pre>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В приведенном примере размер шрифта изменяется на 10. Для этого 
+				мы меняем свойство Size объекта класса Font, который является 
+				свойством нашего элемента управления. Может существовать и более 
+				длинная вложенность, но в C# я не припоминаю вложенности более 
+				5, да и более 3 встречается крайне редко. Когда вы сами станете 
+				проектировать свои программы и классы, не делайте вложенности 
+				более 4, иначе это могут быть просто не очень хорошо 
+				спроектированные классы, а работа с ними окажется неудобна и 
+				даже ужасна.</p>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Сразу же следует рассмотреть структуры данных, с которыми вы 
+				будете встречаться при работе с компонентами и формами: Size и 
+				Location. Рассмотрим каждую в отдельности.</p>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Структура Size предназначается для задания размеров — например, 
+				размеров компонента или формы. У структуры есть два поля: Width 
+				и Height — для указания ширины и высоты соответственно. Вы не 
+				можете изменять свойства структуры, и следующая строка приведет 
+				к ошибке компиляции:</p>
+				<pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; display: block; padding: 10px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(238, 238, 238); background: rgb(17, 17, 17); border: 1px solid rgb(204, 204, 204); border-radius: 4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">   Size.Height = 100;
+</pre>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Всегда нужно создавать новый экземпляр структуры. Например, 
+				следующий пример устанавливает размеры окна в 200´300:</p>
+				<pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; display: block; padding: 10px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(238, 238, 238); background: rgb(17, 17, 17); border: 1px solid rgb(204, 204, 204); border-radius: 4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">   Size = new Size(200, 300);
+</pre>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Тип данных Size используется также для свойств MaximumSize, 
+				MinimumSize, AutoScrollMargin и AutoScrollMinSize.</p>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Структура Location имеет тип Point. И, судя по названию, с ее 
+				помощью чаще всего задают точку. Часто этот тип служит для 
+				задания положения компонента или формы. Эта структура содержит 
+				два важных свойства: X и Y, которые хранят смещения по 
+				соответствующим координатным осям. Следующая строка перемещает 
+				текущую форму в позицию 10´10:</p>
+				<pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; display: block; padding: 10px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(238, 238, 238); background: rgb(17, 17, 17); border: 1px solid rgb(204, 204, 204); border-radius: 4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">   this.Location = new Point(10, 10);
+</pre>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				У обеих структур свойства, задающие размер и положение, имеют 
+				тип данных целого числа int. Вы не можете задать дробное число в 
+				качестве указателя положения, да это и не имеет смысла в 
+				WinForms, — ведь размеры формы и положение определяются 
+				пикселами, а это минимальная единица в таком случае, и она не 
+				может дробиться.</p>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les71.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les71/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 11:01:39 GMT -->
+</html>

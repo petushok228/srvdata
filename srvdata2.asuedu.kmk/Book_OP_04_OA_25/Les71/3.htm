@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les71/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 11:01:40 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 3. Методы формы. События на примере формы.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Класс Form содержит множество методов, которые мы можем 
+				использовать и которые наследуются нашими формами:</p>
+				<ul style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li style="box-sizing: border-box;">Show() — 
+								отобразит созданное окно немодально. Немодальное 
+								окно не блокирует выполнение родительского окна 
+								(в котором оно было создано). Это значит, что 
+								оба окна будут работать как бы параллельно. Вы 
+								можете переключаться между ними и работать в 
+								двух окнах одновременно;</li>
+								<li style="box-sizing: border-box;">ShowDialog() 
+								— отобразит окно модально. В этот момент в окне, 
+								в котором вы вызвали метод, выполнение 
+								блокируется до тех пор, пока вы не закроете 
+								дочернее окно, которое отобразили с помощью 
+								ShowDialog(). Вы можете работать только с 
+								дочерним окном, и оно всегда отображается поверх 
+								своего родительского окна. Таким образом 
+								отображаются все диалоговые окна — например, 
+								окно открытия документа, окно свойств и т. д.;</li>
+								<li style="box-sizing: border-box;">Hide() — 
+								спрячет окно, не уничтожая его. Это действие 
+								имеет смысл для немодальных окон, которые не 
+								блокируют родительское окно;</li>
+								<li style="box-sizing: border-box;">Close() — 
+								закроет форму. При закрытии формы ее объект 
+								уничтожается;</li>
+								<li style="box-sizing: border-box;">Invalidate() 
+								— перерисует форму.</li>
+				</ul>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Методы мы так же будем рассматривать по мере надобности, а пока 
+				этого на ближайшую главу достаточно.</p>
+                <p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В платформе .NET, как и в Win32, для информирования о 
+				возникновении какого-либо состояния или о действии используются 
+				события, или иногда их еще называют сообщения (по-английски: 
+				events). Например, в ответ на изменение положения окна оно 
+				генерирует событие определенного класса, которое мы можем 
+				перехватить.</p>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для того чтобы перехватить событие, нужно создать его 
+				обработчик. Обработчик события по сути является методом, который 
+				регистрируется на отлов определенного события от определенного 
+				элемента управления/формы/компонента. Когда наступит событие, то 
+				этот самый элемент управления/форма/компонент вызовет метод, в 
+				котором мы можем написать код реакции на событие.</p>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				С помощью визуального дизайнера Visual Studio создание 
+				обработчиков событий превращается в тривиальную задачу. На рис. 
+				5.8 показана панель Properties в режиме просмотра событий. Чтобы 
+				увидеть что-то подобное, нужно выделить компонент, событие 
+				которого вы хотите поймать, и нажать кнопку Events в панели 
+				Properties (на рис. 5.8 эта кнопка обведена кружком). Чтобы 
+				вернуться обратно к просмотру свойств, надо щелкнуть по кнопке 
+				Properties, которая находится левее.</p>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img src="Pic/5-8-properties.jpg" alt="Панель Properties 
+при просмотре событий" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; margin: 5px 12px 0px 0px;" /></p>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<i style="box-sizing: border-box;">Рис. 5.8. Панель Properties 
+				при просмотре событий</i></p>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Теперь, чтобы создать нужный обработчик события, достаточно 
+				щелкнуть двойным щелчком в поле справа от имени события. Среда 
+				разработки создаст необходимое событие, добавит его регистрацию 
+				в своем методе InitializeComponent(), переключится в режим кода 
+				и установит курсор в тело метода, созданного для обработки 
+				события.</p>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Давайте создадим обработчик события MouseClick. Выделите форму, 
+				перейдите в панели Properties в режим просмотра событий Events и 
+				щелкните двойным щелчком напротив события. Будет создан метод 
+				Form1_MouseClick():</p>
+				<pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; display: block; padding: 10px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(238, 238, 238); background: rgb(17, 17, 17); border: 1px solid rgb(204, 204, 204); border-radius: 4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">   private void Form1_MouseClick(object sender, MouseEventArgs e)
+   {
+     MessageBox.Show(&quot;Клик&quot;);
+   }
+</pre>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Я здесь добавил внутрь метода обработки события вызов 
+				статического метода Show() класса MessageBox. Этот метод 
+				отображает на рабочем столе диалоговое окно с сообщением, 
+				которое вы передали в качестве параметра. В нашем случае каждый 
+				раз, когда вы щелкнете по форме, будет появляться сообщение: 
+				Клик.</p>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Очень интересным является вопрос о том, какие события получает 
+				форма, когда появляется и уничтожается. При загрузке формы 
+				генерируются следующие события и именно в такой 
+				последовательности:</p>
+				<ul style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li style="box-sizing: border-box;">Load — 
+								загрузка;</li>
+								<li style="box-sizing: border-box;">Activate — 
+								активация;</li>
+								<li style="box-sizing: border-box;">
+								VisibleChanged — изменилось свойство Visible.</li>
+								<li style="box-sizing: border-box;">А при 
+								закрытии формы генерируются следующие события:</li>
+								<li style="box-sizing: border-box;">Deactivated 
+								— деактивировано;</li>
+								<li style="box-sizing: border-box;">Closing — 
+								закрытие формы (можно отменить закрытие);</li>
+								<li style="box-sizing: border-box;">Close — 
+								форма закрыта, и назад дороги нет.</li>
+				</ul>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Событие Load генерируется, когда вы впервые вызываете метод 
+				Show() для отображения формы. Посмотрим на следующий пример:</p>
+				<pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; display: block; padding: 10px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(238, 238, 238); background: rgb(17, 17, 17); border: 1px solid rgb(204, 204, 204); border-radius: 4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">   MyForm form = new MyForm();
+   form.Show();   // отобразить форму
+   form.Hide();   // спрятать с помощью Hide()
+   form.Show();   // Отобразить снова
+</pre>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Событие Load будет сгенерировано только при первом вызове метода 
+				Show(), потому что в этот момент начнет происходить загрузка 
+				формы. Когда мы вызываем метод Hide(), то форма остается 
+				загруженной, просто прячется с экрана. Следующий вызов метода 
+				Show() только изменяет видимость окна, а загрузки не произойдет, 
+				поэтому и событие Load больше генерироваться не станет.</p>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Очень часто у вас будут возникать казусы со случайным созданием 
+				событий. Например, если щелкнуть двойным щелчком по компоненту в 
+				визуальном дизайнере, то будет создан обработчик события по 
+				умолчанию для этого компонента. Так, для кнопки событием по 
+				умолчанию является Click, и если вы случайно щелкнете двойным 
+				щелчком по компоненту в визуальном дизайнере, то будет создан 
+				такой обработчик события. А если вы не хотели его создавать? 
+				Оставлять заготовку метода в коде? Наверное, лучше, все же, 
+				убрать обработчик события, чтобы он не мешал. Как это сделать?</p>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Существует несколько вариантов:</p>
+				<ul style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li style="box-sizing: border-box;">Выделите 
+								компонент в визуальном дизайнере и перейдите в 
+								режим Events в панели свойств. Напротив события 
+								удалите в поле название метода, созданного для 
+								обработчика события. Визуальный редактор удалит 
+								регистрацию события, которую он автоматически 
+								добавил в свой метод InitializeComponent(). Если 
+								в обработчике события не было кода, то заготовка 
+								для метода исчезнет и из кода.</li>
+								<li style="box-sizing: border-box;">Если 
+								обработчик события содержит код, но он уже не 
+								нужен, то можно сначала удалить код из 
+								обработчика события, а потом выполнить действия 
+								из предыдущего пункта.</li>
+								<li style="box-sizing: border-box;">Если 
+								обработчик события содержит код, то можно 
+								сначала удалить имя обработчика события в режиме 
+								Events панели свойств, а потом безболезненно 
+								удалить код метода.</li>
+				</ul>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если вы создали обработчик события и тут же удалили метод в 
+				редакторе кода, то при этом среда разработки не удалит 
+				регистрацию события в методе InitializeComponent(). Это придется 
+				делать вручную. Как это сделать безболезненно? Давайте посмотрим 
+				на примере.</p>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Создайте новое приложение и поместите на его форму кнопку. 
+				Щелкните по кнопке двойным щелчком, и среда разработки 
+				переключит вас в редактор кода с созданным для обработки события 
+				методом:</p>
+				<pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; display: block; padding: 10px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(238, 238, 238); background: rgb(17, 17, 17); border: 1px solid rgb(204, 204, 204); border-radius: 4px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">private void button1_Click(object sender, EventArgs e)
+{
+}
+</pre>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Удалите эту заготовку кода из редактора и попробуйте 
+				скомпилировать проект. Внизу окна появится сообщение об ошибке 
+				(рис. 5.9). В этой ошибке компилятор сообщает нам, что 
+				обработчик события не найден. Щелкните двойным щелчком по 
+				ошибке, и откроется вкладка с файлом (Form1.Designer.cs), где 
+				найдена ошибка, и будет выделена строка кода, которую добавил 
+				визуальный редактор для регистрации события. События — это 
+				отдельная тема, которая будет рассмотрена в главе 10. А сейчас 
+				нужно только понимать, что для того, чтобы избавиться от ошибки, 
+				нужно удалить строку, которую выделил нам редактор. Так вы 
+				вручную удалите регистрацию, и проект откомпилируется без 
+				проблем.</p>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img src="Pic/5-9-error.jpg" alt=" Сообщение об ошибке, что обработчик события не найден " style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; margin: 5px 12px 0px 0px;" /></p>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<i style="box-sizing: border-box;">Рис. 5.9. Сообщение об 
+				ошибке, что обработчик события не найден</i></p>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les71.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les71/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 11:01:51 GMT -->
+</html>

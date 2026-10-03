@@ -1,0 +1,313 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les55/1.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:46:50 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+				color: #FF0000;
+				text-decoration: underline;
+}
+.style4 {
+				color: #0000FF;
+				text-decoration: underline;
+}
+.style5 {
+				color: #FF0000;
+}
+.style7 {
+				color: rgb(0, 0, 128);
+}
+.style8 {
+				font-size: small;
+}
+.style9 {
+	color: rgb(0, 0, 128);
+	font-size: medium;
+}
+.style13 {
+				color: #0000FF;
+}
+    .style14 {
+	color: #FF0000;
+	text-decoration: underline;
+	font-size: small;
+}
+.style15 {
+	font-size: medium;
+	color: #FF0000;
+}
+.style16 {
+	font-size: medium;
+	color: #0000FF;
+}
+.style17 {
+	font-size: medium;
+}
+.style18 {
+	color: #0000FF;
+	text-decoration: underline;
+	font-size: medium;
+}
+.style19 {
+	margin-left: 40px;
+}
+    .style21 {
+	font-size: x-large;
+	color: #FF0000;
+}
+    .style22 {
+	font-size: medium;
+	color: maroon;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 1 Перегрузка методов.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p><span class="style14"><strong><em>В C# допускается совместное использование одного и того же имени двумя или более методами одного и того же класса, при условии, что их параметры объявляются по-разному.</em></strong></span><span class="style8"> </p>
+				</span><span class="style15">
+				<p><span class="style17">В этом случае говорят, что методы перегружаются</span></span><span class="style17">, а сам процесс называется 
+				</span><span class="style15">перегрузкой методов</span><span class="style17">. Перегрузка методов относится к одному из способов реализации
+				</span> 
+				<span class="style16"><strong>полиморфизма</strong></span><span class="style17"> в C#.</p>
+				</span><span class="style8"> 
+<p><em><span class="style18">В общем, </span><span class="style17"><strong>для перегрузки метода достаточно объявить разные его варианты</strong></span><span class="style8">, а об остальном позаботится компилятор</span></em></span><span class="style8">. Но при этом необходимо соблюсти следующее важное условие: тип или число параметров у каждого метода должны быть разными.</p>
+<p><span class="style18"><strong>Совершенно недостаточно</strong></span><span class="style17">, чтобы два метода отличались 
+</span> 
+</span> 
+<span class="style18"><em>только типами возвращаемых значений</em></span><span class="style17">. 
+<span class="style5"><strong>Они должны также отличаться типами или числом своих параметров</strong></span>. (Во всяком случае, типы возвращаемых значений дают недостаточно сведений компилятору C#, чтобы решить, какой именно метод следует использовать.) </p>
+				</span>
+				<span class="style8">
+				<p class="style17">Разумеется, перегружаемые методы могут отличаться и типами возвращаемых значений. 
+				<span class="style4"><em>Когда вызывается перегружаемый метод, то выполняется тот его вариант, параметры которого соответствуют (по типу и числу) передаваемым аргументам.</em></span></p>
+                <p class="style22">Перегрузка операций</p><p class="style17">
+Перегрузка операций в C# является способом объявления семантики новых операций, которые обозначаются принятыми в C# символами операций.</p>
+				<p class="style17">
+
+Перегрузка операций строится на основе общедоступных ( public ) статических (вызываемых от имени класса) функций-членов с использованием ключевого слова operator.</p>
+				<p class="style17">
+
+Не все операции множества могут быть переопределены (перегружены) подобным образом. Некоторые операции могут перегружаться с ограничениями.</p>
+				<p class="style17">
+
+В таблице приводится соответствующая информация относительно перегрузки различных категорий символов операций.</p>
+                <p class="style17">&nbsp;</p>
+<p class="style17">Давайте рассмотрим пример использования перегрузки методов:</p>
+				</span>
+<pre class="style19">
+<span class="style16"><strong>using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication1
+</strong>{<strong>
+    class UserInfo
+    {
+        // Перегружаем метод ui
+        public void ui()
+        {
+            Console.WriteLine("Пустой метод\n");
+        }
+
+        public void ui(</span><span class="style15">string Name</span><span class="style16">)
+        {
+            Console.WriteLine("Имя пользователя: {0}",Name);
+        }
+
+        public void ui(</span><span class="style15">string Name, string Family</span><span class="style16">)
+        {
+            Console.WriteLine("Имя пользователя: {0}\nФамилия пользователя: {1}",Name,Family);
+        }
+
+        public void ui(</span><span class="style15">string Name, string Family, byte Age</span><span class="style16">)
+        {
+            Console.WriteLine("Имя пользователя: {0}\nФамилия пользователя: {1}\nВозраст: {2}", Name, Family, Age);
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            UserInfo user1 = new UserInfo();
+            // Разные реализации вызова перегружаемого метода
+            user1.ui();
+            user1.ui("Ерохин", "Александр", 26);
+
+            Console.ReadLine();
+        }
+    }
+</span></strong><span class="style8">}</pre>
+<p>Использование перегруженного метода C#</p>
+				<p><img alt="" src="Pic/img6689.png" width="677" height="150" /></p>
+<p><span class="style17">Как видите метод </span> </span> <strong><span class="style15">ui</span></strong><span class="style17"> перегружается три раза. 
+</span> </p>
+				<p><span class="style17"><strong>Модификаторы параметров 
+				</strong></span> <span class="style16"><strong>ref и out</strong></span></p>
+				<span class="style8">
+				<p><strong><span class="style17">Модификаторы параметров </span> </strong></span> 
+				<span class="style16"><strong>ref и out</strong></span><span class="style17"><strong> также учитываются, когда принимается решение о перегрузке метода. 
+				</strong></span> </p>
+				<p><span class="style17">(</span><span class="style2"><span class="style18"><strong>Модификатор&nbsp;</strong></span></span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; " class="style15"><strong>ref</strong></span><span class="style16"><strong>&nbsp;предназначен 
+				для указания того, что параметр метода должен передаваться по 
+				ссылке а не по значению). </strong></span></p>
+				<p style="border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style9"><strong>Модификатор параметра</strong><span><strong>&nbsp;</strong></span></span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; " class="style21"><strong>out</strong></span><span class="style9"><strong>&nbsp;используется, 
+				если необходимо выполнение двух условий:</strong></span></p>
+				<ul style="border-style: none; border-color: inherit; border-width: 0px; box-sizing: border-box; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px 20px; outline: 0px; padding: 0px; vertical-align: baseline; list-style: disc; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+								<li style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" class="style17">
+								<strong>методу <span class="style5">не нужно передавать значение</span>;</strong></li>
+								<li style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" class="style8">
+								<strong><span class="style17">метод </span> <span class="style2"><em>
+								<span class="style17">обязательно должен возвращать значение с 
+								помощью параметра</span></em></span>.</strong></li>
+				</ul>
+				<p></p>
+				<p><span class="style8">Несмотря на то что модификаторы параметров ref и out учитываются, когда принимается решение о перегрузке метода, отличие между ними не столь существенно. Давайте добавим еще одну перегрузку в вышеуказанный пример:</p>
+<pre>
+<span class="style13"><strong>// Используем модификатор параметров
+public void ui(string Name, string Family, </span></span><span class="style15">ref</span><span class="style8"><span class="style13"> byte Age)
+</span></span></strong><span class="style8">{<span class="style13"><strong>
+</strong></span>}</pre>
+<p><span class="style18"><strong>Перегрузка методов поддерживает свойство полиморфизма</strong></span><span class="style17">, поскольку именно таким способом в C# реализуется главный принцип полиморфизма: один интерфейс — множество методов. Для того чтобы стало понятнее, как это делается, обратимся к конкретному примеру. В языках программирования, не поддерживающих перегрузку методов, каждому методу должно быть присвоено уникальное имя. Но в программировании зачастую возникает потребность реализовать по сути один и тот же метод для обработки разных типов данных.</span></p>
+<p class="style17">Допустим, что требуется функция, определяющая абсолютное значение. В языках, не поддерживающих перегрузку методов, обычно приходится создавать три или более вариантов такой функции с несколько отличающимися, но все же разными именами. Например, в С функция abs() возвращает абсолютное значение целого числа, функция labs() — абсолютное значение длинного целого числа, а функция fabs () — абсолютное значение числа с плавающей точкой обычной (одинарной) точности.</p>
+<p class="style17">В С перегрузка не поддерживается, и поэтому у каждой функции должно быть свое, особое имя, несмотря на то, что все упомянутые выше функции, по существу, делают одно и то же — определяют абсолютное значение. Но это принципиально усложняет положение, поскольку приходится помнить имена всех трех функций, хотя они реализованы по одному и тому же основному принципу. Подобные затруднения в C# не возникают, поскольку каждому методу, определяющему абсолютное значение, может быть присвоено одно и то же имя. И действительно, в состав библиотеки классов для среды .NET Framework входит метод Abs(), который перегружается в классе System.Math для обработки данных разных числовых типов. Компилятор C# сам определяет, какой именно вариант метода Abs() следует вызывать, исходя из типа передаваемого аргумента.</p>
+<p class="style17">В C# определено понятие сигнатуры, обозначающее имя метода и список его параметров; Применительно к перегрузке это понятие означает, что в одном классе не должно существовать двух методов с одной и той же сигнатурой. Следует подчеркнуть, что в сигнатуру не входит тип возвращаемого значения, поскольку он не учитывается, когда компилятор C# принимает решение о перегрузке метода. В сигнатуру не входит также модификатор params.</p>
+<p><span class="style17">Чтобы закрепить понятие перегрузки методов, давайте рассмотрим перегрузку встроенного метода 
+</span> </span>
+<span class="style15">IndexOf</span><span class="style17"> класса String пространства имен System:</span></p>
+				<p><span class="style8"><span class="style5"><strong>Метод 
+				String.IndexOf</strong></span><br />
+				<br />
+				<span class="style5"><strong>Определение</strong></span> 
+				Возвращает индекс с отсчетом от нуля первого вхождения 
+				указанного символа Юникода или строки в пределах данного 
+				экземпляра. Метод возвращает -1, если знак или строка не найдена 
+				в данном экземпляре.</span></p>
+				<p class="style8">Синтаксис :&nbsp; <span class="style13">
+				<strong>public int IndexOf (string value, int startIndex, int 
+				count);</strong></span></p>
+				<p class="style8"><strong><span class="style13">Параметры<br />
+				</span><span class="style5">value</span><span class="style13">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				String&nbsp; Строка для поиска.<br />
+				<br />
+				</span><span class="style5">startIndex</span><span class="style13">&nbsp; 
+				Int32&nbsp; Позиция, с которой начинается поиск.<br />
+				<br />
+				</span><span class="style5">count </span><span class="style13">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				Int32&nbsp; Количество позиций знаков для проверки.</span></strong></p>
+				<p class="style8"><strong><span class="style13">Возвращаемое 
+				значение&nbsp;&nbsp; Int32&nbsp; -&nbsp; </span>
+				<span class="style5">Отсчитываемая от нуля позиция индекса 
+				параметра</span><span class="style13"> value с начала текущего 
+				экземпляра, если строка найдена. Значение </span>
+				<span class="style15">–1,</span><span class="style13"> если 
+				строка не найдена. Если значение параметра value равно </span>
+				<span class="style15">Empty,</span><span class="style13"> 
+				возвращаемым значением является startIndex.</span></strong></p>
+				<span class="style8">
+<pre class="style19">
+<span class="style13"><strong>using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication1
+</strong>{<strong>
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string s = "Всем привет, это сайт professorweb.ru :)";
+            char ch = 'е';
+            string smile = ":)";
+            Console.WriteLine("Исходная строка: {0}\n\n----------------------\n",s);
+
+            // Первая перегрузка
+            if (s.IndexOf(ch) != -1)
+                Console.WriteLine("Символ '{0}' находится на позиции {1}",ch,s.IndexOf(ch));
+
+            // Вторая перегрузка
+            if (s.IndexOf(ch, s.IndexOf(ch)+1) != -1)
+                Console.WriteLine("Далее, этот символ встречается на позиции {0}", s.IndexOf(ch, s.IndexOf(ch) + 1));
+
+            // Третья перегрузка
+            if (s.IndexOf(smile, 0, s.Length) != -1)
+                Console.WriteLine("Смайл {0} найден на позиции {1}", smile, s.IndexOf(smile, 0, s.Length));
+
+            // Четвертая перегрузка
+            if (s.IndexOf(smile, StringComparison.Ordinal) != -1)
+                Console.WriteLine("Теперь смайл найден другим способом");
+                        
+            Console.ReadLine();
+        }
+    }
+</strong></span>}</pre>
+<p>Перегрузки IndexOf C#</p>
+				<p><img alt="" src="Pic/img6690.png" width="677" height="186" /></p>
+<p>В данном примере используется только часть доступных перегрузок метода </span>
+<span class="style15"><strong>IndexOf</strong></span><span class="style8">, если бы C# не поддерживал перегрузки, то пришлось бы присваивать каждому методу свое имя, что конечно же очень неудобно. В данном случае метод IndexOf реализует несколько перегрузок, для поиска символов и подстрок в исходной строке.</span></p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les55.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les55/1.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:46:58 GMT -->
+</html>

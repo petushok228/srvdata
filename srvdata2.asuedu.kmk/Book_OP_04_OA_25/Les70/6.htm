@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les70/6.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 11:00:09 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Самостоятельная работа.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <font face="Cascadia Mono" size="2" color="#008000" style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<p>1,&nbsp; Создаем главное окно приложения. Обычно переменную 
+				называют «root»</p>
+				<font face="Cascadia Mono" size="2">
+				<p class="style3" style="margin-left: 40px;">
+				<span class="style2" style="color: blue;">root =<span>&nbsp;</span>Tk()</span></p>
+				</font>
+				<p>2.&nbsp; устанавливаем размер окна используя функцию<span>&nbsp;</span><span class="style2" style="color: blue;"><strong>geometry 
+				(wxh+top+left)</strong></span></p>
+				<font face="Cascadia Mono" size="2">
+				<p class="style3" style="margin-left: 40px;">
+				<span class="style2" style="color: blue;">root.title(&quot;Урок 16. 
+				Создание графического интерфейса&quot;</span>) - заголовок окна</p>
+				<p>3.<span>&nbsp;</span><span lang="ru">Установим окно программы в 
+				центре экрана</span></p>
+				<p class="style4" style="color: blue; margin-left: 40px;">w = 
+				root.winfo_screenwidth() -<span>&nbsp;</span><span lang="ru">определим 
+				ширину экрана</span></p>
+				<p class="style3" style="margin-left: 40px;">
+				<span class="style2" style="color: blue;">h = 
+				root.winfo_screenheight()<span>&nbsp;</span></span><font face="Cascadia Mono" size="2" class="style2" style="color: blue;">-<span>&nbsp;</span><span lang="ru">определим 
+				высоту экрана</span></font></p>
+				<p class="style4" style="color: blue; margin-left: 40px;">w = 
+				w//2 # середина экрана</p>
+				<p class="style4" style="color: blue; margin-left: 40px;">h = 
+				h//2</p>
+				<p class="style4" style="color: blue; margin-left: 40px;">
+				<span lang="ru">4. Если необходимо сместим от середины на:</span></p>
+				<p class="style4" style="color: blue; margin-left: 40px;">w = w 
+				- 200 # смещение от середины</p>
+				<p class="style4" style="color: blue; margin-left: 40px;">h = h 
+				- 200</p>
+				<p>5.<span>&nbsp;</span><span lang="ru">Настроим расположение формы с 
+				параметрами:</span></p>
+				<p class="style4" style="color: blue; margin-left: 40px;">
+				root.geometry(&#39;500x400+{}+{}&#39;.format(w, h))</p>
+				</font>
+				<p class="style3" style="margin-left: 40px;">#<span class="style2" style="color: blue;">root.geometry(&#39;600x400+200+100&#39;)&nbsp; 
+				-<span>&nbsp;</span><span lang="ru">или можно так</span></span></p>
+				<p>6. Изменение фона</p>
+				<p class="style4" style="color: blue; margin-left: 40px;">#root.configure(background=&#39;red&#39;)</p>
+				<p class="style3" style="margin-left: 40px;">#<span class="style2" style="color: blue;">root.configure(bg=&#39;red&#39;)</span></p>
+				<p class="style4" style="color: blue; margin-left: 40px;">
+				#root[&#39;bg&#39;] = &#39;blue&#39;</p>
+				<p class="style3" style="margin-left: 40px;">
+				<font face="Cascadia Mono" size="2">
+				<span class="style2" style="color: blue;">root[</span></font><font face="Cascadia Mono" size="2" color="#a31515">&#39;<span class="style2" style="color: blue;">bg&#39;</span></font><span class="style2" style="color: blue;"><font face="Cascadia Mono" size="2">] 
+				=<span>&nbsp;</span></font></span><font face="Cascadia Mono" size="2"><span class="style2" style="color: blue;">&#39;#0059b3&#39;</span></font></p>
+				<p><font face="Cascadia Mono" size="2" color="#008000">6.<span>&nbsp;</span></font>&nbsp;Установка 
+				иконки</p>
+				<font face="Cascadia Mono" size="2">
+				<p class="style3" style="margin-left: 40px;">
+				<span class="style2" style="color: blue;">root.iconbitmap(default=&quot;homepage.ico&quot;</span>)</p>
+				</font>
+				<p>7. запрет на изменение размеров главного окна как по 
+				горизонтали, так и вертикали.</p>
+				<font face="Consolas" size="2">
+				<p class="style4" style="color: blue; margin-left: 40px;">
+				root.protocol(&quot;WM_DELETE_WINDOW&quot;, finish)</p>
+				</font>
+				<p>&nbsp;</p>
+				<font face="Cascadia Mono" size="2">
+				<p>root.mainloop()</p>
+				</font>
+				<p>&nbsp;</p>
+				</font>
+				<p class="ZagT" style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				&nbsp;</p>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les70.htm"
+}
+
+// ]]>
+</script>
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les70/6.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 11:00:09 GMT -->
+</html>

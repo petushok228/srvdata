@@ -1,0 +1,676 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les30/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:04:08 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+				color: #800000;
+				text-decoration: underline;
+}
+.style3 {
+				font-size: small;
+}
+.style4 {
+				font-family: var(--main-font-family);
+				line-height: 25.6px;
+				white-space: pre-wrap;
+				clear: both;
+				color: var(--console-textcolor);
+				font-size: small;
+				border: 1px solid rgb(204, 204, 204);
+				padding-left: 10px;
+				background-color: var(--console-bgcolor);
+}
+.style5 {
+				color: #0000FF;
+}
+    .style6 {
+	font-size: medium;
+	color: #800000;
+}
+.style7 {
+	font-size: medium;
+}
+.style8 {
+	font-size: small;
+	color: rgb(0, 0, 128);
+}
+.style9 {
+	color: rgb(0, 0, 128);
+}
+    </style>
+</head>
+<body>
+    
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 3. Процедуры и функции – методы класса в C#</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+				<p>
+				<strong style="margin: 0px; padding: 0px;"><span class="style7">Процедуры и функции. 
+				Отличия</span></strong><span class="style3"></p>
+				<p>
+				Функция отличается от процедуры двумя особенностями:</p>
+				<ul>
+								<li style="margin: 0px 0px 0.5em; padding: 0px;">
+								всегда вычисляет некоторое значение, 
+								возвращаемое в качестве результата функции;</li>
+								<li style="margin: 0px 0px 0.5em; padding: 0px;">
+								вызывается в выражениях.</li>
+				</ul>
+				<p>
+				Процедура C# имеет свои особенности:</p>
+				<ul>
+								<li style="margin: 0px 0px 0.5em; padding: 0px;">
+								возвращает формальный результат void, 
+								указывающий на<span>&nbsp;</span><strong style="margin: 0px; padding: 0px;">отсутствие 
+								результата,<span>&nbsp;</span></strong>возвращаемого 
+								при вызове процедуры;</li>
+								<li style="margin: 0px 0px 0.5em; padding: 0px;">
+								вызов процедуры является оператором языка;</li>
+								<li style="margin: 0px 0px 0.5em; padding: 0px;">
+								имеет<span>&nbsp;</span><strong style="margin: 0px; padding: 0px;">входные 
+								и выходные аргументы</strong>, причем выходных 
+								аргументов – ее результатов – может быть 
+								достаточно много.</li>
+				</ul>
+				<p>
+				Хорошо известно, что одновременное существование в языке 
+				процедур и функций в каком-то смысле избыточно. Добавив еще один 
+				выходной аргумент любую функцию можно записать в виде процедуры. 
+				Справедливо и обратное. Если допускать функции с побочным 
+				эффектом, то любую процедуру можно записать в виде функции. В 
+				языке С – дедушке C# – так и сделали, оставив только функции. 
+				Однако значительно удобнее иметь обе формы реализации метода –&nbsp; 
+				процедуры и функции. Обычно метод предпочитают реализовать в 
+				виде функции тогда, когда он имеет один выходной аргумент, 
+				рассматриваемый как результат вычисления значения функции. 
+				Возможность вызова функций в выражениях также влияет на выбор в 
+				пользу реализации метода в виде функции. В других случаях метод 
+				реализуют в виде процедуры.</p>
+				</span>
+				<p class="style7">
+				<strong style="margin: 0px; padding: 0px;">Описание методов 
+				(процедур и функций). Синтаксис</strong></p>
+				<span class="style3">
+				<p>
+				Синтаксически в описании метода различают две части –<span>&nbsp;</span><strong style="margin: 0px; padding: 0px;">описание</strong><span>&nbsp;</span><strong style="margin: 0px; padding: 0px;">заголовка</strong><span>&nbsp;</span>и<span>&nbsp;</span><strong style="margin: 0px; padding: 0px;">описание 
+				тела</strong><span>&nbsp;</span>метода:</p>
+				<ul class="style5">
+								<li><strong>заголовок_метода</strong></li>
+								<li><strong>тело_метода</strong></li>
+				</ul>
+				<p>
+				Рассмотрим синтаксис заголовка метода:</p>
+				</span>
+				<span class="style2" >
+				<em><span class="style7">[атрибуты][модификаторы]{void| тип_результата_функции} 
+				имя_метода([список_формальных_аргументов])</span></em></span><p>
+				<span class="style3">Имя метода и список формальных аргументов составляют<span>&nbsp;</span><strong style="margin: 0px; padding: 0px;">сигнатуру 
+				метода</strong>. Заметьте, в сигнатуру не входят имена 
+				формальных аргументов, здесь важны типы аргументов. В сигнатуру 
+				не входит и тип возвращаемого результата.</p>
+				<p>
+				<span class="style5"><strong>Квадратные скобки</strong></span> (метасимволы синтаксической формулы) 
+				показывают, <span class="style5"><em>что атрибуты и модификаторы могут быть опущены при 
+				описании метода</em></span>. Подробное их рассмотрение будет дано в лекциях, 
+				посвященных описанию классов. Сейчас же упомяну только об одном 
+				из модификаторов – модификаторе доступа. У него четыре возможных 
+				значения, из которых пока рассмотрим только два – public и 
+				private. Модификатор public показывает, что<span>&nbsp;</span><strong style="margin: 0px; padding: 0px;">метод</strong><span>&nbsp;</span><strong style="margin: 0px; padding: 0px;">открыт</strong><span>&nbsp;</span>и 
+				доступен для вызова клиентами и потомками класса. Модификатор 
+				private говорит, что метод предназначен для внутреннего 
+				использования в классе и доступен для вызова только в теле 
+				методов самого класса. Заметьте, если&nbsp; модификатор доступа 
+				опущен, то по умолчанию предполагается, что он имеет значение 
+				private и метод является<span>&nbsp;</span><strong style="margin: 0px; padding: 0px;">закрытым<span>&nbsp;</span></strong>для 
+				клиентов и потомков класса.</p>
+				<p>
+				Обязательным при описании заголовка является указание типа 
+				результата, имени метода и круглых скобок, наличие которых 
+				необходимо и в том случае, если сам список формальных аргументов 
+				отсутствует. Формально тип результата метода указывается всегда, 
+				но значение void однозначно определяет, что метод реализуется 
+				процедурой. Тип результата, отличный от void, указывает на 
+				функцию. Вот несколько простейших примеров описания методов:</p>
+				</span>
+				<p>
+				<span class="style6">void A() {…};</p>
+				<p>
+				int B(){…);</p>
+				<p>
+				public void C(){…};</span></p>
+				<span class="style3">
+				<p>
+				Методы A и B являются закрытыми, а метод С – открыт. Методы A и 
+				С реализованы процедурами, а метод B – функцией, возвращающей 
+				целое значение.</p>
+				</span>
+				<p class="style7">
+				<strong style="margin: 0px; padding: 0px;">Список формальных 
+				аргументов</strong></p>
+				<span class="style3">
+				<p>
+				Как уже отмечалось, список формальных аргументов метода может 
+				быть пустым и это довольно типичная ситуация для методов класса. 
+				Список может содержать фиксированное число аргументов, 
+				разделяемых символом запятой.</p>
+				<p>
+				Рассмотрим теперь синтаксис объявления одного формального 
+				аргумента:</span></p>
+				<span class="style6" >
+				<strong>[ref|out|params]тип_аргумента имя_аргумент</strong></span><p>
+				<span class="style3">Обязательным является указание типа и имени аргумента. Заметьте, 
+				никаких ограничений на тип аргумента не накладывается. Он может 
+				быть любым скалярным типом, массивом, классом, структурой, 
+				интерфейсом, перечислением, функциональным типом.</p>
+				<p>
+				Несмотря на фиксированное число формальных аргументов, есть 
+				возможность при вызове метода передавать ему<span>&nbsp;</span><strong style="margin: 0px; padding: 0px;">произвольное 
+				число фактических аргументов</strong>. Для реализации этой 
+				возможности в списке формальных аргументов необходимо задать 
+				ключевое слово params. Оно может появляться в объявлении лишь 
+				для последнего аргумента списка, объявляемого как массив 
+				произвольного типа. При вызове метода этому формальному 
+				аргументу соответствует произвольное число фактических 
+				аргументов.</p>
+				<p>
+				Содержательно, все аргументы метода разделяются на три группы:<span>&nbsp;</span><strong style="margin: 0px; padding: 0px;">входные, 
+				выходные и обновляемые</strong>. Аргументы первой группы 
+				передают информацию методу, их значения в теле метода только 
+				читаются. Аргументы второй группы представляют собой результаты 
+				метода, они получают значения в ходе работы метода. Аргументы 
+				третьей группы выполняют обе функции. Их значения используются в 
+				ходе вычислений и обновляются в результате работы метода. 
+				Выходные аргументы всегда должны сопровождаться ключевым словом 
+				out, обновляемые – ref. Что же касается входных аргументов, то, 
+				как правило, они задаются без ключевого слова, хотя иногда их 
+				полезно объявлять с параметром ref, о чем подробнее скажу чуть 
+				позже. Заметьте, если аргумент объявлен как выходной с ключевым 
+				словом out, то в теле метода обязательно должен присутствовать 
+				оператор присваивания, задающий значение этому аргументу. В 
+				противном случае возникает ошибка еще на этапе компиляции.</span></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Если переменные хранят некоторые значения, то методы содержат 
+				собой набор инструкций, которые выполняют определенные действия. 
+				По сути метод - это именованный блок кода, который выполняет 
+				некоторые действия.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Общее определение методов выглядит следующим образом:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<img alt="" src="Pic/r-30-10.png" width="660" height="90" /></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<strong>Модификаторы и параметры необязательны.</strong></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style8">
+				Ранее мы уже использовали как минимум один метод -<span>&nbsp;</span><span class="b" style="font-weight: bold;">Console.WriteLine()</span>, 
+				который выводит информацию на консоль. Теперь рассмотрим, как мы 
+				можем создавать свои методы.</p>
+				<h3 style="font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Определение метода</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Определим один метод:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<img alt="" src="Pic/r-30-12.png" width="280" height="36" /></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style8">
+				Здесь определен метод<span>&nbsp;</span><code style="font-family: monospace;">SayHello</code>, 
+				который выводит некоторое сообщение. К названиям методов 
+				предъявляются в принципе те же требования, что и к названиям 
+				переменных. Однако, как правило, названия методов начинаются с 
+				большой буквы.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style8">
+				Перед названием метода идет возвращаемый тип данных. Здесь это 
+				тип<span>&nbsp;</span><span class="b" style="font-weight: bold;">void</span>, 
+				который указывает, что фактически ничего не возвращает, он просто 
+				производит некоторые действия.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				После названия метода в скобках идет перечисление параметров. Но 
+				в данном случае скобки пустые, что означает, что метод не 
+				принимает никаких параметров.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style8">
+				После списка параметров в круглых скобках идет блок кода, 
+				который представляет набор выполняемых методом инструкций. В 
+				данном случае блок метода SayHello содержит только одну 
+				инструкцию, которая выводит строку на консоль:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<img alt="" src="Pic/r-30-12.png" width="280" height="36" /></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Но если мы запустим данный проект, то мы не увидим никакой 
+				строки, которую должен выводить метод SayHello. Потому что после 
+				определения метод еще надо вызвать, чтобы он выполнил свою 
+				работу.</p>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				Вызов методов</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Чтобы использовать метод SayHello, нам надо его вызвать. Для 
+				вызова метода указывается его имя, после которого в скобках идут 
+				значения для его параметров (если метод принимает параметры).</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<img alt="" src="Pic/r-30-13.png" width="445" height="36" /></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Например, вызов метода SayHello будет выглядеть следующим 
+				образом:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<img alt="" src="Pic/r-30-14.png" width="189" height="33" /></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Поскольку метод не принимает никаких параметров, то после 
+				названия метода идут пустые скобки.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Объединим определение и вызов метода:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<img alt="" src="Pic/r-30-15.png" width="327" height="156" /></p>
+				<img src="2.13.png" alt="методы в C# и .NET" style="max-width: 99%; height: auto; margin-bottom: 15px; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3" /><p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Консольный вывод программы:</p>
+				<div class="console" style="padding: 0px; margin: 5px; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<pre class="style4" style="max-width: 99%; overflow-wrap: break-word;">Hello
+Hello
+</pre>
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Преимуществом методов является то, что их можно повторно и 
+				многократно вызывать в различных частях программы. Например, в 
+				примере выше два раза вызывается метод SayHello.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				При этом в данном случае нет разницы, сначала определяется 
+				метод, а потом вызывается или наоборот. Например, мы могли бы 
+				написать и так:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<img alt="" src="Pic/r-30-16.png" width="327" height="158" /></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Определим и вызовем еще несколько методов:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<img alt="" src="Pic/r-30-17.png" width="332" height="593" /></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style8">
+				Здесь определены три метода<span>&nbsp;</span><code style="font-family: monospace;">SayHelloRu()</code>,<span>&nbsp;</span><code style="font-family: monospace;">SayHelloEn()</code><span>&nbsp;</span>и<span>&nbsp;</span><code style="font-family: monospace;">SayHelloFr()</code>, 
+				которые также имеют тип<span>&nbsp;</span><code style="font-family: monospace;">void</code>, 
+				не принимают никаких параметров и также выводит некоторую строку 
+				на консоль. Условно говоря, они выводят приветствие на 
+				определенном языке.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style8">
+				В конструкции<span>&nbsp;</span><code style="font-family: monospace;">switch</code><span>&nbsp;</span>проверяется 
+				значение переменной<span>&nbsp;</span><code style="font-family: monospace;">language</code>, 
+				которая условно хранит код языка, и в зависимости от ее значения 
+				вызывается определенный метод. Так, в данном случае на консоль 
+				будет выведено</p>
+				<div class="console" style="padding: 0px; margin: 5px; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<pre class="style3" style="font-family: var(--main-font-family); max-width: 99%; line-height: 25.6px; white-space: pre-wrap; border: 1px solid rgb(204, 204, 204); clear: both; overflow-wrap: break-word; background-color: var(--console-bgcolor); color: var(--console-textcolor); padding-left: 10px;">Hello</pre>
+				</div>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				Сокращенная запись методов</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Если метод в качестве тела определяет только одну инструкцию, то 
+				мы можем сократить определение метода. Например, допустим у нас 
+				есть метод:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<img alt="" src="Pic/r-30-18.png" width="332" height="92" /></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Мы можем его сократить следующим образом:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<img alt="" src="Pic/r-30-19.png" width="410" height="32" /></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style9">
+				То есть после списка параметров ставится оператор<span>&nbsp;</span><span class="b" style="font-weight: bold;">=&gt;</span>, 
+				после которого идет выполняемая инструкция.</p>
+                <h3 style="margin: 49px 0px 21px; padding: 0px; box-sizing: inherit; clear: both; font-weight: 300; color: rgb(0, 0, 0); text-decoration: none; font-size: 1.75rem; line-height: 1.25; font-family: &quot;Nunito Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255);">
+				<span id="i-2" style="margin: 0px; padding: 0px; box-sizing: inherit;">
+				Объявление методов и функций</span></h3>
+				<ul style="margin: 0px 0px 1.5em 1.5em; padding: 0px; box-sizing: border-box; list-style: square; color: rgb(17, 17, 17); font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="margin: 0px; padding: 0px; box-sizing: inherit;">
+					Методы позволяют нам инкапсулировать поведение и 
+					функциональность в объекты, которые мы создаем в нашем коде.</li>
+					<li style="margin: 0px; padding: 0px; box-sizing: inherit;">
+					Метод объявляется с использованием сигнатуры.<p style="margin: 0px 0px 1.5em; padding: 0px; box-sizing: inherit;">
+					<u style="margin: 0px; padding: 0px; box-sizing: inherit;">
+					Сигнатура метода состоит из:</u><br style="margin: 0px; padding: 0px; box-sizing: inherit;" />
+					&nbsp;&nbsp;<br style="margin: 0px; padding: 0px; box-sizing: inherit;" />
+					<strong style="margin: 0px; padding: 0px; box-sizing: inherit; font-weight: 600;">
+					Модификатор доступа</strong><span>&nbsp;</span>— откуда этот 
+					метод может быть вызван. Некоторые из них:</p>
+					</li>
+					<li style="margin: 0px 0px 0px 15px; padding: 0px; box-sizing: inherit; list-style-type: circle;">
+					<em style="margin: 0px; padding: 0px; box-sizing: inherit; font-style: italic;">
+					private</em><span>&nbsp;</span>— наиболее ограничительный, 
+					допускающий доступ к методу только из содержащего его класса 
+					или структуры</li>
+					<li style="margin: 0px 0px 0px 15px; padding: 0px; box-sizing: inherit; list-style-type: circle;">
+					<em style="margin: 0px; padding: 0px; box-sizing: inherit; font-style: italic;">
+					public<span>&nbsp;</span></em>— доступ из любого фрагмента кода в 
+					рамках приложения</li>
+					<li style="margin: 0px 0px 0px 15px; padding: 0px; box-sizing: inherit; list-style-type: circle;">
+					<em style="margin: 0px; padding: 0px; box-sizing: inherit; font-style: italic;">
+					protected<span>&nbsp;</span></em>— позволяет получить доступ из 
+					содержащего класса или из производных классов</li>
+					<li style="margin: 0px 0px 0px 15px; padding: 0px; box-sizing: inherit; list-style-type: circle;">
+					<em style="margin: 0px; padding: 0px; box-sizing: inherit; font-style: italic;">
+					internal<span>&nbsp;</span></em>— доступ из файлов внутри одной 
+					сборки</li>
+					<li style="margin: 0px 0px 0px 15px; padding: 0px; box-sizing: inherit; list-style-type: circle;">
+					<em style="margin: 0px; padding: 0px; box-sizing: inherit; font-style: italic;">
+					static<span>&nbsp;</span></em>— указывает, что метод является 
+					статическим членом класса, а не членом экземпляра 
+					конкретного объекта</li>
+					<li style="margin: 0px; padding: 0px; box-sizing: inherit;">
+					<strong style="margin: 0px; padding: 0px; box-sizing: inherit; font-weight: 600;">
+					Тип возвращаемого значения</strong><span>&nbsp;</span>— 
+					используется для указания типа возвращаемого значения. 
+					Используйте<span>&nbsp;</span><em style="margin: 0px; padding: 0px; box-sizing: inherit; font-style: italic;">void</em>, 
+					если метод не возвращает значение</li>
+					<li style="margin: 0px; padding: 0px; box-sizing: inherit;">
+					<strong style="margin: 0px; padding: 0px; box-sizing: inherit; font-weight: 600;">
+					Идентификатор (имя) метода</strong><span>&nbsp;</span>— все 
+					методы должны иметь идентификатор (имя), чтобы была 
+					возможность вызывать метод в коде. Правила идентификаторов 
+					применяются и к именам методов</li>
+					<li style="margin: 0px; padding: 0px; box-sizing: inherit;">
+					<strong style="margin: 0px; padding: 0px; box-sizing: inherit; font-weight: 600;">
+					Список аргументов (параметров)</strong><span>&nbsp;</span>— 
+					разделенный запятыми список аргументов, передаваемых в метод<p style="margin: 0px 0px 1.5em; padding: 0px; box-sizing: inherit;">
+					<u style="margin: 0px; padding: 0px; box-sizing: inherit;">
+					Пример функции (метода):</u></p>
+					<div class="wp_syntax" style="margin: 0px 0px 1.5em; padding: 0px; box-sizing: inherit; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; overflow: auto hidden; width: auto; position: relative;">
+						<table style="margin: 0px !important; padding: 0px !important; box-sizing: inherit; border-collapse: collapse !important; border-spacing: 0px; border: none !important; width: 892.9px;">
+							<tbody style="margin: 0px; padding: 0px; box-sizing: inherit;">
+								<tr style="margin: 0px; padding: 0px; box-sizing: inherit;">
+									<td class="code" style="margin: 0px; padding: 0px !important; box-sizing: inherit; border: none !important; font-weight: normal; text-align: left !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 892.9px;">
+									<pre class="csharp" style="margin: 0px !important; padding: 0px 4px !important; box-sizing: inherit; overflow: visible !important; font-family: monospace; font-size: 14px !important; background: transparent !important; line-height: 16px !important; max-width: 100%; white-space: pre !important; overflow-wrap: break-word; border: none !important; width: auto !important; float: none !important; clear: none !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important; border-radius: 0px !important;"><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(6, 0, 255); font-weight: bold;">public</span> Boolean StartService<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">(</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">string</span> serviceName<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">)</span>
+<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">{</span>
+   <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 128); font-style: italic;">// код функции</span>
+<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">}</span></pre>
+									</td>
+								</tr>
+						</table>
+					</div>
+					<p style="margin: 0px 0px 1.5em; padding: 0px; box-sizing: inherit;">
+					В примере:<br style="margin: 0px; padding: 0px; box-sizing: inherit;" />
+					<code style="margin: 0px; padding: 2px 4px; box-sizing: inherit; font-family: &quot;Courier New&quot;, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 15.3px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">
+					public</code><span>&nbsp;</span>модификатор доступа,<br style="margin: 0px; padding: 0px; box-sizing: inherit;" />
+					<code style="margin: 0px; padding: 2px 4px; box-sizing: inherit; font-family: &quot;Courier New&quot;, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 15.3px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">
+					Boolean</code><span>&nbsp;</span>тип возвращаемого значения,<br style="margin: 0px; padding: 0px; box-sizing: inherit;" />
+					<code style="margin: 0px; padding: 2px 4px; box-sizing: inherit; font-family: &quot;Courier New&quot;, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 15.3px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">
+					StartService</code><span>&nbsp;</span>идентификатор (имя),<br style="margin: 0px; padding: 0px; box-sizing: inherit;" />
+					<code style="margin: 0px; padding: 2px 4px; box-sizing: inherit; font-family: &quot;Courier New&quot;, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 15.3px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">
+					string serviceName</code><span>&nbsp;</span>параметр (аргумент).</p>
+					</li>
+					<li style="margin: 0px; padding: 0px; box-sizing: inherit;">
+					Чтобы вернуть значение из функции, используйте оператор:<div class="wp_syntax" style="margin: 0px 0px 1.5em; padding: 0px; box-sizing: inherit; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; overflow: auto hidden; width: 885.55px; position: relative;">
+						<table style="margin: 0px !important; padding: 0px !important; box-sizing: inherit; border-collapse: collapse !important; border-spacing: 0px; border: none !important; width: 883.95px;">
+							<tbody style="margin: 0px; padding: 0px; box-sizing: inherit;">
+								<tr style="margin: 0px; padding: 0px; box-sizing: inherit;">
+									<td class="code" style="margin: 0px; padding: 0px !important; box-sizing: inherit; border: none !important; font-weight: normal; text-align: left !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 883.95px;">
+									<pre class="csharp" style="margin: 0px !important; padding: 0px 4px !important; box-sizing: inherit; overflow: visible !important; font-family: monospace; font-size: 14px !important; background: transparent !important; line-height: 16px !important; max-width: 100%; white-space: pre !important; overflow-wrap: break-word; border: none !important; width: auto !important; float: none !important; clear: none !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important; border-radius: 0px !important;"><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(6, 0, 255); font-weight: bold;">return</span> выражение<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">;</span></pre>
+									</td>
+								</tr>
+						</table>
+					</div>
+					</li>
+					<li style="margin: 0px; padding: 0px; box-sizing: inherit;">
+					Если вместо возвращаемого типа у нас присутствует ключевое 
+					слово<span>&nbsp;</span><code style="margin: 0px; padding: 2px 4px; box-sizing: inherit; font-family: &quot;Courier New&quot;, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 15.3px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">void</code>, 
+					то это означает, что функция не вернет никакого значения.<div class="wp_syntax" style="margin: 0px 0px 1.5em; padding: 0px; box-sizing: inherit; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; overflow: auto hidden; width: 885.55px; position: relative;">
+						<table style="margin: 0px !important; padding: 0px !important; box-sizing: inherit; border-collapse: collapse !important; border-spacing: 0px; border: none !important; width: 883.95px;">
+							<tbody style="margin: 0px; padding: 0px; box-sizing: inherit;">
+								<tr style="margin: 0px; padding: 0px; box-sizing: inherit;">
+									<td class="code" style="margin: 0px; padding: 0px !important; box-sizing: inherit; border: none !important; font-weight: normal; text-align: left !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 883.95px;">
+									<pre class="csharp" style="margin: 0px !important; padding: 0px 4px !important; box-sizing: inherit; overflow: visible !important; font-family: monospace; font-size: 14px !important; background: transparent !important; line-height: 16px !important; max-width: 100%; white-space: pre !important; overflow-wrap: break-word; border: none !important; width: auto !important; float: none !important; clear: none !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important; border-radius: 0px !important;"><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(6, 0, 255); font-weight: bold;">static</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">void</span> SayHello<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">()</span>
+<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">{</span>
+ Console<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">.</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 0, 255);">WriteLine</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">(</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 102);">&quot;Hello&quot;</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">);</span>
+<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">}</span></pre>
+									</td>
+								</tr>
+						</table>
+					</div>
+					</li>
+					<li style="margin: 0px; padding: 0px; box-sizing: inherit;">
+					Можно определить функцию в том же классе, что и функцию<span>&nbsp;</span><code style="margin: 0px; padding: 2px 4px; box-sizing: inherit; font-family: &quot;Courier New&quot;, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 15.3px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">Main()</code>, 
+					или определить ее в другом классе.</li>
+					<li style="margin: 0px; padding: 0px; box-sizing: inherit;">
+					Все методы или функции в си шарп должны быть статическими, 
+					что означает, что их можно вызвать без создания класса 
+					объекта.</li>
+					<li style="margin: 0px; padding: 0px; box-sizing: inherit;">
+					Чтобы методы (функции), описываемые в одном классе, сделать 
+					видимыми в другом, они должны быть описаны с помощью 
+					модификатора доступа<span>&nbsp;</span><code style="margin: 0px; padding: 2px 4px; box-sizing: inherit; font-family: &quot;Courier New&quot;, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 15.3px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">public</code></li>
+					<li style="margin: 0px; padding: 0px; box-sizing: inherit;">
+					Если метод (функция) вызывается в том же классе, модификатор 
+					доступа<span>&nbsp;</span><code style="margin: 0px; padding: 2px 4px; box-sizing: inherit; font-family: &quot;Courier New&quot;, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 15.3px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">public</code><span>&nbsp;</span>не 
+					требуется.</li>
+				</ul>
+				<h3 style="margin: 49px 0px 21px; padding: 0px; box-sizing: inherit; clear: both; font-weight: 300; color: rgb(0, 0, 0); text-decoration: none; font-size: 1.75rem; line-height: 1.25; font-family: &quot;Nunito Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255);">
+				<span id="i-3" style="margin: 0px; padding: 0px; box-sizing: inherit;">
+				Вызов метода / функции</span></h3>
+				<li style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(17, 17, 17); font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Чтобы вызвать метод в c sharp, необходимо указать имя метода и 
+				указать в скобках все аргументы, соответствующие параметрам 
+				метода.<div class="wp_syntax" style="margin: 0px 0px 1.5em; padding: 0px; box-sizing: inherit; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; overflow: auto hidden; width: auto; font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+					<table style="margin: 0px !important; padding: 0px !important; box-sizing: inherit; border-collapse: collapse !important; border-spacing: 0px; border: none !important; width: 918.4px;">
+						<tbody style="margin: 0px; padding: 0px; box-sizing: inherit;">
+							<tr style="margin: 0px; padding: 0px; box-sizing: inherit;">
+								<td class="code" style="margin: 0px; padding: 0px !important; box-sizing: inherit; border: none !important; font-weight: normal; text-align: left !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 918.4px;">
+								<pre class="csharp" style="margin: 0px !important; padding: 0px 4px !important; box-sizing: inherit; overflow: visible !important; font-family: monospace; font-size: 14px !important; background: transparent !important; line-height: 16px !important; max-width: 100%; white-space: pre !important; overflow-wrap: break-word; border: none !important; width: auto !important; float: none !important; clear: none !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important; border-radius: 0px !important;"><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(6, 0, 255); font-weight: bold;">static</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">void</span> Main<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">(</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">string</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">[]</span> args<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">)</span>
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">{</span>
+            <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">int</span> res<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">;</span>
+            Square<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">(</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(255, 0, 0);">5</span>, <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(6, 0, 255); font-weight: bold;">out</span> res<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">);</span>
+            Console<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">.</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 0, 255);">WriteLine</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">(</span>res<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">);</span>  
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">}</span>
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(6, 0, 255); font-weight: bold;">static</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">void</span> Square<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">(</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">int</span> a, <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(6, 0, 255); font-weight: bold;">out</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">int</span> res<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">)</span>
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">{</span>
+            res <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">=</span> a <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">*</span> a<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">;</span>
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">}</span></pre>
+								</td>
+							</tr>
+					</table>
+				</div>
+				<p style="margin: 0px 0px 1.5em; padding: 0px; box-sizing: inherit; color: rgb(17, 17, 17); font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В этом примере:<br style="margin: 0px; padding: 0px; box-sizing: inherit;" />
+				<code style="margin: 0px; padding: 2px 4px; box-sizing: inherit; font-family: &quot;Courier New&quot;, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 15.3px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">
+				a</code><span>&nbsp;</span>—<span>&nbsp;</span><em style="margin: 0px; padding: 0px; box-sizing: inherit; font-style: italic;">ref</em><span>&nbsp;</span>аргумент 
+				(входно-выходной);<br style="margin: 0px; padding: 0px; box-sizing: inherit;" />
+				<code style="margin: 0px; padding: 2px 4px; box-sizing: inherit; font-family: &quot;Courier New&quot;, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 15.3px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">
+				res</code><span>&nbsp;</span>—<span>&nbsp;</span><em style="margin: 0px; padding: 0px; box-sizing: inherit; font-style: italic;">out</em><span>&nbsp;</span>аргумент 
+				(выходной).</p>
+				<h3 style="margin: 49px 0px 21px; padding: 0px; box-sizing: inherit; clear: both; font-weight: 300; color: rgb(0, 0, 0); text-decoration: none; font-size: 1.75rem; line-height: 1.25; font-family: &quot;Nunito Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255);">
+				<span id="i-4" style="margin: 0px; padding: 0px; box-sizing: inherit;">
+				Возврат значения из функции / метода</span></h3>
+				<p style="margin: 0px 0px 1.5em; padding: 0px; box-sizing: inherit; color: rgb(17, 17, 17); font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Три подхода для возврата значений в си шарп:</p>
+				</li>
+				<li style="margin: 0px 0px 0px 15px; padding: 0px; box-sizing: inherit; color: rgb(17, 17, 17); font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; list-style-type: circle;">
+				Возврат массива или коллекции</li>
+				<li style="margin: 0px 0px 0px 15px; padding: 0px; box-sizing: inherit; color: rgb(17, 17, 17); font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; list-style-type: circle;">
+				Использование ключевого слова<span>&nbsp;</span><code style="margin: 0px; padding: 2px 4px; box-sizing: inherit; font-family: &quot;Courier New&quot;, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 15.3px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">ref</code><span>&nbsp;</span>(входно-выходной 
+				параметр)</li>
+				<li style="margin: 0px 0px 0px 15px; padding: 0px; box-sizing: inherit; color: rgb(17, 17, 17); font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; list-style-type: circle;">
+				Использование ключевого слова<span>&nbsp;</span><code style="margin: 0px; padding: 2px 4px; box-sizing: inherit; font-family: &quot;Courier New&quot;, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 15.3px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">out</code><span>&nbsp;</span>(выходной 
+				параметр)</li>
+				<li style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(17, 17, 17); font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Итак, параметры, передаваемые по ссылке, делятся на<span>&nbsp;</span><code style="margin: 0px; padding: 2px 4px; box-sizing: inherit; font-family: &quot;Courier New&quot;, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 15.3px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">out</code><span>&nbsp;</span>и<span>&nbsp;</span><code style="margin: 0px; padding: 2px 4px; box-sizing: inherit; font-family: &quot;Courier New&quot;, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 15.3px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">ref</code><span>&nbsp;</span>— 
+				параметры.<span>&nbsp;</span><code style="margin: 0px; padding: 2px 4px; box-sizing: inherit; font-family: &quot;Courier New&quot;, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 15.3px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">Out</code><span>&nbsp;</span>– 
+				выходные,<span>&nbsp;</span><code style="margin: 0px; padding: 2px 4px; box-sizing: inherit; font-family: &quot;Courier New&quot;, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 15.3px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">ref</code><span>&nbsp;</span>– 
+				входно-выходные.</li>
+				<li style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(17, 17, 17); font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<code style="margin: 0px; padding: 2px 4px; box-sizing: inherit; font-family: &quot;Courier New&quot;, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 15.3px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">
+				ref</code>-параметры перед вызовом функции обязательно должны 
+				быть инициализированы, иначе – ошибка компилятора. При вызове 
+				функции также указываются ключевые слова out и refю</li>
+				<li style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(17, 17, 17); font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Посмотрите на следующие примеры: первый пример — без<span>&nbsp;</span><code style="margin: 0px; padding: 2px 4px; box-sizing: inherit; font-family: &quot;Courier New&quot;, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 15.3px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">ref</code>, 
+				второй — с<span>&nbsp;</span><code style="margin: 0px; padding: 2px 4px; box-sizing: inherit; font-family: &quot;Courier New&quot;, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 15.3px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">ref</code>:<div class="wp_syntax" style="margin: 0px 0px 1.5em; padding: 0px; box-sizing: inherit; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; overflow: auto hidden; width: 910.8px; font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+					<table style="margin: 0px !important; padding: 0px !important; box-sizing: inherit; border-collapse: collapse !important; border-spacing: 0px; border: none !important; width: 909.2px;">
+						<tbody style="margin: 0px; padding: 0px; box-sizing: inherit;">
+							<tr style="margin: 0px; padding: 0px; box-sizing: inherit;">
+								<td class="code" style="margin: 0px; padding: 0px !important; box-sizing: inherit; border: none !important; font-weight: normal; text-align: left !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 909.2px;">
+								<pre class="csharp" style="margin: 0px !important; padding: 0px 4px !important; box-sizing: inherit; overflow: visible !important; font-family: monospace; font-size: 14px !important; background: transparent !important; line-height: 16px !important; max-width: 100%; white-space: pre !important; overflow-wrap: break-word; border: none !important; width: auto !important; float: none !important; clear: none !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important; border-radius: 0px !important;"><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 128); font-style: italic;">// 1. без ref</span>
+<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(6, 0, 255); font-weight: bold;">static</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">void</span> Main<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">(</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">string</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">[]</span> args<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">)</span>
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">{</span>
+            <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">int</span> a <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">=</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(255, 0, 0);">1</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">;</span>
+            Plas2<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">(</span>a<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">);</span>
+            Console<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">.</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 0, 255);">WriteLine</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">(</span>a<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">);</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 128); font-style: italic;">// результат 1</span>
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">}</span>
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(6, 0, 255); font-weight: bold;">static</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">void</span> Plas2<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">(</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">int</span> a<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">)</span>
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">{</span>
+            a <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">+=</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(255, 0, 0);">2</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">;</span>
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">}</span></pre>
+								</td>
+							</tr>
+					</table>
+				</div>
+				<div class="wp_syntax" style="margin: 0px 0px 1.5em; padding: 0px; box-sizing: inherit; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; overflow: auto hidden; width: 910.8px; font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+					<table style="margin: 0px !important; padding: 0px !important; box-sizing: inherit; border-collapse: collapse !important; border-spacing: 0px; border: none !important; width: 909.2px;">
+						<tbody style="margin: 0px; padding: 0px; box-sizing: inherit;">
+							<tr style="margin: 0px; padding: 0px; box-sizing: inherit;">
+								<td class="code" style="margin: 0px; padding: 0px !important; box-sizing: inherit; border: none !important; font-weight: normal; text-align: left !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 909.2px;">
+								<pre class="csharp" style="margin: 0px !important; padding: 0px 4px !important; box-sizing: inherit; overflow: visible !important; font-family: monospace; font-size: 14px !important; background: transparent !important; line-height: 16px !important; max-width: 100%; white-space: pre !important; overflow-wrap: break-word; border: none !important; width: auto !important; float: none !important; clear: none !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important; border-radius: 0px !important;"><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 128); font-style: italic;">// 2. с ref</span>
+<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(6, 0, 255); font-weight: bold;">static</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">void</span> Main<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">(</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">string</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">[]</span> args<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">)</span>
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">{</span>
+            <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">int</span> a <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">=</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(255, 0, 0);">1</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">;</span>
+            Plas2<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">(</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(6, 0, 255); font-weight: bold;">ref</span> a<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">);</span>
+            Console<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">.</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 0, 255);">WriteLine</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">(</span>a<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">);</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 128); font-style: italic;">// результат 3</span>
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">}</span>
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(6, 0, 255); font-weight: bold;">static</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">void</span> Plas2<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">(</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(6, 0, 255); font-weight: bold;">ref</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">int</span> a<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">)</span>
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">{</span>
+            a <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">+=</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(255, 0, 0);">2</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">;</span>
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">}</span></pre>
+								</td>
+							</tr>
+					</table>
+				</div>
+				</li>
+				<li style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(17, 17, 17); font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для параметров используется ключевое слово<span>&nbsp;</span><code style="margin: 0px; padding: 2px 4px; box-sizing: inherit; font-family: &quot;Courier New&quot;, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 15.3px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">out</code>, 
+				чтобы указать, что значения тих параметров будут возвращены. При 
+				вызове также указывается ключевое слово<span>&nbsp;</span><code style="margin: 0px; padding: 2px 4px; box-sizing: inherit; font-family: &quot;Courier New&quot;, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 15.3px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">out</code>:<div class="wp_syntax" style="margin: 0px 0px 1.5em; padding: 0px; box-sizing: inherit; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; overflow: auto hidden; width: 910.8px; font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+					<table style="margin: 0px !important; padding: 0px !important; box-sizing: inherit; border-collapse: collapse !important; border-spacing: 0px; border: none !important; width: 909.2px;">
+						<tbody style="margin: 0px; padding: 0px; box-sizing: inherit;">
+							<tr style="margin: 0px; padding: 0px; box-sizing: inherit;">
+								<td class="code" style="margin: 0px; padding: 0px !important; box-sizing: inherit; border: none !important; font-weight: normal; text-align: left !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 909.2px;">
+								<pre class="csharp" style="margin: 0px !important; padding: 0px 4px !important; box-sizing: inherit; overflow: visible !important; font-family: monospace; font-size: 14px !important; background: transparent !important; line-height: 16px !important; max-width: 100%; white-space: pre !important; overflow-wrap: break-word; border: none !important; width: auto !important; float: none !important; clear: none !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important; border-radius: 0px !important;"><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(6, 0, 255); font-weight: bold;">static</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">void</span> Main<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">(</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">string</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">[]</span> args<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">)</span>
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">{</span>
+            <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">int</span> a<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">;</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 128); font-style: italic;">// здесь не нужно инициализировать будущий параметр значением</span>
+            Plas2<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">(</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(6, 0, 255); font-weight: bold;">out</span> a<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">);</span>
+            Console<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">.</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 0, 255);">WriteLine</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">(</span>a<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">);</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 128); font-style: italic;">// 3</span>
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">}</span>
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(6, 0, 255); font-weight: bold;">static</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">void</span> Plas2<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">(</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(6, 0, 255); font-weight: bold;">out</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">int</span> a<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">)</span>
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">{</span>
+            a <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">=</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(255, 0, 0);">1</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">;</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 128); font-style: italic;">// здесь необходимо присвоить какое-то значение</span>
+            a <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">+=</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(255, 0, 0);">2</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">;</span>
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">}</span></pre>
+								</td>
+							</tr>
+					</table>
+				</div>
+				</li>
+				<li style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(17, 17, 17); font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Еще один пример использования модификатора<span>&nbsp;</span><code style="margin: 0px; padding: 2px 4px; box-sizing: inherit; font-family: &quot;Courier New&quot;, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 15.3px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">out</code>:<div class="wp_syntax" style="margin: 0px 0px 1.5em; padding: 0px; box-sizing: inherit; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; overflow: auto hidden; width: 910.8px; font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+					<table style="margin: 0px !important; padding: 0px !important; box-sizing: inherit; border-collapse: collapse !important; border-spacing: 0px; border: none !important; width: 909.2px;">
+						<tbody style="margin: 0px; padding: 0px; box-sizing: inherit;">
+							<tr style="margin: 0px; padding: 0px; box-sizing: inherit;">
+								<td class="code" style="margin: 0px; padding: 0px !important; box-sizing: inherit; border: none !important; font-weight: normal; text-align: left !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 909.2px;">
+								<pre class="csharp" style="margin: 0px !important; padding: 0px 4px !important; box-sizing: inherit; overflow: visible !important; font-family: monospace; font-size: 14px !important; background: transparent !important; line-height: 16px !important; max-width: 100%; white-space: pre !important; overflow-wrap: break-word; border: none !important; width: auto !important; float: none !important; clear: none !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important; border-radius: 0px !important;"> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(6, 0, 255); font-weight: bold;">static</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">void</span> Main<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">(</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">string</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">[]</span> args<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">)</span>
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">{</span>
+            <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">int</span> first<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">;</span>
+            <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">String</span> sValue<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">;</span>
+            ReturnMultiOut<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">(</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(6, 0, 255); font-weight: bold;">out</span> first, <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(6, 0, 255); font-weight: bold;">out</span> sValue<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">);</span>
+            Console<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">.</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 0, 255);">WriteLine</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">(</span>$<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 102);">&quot;{first.ToString()}, {sValue}&quot;</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">);</span>
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">}</span>
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(6, 0, 255); font-weight: bold;">static</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">void</span> ReturnMultiOut<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">(</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(6, 0, 255); font-weight: bold;">out</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">int</span> i, <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(6, 0, 255); font-weight: bold;">out</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">string</span> s<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">)</span>
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">{</span>
+            i <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">=</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(255, 0, 0);">25</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">;</span>
+            s <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">=</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 102);">&quot;использование out&quot;</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">;</span>
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">}</span></pre>
+								</td>
+							</tr>
+					</table>
+				</div>
+				<p style="margin: 0px 0px 1.5em; padding: 0px; box-sizing: inherit; color: rgb(17, 17, 17); font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Результат будет:</p>
+				<pre style="margin: 0px 0px 1.5em; padding: 1.6em; box-sizing: inherit; overflow: auto; font-family: &quot;Courier New&quot;, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 0.9375rem; background: rgb(238, 238, 238); line-height: 1.6; max-width: 100%; white-space: pre-wrap; overflow-wrap: break-word; color: rgb(17, 17, 17); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">25 использование out </pre>
+				</li>
+				<li style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(17, 17, 17); font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В следующем примере ключевое слово<span>&nbsp;</span><code style="margin: 0px; padding: 2px 4px; box-sizing: inherit; font-family: &quot;Courier New&quot;, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 15.3px; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px;">ref</code><span>&nbsp;</span>используется 
+				для возврата значений из метода. При использовании ref 
+				модификатор необходимо, чтобы сначала данные аргументы были 
+				инициализированы значениями<div class="wp_syntax" style="margin: 0px 0px 1.5em; padding: 0px; box-sizing: inherit; color: rgb(17, 0, 0); background-color: rgb(249, 249, 249); border: 1px solid silver; overflow: auto hidden; width: 910.8px; font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+					<table style="margin: 0px !important; padding: 0px !important; box-sizing: inherit; border-collapse: collapse !important; border-spacing: 0px; border: none !important; width: 909.2px;">
+						<tbody style="margin: 0px; padding: 0px; box-sizing: inherit;">
+							<tr style="margin: 0px; padding: 0px; box-sizing: inherit;">
+								<td class="code" style="margin: 0px; padding: 0px !important; box-sizing: inherit; border: none !important; font-weight: normal; text-align: left !important; vertical-align: top !important; background-color: rgb(238, 238, 238); background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.9) 50%); background-size: 1px 32px; line-height: normal !important; white-space: normal !important; width: 909.2px;">
+								<pre class="csharp" style="margin: 0px !important; padding: 0px 4px !important; box-sizing: inherit; overflow: visible !important; font-family: monospace; font-size: 14px !important; background: transparent !important; line-height: 16px !important; max-width: 100%; white-space: pre !important; overflow-wrap: break-word; border: none !important; width: auto !important; float: none !important; clear: none !important; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important; border-radius: 0px !important;"> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(6, 0, 255); font-weight: bold;">static</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">void</span> Main<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">(</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">string</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">[]</span> args<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">)</span>
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">{</span>
+            <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 128); font-style: italic;">// сначала инициализируем значением, так как ref</span>
+            <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">int</span> first <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">=</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(255, 0, 0);">0</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">;</span>
+            <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">String</span> sValue<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">=</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 102);">&quot;&quot;</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">;</span>
+            ReturnMultiOut<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">(</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(6, 0, 255); font-weight: bold;">ref</span> first, <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(6, 0, 255); font-weight: bold;">ref</span> sValue<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">);</span>
+            Console<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">.</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 0, 255);">WriteLine</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">(</span>$<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 102);">&quot;{first.ToString()}, {sValue}&quot;</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">);</span>
+&nbsp;
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">}</span>
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(6, 0, 255); font-weight: bold;">static</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">void</span> ReturnMultiOut<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">(</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(6, 0, 255); font-weight: bold;">ref</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">int</span> i, <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(6, 0, 255); font-weight: bold;">ref</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 204); font-weight: bold;">string</span> s<span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">)</span>
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">{</span>
+            i <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">=</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(255, 0, 0);">25</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">;</span>
+            s <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">=</span> <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(102, 102, 102);">&quot;использование ref&quot;</span><span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">;</span>
+        <span style="margin: 0px; padding: 0px; box-sizing: inherit; color: rgb(0, 128, 0);">}</span></pre>
+								</td>
+							</tr>
+					</table>
+				</div>
+				<h3 style="margin: 49px 0px 21px; padding: 0px; box-sizing: inherit; clear: both; font-weight: 300; color: rgb(0, 0, 0); text-decoration: none; font-size: 1.75rem; line-height: 1.25; font-family: &quot;Nunito Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255);">
+				&nbsp;</h3>
+				</li>
+                <p></p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les30.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les30/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:04:42 GMT -->
+</html>

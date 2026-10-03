@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les56/1.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:47:52 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: small;
+}
+.style3 {
+	font-size: small;
+	color: maroon;
+}
+    .style4 {
+	color: red;
+}
+    .style5 {
+	color: red;
+	text-decoration: underline;
+}
+    .style6 {
+	font-size: medium;
+	color: #0000FF;
+	margin-left: 40px;
+}
+    .style7 {
+	font-size: medium;
+	color: #0000FF;
+}
+.style8 {
+	margin-left: 40px;
+}
+    .style9 {
+	font-size: small;
+	color: blue;
+}
+    .style10 {
+	font-size: medium;
+	color: purple;
+	text-decoration: underline;
+}
+    .style11 {
+	font-size: small;
+	color: blue;
+	margin-left: 40px;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 1.  Перегрузка&nbsp;методов в Python.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p class="style3"><strong>Что такое перегрузка функций</strong></p>
+                <p class="style2">Перегрузка функций (function overloading) — это концепция, которая позволяет определять несколько функций или методов с одинаковым именем, но с разными сигнатурами: количеством, типами или порядком аргументов. 
+
+</p>
+				<p class="style2">Компилятор или интерпретатор выбирает подходящую версию функции на основе переданных аргументов. Это используется в строго типизированных языках, чтобы писать гибкий и читаемый код было проще.</p>
+				<p class="style3"><strong>Почему перегрузки в чистом виде нет в Python и других динамических языках?
+
+				</strong></p>
+				<p class="style2"><span class="style4"><strong>Python — язык с динамической типизацией</strong></span>. Во время исполнения любая переменная может содержать объект почти любого типа. Получается, что единственная «актуальная» сигнатура функции видна только в рантайме. 
+				<span class="style5"><strong>Runtime (от англ. runtime — «время выполнения») в информатике — среда выполнения компьютерной программы.
+				</strong></span>
+
+</p>
+				<p class="style2">Если сделать в Python две функции с одинаковым именем, то последняя «затрет» предыдущую:&nbsp;</p>
+				<pre class="style6"><strong>def hello(name: <span class="style4">str</span>):
+    print(f"Hello {name}")
+
+def hello(age: <span class="style4">int</span>):
+    print(f"Your age is {age}")
+
+hello("Alice")  # "Your age is Alice" – ошибка: вызовется вторая версия, но она ждёт int.&nbsp;</strong></pre>
+				<p class="style2">По умолчанию никакого отдельного механизма перегрузки в Python нет. Но это не значит, что перегрузка невозможно в принципе&nbsp;</p>
+				<p class="style3"><strong>Как же создать перегрузку в Python?&nbsp;</strong></p>
+				<p class="style2">Первый — самый популярный, остальные — максимально простые в реализации.
+
+</p>
+				<p class="style10"><strong>1. Проверка типов внутри функции:&nbsp;</strong></p>
+				<pre class="style8"><span class="style7"><strong>def hello(name_or_age):
+    if isinstance(name_or_age, str):
+        print(f"Hello {name_or_age}")
+    elif isinstance(name_or_age, int):
+        print(f"Your age is {name_or_age}")
+    else:
+        raise TypeError("Expected str or int")</strong></span>&nbsp;</pre>
+				<p class="style2">Минус такого подхода — <span class="style4">единая монолитная функция, которая со временем может раздуться и стать нечитаемой.</span> А еще она не дает возможности задавать несколько версий функции с разными сигнатурами.&nbsp;</p>
+				<p class="style2">Метод<span class="style4"><strong> isinstance
+				</strong></span>в Python — это встроенная функция, которая проверяет, является ли объект экземпляром указанного класса или одного из классов в цепочке наследования.&nbsp;</p>
+				<p class="style9">Синтаксис
+				isinstance(object, classinfo).</p>
+				<ul>
+					<li>
+					<p class="style3">Аргументы:
+object — объект, тип которого нужно проверить. </p>
+					</li>
+					<li>
+					<p class="style3">classinfo — класс, тип или кортеж классов и типов, с которыми нужно сравнить объект.
+					</p>
+					</li>
+				</ul>
+				<p class="style9">Возвращаемое значение: </p>
+				<p class="style9">True, если объект принадлежит указанному классу (или одному из классов из кортежа), и False в противном случае. 
+
+</p>
+				<p class="style9">Примеры использования
+</p>
+				<ul>
+					<li>
+					<p class="style3"><strong>Проверка принадлежности 
+					<span class="style4">числу</span>: print(isinstance(42, int)) — True.
+					</strong></p>
+					</li>
+					<li>
+					<p class="style3"><strong>Проверка принадлежности 
+					<span class="style4">строке</span>: print(isinstance("hello", str)) — True.
+					</strong></p>
+					</li>
+					<li>
+					<p class="style3"><strong>Проверка вхождения в несколько классов: print(isinstance(3.14, (int, float))) — True.
+					</strong></p>
+					</li>
+					<li>
+					<p class="style3"><strong>Проверка пользовательского класса: class MyClass: pass obj = MyClass() print(isinstance(obj, MyClass)) — True.&nbsp;</strong></p>
+					</li>
+				</ul>
+				<p class="style10"><strong>2. Уникальные имена для каждой комбинации:&nbsp;</strong></p>
+				<p class="style2">Вместо перегрузки можно использовать разные имена функций для каждой комбинации аргументов.</p>
+				<pre class="style11"><strong>def <span class="style4">hello_str</span>(name):
+    print(f"Hello {name}")
+
+def <span class="style4">hello_int</span>(age):
+    print(f"Your age is {age}")&nbsp;</strong></pre>
+				<p class="style2">Такой метод максимально прост и прозрачен, не требует дополнительных инструментов или проверок, что делает его удобным для случаев, где важна явность. Однако это увеличивает количество функций в коде и не соответствует концепции перегрузки, так как нет единой точки входа, что может быть неудобно при работе с похожими по смыслу операциями и может сделать API библиотеки громоздким.</p>
+				<p class="style10"><strong>3. Использование декоратора functools.singledispatch (доступен с Python 3.4):&nbsp;</strong></p>
+				<pre class="style11"><strong>from <span class="style5">functools</span> import singledispatch
+
+</strong>@<strong>singledispatch</strong><strong>
+def hello(arg):
+    raise TypeError("Unsupported type")
+
+</strong>@<strong>hello.register</strong><strong>
+def _(arg: str):
+    print(f"Hello {arg}")
+
+</strong>@<strong>hello.register</strong><strong>
+def _(arg: int):
+    print(f"Your age is {arg}")&nbsp;</strong></pre>
+				<p class="style2">Этот декоратор позволяет регистрировать функции-обработчики для разных типов аргументов. 
+				<span class="style5"><strong>Но singledispatch ориентирован на тип первого аргумента</strong></span>, а для многих случаев (например, учитывая несколько параметров, Union, Optional и т. д.) этого может быть недостаточно.&nbsp;</p>
+				<p class="style10"><strong>4. Использование библиотеки multipledispatch:&nbsp;</strong></p>
+				<pre class="style11"><strong>from multipledispatch import dispatch
+
+@dispatch(str)
+def hello(arg):
+    print(f"Hello {arg}")
+
+@dispatch(int)
+def hello(arg):
+    print(f"Your age is {arg}")&nbsp;</strong></pre>
+				<p class="style2">Эта библиотека позволяет регистрировать функции для разных сигнатур, 
+				<span class="style4"><strong>но она не входит в стандартную библиотеку Python
+				</strong></span>— так что придется устанавливать ее отдельно. Кроме того, она не поддерживает аннотации типов.&nbsp;</p>
+				<p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les551.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les56/1.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:47:52 GMT -->
+</html>

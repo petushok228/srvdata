@@ -1,0 +1,185 @@
+﻿<HTML>
+	
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les60/Pz23.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:56:56 GMT -->
+<HEAD>
+		<TITLE></TITLE>
+		<SCRIPT ID="clientEventHandlersVBS" LANGUAGE="vbscript">
+<!--
+ 
+Sub Pr_onmouseover
+Pr.style.cursor="Hand"
+Pr.style.fontSize="16px"
+Pr.className="Ov"
+End Sub
+ 
+Sub Pr_onmouseout
+Pr.style.fontSize="12px"
+Pr.className="V"
+End Sub
+ 
+Sub Pr_onclick
+window.location.href="http://srvdata2.asuedu.kmk/Index_Les23.htm"
+End Sub
+ 
+-->
+		</SCRIPT>
+		<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<Link HREF="../../Css/GlobalCss.css" rel="stylesheet">
+	</HEAD>
+	<BODY>
+		<SPAN Id="Span1" class="Zag1">Раздел 1. Технология программирования.</SPAN><BR>
+		<BR>
+		<BR>
+		<BR>
+		<SPAN Id="Span2" class="Zag2">Тема 1.8. Разработка пользовательских интерфейсов.</SPAN><BR>
+		<BR>
+		<BR>
+		<SPAN Id="" class="Zag3">Практическое занятие № 6. Создание формы "Главная - подчиненная" для анализа данных.</SPAN><BR>
+		<BR>
+		<BR>
+		<SPAN style="LEFT: 400px; POSITION: absolute; TOP: 8px" id="Pr" class="V">Назад</SPAN>&nbsp;
+		<BR>
+		<P class="ZagT">Краткая аннотация.</P>
+		<P><STRONG>Подчиненная форма </STRONG>- это форма, находящаяся внутри другой формы. 
+			Первичная форма называется <FONT color="red"><STRONG>главной формой</STRONG></FONT>, 
+			а форма внутри формы называется подчиненной формой. Комбинацию «<STRONG><FONT color="navy">форма/подчиненная 
+					форма</FONT></STRONG> » часто называют также иерархической формой или 
+			комбинацией «родительской» и «дочерней» форм.</P>
+		<P>Подчиненные формы особенно удобны для вывода данных из таблиц или запросов, 
+			связанных с отношением «один-ко-многим». Например, можно создать форму с 
+			подчиненной формой для вывода данных из таблицы «Типы» и из таблицы «Объекты». 
+			Данные в таблице «Типы» находятся на стороне «один» отношения. Данные в таблице 
+			«Объекты» находятся на стороне «многие» отношения&nbsp;— каждый тип может иметь 
+			несколько объектов.</P>
+		<P><IMG alt="Главная форма с подчиненной формой" src="../../Pic/Form2.html" border="0"></P>
+		<DIV class="opred">&nbsp;Главная форма и подчиненная форма в этом типе форм связаны 
+			таким образом, что в подчиненной форме выводятся только те записи, которые 
+			связаны с текущей записью в главной форме. Например, когда главная форма 
+			отображает тип «Квартиры», подчиненная форма отображает только те объекты, 
+			которые входят в тип «Квартиры».</DIV>
+		<P class="ZagT">Цель практического занятия.</P>
+		<p>
+			Закрепить навыки создания форм для анализа данных БД</p>
+		<P class="ZagT">Исходные материалы и данные.</P>
+		<p>Среда разработчика Delphi 6. Индивидуальное задание на курсовую работу</p>
+		<P class="ZagT">Использованные источники.</P>
+		<p>Электронный конспект по дисциплине "Разработка и эксплуатация информационных 
+			систем"</p>
+		<P class="ZagT">Содержание и порядок выполнения задания.</P>
+		<P class="Sint">Создадим форму в которой данные из таблицы "Тип объекта" будут 
+			определять критерий отбора в таблице "Объект"</P>
+		<P class="Sint" align="center"><IMG alt="" src="../../Pic/Form1.html"></P>
+		<UL>
+			<LI>
+				<DIV class="Sint">Создадим модуль данных: для компонента DBLookupComboBox установим 
+					TipObTable: TTable и TipObDataSource: TDataSource, а для компонента DBGrid 
+					ObjectQuery: TQuery и ObjectDataSource: TDataSource. Таким образом в компанент 
+					DBLookupComboBox будут загружены данные из поля ID_Tip таблицы TipOb, а в 
+					компаненте TQuery создан динамический запрос следующего вида:</DIV>
+			</LI>
+		</UL>
+		<P class="Sint" align="center"><IMG alt="" src="../../Pic/3.html"></P>
+		<UL>
+			<LI>
+				<DIV class="Sint" align="left">Настроим компаненты доступа к данным БД 
+					"Недвижимость" следующим образом:</DIV>
+			</LI>
+		</UL>
+		<P class="Sint" align="center"><IMG alt="" src="../../Pic/NastrSQL1.html"></P>
+		<UL>
+			<LI>
+				<DIV class="Sint">построим и протестируем запрос в SQL Builder (построителе SQL 
+					запросов)</DIV>
+			</LI>
+		</UL>
+		<P class="Sint" align="center"><IMG alt="" src="../../Pic/1.html"></P>
+		<UL>
+			<LI>
+				<DIV class="Sint">Полученный SQL запрос будет иметь следующий вид</DIV>
+			</LI>
+		</UL>
+		<P class="Sint" align="center"><IMG alt="" src="../../Pic/2.html"></P>
+		<UL>
+			<LI>
+				<DIV class="Sint">Преобразуем запрос в динамический, добавив переменную для ввода 
+					типа объекта</DIV>
+			</LI>
+		</UL>
+		<P class="Sint" align="center"><IMG alt="" src="../../Pic/3.html"></P>
+		<UL>
+			<LI>
+				<DIV class="">Настроим переменную TOB (тип объекта)0</DIV>
+			</LI>
+		</UL>
+		<P class="" align="center"><IMG alt="" src="../../Pic/4.html"></P>
+		<UL>
+			<LI>
+				<DIV class="">Введем в значение Value данные - '00002' и установив свойство 
+					ObjectQuery.Active в положение True, проверим правильность построения 
+					динамического запроса.
+				</DIV>
+			</LI>
+		</UL>
+		<P class="" align="center"><IMG alt="" src="../../Pic/6.html"></P>
+		<UL>
+			<LI>
+				<DIV class="">Настроим сетку для вывода данных о объектах</DIV>
+			</LI>
+		</UL>
+		<P class="" align="center"><IMG alt="" src="../../Pic/5.html"></P>
+		<UL>
+			<LI>
+				<DIV class="">Уберем значение Value из свойства Params и создадим обработчик для 
+					ввода в переменную Tob значения из компанента DBLookupComboBox.</DIV>
+			</LI>
+		</UL>
+		<P class="" align="center"><IMG alt="" src="../../Pic/ItogCode.html"></P>
+		<P class="">В результате получим следующие приложение</P>
+		<P class="" align="center"><IMG alt="" src="../../Pic/ItogForm.html"></P>
+		<P class="zagt" align="left">Вариант 2 ( в поле DBLookupComboBox выводится 
+			наименование типа объекта)</P>
+		<P class="" align="left">В данном проекте изменим вид запроса
+		</P>
+		<P class="" align="center"><IMG alt="" src="../../Pic/Code2.html"></P>
+		<P class="" align="left">Изменим настройку компанента DBLookupComboBox
+		</P>
+		<P class="" align="center"><IMG alt="" src="../../Pic/Vid1.html"></P>
+		<P class="" align="left">В итоге получим следующее приложение</P>
+		<P class="" align="center"><IMG alt="" src="../../Pic/Vid2.html"></P>
+		<P class="ZagT">Выводы и предложения проделанной работы.</P>
+		<p>fff</p>
+		<P class="ZagT">Содержание отчета:</P>
+		<OL>
+			<LI>
+			Фамилия, учебная группа, дата выполнения
+			<LI>
+			Наименование практического занятия
+			<LI>
+			Цель занятия
+			<LI>
+			Вариант задания
+			<LI>
+			Отчет о поэтапном выполнении&nbsp;задания
+			<LI>
+			Список использованных источников
+			<LI>
+				Выводы о проделанной работе.</LI></OL>
+		<P class="ZagT">Вопросы для самопроверки.</P>
+		<OL>
+			<LI>
+			Назначение
+			<LI>
+			Особенности применения
+			<LI>
+			Принцип работы
+			<LI>
+				Для чего применяется</LI></OL>
+		<P><FONT color="#0000ff">Преподаватель&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; А. М. 
+				Бакулин</FONT></P>
+		<HR color="lightskyblue">
+	</BODY>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les60/Pz23.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:56:56 GMT -->
+</HTML>
+

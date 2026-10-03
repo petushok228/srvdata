@@ -1,0 +1,431 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les71/7.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 11:03:03 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 7. Формы</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 245, 245); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В этой главе мы глубже погрузимся в работу с формами и узнаем, 
+				как лучше передавать данные между формами, как организовывать 
+				взаимодействие между формами и как управлять ими. Класс Form — 
+				это больше, чем просто элемент управления или контейнер для 
+				элементов управления.</p>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 245, 245); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Существуют два типа приложений: MDI (Multi Document Interface, 
+				многодокументный интерфейс) и SDI (Single Document Interface, 
+				интерфейс с одним документом). Несмотря на то, что Microsoft 
+				рекомендует использовать однодокументные приложения, 
+				многодокументные окна все еще существуют, даже в самом Windows. 
+				Ярким примером многодокументного приложения в Windows является 
+				консоль управления. Выберите меню Пуск | Выполнить (для Windows 
+				Vista и Windows 7 просто выбираем Пуск и вписываем команду в 
+				строку поиска) и введите mmc. Вы увидите программу, внутри 
+				главного окна которой могут находиться другие окна (рис. 11.1). 
+				Если вы работаете с компьютерами давно, то наверно помните, что 
+				программы офисного пакета, — такие как Microsoft Word, тоже 
+				когда-то были выполнены в виде многодокументных окон.</p>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 245, 245); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В принципе, интерфейс Internet Explorer тоже можно отнести к 
+				многодокументному приложению, как и среду разработки Visual 
+				Studio. Ведь в этих программах внутри главного окна можно 
+				открыть сразу несколько Web-страниц или файлов с исходным кодом 
+				— просто они отображаются не в виде окон внутри главного 
+				контейнера, а в виде вкладок. Такой метод считается более 
+				интуитивно понятным, и именно его стараются применить в 
+				большинстве случаев. Интерфейс с использованием документов в 
+				виде вкладок придется программировать самому, а часть функций по 
+				работе стандартного MDI-интерфейса берет на себя сама ОС и 
+				Framework.</p>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 245, 245); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Несмотря на то, что рекомендуется использовать интерфейс с одним 
+				документом, мы рассмотрим и многодокументный интерфейс, раз уж 
+				он существует, но основной упор будет сделан именно на интерфейс 
+				с одним документом, — как на рекомендуемый. Рекомендации 
+				желательно соблюдать, потому что их придумывают не просто так, 
+				чтобы сделать нашу жизнь хуже. Рекомендации — это личный опыт 
+				профессионалов.</p>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 245, 245); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img src="Pic/11-1-mdi.jpg" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; margin: 5px 12px 0px 0px;" /></p>
+				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 245, 245); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<i style="box-sizing: border-box;">Рис. 11.1. Пример 
+				многодокументного приложения</i></p>
+				<div class="row" style="box-sizing: border-box; margin-left: -15px; margin-right: -15px; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 245, 245); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="col-md-12" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 1170px;">
+												<h1 style="box-sizing: border-box; font-size: 44px; margin: 20px 0px 10px; font-family: Montserrat; font-weight: 500; line-height: 1.1; color: rgb(50, 112, 156); letter-spacing: 0.12em;">
+												<span style="box-sizing: border-box;">
+												11.1. Диалоговые окна</span></h1>
+								</div>
+				</div>
+				<div class="row" style="box-sizing: border-box; margin-left: -15px; margin-right: -15px; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 245, 245); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="col-md-12" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 1170px;">
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Классическая задача — получение 
+												ввода от пользователя — чаще 
+												всего решается через диалоговые 
+												окна. Например, у вас есть форма 
+												для отображения списка людей, и 
+												вы хотите иметь возможность 
+												добавления людей в список и 
+												редактирования их. Где 
+												расположить поля ввода для 
+												параметров добавляемого или 
+												редактируемого объекта? Можно в 
+												том же окне, где находится 
+												список, но лучше это делать в 
+												отдельном окне редактирования. 
+												Давайте рассмотрим это на 
+												примере.</p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Для примера нам понадобится 
+												новое WinForms-приложение, на 
+												главной форме которого мы 
+												поместим компонент ListView для 
+												хранения списка и две кнопки для 
+												добавления новой записи и 
+												редактирования выделенной. В 
+												списке ListView нужно:</p>
+												<ul style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px;">
+																<li style="box-sizing: border-box;">
+																в свойстве 
+																Columns добавить 
+																три колонки с 
+																заголовками: 
+																Имя, Фамилия и 
+																Возраст;</li>
+																<li style="box-sizing: border-box;">
+																в свойстве View 
+																выбрать Details.</li>
+												</ul>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Такую главную форму можно 
+												увидеть на рис. 11.2.</p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Теперь нам понадобится дочерняя 
+												форма или диалоговое окно для 
+												редактирования элементов. 
+												Щелкните правой кнопкой мыши по 
+												имени проекта в панели Solution 
+												Explorer и в контекстном меню 
+												выберите Add | New Item. В 
+												открывшемся окне найдите и 
+												выделите Windows Form и в поле 
+												Name введите имя для диалогового 
+												окна — например, EditPersonForm.</p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												<img src="Pic/11-2-form.jpg" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; margin: 5px 12px 0px 0px;" /></p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												<i style="box-sizing: border-box;">
+												Рис. 11.2. Форма будущей 
+												программы</i></p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Сразу же поместите на форму две 
+												кнопки для сохранения и отмены 
+												изменений, а также три поля 
+												ввода: для изменения имени, 
+												фамилии и возраста. Для 
+												изменения возраста можно 
+												использовать компонент 
+												NumericUpDown, который хорошо 
+												подходит для редактирования 
+												чисел. Мой вариант формы можно 
+												увидеть на рис. 11.3, но ваш 
+												может и отличаться.</p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												<img src="Pic/11-3-dialog.jpg" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; margin: 5px 12px 0px 0px;" /></p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												<i style="box-sizing: border-box;">
+												Рис. 11.3. Форма диалогового 
+												окна</i></p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Теперь несколько рекомендаций по 
+												оформлению диалоговых окон, 
+												которым не обязательно 
+												следовать, но которые чаще всего 
+												положительно сказываются на 
+												удобстве использования программ:</p>
+												<ul style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px;">
+																<li style="box-sizing: border-box;">
+																в свойстве 
+																AcceptButton 
+																нужно указать 
+																кнопку, которая 
+																будет являться 
+																кнопкой по 
+																умолчанию, и 
+																именно она 
+																станет 
+																срабатывать 
+																(будет 
+																вызываться ее 
+																обработчик 
+																события Click), 
+																если 
+																пользователь 
+																нажмет клавишу<span>&nbsp;</span><enter style="box-sizing: border-box;">в 
+																тот момент, 
+																когда 
+																отображается 
+																окно. Здесь чаще 
+																выбирают кнопки 
+																типа OK или Да;</enter></li>
+																<li style="box-sizing: border-box;">
+																в свойстве 
+																CancelButton 
+																укажите кнопку 
+																отмены, которая 
+																будет 
+																срабатывать при 
+																нажатии клавиши<span>&nbsp;</span><esc style="box-sizing: border-box;">;</esc></li>
+																<li style="box-sizing: border-box;">
+																свойство 
+																FormBorderStyle 
+																лучше установить 
+																в FixedDialog, 
+																потому что 
+																диалоговым окнам 
+																желательно 
+																устанавливать 
+																фиксированный 
+																размер окна, их 
+																просто незачем 
+																растягивать;</li>
+																<li style="box-sizing: border-box;">
+																свойство 
+																MaximizeBox 
+																рекомендуется 
+																установить в 
+																false, чтобы в 
+																заголовке окна 
+																не отображалась 
+																кнопка 
+																максимизации 
+																формы. Мы уже 
+																определились, 
+																что размер окна 
+																не должен 
+																изменяться, и 
+																возможность 
+																максимизации тем 
+																более не нужна;</li>
+																<li style="box-sizing: border-box;">
+																свойство 
+																ShowInTaskBar 
+																лучше тоже 
+																установить в 
+																false, потому 
+																что только 
+																главное окно 
+																должно 
+																отображаться в 
+																панели задач. 
+																Дочерние окна 
+																отображайте в 
+																панели задач 
+																только при 
+																необходимости, а 
+																для диалоговых 
+																окон я не могу 
+																себе представить 
+																эту 
+																необходимость, — 
+																особенно, если 
+																окно модальное.</li>
+												</ul>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Еще пару манипуляций нужно 
+												сделать над кнопками. Для кнопки 
+												Сохранить установите свойство 
+												DialogResult в OK, а для кнопки 
+												Отмена установите это же 
+												свойство в Cancel. Теперь, если 
+												окно отображается в модальном 
+												режиме, то по нажатию любой из 
+												этих кнопок окно будет закрыто, 
+												а форма вернет в качестве 
+												результата то, что мы указали 
+												для кнопок в свойстве 
+												DialogResult.</p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Теперь посмотрим, как может 
+												использоваться эта форма. Для 
+												начала в коде формы добавим три 
+												свойства, через которые будет 
+												происходить обращение к полям 
+												ввода:</p>
+												<pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; display: block; padding: 10px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(238, 238, 238); background: rgb(17, 17, 17); border: 1px solid rgb(204, 204, 204); border-radius: 4px;">   public string FirstName
+   {
+     get { return firstNameTextBox.Text; }
+     set { firstNameTextBox.Text = value; }
+   }
+
+   public string LastName
+   {
+     get { return lastNameTextBox.Text; }
+     set { lastNameTextBox.Text = value; }
+   }
+
+   public int Age
+   {
+     get { return (int)ageNumericUpDown.Value; }
+     set { ageNumericUpDown.Value = value; }
+   }
+</pre>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Добавленные здесь свойства 
+												являются посредниками между 
+												диалоговым окном редактирования 
+												и главным окном, из которого 
+												будет вызываться это диалоговое 
+												окно.</p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Теперь все готово, чтобы 
+												написать код, который будет 
+												создавать новые элементы в 
+												списке и редактировать их. Для 
+												начала создайте обработчик 
+												события Click для кнопки 
+												Добавить главной формы и 
+												напишите в нем содержимое 
+												листинга 11.1.</p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												<b style="box-sizing: border-box; font-weight: 700;">
+												Листинг 11.1. Код добавления 
+												нового элемента в список</b></p>
+												<pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; display: block; padding: 10px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(238, 238, 238); background: rgb(17, 17, 17); border: 1px solid rgb(204, 204, 204); border-radius: 4px;">private void addPersonButton_Click(object sender, EventArgs e)
+{
+  // создаем форму
+  EditPersonForm editForm = new EditPersonForm();
+
+  // отображаем форму
+  if (editForm.ShowDialog() != DialogResult.OK)
+    return;
+
+  ListViewItem newItem = 
+           personsListView.Items.Add(editForm.FirstName);
+  newItem.SubItems.Add(editForm.LastName);
+  newItem.SubItems.Add(editForm.Age.ToString());
+}
+</pre>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												В самом начале создается 
+												экземпляр класса EditPersonForm, 
+												а этим классом является форма. 
+												Следующим этапом идет 
+												отображение формы 
+												editForm.ShowDialog(), и тут же 
+												проверяется результат, который 
+												возвращает метод ShowDialog(). 
+												Если результат не равен 
+												DialogResult.OK (а этот 
+												результат возвращает кнопка 
+												Сохранить в диалоговом окне), то 
+												выполнение метода прерывается.</p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												После этого создается новый 
+												элемент для списка ListView и 
+												заполняются два подэлемента, 
+												которые будут отображаться в 
+												колонках. Для чтения данных из 
+												объекта диалогового окна 
+												editForm используются свойства, 
+												которые мы написали.</p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Теперь посмотрим на метод, 
+												который выполняет редактирование 
+												выделенного в списке элемента. 
+												Этот код вы можете увидеть в 
+												листинге 11.2.</p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												<b style="box-sizing: border-box; font-weight: 700;">
+												Листинг 11.2. Редактирование с 
+												помощью диалогового окна</b></p>
+												<pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; display: block; padding: 10px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(238, 238, 238); background: rgb(17, 17, 17); border: 1px solid rgb(204, 204, 204); border-radius: 4px;">private void editPersonButton_Click(object sender, EventArgs e)
+{
+  if (personsListView.SelectedItems.Count == 0)
+    return;
+
+  // для удобства сохраняем выделенный элемент в локальной переменной
+  ListViewItem item = personsListView.SelectedItems[0];
+  // создаем форму
+  EditPersonForm editForm = new EditPersonForm();
+
+  // заполняем поля формы значениями
+  editForm.FirstName = item.Text;
+  editForm.LastName = item.SubItems[1].Text;
+  editForm.Age = Convert.ToInt32(item.SubItems[2].Text);
+  if (editForm.ShowDialog() != DialogResult.OK)
+    return;
+
+  item.Text = editForm.FirstName;
+  item.SubItems[1].Text = editForm.LastName;
+  item.SubItems[2].Text = editForm.Age.ToString();
+}</pre>
+								</div>
+				</div>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les66.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les71/7.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 11:03:28 GMT -->
+</html>

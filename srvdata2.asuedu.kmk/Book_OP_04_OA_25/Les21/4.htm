@@ -1,0 +1,506 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les21/4.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:49:14 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: #0000FF;
+	font-size: small;
+}
+    .style3 {
+	color: #0000FF;
+	font-size: small;
+	margin-left: 40px;
+}
+    .style4 {
+	font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	color: rgb(0, 0, 0);
+	letter-spacing: normal;
+}
+    .style5 {
+	font-size: small;
+}
+    .style6 {
+	color: #0000FF;
+	font-size: medium;
+}
+    .style7 {
+	color: #FF0000;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 4. FileStream. Чтение и запись файла&nbsp; (продолжение).</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text" 
+                >
+                <p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Класс<span>&nbsp;</span><span class="b" style="font-weight: bold;">FileStream</span><span>&nbsp;</span>представляет 
+				возможности по считыванию из файла и записи в файл. Он позволяет 
+				работать как с текстовыми файлами, так и с бинарными.</p>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Создание FileStream</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для создания объекта FileStream можно использовать как 
+				конструкторы этого класса, так и статические методы класса File. 
+				Конструктор FileStream имеет множество перегруженных версий, из 
+				которых отмечу лишь одну, самую простую и используемую:</p>
+				<pre class="style6"><code class="c# plain" style="font-family: var(--code-font-family) !important; border-radius: 0px !important; background: none !important; border: 0px !important; inset: auto !important; float: none !important; height: auto !important; line-height: 21px; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; text-align: left !important; vertical-align: baseline !important; width: auto !important; box-sizing: content-box !important; font-weight: normal !important; font-style: normal !important; font-size: var(--code-font-size) !important; min-height: auto !important; white-space: pre !important; color: var(--code-plain) !important;"><strong>FileStream(</strong></code><code class="c# keyword" style="font-family: var(--code-font-family) !important; border-radius: 0px !important; background: none !important; border: 0px !important; inset: auto !important; float: none !important; height: auto !important; line-height: 21px; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; text-align: left !important; vertical-align: baseline !important; width: auto !important; box-sizing: content-box !important; font-weight: normal !important; font-style: normal !important; font-size: var(--code-font-size) !important; min-height: auto !important; white-space: pre !important; color: var(--code-keyword) !important;"><strong>string</strong></code> <code class="c# plain" style="font-family: var(--code-font-family) !important; border-radius: 0px !important; background: none !important; border: 0px !important; inset: auto !important; float: none !important; height: auto !important; line-height: 21px; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; text-align: left !important; vertical-align: baseline !important; width: auto !important; box-sizing: content-box !important; font-weight: normal !important; font-style: normal !important; font-size: var(--code-font-size) !important; min-height: auto !important; white-space: pre !important; color: var(--code-plain) !important;"><strong>filename, FileMode mode)</strong></code></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Здесь в конструктор передается два параметра: путь к файлу и 
+				перечисление<span>&nbsp;</span><span class="b" style="font-weight: bold;">FileMode</span>. 
+				Данное перечисление указывает на режим доступа к файлу и может 
+				принимать следующие значения:</p>
+				<ul style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">Append</span>: 
+					если файл существует, то текст добавляется в конец файл. 
+					Если файла нет, то он создается. Файл открывается только для 
+					записи.</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">Create</span>: 
+					создается новый файл. Если такой файл уже существует, то он 
+					перезаписывается</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">CreateNew</span>: 
+					создается новый файл. Если такой файл уже существует, то 
+					приложение выбрасывает ошибку</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">Open</span>: 
+					открывает файл. Если файл не существует, выбрасывается 
+					исключение</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">OpenOrCreate</span>: 
+					если файл существует, он открывается, если нет - создается 
+					новый</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">Truncate</span>: 
+					если файл существует, то он перезаписывается. Файл 
+					открывается только для записи.</p>
+					</li>
+				</ul>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Другой способ создания объекта FileStream представляют 
+				статические методы класса File:</p>
+				<pre class="style3">FileStream File.Open(string file, FileMode mode);
+FileStream File.OpenRead(string file);
+FileStream File.OpenWrite(string file);</pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Первый метод открывает файл с учетом объекта FileMode и 
+				возвращает файловой поток FileStream. У этого метода также есть 
+				несколько перегруженных версий. Второй метод открывает поток для 
+				чтения, а третий открывает поток для записи.</p>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Закрытие потока</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Класс FileStream для освобождения всех реусрсов, связанных с 
+				файлом, реализует интерфейс IDisposable. Соответственно после 
+				завершения работы с FileStream необходимо освободить связанный с 
+				ним файл вызовом метода Dispose. Для корректного закрытия можно 
+				вызвать метод<span>&nbsp;</span><span class="b" style="font-weight: bold;">Close()</span>, 
+				который вызывает метод Dispose:</p>
+				<pre class="style2">FileStream? fstream = null;
+try
+  {
+    <span class="style7"><strong>fstream = new FileStream("note3.dat", FileMode.OpenOrCreate);</strong></span>
+    // операции с fstream
+   }
+	catch(Exception ex)
+	{  }
+     finally
+     {    
+	<span class="style7"><strong>fstream?.Close();</strong></span>
+     }</pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Либо можно использовать конструкцию using, которая автоматически 
+				освободит все связанные с FileStream ресурсы:</p>
+				<pre class="style2">using (FileStream fstream = new FileStream("note3.dat", FileMode.OpenOrCreate))
+{    // операции с fstream}</pre>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Свойства и методы FileStream</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Рассмотрим наиболее важные свойства класса<span>&nbsp;</span><span class="b" style="font-weight: bold;">FileStream</span>:</p>
+				<ul style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					Свойство<span>&nbsp;</span><span class="b" style="font-weight: bold;">Length</span>: 
+					возвращает длину потока в байтах</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					Свойство<span>&nbsp;</span><span class="b" style="font-weight: bold;">Position</span>: 
+					возвращает текущую позицию в потоке</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					Свойство<span>&nbsp;</span><span class="b" style="font-weight: bold;">Name</span>: 
+					возвращает абсолютный путь к файлу, открытому в FileStream</p>
+					</li>
+				</ul>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для чтения/записи файлов можно применять следующие методы класса<span>&nbsp;</span><span class="b" style="font-weight: bold;">FileStream</span>:</p>
+				<ul style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<code style="font-family: monospace;">void CopyTo(Stream 
+					destination)</code>: копирует данные из текущего потока в 
+					поток destination</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<code style="font-family: monospace;">Task 
+					CopyToAsync(Stream destination)</code>: асинхронная версия 
+					метода CopyTo</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<code style="font-family: monospace;">void Flush()</code>: 
+					сбрасывает содержимое буфера в файл</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<code style="font-family: monospace;">Task FlushAsync()</code>: 
+					асинхронная версия метода Flush</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<code style="font-family: monospace;">int Read(byte[] array, 
+					int offset, int count)</code>: считывает данные из файла в 
+					массив байтов и возвращает количество успешно считанных 
+					байтов. Принимает три параметра:</p>
+					<ul>
+						<li>
+						<p style="line-height: 1.56; overflow-wrap: break-word;">
+						<code style="font-family: monospace;">array</code><span>&nbsp;</span>- 
+						массив байтов, куда будут помещены считываемые из файла 
+						данные</p>
+						</li>
+						<li>
+						<p style="line-height: 1.56; overflow-wrap: break-word;">
+						<code style="font-family: monospace;">offset</code><span>&nbsp;</span>представляет 
+						смещение в байтах в массиве array, в который считанные 
+						байты будут помещены</p>
+						</li>
+						<li>
+						<p style="line-height: 1.56; overflow-wrap: break-word;">
+						<code style="font-family: monospace;">count</code><span>&nbsp;</span>- 
+						максимальное число байтов, предназначенных для чтения. 
+						Если в файле находится меньшее количество байтов, то все 
+						они будут считаны.</p>
+						</li>
+						<li>
+						<p style="line-height: 1.56; overflow-wrap: break-word;">
+						<code style="font-family: monospace;">Task&lt;int&gt; 
+						ReadAsync(byte[] array, int offset, int count)</code>: 
+						асинхронная версия метода Read</p>
+						</li>
+					</ul>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<code style="font-family: monospace;">long Seek(long offset, 
+					SeekOrigin origin)</code>: устанавливает позицию в потоке со 
+					смещением на количество байт, указанных в параметре offset.</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<code style="font-family: monospace;">void Write(byte[] 
+					array, int offset, int count)</code>: записывает в файл 
+					данные из массива байтов. Принимает три параметра:</p>
+					<ul>
+						<li>
+						<p style="line-height: 1.56; overflow-wrap: break-word;">
+						<code style="font-family: monospace;">array</code><span>&nbsp;</span>- 
+						массив байтов, откуда данные будут записываться в файл</p>
+						</li>
+						<li>
+						<p style="line-height: 1.56; overflow-wrap: break-word;">
+						<code style="font-family: monospace;">offset</code><span>&nbsp;</span>- 
+						смещение в байтах в массиве array, откуда начинается 
+						запись байтов в поток</p>
+						</li>
+						<li>
+						<p style="line-height: 1.56; overflow-wrap: break-word;">
+						<code style="font-family: monospace;">count</code><span>&nbsp;</span>- 
+						максимальное число байтов, предназначенных для записи</p>
+						</li>
+					</ul>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<code style="font-family: monospace;">Task WriteAsync(byte[] 
+					array, int offset, int count)</code>: асинхронная версия 
+					метода Write</p>
+					</li>
+				</ul>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Чтение и запись файлов</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				FileStream представляет доступ к файлам на уровне байтов, 
+				поэтому, например, если вам надо считать или записать одну или 
+				несколько строк в текстовый файл, то массив байтов надо 
+				преобразовать в строки, используя специальные методы. Поэтому 
+				для работы с текстовыми файлами применяются другие классы.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В то же время при работе с различными бинарными файлами, 
+				имеющими определенную структуру, FileStream может быть очень 
+				даже полезен для извлечения определенных порций информации и ее 
+				обработки.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Посмотрим на примере считывания-записи в текстовый файл:</p>
+				<pre class="style2">using System.Text;
+string path = @"C:\app\note.txt";   // путь к файлу 
+string text = "Чтение и запись файлов"; // строка для записи 
+	// запись в файл
+using (FileStream fstream = new FileStream(path, FileMode.OpenOrCreate))
+	{    // преобразуем строку в байты    
+	  byte[] buffer = Encoding.Default.GetBytes(text);
+	     // запись массива байтов в файл    
+	await fstream.WriteAsync (buffer, 0, buffer.Length);
+	&nbsp;Console.WriteLine("Текст записан в файл");
+	} // чтение из файла
+	using (FileStream fstream = File.OpenRead(path))
+	{   
+	// выделяем массив для считывания данных из файла    
+	byte[] buffer = new byte[fstream.Length];
+	// считываем данные    
+	await fstream.ReadAsync(buffer, 0, buffer.Length);
+	// декодируем байты в строку   
+	string textFromFile = Encoding.Default.GetString(buffer);
+	Console.WriteLine($"Текст из файла: {textFromFile}");
+	}</pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Разберем этот пример. Вначале определяем путь к файлу и текст 
+				для записи в файл.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				И при чтении, и при записи для создания и удаления объекта 
+				FileStream используется конструкция<span>&nbsp;</span><code style="font-family: monospace;">using</code>, 
+				по завершению которой у созданного объекта FileStream 
+				автоматически вызывается метод<span>&nbsp;</span><code style="font-family: monospace;">Dispose</code>, 
+				и, таким образом, объект уничтожается.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Поскольку операции с файлами могут занимать продолжительное 
+				время и являются узким местом в работе программы, рекомендуется 
+				использовать асинхронные версии методов FileStream. И при 
+				записи, и при чтении применяется объект кодировки<span>&nbsp;</span><code style="font-family: monospace;">Encoding.Default</code><span>&nbsp;</span>из 
+				пространства имен<span>&nbsp;</span><code style="font-family: monospace;">System.Text</code>. 
+				В данном случае мы используем два его метода:<span>&nbsp;</span><code style="font-family: monospace;">GetBytes</code><span>&nbsp;</span>для 
+				получения массива байтов из строки и<span>&nbsp;</span><code style="font-family: monospace;">GetString</code><span>&nbsp;</span>для 
+				получения строки из массива байтов.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В итоге введенная нами строка записывается в файл<span>&nbsp;</span><span class="ii" style="font-style: italic;">note.txt</span>. 
+				И мы получим следующий консольный вывод:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				Текст записан в файл
+</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+								Текст из файла:
+				Чтение и запись файлов </p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Записанный файл по сути представляет бинарный файл (не 
+				текстовый), хотя если мы в него запишем только строку, то сможем 
+				посмотреть в удобочитаемом виде этот файл, открыв его в 
+				текстовом редакторе. Однако если мы в него запишем случайные 
+				байты, например:</p>
+				<pre class="style5">fstream.WriteByte(13);
+fstream.WriteByte(103);</pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				То у нас могут возникнуть проблемы с его пониманием. Поэтому для 
+				работы непосредственно с текстовыми файлами предназначены 
+				отдельные классы - StreamReader и StreamWriter.</p>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Произвольный доступ к файлам</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Нередко бинарные файлы представляют определенную структуру. И, 
+				зная эту структуру, мы можем взять из файла нужную порцию 
+				информации или наоброт записать в определенном месте файла 
+				определенный набор байтов. Например, в wav-файлах 
+				непосредственно звуковые данные начинаются с 44 байта, а до 44 
+				байта идут различные метаданные - количество каналов аудио, 
+				частота дискретизации и т.д.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				С помощью метода<span>&nbsp;</span><span class="b" style="font-weight: bold;">Seek()</span><span>&nbsp;</span>мы 
+				можем управлять положением курсора потока, начиная с которого 
+				производится считывание или запись в файл. Этот метод принимает 
+				два параметра: offset (смещение) и позиция в файле. Позиция в 
+				файле описывается тремя значениями:</p>
+				<ul style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">SeekOrigin.Begin</span>: 
+					начало файла</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">SeekOrigin.End</span>: 
+					конец файла</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">
+					SeekOrigin.Current</span>: текущая позиция в файле</p>
+					</li>
+				</ul>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Курсор потока, с которого начинается чтение или запись, 
+				смещается вперед на значение offset относительно позиции, 
+				указанной в качестве второго параметра. Смещение может быть 
+				отрицательным, тогда курсор сдвигается назад, если положительное 
+				- то вперед.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Рассмотрим простой пример:</p>
+				<pre class="style2">using System.Text;
+string path = "note.dat";
+string text = "hello world";
+using (FileStream fstream = new FileStream(path, FileMode.OpenOrCreate))
+{    // преобразуем строку в байты   byte[] 
+     input = Encoding.Default.GetBytes(text);
+     // запись массива байтов в файл    
+	fstream.Write(input, 0, input.Length);
+	Console.WriteLine("Текст записан в файл");}// чтение части файла
+	using (FileStream fstream = new FileStream(path, FileMode.OpenOrCreate))
+	{     // перемещаем указатель в конец файла, до конца файла- пять байт    
+	fstream.Seek(-5, SeekOrigin.End);
+		// минус 5 символов с конца потока
+		// считываем четыре символов с текущей позиции    byte[] 
+	output = new byte[5];
+	await fstream.ReadAsync(output, 0, output.Length);
+	// декодируем байты в строку    
+	string textFromFile = Encoding.Default.GetString(output);
+       &nbsp;Console.WriteLine($"Текст из файла: {textFromFile}");// world
+       }
+				  </pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вначале записываем в файл текст &quot;hello world&quot;. Затем снова 
+				обращаемся к файла для считывания. Сначала перемещаем курсор на 
+				пять символов назад относительно конца файлового потока:</p>
+				<pre class="style2">fstream.Seek(-5, SeekOrigin.End)</pre>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<img src="Pic/5.3.png" alt="чтение и запись файлов через FileStream в C#" style="max-width: 99%; height: auto; margin-bottom: 15px; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" /><p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				То есть после выполнения этого вызова курсор будет стоять на 
+				позиции символа &quot;w&quot;.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				После этого считываем пять байт начиная с символа &quot;w&quot;. В 
+				кодировке по умолчанию 1 символ будет представлять 1 байт. 
+				Поэтому чтение 5 байт будет эквивалентно чтению пяти сиволов: 
+				&quot;world&quot;.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Соответственно мы получим следующий консольный вывод:</p>
+				<div class="console" style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre class="consoletext" style="font-family: var(--main-font-family); max-width: 99%; line-height: 25.6px; white-space: pre-wrap; border: 1px solid rgb(204, 204, 204); clear: both; overflow-wrap: break-word; background-color: var(--console-bgcolor); color: var(--console-textcolor); padding: 8px;">Текст записан в файл
+Текст из файла: world
+</pre>
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Рассмотрим чуть более сложный пример - с записью начиная с 
+				некоторой позиции:</p>
+				<pre class="style2">using System.Text; string path = "note2.dat"; string text = "hello world"; // запись в файл
+using (FileStream fstream = new FileStream(path, FileMode.OpenOrCreate))
+{    // преобразуем строку в байты    byte[] 
+      input = Encoding.Default.GetBytes(text);    // запись массива байтов в файл    
+	fstream.Write(input, 0, input.Length);    
+	Console.WriteLine("Текст записан в файл");
+}
+using (FileStream fstream = new FileStream(path, FileMode.OpenOrCreate))
+   {     // заменим в файле слово world на слово house    
+	string replaceText = "house";
+	   fstream.Seek(-5, SeekOrigin.End); // минус 5 символов с конца потока    byte[] 
+	input = Encoding.Default.GetBytes(replaceText);    
+	await fstream.WriteAsync(input, 0, input.Length);     // считываем весь файл    
+	// возвращаем указатель в начало файла    
+	fstream.Seek(0, SeekOrigin.Begin);    byte[] 
+	output = new byte[fstream.Length];    
+	await fstream.ReadAsync(output, 0, output.Length);    // декодируем байты в строку    
+	string textFromFile = Encoding.Default.GetString(output);    
+	Console.WriteLine($"Текст из файла: {textFromFile}"); // hello house}</pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Здесь также вначале записываем в файл строку &quot;hello world&quot;. 
+				Затем также открываем файл и опять же перемещаемся в конец 
+				файла, не доходя до конца пять символов (то есть опять же с 
+				позиции символа &quot;w&quot;), и осуществляем запись строки &quot;house&quot;. 
+				Таким образом, строка &quot;house&quot; заменяет строку &quot;world&quot;.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Чтобы после этого считать весь файл, сдвигаем курсор на самое 
+				начало</p>
+				<pre class="style2">fstream.Seek(0, SeekOrigin.Begin);</pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Консольный вывод программы:/p>
+				<div class="console" style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre class="consoletext" style="font-family: var(--main-font-family); max-width: 99%; line-height: 25.6px; white-space: pre-wrap; border: 1px solid rgb(204, 204, 204); clear: both; overflow-wrap: break-word; background-color: var(--console-bgcolor); color: var(--console-textcolor); padding: 8px;">Текст записан в файл
+Текст из файла: hello house</pre>
+				</div>
+			</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2008 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les21.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les21/4.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:49:14 GMT -->
+</html>

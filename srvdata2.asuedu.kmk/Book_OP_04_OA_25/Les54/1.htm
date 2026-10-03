@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les54/1.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:46:15 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	width: 100%;
+	font-size: medium;
+	color: #0000FF;
+}
+.style3 {
+	color: #0000FF;
+}
+    .style5 {
+				color: #0000FF;
+				text-decoration: underline;
+}
+.style6 {
+				color: #800000;
+}
+.style7 {
+				color: #FF0000;
+				text-decoration: underline;
+}
+.style8 {
+				color: #800000;
+				text-decoration: underline;
+}
+.style9 {
+				color: #000080;
+}
+.style10 {
+	font-size: small;
+	color: #0000FF;
+}
+.style11 {
+				color: #000080;
+				text-decoration: underline;
+}
+.style12 {
+				color: #FF0000;
+}
+    .style13 {
+	font-size: small;
+}
+.style14 {
+	color: #FF0000;
+	font-size: small;
+}
+    .style15 {
+	font-size: medium;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 1 Индексаторы.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text" style="height: 2462px">
+                <p><span class="style13">Программисты хорошо знакомы с процессом доступа к индивидуальным элементам, содержащимся в стандартных массивах, через операцию индекса (</span><span class="style14"><strong>[]</strong></span><span class="style13">).
+				<p>В C# имеется возможность проектировать <span class="style5">
+				<strong><em>специальные классы и структуры, которые могут быть индексированы подобно стандартному массиву</em></strong></span>,<span class="style6"><strong> посредством определения индексатора</strong></span>. Это конкретное языковое средство наиболее полезно при создании специальных типов коллекций (обобщенных и необобщенных). 
+				</span> 
+				<span class="style7"><strong><span class="style13">Индексаторы могут быть одно- или многомерными.
+				</span>
+				</strong></span>
+<p class="style2"><strong>Одномерные индексаторы
+</strong>
+<p><span class="style13">Ниже приведена общая форма одномерного индексатора:
+<pre><span class="style3"><strong>тип_элемента this[int индекс] {
+// Аксессор для получения данных,
+get {
+// Возврат значения, которое определяет индекс.
+</strong></span>}<span class="style3"><strong>
+// Аксессор для установки данных,
+set {
+// Установка значения, которое определяет индекс.
+}}</strong></span></pre>
+<p>где <span class="style3">тип_элемента</span> обозначает конкретный тип элемента индексатора.
+				<p>Следовательно, у каждого элемента, доступного с помощью индексатора, должен быть определенный
+				<span class="style3"><strong>тип_элемента</strong></span>. 
+				<span class="style8"><em>Этот тип соответствует типу элемента массива</em></span>.
+				<p>Параметр индекс получает конкретный индекс элемента, к которому осуществляется доступ. Формально этот параметр совсем не обязательно должен иметь тип int, но поскольку 
+				<span class="style8"><em>индексаторы, как правило, применяются для индексирования массивов</em></span>, то чаще всего используется ц<strong>елочисленный тип данного параметра</strong>.
+<p><span class="style9"><strong>В теле индексатора определены два аксессора</strong></span> (т.е. средства доступа к данным): 
+</span> 
+<span class="style10">get </span><span class="style13">и </span> <span class="style10">set</span><span class="style13">.
+				<p><span class="style5"><em>Аксессор подобен методу</em></span>, за исключением того, что 
+				<span class="style11"><em><strong>в нем не объявляется тип возвращаемого значения или параметры</strong></em></span>.
+				<p><span class="style5"><em>Аксессоры вызываются автоматически</em></span> при использовании индексатора, и оба получают индекс в качестве параметра.
+				<p>Так, <span class="style7"><em>если индексатор указывается в левой части оператора присваивания, то вызывается аксессор set 
+				</em></span>и устанавливается элемент, на который указывает параметр индекс. 
+				<span class="style7"><em>В противном случае вызывается аксессор get</em></span> и возвращается значение, соответствующее параметру индекс.
+				<p>Кроме того, </span><strong> <span class="style12">
+				<span class="style13">аксессор set получает неявный параметр
+				</span> 
+				</span><span class="style10">value</span><span class="style14">,</span></strong><span class="style13"> содержащий значение, присваиваемое по указанному индексу.
+<p>Давайте рассмотрим пример:
+				<p><img alt="" src="Pic/r-54-4.png" width="515" height="302" /><p>
+				Обращение е к массиву<p>
+				<img alt="" src="Pic/r-54-5.png" width="451" height="266" /><p>
+				Результат:<p>
+				<img alt="" src="Pic/r-54-6.png" width="447" height="129" /><p>В текущем классе MyArr определен индексатор, позволяющий вызывающему коду идентифицировать подэлементы с применением числовых значений. Однако надо понимать, что это не обязательное требование метода-индексатора.</p>
+<p>Следует особо подчеркнуть, что индексатор совсем не обязательно должен оперировать массивом. Его основное назначение — предоставить пользователю функциональные возможности, аналогичные массиву.</p>
+<p>На применение индексаторов накладываются два существенных ограничения. </p>
+				<p><span class="style3"><strong>Во-первых</strong></span>, значение, выдаваемое индексатором, нельзя передавать методу в качестве параметра ref или out, поскольку в индексаторе не определено место в памяти для его хранения. </p>
+				<p><span class="style3"><strong>Во-вторых,</strong></span> индексатор должен быть членом своего класса и поэтому 
+				<span class="style5"><strong><em>не может быть объявлен как static</em></strong></span>.</p>
+				</span>
+<p class="style15"><strong>Многомерные индексаторы</strong></p>
+				<span class="style13"> 
+<p>Можно также создавать индексатор, принимающий несколько параметров:</p>
+				<p><img alt="" src="Pic/r-54-7.png" width="584" height="236" /></p>
+				<p><span class="style13"> Обращение е к массиву</span></p>
+				<p><img alt="" src="Pic/r-54-8.png" width="425" height="284" /></p>
+				</span>
+				<pre>&nbsp;</pre>
+				<pre><img alt="" src="Pic/img7267.png" width="677" height="174" /></pre>
+</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les54.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les54/1.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:46:22 GMT -->
+</html>

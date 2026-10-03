@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les33/4.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:12:45 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: medium;
+	color: #0000FF;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 4. Рекурсия в Python.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p style="box-sizing: border-box; font-family: Verdana, Geneva, sans-serif; font-size: 16px; line-height: 26px; margin-top: 0px; margin-bottom: 26px; overflow-wrap: break-word; font-weight: 400; color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Рекурсию не очень просто понять при первом знакомстве, но без ее 
+				понимания в разработке будет тяжело. В этом материале 
+				рассмотрим:</p>
+				<ul style="box-sizing: border-box; padding: 0px; margin-bottom: 26px; color: rgb(34, 34, 34); font-family: Verdana, Geneva, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li style="box-sizing: border-box; line-height: 26px; margin-left: 21px; font-size: 15px; font-family: Verdana, Geneva, sans-serif;">
+								Рекурсивную функцию поиска факториала.</li>
+								<li style="box-sizing: border-box; line-height: 26px; margin-left: 21px; font-size: 15px; font-family: Verdana, Geneva, sans-serif;">
+								Как рекурсивные функции работают в коде.</li>
+								<li style="box-sizing: border-box; line-height: 26px; margin-left: 21px; font-size: 15px; font-family: Verdana, Geneva, sans-serif;">
+								Действительно ли рекурсивные функции выполняют 
+								свои задачи лучше итеративных?</li>
+				</ul>
+				<h2 id="h-" style="box-sizing: border-box; color: rgb(17, 17, 17); font-weight: 800; margin: 30px 0px 20px; font-size: 24px; line-height: 38px; font-family: Verdana, Geneva, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="ez-toc-section" id="%D0%A0%D0%B5%D0%BA%D1%83%D1%80%D1%81%D0%B8%D0%B2%D0%BD%D1%8B%D0%B5-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8" style="box-sizing: border-box;">
+				</span>Рекурсивные функции<span class="ez-toc-section-end" style="box-sizing: border-box;"></span></h2>
+				<p class="has-light-green-cyan-background-color has-background" style="box-sizing: border-box; font-family: Verdana, Geneva, sans-serif; font-size: 16px; line-height: 26px; margin-top: 0px; margin-bottom: 26px; background-color: var(--wp--preset--color--light-green-cyan) !important; padding: 1.25em 2.375em; overflow-wrap: break-word; font-weight: 400; color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Рекурсивная функция — это та, которая вызывает сама себя.</p>
+				<p style="box-sizing: border-box; font-family: Verdana, Geneva, sans-serif; font-size: 16px; line-height: 26px; margin-top: 0px; margin-bottom: 26px; overflow-wrap: break-word; font-weight: 400; color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В качестве простейшего примера рассмотрите следующий код:</p>
+				<pre class="style2">def factorial_recursive(n):
+    if n == 1:
+        return n
+    else:
+        return n*factorial_recursive(n-1)</pre>
+				<p style="box-sizing: border-box; font-family: Verdana, Geneva, sans-serif; font-size: 16px; line-height: 26px; margin-top: 0px; margin-bottom: 26px; overflow-wrap: break-word; font-weight: 400; color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вызывая рекурсивную функцию здесь и передавая ей целое число, вы 
+				получаете факториал этого числа (n!).</p>
+				<h3 id="h--1" style="box-sizing: border-box; color: rgb(17, 17, 17); font-weight: 600; margin: 27px 0px 17px; font-size: 22px; line-height: 30px; font-family: Verdana, Geneva, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="ez-toc-section" id="%D0%92%D0%BA%D1%80%D0%B0%D1%82%D1%86%D0%B5-%D0%BE-%D1%84%D0%B0%D0%BA%D1%82%D0%BE%D1%80%D0%B8%D0%B0%D0%BB%D0%B0%D1%85" style="box-sizing: border-box;">
+				</span>Вкратце о факториалах<span class="ez-toc-section-end" style="box-sizing: border-box;"></span></h3>
+				<p style="box-sizing: border-box; font-family: Verdana, Geneva, sans-serif; font-size: 16px; line-height: 26px; margin-top: 0px; margin-bottom: 26px; overflow-wrap: break-word; font-weight: 400; color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Факториал числа — это число, умноженное на каждое предыдущее 
+				число вплоть до 1.</p>
+				<blockquote class="wp-block-quote" style="box-sizing: border-box; overflow-wrap: break-word; border-left: 4px solid rgb(0, 0, 0); margin: 0px 0px 28px; padding-left: 1em; color: rgb(34, 34, 34); font-family: Verdana, Geneva, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<p style="box-sizing: border-box; font-family: Verdana, Geneva, sans-serif; font-size: 18px; line-height: 26px; margin-top: 0px; margin-bottom: 26px; overflow-wrap: break-word; font-weight: 400; color: rgba(0, 0, 0, 0.6); font-style: normal; text-transform: none;">
+								Например, факториал числа 7:<br style="box-sizing: border-box;" />
+								7! = 7*6*5*4*3*2*1 = 5040</p>
+				</blockquote>
+				<p style="box-sizing: border-box; font-family: Verdana, Geneva, sans-serif; font-size: 16px; line-height: 26px; margin-top: 0px; margin-bottom: 26px; overflow-wrap: break-word; font-weight: 400; color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вывести факториал числа можно с помощью функции:</p>
+				<pre class="style2">num = 3
+print(f"Факториал {num} это {factorial_recursive(num)}")</pre>
+				<p style="box-sizing: border-box; font-family: Verdana, Geneva, sans-serif; font-size: 16px; line-height: 26px; margin-top: 0px; margin-bottom: 26px; overflow-wrap: break-word; font-weight: 400; color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Эта функция выведет: «Факториал 3 это 6». Еще раз рассмотрим эту 
+				рекурсивную функцию:</p>
+				<pre class="style2">def factorial_recursive(n):
+
+    ...</pre>
+				<p style="box-sizing: border-box; font-family: Verdana, Geneva, sans-serif; font-size: 16px; line-height: 26px; margin-top: 0px; margin-bottom: 26px; overflow-wrap: break-word; font-weight: 400; color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				По аналогии с обычной функцией имя рекурсивной указывается после<span>&nbsp;</span><code style="box-sizing: border-box; font-family: monospace, monospace; font-size: 1em; background-color: rgba(0, 0, 0, 0.15); border-radius: 3px; padding: 3px 6px;">def</code>, 
+				а в скобках обозначается параметр<span>&nbsp;</span><code style="box-sizing: border-box; font-family: monospace, monospace; font-size: 1em; background-color: rgba(0, 0, 0, 0.15); border-radius: 3px; padding: 3px 6px;">n</code>:</p>
+				<pre class="style2">def factorial_recursive(n):
+    if n == 1:
+        return n
+    else:
+        return n*factorial_recursive(n-1)</pre>
+				<p style="box-sizing: border-box; font-family: Verdana, Geneva, sans-serif; font-size: 16px; line-height: 26px; margin-top: 0px; margin-bottom: 26px; overflow-wrap: break-word; font-weight: 400; color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Благодаря условной конструкции переменная<span>&nbsp;</span><code style="box-sizing: border-box; font-family: monospace, monospace; font-size: 1em; background-color: rgba(0, 0, 0, 0.15); border-radius: 3px; padding: 3px 6px;">n</code><span>&nbsp;</span>вернется 
+				только в том случае, если ее значение будет равно 1. Это еще 
+				называют условием завершения. Рекурсия останавливается в момент 
+				удовлетворения условиям.</p>
+				<pre class="style2">def factorial_recursive(n):
+    if n == 1:
+        return n
+    else:
+        return n*factorial_recursive(n-1)</pre>
+				<p style="box-sizing: border-box; font-family: Verdana, Geneva, sans-serif; font-size: 16px; line-height: 26px; margin-top: 0px; margin-bottom: 26px; overflow-wrap: break-word; font-weight: 400; color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В коде выше выделен фрагмент самой рекурсии. В блоке<span>&nbsp;</span><code style="box-sizing: border-box; font-family: monospace, monospace; font-size: 1em; background-color: rgba(0, 0, 0, 0.15); border-radius: 3px; padding: 3px 6px;">else</code><span>&nbsp;</span>условной 
+				конструкции возвращается произведение<span>&nbsp;</span><code style="box-sizing: border-box; font-family: monospace, monospace; font-size: 1em; background-color: rgba(0, 0, 0, 0.15); border-radius: 3px; padding: 3px 6px;">n</code><span>&nbsp;</span>и 
+				значения этой же функции с параметром<span>&nbsp;</span><code style="box-sizing: border-box; font-family: monospace, monospace; font-size: 1em; background-color: rgba(0, 0, 0, 0.15); border-radius: 3px; padding: 3px 6px;">n-1</code>.</p>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les33.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les33/4.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:12:45 GMT -->
+</html>

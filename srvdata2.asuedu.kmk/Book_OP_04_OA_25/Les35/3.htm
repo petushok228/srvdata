@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les35/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:18:37 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: #0000FF;
+	margin-left: 40px;
+}
+.style6 {
+	color: #0000FF;
+}
+.style7 {
+	font-size: small;
+	color: rgb(0, 0, 255);
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 3. Структура модуля в Pascal. </td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p>Всякий модуль Паскаля имеет следующую структуру:</p>
+<pre class="style2">
+<strong>Unit <имя_модуля>;
+interface <интерфейсная часть>;
+implementation < исполняемая часть >;
+begin
+<инициирующая часть>;
+end .</strong></pre><p>
+Здесь <span class="style6"><strong>UNIT</strong></span> – зарезервированное слово (единица); начинает заголовок модуля;</p><p>
+
+<span class="style6"><strong><имя_модуля></strong></span> - имя модуля (правильный идентификатор);</p><p>
+<span class="style6"><strong>INTERFACE </strong></span>– зарезервированное слово (интерфейс); начинает интерфейсную часть модуля;</p><p>
+<span class="style6"><strong>IMPLEMENTATION</strong></span> – зарезервированное слово (выполнение); начинает исполняемую часть модуля;</p><p>
+<span class="style6"><strong>BEGIN </strong></span>– зарезервированное слово; начинает инициирующую часть модуля; причем конструкция begin <инициирующая часть> необязательна;</p><p>
+<span class="style6"><strong>END </strong></span>– зарезервированное слово – признак конца модуля.</p>
+                <p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<strong>Таким образом, модуль Паскаля состоит из заголовка и трех составных частей, любая из которых может быть пустой.</strong></p>
+				<div style="box-sizing: inherit; color: rgb(38, 38, 38); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<img alt="" src="Pic/ModPas.png" width="688" height="613" /></div>
+				<p class="style6">
+
+<strong>Заголовок модуля Паскаля и связь модулей друг с другом</strong></p><p>
+Заголовок модуля Паскаля состоит из зарезервированного слова unit и следующего за ним имени модуля. Для правильной работы среды Турбо Паскаля и возможности подключения средств, облегчающих разработку больших программ, имя модуля Паскаля должно совпадать с именем дискового файла, в который помещается исходный текст модуля. Если, например, имеем заголовок модуля Паскаля</p><p>
+
+Unit primer ;</p><p>
+то исходный текст этого модуля должен размещаться на диске в файле primer .pas .</p><p>
+
+Имя модуля Паскаля служит для его связи с другими модулями и основной программой. Эта связь устанавливается специальным предложением:</p><p>
+
+uses<список модулей></p><p>
+Здесь USES – зарезервированное слово (использует);</p><p>
+
+<список модулей> - список модулей, с которыми устанавливается связь; элементы списка – имена модулей через запятую.</p><p>
+
+Если в Паскале модули используются, то предложение uses <список модулей> должно стоять сразу после заголовка программы , т.е. должно открывать раздел описаний основной программы. В модулях Паскаля могут использоваться другие модули. В модулях предложение uses <список модулей> может стоять сразу после слова interface или сразу после слова implementation . Допускается и два предложения uses , т.е. оно может стоять и там, и там.</p>
+				<p class="style6">
+
+<strong>Интерфейсная часть</strong></p><p>
+Интерфейсная часть открывается зарезервированным словом INTERFACE . В этой части содержатся объявления всех глобальных объектов модуля (типов, констант, переменных и подпрограмм), которые должны быть доступны основной программе и (или) другим модулям Паскаля. При объявлении глобальных подпрограмм в интерфейсной части указывается только их заголовок, например:</p><p>
+
+Пример фрагмента программы</p><pre>
+Unit complexn;
+Interface Type Complex= record
+   Re, im: real;
+End;
+Procedure AddC(x,y: complex, var z: complex);
+Procedure MulC (x,y: complex, var z: complex);</pre><p>
+Если теперь в основной программе написать предложение</p><p>
+
+Uses complexn ;</p><p>
+то в программе станут доступными тип cmplex и две процедуры – AddC и MulC из модуля complexn .</p><p>
+
+Отметим, что объявление подпрограмм в интерфейсной части автоматически сопровождается их компиляцией с использованием дальней модели памяти. Таким образом, обеспечивается доступ к подпрограммам из основной программы и других модулей Паскаля.</p><p>
+
+Следует учесть, что все константы и переменные, объявленные в интерфейсной части модуля Паскаля, равно как и глобальные константы и переменные основной программы, помещаются компилятором Турбо Паскаля в общий сегмент данных (максимальная длина сегмента 65536 байт).</p><p>
+
+Порядок появления различных разделов объявлений и их количество может быть произвольным. Если в интерфейсной части объявляются внешние подпрограммы или подпрограммы в машинных кодах, их тела (т.е. зарезервированное слово EXTERNAL , в первом случае, и машинные коды вместе со словом INLINE – во втором) должны следовать сразу за их заголовками в исполняемой части модуля (не в интерфейсной!). В интерфейсной части модулей Паскаля нельзя использовать опережающее описание.</p>
+				<p class="style6">
+
+<strong>Исполняемая часть модуля Паскаля</strong></p><p>
+Исполняемая часть модуля Паскаля начинается зарезервированным словом IMPLEMENTATION и содержит описания подпрограмм, объявленных в интерфейсной части. В ней могут объявляться локальные для модуля объекты – вспомогательные типы, константы, переменные и блоки, а также метки.</p><p>
+
+Описанию подпрограммы, объявленной в интерфейсной части модуля Паскаля, в исполняемой части должен предшествовать заголовок, в котором можно опустить список формальных параметров и тип результата для функции, так как они уже описаны в интерфейсной части. Но если заголовок подпрограммы приводится в полном виде, т.е. со списком параметров и объявлением типа результата для функции, то он должен полностью совпадать с заголовком подпрограммы в интерфейсной части, например:</p><p>
+Пример модуля Паскаля</p><pre class="style2">
+<strong>Unit complexn;
+{--------------------------------}
+Interface
+Type
+Complex= record
+   Re, im: real;
+End;
+Procedure AddC(x,y: complex, var z: complex);
+{---------------------------------}
+Implementation
+   Procedure AddC;
+      z.re:= x.re + y.re;
+      z.im:= x.im + y.im;
+   end ;
+end .</strong></pre><p class="style6">
+<strong>Инициирующая часть модуля Паскаля</strong></p><p>
+Инициирующая часть завершает модуль Паскаля. Она может отсутствовать вместе с начинающим ее словом BEGIN или быть пустой – тогда вслед за BEGIN сразу следует признак конца модуля.</p><p>
+
+В инициирующей части размещаются исполняемые операторы, содержащие некоторый фрагмент программы. Эти операторы исполняются до передачи управления основной программе и обычно используются для подготовки ее работы. Например, в инициирующей части могут инициироваться переменные, открываться файлы, устанавливаться связи с другими компьютерами и т.п.:</p><p>
+
+Пример модуля Паскаля</p><pre class="style2">
+<strong>Unit fileText;
+{-------------------------------}
+Interface
+   Procedure print(s: string);
+{-------------------------------}
+implementation
+</strong><strong>var f: text;
+const
+   name= 'output.txt';
+procedure print;
+begin
+   writeln(f, s)
+end ;
+{---------------------------------}
+{начало инициирующей части}
+begin
+   assign(f, name);
+   rewrite ( f );
+{конец инициирующей части}
+end .</strong></pre><p>
+Не рекомендуется делать инициирующую часть пустой, лучше ее опустить.</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les35.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les35/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:18:41 GMT -->
+</html>

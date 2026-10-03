@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les26/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:56:52 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: #0000FF;
+	margin-left: 40px;
+}
+    .style3 {
+	color: #0000FF;
+}
+.style4 {
+	margin-left: 40px;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 3. Типы исключений. Класс Exception.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Базовым для всех типов исключений является тип<span>&nbsp;</span><span class="b" style="font-weight: bold;">Exception</span>. 
+				Этот тип определяет ряд свойств, с помощью которых можно 
+				получить информацию об исключении.</p>
+				<ul style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">InnerException</span>: 
+					хранит информацию об исключении, которое послужило причиной 
+					текущего исключения</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">Message</span>: 
+					хранит сообщение об исключении, текст ошибки</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">Source</span>: 
+					хранит имя объекта или сборки, которое вызвало исключение</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">StackTrace</span>: 
+					возвращает строковое представление стека вызывов, которые 
+					привели к возникновению исключения</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">TargetSite</span>: 
+					возвращает метод, в котором и было вызвано исключение</p>
+					</li>
+				</ul>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Например, обработаем исключения типа Exception:</p>
+				<pre class="style2"><strong>try
+{    
+	int x = 5;
+	int y = x / 0;
+	Console.WriteLine($"Результат: {y}");
+}
+catch (Exception ex)
+{    
+	Console.WriteLine($"Исключение: {ex.Message}");    
+	Console.WriteLine($"Метод: {ex.TargetSite}");    
+	Console.WriteLine($"Трассировка стека: {ex.StackTrace}");
+}</strong></pre>
+				<img src="Pic/2.11.png" alt="Обработка исключений и класс Exception в C#" style="max-width: 99%; height: auto; margin-bottom: 15px; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" /><p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Однако так как тип Exception является базовым типом для всех 
+				исключений, то выражение<span>&nbsp;</span><code style="font-family: monospace;">catch 
+				(Exception ex)</code><span>&nbsp;</span>будет обрабатывать все 
+				исключения, которые могут возникнуть.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Но также есть более специализированные типы исключений, которые 
+				предназначены для обработки каких-то определенных видов 
+				исключений. Их довольно много, я приведу лишь некоторые:</p>
+				<ul style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">
+					DivideByZeroException</span>: представляет исключение, 
+					которое генерируется при делении на ноль</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">
+					ArgumentOutOfRangeException</span>: генерируется, если 
+					значение аргумента находится вне диапазона допустимых 
+					значений</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">ArgumentException</span>: 
+					генерируется, если в метод для параметра передается 
+					некорректное значение</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">
+					IndexOutOfRangeException</span>: генерируется, если индекс 
+					элемента массива или коллекции находится вне диапазона 
+					допустимых значений</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">
+					InvalidCastException</span>: генерируется при попытке 
+					произвести недопустимые преобразования типов</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">
+					NullReferenceException</span>: генерируется при попытке 
+					обращения к объекту, который равен null (то есть по сути 
+					неопределен)</p>
+					</li>
+				</ul>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				И при необходимости мы можем разграничить обработку различных 
+				типов исключений, включив дополнительные блоки catch:</p>
+				<pre class="style4"><strong><span class="style3">static void Main(string[] args)
+{    
+	try    
+	{        
+		int[] numbers = new int[4];        
+		numbers[7] = 9;     // IndexOutOfRangeException         
+		int x = 5;        
+		int y = x / 0;  // DivideByZeroException        
+		Console.WriteLine($"Результат: {y}");    
+	}    
+	catch (DivideByZeroException)    
+	{       
+		 Console.WriteLine("Возникло исключение DivideByZeroException");    
+	}    
+	catch (IndexOutOfRangeException ex)    
+	{        
+		Console.WriteLine(ex.Message);    
+	}                 
+Console.Read();
+}</span></strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В данном случае блоки catch обрабатывают исключения типов 
+				IndexOutOfRangeException и DivideByZeroException. Когда в блоке 
+				try возникнет исключение, то CLR будет искать нужный блок catch 
+				для обработки исключения. Так, в данном случае на строке</p>
+				<pre class="style2"><strong>numbers[7] = 9;</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				происходит обращение к 7-му элементу массива. Однако поскольку в 
+				массиве только 4 элемента, то мы получим исключение типа 
+				IndexOutOfRangeException. CLR найдет блок catch, который 
+				обрабатывает данное исключение, и передаст ему управление.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Следует отметить, что в данном случае в блоке try есть ситуация 
+				для генерации второго исключения - деление на ноль. Однако 
+				поскольку после генерации IndexOutOfRangeException управление 
+				переходит в соответствующий блок catch, то деление на ноль<span>&nbsp;</span><code style="font-family: monospace;">int 
+				y = x / 0</code><span>&nbsp;</span>в принципе не будет выполняться, 
+				поэтому исключение типа DivideByZeroException никогда не будет 
+				сгенерировано.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Однако рассмотрим другую ситуацию:</p>
+				<pre class="style2"><strong>try
+{    
+	object obj = "you";    
+	int num = (int)obj;     // System.InvalidCastException    
+	Console.WriteLine($"Результат: {num}");
+}
+catch (DivideByZeroException)
+{    
+	Console.WriteLine("Возникло исключение DivideByZeroException");
+}
+catch (IndexOutOfRangeException)
+{    
+	Console.WriteLine("Возникло исключение IndexOutOfRangeException");
+}</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В данном случае в блоке try генерируется исключение типа 
+				InvalidCastException, однако соответствующего блока catch для 
+				обработки данного исключения нет. Поэтому программа аварийно 
+				завершит свое выполнение.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Мы также можем определить для InvalidCastException свой блок 
+				catch, однако суть в том, что теоретически в коде могут быть 
+				сгенерированы самые разные типы исключений. А определять для 
+				всех типов исключений блоки catch, если обработка исключений 
+				однотипна, не имеет смысла. И в этом случае мы можем определить 
+				блок catch для базового типа Exception:</p>
+				<pre class="style2"><strong>try
+{&nbsp;&nbsp;&nbsp;&nbsp;
+	object obj = &quot;you&quot;;&nbsp;&nbsp;&nbsp;&nbsp;
+	int num = (int)obj;     // System.InvalidCastException&nbsp;&nbsp;&nbsp;&nbsp;
+	Console.WriteLine($&quot;Результат: {num}&quot;);
+}
+catch (DivideByZeroException)
+{&nbsp;&nbsp;&nbsp;&nbsp;
+	Console.WriteLine(&quot;Возникло исключение DivideByZeroException&quot;);
+}
+catch (IndexOutOfRangeException)
+{&nbsp;&nbsp;&nbsp;&nbsp;
+	Console.WriteLine(&quot;Возникло исключение IndexOutOfRangeException&quot;);
+}
+catch (Exception ex)
+{    
+	Console.WriteLine($"Исключение: {ex.Message}");
+}</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				И в данном случае блок<span>&nbsp;</span><code style="font-family: monospace;">catch 
+				(Exception ex){}</code><span>&nbsp;</span>будет обрабатывать все 
+				исключения кроме DivideByZeroException и 
+				IndexOutOfRangeException. При этом блоки catch для более общих, 
+				более базовых исключений следует помещать в конце - после блоков 
+				catch для более конкретный, специализированных типов. Так как 
+				CLR выбирает для обработки исключения первый блок catch, который 
+				соответствует типу сгенерированного исключения. Поэтому в данном 
+				случае сначала обрабатывается исключение DivideByZeroException и 
+				IndexOutOfRangeException, и только потом Exception (так как 
+				DivideByZeroException и IndexOutOfRangeException наследуется от 
+				класса Exception).</p>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les26.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les26/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:56:57 GMT -->
+</html>

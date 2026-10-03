@@ -1,0 +1,280 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les7/1.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:20:59 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: small;
+}
+.style3 {
+	color: #0000FF;
+}
+.style4 {
+	color: #800000;
+}
+.style5 {
+	color: #FF0000;
+}
+.style6 {
+	color: #008800;
+}
+.style7 {
+	color: #FF0000;
+	text-decoration: underline;
+}
+    .style8 {
+				color: #0000FF;
+				text-decoration: underline;
+}
+    .style9 {
+	font-size: medium;
+}
+.style10 {
+	color: #0000FF;
+	font-size: medium;
+	margin-left: 40px;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 1. Консольный ввод и вывод данных C#. </td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p class="ZagT" style="font-size: medium">Консольный ввод и вывод данных
+				<span lang="en-us">C#.</span></p>
+				<p class="style2"><span lang="en-us">Для вывода информации на 
+				консоль мы уже использовали встроенный метод Console.WriteLine. 
+				То есть, если мы хотим вывести некоторую информацию на консоль, 
+				то нам надо передать ее в метод <span class="style7"><strong>
+				Console.WriteLine</strong></span>:<br />
+				<br />
+				<span class="style3"><em>string hello = &quot;Привет мир&quot;;<br />
+				</em><em>Console.WriteLine(hello);<br />
+				</em><em>Console.WriteLine(&quot;Добро пожаловать в C#!&quot;);<br />
+				</em><em>Console.WriteLine(&quot;Пока мир...&quot;);<br />
+				</em><em>Console.WriteLine(24.5);</em></span><br />
+				</span></p>
+				<p class="style2"><span lang="en-us">Консольный вывод:<br />
+				<br />
+				<span class="style4"><em>Привет мир!<br />
+				Добро пожаловать в C#!<br />
+				Пока мир...<br />
+				24,5</em></span></span></p>
+				<p class="style2"><span lang="en-us"><br />
+				Нередко возникает необходимость вывести на консоль<span class="style8"><em> в одной 
+				строке значения сразу нескольких переменных</em></span>. В этом случае мы 
+				можем использовать прием, который называется
+				<span class="style5">интерполяцией - </span><em>
+				<span class="style3"><strong>$</strong></span></em><span class="style5"> признак интерполяции</span>:<br />
+				<br />
+				<span class="style3"><em>string name = &quot;Tom&quot;;<br />
+				</em><em>int age = 34;<br />
+				double height = 1.7;<br />
+				</em><em>Console.WriteLine(<strong>$</strong></span><span class="style5">&quot;Имя: 
+				{name} Возраст: {age} Рост: {height}м&quot;</span><span class="style3">);</span></em></span></p>
+				<p class="style2"><span lang="en-us"><span class="style5"><em>
+				Для встраивания отдельных значений в выводимую на консоль строку 
+				используются фигурные скобки</em></span>, в которые заключается 
+				встраиваемое значение. Это можем значение переменной ({name}) 
+				или более сложное выражение (например, операция сложения {4 + 
+				7}). А <span class="style5"><em>перед всей строкой ставится знак 
+				доллара </span> <span class="style8">$</span><span class="style5">.</span></em><br />
+				<br />
+				При выводе на консоль вместо помещенных в фигурные скобки 
+				выражений будут выводиться их значения:<br />
+				</span></p>
+				<p class="style2"><span lang="en-us">Консольный вывод:<br />
+				<span class="style4"><em>Имя: Tom Возраст: 34 Рост: 1,7м</em></span></span></p>
+				<p class="style2"><span lang="en-us"><br />
+				Есть другой способ <span class="style8"><em>вывода на консоль сразу нескольких значений</em></span>:<br />
+				<br />
+				<span class="style3"><em>string name = &quot;Tom&quot;;<br />
+				</em><em>int age = 34;<br />
+				double height = 1.7;<br />
+				</em><em>Console.WriteLine(&quot;Имя: {</span><span class="style6">0</span><span class="style3">} 
+				Возраст: {</span><span class="style5">2</span><span class="style3">} 
+				Рост: {1}м&quot;, </span><span class="style6">name</span><span class="style3">, 
+				height, </span><span class="style5">age</span><span class="style3">);</span></em></span></p>
+				<p class="style2"><span lang="en-us">Здесь мы видим, что строка 
+				в Console.WriteLine содержит некие числа в фигурных скобках: 
+				{0}, {1}, {2}. Это <span class="style7"><strong>плейсхолдеры</strong></span>, 
+				вместо которых при выводе строки на консоль будут подставляться 
+				некоторые значения. Подставляемые значения указываются после 
+				строки через запятую.<br />
+				<br />
+				<span class="style8"><em>При это.м важен порядок подобных плейсхолдеров</em></span> Например, в 
+				данном случае после строки первой указана переменная name, потом 
+				height и потом age. Поэтому значение переменной name будет 
+				вставляться вместо первого плейсхолдера - {0} (<span class="style8"><strong>нумерация 
+				начинается с нуля</strong></span>), height - вместо {1}, а age - вместо {2}.
+				</span></p>
+				<p class="style2"><span lang="en-us">Поэтому в итоге пи выводе 
+				на консоль строка<br />
+				<br />
+				&quot;Имя: {0} Возраст: {2} Рост: {1}м&quot;<br />
+				будет заменена на<br />
+				<br />
+				&quot;Имя: Tom Возраст: 34 Рост: 1,7м&quot;</span></p>
+				<font FACE="Cascadia Mono" SIZE="2">
+				<p class="style9">//Также при выводе можно указывать ширину 
+				полей, при этом неиспользуемые части полей будут заполнены 
+				пробелами:</p>
+				<p class="style10"><strong>Console.WriteLine(&quot;Имя: {0,
+				<span class="style5">10</span>} | Фамилия: {1,
+				<span class="style5">15</span>} | Возраст: {2}&quot;, name, surname, 
+				age.ToString());</strong></p>
+				</font>
+				<p class="style2">&nbsp;</p>
+				<p class="style2"><span class="style5"><strong>М</strong><span lang="en-us"><strong>етод</strong></span></span><span class="style7"><strong>
+				<span lang="en-us">Console.Write</span></strong></span><span lang="en-us"><br />
+				Кроме Console.WriteLine() можно также использовать метод 
+				Console.Write(), он работает точно так же за тем исключением, 
+				что не добавляет переход на следующую строку, то есть 
+				последующий консольный вывод будет выводиться на той же строке.<br />
+				<br />
+				<span class="style3"><em>string name = &quot;Tom&quot;;<br />
+				</em><em>int age = 34;<br />
+				double height = 1.7;<br />
+				</em><em>Console.Write($&quot;Имя: {name} Возраст: {age} Рост: 
+				{height}м&quot;);</em></span></span></p>
+				<p class="ZagT" style="font-size: medium">Консольный ввод.</p>
+				<p class="style2">
+				Кроме вывода информации на консоль мы можем получать информацию 
+				с консоли. Для этого предназначен <span class="style7"><strong>метод Console.ReadLine().</strong></span> Он 
+				позволяет получить введенную строку.<br />
+				<br />
+				<span class="style3"><em>Console.Write(&quot;Введите свое имя: &quot;);<br />
+				string? name = Console.ReadLine();<br />
+				</em><em>Console.WriteLine($&quot;Привет {name}&quot;);</em></span><br />
+				</p>
+				<p class="style2">
+				В данном случае все, что вводит пользователь, с помощью метода 
+				Console.ReadLine() передается в переменную name.<br />
+				<br />
+				Пример работы программы:<br />
+				<span class="style4">Введите свое имя: Том<br />
+				Привет Том</span></p>
+				<p class="style2">
+				Особенностью метода Console.ReadLine() является то, что он может 
+				считать информацию с консоли только в виде строки. Кроме того, 
+				возможная ситуация, когда для метода Console.ReadLine не 
+				окажется доступных для считывания строк, то есть когда ему 
+				нечего считывать, он возвращаает значение null, то есть, грубо 
+				говоря, фактически отсутствие значения. И чтобы отразить эту 
+				ситуацию мы определяем переменную name, в которую получаем ввод 
+				с консоли, как переменную типа string?. Здесь string указывает, 
+				что переменная может хранить значения типа string, то есть 
+				строки. А знак вопроса ? указывает, что переменная также может 
+				хранить значение null, то есть по сути не иметь никакого 
+				значения. Далее мы более подробно разберем null и как с ним 
+				работать.<br />
+				<br />
+				Однако, может возникнуть вопрос, как нам быть, если, допустим, 
+				мы хотим ввести возраст в переменную типа int или другую 
+				информацию в переменные типа double или decimal? По умолчанию 
+				платформа .NET предоставляет ряд методов, которые позволяют 
+				преобразовать различные значения к типам int, double и т.д. 
+				Некоторые из этих методов:<br />
+				<br />
+				<span class="style5"><em><strong>Convert.ToInt32() (преобразует к типу int)<br />
+				<br />
+				</strong></em><em><strong>Convert.ToDouble() (преобразует к типу double)<br />
+				<br />
+				</strong></em></span><em><span class="style5"><strong>Convert.ToDecimal() (преобразует к типу decimal)</strong></span><span class="style3"><br />
+				<br />
+				</span></em><span class="style3">Пример ввода значений:<em><br />
+				</em><span lang="en-us"><em><br />
+				</em><em>Console.Write(&quot;Введите имя: &quot;);<br />
+				string? name = Console.ReadLine();<br />
+				<br />
+				</em><em>Console.Write(&quot;Введите возраст: &quot;);<br />
+				</em><em>int age = Convert.ToInt32(Console.ReadLine());<br />
+				<br />
+				</em><em>Console.Write(&quot;Введите рост: &quot;);<br />
+				double height = Convert.ToDouble(Console.ReadLine());<br />
+				<br />
+				</em><em>Console.Write(&quot;Введите размер зарплаты: &quot;);<br />
+				decimal salary = Convert.ToDecimal(Console.ReadLine());<br />
+				<br />
+				</em><em>Console.WriteLine($&quot;Имя: {name} Возраст: {age} Рост: {height}м 
+				Зарплата: {salary}$&quot;);</em></span></span></p>
+				<p class="style2">
+				<span lang="en-us"><br />
+				При вводе важно учитывать текущую операционную систему. В одних 
+				культурах разделителем между целой и дробной частью является 
+				точка (США, Великобритания...), в других - запятая (Россия, 
+				Германия...). Например, если текущая ОС - русскоязычная, значит, 
+				надо вводить дробные числа с разделителем запятой. Если 
+				локализация англоязычная, значит, разделителем целой и дробной 
+				части при вводе будет точка.<br />
+				<br />
+				Пример работы программы:<br />
+				<br />
+				<span class="style4">Введите имя: Том<br />
+				Введите возраст: 25<br />
+				Введите рост: 1,75<br />
+				Введите размер зарплаты: 300,67<br />
+				Имя: Том Возраст: 25 Рост: 1,75м Зарплата: 300,67$</span></span></p>
+				<p class="style2">
+				&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les7.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les7/1.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:20:59 GMT -->
+</html>

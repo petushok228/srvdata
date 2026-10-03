@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les57/4.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:49:05 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: #0000FF;
+}
+.style3 {
+	color: #800000;
+}
+    .style4 {
+	font-size: small;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 4.  Запись экземпляра дочернего класса в экземпляр родительского класса.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text" style="font-size: medium">
+                <p class="style4">Рассмотрим соотношения между экземплярами родительского и
+дочернего классов. Дочерний класс получается из родительского класса
+добавлением новых свойств и методов. Поэтому дочерний класс более
+узкий и его экземпляры в принципе, входят и в родительский класс. С
+точки зрения преобразования типов, это означает, что существует неявное
+преобразование дочернего типа в родительский тип, т.е. допустимы
+операторы</p>
+<pre class="style2"><strong>Worker wrk = new Worker("Иванов","Василий","Петрович",45,1500);
+Human wrk1 = wrk;</strong></pre>
+<p>или</p>
+<p class="style2"><strong>Human wrk1 = new Worker("Иванов","Василий","Петрович",45,1500);</strong></p>
+<p class="style4">В первом случае мы вначале создали экземпляр wrk класса Worker, а
+затем его записали в экземпляр wrk1 класса Human. Во втором же случае
+сразу созданный экземпляр класса Worker записали в экземпляр wrk1
+класса Human.</p>
+<p class="style4">Заметим, что хотя wrk1 фактически указывает на экземпляр класса
+Worker, этому экземпляру доступны только свойства и методы класса
+Human. Например, мы не можем для этого экземпляра использовать
+свойство Tarif, метод ZarPlata(), а метод Info() будет выполняться
+на основе реализации в классе Human .</p>
+<p class="style4">Как мы знаем, преобразование, обратное неявному преобразованию,
+всегда должно быть явным. Поэтому преобразование из родительского
+типа в дочерний тип должно быть явным. Для этого можно использовать
+операцию приведения типа, например,</p>
+<p class="style2"><strong>Worker wrk2 = (Worker) wrk1;</strong></p>
+<p class="style4">Теперь для объекта wrk2 доступны все свойства и методы класса Worker .
+При выполнении код</p>
+<pre class="style2"><strong>Worker wrk1=new Worker("Иванов","Василий","Петрович",45,1500);
+wrk1.Info();
+Human wrk2 = wrk1;
+wrk2.Info();
+Worker wrk3 = (Worker)wrk2;
+wrk3.Info();</strong></pre>
+<p class="style4">получим строки</p>
+<pre class="style3"><strong>Вы используете класс Human
+Иванов Василий Петрович, 45 лет, 1500 руб/день
+Иванов Василий Петрович, 45 лет
+Иванов Василий Петрович, 45 лет, 1500 руб/день</strong></pre>
+<p class="style4">Как видим, объект wrk2 описан как экземпляр класса Human. Поэтому
+при выполнении метода Info() отсутствует поле tarif.</p>
+<p class="style4">Заметим, что невозможно экземпляр родительского класса записать в
+экземпляр дочернего класса. Коды</p>
+<pre class="style2"><strong>Human wrk1 = new Human();
+Worker wrk2 = (Worker) wrk1;</strong></pre>
+<p>или</p>
+<p class="style2"><strong>Worker wrk1 = new Human();</strong></p>
+<p class="style4">приведут к ошибке. Изначально объект должен быть создан конструктором
+дочернего класса.</p>
+<p class="style4">Укажем возможные пути использования изложенного здесь
+материала. Предположим, что на фирме имеются разные категории
+работников: рабочие, инженеры, лаборанты и т.п. На основе базового
+класса Worker можно для каждой категории создать свой дочерний класс,
+учитывающий особенности данной категории работников. Затем при
+необходимости, например, для начисления заработной платы, можно
+создать массив типа Worker и записать туда экземпляры дочерних классов.
+Это позволит одним циклом всем работникам начислить зарплату.</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les57.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les57/4.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:49:05 GMT -->
+</html>

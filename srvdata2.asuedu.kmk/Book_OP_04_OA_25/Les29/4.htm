@@ -1,0 +1,402 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les29/4.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:02:24 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: medium;
+}
+.style3 {
+	font-weight: normal;
+	color: black;
+	font-size: medium;
+	border-bottom: 1px solid rgb(170, 170, 170);
+	margin: 0px;
+	padding-top: 0.5em;
+	padding-bottom: 0.17em;
+	background:;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 4. Механизм подпрограмм, их описание.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style2" style="font-size: small;"><span>&nbsp;</span>Подпрограммы 
+				изначально появились как средство оптимизации программ по объёму 
+				занимаемой памяти&nbsp;— они позволили не повторять в программе 
+				идентичные блоки кода, а описывать их однократно и вызывать по 
+				мере необходимости. К настоящему времени данная функция 
+				подпрограмм стала вспомогательной, главное их назначение&nbsp;—<span>&nbsp;</span><span class="style3" style="color: rgb(255, 0, 0); text-decoration: underline;"><strong>структуризация 
+				программы с целью удобства её понимания и сопровождения.</strong></span></span></p>
+				<ul style="line-height: 1.5em; list-style-type: square; margin: 0.3em 0px 0px 1.5em; padding: 0px; list-style-image: url('../../Book-OA_CCA_24/Les24/bullet.html'); color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="margin-bottom: 0.1em;">
+					<span class="style4" style="color: rgb(0, 0, 255); text-decoration: underline;">
+					<em>Выделение набора действий в подпрограмму и вызов её по 
+					мере необходимости позволяет логически выделить целостную 
+					подзадачу</em></span>, имеющую типовое решение. Такое 
+					действие имеет ещё одно (помимо экономии памяти) 
+					преимущество перед повторением однотипных действий: любое 
+					изменение (исправление ошибки, оптимизация, расширение 
+					функциональности), сделанное в подпрограмме, автоматически 
+					отражается на всех её вызовах, в то время как при 
+					дублировании каждое изменение необходимо вносить в каждое 
+					вхождение изменяемого кода.</li>
+					<li style="margin-bottom: 0.1em;">Даже в тех случаях, когда 
+					в подпрограмму выделяется однократно производимый набор 
+					действий, это оправдано, так как<span>&nbsp;</span><span class="style4" style="color: rgb(0, 0, 255); text-decoration: underline;"><em>позволяет 
+					сократить размеры целостных блоков кода, составляющих 
+					программу, то есть сделать программу более понятной и 
+					обозримой</em></span>...</li>
+				</ul>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style2" style="font-size: small;">&nbsp;&nbsp; 
+				Первыми формами модульности, появившимися в языках 
+				программирования, были<span>&nbsp;</span><strong style="margin: 0px; padding: 0px;">процедуры</strong><span>&nbsp;</span>и<span>&nbsp;</span><strong style="margin: 0px; padding: 0px;">функции</strong>. 
+				Поскольку функции в математике использовались издавна, то 
+				появление их в языках программирования было совершенно 
+				естественным. Уже с первых шагов программирования&nbsp; 
+				процедуры и функции позволяли решать одну из важнейших задач, 
+				стоящих перед программистами, – задачу повторного использования 
+				программного кода.<br />
+				</span>&nbsp;&nbsp;&nbsp;<span>&nbsp;</span><span class="style2" style="font-size: small;">Один 
+				раз написанную функцию можно многократно вызывать в программе с 
+				разными значениями параметров, передаваемых функции в момент 
+				вызова. Встроенные в язык функции позволяли существенно 
+				расширить возможности языка программирования. Важным шагом в 
+				автоматизации программирования было появление библиотек процедур 
+				и функций, доступных из языка программирования.</span></p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong>Механизм подпрограмм, их описание и вызов</strong></p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style2" style="font-size: small;">&nbsp;&nbsp;&nbsp; 
+				В простейшем случае (в ассемблерах) подпрограмма представляет 
+				собой последовательность команд (операторов), отдельную от 
+				основной части программы и имеющую в конце специальную команду 
+				выхода из подпрограммы. Обычно подпрограмма также имеет имя, по 
+				которому её можно вызвать, хотя ряд языков программирования 
+				допускает использование и неименованных подпрограмм.</span></p>
+				<p class="style2" style="font-size: small; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">&nbsp;&nbsp;&nbsp; 
+				В языках высокого уровня описание подпрограммы обычно состоит по 
+				меньшей мере из двух частей:<span>&nbsp;</span><span class="style6" style="color: rgb(0, 0, 255); font-style: italic; text-decoration: underline;"><strong>заголовка</strong></span><span class="style5" style="color: rgb(0, 0, 255);"><span class="style8" style="text-decoration: underline;"><strong><span>&nbsp;</span>и<span>&nbsp;</span></strong></span><span class="style7" style="font-style: italic; text-decoration: underline;"><strong>тела</strong></span></span>.</p>
+				<p class="style2" style="font-size: small; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style3" style="color: rgb(255, 0, 0); text-decoration: underline;">
+				<strong>Заголовок подпрограммы<span>&nbsp;</span></strong></span>описывает 
+				её имя и, возможно, параметры, то есть содержит информацию, 
+				необходимую для вызова подпрограммы.</p>
+				<p class="style2" style="font-size: small; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style9" style="color: rgb(255, 0, 0);"><strong>Тело</strong></span>&nbsp;— 
+				набор операторов, который будет выполнен всякий раз, когда 
+				подпрограмма будет вызвана.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				&nbsp;&nbsp;&nbsp;<span>&nbsp;</span><span class="style2" style="font-size: small;">Вызов 
+				подпрограммы выполняется с помощью<span>&nbsp;</span></span><span class="style13" style="color: rgb(255, 0, 0); text-decoration: underline; font-size: small;"><strong>команды 
+				вызова, включающей в себя имя подпрограммы</strong></span><span class="style2" style="font-size: small;">. 
+				В большинстве современных языков программирования команда вызова 
+				представляет собой<span>&nbsp;</span></span><span class="style13" style="color: rgb(255, 0, 0); text-decoration: underline; font-size: small;"><strong>просто 
+				имя вызываемой подпрограммы</strong></span><span class="style2" style="font-size: small;">, 
+				за которым могут следовать фактические параметры.</span></p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style2" style="font-size: small;">В следующем 
+				примере на языке Паскаль подпрограмма<span>&nbsp;</span></span><span class="style12" style="color: rgb(0, 0, 255); font-size: small;"><strong><em>subprog</em></strong></span><span class="style2" style="font-size: small;"><span>&nbsp;</span>вызывается 
+				из основной программы трижды:</span></p>
+				<div class="mw-geshi" dir="ltr" style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: left;">
+					<div class="pascal source-pascal" style="line-height: normal; font-family: monospace;">
+						<pre class="de1">  <span class="kw1" style="color: rgb(0, 0, 0); font-weight: bold; font-size: medium;">program</span><span class="style11" style="font-size: medium;"> SubProgExample;
+    <span class="co1" style="color: rgb(102, 102, 102); font-style: italic;">// Описание подпрограммы subprog</span>
+    <span class="kw1" style="color: rgb(0, 0, 0); font-weight: bold;">procedure</span> subprog; <span class="co1" style="color: rgb(102, 102, 102); font-style: italic;">// Заголовок, включающий имя подпрограммы</span>
+    <span class="kw1" style="color: rgb(0, 0, 0); font-weight: bold;">begin</span> <span class="co1" style="color: rgb(102, 102, 102); font-style: italic;">// начало тела подпрограммы</span>
+      <span class="kw3" style="color: rgb(0, 0, 102);">WriteLn</span><span class="br0" style="color: rgb(0, 153, 0);">(</span><span class="st_h" style="color: rgb(255, 0, 0);">&#39;Bye&#39;</span><span class="br0" style="color: rgb(0, 153, 0);">)</span>;
+    <span class="kw1" style="color: rgb(0, 0, 0); font-weight: bold;">end</span>; <span class="co1" style="color: rgb(102, 102, 102); font-style: italic;">// конец тела подпрограммы</span>
+  <span class="kw1" style="color: rgb(0, 0, 0); font-weight: bold;">begin</span>
+    <span class="kw3" style="color: rgb(0, 0, 102);">WriteLn</span><span class="br0" style="color: rgb(0, 153, 0);">(</span><span class="st_h" style="color: rgb(255, 0, 0);">&#39;Hello&#39;</span><span class="br0" style="color: rgb(0, 153, 0);">)</span>;
+    subprog; <span class="co1" style="color: rgb(102, 102, 102); font-style: italic;">// 1-й вызов</span>
+    subprog; <span class="co1" style="color: rgb(102, 102, 102); font-style: italic;">// 2-й вызов</span>
+    subprog; <span class="co1" style="color: rgb(102, 102, 102); font-style: italic;">// 3-й вызов</span>
+  </span><span class="kw1" style="color: rgb(0, 0, 0); font-weight: bold;"><span class="style11" style="font-size: medium;">end</span></span>.</pre>
+					</div>
+				</div>
+				<p class="style2" style="font-size: small; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Результатом выполнения такой программы станет вывод строки 
+				«Hello» и трёх строк «Bye».</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style2" style="font-size: small;">&nbsp;&nbsp;<span>&nbsp;</span></span><em><span class="style14" style="color: rgb(128, 0, 0); font-size: small;">Некоторые 
+				языки программирования (например, Паскаль, Ада, Модула-2) 
+				допускают описание<span>&nbsp;</span></span><span class="style13" style="color: rgb(255, 0, 0); text-decoration: underline; font-size: small;"><strong>вложенных 
+				подпрограмм</strong></span><span class="style14" style="color: rgb(128, 0, 0); font-size: small;">, 
+				то есть помещение подпрограмм внутрь других подпрограмм.<span>&nbsp;</span></span><span class="style16" style="color: rgb(0, 0, 255); text-decoration: underline; font-size: small;">Такие 
+				вложенные подпрограммы могут использоваться только в той 
+				подпрограмме, в которой они описаны</span><span class="style14" style="color: rgb(128, 0, 0); font-size: small;">.</span></em></p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<em>&nbsp;<span class="style14" style="color: rgb(128, 0, 0); font-size: small;"><span>&nbsp;</span>В 
+				иных случаях (например, в языке Си)<span>&nbsp;</span></span><span class="style15" style="color: rgb(255, 0, 0); font-size: small;"><strong>вложение 
+				подпрограмм не допускается</strong></span><span class="style14" style="color: rgb(128, 0, 0); font-size: small;">. 
+				Никаких принципиальных преимуществ вложение подпрограмм не даёт, 
+				но может быть удобно для более логичной структуризации программы 
+				(если какая-то подпрограмма используется только в некоторой 
+				другой подпрограмме, логично поместить первую во вторую).</span></em></p>
+				<span class="style2" style="font-size: small; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<h3 style="border-bottom: 1px solid rgb(170, 170, 170); font-weight: normal; color: black; background: none; margin: 0px; padding-top: 0.5em; padding-bottom: 0.17em;" class="style2">
+				<span class="mw-headline"><strong>Назначение параметров</strong></span></h3>
+				<p>&nbsp;&nbsp;&nbsp; Подпрограммы часто используются для 
+				многократного выполнения стереотипных действий над различными 
+				данными. Подпрограмма обычно имеет доступ к объектам данных, 
+				описанным в основной программе (по крайней мере, к некоторым из 
+				них), поэтому для того, чтобы передать в подпрограмму 
+				обрабатываемые данные, их достаточно присвоить, например, 
+				глобальным переменным. Но такой путь не особенно удобен и чреват 
+				ошибками.</p>
+				<p>&nbsp;&nbsp;&nbsp; Для обеспечения контролируемой передачи 
+				параметров в подпрограмму и возврата результатов из неё 
+				используется механизм<span>&nbsp;</span><i>параметров</i>. Параметры 
+				описываются при описании подпрограммы (в её заголовке) и могут 
+				использоваться внутри процедуры аналогично переменным, описанным 
+				в ней. При вызове процедуры значения каждого из параметров 
+				указываются в команде вызова (обычно после имени вызываемой 
+				подпрограммы).</p>
+				<div class="mw-geshi" dir="ltr" style="text-align: left;">
+					<div class="pascal source-pascal" style="line-height: normal; font-family: monospace;">
+						<pre class="de1">  <span class="kw1" style="color: rgb(0, 0, 0); font-weight: bold;">program</span> SubProgExample2;
+    <span class="co1" style="color: rgb(102, 102, 102); font-style: italic;">// Описание подпрограммы subprog</span>
+    <span class="kw1" style="color: rgb(0, 0, 0); font-weight: bold;">procedure</span> subprog<span class="br0" style="color: rgb(0, 153, 0);">(</span>Line<span class="sy0" style="color: rgb(51, 153, 51);">:</span> <span class="kw4" style="color: rgb(0, 0, 102); font-weight: bold;">String</span><span class="br0" style="color: rgb(0, 153, 0);">)</span>; <span class="co1" style="color: rgb(102, 102, 102); font-style: italic;">// Заголовок, включающий имя подпрограммы</span>
+    <span class="kw1" style="color: rgb(0, 0, 0); font-weight: bold;">begin</span> <span class="co1" style="color: rgb(102, 102, 102); font-style: italic;">// начало тела подпрограммы</span>
+      <span class="kw3" style="color: rgb(0, 0, 102);">WriteLn</span><span class="br0" style="color: rgb(0, 153, 0);">(</span>Line<span class="br0" style="color: rgb(0, 153, 0);">)</span>;
+    <span class="kw1" style="color: rgb(0, 0, 0); font-weight: bold;">end</span>; <span class="co1" style="color: rgb(102, 102, 102); font-style: italic;">// конец тела подпрограммы</span>
+  <span class="kw1" style="color: rgb(0, 0, 0); font-weight: bold;">begin</span>
+    <span class="kw3" style="color: rgb(0, 0, 102);">WriteLn</span><span class="br0" style="color: rgb(0, 153, 0);">(</span><span class="st_h" style="color: rgb(255, 0, 0);">&#39;Hello&#39;</span><span class="br0" style="color: rgb(0, 153, 0);">)</span>;
+    subprog<span class="br0" style="color: rgb(0, 153, 0);">(</span><span class="st_h" style="color: rgb(255, 0, 0);">&#39;Good bye,&#39;</span><span class="br0" style="color: rgb(0, 153, 0);">)</span>; <span class="co1" style="color: rgb(102, 102, 102); font-style: italic;">// 1-й вызов</span>
+    subprog<span class="br0" style="color: rgb(0, 153, 0);">(</span><span class="st_h" style="color: rgb(255, 0, 0);">&#39;my love,&#39;</span><span class="br0" style="color: rgb(0, 153, 0);">)</span>;  <span class="co1" style="color: rgb(102, 102, 102); font-style: italic;">// 2-й вызов</span>
+    subprog<span class="br0" style="color: rgb(0, 153, 0);">(</span><span class="st_h" style="color: rgb(255, 0, 0);">&#39;good bye!&#39;</span><span class="br0" style="color: rgb(0, 153, 0);">)</span>; <span class="co1" style="color: rgb(102, 102, 102); font-style: italic;">// 3-й вызов</span>
+  <span class="kw1" style="color: rgb(0, 0, 0); font-weight: bold;">end</span>.</pre>
+					</div>
+				</div>
+				<p>&nbsp;&nbsp; В приведённом примере параметр<span>&nbsp;</span><i>Line</i><span>&nbsp;</span>подпрограммы<span>&nbsp;</span><i>subprog</i><span>&nbsp;</span>в 
+				каждом вызове получает различное значение, благодаря чему 
+				выводятся не одинаковые строки, а разные.</p>
+				<h3 class="style3"><strong>Формальные и фактические параметры</strong></h3>
+				<p>Чтобы отличать параметры подпрограммы, описанные в её 
+				заголовке и теле, от параметров, указываемых при вызове 
+				подпрограммы, первые принято называть формальными параметрами, 
+				вторые&nbsp;— фактическими параметрами. Так, в последнем примере 
+				параметр<span>&nbsp;</span><i>Line</i><span>&nbsp;</span>в заголовке и 
+				теле подпрограммы<span>&nbsp;</span><i>subprog</i>&nbsp;— это формальный 
+				параметр, а строка<span>&nbsp;</span><i>&#39;Good bye&#39;<span>&nbsp;</span></i>, 
+				использованная в первом вызове этой подпрограммы&nbsp;— фактический 
+				параметр.<span>&nbsp;</span><i>При вызове подпрограммы фактические 
+				параметры, указанные в команде вызова, становятся значениями 
+				соответствующих формальных параметров, чем и обеспечивается 
+				передача данных в подпрограмму.</i></p>
+				<h3 style="border-bottom: 1px solid rgb(170, 170, 170); font-weight: normal; color: black; background: none; margin: 0px; padding-top: 0.5em; padding-bottom: 0.17em;" class="style2">
+				<span class="mw-headline"><strong>С</strong><span class="style5" style="color: rgb(0, 0, 255);"><strong>пособ 
+				передачи параметров в подпрограмму</strong></span></span></h3>
+				<p class="style10" style="color: rgb(128, 0, 0);">Существует 
+				несколько способов передачи параметров в подпрограмму.</p>
+				<ul style="line-height: 1.5em; list-style-type: square; margin: 0.3em 0px 0px 1.5em; padding: 0px; list-style-image: url('../../Book-OA_CCA_24/Les24/bullet.html');">
+					<li style="margin-bottom: 0.1em;"><b>
+					<span class="style5" style="color: rgb(0, 0, 255);">Передача 
+					параметров по значению</span>.</b><span>&nbsp;</span>Формальному 
+					параметру присваивается<span>&nbsp;</span><i>значение</i><span>&nbsp;</span>фактического 
+					параметра. В этом случае формальный параметр будет содержать 
+					копию значения, имеющегося в фактическом, и никакое 
+					воздействие, производимое внутри подпрограммы на формальные 
+					параметры, не отражается на параметрах фактических. Так, 
+					если в качестве фактического параметра будет использована 
+					переменная, и внутри подпрограммы значение соответствующего 
+					формального параметра будет изменено, то фактический 
+					параметр останется без изменений.</li>
+				</ul>
+				<blockquote>
+					<code style="background-color: rgb(255, 252, 244);">int 
+					func1(int x) { x=x+1; return x; }</code></blockquote>
+				<ul style="line-height: 1.5em; list-style-type: square; margin: 0.3em 0px 0px 1.5em; padding: 0px; list-style-image: url('../../Book-OA_CCA_24/Les24/bullet.html');">
+					<li style="margin-bottom: 0.1em;"><b>
+					<span class="style5" style="color: rgb(0, 0, 255);">Передача 
+					параметров по ссылке</span>.</b><span>&nbsp;</span>В формальный 
+					параметр может быть помещён<span>&nbsp;</span><i>сам</i><span>&nbsp;</span>фактический 
+					параметр (обычно это реализуется путём помещения в 
+					формальный параметр ссылки на фактический). При этом любое 
+					изменение формального параметра в подпрограмме отразится на 
+					фактическом параметре&nbsp;— оба параметра во время вызова 
+					подпрограммы суть одно и то же. Параметры, передаваемые по 
+					ссылке, дают возможность не только передавать параметры 
+					внутрь подпрограммы, но и возвращать вычисленные значения в 
+					точку вызова. Для этого параметру внутри подпрограммы просто 
+					присваивается нужное значение, и после возврата из 
+					подпрограммы переменная, использованная в качестве 
+					фактического параметра, получает это значение.</li>
+				</ul>
+				<blockquote>
+					<code style="background-color: rgb(255, 252, 244);">void 
+					func2(int &amp;x) { x=x+1; }</code></blockquote>
+				<ul style="line-height: 1.5em; list-style-type: square; margin: 0.3em 0px 0px 1.5em; padding: 0px; list-style-image: url('../../Book-OA_CCA_24/Les24/bullet.html');">
+					<li style="margin-bottom: 0.1em;"><b>Передача параметров по 
+					имени.</b><span>&nbsp;</span>В формальный параметр может быть 
+					помещено произвольное выражение. При этом вычисление этого 
+					выражения произойдёт внутри подпрограммы в тот момент, когда 
+					потребуется его значение. Если это значение фигурирует 
+					несколько раз, то и вычисляться оно будет тоже несколько 
+					раз. Параметры, передаваемые по имени, дают возможность 
+					писать довольно универсальные подпрограммы. Такой способ 
+					передачи параметров используется, к примеру в языках Алгол 
+					или Алгол 68.</li>
+					<li style="margin-bottom: 0.1em;"><b>Передача параметров 
+					через стек.</b><span>&nbsp;</span>Это фактически разновидность 
+					передачи параметра по значению «с ручным приводом», в данном 
+					случае отсутствует понятие формальных и фактических 
+					параметров. Все параметры лежат на стеке, причём их типы, 
+					количество и порядок не контролируются компилятором. Данный 
+					подход реализован в языке Форт.</li>
+				</ul>
+				<p>&nbsp;&nbsp;&nbsp; Язык программирования может предоставлять 
+				возможность передавать параметры в подпрограммы либо только по 
+				значению (так сделано в языке Си), либо по значению и по ссылке 
+				(это реализовано в Паскале, Аде, C++), либо по имени и значению 
+				(это реализовано в языках Алгол и Алгол 68). В последних двух 
+				случаях для различения способов передачи параметра используются 
+				отдельные синтаксическая конструкции (в Паскале это ключевое 
+				слово<span>&nbsp;</span><i>var</i><span>&nbsp;</span>при описании 
+				параметра). В действительности, если язык содержит понятие 
+				ссылки (указателя), то можно обойтись и без передачи параметра 
+				по ссылке (её всегда можно смоделировать, описав параметр типа 
+				«ссылка»), но эта возможность удобна, так как позволяет работать 
+				с формальным параметром-ссылкой без разыменования, а также 
+				повышает надёжность и безопасность программы.</p>
+				<p>&nbsp;&nbsp; На параметры, передаваемые по ссылке, 
+				накладываются естественные ограничения: фактический параметр, 
+				подставляемый на место такого параметра при вызове, обязан быть 
+				переменной (то есть иметь адрес), а в языках со строгой 
+				типизацией&nbsp;— ещё и иметь в точности такой же тип данных.</p>
+				<h2 class="style11" style="font-size: medium; color: black; background: none; font-weight: normal; margin: 0px; padding-top: 0.5em; padding-bottom: 0.17em; border-bottom: 1px solid rgb(170, 170, 170);">
+				<strong><span class="style5" style="color: rgb(0, 0, 255);">Виды 
+				подпрограмм</span></strong></h2>
+				<p>В языках программирования высокого уровня используется два 
+				типа подпрограмм:<span>&nbsp;</span><strong>процедуры</strong><span class="style10" style="color: rgb(128, 0, 0);"><strong><span>&nbsp;</span>и<span>&nbsp;</span></strong></span><strong>функции</strong>.</p>
+				<ul style="line-height: 1.5em; list-style-type: square; margin: 0.3em 0px 0px 1.5em; padding: 0px; list-style-image: url('../../Book-OA_CCA_24/Les24/bullet.html');">
+					<li style="margin-bottom: 0.1em;">
+					<span class="style9" style="color: rgb(255, 0, 0);">Функция</span>&nbsp;— 
+					это подпрограмма специального вида, которая, кроме получения 
+					параметров, выполнения действий и передачи результатов 
+					работы через параметры имеет ещё одну возможность&nbsp;— она 
+					может<span>&nbsp;</span><i>возвращать результат</i>. Вызов 
+					функции является, с точки зрения языка программирования, 
+					выражением, он может использоваться в других выражениях или 
+					в качестве правой части присваивания. Подробнее см. в статье 
+					Функция (программирование).</li>
+					<li style="margin-bottom: 0.1em;">
+					<span class="style9" style="color: rgb(255, 0, 0);">
+					Процедура</span>&nbsp;— это любая подпрограмма, которая не 
+					является функцией.</li>
+				</ul>
+				<p>Подпрограммы, входящие в состав классов в объектных языках 
+				программирования, обычно называются<span>&nbsp;</span><i>методами</i>. 
+				Этим термином называют любые подпрограммы-члены класса, как 
+				функции, так и процедуры; когда требуется уточнение, говорят о<span>&nbsp;</span><i>методах-процедурах</i><span>&nbsp;</span>или<span>&nbsp;</span><i>методах-функциях</i>.</p>
+				</span>
+				<span class="style2" style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<p class="style5" style="color: rgb(0, 0, 255);">
+				<strong style="margin: 0px; padding: 0px;">Процедуры и функции – 
+				методы класса</strong></p>
+				</span>
+				<span class="style2" style="font-size: small; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<p>Долгое время процедуры и функции играли не только 
+				функциональную, но и архитектурную роль. Весьма популярным при 
+				построении программных систем был метод функциональной 
+				декомпозиции «сверху вниз», и сегодня еще играющий важную роль. 
+				Вся программа рассматривалась, как некоторая главная функция. В 
+				процессе проектирования программы происходила декомпозиция 
+				главной функции на подфункции, решающие частные задачи. Этот 
+				процесс декомпозиции продолжался до тех пор, пока не приходили к 
+				достаточно простым функциям, реализация которых не требовала 
+				декомпозиции и могла быть описана базовыми конструкциями языка 
+				программирования.</p>
+				<p>с появлением ООП архитектурная роль функциональных модулей 
+				отошла на второй план. Для ОО-языков, к которым относится и язык 
+				C#, роль архитектурного модуля играет<span>&nbsp;</span><strong style="margin: 0px; padding: 0px;">класс</strong>. 
+				Программная система строится из модулей, роль которых играют 
+				классы, но каждый из этих модулей имеют содержательную начинку, 
+				задавая некоторую абстракцию данных.</p>
+				<p>Процедуры и функции связываются теперь с классом, они 
+				обеспечивают требуемую функциональность класса и называются 
+				методами класса. Поскольку класс в объектно-ориентированном 
+				программировании рассматривается как некоторый тип данных, то 
+				главную роль в классе начинают играть его данные – поля класса, 
+				задающие свойства объектов класса. Методы класса &nbsp;«служат» 
+				данным, занимаясь их обработкой. Помните, в C# процедуры и 
+				функции существуют только как методы некоторого класса, они не 
+				существуют вне класса.</p>
+				<p>В данном контексте понятие класс распространяется и на все 
+				его частные случаи – структуры, интерфейсы, делегаты.</p>
+				<p>В языке C# нет специальных ключевых слов – method, procedure, 
+				function, но сами понятия конечно же присутствуют. Синтаксис 
+				объявления метода позволяет однозначно определить, чем является 
+				метод – процедурой или функцией.</p>
+				<p>Прежнюю роль библиотек процедур и функций теперь играют<span>&nbsp;</span><strong style="margin: 0px; padding: 0px;">библиотеки 
+				классов</strong>. Библиотека классов FCL, доступная в языке C#, 
+				существенно расширяет возможности языка. Знание классов этой 
+				библиотеки, методов этих классов совершенно необходимо для 
+				практического программирования на C#, использование всей его 
+				мощи.</p>
+				</span>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les29.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les29/4.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:02:33 GMT -->
+</html>

@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les16/4.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:38:37 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: small;
+}
+    .style3 {
+	font-size: medium;
+	color: #0000FF;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Многомерные массивы C#.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p class="style2">Многомерным</em>&nbsp;называется такой массив, который 
+				отличается двумя или более измерениями, причем доступ к каждому 
+				элементу такого массива осуществляется с помощью определенной 
+				комбинации двух или более индексов. Многомерный массив 
+				индексируется двумя и более целыми числами.</p>
+				<h2 class="style2">Двумерные массивы</h2>
+				<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; text-indent: 20px; font-weight: 100; font-family: OpenSansRegular, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Простейшей формой многомерного массива является<span>&nbsp;</span><strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">двумерный 
+				массив</strong>. Местоположение любого элемента в двумерном 
+				массиве обозначается двумя индексами. Такой массив можно 
+				представить в виде таблицы, на строки которой указывает один 
+				индекс, а на столбцы — другой. Пример объявления и инициализации 
+				двумерного массива показан ниже:</p>
+				<pre><code class="hljs cpp" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: inherit; padding: 0px; color: inherit; background-color: transparent; border-radius: 0px; white-space: pre-wrap;"><span class="hljs-comment" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;"><span class="style2">// Объявляем двумерный массив</span></span><span class="style2">
+</span><span class="hljs-keyword" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; color: rgb(76, 208, 122);"><span class="style2">int</span></span><span class="style2">[,] myArr = <span class="hljs-keyword" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; color: rgb(76, 208, 122);">new</span> <span class="hljs-keyword" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; color: rgb(76, 208, 122);">int</span>[<span class="hljs-number" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; color: rgb(224, 109, 183);">4</span>, <span class="hljs-number" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; color: rgb(224, 109, 183);">5</span>];
+
+Random ran = <span class="hljs-keyword" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; color: rgb(76, 208, 122);">new</span> Random();
+
+<span class="hljs-comment" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">// Инициализируем данный массив</span>
+<span class="hljs-keyword" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; color: rgb(76, 208, 122);">for</span> (<span class="hljs-keyword" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; color: rgb(76, 208, 122);">int</span> i = <span class="hljs-number" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; color: rgb(224, 109, 183);">0</span>; i &lt; <span class="hljs-number" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; color: rgb(224, 109, 183);">4</span>; i++)
+{
+    <span class="hljs-keyword" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; color: rgb(76, 208, 122);">for</span> (<span class="hljs-keyword" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; color: rgb(76, 208, 122);">int</span> j = <span class="hljs-number" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; color: rgb(224, 109, 183);">0</span>; j &lt; <span class="hljs-number" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; color: rgb(224, 109, 183);">5</span>; j++)
+    {
+       myArr[i, j] = ran.Next(<span class="hljs-number" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; color: rgb(224, 109, 183);">1</span>, <span class="hljs-number" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; color: rgb(224, 109, 183);">15</span>);
+       Console.Write(<span class="hljs-string" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; color: rgb(235, 138, 134);">&quot;{0}\t&quot;</span>, myArr[i, j]);
+    }
+    Console.WriteLine();
+}</span></code></pre>
+				<div class="style2" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; width: 940px; padding: 15px; color: rgb(255, 255, 255); font-family: OpenSansRegular, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<img src="Pic/Random_Diff_Array.png" alt="Двумерный массив" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; border: 0px; vertical-align: middle; margin-left: auto; margin-right: auto; display: block; max-width: 100%;" /></div>
+				<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; text-indent: 20px; font-weight: 100; font-family: OpenSansRegular, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Обратите особое внимание на способ объявления двумерного 
+				массива. Схематическое представление массива myArr показано 
+				ниже:</p>
+				<div class="style2" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; width: 940px; padding: 15px;">
+					<img class="png" src="../../../professorweb.ru/my/csharp/charp_theory/level4/files/img0345.png" alt="Схематическое представление двумерного массива" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; border: 0px; vertical-align: middle; margin-left: auto; margin-right: auto; display: block; max-width: 100%;" /></div>
+				<h2 style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-family: OpenSansBold, sans-serif; font-weight: 500; line-height: 1.4; margin: 30px 0px; text-indent: 0px; background: transparent; padding: 0px;" class="style3">
+				Массивы трех и более измерений</h2>
+				<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; text-indent: 20px; font-weight: 100;" class="style2">
+				В C# допускаются массивы трех и более измерений. Ниже приведена 
+				общая форма объявления многомерного массива:</p>
+				<pre>тип[,...,] имя_массива = new тип[размер1, размер2, ... размеры];</pre>
+				<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; text-indent: 20px; font-weight: 100;" class="style2">
+				Ниже приведен пример программы, использующей трехмерный массив:</p>
+				<p><code class="hljs cpp" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: inherit; padding: 0px; background-color: transparent; border-radius: 0px; white-space: pre-wrap;"><span style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;" class="style2">int</span><span class="style2">[,,] myArr = </span></code><code class="hljs cpp" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: inherit; padding: 0px; color: inherit; background-color: transparent; border-radius: 0px; white-space: pre-wrap;"><span class="style2"><code class="hljs cpp" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: inherit; padding: 0px; background-color: transparent; border-radius: 0px; white-space: pre-wrap;"><span style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">new</span></code> <code class="hljs cpp" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: inherit; padding: 0px; background-color: transparent; border-radius: 0px; white-space: pre-wrap;"><span style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">int</span></code>[<code class="hljs cpp" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: inherit; padding: 0px; background-color: transparent; border-radius: 0px; white-space: pre-wrap;"><span style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">5</span></code>,<code class="hljs cpp" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: inherit; padding: 0px; background-color: transparent; border-radius: 0px; white-space: pre-wrap;"><span style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">5</span></code>,<code class="hljs cpp" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: inherit; padding: 0px; background-color: transparent; border-radius: 0px; white-space: pre-wrap;"><span style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">5</span>];<br />
+				<br />
+
+<span style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">for</span> (<span style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">int</span></code> </span><code class="hljs cpp" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: inherit; padding: 0px; background-color: transparent; border-radius: 0px; white-space: pre-wrap;"><span class="style2">i = <span style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">0</span>; i &lt; <span style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">5</span>; i++)<br />
+&nbsp;&nbsp;
+   <span style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">for</span> (<span style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">int</span> j = <span style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">0</span>; j &lt; <span style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">5</span>; j++)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <span style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">for</span> (<span style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">int</span> k = <span style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">0</span>; k &lt; <span style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">5</span>; k++)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; myArr[i, j, k] = i + j + k;</span></code></code></p>
+				<h2 style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-family: OpenSansBold, sans-serif; font-weight: 500; line-height: 1.4; margin: 30px 0px; text-indent: 0px; background: transparent; padding: 0px;" class="style2">
+				Инициализация многомерных массивов</h2>
+				<pre>тип[,] имя_массива = {
+{val, val, val, ..., val},
+{ val, val, val, ..., val},
+{val, val, val, ..., val}
+};</pre>
+				<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; text-indent: 20px; font-weight: 100;" class="style2">
+				Для инициализации многомерного массива достаточно заключить в 
+				фигурные скобки список инициализаторов каждого его размера:</p>
+				<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; text-indent: 20px; font-weight: 100;" class="style2">
+				где val обозначает инициализирующее значение, а каждый 
+				внутренний блок — отдельный ряд. Первое значение в каждом ряду 
+				сохраняется на первой позиции в массиве, второе значение — на 
+				второй позиции и т.д. Обратите внимание на то, что блоки 
+				инициализаторов разделяются запятыми, а после завершающей эти 
+				блоки закрывающей фигурной скобки ставится точка с запятой.</p>
+				<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; text-indent: 20px; font-weight: 100;" class="style2">
+				Ниже в качестве примера приведена общая форма инициализации 
+				двумерного массива:</p>
+				<p><code class="hljs cpp" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: inherit; padding: 0px; color: inherit; background-color: transparent; border-radius: 0px; white-space: pre-wrap;"><span class="style2" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; color: rgb(76, 208, 122);">int</span><span class="style2">[,] myArr = {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<span class="hljs-number" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; color: rgb(224, 109, 183);">1</span>,<span class="hljs-number" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; color: rgb(224, 109, 183);">10</span>},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<span class="hljs-number" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; color: rgb(224, 109, 183);">2</span>,<span class="hljs-number" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; color: rgb(224, 109, 183);">20</span>},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<span class="hljs-number" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; color: rgb(224, 109, 183);">3</span>,<span class="hljs-number" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; color: rgb(224, 109, 183);">30</span>},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<span class="hljs-number" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; color: rgb(224, 109, 183);">4</span>,<span class="hljs-number" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; color: rgb(224, 109, 183);">40</span>}<br />
+				};</span></code></p>
+				</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les16.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les16/4.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:39:04 GMT -->
+</html>

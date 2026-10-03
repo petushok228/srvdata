@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les500/4.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:17:29 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: medium;
+}
+.style3 {
+	color: rgb(255, 0, 0);
+}
+    .style7 {
+	font-size: medium;
+	margin-left: 40px;
+}
+    .style8 {
+	font-size: medium;
+	font-weight: bold;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 4. Оператор new. Ключевое слово var и неявная типизация. Оператор default.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <h2 class="wp-block-heading" id="main-menu-1" style="margin: 24px 0px; padding: 0px; border: 0px; font-size: 18px; vertical-align: baseline; clear: both; line-height: 1.6; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Оператор&nbsp;<span class="style3"><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;" class="style2">new</code></span></h2>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Варианты инициализации переменных, уже рассмотренные в этом 
+				уроке, являются сокращенным видом более общего подхода, который 
+				реализуется с использованием оператора&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">new</code>. 
+				Это требование уровня&nbsp;<strong style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">CLR</strong>, 
+				суть которого в том, что все создаваемые объекты должны 
+				инициализироваться оператором&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">new</code>.</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вот пример объявления переменной типа&nbsp;<span class="style3"><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;" class="style2"><strong>Person</strong></code></span>:</p>
+				<pre class="style7"><strong>Person p = new Person();</strong></pre>
+				<figure class="wp-block-image" style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; display: block; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</figure>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/types_6.png" width="544" height="326" /></p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В процессе работы, программистам, как правило, приходится 
+				довольно много работать с числами, строками и т. п. Каждый раз 
+				набирать полный вариант объявления переменной было бы 
+				утомительно. Чтобы исключить это было принято решение поддержать 
+				на уровне компилятора набор типов данных, для которых 
+				предусмотрен более лаконичный синтаксис. Если бы это было не 
+				так, объявление переменной типа&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">int</code>&nbsp;выглядело 
+				бы следующим образом:</p>
+				<pre class="style7"><strong>System.Int32 value = new System.Int32(10);</strong></pre>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В этой строке создается переменная с именем&nbsp;<strong style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">value</strong>&nbsp;и 
+				значением&nbsp;<strong style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">10</strong>. 
+				Эту запись можно сократить до следующего вида:</p>
+				<pre class="style7"><strong>int value = 10;</strong></pre>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для остальных типов данных, для которых не предусмотрены 
+				подобные сокращения, используется только вариант с&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">new</code>.</p>
+				<figure class="wp-block-image" style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; display: block; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</figure>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/types_7.png" width="1058" height="497" /></p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При выполнении оператора&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">new</code>:</p>
+				<ul class="wp-block-list" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; list-style: outside square; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+					Сначала&nbsp;определяется необходимый набор байт для хранения 
+					объекта типа (включая дополнительные специальные поля, если 
+					данные будут храниться в куче).</li>
+					<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+					Выделяется соответствующая память, и все байты 
+					зарезервированного пространства обнуляются.</li>
+					<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+					Инициализируются дополнительные специальные поля (если 
+					объект хранится в куче).</li>
+					<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+					Вызывается конструктор типа с указанными параметрами.</li>
+				</ul>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+				Конструктор&nbsp;</strong>– это такой специальный метод, который 
+				вызывается оператором&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">new</code>&nbsp;при 
+				создании экземпляра типа, о нём мы поговорим, когда более 
+				детально будем изучать классы.</p>
+				<figure class="wp-block-image" style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; display: block; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</figure>
+				<h2 class="wp-block-heading" id="main-menu-2" style="margin: 24px 0px; padding: 0px; border: 0px; font-size: 18px; vertical-align: baseline; clear: both; line-height: 1.6; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/types_8.png" width="310" height="423" /></h2>
+				<h2 class="wp-block-heading" style="margin: 24px 0px; padding: 0px; border: 0px; font-size: 18px; vertical-align: baseline; clear: both; line-height: 1.6; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Ключевое слово&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">var</code>. 
+				Неявная типизация</h2>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При объявлении переменной, вместо явного задания типа можно 
+				использовать ключевое слово&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">var</code>. 
+				В этом случае&nbsp;<em style="margin: 0px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">будет 
+				использована система вывода типов&nbsp;</em>для определения типа 
+				переменной по ее значению.</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В примере ниже, переменные&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">v1</code>&nbsp;и&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">v2</code>&nbsp;имею 
+				тип&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">int</code>.</p>
+				<pre class="style7"><strong>int v1 = 12345;
+var v2 = 12345;
+Console.WriteLine($"Type of v1: {v1.GetType()}\n Type of v2: {v2.GetType()}");</strong></pre>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Результатом выполнения будет следующее:</p>
+				<pre class="style7"><strong>Type of v1: System.Int32
+Type of v2: System.Int32</strong></pre>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Рассмотрим разные варианты создания и инициализации переменных.</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Наиболее полный вариант:</p>
+				<pre class="style7"><b>Dictionary</b><string, int> <span class="style8" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; vertical-align: baseline; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">&lt;</span><span class="style8" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; vertical-align: baseline; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">string, </span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; vertical-align: baseline; line-height: inherit; font-family: inherit; color: rgb(40, 100, 145); font-weight: 700;">int</span><span class="style8" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; vertical-align: baseline; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">&gt; </span><string, int><b>dict = new Dictionary &lt;string, int>()</b></strong></pre>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Можно сократить вот так:</p>
+				<pre class="style7"><strong>Dictionary</strong><string, int> <span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; vertical-align: baseline; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">&lt;</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; vertical-align: baseline; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">string, </span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; vertical-align: baseline; line-height: inherit; font-family: inherit; color: rgb(40, 100, 145); font-weight: 700;">int</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; vertical-align: baseline; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">&gt; </span><string, int><strong>dict = new()</strong></pre>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Или воспользоваться&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">var</code>:</p>
+				<pre class="style7"><strong>var dict = new Dictionary</strong><string, int><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; vertical-align: baseline; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">&lt;</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; vertical-align: baseline; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">string, </span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; vertical-align: baseline; line-height: inherit; font-family: inherit; color: rgb(40, 100, 145); font-weight: 700;">int</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; vertical-align: baseline; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">&gt;</span><string, int><strong>()</strong></pre>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При работе с&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">var</code>&nbsp;необходимо 
+				помнить следующее:</p>
+				<ul class="wp-block-list" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; list-style: outside square; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+					использовать&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">var</code>&nbsp;можно 
+					только для объявления локальных переменных;</li>
+					<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+					<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">
+					var</code>&nbsp;нельзя использоваться для объявления типа 
+					возвращаемого значения, типов полей и параметров;</li>
+					<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+					при объявлении переменной с использованием&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">var</code>, 
+					она обязательно должна быть проинициализирована, при этом 
+					использовать для этого&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">null</code>&nbsp;запрещено;</li>
+					<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline;">
+					объявлять переменную допускающую&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">null</code>-значение 
+					с использованием лексемы&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">?</code>&nbsp;через&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">var</code>&nbsp;нельзя.</li>
+				</ul>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Про допускающие&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">null</code>-значение 
+				переменные мы поговорим подробно позже в нашем курсе.</p>
+				<h2 class="wp-block-heading" id="main-menu-3" style="margin: 24px 0px; padding: 0px; border: 0px; font-size: 18px; vertical-align: baseline; clear: both; line-height: 1.6; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Оператор&nbsp;<span class="style3"><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;" class="style2">default</code></span></h2>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Оператор&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">default</code>&nbsp;создает 
+				значение по умолчанию для указанного типа, он используется 
+				следующим образом:&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">default(T)</code>, 
+				где&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">T</code>&nbsp;– 
+				это тип, для которого нужно создать соответствующее значение.</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Объявим переменную типа&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">int</code>&nbsp;и 
+				присвоим ей значение по умолчанию с помощью&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">new</code>.</p>
+				<pre class="style7"><strong>int n = new int();
+Console.WriteLine($"Значение по умолчанию для int: {n}");</strong></pre>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				То же самое можно сделать с помощью оператора&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">default</code>:</p>
+				<pre class="style7"><strong>int n = default(int);
+Console.WriteLine($"default(int): {n}");</strong></pre>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если C# может самостоятельно вывести тип, то можно 
+				воспользоваться не оператором, а литерой&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; font-size: 14pt; vertical-align: baseline; font-family: Consolas, Monaco, &quot;Lucida Console&quot;, monospace; line-height: 2;">default</code>, 
+				без явного указания типа:</p>
+				<pre class="style7"><strong>int n = default;
+Console.WriteLine($"default: {n}");</strong></pre>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Этот оператор полезен при разработке методов с обобщенным типом. 
+				Обобщения – это механизм C#, который позволяет вам написать код 
+				без явной привязки к конкретным типам.</p>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Создадим метод, который выводит на консоль значение по умолчанию 
+				для типа переданного в нее аргумента:</p>
+				<pre class="style7"><strong>static void PrintDefaultValue</strong>&lt;T><strong>(T val)
+{Console.WriteLine($"Тип аргумента val: {val.GetType()}");
+Console.WriteLine($"Значение по умолчанию для типа {val.GetType()}: {default(T)}");
+Console.WriteLine($"Текущее значение аргумента val: {val}");}</strong></pre>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вызовем эту функцию для разных типов аргументов.</p>
+				<pre class="style7"><strong>PrintDefaultValue</strong><int><strong>(5);
+Console.WriteLine();
+PrintDefaultValue</strong><bool><strong>(true);</strong></pre>
+				<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.71429; color: rgb(68, 68, 68); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В результате получим следующий вывод:</p>
+				<pre class="style7"><strong>Тип аргумента val: System.Int32
+Значение по умолчанию для типа System.Int32: 0
+Текущее значение аргумента val: 5</strong></pre>
+				<pre class="style7"><strong>
+Тип аргумента val: System.Boolean
+Значение по умолчанию для типа System.Boolean: False
+Текущее значение аргумента val: True</strong></pre>
+                <p></p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les500.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les500/4.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:17:30 GMT -->
+</html>

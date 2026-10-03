@@ -1,0 +1,340 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les9/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:23:40 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 2. Условные операторы Pascal-Паскаль. </td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <h3 style="padding: 0px; margin: 0px 0px 0.5em; clear: both; font-family: &quot;trebuchet ms&quot;, arial, sans-serif; color: rgb(0, 0, 0); font-weight: normal; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Условные операторы Pascal-Паскаль</h3>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<b style="padding: 0px; margin: 0px;">Условные операторы</b><span>&nbsp;</span>позволяют 
+				выбирать для выполнения те или иные части программы в 
+				зависимости от некоторых условий. Если, например, в программе 
+				используются вещественные переменные x и z, и на каком-то этапе 
+				решения задачи требуется вычислить z=max(x, y), то желаемый 
+				результат получается в результате выполнения либо оператора 
+				присваивания z:=x, либо оператора присваивания z:=y. Поскольку 
+				значения переменных x и y заранее неизвестны, а определяются в 
+				процессе вычислений, то в программе необходимо предусмотреть оба 
+				эти оператора присваивания. Однако на самом деле должен 
+				выполниться один из них. Поэтому в программе должно содержаться 
+				указание о том, в каком случае надо выбирать для исполнения тот 
+				или иной оператор присваивания.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Это указание естественно сформулировать с использованием 
+				отношения x&gt;y. Если это отношение при текущих значениях x и y 
+				справедливо (принимает значение true), то для исполнения должен 
+				выбираться оператор z:=x; в противном случае для исполнения 
+				должен выбираться оператор z:=y (при x=y безразлично, какой 
+				оператор выполнять, так что выполнение оператора z:=y в этом 
+				случае даст правильный результат).</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для задания подобного рода разветвляющихся вычислительных 
+				процессов в языках программирования существуют<span>&nbsp;</span><b style="padding: 0px; margin: 0px;">условные 
+				операторы</b>. Рассмотрим полный<span>&nbsp;</span><b style="padding: 0px; margin: 0px;">условный 
+				оператор</b><span>&nbsp;</span>Паскаля:</p>
+				<div class="example hljs delphi" style="padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 15px; overflow-x: auto; overflow-y: hidden !important; display: block; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<b style="padding: 0px; margin: 0px;">
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					if</span></b><span>&nbsp;</span>B<span>&nbsp;</span><b style="padding: 0px; margin: 0px;"><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">then</span></b><span>&nbsp;</span>S1<span>&nbsp;</span><b style="padding: 0px; margin: 0px;"><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">else</span></b><span>&nbsp;</span>S2</div>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Здесь<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">if</strong><span>&nbsp;</span>(если),<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">then</strong><span>&nbsp;</span>(то) 
+				и<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">else</strong><span>&nbsp;</span>(иначе) 
+				являются служебными словами,<strong style="padding: 0px; margin: 0px;"><span>&nbsp;</span>В</strong><span>&nbsp;</span>– 
+				логическое выражение, а<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">S1</strong><span>&nbsp;</span>и<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">S2</strong><span>&nbsp;</span>– 
+				операторы.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Выполнение такого условного оператора в Паскале сводится к 
+				выполнению одного из входящих в него операторов S1 или S2: если 
+				заданное в операторе условие выполняется (логическое выражение В 
+				принимает значение true), то выполняется оператор S1, в 
+				противном случае выполняется оператор S2.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Алгоритм решения упомянутой выше задачи вычисления z= max( x, y) 
+				можно задать в виде<span>&nbsp;</span><b style="padding: 0px; margin: 0px;">условного 
+				оператора Паскаля</b></p>
+				<div class="example hljs delphi" style="padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 15px; overflow-x: auto; overflow-y: hidden !important; display: block; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<b style="padding: 0px; margin: 0px;">
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					if</span></b><span>&nbsp;</span>x&gt;y<span>&nbsp;</span><b style="padding: 0px; margin: 0px;"><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">then</span></b><span>&nbsp;</span>z:= 
+					x<span>&nbsp;</span><b style="padding: 0px; margin: 0px;"><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">else</span></b><span>&nbsp;</span>z:= 
+					y</div>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При формулировании алгоритмов весьма типичной является такая 
+				ситуация, когда на определенном этапе вычислительного процесса 
+				какие-либо действия надо выполнить только при выполнении 
+				некоторого условия, а если это условие не выполняется, то на 
+				данном этапе вообще не нужно выполнять никаких действий. 
+				Простейшим примером такой ситуации является замена текущего 
+				значения переменной х на абсолютную величину этого значения: 
+				если x&lt;0, то необходимо выполнить оператор присваивания x:= - x; 
+				если же x&gt;=0, то текущее значение х должно остаться без 
+				изменений, т.е. на данном этапе вообще не надо выполнять 
+				каких-либо действий.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В подобных ситуациях удобна сокращенная форма записи условного 
+				оператора в Паскале:</p>
+				<div class="example hljs delphi" style="padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 15px; overflow-x: auto; overflow-y: hidden !important; display: block; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<b style="padding: 0px; margin: 0px;">
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					if</span></b><span>&nbsp;</span>B<span>&nbsp;</span><b style="padding: 0px; margin: 0px;"><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">then</span></b><span>&nbsp;</span>S</div>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Правило выполнения сокращенного<span>&nbsp;</span><b style="padding: 0px; margin: 0px;">условного 
+				оператора Паскаля</b><span>&nbsp;</span>достаточно очевидно:<span>&nbsp;</span><b style="padding: 0px; margin: 0px;">если</b><span>&nbsp;</span>значение 
+				логического выражения В есть true,<span>&nbsp;</span><b style="padding: 0px; margin: 0px;">то</b><span>&nbsp;</span>выполняется 
+				оператор S; в<span>&nbsp;</span><b style="padding: 0px; margin: 0px;">противном 
+				случае</b><span>&nbsp;</span>никаких иных действий не производится.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В языке программирования Паскаль в условном операторе между<span>&nbsp;</span><b style="padding: 0px; margin: 0px;">then</b><span>&nbsp;</span>и<span>&nbsp;</span><b style="padding: 0px; margin: 0px;">else</b>, 
+				а также после<span>&nbsp;</span><b style="padding: 0px; margin: 0px;">else</b><span>&nbsp;</span>по 
+				синтаксису может стоять только один оператор. Если же при 
+				выполнении (или невыполнении) заданного условия надо выполнить 
+				некоторую последовательность действий, то их надо объединить в 
+				единый, составной оператор, т.е. заключить эту 
+				последовательность действий в операторные скобки<span>&nbsp;</span><b style="padding: 0px; margin: 0px;">begin... 
+				end</b><span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">(это 
+				важно!)</strong>. Если, например, при x&lt; y надо поменять местами 
+				значения этих переменных, то<span>&nbsp;</span><b style="padding: 0px; margin: 0px;">условный 
+				оператор</b><span>&nbsp;</span>будет записан следующим образом в 
+				Паскале:</p>
+				<div class="example hljs delphi" style="padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 15px; overflow-x: auto; overflow-y: hidden !important; display: block; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<b style="padding: 0px; margin: 0px;">
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					if</span></b><span>&nbsp;</span>x&lt;y<span>&nbsp;</span><b style="padding: 0px; margin: 0px;"><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">then</span></b><span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">begin</span><span>&nbsp;</span>r:=x; 
+					x:=y; y:=r<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">end</span></div>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Наличие сокращенной формы<span>&nbsp;</span><b style="padding: 0px; margin: 0px;">условного 
+				оператора Паскаля</b><span>&nbsp;</span>требует большой осторожности 
+				при использовании. Например, условный оператор</p>
+				<div class="example hljs delphi" style="padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 15px; overflow-x: auto; overflow-y: hidden !important; display: block; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<strong style="padding: 0px; margin: 0px;">
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					if</span></strong><span>&nbsp;</span>B1<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;"><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">then</span></strong><span>&nbsp;</span><strong style="padding: 0px; margin: 0px;"><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">if</span></strong><span>&nbsp;</span>B2<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;"><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">then</span></strong><span>&nbsp;</span>S1<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;"><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">else</span></strong><span>&nbsp;</span>S2</div>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				допускает, вообще говоря, две разные трактовки:</p>
+				<ul style="padding: 0px; margin: 0.5em 0px 1em; list-style: none; font-size: 8pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('Pic/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; font-size: 10.6667px;">
+					как<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">полный 
+					условный оператор Паскаля</strong><span>&nbsp;</span>вида</li>
+				</ul>
+				<div class="example hljs delphi" style="padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 45px; overflow-x: auto; overflow-y: hidden !important; display: block; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<strong style="padding: 0px; margin: 0px;">
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					if</span><span>&nbsp;</span></strong>B1<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;"><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">then</span><span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">begin</span></strong><br style="padding: 0px; margin: 0px;" />
+					<strong style="padding: 0px; margin: 0px;">
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					if</span></strong><span>&nbsp;</span>B2<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;"><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">then</span></strong><span>&nbsp;</span>S1<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">end</span><br style="padding: 0px; margin: 0px;" />
+					<strong style="padding: 0px; margin: 0px;">
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					else</span></strong><span>&nbsp;</span>S2</div>
+				<ul style="padding: 0px; margin: 0.5em 0px 1em; list-style: none; font-size: 8pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('Pic/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; font-size: 10.6667px;">
+					как<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">сокращенный 
+					условный оператор Паскаля</strong><span>&nbsp;</span>вида</li>
+				</ul>
+				<div class="example hljs delphi" style="padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 30px; overflow-x: auto; overflow-y: hidden !important; display: block; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<strong style="padding: 0px; margin: 0px;">
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					if</span></strong><span>&nbsp;</span>B1<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;"><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">then</span><span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">begin</span></strong><br style="padding: 0px; margin: 0px;" />
+					<strong style="padding: 0px; margin: 0px;">
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					if</span></strong><span>&nbsp;</span>B2<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;"><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">then</span></strong><span>&nbsp;</span>S1<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;"><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">else</span></strong><span>&nbsp;</span>S2<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">end</span></div>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				По правилам Паскаля имеет место вторая трактовка, т.е. 
+				считается, что каждое слово<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">else</strong><span>&nbsp;</span>соответствует 
+				первому предшествующему ему слову<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">then</strong>. 
+				Для избежания возможных ошибок и недоразумений можно 
+				порекомендовать во всех подобных случаях четко выделять желаемую 
+				форму<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;">условного 
+				оператора Паскаля</strong><span>&nbsp;</span>путем взятия в 
+				операторные скобки.</p>
+				<a name="pascal-conditional_operators" style="padding: 0px; margin: 0px; color: rgb(70, 122, 167); font-weight: bold; text-decoration: none; font-family: verdana, arial, sans-serif; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; ">
+				</a>
+				<h3 style="padding: 0px; margin: 0px 0px 0.5em; clear: both; font-family: &quot;trebuchet ms&quot;, arial, sans-serif; color: rgb(0, 0, 0); font-weight: normal; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Оператор выбора Паскаля</h3>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="padding: 0px; margin: 0px;">Оператор выбора 
+				Паскаля</strong><span>&nbsp;</span>позволяет выбрать одно из 
+				нескольких возможных продолжений программы. Параметром, по 
+				которому осуществляется выбор, служит ключ выбора – выражение 
+				любого порядкового типа.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Структура оператора выбора в Паскале такова:</p>
+				<div class="example hljs delphi" style="padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 45px; overflow-x: auto; overflow-y: hidden !important; display: block; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<strong style="padding: 0px; margin: 0px;">
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					Case</span><span>&nbsp;</span>&lt;ключ_выбора&gt;<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">of</span><br style="padding: 0px; margin: 0px;" />
+					&lt;список_выбора&gt;<br style="padding: 0px; margin: 0px;" />
+					[<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">else</span><span>&nbsp;</span>&lt;оператор_иначе&gt;]<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">end</span></strong></div>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Здесь<strong style="padding: 0px; margin: 0px;"><span>&nbsp;</span>case, 
+				of, else, end</strong><span>&nbsp;</span>– зарезервированные слова 
+				(случай, из, иначе, конец);</p>
+				<ul style="padding: 0px; margin: 0.5em 0px 1em; list-style: none; font-size: 8pt; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('Pic/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; font-size: 10.6667px;">
+					&lt;ключ_выбора&gt; - выражение порядкового типа;</li>
+					<li style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('Pic/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; font-size: 10.6667px;">
+					&lt;список_выбора&gt; - одна или более конструкций вида:<ul style="padding: 0px; margin: 0.5em 0px 1em; list-style: none; font-size: 8pt;">
+						<li style="padding: 0px 0px 0px 12px; margin: 0px 0px 1.1em 2px; background: url('Pic/li.gif') no-repeat 0px 0.5em; line-height: 1.4em; font-size: 10.6667px;">
+						&lt;константа_выбора&gt;: &lt;оператор&gt;;</li>
+					</ul>
+					</li>
+					<li style="padding: 0px 0px 0px 12px; margin: 0px 0px 0.5em 2px; background: url('Pic/bg_bullet_full_1.gif') no-repeat 0px 0.5em; line-height: 1.4em; font-size: 10.6667px;">
+					&lt;константа_выбора&gt; - константа того же типа, что и выражение<ul style="padding: 0px; margin: 0.5em 0px 1em; list-style: none; font-size: 8pt;">
+						<li style="padding: 0px 0px 0px 12px; margin: 0px 0px 1.1em 2px; background: url('Pic/li.gif') no-repeat 0px 0.5em; line-height: 1.4em; font-size: 10.6667px;">
+						&lt;ключ_выбора&gt;;</li>
+					</ul>
+					</li>
+				</ul>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				&lt;операторы&gt; - произвольные операторы Паскаля.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Оператор выбора Паскаля работает следующим образом. Вначале 
+				вычисляется значение выражения &lt;ключ_выбора&gt;, а затем в 
+				последовательности &lt;список_выбора&gt; отыскивается константа, 
+				равная вычисленному значению. Выполняется оператор, который 
+				следует за найденной константой, после чего оператор выбора 
+				завершает работу. Если в списке выбора не будет найдена 
+				константа, соответствующая вычисленному значению ключа выбора, 
+				управление передается операторам, стоящим за словом else. Часть 
+				else &lt;оператор_иначе&gt; можно опустить, тогда при отсутствии в 
+				списке выбора нужной константы не будет выполнено никаких 
+				действий, и оператор выбора просто завершит свою работу.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Например, составим программу, которая по номеру дня недели 
+				выводит на экран его название:</p>
+				<b class="exampleTitle" style="padding: 2px 6px; margin: 0px; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; border-image: initial; border-bottom: none; display: inline; background: rgb(100, 149, 237) url('Pic/new-1.png'); font-weight: bold; font-size: 8pt; color: white; font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример программы с использованием Case of</b><div class="example hljs delphi" style="padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 225px; overflow-x: auto; overflow-y: hidden !important; display: block; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					Program</span><span>&nbsp;</span>dni_nedeli;<br style="padding: 0px; margin: 0px;" />
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					Var</span><span>&nbsp;</span>n: byte;<br style="padding: 0px; margin: 0px;" />
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					Begin</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp; Readln(n);<br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;"><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">Case</span></strong><span>&nbsp;</span>n<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">of</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>&nbsp;</span><span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">1</span>: 
+					writeln(<span class="hljs-string" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">&#39;понедельник 
+					&#39;</span>);<br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>&nbsp;</span><span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">2</span>: 
+					writeln(<span class="hljs-string" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">&#39;вторник 
+					&#39;</span>);<br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>&nbsp;</span><span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">3</span>: 
+					writeln(<span class="hljs-string" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">&#39;среда 
+					&#39;</span>);<br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>&nbsp;</span><span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">4</span>: 
+					writeln(<span class="hljs-string" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">&#39;четверг 
+					&#39;</span>);<br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>&nbsp;</span><span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">5</span>: 
+					writeln(<span class="hljs-string" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">&#39;пятница 
+					&#39;</span>);<br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>&nbsp;</span><span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">6</span>: 
+					writeln(<span class="hljs-string" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">&#39;суббота 
+					&#39;</span>);<br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>&nbsp;</span><span class="hljs-number" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">7</span>: 
+					writeln(<span class="hljs-string" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">&#39;воскресенье&#39;</span>);<br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;"><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">else</span></strong><span>&nbsp;</span>writeln(<span class="hljs-string" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">&#39;дня 
+					недели с номером&#39;</span>, n,<span class="hljs-string" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">&#39;нет&#39;</span>);<br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;"><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">end</span>;</strong><br style="padding: 0px; margin: 0px;" />
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					end</span>.<br style="padding: 0px; margin: 0px;" />
+				</div>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Следует помнить, что все константы из списка выбора должны быть 
+				различны.</p>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Любому из операторов списка выбора может предшествовать не одна, 
+				а несколько констант выбора, разделенных запятыми. Например, 
+				следующая программа при вводе одного из символов &#39; y&#39; или &#39; Y&#39; 
+				выведет на экран «Да», а при вводе &#39; n&#39; или &#39; N&#39; – слово «Нет».</p>
+				<b class="exampleTitle" style="padding: 2px 6px; margin: 0px; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; border-image: initial; border-bottom: none; display: inline; background: rgb(100, 149, 237) url('Pic/new-1.png'); font-weight: bold; font-size: 8pt; color: white; font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример программы с использованием Case of с несколькими 
+				переменными</b><div class="example hljs delphi" style="padding: 0.5em; margin: 0px 0px 1em; border: 3px double rgb(99, 79, 54); background: rgb(240, 240, 240); font-family: &quot;Courier New&quot;, Courier, monospace; font-size: 10pt; text-align: left; height: 120px; overflow-x: auto; overflow-y: hidden !important; display: block; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					Var</span><span>&nbsp;</span>ch: char;<br style="padding: 0px; margin: 0px;" />
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					Begin</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp; Readln(ch);<br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;"><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">Case</span></strong><span>&nbsp;</span>ch<span>&nbsp;</span><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">of</span><br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; N, n: writeln(<span class="hljs-string" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">&#39;Да 
+					&#39;</span>);<br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Y, y: writeln(<span class="hljs-string" style="padding: 0px; margin: 0px; color: rgb(136, 0, 0);">&#39;Нет 
+					&#39;</span>);<br style="padding: 0px; margin: 0px;" />
+					&nbsp;&nbsp;&nbsp;<span>&nbsp;</span><strong style="padding: 0px; margin: 0px;"><span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">End</span>;</strong><br style="padding: 0px; margin: 0px;" />
+					<span class="hljs-keyword" style="padding: 0px; margin: 0px; font-weight: bold;">
+					End</span>.</div>
+				<p style="padding: 0px; margin: 0px 0px 1em; line-height: 1.5em; font-size: 12px; color: rgb(0, 0, 0); font-family: verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Очевидно, что рассмотренные выше программы можно записать с 
+				помощью вложенных или последовательно расположенных условных 
+				операторов, но в подобных задачах использование оператора выбора 
+				является более простым. Основное отличие условного оператора от 
+				оператора выбора состоит в том, что в условном операторе условия 
+				проверяются одно за другим, а в операторе выбора значение ключа 
+				выбора непосредственно определяет одну из возможностей.</p>
+                <p></p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les9.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les9/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:23:42 GMT -->
+</html>

@@ -1,0 +1,576 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les63/1.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:59:06 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: small;
+}
+.style3 {
+	color: #0000FF;
+}
+.style4 {
+	font-size: small;
+	margin-left: 40px;
+}
+.style5 {
+	font-size: small;
+	color: blue;
+}
+.style6 {
+	font-size: small;
+	text-align: center;
+}
+.style7 {
+	color: red;
+}
+    .style8 {
+	color: red;
+	text-decoration: underline;
+}
+.style9 {
+	font-size: small;
+	color: red;
+}
+.style10 {
+	font-size: small;
+	text-decoration: underline;
+	color: blue;
+}
+.style11 {
+	font-family: "Jetbrains Mono", "Jetbrains Mono override", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+}
+.style12 {
+	color: red;
+	text-decoration: underline;
+	font-size: medium;
+}
+.style13 {
+	margin-left: 40px;
+}
+    .style14 {
+	font-size: medium;
+	margin-left: 40px;
+}
+.style15 {
+	font-size: medium;
+}
+.style16 {
+	font-size: medium;
+	text-align: center;
+}
+.style17 {
+	font-size: medium;
+	color: blue;
+}
+.style18 {
+	font-size: small;
+	margin-left: 80px;
+}
+    .style19 {
+	font-size: large;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 1 .</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p class="style2">Метод, на который ссылается делегат, нередко 
+				используется только для этой цели. Иными словами, единственным 
+				основанием для существования метода служит то обстоятельство, 
+				что он может быть вызван посредством делегата, 
+				<span class="style8"><strong>но сам он не 
+				вызывается вообще.</strong></span> В подобных случаях можно воспользоваться 
+				анонимной функцией, чтобы не создавать отдельный метод.
+				<span class="style8"><strong>Анонимная функция, по существу, 
+				представляет собой <span class="style19">безымянный кодовый блок</span>, передаваемый 
+				конструктору делегата.</strong></span> Преимущество анонимной 
+				функции состоит, в частности, в ее простоте. Благодаря ей
+				<span class="style8"><strong>отпадает необходимость объявлять 
+				отдельный метод, единственное назначение которого состоит в том, 
+				что он передается делегату. </strong></span>
+</p><p class="style2">
+Начиная с версии 3.0, в C# предусмотрены <span class="style3"><strong>две 
+разновидности анонимных функций - анонимные методы и лямбда-выражения:
+</strong></span>
+</p>
+				<p class="style6">
+<img alt="" src="Pic/img1454.png" width="571" height="278" /></p>
+				<p class="style5">
+<strong>Анонимные функции C#</strong></p><p class="style2">
+Анонимные методы были внедрены в C# еще в версии 2.0, а лямбда-выражения — в 
+версии 3.0. В целом <span class="style8"><strong>лямбда-выражение совершенствует принцип действия анонимного 
+метода </strong></span>и в настоящее время считается более предпочтительным для создания 
+анонимной функции. Но анонимные методы широко применяются в существующем коде C# 
+и поэтому по-прежнему являются важной составной частью C#. А поскольку анонимные 
+методы предшествовали появлению лямбда-выражений, то ясное представление о них 
+позволяет лучше понять особенности лямбда-выражений. К тому же анонимные методы 
+могут быть использованы в целом ряде случаев, где применение лямбда-выражений 
+оказывается невозможным.
+</p>
+				<h2 class="style2">
+				Синтаксис создания делегата</h2>
+				<p class="style9"
+>
+				<strong>Шаг 1 — Объявление</strong></p>
+					<p class="style2"
+><strong>modifier delegate ReturnType DelegateName ([Parameter_1]);</strong></p>
+				<p class="style5"
+><strong>(модификатор delegate возвращаемый тип&nbsp; Имя делегата&nbsp; (<span lang="en-us">[</span>параметры<span lang="en-us">]):</span></strong></p>
+				<p>
+				<span class="style5">1. <span class="style4"><em>Чтобы получить 
+				делегат, сначала нужно объявить его тип</em></span>. Тип 
+				делегата объявляется с помощью ключевого слова</span><span><span class="style5">&nbsp;</span></span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style5">delegate</span><span class="style5">. 
+				Ниже приведена общая форма объявления делегата:</span></p>
+				<pre style="border: 1px solid rgba(0, 0, 0, 0.1); font-family: monospace, serif; font-size: 15px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 12px; vertical-align: baseline; hyphens: none; line-height: 1.6; box-sizing: border-box; max-width: 100%; overflow: auto; white-space: pre-wrap; overflow-wrap: break-word; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">delegate</span> <em style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: italic; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" class="style6">возвращаемый_тип</em> <strong style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: 700; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"><em style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: italic; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" class="style6">имя</em></strong>(<em style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: italic; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" class="style6">список_параметров</em><span class="style6">);</span></pre>
+				<p class="style2">
+				где</p>
+				<ul style="box-sizing: border-box; border: 0px; font-family: Lato, sans-serif; font-size: 12pt;
+font-style: normal; font-weight: 400; margin: 0px 0px 24px 20px; outline: 0px; padding: 0px; vertical-align: baseline; list-style: disc; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li style="border: 0px; font-family: inherit; font-size: 12pt;
+font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								<span style="border: 0px; font-family: inherit; font-size: 12pt;
+font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">
+								<em style="border: 0px; font-family: inherit; font-size: 12pt;
+font-style: italic; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								возвращаемый_тип</em></span><span>&nbsp;</span>– 
+								обозначает тип значения, которое возвращается 
+								методами, которые будут вызваться с помощью 
+								делегата;</li>
+				</ul>
+
+				<p class="style2"
+>
+				Шаг 2 — <span class="style7"><strong>Инициализация</strong></span></p>
+				<p class="style10"
+>
+				<em>Делегат инициализируется путём передачи ему имени
+				<span class="style7">метода в качестве аргумента</span>.</em></p>
+				<p class="style2"><code class="lang-csharp lazy-code" data-v-04728ac0="" style="box-sizing: border-box; font-family: &quot;Jetbrains Mono&quot;, &quot;Jetbrains Mono override&quot;, Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; margin: 0px; padding: 0px; background: transparent; color: var(--tp-color-text-primary); display: block; outline: none; tab-size: 2; text-shadow: none; white-space: pre;"><strong>
+				DelegateName DelgObjectName = new DelegateName(<span class="style7">MethodName</span>);</strong></code></p>
+				<p class="style2"><code><strong><span class="style11">(</span></strong></code><strong>Имя 
+				делегата&nbsp; имя экземпляра делегата =</strong>
+				<span lang="en-us">new </span><strong>Имя делегата<span lang="en-us"> 
+				( </span>вызываемый метод <span lang="en-us">)</span></strong></p>
+					
+				<p class="style2"
+>
+				Шаг 3 — Вызов</p>
+				<p class="style5"
+>
+				Вызываем созданный делегат с указанием параметров, если это 
+				необходимо.</p>
+				<p class="style2"><code class="lang-csharp lazy-code" data-v-04728ac0="" style="box-sizing: border-box; font-family: &quot;Jetbrains Mono&quot;, &quot;Jetbrains Mono override&quot;, Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; margin: 0px; padding: 0px; background: transparent; color: var(--tp-color-text-primary); display: block; outline: none; tab-size: 2; text-shadow: none; white-space: pre;">
+					<strong>DelegateObjectName([Parameter_1]);</strong></code></p>
+					
+				<p class="style2">
+&nbsp;</p><p class="style2">
+<span class="style3"><strong>Анонимный метод </strong></span>— 
+<span class="style7"><strong>один из способов создания безымянного блока кода, 
+связанного с конкретным экземпляром делегата.</strong></span> 
+<span class="style8">Для создания анонимного метода достаточно указать кодовый 
+блок после ключевого слова delegate. </span>Покажем, как это делается, на 
+конкретном примере:
+</p><pre class="style4">
+<span class="style3"><strong>using System;
+using System.Collections.Generic;
+
+namespace ConsoleApplication1
+</strong>{<strong>
+    </strong></span><strong><span class="style7">delegate int Sum(int number);  </span></strong><span class="style3"><strong>создания делегата</strong></span><strong><span class="style3">
+
+    class Program
+    {
+        static Sum SomeVar()
+        {
+            int result = 0;
+
+            // Вызов анонимного метода
+            </span><span class="style7">Sum del = delegate (int number)</span><span class="style3">
+            {
+                for (int i = 0; i &lt;= number; i++)
+                    result += i;
+                return result;
+            };
+            return del;
+        }
+
+        static void Main()
+        {
+            Sum del1 = SomeVar();
+
+            for (int i = 1; i &lt;= 5; i++)
+            {
+                Console.WriteLine(&quot;Cумма {0} равна: {1}&quot;,i,del1(i));
+            }
+
+            Console.ReadLine();
+        }
+    }
+</span></strong>}</pre><p class="style5">
+<img alt="" src="Pic/img1455.png" width="677" height="162" /></p>
+				<p class="style5">
+<strong>Анонимные методы</strong></p><p class="style2">
+Обратите внимание на получившийся результат. Локальная переменная, в область 
+действия которой входит анонимный метод, называется внешней переменной. Такие 
+переменные доступны для использования в анонимном методе. И в этом случае 
+внешняя переменная считается захваченной. Захваченная переменная существует до 
+тех пор, пока захвативший ее делегат не будет собран в &quot;мусор&quot;. Поэтому если 
+локальная переменная, которая обычно прекращает свое существование после выхода 
+из кодового блока, используется в анонимном методе, то она продолжает 
+существовать до тех пор, пока не будет уничтожен делегат, ссылающийся на этот 
+метод.
+</p><p class="style2">
+Захват локальной переменной может привести к неожиданным результатам, как в 
+приведенном выше примере, где локальная переменная result не обнуляется после 
+каждого вызова анонимного метода. В результате получается необычный результат 
+суммы чисел.</p>
+				<p class="style2">
+Пример формирования анонимного метода и лямбда выражения.</p>
+				<P class="style12">
+Создадим делегат и передадим ему функцию</P><PRE class="style13">
+<span class="style2"><strong>using System;
+
+namespace DAL
+</strong>{<strong>
+    </strong><span class="style7"><strong>public delegate void MyDelegate();</strong></span><strong>
+
+    class Program
+    {
+        public void <span class="style7">CallerOne()</span>  </strong><span lang="en-us"><strong>//</strong></span><strong>метод
+        {
+            Console.WriteLine(&quot;Это первая вызываемая функция ...");
+        }
+
+        static void Main()
+        {
+            // Create an instance of the class
+            Program p = new Program();
+
+            // </strong><span class="EzKURWReUAB5oZgtQNkl" data-src-align="0:6" style="white-space: pre-wrap;"><strong>Создайте</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="10:8" style="white-space: pre-wrap;"><strong>экземпляр</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="26:8" style="white-space: pre-wrap;"><strong>делегата</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="35:3" style="white-space: pre-wrap;"><strong>и</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="39:4" style="white-space: pre-wrap;"><strong>передайте</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="48:6" style="white-space: pre-wrap;"><strong>метод</strong></span><span style="white-space: pre-wrap;"><strong> в </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="55:2" style="white-space: pre-wrap;"><strong>качестве</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="60:9" style="white-space: pre-wrap;"><strong>параметра</strong></span><strong>
+            MyDelegate myDelegate = new MyDelegate(</strong><span class="style3"><strong>p.CallerOne</strong></span><strong>);
+            myDelegate(); </strong><span lang="en-us"><strong>//</strong></span><strong>вызов  метода
+        }
+    }
+</strong></span>}
+</PRE><P class="style4">
+Вы можете видеть, что у меня есть делегат с именем MyDelegate, и, как вы знаете, он может содержать ссылку на метод. Итак, MyDelegate содержит ссылку на метод CallerOne() . Знайте, что вы также можете выполнить метод с помощью 
+<span class="style3"><strong>MyDelegate .Invoke();</strong></span> вместо вызова объекта делегирования MyDelegate(); 
+. Это определение останется аналогичным и в следующем коде. Еще один момент, на 
+который следует обратить внимание - здесь посмотрите на возвращаемый тип и 
+параметры. Сигнатуры делегата и метода должны быть одинаковыми для его 
+реализации.
+</P><Pre class="style14">
+<strong>using System;
+
+namespace DAL
+</strong>{<strong>
+    </strong><span class="style3"><strong>public delegate void MyDelegate();
+</strong></span><strong>
+    class Program
+    {
+        public void CallerOne()
+        {
+            Console.WriteLine(&quot;Это первая вызываемая функция ...");
+        }
+
+        public void CallerTwo()
+        {
+            Console.WriteLine(&quot;Это вторая вызываемая функция ...");
+        }
+
+        static void Main()
+        {
+            // Create an instance of the class
+            Program p = new Program();
+
+            // </strong><span class="EzKURWReUAB5oZgtQNkl" data-src-align="0:6" style="white-space: pre-wrap;"><strong>Создайте</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="10:8" style="white-space: pre-wrap;"><strong>экземпляр</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="26:8" style="white-space: pre-wrap;"><strong>делегата</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="35:3" style="white-space: pre-wrap;"><strong>и</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="39:4" style="white-space: pre-wrap;"><strong>передайте</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="48:6" style="white-space: pre-wrap;"><strong>метод</strong></span><span style="white-space: pre-wrap;"><strong> в </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="55:2" style="white-space: pre-wrap;"><strong>качестве</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="60:9" style="white-space: pre-wrap;"><strong>параметра</strong></span><strong>
+            MyDelegate myDelegate = new MyDelegate(p.CallerOne);
+
+            // </strong><span class="EzKURWReUAB5oZgtQNkl" data-src-align="0:6" style="white-space: pre-wrap;"><strong>Создайте</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="7:7" style="white-space: pre-wrap;"><strong>другой</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="15:8" style="white-space: pre-wrap;"><strong>экземпляр</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="31:8" style="white-space: pre-wrap;"><strong>делегата</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="40:3" style="white-space: pre-wrap;"><strong>и</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="44:4" style="white-space: pre-wrap;"><strong>передайте</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="51:9" style="white-space: pre-wrap;"><strong>другой</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="61:6" style="white-space: pre-wrap;"><strong>метод</strong></span><span style="white-space: pre-wrap;"><strong> в </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="68:2" style="white-space: pre-wrap;"><strong>качестве</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="73:9" style="white-space: pre-wrap;"><strong>параметра</strong></span><strong>
+            MyDelegate myDelegate1 = new MyDelegate(p.CallerTwo);
+
+            // Invoke the delegate instances
+            myDelegate();
+            myDelegate1();
+        }
+    }
+</strong>}<strong>
+</strong></Pre><P class="style4">
+На приведенном выше шаге есть еще один объект делегата с именем myDelegate1, но он выполняет ту же работу, что и в первом коде. 
+<span class="style7">Итак, мы реализовали два объекта одного и того же делегата.</span>
+</P><Pre class="style13">
+<span class="style15"><strong>using System;
+
+namespace DAL
+</strong>{<strong>
+    public delegate void MyDelegate();
+
+    class Program
+    {
+        public void CallerOne()
+        {
+            Console.WriteLine("This is Caller One function...");
+        }
+
+        public void CallerTwo()
+        {
+            Console.WriteLine("This is Caller Two function...");
+        }
+
+        public </strong><span class="style7"><strong>static</strong></span><strong> void CallerThree()
+        {
+            Console.WriteLine("This is Caller Three function...");
+        }
+
+        static void Main()
+        {
+            // Create an instance of the class
+            Program p = new Program();
+
+            // </strong><span class="EzKURWReUAB5oZgtQNkl" data-src-align="0:6" style="white-space: pre-wrap;"><strong>Создайте</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="10:8" style="white-space: pre-wrap;"><strong>экземпляр</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="26:8" style="white-space: pre-wrap;"><strong>делегата</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="35:3" style="white-space: pre-wrap;"><strong>и</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="39:4" style="white-space: pre-wrap;"><strong>передайте</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="48:6" style="white-space: pre-wrap;"><strong>метод</strong></span><span style="white-space: pre-wrap;"><strong> в </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="55:2" style="white-space: pre-wrap;"><strong>качестве</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="60:9" style="white-space: pre-wrap;"><strong>параметра</strong></span><strong>
+            MyDelegate myDelegate = new MyDelegate(p.CallerOne);
+
+            // </strong><span class="EzKURWReUAB5oZgtQNkl" data-src-align="0:6" style="white-space: pre-wrap;"><strong>Создайте</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="7:7" style="white-space: pre-wrap;"><strong>другой</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="15:8" style="white-space: pre-wrap;"><strong>экземпляр</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="31:8" style="white-space: pre-wrap;"><strong>делегата</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="40:3" style="white-space: pre-wrap;"><strong>и</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="44:4" style="white-space: pre-wrap;"><strong>передайте</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="51:9" style="white-space: pre-wrap;"><strong>другой</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="61:6" style="white-space: pre-wrap;"><strong>метод</strong></span><span style="white-space: pre-wrap;"><strong> в </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="68:2" style="white-space: pre-wrap;"><strong>качестве</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="73:9" style="white-space: pre-wrap;"><strong>параметра</strong></span><strong>
+            MyDelegate myDelegate1 = new MyDelegate(p.CallerTwo);
+
+            // </strong><span class="EzKURWReUAB5oZgtQNkl" data-src-align="0:6" style="white-space: pre-wrap;"><strong>Создайте</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="7:7" style="white-space: pre-wrap;"><strong>другой</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="15:8" style="white-space: pre-wrap;"><strong>экземпляр</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="31:8" style="white-space: pre-wrap;"><strong>делегата</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="40:3" style="white-space: pre-wrap;"><strong>и</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="44:4" style="white-space: pre-wrap;"><strong>передайте</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="51:6" style="white-space: pre-wrap;"><strong>статический</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="58:6" style="white-space: pre-wrap;"><strong>метод</strong></span><span style="white-space: pre-wrap;"><strong> в </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="65:2" style="white-space: pre-wrap;"><strong>качестве</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="70:9" style="white-space: pre-wrap;"><strong>параметра</strong></span><strong>
+            MyDelegate myDelegate2 = new MyDelegate(CallerThree);
+
+            // </strong><span class="EzKURWReUAB5oZgtQNkl" data-src-align="0:6" style="white-space: pre-wrap;"><strong>Вызывать</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="20:9" style="white-space: pre-wrap;"><strong>экземпляры</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="11:8" style="white-space: pre-wrap;"><strong>делегатов</strong></span><strong>
+            myDelegate();
+            myDelegate1();
+            myDelegate2();
+        }
+    }
+</strong></span>}
+</Pre><P class="style4">
+Подумайте о приведенном выше коде! Почему я не должен выделять память методу во время компиляции вместо вызова функции-члена / метода с использованием class object? Итак, я пометил CallerThree как статический метод.
+</P><Pre class="style13">
+<span class="style15"><strong>using System;
+
+namespace DAL
+</strong>{<strong>
+    public delegate void MyDelegate();
+
+    class Program
+    {
+        public void CallerOne()
+        {
+            Console.WriteLine("This is Caller One function...");
+        }
+
+        public void CallerTwo()
+        {
+            Console.WriteLine("This is Caller Two function...");
+        }
+
+        public static void CallerThree()
+        {
+            Console.WriteLine("This is Caller Three function...");
+        }
+
+        static void Main()
+        {
+            // Create an instance of the class
+            Program p = new Program();
+
+            // Create an instance of the delegate and pass the method as a parameter. This is Single Cast
+            MyDelegate myDelegate = new MyDelegate(p.CallerOne);
+
+            // Create another instance of the delegate and pass a different method as a parameter. This is Single Cast
+            MyDelegate myDelegate1 = new MyDelegate(p.CallerTwo);
+
+            // Create another instance of the delegate and pass a static method as a parameter. This is Single Cast
+            MyDelegate myDelegate2 = new MyDelegate(CallerThree);
+
+            myDelegate();
+            myDelegate1();
+            myDelegate2();
+
+            // </strong><span class="EzKURWReUAB5oZgtQNkl" data-src-align="0:4" style="white-space: pre-wrap;"><strong>Эта</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="5:7" style="white-space: pre-wrap;"><strong>концепция</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="16:6" style="white-space: pre-wrap;"><strong>называется</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="23:9" style="white-space: pre-wrap;"><strong>многоадресной</strong></span><span style="white-space: pre-wrap;"><strong> рассылкой</strong></span><strong>
+            MyDelegate MyDelegate_MultiCast_Idea = myDelegate + myDelegate1 + myDelegate2;
+            MyDelegate_MultiCast_Idea();
+        }
+    }
+</strong></span>}
+</Pre><P class="style4">
+Посмотрите на приведенный выше код. Объект MyDelegate_MultiCast_Idea является суммой всех предыдущих объектов. Это называется множественным приведением в delegates. На этом этапе вам должно быть ясно, что первый, второй и третий коды из начальной статьи будут иметь 1, 2 и 3 делегата одиночной рассылки соответственно для каждого из отдельных методов.
+</P><P class="style4">
+Теперь обратите внимание! Для реализации делегата нам необходимо определить метод, но это сложно. Если я перенесу эту идею на трехуровневую архитектуру, это означает, что изменение уровня представления должно быть отражено на бизнес-уровне и уровне данных. Короче говоря, изменения окажут влияние! Итак, подумайте о чем-нибудь, где мы могли бы написать сам метод и передать ссылку на него. Microsoft выполнила эту работу с C # 2.0, внедрив анонимные методы.
+</P><Pre class="style13">
+<span class="style15"><strong>using System;
+
+namespace DAL
+</strong>{<strong>
+   </strong><span class="style3"><strong> public delegate void MyDelegate();
+</strong></span><strong>
+    class Program
+    {
+        static void Main()
+        {
+            // </strong><span class="EzKURWReUAB5oZgtQNkl" data-src-align="0:1" style="white-space: pre-wrap;"><strong>Я</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="7:6" style="white-space: pre-wrap;"><strong>передал</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="18:4" style="white-space: pre-wrap;"><strong>полное</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="30:4" style="white-space: pre-wrap;"><strong>тело</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="23:6" style="white-space: pre-wrap;"><strong>метода</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="35:6" style="white-space: pre-wrap;"><strong>в</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="42:3:55:8" style="white-space: pre-wrap;"><strong>экземпляре</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="46:8" style="white-space: pre-wrap;"><strong>делегата</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><strong>
+            // </strong><span style="white-space: pre-wrap;"><strong>У </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="64:4" style="white-space: pre-wrap;"><strong>этого</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="69:6" style="white-space: pre-wrap;"><strong>метода</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="76:7" style="white-space: pre-wrap;"><strong>нет</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="91:4" style="white-space: pre-wrap;"><strong>имени</strong></span><strong>
+            </strong><span class="style3"><strong>MyDelegate myDelegate = new MyDelegate(</strong></span><strong><span class="style7">delegate()
+            {
+                Console.WriteLine(&quot;</span>Это первая вызываемая функция ...<span class="style7">");
+            });</span><span class="style3">
+</span>
+            </strong></span><span class="style17"><strong>MyDelegate myDelegate1 = new MyDelegate(delegate()
+            {
+                Console.WriteLine(&quot;</strong></span><span class="style15"><strong>Это вторая вызываемая функция ...</strong></span><span class="style17"><strong>");
+            });</strong></span><span class="style15"><strong>
+
+           </strong></span><strong><span class="style6"> </span><span class="style16">MyDelegate myDelegate2 = new MyDelegate(delegate()
+            {
+                Console.WriteLine(&quot;</span></strong><span class="style15"><strong>Это третья вызываемая функция ...</strong></span><span class="style16"><strong>");
+            });</strong></span><span class="style15"><strong>
+
+            myDelegate();
+            myDelegate1();
+            myDelegate2();
+        }
+    }
+</strong>}<strong>
+</strong></span></Pre><P class="style18">
+<span class="style7">Абсолютно чистый и понятный код!</span>
+</P>
+				<P class="style4">
+Делегат содержит ссылку на метод, но здесь делегат содержит сам метод.. итак, как называется метод? Имени нет!! Вот почему он называется Анонимным методом!
+</P><P>
+<span class="style4">Как упоминалось ранее, сигнатура делегата должна совпадать с методом, на который он ссылается, и наоборот. Есть один случай, когда анонимный метод предоставляет функциональность, отсутствующую в лямбда-выражении. Анонимные методы позволяют опустить параметр (ы). Эта функция очень важна в обоих случаях. Это может быть использовано для повышения гибкости системы с помощью анонимного метода и / или более строгой типизации с помощью лямбда-выражения. Это сравнение приведено после кода.</span>
+</P><Pre class="style13">
+<span class="style15"><strong>using System;
+
+namespace DAL
+</strong>{<strong>
+    public delegate void MyDelegate();
+
+    class Program
+    {
+        static void Main()
+        {
+            // </strong><span class="EzKURWReUAB5oZgtQNkl" data-src-align="0:4" style="white-space: pre-wrap;"><strong>Здесь</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="5:1" style="white-space: pre-wrap;"><strong>&#39;</strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="6:1" style="white-space: pre-wrap;"><strong>=</strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="7:1" style="white-space: pre-wrap;"><strong>&gt;</strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="8:1" style="white-space: pre-wrap;"><strong>&#39;</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="13:4" style="white-space: pre-wrap;"><strong>используется</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="18:2" style="white-space: pre-wrap;"><strong>для</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="21:9" style="white-space: pre-wrap;"><strong>реализации</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="31:6" style="white-space: pre-wrap;"><strong>лямбда</strong></span><span style="white-space: pre-wrap;"><strong>-</strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="38:10" style="white-space: pre-wrap;"><strong>выражения</strong></span><span class="EzKURWReUAB5oZgtQNkl" data-src-align="48:1" style="white-space: pre-wrap;"><strong>.</strong></span><span style="white-space: pre-wrap;"><strong> </strong></span><strong>
+            </strong><span class="style7"><strong>MyDelegate myDelegate = new MyDelegate(() =>
+            {
+                Console.WriteLine("This is Caller One function...");
+            });</strong></span><strong>
+
+            myDelegate();
+        }
+    }
+</strong></span>}
+</Pre><P>
+<span class="style4">Давайте проведем сравнение на анонимный метод и Лямбда-Выражения. Этот пример поможет, по крайней мере, две идеи. Первый - это работа с параметризованными делегатами, а второй - сравнение анонимного метода и лямбда-выражения.</span>
+</P><Pre class="style13">
+<span class="style15"><strong>using System;
+
+namespace DAL
+</strong>{<strong>
+    public delegate void MyDelegate(int num);
+
+    class Program
+    {
+        static void Main()
+        {
+            MyDelegate myDelegate = new MyDelegate(delegate (int num)
+            {
+                Console.WriteLine("This is Caller One function...");
+            });
+
+            myDelegate(211);
+        }
+    }
+</strong></span>}
+</Pre><P class="style4">
+Вы можете принять к сведению, что вы передали параметру num значение 211, но Анонимный метод может опустить его, и программа будет выполнена. Теперь, с тем же делегатом, посмотрите на приведенный ниже код, который использует лямбда-выражение. Это выдаст ошибку во время компиляции, потому что вам нужно будет передать параметр в теле метода для компиляции и выполнения. Как передать параметр в этом? Я оставляю эту очень простую работу на ваше усмотрение, и вы должны опубликовать свой ответ в комментариях.
+</P><Pre class="style13">
+<span class="style15"><strong>using System;
+
+namespace DAL
+</strong>{<strong>
+    public delegate void MyDelegate(int num);
+
+    class Program
+    {
+        static void Main()
+        {
+            MyDelegate myDelegate = new MyDelegate(delegate(int num)
+            {
+                Console.WriteLine("This is Caller One function...");
+            });
+
+            myDelegate(211);
+        }
+    }
+</strong></span>}
+</Pre><P class="style4">
+Подсказка - Передайте свой параметр (здесь) => Тело метода</p>
+				<p class="style2">
+				</p>
+				<p class="style2">
+&nbsp;</p>
+				<p class="style2">
+&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les63.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les63/1.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:59:19 GMT -->
+</html>

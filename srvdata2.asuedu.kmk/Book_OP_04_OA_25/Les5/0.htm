@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les5/0.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:17:37 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: #FF0000;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема&nbsp; Класс Program и метод Main.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text" style="font-size: small">
+                <p><span class="style2"><strong>Точкой входа</strong></span> в программу на языке C# является метод Main. 
+				Именно с этого метода начинается выполнение программы на C#. И 
+				программа на C# должна обязательно иметь метод Main. Однако 
+				может возникнуть вопрос, какой еще метод Main, если, например, 
+				Visual Studio 2022 по умолчанию создает проект консольного 
+				приложения со следующим кодом:</p><p>				<em><strong>// See https://aka.ms/new-console-template for more information</strong></em></p><p>				
+				<em><strong>Console.WriteLine(&quot;Hello, World!&quot;)</strong></em>;</p><p>				И эта программа никаких методов Main не содержит, но при этом 
+				нормально выполняется и выводит на консоль строку &quot;Hello, 
+				World!&quot;, как и запланировано. Это так называемая программа 
+				верхнего уровня (top-level program). А вызов Console.WriteLine(&quot;Hello, 
+				World!&quot;) представляет инструкцию верхнего уровня (top-level 
+				statement)</p><p>				Однако в реальности этот код неявно помещается компилятором в 
+				метод Main, который, в свою очередь, помещается в класс Program. 
+				В действительности название класса может быть любым (как 
+				правило, это класс Program, собственно поэтому генерируемый по 
+				умолчанию файл кода называется Program.cs). Но метод Main 
+				является обязательной частью консольного приложения. Поэтому 
+				выше представленный код фактически эквивалентен следующей 
+				программе:</p><p>				<strong><em>class Program</em></strong></p><p>				
+				<strong><em>{</em></strong></p><p>				<strong><em>static void Main(string[] args)</em></strong></p><p>				
+				<strong><em>{</em></strong></p><p>				<strong><em>// See https://aka.ms/new-console-template for more information</em></strong></p><p>				
+				<strong><em>Console.WriteLine(&quot;Hello, World!&quot;);</em></strong></p><p>				
+				<strong><em>}</em></strong></p><p>				}</p><p>				Определение метода Main обязательно начинается с модификатора 
+				static, которое указывает, что метод Main - статический. Позже 
+				мы подробнее разберем, что все это значит.</p><p>				Возвращаемым типом метода Main обязательно является тип void. 
+				Кроме того, в качестве параметра он принимает массив строк - 
+				string[] args - в реальной программе это те параметры, через 
+				которые при запуске программы из консоли мы можем передать ей 
+				некоторые значения. Внутри метода располагаются действия, 
+				которые выполняет программа.</p><p>				До Visual Studio 2022 все предыдущие студии создавали по 
+				умолчанию примерно такой код. Но начиная с Visual Studio 2022 
+				нам необязательно вручную определять класс Program и в нем метод 
+				Main - компилятор генерирует их самостоятельно.</p><p>				Если мы определяем какие-то переменные, константы, методы и 
+				обращаемся к ним, они помещаются в метод Main. Например, 
+				следующая программа верхнего уровня</p><p>				<strong>
+				<em>string hello = &quot;Hello METANIT.COM&quot;;</em></strong></p><p>				
+				<strong><em>Print(hello);</em></strong></p><p>				
+				<strong><em>void Print(string message)</em></strong></p><p>				
+				<strong><em>{</em></strong></p><p>				<strong><em>Console.WriteLine(message);</em></strong></p><p>				}</p><p>				будет аналогична следующей программе:</p><p>				
+				<strong><em>class Program</em></strong></p><p>				
+				<strong><em>{</em></strong></p><p>				<strong><em>static void Main(string[] args)</em></strong></p><p>				
+				<strong><em>{</em></strong></p><p>				<strong><em>string hello = &quot;Hello METANIT.COM&quot;;</em></strong></p><p>				
+				<strong><em>Print(hello);</em></strong></p><p>				
+				<strong><em>void Print(string message)</em></strong></p><p>				
+				<strong><em>{</em></strong></p><p>				<strong><em>Console.WriteLine(message);</em></strong></p><p>				
+				<strong><em>}</em></strong></p><p>				<strong><em>}</em></strong></p><p>				}</p><p>				Если определяются новые типы, например, классы, то они 
+				помещаются вне класса Program. Например, код:</p><p>				
+				<strong><em>Person tom = new();</em></strong></p><p>				
+				<strong><em>tom.SayHello();</em></strong></p><p>				
+				<strong><em>class Person</em></strong></p><p>				
+				<strong><em>{ </em></strong> </p><p>				<strong><em>public void SayHello() =&gt;Console.WriteLine(&quot;Hello&quot;);</em></strong></p><p>				
+				<strong><em>}</em></strong></p><p>				будет аналогичен следующему</p><p>				
+				<strong><em>class Program</em></strong></p><p>				
+				<strong><em>{</em></strong></p><p>				<strong><em>static void Main(string[] args)</em></strong></p><p>				
+				<strong><em>{</em></strong></p><p>				<strong><em>Person tom = new();</em></strong></p><p>				
+				<strong><em>tom.SayHello();</em></strong></p><p>				
+				<strong><em>}</em></strong></p><p>				<strong><em>}</em></strong></p><p>				
+				<strong><em>class Person</em></strong></p><p>				
+				<strong><em>{</em></strong></p><p>				<strong><em>public void SayHello() =&gt; Console.WriteLine(&quot;Hello&quot;);</em></strong></p><p>				}</p><p>				Однако надо учитывать, что опредления типов (в частности 
+				классов) должны идти в конце файла после инструкций верхнего 
+				уровня. То есть:</p><p>				</p><p>				<em>
+				<strong>// инструкции верхнего уровня (top-level statements)</strong></em></p><p>				
+				<em><strong>Person tom = new();</strong></em></p><p>				
+				<em><strong>tom.SayHello();</strong></em></p><p>				
+				<em><strong>// определение класса идет после инструкций верхнего уровня</strong></em></p><p>				
+				<em><strong>class Person</strong></em></p><p>				<em>
+				<strong>{</strong></em></p><p>				<em><strong>public void SayHello() =&gt; Console.WriteLine(&quot;Hello&quot;);</strong></em></p><p>				
+				<strong><em>}</em></strong></p><p>				Таким образом, мы можем продолжать писать программы верхнего 
+				уровня без явного определения метода Main. Либо мы можем явным 
+				образом определить метод Main и класс Program:</p><p>				top-level programs in C# и Visual Studio 2022</p><p>				И этот код будет выполняться аналогичным образом, как если бы мы 
+				не использовали класс Program и метод Main.</p>
+				<p>				
+				<img alt="" src="Pic/3.35.png" width="693" height="220" /></p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les5.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les5/0.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:17:37 GMT -->
+</html>

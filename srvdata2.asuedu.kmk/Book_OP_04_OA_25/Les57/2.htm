@@ -1,0 +1,347 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les57/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:48:29 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+				color: #0000FF;
+}
+.style3 {
+				color: #0000FF;
+				text-decoration: underline;
+	font-size: small;
+}
+.style4 {
+				color: #FF0000;
+}
+    .style5 {
+				color: maroon;
+				text-decoration: underline;
+}
+    .style6 {
+	font-size: medium;
+}
+    .style7 {
+	font-size: small;
+}
+.style8 {
+	color: #0000FF;
+	font-size: small;
+}
+.style9 {
+	color: #FF0000;
+	font-size: small;
+}
+.style10 {
+	font-size: small;
+	color: maroon;
+}
+.style11 {
+	color: maroon;
+}
+.style12 {
+	color: #FF0000;
+	text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 2. Наследование. Базовые понятия. Преимущества и недостатки.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <span class="style6">
+<p><span class="style8"><strong>Наследование</strong></span><span class="style7"> – это один из принципов объектно-ориентированного программирования, который дает возможность классу использовать программный код другого (базового) класса, дополняя его своими собственными деталями реализации. Иными словами, при наследовании происходит получение нового (производного) класса, который содержит программный код базового класса с указанием собственных особенностей использования. Наследование принадлежит к типу is-a отношений между классами. 
+</span></p>
+				<p class="style9">При наследовании создается специализированная версия уже существующего класса.</p>
+<p class="style10"><strong>1. Преимущества использования наследования в программах</strong></p>
+<p class="style7">Правильное использование механизма наследования дает следующие взаимосвязанные преимущества:</p>
+				<ul class="style8">
+								<li>эффективное построение сложных иерархий классов с возможностью их удобной модификации. 
+								<span class="style4">Работу классов в иерархии можно изменять путем добавления новых унаследованных классов в нужном месте иерархии;
+								</span>
+								</li>
+								<li><span class="style4">повторное использование ранее написанного кода</span> с дальнейшей его модификацией под выполняемую задачу. В свою очередь, новосозданный код также может использоваться на низлежащих иерархиях классов;
+								</li>
+								<li><span class="style4">удобство в сопровождении</span> (дополнении) программного кода путем введения новых классов с новыми возможностями;
+								</li>
+								<li><span class="style4">уменьшение количества логических ошибок</span> при разработке сложных программных систем. Повторно используемый код чаще тестируется, а, значит, меньшая вероятность наличия в нем ошибок;
+								</li>
+								<li>легкость в согласовании разных частей программного кода путем использования интерфейсов. Если два класса унаследованы от общего потомка, поведение этих классов будет одинаковым во всех случаях. Это утверждение выходит из требования, что похожие объекты должны иметь похожее поведение. Само использование интерфейсов предопределяет схожесть поведения объектов;
+								</li>
+								<li>создание библиотек кода, которые можно использовать и дополнять собственными разработками;
+								</li>
+								<li>возможность реализовывать известные шаблоны проектирования для построения гибкого кода, который не изменяет предыдущих разработок;
+								</li>
+								<li>использование преимуществ полиморфизма невозможно без наследования. Благодаря полиморфизму обеспечивается принцип: один интерфейс – несколько реализаций;
+								</li>
+								<li>обеспечение исследовательского программирования (быстрого макетирования). Такое программирование применяется в случаях, когда цели и требования к программной системе в начале 
+								расплывчаты. Сначала создается макет структуры, 
+								затем этот макет поэтапно усовершенствуется путем наследования предыдущего. Процесс длится до получения требуемого результата;
+								</li>
+								<li>лучшее понимание структуры программной системы программистом благодаря естественному представлению механизма наследования. Если при построении сложных иерархий пробовать использовать другие принципы, то это может значительно усложнить понимание всей задачи и приведет к увеличению количества ошибок.</li>
+				</ul>
+<p class="style10"><strong>2. Недостатки наследования</strong></p>
+<p class="style7">При использовании наследования в программах были замечены следующие недостатки:</p>
+				<ul class="style7">
+								<li>невозможно изменить унаследованную реализацию во время выполнения;
+								</li>
+								<li>базовый класс частично определяет физическое представление своих подклассов. Между реализациями базового и производного классов существует сильная связь, которая при решении некоторых задачах нежелательна;
+								</li>
+								<li>низкая скорость выполнения. Скорость выполнения программного кода общего назначения ниже чем в случае использования специализированного кода, который написан именно для этой задачи. Однако, этот недостаток можно исправить благодаря исследованию и 
+								оптимизации кода, который занимает значительное время выполнения;
+								</li>
+								<li>большая размерность программ благодаря использованию библиотек общего назначения. Если для некоторой задачи разрабатывать узкоспециализированный программный код, то этот код будет занимать меньше памяти чем код общего назначения;
+								</li>
+								<li>увеличение сложности программы в случае неправильного или неумелого использования наследования. Программист должен уметь правильно использовать наследование при построении иерархий классов. В противном случае это приведет к большему запутыванию программного кода, и, как результат, увеличению ошибок;
+								</li>
+								<li>сложность усваивания начинающими программистами основ построения программ, которые используют наследование. Нужно уметь выделять что-то общее, затом это общее детализировать и правильно кодировать. Однако, этот недостаток условный, так как зависит от опыта программиста.</li>
+				</ul>
+<p class="style10">3<strong>. Что такое базовый класс? Что такое производный класс?</strong></p>
+<p><span class="style3"><strong>Базовый класс</strong></span><span class="style7"> (base class) – это класс, программный код которого используется в унаследованных (производных) классах. 
+</span> </p>
+				<p><span class="style8"><strong>Производный класс</strong></span><span class="style7"> (derived class) – это класс, который использует программный код базового класса и изменяет (расширяет) его под свои потребности.</span></p>
+<p class="style7">В других языках программирования (например, Java) базовый класс еще называется суперкласс (superclass), а производный класс называется подкласс (subclass).</p>
+<p class="style10">4<strong>. Синтаксис наследования в случае двух классов. Общая форма</strong></p>
+<p class="style7">Если один класс наследует другой базовый класс, то общая форма объявления такого класса следующая:</p>
+<pre><span class="style2"><strong><span class="style6">class derived_class : base_class
+</span></strong></span>{<span class="style2"><strong><span class="style6">
+  // тело класса
+  // ...
+}</span></strong></span></pre>
+<p class="style2"><strong>где</strong></p>
+<p class="style2"><strong>derived_class – имя производного класса;</strong></p>
+<p class="style2"><strong>base_class – имя базового класса.</strong></p>
+<p class="style2"><strong>Например.</strong></p>
+<pre>
+<span class="style2"><strong><span class="style6">// базовый класс
+class Base
+</span></strong></span>{<span class="style2"><strong><span class="style6">
+  // поля, методы класса
+  // ...
+</span></strong></span>}<span class="style2"><strong><span class="style6">
+
+// класс, унаследованный от класса Base
+class Derived : Base
+</span></strong></span>{<span class="style2"><strong><span class="style6">
+  // поля, методы класса
+  // ...
+</span></strong></span>}</pre>
+<p class="style7">В вышеописанном примере Base – базовый класс, Derived – класс, который наследует возможности класса Base. В классе Derived непосредственно доступны все элементы (поля, свойства, методы, индексаторы и прочее) которые описываются с модификаторами доступа protected, public и internal. В свою очередь, класс Derived может быть базовым для другого класса нижнего уровня.</p>
+<p class="style7">5<span class="style11"><strong>. </strong></span> <span class="style5"><strong><em>Доступ к элементам базового класса которые объявлены с модификаторами доступа private, protected, public, internal, protected internal</em></strong></span></p>
+<p class="style7">В производном классе доступны элементы базового класса, которые объявлены с модификаторами доступа 
+<span class="style4"><strong>protected, public, internal и protected internal.</strong></span></p>
+<p class="style7">Все элементы базового класса, которые объявлены с модификатором 
+<span class="style4"><strong>private недоступны в производном классе</strong></span>.</p>
+<p class="style7">Пример. В примере демонстрируется влияние модификаторов доступа на доступ к элементам базового и производного классов.</p>
+<pre>
+<span class="style2"><strong>using System;
+
+namespace ConsoleApp1
+</strong></span>{<span class="style2"><strong>
+  // Базовый класс
+  class Base
+  {
+    // внутренние поля класса Base
+    private int private_Item;
+    protected int protected_Item;
+    internal int internal_Item;
+    protected internal int protIntern_Item;
+    public int public_Item;
+  }
+
+  // Производный класс от класса Base
+  class Derived : Base
+  {
+    // метод, который изменяет поля класса Base
+    void Method()
+    {
+      protected_Item = 10;
+      internal_Item = 20;
+      protIntern_Item = 30;
+      public_Item = 40;
+      // private_item = 50; - ошибка, элемент недоступен
+    }
+  }
+
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      // Доступ с экземпляру класса
+      // 1. Базовый класс Base
+      // 1.1. Создать экземпляр базового класса Base
+      Base bs = new Base();
+
+      // 1.2. Доступ к полям экземпляра bs
+      // bs.private_Item = 10; - доступ запрещен
+      // bs.protected_Item = 20; - доступ запрещен
+      bs.internal_Item = 30; // internal доступ разрешен
+      bs.public_Item = 40; // public - разрешен
+      bs.protIntern_Item = 50; // protected internal - разрешен
+
+      // 2. Производный класс Derived - доступ к полям базового класса Base
+      // 2.1. Создать экземпляр производного класса Derived
+      Derived dr = new Derived();
+      // dr.private_Item - private-доступ запрещен
+      // dr.protected_Item - protected-доступ запрещен
+      dr.internal_Item = 30; // internal - разрешен
+      dr.public_Item = 40; // public - разрешен
+      dr.protIntern_Item = 50; // protected internal - разрешен
+    }
+  }
+</strong></span>}</pre>
+<p class="style7"><span class="style11">6. <strong>Сколько классов одновременно может быть унаследовано от базового класса</strong></span>?</p>
+<p class="style7">Язык программирования C# <span class="style4"><strong><em>не поддерживает множественного наследования</em></strong></span> (в отличие от языка C++). 
+<span class="style12"><strong>Из конкретного класса одновременно может быть унаследована только один класс.</strong></span> Тем не менее, класс может наследовать любое количество интерфейсов. Более подробно об интерфейсах можно прочитать здесь.</p>
+<p class="style10"><strong>7. Особенности применения модификаторов доступа protected и protected internal.
+</strong></p>
+				<p class="style7">Пример</p>
+<p class="style7">Каждый элемент класса может иметь разные уровни доступа: private, public, protected, internal, protected internal. Если в программе используется механизм наследования, то особое внимание заслуживают модификаторы доступа protected и protected internal.</p>
+<p class="style7">Если элемент класса (поле, метод, свойство и т.п.) реализован с модификатором доступа protected, то к нему выполняются следующие правила:</p>
+				<ul class="style7">
+								<li>элемент доступен в пределах класса, в котором он объявлен, а также в унаследованных классах;
+								</li>
+								<li>элемент недоступен из экземпляра класса.</li>
+				</ul>
+<p class="style7">Модификатор доступа protected internal объединяет ограничение модификатора protected и модификатора internal (см. пример ниже). Здесь возможны два случая:</p>
+<p class="style7">Ситуация, когда класс с protected internal элементом и создаваемый экземпляр этого класса находятся в одной сборке. В этом случае доступ из экземпляра класса к protected internal элементу есть (расширение ключевого слова internal). Также есть доступ из производного класса (расширение ключевого слова protected).</p>
+<p class="style7">Ситуация, когда класс  с protected internal элементом объявлен в одной сборке, а экземпляр этого класса создается в другой сборке. В этом случае экземпляр не имеет доступа к protected internal элементу (ограничение internal). Но можно создать производный класс и из этого класса получить доступ к protected internal элементу (расширение protected).</p>
+<p class="style7">Пример. Демонстрация использования модификаторов доступа на примере трех классов A, B, C. 
+(выполнить самостоятельно)</p>
+<pre>
+<strong><span class="style2">using System;
+namespace ConsoleApp1
+</span></strong>{</span><strong><span class="style2"><span class="style6">
+  // Базовый класс
+  class A
+  {
+    // Защищенные поля класса A
+    protected int a;
+    protected internal int aa;
+  }
+
+  // Производный класс B
+  class B : A
+  {
+    // Защищенные поля класса B
+    protected int b;
+    protected internal int bb;
+
+    public void Method()
+    {
+      // есть доступ к protected и
+      // protected internal элементам класса A
+      a = 25;
+      aa = 30;
+    }
+  }
+
+  // Производный класс C
+  class C : B
+  {
+    // Защищенные поля класса C
+    protected int c;
+    protected internal int cc;
+
+    public void Method()
+    {
+      // есть доступ к protected и
+      // protected internal элементам классов A, B
+      a = 10;
+      aa = 20;
+      b = 30;
+      bb = 40;
+    }
+  }
+
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      // Доступа из экземпляров классов к
+      // protected-элементам нет
+      A objA = new A(); // экземпляр класса A
+      B objB = new B();
+      C objC = new C();
+
+      // objA.a = 30; - доступа нет
+      // objB.a = 20; - доступа нет
+      // objB.b = 20; - доступа нет
+      // objC.a = 20; - доступа нет
+      // objC.b = 20; - доступа нет
+      // objC.c = 20; - доступа нет
+
+      // Однако, есть доступ к protected internal
+      // экземплярам классов A, B, C,  
+      // поскольку в данном примере классы A, B, C и их
+      // экземпляры objA, objB, objC объявлены в одной сборке
+      objA.aa = 40;
+      objB.aa = 50;
+      objB.bb = 50;
+      objC.aa = 10;
+      objC.bb = 20;
+      objC.cc = 30;
+    }
+  }
+</span></span></strong>}</pre></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les57.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les57/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:48:29 GMT -->
+</html>

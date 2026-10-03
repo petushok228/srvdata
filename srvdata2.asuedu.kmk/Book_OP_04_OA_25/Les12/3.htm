@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les12/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:25:33 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: #0000FF;
+	font-size: medium;
+}
+    .style3 {
+	font-size: medium;
+}
+.style4 {
+	color: #0000FF;
+	font-size: medium;
+	margin-left: 40px;
+}
+.style5 {
+	font-size: medium;
+	color: maroon;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+				<span class="style1">Тема 3. Определение числа разряда&nbsp; из 
+				двухзначного. </span>
+
+			</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p class="style3">Вот пример кода на Pascal, который находит и выводит каждую цифру трёхзначного числа:</p>
+				<pre class="style4">
+program ExtractDigits;
+
+var
+  n,
+  hundreds,    // переменная для цифры сотен
+  tens,        // переменная для цифры десятков
+  units:       // переменная для цифры единиц
+
+begin
+  writeln('Введите трёхзначное число:');
+  readln(n);
+
+  // Находим цифры с помощью операций div и mod
+  hundreds := n div 100;        // Целочисленное деление на 100 даёт цифру сотен
+  tens := (n mod 100) div 10;     // Остаток от деления на 100, затем целочисленное деление на 10 — цифра десятков
+  units := n mod 10;             // Остаток от деления на 10 — цифра единиц
+
+  // Выводим результат
+  writeln('Цифры числа: сотни = ', hundreds, ', десятки = ', tens, ', единицы = ', units);
+end.</pre>
+				<p class="style3">
+Как это работает:</p>
+				<ul>
+					<li>
+					<p class="style5">Цифра сотен: n div 100 — целочисленное деление на 100 «отсекает» последние две цифры, оставляя первую. 
+					</p>
+					</li>
+					<li>
+					<p class="style5">Цифра десятков: (n mod 100) div 10 — сначала отбрасываем сотни операцией mod 100, затем делим на 10, чтобы осталась средняя цифра. 
+					</p>
+					</li>
+					<li>
+					<p class="style5">Цифра единиц: n mod 10 — остаток от деления на 10 даёт последнюю цифру. 
+					</p>
+					</li>
+				</ul>
+				<p class="style3">Пример работы: Если ввести число 238, программа выведет:
+Цифры числа: сотни = 2, десятки = 3, единицы = 8</p><span class="style2"><span class="style4">Задача 15.
+				Найти двузначное число, равное утроенному произведению его цифр. 
+				(есть пример)</span></span><pre><span class="style2"><strong>program Project1;
+
+</strong> <strong>var</strong><strong>
+    number, tens, units, product: Integer;
+
+begin
+    // Перебор всех двузначных чисел от 10 до 99
+    for number := 10 to 99 do
+    begin
+        // Разделение числа на десятки и единицы
+        tens := number div 10; //десятки
+        units := number mod 10;  //единицы
+
+        // Вычисление произведения цифр
+        product := tens * units;
+
+        // Проверка условия: число равно утроенному произведению своих цифр
+        if number = 3 * product then
+        begin
+            writeln('Число, удовлетворяющее условию: ', number);
+        end;
+    end;
+    readln;
+end.</strong></span>
+</pre>
+				<pre>&nbsp;</pre>
+				<pre><img alt="" src="Pic/r-12-3.png" width="509" height="131" /></pre></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les12.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les12/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:25:37 GMT -->
+</html>

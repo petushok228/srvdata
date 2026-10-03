@@ -1,0 +1,237 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les55/5.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:47:41 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: #0000FF;
+}
+    .style3 {
+	font-size: medium;
+}
+.style4 {
+	margin-left: 80px;
+}
+.style5 {
+	color: #0000FF;
+	margin-left: 80px;
+}
+    .style6 {
+	font-size: small;
+}
+.style7 {
+	font-size: small;
+	color: maroon;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 5. Перегрузка операторов отношения и операторов true - false. </td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p><span class="style3">Перегрузка операторов отношения</p>
+<p class="style6">Операторы отношения, например == и <, могут также перегружаться, причем очень просто. Как правило, перегруженный оператор отношения возвращает логическое значение true и false. Это вполне соответствует правилам обычного применения подобных операторов и дает возможность использовать их перегружаемые разновидности в условных выражениях. Если же возвращается результат другого типа, то тем самым сильно ограничивается применимость операторов отношения.</p>
+<pre class="style4">
+<span class="style2"><strong>using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication1
+</strong></span>{<span class="style2"><strong>
+    class MyArr
+    {
+        // Координаты точки в трехмерном пространстве
+        public int x, y, z;
+
+        public MyArr(int x = 0, int y = 0, int z = 0)
+        {
+            this.x = x;
+            this.y = y;
+            this.z = z;
+        }
+
+        // Перегружаем логический оператор ==
+        public static bool operator ==(MyArr obj1, MyArr obj2)
+        {
+            if ((obj1.x == obj2.x) && (obj1.y == obj2.y) && (obj1.z == obj2.z))
+                return true;
+            return false;
+        }
+
+        // Теперь обязательно нужно перегрузить логический оператор !=
+        public static bool operator !=(MyArr obj1, MyArr obj2)
+        {
+            if ((obj1.x != obj2.x) || (obj1.y != obj2.y) || (obj1.z != obj2.z))
+                return true;
+            return false;
+        }
+        
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            MyArr myObject1 = new MyArr(x: 4, z: 5, y: 12);
+            MyArr myObject2 = new MyArr(x: 4, z: 5, y: 12);
+
+            if (myObject1 == myObject2)
+                Console.WriteLine("Объекты равны");
+
+            Console.ReadLine();
+        }
+    }
+}</strong></span></pre>
+<p class="style6">Обратите внимание, что на перегрузку операторов отношения накладывается следующее важное ограничение: они должны перегружаться попарно. Так, если перегружается оператор <, то следует перегрузить и оператор >, и наоборот. Ниже приведены составленные в пары перегружаемые операторы отношения:</p>
+<pre class="style5">
+<strong>!=   ==	
+<    >
+<=   >=</strong></pre>
+<p class="style6">И еще одно замечание: если перегружаются операторы == и !=, то для этого обычно требуется также переопределить методы Object.Equals() и Object.GetHashCode().</p>
+<p class="style7"><strong>Перегрузка операторов true и false</strong></p>
+<p class="style6">Ключевые слова true и false можно также использовать в качестве унарных операторов для целей перегрузки. Перегружаемые варианты этих операторов позволяют определить назначение ключевых слов true и false специально для создаваемых классов. После перегрузки этих ключевых слов в качестве унарных операторов для конкретного класса появляется возможность использовать объекты этого класса для управления операторами if, while, for и do-while или же в условном выражении ?.</p>
+<p class="style6">Операторы true и false должны перегружаться попарно, а не раздельно. Ниже приведена общая форма перегрузки этих унарных операторов:</p>
+<pre class="style4">
+<span class="style2"><strong>public static bool operator true(тип_параметра операнд)
+</strong></span>{<span class="style2"><strong>
+// Возврат логического значения true или false.
+</strong></span>}<span class="style2"><strong>
+
+public static bool operator false(тип_параметра операнд)
+</strong></span>{<span class="style2"><strong>
+// Возврат логического значения true или false.
+</strong></span>}</pre>
+<p class="style6">Обратите внимание на то, что и в том и в другом случае возвращается результат типа bool. Давайте модернизируем предыдущий пример, и добавим в него перегрузку операторов true и false:</p>
+<pre class="style4">
+<span class="style2"><strong><span class="style3">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication1
+</span></strong></span><span class="style3"><strong>{</strong></span></span><span class="style2"><strong><span class="style3">
+    class MyArr
+    {
+        // Координаты точки в трехмерном пространстве
+        public int x, y, z;
+
+        public MyArr(int x = 0, int y = 0, int z = 0)
+        {
+            this.x = x;
+            this.y = y;
+            this.z = z;
+        }
+
+        // Перегружаем логический оператор ==
+        public static bool operator ==(MyArr obj1, MyArr obj2)
+        {
+            if ((obj1.x == obj2.x) && (obj1.y == obj2.y) && (obj1.z == obj2.z))
+                return true;
+            return false;
+        }
+
+        // Теперь обязательно нужно перегрузить логический оператор !=
+        public static bool operator !=(MyArr obj1, MyArr obj2)
+        {
+            if ((obj1.x != obj2.x) || (obj1.y != obj2.y) || (obj1.z != obj2.z))
+                return false;
+            return true;
+        }
+
+        // Перегружаем оператор false
+        public static bool operator false(MyArr obj)
+        {
+            if ((obj.x <= 0) || (obj.y <= 0) || (obj.z <= 0))
+                return true;
+            return false;
+        }
+
+        // Обязательно перегружаем оператор true
+        public static bool operator true(MyArr obj)
+        {
+            if ((obj.x > 0) && (obj.y > 0) && (obj.z > 0))
+                return true;
+            return false;
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            MyArr myObject1 = new MyArr(x: 4, z: 5, y: 12);
+            MyArr myObject2 = new MyArr(x: 4, z: 5, y: 12);
+
+            if (myObject1 == myObject2)
+                Console.WriteLine("Объекты равны");
+
+            if (myObject1)
+                Console.WriteLine("Все координаты объекта myObject1 положительны");
+
+            Console.ReadLine();
+        }
+    }
+</span></strong></span>}</pre>
+                </td></tr>
+
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les55.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les55/5.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:47:41 GMT -->
+</html>

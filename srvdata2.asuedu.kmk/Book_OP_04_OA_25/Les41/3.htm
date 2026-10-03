@@ -1,0 +1,294 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les41/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:27:51 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: small;
+}
+    .style3 {
+	font-size: medium;
+}
+    .style4 {
+	color: blue;
+}
+    .style5 {
+	font-size: small;
+	margin-left: 40px;
+}
+.style6 {
+	color: blue;
+	font-size: small;
+}
+    .style7 {
+	color: red;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 3. Обобщенные коллекции.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p class="style2">
+				Благодаря внедрению обобщений прикладной интерфейс Collections 
+				API значительно расширился, в результате чего количество классов 
+				коллекций и интерфейсов удвоилось. Обобщенные коллекции 
+				объявляются в пространстве имен<span>&nbsp;</span>System.Collections.Generic. 
+				Как правило, классы обобщенных коллекций являются не более чем 
+				обобщенными эквивалентами классов необобщенных коллекций, хотя 
+				это соответствие не является взаимно однозначным. Например, в 
+				классе обобщенной коллекции LinkedList реализуется 
+				двунаправленный список, тогда как в необобщенном эквиваленте его 
+				не существует. В некоторых случаях одни и те же функции 
+				существуют параллельно в классах обобщенных и необобщенных 
+				коллекций, хотя и под разными именами. Так, обобщенный вариант 
+				класса ArrayList называется List, а обобщенный вариант класса 
+				HashTable — Dictionary. Кроме того, конкретное содержимое 
+				различных интерфейсов и классов реорганизуется с минимальными 
+				изменениями для переноса некоторых функций из одного интерфейса 
+				в другой. Но в целом, имея ясное представление о необобщенных 
+				коллекциях, можно без особого труда научиться применять и 
+				обобщенные коллекции.</p>
+				<p class="style2">
+				Как правило, обобщенные коллекции действуют по тому же принципу, 
+				что и необобщенные, за исключением того, что обобщенные 
+				коллекции типизированы. Это означает, что в обобщенной коллекции 
+				можно хранить только те элементы, которые совместимы по типу с 
+				ее аргументом. Так, если требуется коллекция для хранения 
+				несвязанных друг с другом разнотипных данных, то для этой цели 
+				следует использовать классы необобщенных коллекций. А во всех 
+				остальных случаях, когда в коллекции должны храниться объекты 
+				только одного типа, выбор рекомендуется останавливать на классах 
+				обобщенных коллекций.</p>
+				<p class="style2">
+				Обобщенные коллекции определяются в ряде интерфейсов и классов, 
+				реализующих эти интерфейсы.</p>
+				<h2 class="style3">
+				Интерфейсы обобщенных коллекций</h2>
+				<p class="style2">
+				В пространстве имен System.Collections.Generic определен целый 
+				ряд интерфейсов обобщенных коллекций, имеющих соответствующие 
+				аналоги среди интерфейсов необобщенных коллекций:</p>
+				
+					<ul class="style2">
+						<li><span class="style4">ICollection&lt;T&gt;
+						&nbsp;
+						Определяет основополагающие свойства обобщенных коллекций
+						</li>
+						<li>IComparer&lt;T&gt;&nbsp;&nbsp;
+												Определяет обобщенный метод Compare() для сравнения 
+					объектов, хранящихся в коллекции </li>
+						<li>IDictionary&lt;Tkey, TValue&gt;&nbsp;
+						
+						Определяет обобщенную коллекцию, состоящую из пар 
+					&quot;ключ-значение&quot;
+						
+						</li>
+						<li>IEnumerable&lt;T&gt;&nbsp;
+						
+						Определяет обобщенный метод GetEnumerator(), предоставляющий 
+					перечислитель для любого класса коллекции </li>
+						<li>IEnumerator&lt;T&gt;&nbsp;
+						
+						Предоставляет методы, позволяющие получать содержимое 
+					коллекции по очереди
+						
+						</li>
+						<li>IEqualityComparer&lt;T&gt;&nbsp;
+						
+						Сравнивает два объекта на предмет равенства
+					
+						</li>
+						<li>IList&lt;T&gt;&nbsp;&nbsp;
+						
+						Определяет обобщенную коллекцию, доступ к которой можно 
+					получить с помощью индексатора
+					
+						
+						</li></ul>
+
+						
+						<h2 class="style3">Структура KeyValuePair&lt;TKey, TValue&gt;</h2>
+						<p class="style2">В пространстве имен System.Collections.Generic определена 
+				структура KeyValuePair&lt;TKey, TValue&gt; Она служит для хранения 
+				ключа и его значения и применяется в классах обобщенных 
+				коллекций, в которых хранятся пары &quot;ключ-значение&quot;, как, 
+				например, в классе Dictionary&lt;TKey, TValue&gt; В этой структуре 
+				определяются два следующих свойства:</p>
+				<pre class="style5">public ТКеу Key { get; };
+public TValue Value { get; };</pre>
+						<p class="style2">В этих свойствах хранятся ключ и значение соответствующего 
+				элемента коллекции. Для построения объекта типа KeyValuePair&lt;TKey, 
+				TValue&gt; служит конструктор:</p>
+						<ul>
+							<li>
+							<pre>&nbsp;<span class="style4">public KeyValuePair(ТКеу key, TValue value)</span></pre>
+							</li>
+						</ul>
+						<p>где key обозначает ключ, a value — значение.</p>
+						<h2 class="style3">Классы обобщенных коллекций</h2>
+						</li>
+				<p class="style2">Kлассы обобщенных коллекций по большей части соответствуют своим 
+				необобщенным аналогам, хотя в некоторых случаях они носят другие 
+				имена. Отличаются они также своей организацией и функциональными 
+				возможностями. Классы обобщенных коллекций определяются в 
+				пространстве имен System.Collections.Generic:</p>
+				<ul>
+						<dt></dt>
+						
+						</li>
+						<li class="style2"><span class="style4"><strong>Dictionary&lt;Tkey, TValue&gt;</strong>&nbsp;
+						
+						Сохраняет пары &quot;ключ-значение&quot;. Обеспечивает такие же 
+					функциональные возможности, как и необобщенный класс </li>
+						<span class="style2">
+						<li><strong>Hashtable
+					</dd>
+										
+						</strong><strong>HashSet&lt;T&gt;&nbsp;</strong>
+						
+						Сохраняет ряд уникальных значений, используя </span></span>
+						<span class="style2">
+						<span class="style7"><strong>хештаблицу</strong></span><span class="style4"> </li>
+						<li>
+					</dd>
+										
+					<strong>LinkedList&lt;T&gt;&nbsp;</strong>
+						
+						Сохраняет элементы в </span><span class="style7">
+					<strong>двунаправленном списке </strong>
+						</li>
+						</span><span class="style4">
+						<li>
+					</dd>
+										
+					<strong>List&lt;T&gt;&nbsp;
+						
+						</strong></span><span class="style7"><strong>Создает динамический массив.</strong></span><span class="style4"> Обеспечивает такие же 
+					функциональные возможности, как и необобщенный класс 
+						</li>
+						<li><strong>ArrayList
+					</dd>
+										
+					Queue&lt;T&gt;</strong>&nbsp;
+						
+						</span><span class="style7"><strong>Создает очередь.</strong></span><span class="style4"> Обеспечивает такие же функциональные 
+					возможности, как и необобщенный класс </li>
+						<li><strong>Queue
+					</dd>
+										
+					SortedDictionary&lt;TKey, TValue&gt;&nbsp; </strong></span>
+						<span class="style7"><strong>Создает отсортированный список из пар &quot;ключ-значение&quot;</strong></span><span class="style4">
+					</dd>
+										
+						</li>
+						<li><strong>SortedList&lt;TKey, TValue&gt; </strong>&nbsp;</span><span class="style7"><strong>Создает отсортированный список из пар &quot;ключ-значение&quot;.</strong></span><span class="style4"> 
+					Обеспечивает такие же функциональные возможности, как и 
+					необобщенный класс </li>
+						<li><strong>SortedList
+					</dd>
+										
+						</strong><strong>SortedSet&lt;T&gt; </strong>&nbsp;</span><span class="style7"><strong>Создает отсортированное множество
+					</dd>
+										
+						</strong>
+										
+						</li>
+						</span><span class="style4">
+						<li><strong>Stack&lt;T&gt;
+					</strong></span></span><span class="style7"><strong>Создает 
+						стек. </strong></span><span class="style4">Обеспечивает 
+						такие же функциональные возможности, как и необобщенный 
+						класс Stack</span></li>
+				</ul>
+				
+										
+					
+					<p>
+					&nbsp;</p>
+					</dd>
+				
+				<p>
+				В пространстве имен System.Collections.Generic находятся также 
+				следующие классы: </p>
+				<ul>
+					<li class="style6">класс <strong>SynchronizedCollection&lt;T&gt;</strong> 
+				синхронизированной коллекции на основе класса IList&lt;T&gt;; 
+					</li>
+					<li>
+					<p class="style4">класс <strong>SynchronizedReadOnlyCollection&lt;T&gt;</strong>, доступной только для чтения 
+				синхронизированной коллекции на основе класса IList&lt;T&gt;; 
+					</p>
+					</li>
+					<li>
+					<p class="style4">абстрактный класс <strong>SynchronizedKeyCollection&lt;K, Т&gt;,</strong> служащий в 
+				качестве базового для класса коллекции System.ServiceModel.UriSchemeKeyedCollection; 
+					</p>
+					</li>
+					<li>
+					<p class="style4"><strong>KeyedByTypeCollection&lt;T&gt;</strong> коллекции, в которой в качестве ключей 
+				используются отдельные типы данных.</p>
+					</li>
+				</ul>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les50.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les41/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:27:51 GMT -->
+</html>

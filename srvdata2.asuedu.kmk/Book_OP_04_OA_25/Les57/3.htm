@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les57/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:48:31 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: #0000FF;
+}
+.style3 {
+	color: #800000;
+}
+    .style4 {
+				color: #800080;
+}
+.style5 {
+				color: #FF0000;
+}
+.style6 {
+				color: #0000FF;
+				text-decoration: underline;
+}
+.style8 {
+	font-size: medium;
+}
+    .style9 {
+	font-size: small;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 3. Пример построения родительского и дочернего класса. 
+				Создание конструктора дочернего класса.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p><span class="style8">Классы обладают важным свойством: на основе одного класса,
+который называется родительским, или базовым, можно создавать другие
+классы, которые называются дочерними, или производными. Этот процесс
+можно продолжить. Все классы, созданные на основе некоторого класса,
+называются его потомками.</p>
+<p>Дочерние классы обладают всеми свойствами и методами
+родительского класса. Этот факт называется наследованием. Кроме того,
+можно задавать новые свойства и методы.</p>
+				<p><img alt="" src="Pic/r-56-13.png" width="925" height="513" /></p>
+<p>Для класса Human создадим дочерний класс Worker. </p>
+				<p><a href="Human.HTM">описание класса <strong>
+				<span lang="en-us" class="style2">Human</span></strong></a></p>
+				<p><img alt="" src="Pic/r-56-14.png" width="876" height="531" /></p>
+				<p><img alt="" src="Pic/r-56-15.png" width="762" height="535" /></p>
+				<p class="style8">В&nbsp; класс
+				Worker. добавим поле tarif, которое означает тарифную сетку (в данном случае
+				<span class="style5"><strong>оплату за один рабочий день</strong></span>), и метод
+				<span class="style6"><em>ZarPlata</em></span>, который вычисляет
+заработную плату работника, как произведение tarif на количество
+отработанных дней. Количество отработанных дней (countday) будем
+вводить в качестве параметра метода. Устанавливать значение tarif
+будем с помощью свойства Tarif. Получим следующий код:</p>
+<pre><img alt="" src="Pic/r-56-16.png" width="1055" height="538" /></pre>
+<p>При создании класса мы записали</p>
+<p class="style8">class Worker:&nbsp; Human&nbsp; <span lang="en-us">//</span>создание 
+дочернего класса</p>
+<p class="style8">Это означает, что класс Worker является дочерним для класса Human.
+<span class="style4"><strong>В процедуру Main() запишем следующий код и 
+протестируем работу с полями родительского класса:</strong></span></p>
+<pre class="style2"><strong>Worker wrk1 = new Worker();
+wrk1.LastName = "Сидоров";
+wrk1.Name = "Александр";
+wrk1.SecondName = "Михайлович";
+wrk1.Age = 42;
+wrk1.Tarif = 2000;
+Console.WriteLine("Сотрудник {0}, зарплата {1}",
+wrk1.FullName, wrk1.ZarPlata(20));
+wrk1.Info();</strong></pre>
+<p>После выполнения кода получим</span></p>
+<pre><img alt="" src="Pic/r-56-11.png" width="540" height="151" /></pre>
+<p><span class="style8">Мы создали объект с помощью конструктора по умолчанию класса
+Worker и воспользовались методами и свойствами этого класса. Как
+видим, все свойства и методы родительского класса Human также
+доступны в новом классе.</p>
+<p class="style9">Заметим, что первая выведенная строка означает, что мы используем
+класс Human.</p>
+				<p class="style8">Выше, при создании экземпляра дочернего класса мы использовали
+его конструктор по умолчанию. <span class="style2"><strong>Создадим конструктор с параметрами</strong></span></p>
+<pre><span class="style2"><strong>public Worker(string lastname, string name,
+string secondname, int age, int tarif)
+</strong></span>{<span class="style2"><strong>
+this.lastname = lastname;
+this.name = name;
+this.secondname = secondname;
+this.age = age;
+this.tarif = tarif;
+</strong></span>}</pre>
+<p class="style9">который будет инициализировать все поля при создании экземпляра класса
+Worker.</p>
+<p class="style9">Учитывая, что при определении конструктора с параметрами у
+класса Worker конструктор по умолчанию этого класса аннулируется,
+опишем его явно в виде</p>
+<pre><span class="style2"><strong>public Worker()
+</strong></span>{<span class="style2"><strong>
+</strong></span>}</pre>
+<p class="style9">Добавим этот конструктор в класс Worker и вернемся к конструктору
+с параметрами. Конструкторы дочерних классов можно создавать на
+основе конструкторов родительских классов. Например, рассматриваемый
+конструктор можно описать так:</p>
+<pre><span class="style2"><strong>public Worker(string lastname, string name,
+string secondname, int age, int tarif) :
+base(lastname, name, secondname, age)
+</strong></span>{<span class="style2"><strong>
+this.tarif = tarif;
+</strong></span>}</pre>
+<p class="style9">Здесь строка в заголовке метода</p>
+<p class="style2"><strong>: base(lastname, name, secondname, age)</strong></p>
+<p class="style9">означает, что используется конструктор базового класса с указанными в
+скобках параметрами. В теле создаваемого конструктора будет
+предполагаться присутствие операторов тела указанного конструктора
+базового класса и будет необходимо записать только недостающие
+операторы. В данном случае это оператор</p>
+<p class="style2"><strong>this.tarif = tarif;</strong></p>
+<p class="style9">Так можно сократить запись. Приведенный код добавим в класс
+Worker. Процедуру Main() перепишем следующим образом:</p>
+<pre class="style2"><strong>Worker wrk1 = new Worker();
+wrk1.LastName = "Сидоров";
+wrk1.Name = "Александр";
+wrk1.SecondName = "Михайлович";
+wrk1.Age = 42;
+wrk1.Tarif = 2000;
+</strong></span><strong><span class="style8">Console.WriteLine("Сотрудник {0}, зарплата {1}",
+wrk1.FullName, wrk1.ZarPlata(20));
+Worker wrk2 = new Worker("Иванов", "Василий", "Петрович",
+45, 1500);
+wrk2.Info();</span></strong></pre>
+<p class="style9">Здесь мы объект wrk1 создаем с помощью конструктора без параметров, а
+объект wrk2 – с помощью конструктора с параметрами. После
+выполнения получим</p>
+<pre class="style3"><img alt="" src="Pic/r-56-12.png" width="872" height="442" /></pre></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les57.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les57/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:49:01 GMT -->
+</html>

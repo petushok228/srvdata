@@ -1,0 +1,401 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les39/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:25:26 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: small;
+}
+.style3 {
+	font-size: medium;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 2. Примеры. Создание. Добавление. Удаление. Поиск.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+								<p style="margin: 0.5em 0px;" class="style2">Динамические 
+								структуры данных, к которым относятся односвяные 
+								и двусвязные списки, традиционно излагаются в 
+								теме &quot;Указатели&quot;. </p>
+								<p style="margin: 0.5em 0px;" class="style2">Рассмотрим 
+								основные операции с линейными односвязными 
+								списками и приведем реализацию для указателей 
+								(слева) и ссылок (справа). Всюду считается, что 
+								переменная p имеет тип PNode для указателей и 
+								Node для ссылок.</p>
+								<p style="margin: 0.5em 0px;" class="style3">1.<span>&nbsp;</span><strong style="font-weight: bold;">Предварительные 
+								описания.</strong></p>
+								<table border="0" style="max-width: 100%; background-color: transparent; border-collapse: collapse; border-spacing: 0px; width: 811.578px;">
+												<tr>
+																<td valign="top" width="49%">
+																<div class="code" style="border-radius: 4px;">
+																				<div class="javascript">
+																								<pre class="delphi" style="padding: 2px 4px; font-family: monospace; font-size: 12px; border-radius: 3px; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; color: rgb(221, 17, 68); background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);"><span style="color: rgb(0, 0, 0); font-weight: bold;">type</span>
+  PNode <span style="color: rgb(0, 0, 102);">=</span> <span style="color: rgb(0, 0, 102);">^</span>Node<span style="color: rgb(0, 0, 102);">;</span>
+  Node <span style="color: rgb(0, 0, 102);">=</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">record</span>
+    data<span style="color: rgb(0, 0, 102);">:</span> <span style="color: rgb(0, 0, 102); font-weight: bold;">integer</span><span style="color: rgb(0, 0, 102);">;</span>
+    next<span style="color: rgb(0, 0, 102);">:</span> PNode<span style="color: rgb(0, 0, 102);">;</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">end</span><span style="color: rgb(0, 0, 102);">;</span>
+&nbsp;
+<span style="color: rgb(0, 0, 0); font-weight: bold;">function</span> NewNode<span style="color: rgb(0, 0, 102);">(</span>data<span style="color: rgb(0, 0, 102);">:</span> <span style="color: rgb(0, 0, 102); font-weight: bold;">integer</span><span style="color: rgb(0, 0, 102);">;</span> next<span style="color: rgb(0, 0, 102);">:</span> PNode<span style="color: rgb(0, 0, 102);">):</span> PNode<span style="color: rgb(0, 0, 102);">;</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">begin</span>
+  <span style="color: rgb(0, 0, 102);">New(</span>Result<span style="color: rgb(0, 0, 102);">);</span>
+  Result<span style="color: rgb(0, 0, 102);">^.</span><span style="color: rgb(0, 102, 0);">data</span> <span style="color: rgb(0, 0, 102);">:=</span> data<span style="color: rgb(0, 0, 102);">;</span>
+  Result<span style="color: rgb(0, 0, 102);">^.</span><span style="color: rgb(0, 102, 0);">next</span> <span style="color: rgb(0, 0, 102);">:=</span> next<span style="color: rgb(0, 0, 102);">;</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">end</span><span style="color: rgb(0, 0, 102);">;</span></pre>
+																				</div>
+																</div>
+																</td>
+																<td width="2%">&nbsp;</td>
+																<td valign="top" width="49%">
+																<div class="code" style="border-radius: 4px;">
+																				<div class="javascript">
+																								<pre class="delphi" style="padding: 2px 4px; font-family: monospace; font-size: 12px; border-radius: 3px; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; color: rgb(221, 17, 68); background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);"><span style="color: rgb(0, 0, 0); font-weight: bold;">type</span>
+  Node <span style="color: rgb(0, 0, 102);">=</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">class</span>
+  data<span style="color: rgb(0, 0, 102);">:</span> <span style="color: rgb(0, 0, 102); font-weight: bold;">integer</span><span style="color: rgb(0, 0, 102);">;</span>
+  next<span style="color: rgb(0, 0, 102);">:</span> Node<span style="color: rgb(0, 0, 102);">;</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">constructor</span> <span style="color: rgb(0, 0, 102);">(</span>d<span style="color: rgb(0, 0, 102);">:</span> <span style="color: rgb(0, 0, 102); font-weight: bold;">integer</span><span style="color: rgb(0, 0, 102);">;</span> n<span style="color: rgb(0, 0, 102);">:</span> Node<span style="color: rgb(0, 0, 102);">);</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">begin</span>
+    data <span style="color: rgb(0, 0, 102);">:=</span> d<span style="color: rgb(0, 0, 102);">;</span>
+    next <span style="color: rgb(0, 0, 102);">:=</span> n<span style="color: rgb(0, 0, 102);">;</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">end</span><span style="color: rgb(0, 0, 102);">;</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">end</span><span style="color: rgb(0, 0, 102);">;</span></pre>
+																				</div>
+																</div>
+																<p style="margin: 0.5em 0px;">
+																&nbsp;</p>
+																</td>
+												</tr>
+								</table>
+								<p style="margin: 0.5em 0px;">Реализация с 
+								указателями - явно более &quot;многословная&quot;. К тому 
+								же функция NewNode является внешней, и связь ее 
+								с типом PNode определяется только близостью к 
+								нему в тексте программы.</p>
+								<p style="margin: 0.5em 0px;">2.<span>&nbsp;</span><strong style="font-weight: bold;">Вставка 
+								элемента со значением x в начало списка</strong>, 
+								на который указывает p.</p>
+								<table border="0" style="max-width: 100%; background-color: transparent; border-collapse: collapse; border-spacing: 0px; width: 811.578px;">
+												<tr>
+																<td valign="top" width="49%">
+																<div class="code" style="border-radius: 4px;">
+																				<div class="javascript">
+																								<pre class="delphi" style="padding: 2px 4px; font-family: monospace; font-size: 12px; border-radius: 3px; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; color: rgb(221, 17, 68); background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">p <span style="color: rgb(0, 0, 102);">:=</span> NewNode<span style="color: rgb(0, 0, 102);">(</span>x<span style="color: rgb(0, 0, 102);">,</span>p<span style="color: rgb(0, 0, 102);">);</span></pre>
+																				</div>
+																</div>
+																</td>
+																<td width="2%">&nbsp;</td>
+																<td valign="top" width="49%">
+																<div class="code" style="border-radius: 4px;">
+																				<div class="javascript">
+																								<pre class="delphi" style="padding: 2px 4px; font-family: monospace; font-size: 12px; border-radius: 3px; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; color: rgb(221, 17, 68); background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">p <span style="color: rgb(0, 0, 102);">:=</span> new Node<span style="color: rgb(0, 0, 102);">(</span>x<span style="color: rgb(0, 0, 102);">,</span>p<span style="color: rgb(0, 0, 102);">);</span></pre>
+																				</div>
+																</div>
+																</td>
+												</tr>
+								</table>
+								<p style="margin: 0.5em 0px;">Почти одинаково. 
+								Во втором случае вызывается конструктор класса 
+								Node, возвращающий ссылку на созданный объект.</p>
+								<p style="margin: 0.5em 0px;">3.<span>&nbsp;</span><strong style="font-weight: bold;">Удаление 
+								элемента из начала непустого списка</strong>, на 
+								который указывает p.</p>
+								<table border="0" style="max-width: 100%; background-color: transparent; border-collapse: collapse; border-spacing: 0px; width: 811.578px;">
+												<tr>
+																<td valign="top" width="49%">
+																<div class="code" style="border-radius: 4px;">
+																				<div class="javascript">
+																								<pre class="delphi" style="padding: 2px 4px; font-family: monospace; font-size: 12px; border-radius: 3px; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; color: rgb(221, 17, 68); background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);"><span style="color: rgb(0, 0, 0); font-weight: bold;">var</span> t <span style="color: rgb(0, 0, 102);">:=</span> p<span style="color: rgb(0, 0, 102);">;</span>
+p <span style="color: rgb(0, 0, 102);">:=</span> t<span style="color: rgb(0, 0, 102);">^.</span><span style="color: rgb(0, 102, 0);">next</span><span style="color: rgb(0, 0, 102);">;</span>
+<span style="color: rgb(0, 0, 102);">Dispose(</span>t<span style="color: rgb(0, 0, 102);">);</span></pre>
+																				</div>
+																</div>
+																</td>
+																<td width="2%">&nbsp;</td>
+																<td valign="top" width="49%">
+																<div class="code" style="border-radius: 4px;">
+																				<div class="javascript">
+																								<pre class="delphi" style="padding: 2px 4px; font-family: monospace; font-size: 12px; border-radius: 3px; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; color: rgb(221, 17, 68); background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">p <span style="color: rgb(0, 0, 102);">:=</span> p<span style="color: rgb(0, 0, 102);">.</span><span style="color: rgb(0, 102, 0);">next</span><span style="color: rgb(0, 0, 102);">;</span></pre>
+																				</div>
+																</div>
+																</td>
+												</tr>
+								</table>
+								<p style="margin: 0.5em 0px;">Здесь на 
+								компактности записи решения со ссылками 
+								сказывается сборка мусора - на первый элемент 
+								больше никто не указывает, поэтому память, им 
+								занимаемая, будет освобождена при следующей 
+								сборке мусора.</p>
+								<p style="margin: 0.5em 0px;">4.<span>&nbsp;</span><strong style="font-weight: bold;">Вставка 
+								элемента со значением x после текущего</strong>, 
+								на который указывает p.</p>
+								<table border="0" style="max-width: 100%; background-color: transparent; border-collapse: collapse; border-spacing: 0px; width: 811.578px;">
+												<tr>
+																<td valign="top" width="49%">
+																<div class="code" style="border-radius: 4px;">
+																				<div class="javascript">
+																								<pre class="delphi" style="padding: 2px 4px; font-family: monospace; font-size: 12px; border-radius: 3px; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; color: rgb(221, 17, 68); background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">p<span style="color: rgb(0, 0, 102);">^.</span><span style="color: rgb(0, 102, 0);">next</span> <span style="color: rgb(0, 0, 102);">:=</span> NewNode<span style="color: rgb(0, 0, 102);">(</span>x<span style="color: rgb(0, 0, 102);">,</span>p<span style="color: rgb(0, 0, 102);">^.</span><span style="color: rgb(0, 102, 0);">next</span><span style="color: rgb(0, 0, 102);">);</span></pre>
+																				</div>
+																</div>
+																</td>
+																<td width="2%">&nbsp;</td>
+																<td valign="top" width="49%">
+																<div class="code" style="border-radius: 4px;">
+																				<div class="javascript">
+																								<pre class="delphi" style="padding: 2px 4px; font-family: monospace; font-size: 12px; border-radius: 3px; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; color: rgb(221, 17, 68); background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">p<span style="color: rgb(0, 0, 102);">.</span><span style="color: rgb(0, 102, 0);">next</span> <span style="color: rgb(0, 0, 102);">:=</span> new Node<span style="color: rgb(0, 0, 102);">(</span>x<span style="color: rgb(0, 0, 102);">,</span>p<span style="color: rgb(0, 0, 102);">.</span><span style="color: rgb(0, 102, 0);">next</span><span style="color: rgb(0, 0, 102);">);</span></pre>
+																				</div>
+																</div>
+																</td>
+												</tr>
+								</table>
+								<p style="margin: 0.5em 0px;">Одно и то же. 
+								Только ^ не надо ставить - красота!<span>&nbsp;</span><em style="font-style: italic;">Ссылка 
+								- это разыменованный указатель</em>. Шапочки 
+								вовсе не нужны!</p>
+								<p style="margin: 0.5em 0px;">5.<span>&nbsp;</span><strong style="font-weight: bold;">Удаление 
+								элемента, следующего за текущим</strong>, на 
+								который указывает p.</p>
+								<table border="0" style="max-width: 100%; background-color: transparent; border-collapse: collapse; border-spacing: 0px; width: 811.578px;">
+												<tr>
+																<td valign="top" width="49%">
+																<div class="code" style="border-radius: 4px;">
+																				<div class="javascript">
+																								<pre class="delphi" style="padding: 2px 4px; font-family: monospace; font-size: 12px; border-radius: 3px; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; color: rgb(221, 17, 68); background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);"><span style="color: rgb(0, 0, 0); font-weight: bold;">var</span> t <span style="color: rgb(0, 0, 102);">:=</span> p<span style="color: rgb(0, 0, 102);">^.</span><span style="color: rgb(0, 102, 0);">next</span><span style="color: rgb(0, 0, 102);">;</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">if</span> t&lt;&gt;<span style="color: rgb(0, 0, 0); font-weight: bold;">nil</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">then</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">begin</span>
+  p<span style="color: rgb(0, 0, 102);">^.</span><span style="color: rgb(0, 102, 0);">next</span> <span style="color: rgb(0, 0, 102);">:=</span> t<span style="color: rgb(0, 0, 102);">^.</span><span style="color: rgb(0, 102, 0);">next</span><span style="color: rgb(0, 0, 102);">;</span>
+  <span style="color: rgb(0, 0, 102);">Dispose(</span>t<span style="color: rgb(0, 0, 102);">);</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">end</span><span style="color: rgb(0, 0, 102);">;</span></pre>
+																				</div>
+																</div>
+																</td>
+																<td width="2%">&nbsp;</td>
+																<td valign="top" width="49%">
+																<div class="code" style="border-radius: 4px;">
+																				<div class="javascript">
+																								<pre class="delphi" style="padding: 2px 4px; font-family: monospace; font-size: 12px; border-radius: 3px; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; color: rgb(221, 17, 68); background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);"><span style="color: rgb(0, 0, 0); font-weight: bold;">if</span> p<span style="color: rgb(0, 0, 102);">.</span><span style="color: rgb(0, 102, 0);">next</span>&lt;&gt;<span style="color: rgb(0, 0, 0); font-weight: bold;">nil</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">then</span>
+p<span style="color: rgb(0, 0, 102);">.</span><span style="color: rgb(0, 102, 0);">next</span> <span style="color: rgb(0, 0, 102);">:=</span> p<span style="color: rgb(0, 0, 102);">.</span><span style="color: rgb(0, 102, 0);">next</span><span style="color: rgb(0, 0, 102);">.</span><span style="color: rgb(0, 102, 0);">next</span><span style="color: rgb(0, 0, 102);">;</span></pre>
+																				</div>
+																</div>
+																</td>
+												</tr>
+								</table>
+								<p style="margin: 0.5em 0px;">В указатель на 
+								следующий записать адрес элемента, следующего за 
+								следующим. Опять-таки, во втором случае на 
+								удаляемый узел никто больше не указывает, 
+								поэтому память под него будет освобождена при 
+								следующей сборке мусора.</p>
+								<p style="margin: 0.5em 0px;">6.<span>&nbsp;</span><strong style="font-weight: bold;">Вставка 
+								элемента со значением x перед текущим</strong>, 
+								на который указывает p.</p>
+								<table border="0" style="max-width: 100%; background-color: transparent; border-collapse: collapse; border-spacing: 0px; width: 811.578px;">
+												<tr>
+																<td valign="top" width="49%">
+																<div class="code" style="border-radius: 4px;">
+																				<div class="javascript">
+																								<pre class="delphi" style="padding: 2px 4px; font-family: monospace; font-size: 12px; border-radius: 3px; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; color: rgb(221, 17, 68); background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">p<span style="color: rgb(0, 0, 102);">^.</span><span style="color: rgb(0, 102, 0);">next</span> <span style="color: rgb(0, 0, 102);">:=</span> NewNode<span style="color: rgb(0, 0, 102);">(</span>p<span style="color: rgb(0, 0, 102);">^.</span><span style="color: rgb(0, 102, 0);">data</span><span style="color: rgb(0, 0, 102);">,</span>p<span style="color: rgb(0, 0, 102);">^.</span><span style="color: rgb(0, 102, 0);">next</span><span style="color: rgb(0, 0, 102);">);</span>
+p<span style="color: rgb(0, 0, 102);">^.</span><span style="color: rgb(0, 102, 0);">data</span> <span style="color: rgb(0, 0, 102);">:=</span> x<span style="color: rgb(0, 0, 102);">;</span>
+p <span style="color: rgb(0, 0, 102);">:=</span> p<span style="color: rgb(0, 0, 102);">^.</span><span style="color: rgb(0, 102, 0);">next</span><span style="color: rgb(0, 0, 102);">;</span></pre>
+																				</div>
+																</div>
+																</td>
+																<td width="2%">&nbsp;</td>
+																<td valign="top" width="49%">
+																<div class="code" style="border-radius: 4px;">
+																				<div class="javascript">
+																								<pre class="delphi" style="padding: 2px 4px; font-family: monospace; font-size: 12px; border-radius: 3px; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; color: rgb(221, 17, 68); background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">p<span style="color: rgb(0, 0, 102);">.</span><span style="color: rgb(0, 102, 0);">next</span> <span style="color: rgb(0, 0, 102);">:=</span> new Node<span style="color: rgb(0, 0, 102);">(</span>p<span style="color: rgb(0, 0, 102);">.</span><span style="color: rgb(0, 102, 0);">data</span><span style="color: rgb(0, 0, 102);">,</span>p<span style="color: rgb(0, 0, 102);">.</span><span style="color: rgb(0, 102, 0);">next</span><span style="color: rgb(0, 0, 102);">);</span>
+p<span style="color: rgb(0, 0, 102);">.</span><span style="color: rgb(0, 102, 0);">data</span> <span style="color: rgb(0, 0, 102);">:=</span> x<span style="color: rgb(0, 0, 102);">;</span>
+p <span style="color: rgb(0, 0, 102);">:=</span> p<span style="color: rgb(0, 0, 102);">.</span><span style="color: rgb(0, 102, 0);">next</span><span style="color: rgb(0, 0, 102);">;</span></pre>
+																				</div>
+																</div>
+																</td>
+												</tr>
+								</table>
+								<p style="margin: 0.5em 0px;">Трюк. Вставляем 
+								после текущего элемента его копию, после чего 
+								меняем в текущем элементе значение на x. Решения 
+								равноценны.</p>
+								<p style="margin: 0.5em 0px;">7.<span>&nbsp;</span><strong style="font-weight: bold;">Удаление 
+								текущего элемента</strong>, на который указывает 
+								p.</p>
+								<table border="0" style="max-width: 100%; background-color: transparent; border-collapse: collapse; border-spacing: 0px; width: 811.578px;">
+												<tr>
+																<td valign="top" width="49%">
+																<div class="code" style="border-radius: 4px;">
+																				<div class="javascript">
+																								<pre class="delphi" style="padding: 2px 4px; font-family: monospace; font-size: 12px; border-radius: 3px; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; color: rgb(221, 17, 68); background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);"><span style="color: rgb(0, 0, 0); font-weight: bold;">var</span> t <span style="color: rgb(0, 0, 102);">:=</span> p<span style="color: rgb(0, 0, 102);">^.</span><span style="color: rgb(0, 102, 0);">next</span><span style="color: rgb(0, 0, 102);">;</span>
+p<span style="color: rgb(0, 0, 102);">^:=</span> t<span style="color: rgb(0, 0, 102);">^;</span>
+<span style="color: rgb(0, 0, 102);">Dispose(</span>t<span style="color: rgb(0, 0, 102);">);</span></pre>
+																				</div>
+																</div>
+																</td>
+																<td width="2%">&nbsp;</td>
+																<td valign="top" width="49%">
+																<div class="code" style="border-radius: 4px;">
+																				<div class="javascript">
+																								<pre class="delphi" style="padding: 2px 4px; font-family: monospace; font-size: 12px; border-radius: 3px; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; color: rgb(221, 17, 68); background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">p<span style="color: rgb(0, 0, 102);">.</span><span style="color: rgb(0, 102, 0);">data</span> <span style="color: rgb(0, 0, 102);">:=</span> p<span style="color: rgb(0, 0, 102);">.</span><span style="color: rgb(0, 102, 0);">next</span><span style="color: rgb(0, 0, 102);">.</span><span style="color: rgb(0, 102, 0);">data</span><span style="color: rgb(0, 0, 102);">;</span>
+p<span style="color: rgb(0, 0, 102);">.</span><span style="color: rgb(0, 102, 0);">next</span> <span style="color: rgb(0, 0, 102);">:=</span> p<span style="color: rgb(0, 0, 102);">.</span><span style="color: rgb(0, 102, 0);">next</span><span style="color: rgb(0, 0, 102);">.</span><span style="color: rgb(0, 102, 0);">next</span><span style="color: rgb(0, 0, 102);">;</span></pre>
+																				</div>
+																</div>
+																</td>
+												</tr>
+								</table>
+								<p style="margin: 0.5em 0px;">Элемент, следующий 
+								за текущим, должен существовать. В случае 
+								указателей мы можем скопировать оба поля за одно 
+								присваивание:&nbsp; p^:= t^. Но и это не 
+								помогает - код со ссылками все равно короче!</p>
+								<p style="margin: 0.5em 0px;">8.<span>&nbsp;</span><strong style="font-weight: bold;">Вывод 
+								списка</strong>, на первый элемент которого 
+								указывает p.</p>
+								<table border="0" style="max-width: 100%; background-color: transparent; border-collapse: collapse; border-spacing: 0px; width: 811.578px;">
+												<tr>
+																<td valign="top" width="49%">
+																<div class="code" style="border-radius: 4px;">
+																				<div class="javascript">
+																								<pre class="delphi" style="padding: 2px 4px; font-family: monospace; font-size: 12px; border-radius: 3px; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; color: rgb(221, 17, 68); background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);"><span style="color: rgb(0, 0, 0); font-weight: bold;">while</span> p&lt;&gt;<span style="color: rgb(0, 0, 0); font-weight: bold;">nil</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">do</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">begin</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">write</span><span style="color: rgb(0, 0, 102);">(</span>p<span style="color: rgb(0, 0, 102);">^.</span><span style="color: rgb(0, 102, 0);">data</span><span style="color: rgb(0, 0, 102);">,</span><span style="color: rgb(255, 0, 0);">&#39; &#39;</span><span style="color: rgb(0, 0, 102);">);</span>
+  p <span style="color: rgb(0, 0, 102);">:=</span> p<span style="color: rgb(0, 0, 102);">^.</span><span style="color: rgb(0, 102, 0);">next</span><span style="color: rgb(0, 0, 102);">;</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">end</span><span style="color: rgb(0, 0, 102);">;</span></pre>
+																				</div>
+																</div>
+																</td>
+																<td width="2%">&nbsp;</td>
+																<td valign="top" width="49%">
+																<div class="code" style="border-radius: 4px;">
+																				<div class="javascript">
+																								<pre class="delphi" style="padding: 2px 4px; font-family: monospace; font-size: 12px; border-radius: 3px; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; color: rgb(221, 17, 68); background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);"><span style="color: rgb(0, 0, 0); font-weight: bold;">while</span> p&lt;&gt;<span style="color: rgb(0, 0, 0); font-weight: bold;">nil</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">do</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">begin</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">write</span><span style="color: rgb(0, 0, 102);">(</span>p<span style="color: rgb(0, 0, 102);">.</span><span style="color: rgb(0, 102, 0);">data</span><span style="color: rgb(0, 0, 102);">,</span><span style="color: rgb(255, 0, 0);">&#39; &#39;</span><span style="color: rgb(0, 0, 102);">);</span>
+  p <span style="color: rgb(0, 0, 102);">:=</span> p<span style="color: rgb(0, 0, 102);">.</span><span style="color: rgb(0, 102, 0);">next</span><span style="color: rgb(0, 0, 102);">;</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">end</span><span style="color: rgb(0, 0, 102);">;</span></pre>
+																				</div>
+																</div>
+																</td>
+												</tr>
+								</table>
+								<p style="margin: 0.5em 0px;">Равноценные 
+								решения.</p>
+								<p style="margin: 0.5em 0px;">9.<span>&nbsp;</span><strong style="font-weight: bold;">Поиск 
+								элемента со значением x</strong>. На первый 
+								элемент списка указывает p.</p>
+								<table border="0" style="max-width: 100%; background-color: transparent; border-collapse: collapse; border-spacing: 0px; width: 811.578px;">
+												<tr>
+																<td valign="top" width="49%">
+																<div class="code" style="border-radius: 4px;">
+																				<div class="javascript">
+																								<pre class="delphi" style="padding: 2px 4px; font-family: monospace; font-size: 12px; border-radius: 3px; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; color: rgb(221, 17, 68); background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);"><span style="color: rgb(0, 0, 0); font-weight: bold;">while</span> <span style="color: rgb(0, 0, 102);">(</span>p&lt;&gt;<span style="color: rgb(0, 0, 0); font-weight: bold;">nil</span><span style="color: rgb(0, 0, 102);">)</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">and</span> <span style="color: rgb(0, 0, 102);">(</span>p<span style="color: rgb(0, 0, 102);">^.</span><span style="color: rgb(0, 102, 0);">data</span>&lt;&gt;x<span style="color: rgb(0, 0, 102);">)</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">do</span>
+  p <span style="color: rgb(0, 0, 102);">:=</span> p<span style="color: rgb(0, 0, 102);">^.</span><span style="color: rgb(0, 102, 0);">next</span><span style="color: rgb(0, 0, 102);">;</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">var</span> found <span style="color: rgb(0, 0, 102);">:=</span> p&lt;&gt;<span style="color: rgb(0, 0, 0); font-weight: bold;">nil</span><span style="color: rgb(0, 0, 102);">;</span></pre>
+																				</div>
+																</div>
+																</td>
+																<td width="2%">&nbsp;</td>
+																<td valign="top" width="49%">
+																<div class="code" style="border-radius: 4px;">
+																				<div class="javascript">
+																								<pre class="delphi" style="padding: 2px 4px; font-family: monospace; font-size: 12px; border-radius: 3px; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; color: rgb(221, 17, 68); background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);"><span style="color: rgb(0, 0, 0); font-weight: bold;">while</span> <span style="color: rgb(0, 0, 102);">(</span>p&lt;&gt;<span style="color: rgb(0, 0, 0); font-weight: bold;">nil</span><span style="color: rgb(0, 0, 102);">)</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">and</span> <span style="color: rgb(0, 0, 102);">(</span>p<span style="color: rgb(0, 0, 102);">.</span><span style="color: rgb(0, 102, 0);">data</span>&lt;&gt;x<span style="color: rgb(0, 0, 102);">)</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">do</span>
+  p <span style="color: rgb(0, 0, 102);">:=</span> p<span style="color: rgb(0, 0, 102);">.</span><span style="color: rgb(0, 102, 0);">next</span><span style="color: rgb(0, 0, 102);">;</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">var</span> found <span style="color: rgb(0, 0, 102);">:=</span> p&lt;&gt;<span style="color: rgb(0, 0, 0); font-weight: bold;">nil</span><span style="color: rgb(0, 0, 102);">;</span></pre>
+																				</div>
+																</div>
+																</td>
+												</tr>
+								</table>
+								<p style="margin: 0.5em 0px;">Равноценные 
+								решения. Шапочек справа - нет&nbsp;</p>
+								<p style="margin: 0.5em 0px;">10.<span>&nbsp;</span><strong style="font-weight: bold;">Разрушение 
+								списка</strong>.</p>
+								<table border="0" style="max-width: 100%; background-color: transparent; border-collapse: collapse; border-spacing: 0px; width: 811.578px;">
+												<tr>
+																<td valign="top" width="49%">
+																<div class="code" style="border-radius: 4px;">
+																				<div class="javascript">
+																								<pre class="delphi" style="padding: 2px 4px; font-family: monospace; font-size: 12px; border-radius: 3px; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; color: rgb(221, 17, 68); background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);"><span style="color: rgb(0, 0, 0); font-weight: bold;">while</span> p&lt;&gt;<span style="color: rgb(0, 0, 0); font-weight: bold;">nil</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">do</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">begin</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">var</span> t <span style="color: rgb(0, 0, 102);">:=</span> p<span style="color: rgb(0, 0, 102);">;</span>
+  p <span style="color: rgb(0, 0, 102);">:=</span> p<span style="color: rgb(0, 0, 102);">^.</span><span style="color: rgb(0, 102, 0);">next</span><span style="color: rgb(0, 0, 102);">;</span>
+  <span style="color: rgb(0, 0, 102);">Dispose(</span>t<span style="color: rgb(0, 0, 102);">);</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">end</span><span style="color: rgb(0, 0, 102);">;</span></pre>
+																				</div>
+																</div>
+																</td>
+																<td width="2%">&nbsp;</td>
+																<td valign="top" width="49%">
+																<div class="code" style="border-radius: 4px;">
+																				<div class="javascript">
+																								<pre class="delphi" style="padding: 2px 4px; font-family: monospace; font-size: 12px; border-radius: 3px; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; color: rgb(221, 17, 68); background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232);">p <span style="color: rgb(0, 0, 102);">:=</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">nil</span><span style="color: rgb(0, 0, 102);">;</span></pre>
+																				</div>
+																</div>
+																</td>
+												</tr>
+								</table>
+								<p style="margin: 0.5em 0px;">Вот здесь - все 
+								преимущества сборки мусора.</p>
+				<p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les39.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les39/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:25:26 GMT -->
+</html>

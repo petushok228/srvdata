@@ -1,0 +1,845 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les20/4.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:48:38 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: small;
+}
+.style3 {
+	color: rgb(0, 0, 128);
+	font-family: Verdana;
+	font-size: small;
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: normal;
+	text-align: start;
+	text-indent: 0px;
+	text-transform: none;
+	word-spacing: 0px;
+	white-space: normal;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 4. Работа с файлами в C#. Класс FileStream.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p>
+				<table class="style1" style="width: 1496.8px; color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<tr>
+						<td colspan="3" class="text">
+						<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						<span class="style2" style="font-size: small;">
+						Большинство задач в программировании так или иначе 
+						связаны с работой с файлами и каталогами. Нам может 
+						потребоваться прочитать текст из файла или наоборот 
+						произвести запись, удалить файл или целый каталог, не 
+						говоря уже о более комплексных задачах, как например, 
+						создание текстового редактора и других подобных задачах.<br />
+						<br />
+						Фреймворк .NET предоставляет большие возможности по 
+						управлению и манипуляции файлами и каталогами, которые 
+						по большей части сосредоточены</span><span><span class="style2" style="font-size: small;">&nbsp;</span></span><span class="style4" style="color: red; font-family: Verdana; font-size: small; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal;"><strong>в 
+						пространстве имен System.IO.</strong></span><span class="style2" style="font-size: small;">&nbsp;Классы, 
+						расположенные в этом пространстве имен (такие как</span><span><span class="style2" style="font-size: small;">&nbsp;</span></span><span class="style4" style="color: red; font-family: Verdana; font-size: small; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal;">Stream</span>,<span class="style2" style="font-size: small;">&nbsp;</span><span class="style4" style="color: red; font-family: Verdana; font-size: small; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal;">StreamWriter</span>,<span class="style2" style="font-size: small;">&nbsp;</span><span class="style5" style="color: red; font-family: Verdana; font-size: medium; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal;">FileStream</span><span class="style2" style="font-size: small;">&nbsp;и 
+						др.), позволяют управлять файловым вводом-выводом.</span></p>
+						<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						<span class="style8" style="color: red; text-decoration: underline;">
+						<em><span class="style2" style="font-size: small;">Класс</span><span><span class="style2" style="font-size: small;">&nbsp;</span></span><strong><span class="style2" style="font-size: small;">FileStream</span></strong><span class="style2" style="font-size: small;">&nbsp;представляет 
+						возможности по считыванию из файла и записи в файл. Он 
+						позволяет работать как с текстовыми файлами, так и с 
+						бинарными.</span></em></span><span class="style2" style="font-size: small;"><br />
+						</span></p>
+						<p class="ZagT" style="font-size: small; border-bottom-color: blue; color: red; font-family: cursive; background-color: rgb(204, 255, 153); border-bottom-style: double; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Создание FileStream</p>
+						<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						<span class="style2" style="font-size: small; color: red;">
+						<em>Для создания объекта FileStream можно использовать 
+						как конструкторы этого класса, так и статические методы 
+						класса File</em></span><span class="style2" style="font-size: small;">.</span></p>
+						<p class="style2" style="font-size: small; color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Конструктор FileStream<span>&nbsp;</span><span class="style6" style="color: blue;"><em>имеет 
+						множество перегруженных версий</em></span>, из которых 
+						отмечу лишь одну, самую простую и используемую:</p>
+						<p class="style3" style="color: blue; font-family: Verdana; font-size: small; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal; margin-left: 40px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						<strong>FileStream(string filename, FileMode mode)</strong></p>
+						<p class="style2" style="font-size: small; color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Здесь в конструктор передается два параметра:<span>&nbsp;</span><span class="style6" style="color: blue;">путь 
+						к файлу</span><span>&nbsp;</span>и<span>&nbsp;</span><span class="style4" style="color: red; font-family: Verdana; font-size: small; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal;"><strong>перечисление 
+						FileMode.</strong></span></p>
+						<p class="style2" style="font-size: small; color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Данное перечисление указывает на<span>&nbsp;</span><span class="style10" style="color: blue; text-decoration: underline;"><strong>режим 
+						доступа к файлу</strong></span><span>&nbsp;</span>и может 
+						принимать следующие значения:</p>
+						<ul style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+							<li>
+							<p class="style2" style="font-size: small; color: blue;">
+							<strong>Append:</strong><span>&nbsp;</span><span class="style4" style="color: red; font-family: Verdana; font-size: small; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal;">если 
+							файл существует</span>, то текст добавляется в конец 
+							файл. Если файла нет, то он создается. Файл 
+							открывается только для записи.</p>
+							</li>
+							<li>
+							<p class="style2" style="font-size: small; color: blue;">
+							<strong>Create:</strong><span>&nbsp;</span><span class="style4" style="color: red; font-family: Verdana; font-size: small; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal;">создается 
+							новый файл</span>. Если такой файл уже существует,<span>&nbsp;</span><span class="style4" style="color: red; font-family: Verdana; font-size: small; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal;">то 
+							он перезаписывается</span></p>
+							</li>
+							<li>
+							<p class="style2" style="font-size: small; color: blue;">
+							<strong>CreateNew:</strong><span>&nbsp;</span><span class="style4" style="color: red; font-family: Verdana; font-size: small; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal;">создается 
+							новый файл</span>. Если такой файл уже существует, 
+							то приложение выбрасывает ошибку</p>
+							</li>
+							<li>
+							<p class="style2" style="font-size: small; color: blue;">
+							Open:<span>&nbsp;</span><span class="style4" style="color: red; font-family: Verdana; font-size: small; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal;">открывает 
+							файл.</span><span>&nbsp;</span><strong><span class="style11" style="color: green;">Если 
+							файл не существует,<span>&nbsp;</span></span><span class="style4" style="color: red; font-family: Verdana; font-size: small; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal;">выбрасывается 
+							исключение</span></strong></p>
+							</li>
+							<li>
+							<p class="style2" style="font-size: small; color: blue;">
+							<strong>OpenOrCreate:<span>&nbsp;</span></strong>если 
+							файл существует, он открывается, если нет - 
+							создается новый</p>
+							</li>
+							<li>
+							<p class="style2" style="font-size: small; color: blue;">
+							<strong>Truncate:</strong><span>&nbsp;</span>если файл 
+							существует, то он перезаписывается.<span>&nbsp;</span><span class="style4" style="color: red; font-family: Verdana; font-size: small; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal;">Файл 
+							открывается только для записи</span>.</p>
+							</li>
+						</ul>
+						<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						<span class="style2" style="font-size: small;"><br />
+						Другой способ создания объекта FileStream представляют<span>&nbsp;</span></span><span class="style4" style="color: red; font-family: Verdana; font-size: small; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal;"><strong><em><span class="style2" style="font-size: small;">статические 
+						методы класса File:</span></em></strong></span></p>
+						<p class="style2" style="font-size: small; color: blue; margin-left: 40px; font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						FileStream File.Open(string file, FileMode mode);<br />
+						FileStream File.OpenRead(string file);<br />
+						FileStream File.OpenWrite(string file);</p>
+						<p class="style2" style="font-size: small; color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Первый метод открывает файл с учетом объекта<span>&nbsp;</span><span class="style4" style="color: red; font-family: Verdana; font-size: small; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal;">FileMode<span>&nbsp;</span></span>и 
+						возвращает файловой поток<span>&nbsp;</span><span class="style4" style="color: red; font-family: Verdana; font-size: small; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal;"><strong>FileStream</strong></span>. 
+						У этого метода также есть несколько перегруженных 
+						версий. Второй метод открывает поток для чтения, а 
+						третий открывает поток для записи.</p>
+						<p class="ZagT" style="font-size: small; border-bottom-color: blue; color: red; font-family: cursive; background-color: rgb(204, 255, 153); border-bottom-style: double; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Закрытие потока</p>
+						<p class="style2" style="font-size: small; color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Класс FileStream для освобождения всех реусрсов, 
+						связанных с файлом, реализует интерфейс IDisposable. 
+						Соответственно после завершения работы с FileStream 
+						необходимо освободить связанный с ним файл вызовом 
+						метода Dispose. Для корректного закрытия можно вызвать 
+						метод Close(), который вызывает метод Dispose:</p>
+						<p class="style3" style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 10px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal; margin-left: 40px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						<span class="style2" style="font-size: small; color: blue;">
+						FileStream? fstream = null;<br />
+						try<br />
+						{<br />
+						fstream = new FileStream(&quot;note3.dat&quot;, 
+						FileMode.OpenOrCreate);<br />
+						// операции с fstream<br />
+						}<br />
+						catch(Exception ex)<br />
+						{ }<br />
+						finally<br />
+						{<br />
+						fstream?.Close();<br />
+						</span><span class="style2" style="font-size: small;">}</span></p>
+						<p class="style4" style="color: rgb(0, 0, 128); font-family: Verdana; font-size: small; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						<br />
+						Либо можно использовать конструкцию using, которая 
+						автоматически освободит все связанные с FileStream 
+						ресурсы:<br />
+						</p>
+						<p class="style3" style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 10px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal; margin-left: 40px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						<span class="style2" style="font-size: small; color: blue;">
+						using (FileStream fstream = new FileStream(&quot;note3.dat&quot;, 
+						FileMode.OpenOrCreate))<br />
+						{<br />
+						// операции с fstream<br />
+						</span><span class="style2" style="font-size: small;">}</span></p>
+						<p class="ZagT" style="font-size: small; border-bottom-color: blue; color: red; font-family: cursive; background-color: rgb(204, 255, 153); border-bottom-style: double; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Свойства и методы FileStream</p>
+						<p class="style2" style="font-size: small; color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Рассмотрим наиболее важные свойства класса<span>&nbsp;</span><span class="style4" style="color: red; font-family: Verdana; font-size: small; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal;"><strong>FileStream:</strong></span></p>
+						<ul style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+							<li>
+							<p class="style5" style="color: blue; font-family: Verdana; font-size: medium; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal; margin-left: 40px;">
+							<strong>
+							<span class="style2" style="font-size: small;">
+							Свойство Length:</span></strong><span><span class="style2" style="font-size: small;">&nbsp;</span></span><span class="style2" style="font-size: small;">возвращает 
+							длину потока в байтах</span></p>
+							</li>
+							<li>
+							<p class="style5" style="color: blue; font-family: Verdana; font-size: medium; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal; margin-left: 40px;">
+							<strong>Свойство Position:</strong><span>&nbsp;</span>возвращает 
+							текущую позицию в потоке</p>
+							</li>
+							<li>
+							<p class="style5" style="color: blue; font-family: Verdana; font-size: medium; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal; margin-left: 40px;">
+							<strong>Свойство Name</strong>: возвращает 
+							абсолютный путь к файлу, открытому в FileStream</p>
+							</li>
+						</ul>
+						<p class="style4" style="color: rgb(0, 0, 128); font-family: Verdana; font-size: small; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						<br />
+						Для чтения/записи файлов можно применять следующие<span>&nbsp;</span><span class="style4" style="color: red; font-family: Verdana; font-size: small; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal;"><strong>методы 
+						класса FileStream</strong></span>:</p>
+						<ul style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+							<li class="style2" style="font-size: small; color: blue;">
+							<strong>void CopyTo(Stream destination):</strong><span>&nbsp;</span>копирует 
+							данные из текущего потока в поток destination</li>
+							<li class="style2" style="font-size: small; color: blue;">
+							<strong>Task CopyToAsync(Stream destination):</strong><span>&nbsp;</span>асинхронная 
+							версия метода CopyTo</li>
+							<li class="style2" style="font-size: small; color: blue;">
+							<strong>void Flush():</strong><span>&nbsp;</span>сбрасывает 
+							содержимое буфера в файл</li>
+							<li class="style2" style="font-size: small; color: blue;">
+							<strong>Task FlushAsync():</strong><span>&nbsp;</span>асинхронная 
+							версия метода Flush</li>
+							<li class="style2" style="font-size: small; color: blue;">
+							<strong>int Read(byte[] array, int offset, int 
+							count):</strong><span>&nbsp;</span>считывает данные из 
+							файла в массив байтов и возвращает количество 
+							успешно считанных байтов. Принимает три параметра:<ul>
+								<li class="style2" style="font-size: small; color: blue;">
+								<strong>array</strong><span>&nbsp;</span>- массив 
+								байтов, куда будут помещены считываемые из файла 
+								данные</li>
+								<li class="style2" style="font-size: small; color: blue;">
+								<strong>offset</strong><span>&nbsp;</span>представляет 
+								смещение в байтах в массиве array, в который 
+								считанные байты будут помещены</li>
+								<li class="style2" style="font-size: small; color: blue;">
+								<strong>count</strong><span>&nbsp;</span>- 
+								максимальное число байтов, предназначенных для 
+								чтения. Если в файле находится меньшее 
+								количество байтов, то все они будут считаны.</li>
+								<li class="style2" style="font-size: small; color: blue;">
+								<strong>Task&lt;int&gt;</strong><span>&nbsp;</span>ReadAsync(byte[] 
+								array, int offset, int count): асинхронная 
+								версия метода Read</li>
+							</ul>
+							</li>
+							<li class="style2" style="font-size: small; color: blue;">
+							<strong>long Seek(long offset, SeekOrigin origin):</strong><span>&nbsp;</span>устанавливает 
+							позицию в потоке со смещением на количество байт, 
+							указанных в параметре offset.</li>
+							<li class="style2" style="font-size: small; color: blue;">
+							<strong>void Write(byte[] array, int offset, int 
+							count)</strong>: записывает в файл данные из массива 
+							байтов. Принимает три параметра:<ul>
+								<li class="style2" style="font-size: small; color: blue;">
+								<strong>array</strong><span>&nbsp;</span>- массив 
+								байтов, откуда данные будут записываться в файл</li>
+								<li class="style2" style="font-size: small; color: blue;">
+								<strong>offset</strong><span>&nbsp;</span>- смещение 
+								в байтах в массиве array, откуда начинается 
+								запись байтов в поток</li>
+								<li class="style2" style="font-size: small; color: blue;">
+								<strong>count</strong><span>&nbsp;</span>- 
+								максимальное число байтов, предназначенных для 
+								записи</li>
+							</ul>
+							</li>
+							<li class="style2" style="font-size: small; color: blue;">
+							<strong>Task WriteAsync(byte[] array, int offset, 
+							int count):</strong><span>&nbsp;</span>асинхронная версия 
+							метода Write</li>
+						</ul>
+						<p class="ZagT" style="font-size: small; border-bottom-color: blue; color: red; font-family: cursive; background-color: rgb(204, 255, 153); border-bottom-style: double; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Чтение и запись файлов</p>
+						<p class="style2" style="font-size: small; color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						FileStream представляет доступ к файлам на уровне 
+						байтов, поэтому, например, если вам надо считать или 
+						записать одну или несколько строк в текстовый файл, то 
+						массив байтов надо преобразовать в строки, используя 
+						специальные методы. Поэтому для работы с текстовыми 
+						файлами применяются другие классы.<br />
+						<br />
+						В то же время при работе с различными бинарными файлами, 
+						имеющими определенную структуру, FileStream может быть 
+						очень даже полезен для извлечения определенных порций 
+						информации и ее обработки.<br />
+						<br />
+						Посмотрим на примере считывания-записи в текстовый файл:</p>
+						<p class="style3" style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 10px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal; margin-left: 40px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						<span class="style2" style="font-size: small; color: blue;">
+						using System.Text;<br />
+						<br />
+						string path = @&quot;C:\app\note.txt&quot;; // путь к файлу<br />
+						<br />
+						string text = &quot;Hello METANIT.COM&quot;; // строка для записи<br />
+						<br />
+						// запись в файл<br />
+						using (FileStream fstream = new FileStream(path, 
+						FileMode.OpenOrCreate))<br />
+						{<br />
+						// преобразуем строку в байты<br />
+						byte[] buffer = Encoding.Default.GetBytes(text);<br />
+						// запись массива байтов в файл<br />
+						await fstream.WriteAsync(buffer, 0, buffer.Length);<br />
+						Console.WriteLine(&quot;Текст записан в файл&quot;);<br />
+						}<br />
+						<br />
+						// чтение из файла<br />
+						using (FileStream fstream = File.OpenRead(path))<br />
+						{<br />
+						// выделяем массив для считывания данных из файла<br />
+						byte[] buffer = new byte[fstream.Length];<br />
+						// считываем данные<br />
+						await fstream.ReadAsync(buffer, 0, buffer.Length);<br />
+						// декодируем байты в строку<br />
+						string textFromFile = Encoding.Default.GetString(buffer);<br />
+						Console.WriteLine($&quot;Текст из файла: {textFromFile}&quot;);<br />
+						</span><span class="style2" style="font-size: small;">}</span></p>
+						<p class="style2" style="font-size: small; color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Разберем этот пример. Вначале определяем путь к файлу и 
+						текст для записи в файл.<br />
+						<br />
+						И при чтении, и при записи для создания и удаления 
+						объекта FileStream используется конструкция using, по 
+						завершению которой у созданного объекта FileStream 
+						автоматически вызывается метод Dispose, и, таким 
+						образом, объект уничтожается.<br />
+						<br />
+						Поскольку операции с файлами могут занимать 
+						продолжительное время и являются узким местом в работе 
+						программы, рекомендуется использовать асинхронные версии 
+						методов FileStream. И при записи, и при чтении 
+						применяется объект кодировки Encoding.Default из 
+						пространства имен System.Text. В данном случае мы 
+						используем два его метода: GetBytes для получения 
+						массива байтов из строки и GetString для получения 
+						строки из массива байтов.<br />
+						<br />
+						В итоге введенная нами строка записывается в файл 
+						note.txt. И мы получим следующий консольный вывод:</p>
+						<p class="style2" style="font-size: small; color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						<img alt="" src="Pic/u-55-1-1.png" width="205" height="79" /></p>
+						<p class="style4" style="color: rgb(0, 0, 128); font-family: Verdana; font-size: small; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						<br />
+						Записанный файл по сути представляет бинарный файл (не 
+						текстовый), хотя если мы в него запишем только строку, 
+						то сможем посмотреть в удобочитаемом виде этот файл, 
+						открыв его в текстовом редакторе. Однако если мы в него 
+						запишем случайные байты, например:</p>
+						<p class="style2" style="font-size: small; margin-left: 40px; color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						<br />
+						<br />
+						<span class="style6" style="color: blue;">
+						fstream.WriteByte(13);<br />
+						fstream.WriteByte(103);</span></p>
+						<p class="style4" style="color: rgb(0, 0, 128); font-family: Verdana; font-size: small; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						<br />
+						То у нас могут возникнуть проблемы с его пониманием. 
+						Поэтому для работы непосредственно с текстовыми файлами 
+						предназначены отдельные классы - StreamReader и 
+						StreamWriter.<br />
+						<br />
+						Произвольный доступ к файлам<br />
+						Нередко бинарные файлы представляют определенную 
+						структуру. И, зная эту структуру, мы можем взять из 
+						файла нужную порцию информации или наоброт записать в 
+						определенном месте файла определенный набор байтов. 
+						Например, в wav-файлах непосредственно звуковые данные 
+						начинаются с 44 байта, а до 44 байта идут различные 
+						метаданные - количество каналов аудио, частота 
+						дискретизации и т.д.<br />
+						<br />
+						С помощью метода Seek() мы можем управлять положением 
+						курсора потока, начиная с которого производится 
+						считывание или запись в файл. Этот метод принимает два 
+						параметра: offset (смещение) и позиция в файле. Позиция 
+						в файле описывается тремя значениями:</p>
+						<ul class="style2" style="font-size: small; margin-left: 80px; color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+							<li>
+							<p class="style6" style="color: blue;">
+							SeekOrigin.Begin: начало файла</p>
+							</li>
+							<li>
+							<p class="style6" style="color: blue;">
+							SeekOrigin.End: конец файла</p>
+							</li>
+							<li>
+							<p class="style6" style="color: blue;">
+							SeekOrigin.Current: текущая позиция в файле</p>
+							</li>
+						</ul>
+						<p class="style4" style="color: rgb(0, 0, 128); font-family: Verdana; font-size: small; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						<br />
+						<br />
+						Курсор потока, с которого начинается чтение или запись, 
+						смещается вперед на значение offset относительно 
+						позиции, указанной в качестве второго параметра. 
+						Смещение может быть отрицательным, тогда курсор 
+						сдвигается назад, если положительное - то вперед.<br />
+						<br />
+						Рассмотрим простой пример:</p>
+						<p class="style3" style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 10px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal; margin-left: 40px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						<span class="style2" style="font-size: small;"><br />
+						<br />
+						</span>
+						<span class="style2" style="font-size: small; color: blue;">
+						using System.Text;<br />
+						<br />
+						string path = &quot;note.dat&quot;;<br />
+						<br />
+						string text = &quot;hello world&quot;;<br />
+						<br />
+						using (FileStream fstream = new FileStream(path, 
+						FileMode.OpenOrCreate))<br />
+						{<br />
+						// преобразуем строку в байты<br />
+						byte[] input = Encoding.Default.GetBytes(text);<br />
+						// запись массива байтов в файл<br />
+						fstream.Write(input, 0, input.Length);<br />
+						Console.WriteLine(&quot;Текст записан в файл&quot;);<br />
+						}<br />
+						// чтение части файла<br />
+						using (FileStream fstream = new FileStream(path, 
+						FileMode.OpenOrCreate))<br />
+						{<br />
+						// перемещаем указатель в конец файла, до конца файла- 
+						пять байт<br />
+						fstream.Seek(-5, SeekOrigin.End); // минус 5 символов с 
+						конца потока<br />
+						<br />
+						// считываем четыре символов с текущей позиции<br />
+						byte[] output = new byte[5];<br />
+						await fstream.ReadAsync(output, 0, output.Length);<br />
+						// декодируем байты в строку<br />
+						string textFromFile = Encoding.Default.GetString(output);<br />
+						Console.WriteLine($&quot;Текст из файла: {textFromFile}&quot;); // 
+						world<br />
+						}</span></p>
+						<p class="style4" style="color: rgb(0, 0, 128); font-family: Verdana; font-size: small; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						<br />
+						Вначале записываем в файл текст &quot;hello world&quot;. Затем 
+						снова обращаемся к файла для считывания. Сначала 
+						перемещаем курсор на пять символов назад относительно 
+						конца файлового потока:</p>
+						<p class="style2" style="font-size: small; margin-left: 40px; color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						<br />
+						<br />
+						<span class="style6" style="color: blue;">fstream.Seek(-5, 
+						SeekOrigin.End)</span></p>
+						<p class="style2" style="font-size: small; color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						&nbsp;</p>
+						<p class="style2" style="font-size: small; color: rgb(0, 0, 128); font-family: Verdana; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						То есть после выполнения этого вызова курсор будет 
+						стоять на позиции символа &quot;w&quot;.<br />
+						<br />
+						После этого считываем пять байт начиная с символа &quot;w&quot;. В 
+						кодировке по умолчанию 1 символ будет представлять 1 
+						байт. Поэтому чтение 5 байт будет эквивалентно чтению 
+						пяти сиволов: &quot;world&quot;.<br />
+						<br />
+						Соответственно мы получим следующий консольный вывод:<br />
+						<br />
+						<img alt="" src="Pic/u-55-1-2.png" width="241" height="82" /></p>
+						<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						<span class="style2" style="font-size: small;"><br />
+						Рассмотрим чуть более сложный пример - с записью начиная 
+						с некоторой позиции:<br />
+						</span><br />
+						</p>
+						<p class="style3" style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 10px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal; margin-left: 40px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						<span class="style2" style="font-size: small; color: blue;">
+						using System.Text;<br />
+						<br />
+						string path = &quot;note2.dat&quot;;<br />
+						<br />
+						string text = &quot;hello world&quot;;<br />
+						<br />
+						// запись в файл<br />
+						using (FileStream fstream = new FileStream(path, 
+						FileMode.OpenOrCreate))<br />
+						{<br />
+						// преобразуем строку в байты<br />
+						byte[] input = Encoding.Default.GetBytes(text);<br />
+						// запись массива байтов в файл<br />
+						fstream.Write(input, 0, input.Length);<br />
+						Console.WriteLine(&quot;Текст записан в файл&quot;);<br />
+						}<br />
+						using (FileStream fstream = new FileStream(path, 
+						FileMode.OpenOrCreate))<br />
+						{<br />
+						// заменим в файле слово world на слово house<br />
+						string replaceText = &quot;house&quot;;<br />
+						fstream.Seek(-5, SeekOrigin.End); // минус 5 символов с 
+						конца потока<br />
+						byte[] input = Encoding.Default.GetBytes(replaceText);<br />
+						await fstream.WriteAsync(input, 0, input.Length);<br />
+						<br />
+						// считываем весь файл<br />
+						// возвращаем указатель в начало файла<br />
+						fstream.Seek(0, SeekOrigin.Begin);<br />
+						byte[] output = new byte[fstream.Length];<br />
+						await fstream.ReadAsync(output, 0, output.Length);<br />
+						// декодируем байты в строку<br />
+						string textFromFile = Encoding.Default.GetString(output);<br />
+						Console.WriteLine($&quot;Текст из файла: {textFromFile}&quot;); // 
+						hello house<br />
+						</span>}</p>
+						<p style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						<span class="style2"><br />
+						Здесь также вначале записываем в файл строку &quot;hello 
+						world&quot;. Затем также открываем файл и опять же 
+						перемещаемся в конец файла, не доходя до конца пять 
+						символов (то есть опять же с позиции символа &quot;w&quot;), и 
+						осуществляем запись строки &quot;house&quot;. Таким образом, 
+						строка &quot;house&quot; заменяет строку &quot;world&quot;.<br />
+						<br />
+						Чтобы после этого считать весь файл, сдвигаем курсор на 
+						самое начало</span><br />
+						</p>
+						<p class="style3" style="color: rgb(0, 0, 128); font-family: Verdana; font-size: 10px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; white-space: normal; margin-left: 40px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						<br />
+						<span class="style6" style="color: blue;"><strong>
+						fstream.Seek(0, SeekOrigin.Begin);</strong></span></p>
+						<p style="font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+						<br />
+						Консольный вывод программы:</p>
+						<h1 itemprop="headline" style="box-sizing: border-box; margin: 0px; padding: 10px 0px 15px; border: 0px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-weight: bold; font-stretch: inherit; font-size: 1.8em; line-height: 1.1; font-family: Tahoma, sans-serif; vertical-align: baseline; color: rgb(34, 34, 34); text-indent: 20px; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						&nbsp;</h1>
+						<h1 itemprop="headline" style="box-sizing: border-box; margin: 0px; padding: 10px 0px 15px; border: 0px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-weight: bold; font-stretch: inherit; font-size: 1.8em; line-height: 1.1; font-family: Tahoma, sans-serif; vertical-align: baseline; color: rgb(34, 34, 34); text-indent: 20px; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Чтение текстового файла построчно на C#</h1>
+						<div itemprop="articleBody" style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-weight: 400; font-stretch: inherit; font-size: 14px; line-height: inherit; font-family: Verdana, sans-serif; vertical-align: baseline; color: rgb(34, 34, 34); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							Два самых простых способа как прочитать текстовый 
+							файл построчно на C#. В обоих случаях используется 
+							using System.IO;. Напишу сразу примеры кода без 
+							всяких прелюдий.</p>
+							<h2 style="box-sizing: border-box; margin: 0.5em 0px 0.7em; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: 1.3em; line-height: 1.1; font-family: Tahoma, sans-serif; vertical-align: baseline; color: inherit;">
+							Способ 1</h2>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							Классический вариант чтения файла построчно:</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<img alt="" src="../Les20_%d1%81%d1%82%d0%b0%d1%80%d1%8b%d0%b9/Pic/r-20-1.html" width="518" height="113" /></p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							Еще один пример, как можно организовать цикл 
+							построчного чтения:</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<img alt="" src="../Les20_%d1%81%d1%82%d0%b0%d1%80%d1%8b%d0%b9/Pic/r-20-2.html" width="477" height="119" /></p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							Указать<span>&nbsp;</span><b style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">кодировку</b><span>&nbsp;</span>при 
+							чтении файла (например, DOS-кодировку) можно так:</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<img alt="" src="../Les20_%d1%81%d1%82%d0%b0%d1%80%d1%8b%d0%b9/Pic/r-20-3.html" width="644" height="25" /></p>
+							<div style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font: inherit; vertical-align: baseline;">
+							</div>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							Так же можно использовать обёртку<span>&nbsp;</span><strong style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">using</strong><span>&nbsp;</span>чтобы 
+							не закрывать файл после чтения.</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<img alt="" src="../Les20_%d1%81%d1%82%d0%b0%d1%80%d1%8b%d0%b9/Pic/r-20-4.html" width="665" height="130" /></p>
+							<h2 style="box-sizing: border-box; margin: 0.5em 0px 0.7em; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: 1.3em; line-height: 1.1; font-family: Tahoma, sans-serif; vertical-align: baseline; color: inherit;">
+							Способ 2</h2>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							Прочитать весь файл целиком в массив строк:</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<img alt="" src="../Les20_%d1%81%d1%82%d0%b0%d1%80%d1%8b%d0%b9/Pic/r-20-5.html" width="460" height="98" /></p>
+						</div>
+						<h1 itemprop="headline" style="box-sizing: border-box; margin: 0px; padding: 10px 0px 15px; border: 0px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-weight: bold; font-stretch: inherit; font-size: 1.8em; line-height: 1.1; font-family: Tahoma, sans-serif; vertical-align: baseline; color: rgb(34, 34, 34); text-indent: 20px; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Запись текста в файл построчно на C#</h1>
+						<div itemprop="articleBody" style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-weight: 400; font-stretch: inherit; font-size: 14px; line-height: inherit; font-family: Verdana, sans-serif; vertical-align: baseline; color: rgb(34, 34, 34); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							Три самых простых способа как записать текст в файл 
+							построчно на C#. Во всех случаях используется using<span>&nbsp;</span><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font: inherit; vertical-align: baseline; color: rgb(0, 0, 255);"><strong style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">System.IO;</strong></span>. 
+							Напишу сразу примеры кода без всяких прелюдий.</p>
+							<h2 style="box-sizing: border-box; margin: 0.5em 0px 0.7em; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: 1.3em; line-height: 1.1; font-family: Tahoma, sans-serif; vertical-align: baseline; color: inherit;">
+							Способ 1</h2>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							Записать текстовый файл построчно:</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<img alt="" src="../Les20_%d1%81%d1%82%d0%b0%d1%80%d1%8b%d0%b9/Pic/r-20-6.html" width="447" height="98" /></p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							Чтобы<span>&nbsp;</span><strong style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">добавить</strong><span>&nbsp;</span>текстовые 
+							данные в файл, просто укажите&nbsp;<strong style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">true</strong><span>&nbsp;</span>после 
+							имени файла:&nbsp;</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<img alt="" src="../Les20_%d1%81%d1%82%d0%b0%d1%80%d1%8b%d0%b9/Pic/r-20-18.html" width="513" height="27" /></p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							В этом случае, если файл не существует, то он будет 
+							создан новый, а если файл существует, он будет 
+							открыт&nbsp;для добавления данных. Соответственно, если 
+							второй параметр указать false, файл будет 
+							перезаписан.</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							Чтобы<span>&nbsp;</span><strong style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">указать 
+							кодировку</strong><span>&nbsp;</span>записываемого 
+							текстового файла (например, DOS-кодировку) можно 
+							сделать так:</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<img alt="" src="../Les20_%d1%81%d1%82%d0%b0%d1%80%d1%8b%d0%b9/Pic/r-20-7.html" width="473" height="28" /></p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							Так же можно использовать обёртку<span>&nbsp;</span><strong style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">using</strong><span>&nbsp;</span>чтобы 
+							не нужно было закрывать файл после записи.</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<img alt="" src="../Les20_%d1%81%d1%82%d0%b0%d1%80%d1%8b%d0%b9/Pic/r-20-8.html" width="765" height="102" /></p>
+							<h2 style="box-sizing: border-box; margin: 0.5em 0px 0.7em; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: 1.3em; line-height: 1.1; font-family: Tahoma, sans-serif; vertical-align: baseline; color: inherit;">
+							Способ 2</h2>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							Запись с использованием FileStream.</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<img alt="" src="../Les20_%d1%81%d1%82%d0%b0%d1%80%d1%8b%d0%b9/Pic/r-20-9.html" width="569" height="89" /></p>
+							<h2 style="box-sizing: border-box; margin: 0.5em 0px 0.7em; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: 1.3em; line-height: 1.1; font-family: Tahoma, sans-serif; vertical-align: baseline; color: inherit;">
+							Способ 3</h2>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							Записать текстовый файл целиком из массива строк:</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<img alt="" src="../Les20_%d1%81%d1%82%d0%b0%d1%80%d1%8b%d0%b9/Pic/r-20-10.html" width="599" height="51" /></p>
+						</div>
+						<h1 itemprop="headline" style="box-sizing: border-box; margin: 0px; padding: 10px 0px 15px; border: 0px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-weight: bold; font-stretch: inherit; font-size: 1.8em; line-height: 1.1; font-family: Tahoma, sans-serif; vertical-align: baseline; color: rgb(34, 34, 34); text-indent: 20px; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+						Как получить список файлов и папок на C#</h1>
+						<div itemprop="articleBody" style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-weight: 400; font-stretch: inherit; font-size: 14px; line-height: inherit; font-family: Verdana, sans-serif; vertical-align: baseline; color: rgb(34, 34, 34); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							Задача получения списка файлов или папок в другой 
+							папке часто бывает при написании программы, поэтому, 
+							чтобы рецепт всегда был под рукой, решил написать 
+							коротенькую статью.</p>
+							<h2 style="box-sizing: border-box; margin: 0.5em 0px 0.7em; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: 1.3em; line-height: 1.1; font-family: Tahoma, sans-serif; vertical-align: baseline; color: inherit;">
+							Получить список файлов в папке</h2>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							Для получения списка файлов можно воспользоваться 
+							методом<span>&nbsp;</span><b style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">GetFiles</b>.</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							Пример поиска файлов:</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<img alt="" src="../Les20_%d1%81%d1%82%d0%b0%d1%80%d1%8b%d0%b9/Pic/r-20-112.html" width="504" height="91" /></p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							Метод<span>&nbsp;</span><b style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">GetFiles</b><span>&nbsp;</span>может 
+							принимать 3 параметра, из которых первый 
+							обязательный:</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<b style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">
+							GetFiles</b>(String<span>&nbsp;</span><b style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">path</b>, 
+							String<span>&nbsp;</span><b style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">pattern</b>, 
+							SearchOption<span>&nbsp;</span><b style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">options</b>)</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font: inherit; vertical-align: baseline; color: rgb(0, 0, 205);">
+							<b style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">
+							path</b></span><span>&nbsp;</span>- путь к папке, в 
+							которой ищем файлы;</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font: inherit; vertical-align: baseline; color: rgb(0, 0, 205);">
+							<strong style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">
+							pattern</strong></span><span>&nbsp;</span>- шаблон поиска 
+							файлов (например, *.txt или ??abc.doc);</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font: inherit; vertical-align: baseline; color: rgb(0, 0, 205);">
+							<strong style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">
+							options</strong></span><span>&nbsp;</span>- способ 
+							поиска, указывающий нужно искать только в текущей 
+							папке (SearchOption.TopDirectoryOnly) или во 
+							вложенных тоже (SearchOption.AllDirectories).</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							Пример<strong style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;"><span>&nbsp;</span>поиска 
+							файлов по шаблону</strong><span>&nbsp;</span>смотрите 
+							ниже (рекурсивный поиск).</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							Если список файлов очень большой, тогда лучше 
+							воспользоваться методом<span>&nbsp;</span><b style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">EnumerateFiles</b><span>&nbsp;</span>(доступен 
+							в .NET Framework 4.0 и выше), т.к. в отличие от 
+							GetFiles он возвращает IEnumerable и заполняет его 
+							как бы асинхронно, т.е. можно приступить к перебору 
+							списка файлов сразу, не дожидаясь получения всего 
+							списка и тем самым увеличить скорость обработки 
+							полученных файлов.</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							Метод<span>&nbsp;</span><b style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">EnumerateFiles</b><span>&nbsp;</span>так 
+							же может принимать 3 параметра:</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font: inherit; vertical-align: baseline; color: rgb(0, 0, 205);">
+							<b style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">
+							path</b></span><span>&nbsp;</span>- путь к папке, в 
+							которой ищем файлы;</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font: inherit; vertical-align: baseline; color: rgb(0, 0, 205);">
+							<strong style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">
+							pattern</strong></span><span>&nbsp;</span>- шаблон поиска 
+							файлов;</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font: inherit; vertical-align: baseline; color: rgb(0, 0, 205);">
+							<strong style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">
+							options</strong></span><span>&nbsp;</span>- способ 
+							поиска.</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							Пример поиска файлов методом<span>&nbsp;</span><b style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">EnumerateFiles</b>:</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<img alt="" src="../Les20_%d1%81%d1%82%d0%b0%d1%80%d1%8b%d0%b9/Pic/r-20-13.html" width="628" height="108" /></p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							Как видим, поиск методом<span>&nbsp;</span><strong style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">EnumerateFiles</strong><span>&nbsp;</span>аналогичен<span>&nbsp;</span><strong style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">GetFiles</strong>, 
+							однако, он начнется сразу, до получения всего списка 
+							файлов, что может быть актуальным при очень большом 
+							количестве файлов.</p>
+							<h2 style="box-sizing: border-box; margin: 0.5em 0px 0.7em; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: 1.3em; line-height: 1.1; font-family: Tahoma, sans-serif; vertical-align: baseline; color: inherit;">
+							Получить список папок в папке</h2>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							Для получения списка папок можно воспользоваться 
+							методом<span>&nbsp;</span><b style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">GetDirectories</b>.</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							Пример поиска папок с помощью GetDirectories:</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<img alt="" src="../Les20_%d1%81%d1%82%d0%b0%d1%80%d1%8b%d0%b9/Pic/r-20-14.html" width="558" height="91" /></p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							Метод<span>&nbsp;</span><b style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">GetDirectories</b><span>&nbsp;</span>может 
+							принимать 3 параметра, из которых первый 
+							обязательный:</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<b style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">
+							GetDirectories</b>(String<span>&nbsp;</span><b style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">path</b>, 
+							String<span>&nbsp;</span><b style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">pattern</b>, 
+							SearchOption<span>&nbsp;</span><b style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">options</b>)</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font: inherit; vertical-align: baseline; color: rgb(0, 0, 205);">
+							<b style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">
+							path</b></span><span>&nbsp;</span>- путь к папке, в 
+							которой ищем файлы;</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font: inherit; vertical-align: baseline; color: rgb(0, 0, 205);">
+							<strong style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">
+							pattern</strong></span><span>&nbsp;</span>- шаблон поиска 
+							файлов (например, *.txt или ??abc.doc);</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font: inherit; vertical-align: baseline; color: rgb(0, 0, 205);">
+							<strong style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">
+							options</strong></span><span>&nbsp;</span>- способ 
+							поиска, указывающий нужно искать только в текущей 
+							папке (SearchOption.TopDirectoryOnly) или во 
+							вложенных тоже (SearchOption.AllDirectories).</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							По аналогии с поиском файлов, есть метод<span>&nbsp;</span><b style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">EnumerateDirectories</b>, 
+							который позволяет обрабатывать список папок не 
+							дожидаясь его полного получения (доступен в .NET 
+							Framework 4.0 и выше).</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							Метод<span>&nbsp;</span><b style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">EnumerateDirectories</b><span>&nbsp;</span>аналогично 
+							GetDirectories принимает 3 параметра:</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font: inherit; vertical-align: baseline; color: rgb(0, 0, 205);">
+							<b style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">
+							path</b></span><span>&nbsp;</span>- путь к папке, в 
+							которой ищем файлы;</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font: inherit; vertical-align: baseline; color: rgb(0, 0, 205);">
+							<strong style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">
+							pattern</strong></span><span>&nbsp;</span>- шаблон поиска 
+							файлов;</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font: inherit; vertical-align: baseline; color: rgb(0, 0, 205);">
+							<strong style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">
+							options</strong></span><span>&nbsp;</span>- способ 
+							поиска.</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							Пример поиска папок с помощью EnumerateDirectories:</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<img alt="" src="../Les20_%d1%81%d1%82%d0%b0%d1%80%d1%8b%d0%b9/Pic/r-20-15.html" width="679" height="110" /></p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<b style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">
+							Примечание:</b><span>&nbsp;</span>Во всех способах 
+							получения файлов и папок можно во втором параметре 
+							указывать шаблон поиска<span>&nbsp;</span><b style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">pattern</b>, 
+							однако в нем можно использовать только * (любое 
+							количество любых символов) и ? (один любой символ) 
+							для указания шаблона поиска, регулярные выражения не 
+							поддерживаются.</p>
+							<h2 style="box-sizing: border-box; margin: 0.5em 0px 0.7em; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: 1.3em; line-height: 1.1; font-family: Tahoma, sans-serif; vertical-align: baseline; color: inherit;">
+							Получить список файлов по шаблону рекурсивно</h2>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							В этом случае нужно лишь добавить 2-й параметр, в 
+							котором указываем маску файлов и 3-й параметр, 
+							означающий что нужно искать файлы так же во 
+							вложенных папках.</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<img alt="" src="../Les20_%d1%81%d1%82%d0%b0%d1%80%d1%8b%d0%b9/Pic/r-20-16.html" width="765" height="88" /></p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							Однако, у этого способа есть недостаток - в случае, 
+							если в какую-то папку нет доступа, получится ошибка 
+							и список файлов не будет получен совсем.</p>
+							<h2 style="box-sizing: border-box; margin: 0.5em 0px 0.7em; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: bold; font-stretch: inherit; font-size: 1.3em; line-height: 1.1; font-family: Tahoma, sans-serif; vertical-align: baseline; color: inherit;">
+							Рекурсивно получить список всех файлов и папок</h2>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							Этот пример рекурсивного поиска файлов и папок не 
+							прервется в случае ошибки, а продолжится дальше. 
+							Вместо массива здесь используется List для записи 
+							списка файлов и папок.</p>
+							<p style="box-sizing: border-box; margin: 0px; padding: 0px 0px 0.5em; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 15px; line-height: 1.2em; font-family: inherit; vertical-align: baseline; text-indent: 20px; color: rgb(0, 0, 0); text-align: justify;">
+							<img alt="" src="../Les20_%d1%81%d1%82%d0%b0%d1%80%d1%8b%d0%b9/Pic/r-20-17.html" width="574" height="452" /></p>
+						</div>
+						<p></p>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+				</table>
+				</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les20.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les20/4.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:49:00 GMT -->
+</html>

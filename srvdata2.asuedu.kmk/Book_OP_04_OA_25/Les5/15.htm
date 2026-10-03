@@ -1,0 +1,506 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les5/15.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:18:06 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: small;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тонкости работы с числами в C#</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <h2 style="border: 0px; margin: 0px 0px 20px; padding: 0px; font-family: &quot;Open Sans&quot;, sans-serif; font-size: 30px; font-style: normal; font-weight: 300; line-height: 1.2em; text-transform: none; color: rgb(58, 58, 58); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span id="___c" style="border: 0px; margin: 0px; padding: 0px;">
+				Работа с целыми числами в C#</span></h2>
+				<p style="border: 0px; margin: 0px 0px 1.5em; padding: 0px;">
+				<span class="style2">Как 
+				мы уже знаем, в C# есть несколько целочисленных типов данных, 
+				которые характеризуются максимально и минимально возможными 
+				пределами. Например,<span>&nbsp;</span><a title="Переменные в C#" style="border: 0px; margin: 0px; padding: 0px; background-color: transparent; transition: all 0.31s ease 0s; text-decoration: none; color: rgb(30, 115, 190);" href="https://csharp.webdelphi.ru/peremennye-v-c/">переменная</a><span>&nbsp;</span>типа</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">int</code><span class="style2">&nbsp;может 
+				содержать значения от от<span>&nbsp;</span><strong style="border: 0px; margin: 0px; padding: 0px; font-weight: 700;">-2&nbsp;147&nbsp;483&nbsp;648</strong><span>&nbsp;</span>до<span>&nbsp;</span><strong style="border: 0px; margin: 0px; padding: 0px; font-weight: 700;">2 
+				147 483 647</strong>.&nbsp; Чтобы узнать пределы, которые может 
+				принимать<span>&nbsp;</span><a title="Переменные в C#" style="border: 0px; margin: 0px; padding: 0px; background-color: transparent; transition: all 0.31s ease 0s; text-decoration: none; color: rgb(30, 115, 190);" href="https://csharp.webdelphi.ru/peremennye-v-c/">переменная</a><span>&nbsp;</span>определенного 
+				типа можно выполнить вот такие действия:</span></p>
+				<div class="enlighter-default enlighter-v-standard enlighter-t-enlighter enlighter-l-csharp enlighter-hover enlighter-linenumbers " style="border: 1px solid rgb(224, 224, 224); margin: 0px 0px 20px; padding: 0px; font-family: &quot;Source Code Pro&quot;, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; line-height: 1.35em; white-space: pre-wrap; overflow-wrap: break-word; position: relative; text-align: left; direction: ltr; display: block; color: rgb(147, 147, 147); border-radius: 8px;">
+					<div class="enlighter-code" style="border: 0px; margin: 0px; padding: 0px; overflow: hidden;">
+						<div class="enlighter" style="border: 0px; margin: 0px; padding: 0px; display: table; width: 1001.8px; border-collapse: collapse; border-spacing: 0px; empty-cells: show; min-width: 100%; font-size: 1em; text-indent: 0px; counter-reset: enlighter 0;">
+							<div class="" style="border: 0px solid rgb(255, 255, 255); margin: 0px; padding: 0px; display: table-row; list-style: none; font-size: inherit; line-height: 1.35em; min-height: 14px; color: rgb(170, 170, 170); border-radius: 8px 8px 0px 0px;">
+								<div style="border: 0px; margin: 0px; padding: 0px 0px 0px 10px; display: table-cell;">
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">
+									Console.</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 134, 179);">WriteLine</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">(</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">$</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(221, 17, 68);">&quot;Max 
+									value = </span>
+									<span class="enlighter-s3" style="border: 0px; margin: 0px; padding: 0px; line-height: inherit; font-size: 1em; font-family: inherit; color: rgb(115, 115, 131);">
+									{</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(115, 115, 131);">int.MaxValue}</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(221, 17, 68);">&quot;</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">)</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">;</span></div>
+							</div>
+							<div class="" style="border: 0px solid rgb(255, 255, 255); margin: 0px; padding: 0px; display: table-row; list-style: none; font-size: inherit; line-height: 1.35em; min-height: 14px; color: rgb(170, 170, 170); border-radius: 0px 0px 8px 8px;">
+								<div style="border: 0px; margin: 0px; padding: 0px 0px 0px 10px; display: table-cell;">
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">
+									Console.</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 134, 179);">WriteLine</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">(</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">$</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(221, 17, 68);">&quot;Min 
+									value = </span>
+									<span class="enlighter-s3" style="border: 0px; margin: 0px; padding: 0px; line-height: inherit; font-size: 1em; font-family: inherit; color: rgb(115, 115, 131);">
+									{</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(115, 115, 131);">int.MinValue}</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(221, 17, 68);">&quot;</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">)</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">;</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<p style="border: 0px; margin: 0px 0px 1.5em; padding: 0px;">
+				<span class="style2">Здесь мы узнаем предельные значения для типа</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">int</code>.</p>
+				<div class="su-note" style="border: 1px solid rgb(222, 148, 153); margin: 0px 0px 1.5em; padding: 0px; border-radius: 3px;">
+					<div class="su-note-inner su-u-clearfix su-u-trim" style="border: 1px solid rgb(255, 255, 255); margin: 0px; padding: 1em; background-color: rgb(248, 174, 179); color: rgb(51, 51, 51); border-radius: 3px;">
+						В приведенном примере мы использовали интерполяцию строк 
+						(перед строкой стоит символ $). О том, что такое 
+						интерполяция строк и как она работает мы поговорим 
+						позднее, когда будем изучать строки в C#</div>
+				</div>
+				<p style="border: 0px; margin: 0px 0px 1.5em; padding: 0px;">
+				<span class="style2">Теперь, узнав максимальные и минимальные значения для типа</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">int</code><span class="style2">&nbsp;попробуем 
+				выполнить вот такое действие:</p>
+				<div id="yandex_rtb_R-A-355100-17" style="border: 0px; margin: 0px; padding: 0px;">
+					<yatag class="vbca75781 a5544fba1" style="white-space: normal !important; visibility: inherit !important; display: block !important; font-family: inherit !important; font-weight: inherit !important; box-sizing: content-box !important; color: inherit !important; font-size: inherit !important; hyphens: manual !important; transition: none 0s ease 0s !important; background: none !important; border: none !important; border-radius: 0px !important; border-spacing: 0px !important; border-collapse: collapse !important; clear: none !important; float: none !important; font-feature-settings: normal !important; font-variant: normal !important; letter-spacing: normal !important; line-height: normal !important; margin: 0px !important; max-height: none !important; max-width: none !important; min-height: 0px !important; min-width: 0px !important; outline: none !important; padding: 0px !important; position: static !important; text-align: left !important; text-decoration: none !important; text-indent: 0px !important; text-transform: none !important; vertical-align: baseline !important; word-spacing: normal !important; height: auto !important; width: auto !important; overflow: visible !important;"><yatag class="w338f2dbc" style="display: block !important; font-family: &quot;Open Sans&quot;, sans-serif; font-weight: 400; box-sizing: content-box !important; color: rgb(58, 58, 58); font-size: 15px; hyphens: manual !important; transition: none 0s ease 0s !important; position: absolute !important; left: -1000px !important; top: -1000px !important; width: 1px !important; height: 1px !important; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"></yatag><yatag class="ybc252b4c g89cd3f38" style="display: flex !important; font-family: &quot;Open Sans&quot;, sans-serif; font-weight: 400; box-sizing: border-box !important; color: rgb(58, 58, 58); font-size: 15px; hyphens: manual !important; transition: none 0s ease 0s !important; position: relative !important; margin: auto !important; -webkit-box-pack: center !important; justify-content: center !important; -webkit-box-align: center !important; align-items: center !important; overflow: hidden !important; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><yatag class="h9f8b1acb" style="display: block !important; font-family: inherit !important; font-weight: inherit !important; box-sizing: content-box !important; color: inherit !important; font-size: inherit !important; hyphens: manual !important; transition: none 0s ease 0s !important; position: relative !important; z-index: 2 !important; width: 1000px !important; height: 120px !important;">
+					<br class="Apple-interchange-newline" />
+					</span>
+				</div>
+				<div class="enlighter-default enlighter-v-standard enlighter-t-enlighter enlighter-l-csharp enlighter-hover enlighter-linenumbers " style="border: 1px solid rgb(224, 224, 224); margin: 0px 0px 20px; padding: 0px; font-family: &quot;Source Code Pro&quot;, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; line-height: 1.35em; white-space: pre-wrap; overflow-wrap: break-word; position: relative; text-align: left; direction: ltr; display: block; color: rgb(147, 147, 147); border-radius: 8px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<div class="enlighter-code" style="border: 0px; margin: 0px; padding: 0px; overflow: hidden;">
+						<div class="enlighter" style="border: 0px; margin: 0px; padding: 0px; display: table; width: 1001.8px; border-collapse: collapse; border-spacing: 0px; empty-cells: show; min-width: 100%; font-size: 1em; text-indent: 0px; counter-reset: enlighter 0;">
+							<div class="" style="border: 0px solid rgb(255, 255, 255); margin: 0px; padding: 0px; display: table-row; list-style: none; font-size: inherit; line-height: 1.35em; min-height: 14px; color: rgb(170, 170, 170); border-radius: 8px 8px 0px 0px;">
+								<div style="border: 0px; margin: 0px; padding: 0px 0px 0px 10px; display: table-cell;">
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(40, 100, 145); font-weight: 700;">
+									int</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);"> 
+									i = </span>
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(40, 100, 145); font-weight: 700;">
+									int</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">.</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 134, 179);">MaxValue</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">;</span></div>
+							</div>
+							<div class="" style="border: 0px solid rgb(255, 255, 255); margin: 0px; padding: 0px; display: table-row; list-style: none; font-size: inherit; line-height: 1.35em; min-height: 14px; color: rgb(170, 170, 170);">
+								<div style="border: 0px; margin: 0px; padding: 0px 0px 0px 10px; display: table-cell;">
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">
+									i = i + </span>
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 153, 153);">
+									1</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">;</span></div>
+							</div>
+							<div class="" style="border: 0px solid rgb(255, 255, 255); margin: 0px; padding: 0px; display: table-row; list-style: none; font-size: inherit; line-height: 1.35em; min-height: 14px; color: rgb(170, 170, 170); border-radius: 0px 0px 8px 8px;">
+								<div style="border: 0px; margin: 0px; padding: 0px 0px 0px 10px; display: table-cell;">
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">
+									Console.</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 134, 179);">WriteLine</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">(</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">i</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">)</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">;</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<p style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px 0px 1.5em; padding: 0px; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Вопреки всем ожиданиям,<span>&nbsp;</span><a title="Знакомство с Visual Studio" style="border: 0px; margin: 0px; padding: 0px; background-color: transparent; transition: all 0.31s ease 0s; text-decoration: none; color: rgb(30, 115, 190);" href="https://csharp.webdelphi.ru/znakomstvo-s-visual-studio/">Visual 
+				Studio</a><span>&nbsp;</span>не сделает нам никаких предупреждений, 
+				программа скомпилируется и, даже, выдаст нам ответ. Правда не<span>&nbsp;</span><strong style="border: 0px; margin: 0px; padding: 0px; font-weight: 700;">2 
+				147 483 648</strong>, а вот такой:</p>
+				<div class="su-note" style="border: 1px solid rgb(0, 0, 0); margin: 0px 0px 1.5em; padding: 0px; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; border-radius: 3px;">
+					<div class="su-note-inner su-u-clearfix su-u-trim" style="border: 1px solid rgb(204, 204, 204); margin: 0px; padding: 1em; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); border-radius: 3px;">
+						-2147483648</div>
+				</div>
+				<p style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px 0px 1.5em; padding: 0px; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Всё дело в том, что е<span data-ttu-id="031e8-166" style="border: 0px; margin: 0px; padding: 0px;">сли 
+				при вычислении значения переменной результат выходит за пределы 
+				типа, то возникает условие<span>&nbsp;</span><strong style="border: 0px; margin: 0px; padding: 0px; font-weight: 700;">потери 
+				значимости</strong>&nbsp;или&nbsp;<strong style="border: 0px; margin: 0px; padding: 0px; font-weight: 700;">переполнения</strong>.</span>&nbsp;<span data-ttu-id="031e8-167" style="border: 0px; margin: 0px; padding: 0px;">Результат 
+				вычисления переменной должен находиться в диапазоне от 
+				минимального до максимального значения. Так, в приведенном выше 
+				примере мы намеренно получили<span>&nbsp;</span><strong style="border: 0px; margin: 0px; padding: 0px; font-weight: 700;">переполнение<span>&nbsp;</span></strong>и 
+				результат оказался равным минимальному значению для int. 
+				Соответственно, можно получить обратный результат, например,</span></p>
+				<div class="enlighter-default enlighter-v-standard enlighter-t-enlighter enlighter-l-csharp enlighter-hover enlighter-linenumbers " style="border: 1px solid rgb(224, 224, 224); margin: 0px 0px 20px; padding: 0px; font-family: &quot;Source Code Pro&quot;, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; line-height: 1.35em; white-space: pre-wrap; overflow-wrap: break-word; position: relative; text-align: left; direction: ltr; display: block; color: rgb(147, 147, 147); border-radius: 8px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<div class="enlighter-code" style="border: 0px; margin: 0px; padding: 0px; overflow: hidden;">
+						<div class="enlighter" style="border: 0px; margin: 0px; padding: 0px; display: table; width: 1001.8px; border-collapse: collapse; border-spacing: 0px; empty-cells: show; min-width: 100%; font-size: 1em; text-indent: 0px; counter-reset: enlighter 0;">
+							<div class="" style="border: 0px solid rgb(255, 255, 255); margin: 0px; padding: 0px; display: table-row; list-style: none; font-size: inherit; line-height: 1.35em; min-height: 14px; color: rgb(170, 170, 170); border-radius: 8px 8px 0px 0px;">
+								<div style="border: 0px; margin: 0px; padding: 0px 0px 0px 10px; display: table-cell;">
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(40, 100, 145); font-weight: 700;">
+									int</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);"> 
+									i = </span>
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(40, 100, 145); font-weight: 700;">
+									int</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">.</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 134, 179);">MinValue</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">;</span></div>
+							</div>
+							<div class="" style="border: 0px solid rgb(255, 255, 255); margin: 0px; padding: 0px; display: table-row; list-style: none; font-size: inherit; line-height: 1.35em; min-height: 14px; color: rgb(170, 170, 170);">
+								<div style="border: 0px; margin: 0px; padding: 0px 0px 0px 10px; display: table-cell;">
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">
+									i = i - </span>
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 153, 153);">
+									2</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">;</span></div>
+							</div>
+							<div class="" style="border: 0px solid rgb(255, 255, 255); margin: 0px; padding: 0px; display: table-row; list-style: none; font-size: inherit; line-height: 1.35em; min-height: 14px; color: rgb(170, 170, 170); border-radius: 0px 0px 8px 8px;">
+								<div style="border: 0px; margin: 0px; padding: 0px 0px 0px 10px; display: table-cell;">
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">
+									Console.</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 134, 179);">WriteLine</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">(</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">i</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">)</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">;</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<p style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px 0px 1.5em; padding: 0px; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				при этом нетрудно догадаться, что значение окажется равным</p>
+				<div class="su-note" style="border: 1px solid rgb(0, 0, 0); margin: 0px 0px 1.5em; padding: 0px; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; border-radius: 3px;">
+					<div class="su-note-inner su-u-clearfix su-u-trim" style="border: 1px solid rgb(204, 204, 204); margin: 0px; padding: 1em; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); border-radius: 3px;">
+						2147483646</div>
+				</div>
+				<p style="border: 0px; margin: 0px 0px 1.5em; padding: 0px; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style2">то есть на единицу меньше, чем максимальное значение для типа</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">int</code><span class="style2">. 
+				Условия переполнения, в принципе, достаточно просто не допускать 
+				при разработке приложений, хотя периодически такие условия и 
+				имеют место быть в различных проектах. Теперь посмотрим ещё на 
+				один пример:</span></p>
+				<div class="enlighter-default enlighter-v-standard enlighter-t-enlighter enlighter-l-generic enlighter-hover enlighter-linenumbers " style="border: 1px solid rgb(224, 224, 224); margin: 0px 0px 20px; padding: 0px; font-family: &quot;Source Code Pro&quot;, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; line-height: 1.35em; white-space: pre-wrap; overflow-wrap: break-word; position: relative; text-align: left; direction: ltr; display: block; color: rgb(147, 147, 147); border-radius: 8px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<div class="enlighter-code" style="border: 0px; margin: 0px; padding: 0px; overflow: hidden;">
+						<div class="enlighter" style="border: 0px; margin: 0px; padding: 0px; display: table; width: 1001.8px; border-collapse: collapse; border-spacing: 0px; empty-cells: show; min-width: 100%; font-size: 1em; text-indent: 0px; counter-reset: enlighter 0;">
+							<div class="" style="border: 0px solid rgb(255, 255, 255); margin: 0px; padding: 0px; display: table-row; list-style: none; font-size: inherit; line-height: 1.35em; min-height: 14px; color: rgb(170, 170, 170); border-radius: 8px 8px 0px 0px;">
+								<div style="border: 0px; margin: 0px; padding: 0px 0px 0px 10px; display: table-cell;">
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">
+									long longValue = </span>
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 153, 153);">
+									1000000</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">
+									</span>
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">
+									*</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">
+									</span>
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 153, 153);">
+									1000000</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">;</span></div>
+							</div>
+							<div class="" style="border: 0px solid rgb(255, 255, 255); margin: 0px; padding: 0px; display: table-row; list-style: none; font-size: inherit; line-height: 1.35em; min-height: 14px; color: rgb(170, 170, 170); border-radius: 0px 0px 8px 8px;">
+								<div style="border: 0px; margin: 0px; padding: 0px 0px 0px 10px; display: table-cell;">
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">
+									Console.</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 134, 179);">WriteLine</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">(</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">longValue</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">)</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">;</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<p style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px 0px 1.5em; padding: 0px; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				По логике вещей, тип long в C# должен вполне справиться с 
+				задачей так как:</p>
+				<div class="su-table su-table-alternate" style="border: 0px; margin: 0px 0px 1.5em; padding: 0px; width: 1003.4px; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<table style="border: 1px solid rgb(204, 204, 204) !important; margin: 0px !important; padding: 0px; border-collapse: collapse !important; border-spacing: 0px; width: 1003.4px; font-size: 1em !important; table-layout: auto !important;">
+						<tbody style="border: 0px; margin: 0px; padding: 0px;">
+							<tr style="border: 0px; margin: 0px; padding: 0px;">
+								<td style="border: 1px solid rgb(204, 204, 204) !important; margin: 0px; padding: 0.5em 1em !important; font-weight: 400; text-align: left; background: rgb(255, 255, 255) !important;" class="style2">
+								Результат вычисления&nbsp; 1000 000 * 1000 000</td>
+								<td style="border: 1px solid rgb(204, 204, 204) !important; margin: 0px; padding: 0.5em 1em !important; font-weight: 400; text-align: left; background: rgb(255, 255, 255) !important;" class="style2">
+								1 000 000 000 000</td>
+							</tr>
+							<tr style="border: 0px; margin: 0px; padding: 0px;">
+								<td style="border: 1px solid rgb(204, 204, 204) !important; margin: 0px; padding: 0.5em 1em !important; font-weight: 400; text-align: left; background: rgb(247, 247, 247) !important;" class="style2">
+								Максимальное значение для long</td>
+								<td style="border: 1px solid rgb(204, 204, 204) !important; margin: 0px; padding: 0.5em 1em !important; font-weight: 400; text-align: left; background: rgb(247, 247, 247) !important;" class="style2">
+								9&nbsp;223&nbsp;372&nbsp;036&nbsp;854&nbsp;775&nbsp;807</td>
+							</tr>
+					</table>
+				</div>
+				<p style="border: 0px; margin: 0px 0px 1.5em; padding: 0px; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style2">Вроде бы мы всё сделали корректно — указали для переменной тип</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">long</code><span class="style2">, 
+				но<span>&nbsp;</span><a title="Знакомство с Visual Studio" style="border: 0px; margin: 0px; padding: 0px; background-color: transparent; transition: all 0.31s ease 0s; text-decoration: none; color: rgb(30, 115, 190);" href="https://csharp.webdelphi.ru/znakomstvo-s-visual-studio/">Visual 
+				Studio</a><span>&nbsp;</span>выдает ошибку:</span></p>
+				<div class="su-note" style="border: 1px solid rgb(222, 148, 153); margin: 0px 0px 1.5em; padding: 0px; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; border-radius: 3px;">
+					<div class="style2" style="border: 1px solid rgb(255, 255, 255); margin: 0px; padding: 1em; background-color: rgb(248, 174, 179); color: rgb(51, 51, 51); border-radius: 3px;">
+						Ошибка CS0220 Переполнение при выполнении операции во 
+						время компиляции в режиме проверки.</div>
+				</div>
+				<p style="border: 0px; margin: 0px 0px 1.5em; padding: 0px; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style2">Дело в том, что по умолчанию целочисленные литералы 
+				воспринимаются как</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">int</code><span class="style2">. 
+				Компилятор видит два числа — оба воспринимает как</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">int</code><span class="style2">&nbsp;и 
+				результат же ожидает как</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">int</code><span class="style2">, 
+				а так как результат вычисления выражения явно выходит за пределы</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">int</code><span class="style2">&nbsp;возникает 
+				ошибка. Чтобы этого не происходило можно воспользоваться двумя 
+				вариантами:</span></p>
+				<ol style="box-sizing: border-box; border: 0px; margin: 0px 0px 1.5em 3em; padding: 0px; list-style: decimal; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="border: 0px; margin: 0px; padding: 0px;">
+					<span class="style2">Использовать суффикс</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">L</code><span class="style2">, 
+					чтобы показать компилятору, что перед ним число типа</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">long</code><span class="style2">.</li>
+					<li style="border: 0px; margin: 0px; padding: 0px;">Завести 
+					переменную типа</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">long</code></li>
+				</ol>
+				<p style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px 0px 1.5em; padding: 0px; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Продемонстрируем оба варианта, которые приведут к тому, что C# 
+				правильно вычислит произведение двух чисел:</p>
+				<div class="enlighter-default enlighter-v-standard enlighter-t-enlighter enlighter-l-csharp enlighter-hover enlighter-linenumbers " style="border: 1px solid rgb(224, 224, 224); margin: 0px 0px 20px; padding: 0px; font-family: &quot;Source Code Pro&quot;, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; line-height: 1.35em; white-space: pre-wrap; overflow-wrap: break-word; position: relative; text-align: left; direction: ltr; display: block; color: rgb(147, 147, 147); border-radius: 8px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<div class="enlighter-code" style="border: 0px; margin: 0px; padding: 0px; overflow: hidden;">
+						<div class="enlighter" style="border: 0px; margin: 0px; padding: 0px; display: table; width: 1001.8px; border-collapse: collapse; border-spacing: 0px; empty-cells: show; min-width: 100%; font-size: 1em; text-indent: 0px; counter-reset: enlighter 0;">
+							<div class="" style="border: 0px solid rgb(255, 255, 255); margin: 0px; padding: 0px; display: table-row; list-style: none; font-size: inherit; line-height: 1.35em; min-height: 14px; color: rgb(170, 170, 170); border-radius: 8px 8px 0px 0px;">
+								<div style="border: 0px; margin: 0px; padding: 0px 0px 0px 10px; display: table-cell;">
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(40, 100, 145); font-weight: 700;">
+									long</span><span class="enlighter-text" style="border: 0px; margin: 0px; padding: 0px; line-height: inherit; font-size: 1em; font-family: inherit; color: rgb(0, 0, 0);"> 
+									</span>
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);"> 
+									longValue = </span>
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 153, 153);">
+									1000000</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);"> 
+									* 1000000L;</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(153, 153, 170);">//используем 
+									суффикс</span><span class="enlighter-text" style="border: 0px; margin: 0px; padding: 0px; line-height: inherit; font-size: 1em; font-family: inherit; color: rgb(0, 0, 0);"></span></div>
+							</div>
+							<div class="" style="border: 0px solid rgb(255, 255, 255); margin: 0px; padding: 0px; display: table-row; list-style: none; font-size: inherit; line-height: 1.35em; min-height: 14px; color: rgb(170, 170, 170);">
+								<div style="border: 0px; margin: 0px; padding: 0px 0px 0px 10px; display: table-cell;">
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">
+									Console.</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 134, 179);">WriteLine</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">(</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">longValue</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">)</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">;</span></div>
+							</div>
+							<div class="" style="border: 0px solid rgb(255, 255, 255); margin: 0px; padding: 0px; display: table-row; list-style: none; font-size: inherit; line-height: 1.35em; min-height: 14px; color: rgb(170, 170, 170);">
+								<div style="border: 0px; margin: 0px; padding: 0px 0px 0px 10px; display: table-cell;">
+									<span class="enlighter-text" style="border: 0px; margin: 0px; padding: 0px; line-height: inherit; font-size: 1em; font-family: inherit; color: rgb(0, 0, 0);">
+									</span>
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(40, 100, 145); font-weight: 700;">
+									long</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);"> 
+									longValue2 = </span>
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 153, 153);">
+									1000000</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">;</span></div>
+							</div>
+							<div class="" style="border: 0px solid rgb(255, 255, 255); margin: 0px; padding: 0px; display: table-row; list-style: none; font-size: inherit; line-height: 1.35em; min-height: 14px; color: rgb(170, 170, 170); border-radius: 0px 0px 8px 8px;">
+								<div style="border: 0px; margin: 0px; padding: 0px 0px 0px 10px; display: table-cell;">
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">
+									Console.</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 134, 179);">WriteLine</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">(</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">longValue2*</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 153, 153);">1000000</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">)</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">;</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(153, 153, 170);">//используем 
+									переменную типа long</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<p style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px 0px 1.5em; padding: 0px; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				В обоих случаях результат будет верным:</p>
+				<div class="su-note" style="border: 1px solid rgb(0, 0, 0); margin: 0px 0px 1.5em; padding: 0px; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; border-radius: 3px;">
+					<div class="su-note-inner su-u-clearfix su-u-trim" style="border: 1px solid rgb(204, 204, 204); margin: 0px; padding: 1em; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); border-radius: 3px;">
+						1000000000000<p style="border: 0px; margin: 0px 0px 1.5em; padding: 0px;">
+						</p>
+						<p style="border: 0px; margin: 0px; padding: 0px;">
+						1000000000000</p>
+					</div>
+				</div>
+				<h2 style="border: 0px; margin: 0px 0px 20px; padding: 0px; font-family: &quot;Open Sans&quot;, sans-serif; font-size: 30px; font-style: normal; font-weight: 300; line-height: 1.2em; text-transform: none; color: rgb(58, 58, 58); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span id="i" style="border: 0px; margin: 0px; padding: 0px;">
+				Работа с вещественными числами</span></h2>
+				<p style="border: 0px; margin: 0px 0px 1.5em; padding: 0px; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style2">Любой школьник знает, что периодическая десятичная дробь</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">0.3</code><span class="style2">&nbsp;не 
+				равняется</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">1/3</code><span class="style2">. 
+				Однако, не каждый, кто начинает изучать C# знает, что 
+				результатом вот такого действия:</span></p>
+				<div class="enlighter-default enlighter-v-standard enlighter-t-enlighter enlighter-l-csharp enlighter-hover enlighter-linenumbers " style="border: 1px solid rgb(224, 224, 224); margin: 0px 0px 20px; padding: 0px; font-family: &quot;Source Code Pro&quot;, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; line-height: 1.35em; white-space: pre-wrap; overflow-wrap: break-word; position: relative; text-align: left; direction: ltr; display: block; color: rgb(147, 147, 147); border-radius: 8px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<div class="enlighter-code" style="border: 0px; margin: 0px; padding: 0px; overflow: hidden;">
+						<div class="enlighter" style="border: 0px; margin: 0px; padding: 0px; display: table; width: 1001.8px; border-collapse: collapse; border-spacing: 0px; empty-cells: show; min-width: 100%; font-size: 1em; text-indent: 0px; counter-reset: enlighter 0;">
+							<div class="" style="border: 0px solid rgb(255, 255, 255); margin: 0px; padding: 0px; display: table-row; list-style: none; font-size: inherit; line-height: 1.35em; min-height: 14px; color: rgb(170, 170, 170); border-radius: 0px 0px 8px 8px;">
+								<div style="border: 0px; margin: 0px; padding: 0px 0px 0px 10px; display: table-cell;">
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">
+									Console.</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 134, 179);">WriteLine</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">(</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 153, 153);">1</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">/</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 153, 153);">3</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">)</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">;</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<p style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px 0px 1.5em; padding: 0px; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				будет</p>
+				<div class="su-note" style="border: 1px solid rgb(0, 0, 0); margin: 0px 0px 1.5em; padding: 0px; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; border-radius: 3px;">
+					<div class="su-note-inner su-u-clearfix su-u-trim" style="border: 1px solid rgb(204, 204, 204); margin: 0px; padding: 1em; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); border-radius: 3px;">
+						0</div>
+				</div>
+				<p style="border: 0px; margin: 0px 0px 1.5em; padding: 0px; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style2">Здесь, опять же срабатывает правило —<span>&nbsp;</span><a title="Типы данных в C#" style="border: 0px; margin: 0px; padding: 0px; background-color: transparent; transition: all 0.31s ease 0s; text-decoration: none; color: rgb(30, 115, 190);" href="https://csharp.webdelphi.ru/tipy-dannuh/">целое 
+				число</a></span><span><span class="style2">&nbsp;</span></span>(<code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">int</code><span class="style2">) 
+				делится на<span>&nbsp;</span><a title="Типы данных в C#" style="border: 0px; margin: 0px; padding: 0px; background-color: transparent; transition: all 0.31s ease 0s; text-decoration: none; color: rgb(30, 115, 190);" href="https://csharp.webdelphi.ru/tipy-dannuh/">целое 
+				число</a></span><span><span class="style2">&nbsp;</span></span>(<code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">int</code><span class="style2">), 
+				следовательно и ответ должен быть</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">int</code><span class="style2">. 
+				А так как</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">int</code><span class="style2">&nbsp;не 
+				может содержать вещественных чисел, то получаем 0. Выход из 
+				сложившейся ситуации точно такое же, как и в предыдущем примере 
+				— надо указать компилятору, что хотя бы одно из чисел является 
+				вещественным. Для вещественных типов данных в C# можно 
+				использовать следующие суффиксы:</span></p>
+				<div class="su-table su-table-alternate" style="border: 0px; margin: 0px 0px 1.5em; padding: 0px; width: 1003.4px; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<table style="border: 1px solid rgb(204, 204, 204) !important; margin: 0px !important; padding: 0px; border-collapse: collapse !important; border-spacing: 0px; width: 1003.4px; font-size: 1em !important; table-layout: auto !important;">
+						<tbody style="border: 0px; margin: 0px; padding: 0px;">
+							<tr style="border: 0px; margin: 0px; padding: 0px;">
+								<td style="border: 1px solid rgb(204, 204, 204) !important; margin: 0px; padding: 0.5em 1em !important; font-weight: 400; text-align: left; background: rgb(255, 255, 255) !important;" class="style2">
+								Суффикс</td>
+								<td style="border: 1px solid rgb(204, 204, 204) !important; margin: 0px; padding: 0.5em 1em !important; font-weight: 400; text-align: left; background: rgb(255, 255, 255) !important;" class="style2">
+								Тип данных</td>
+							</tr>
+							<tr style="border: 0px; margin: 0px; padding: 0px;">
+								<td style="border: 1px solid rgb(204, 204, 204) !important; margin: 0px; padding: 0.5em 1em !important; font-weight: 400; text-align: left; background: rgb(247, 247, 247) !important;" class="style2">
+								d или D</td>
+								<td style="border: 1px solid rgb(204, 204, 204) !important; margin: 0px; padding: 0.5em 1em !important; font-weight: 400; text-align: left; background: rgb(247, 247, 247) !important;" class="style2">
+								double</td>
+							</tr>
+							<tr style="border: 0px; margin: 0px; padding: 0px;">
+								<td style="border: 1px solid rgb(204, 204, 204) !important; margin: 0px; padding: 0.5em 1em !important; font-weight: 400; text-align: left; background: rgb(255, 255, 255) !important;" class="style2">
+								f или F</td>
+								<td style="border: 1px solid rgb(204, 204, 204) !important; margin: 0px; padding: 0.5em 1em !important; font-weight: 400; text-align: left; background: rgb(255, 255, 255) !important;" class="style2">
+								float</td>
+							</tr>
+							<tr style="border: 0px; margin: 0px; padding: 0px;">
+								<td style="border: 1px solid rgb(204, 204, 204) !important; margin: 0px; padding: 0.5em 1em !important; font-weight: 400; text-align: left; background: rgb(247, 247, 247) !important;" class="style2">
+								m или M</td>
+								<td style="border: 1px solid rgb(204, 204, 204) !important; margin: 0px; padding: 0.5em 1em !important; font-weight: 400; text-align: left; background: rgb(247, 247, 247) !important;" class="style2">
+								decimal</td>
+							</tr>
+					</table>
+				</div>
+				<p style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px 0px 1.5em; padding: 0px; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				От того, какой суффикс мы укажем будет зависеть и точность 
+				вычисления. Продемонстрировать этом можно с помощью следующего 
+				примера:</p>
+				<div class="enlighter-default enlighter-v-standard enlighter-t-enlighter enlighter-l-generic enlighter-hover enlighter-linenumbers " style="border: 1px solid rgb(224, 224, 224); margin: 0px 0px 20px; padding: 0px; font-family: &quot;Source Code Pro&quot;, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; line-height: 1.35em; white-space: pre-wrap; overflow-wrap: break-word; position: relative; text-align: left; direction: ltr; display: block; color: rgb(147, 147, 147); border-radius: 8px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<div class="enlighter-code" style="border: 0px; margin: 0px; padding: 0px; overflow: hidden;">
+						<div class="enlighter" style="border: 0px; margin: 0px; padding: 0px; display: table; width: 1001.8px; border-collapse: collapse; border-spacing: 0px; empty-cells: show; min-width: 100%; font-size: 1em; text-indent: 0px; counter-reset: enlighter 0;">
+							<div class="" style="border: 0px solid rgb(255, 255, 255); margin: 0px; padding: 0px; display: table-row; list-style: none; font-size: inherit; line-height: 1.35em; min-height: 14px; color: rgb(170, 170, 170); border-radius: 8px 8px 0px 0px;">
+								<div style="border: 0px; margin: 0px; padding: 0px 0px 0px 10px; display: table-cell;">
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">
+									Console.</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 134, 179);">WriteLine</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">(</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">$</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(221, 17, 68);">&quot;float: 
+									{1 / 3f}&quot;</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">)</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">;</span></div>
+							</div>
+							<div class="" style="border: 0px solid rgb(255, 255, 255); margin: 0px; padding: 0px; display: table-row; list-style: none; font-size: inherit; line-height: 1.35em; min-height: 14px; color: rgb(170, 170, 170);">
+								<div style="border: 0px; margin: 0px; padding: 0px 0px 0px 10px; display: table-cell;">
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">
+									Console.</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 134, 179);">WriteLine</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">(</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">$</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(221, 17, 68);">&quot;double: 
+									{1 / 3d}&quot;</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">)</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">;</span></div>
+							</div>
+							<div class="" style="border: 0px solid rgb(255, 255, 255); margin: 0px; padding: 0px; display: table-row; list-style: none; font-size: inherit; line-height: 1.35em; min-height: 14px; color: rgb(170, 170, 170); border-radius: 0px 0px 8px 8px;">
+								<div style="border: 0px; margin: 0px; padding: 0px 0px 0px 10px; display: table-cell;">
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">
+									Console.</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 134, 179);">WriteLine</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">(</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">$</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(221, 17, 68);">&quot;decimal: 
+									{1 / 3m}&quot;</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">)</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">;</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<p style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px 0px 1.5em; padding: 0px; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Вывод консоли будет следующим:</p>
+				<div class="su-note" style="border: 1px solid rgb(0, 0, 0); margin: 0px 0px 1.5em; padding: 0px; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; border-radius: 3px;">
+					<div class="su-note-inner su-u-clearfix su-u-trim" style="border: 1px solid rgb(204, 204, 204); margin: 0px; padding: 1em; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); border-radius: 3px;">
+						float: 0,33333334<p style="border: 0px; margin: 0px 0px 1.5em; padding: 0px;">
+						</p>
+						<p style="border: 0px; margin: 0px 0px 1.5em; padding: 0px;">
+						double: 0,3333333333333333</p>
+						<p style="border: 0px; margin: 0px; padding: 0px;">
+						decimal: 0,3333333333333333333333333333</p>
+					</div>
+				</div>
+				<p style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px 0px 1.5em; padding: 0px; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				как видите, тип float имеет самую низкую точность вычисления. В 
+				C# вещественные литералы по умолчанию определяются как double.</p>
+				<p style="border: 0px; margin: 0px 0px 1.5em; padding: 0px; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style2">В одном и том же выражении можно сочетать и целочисленные типы, 
+				и типы</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">float</code><span><span class="style2">&nbsp;</span></span><span class="style2">и</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">double</code><span class="style2">.&nbsp; 
+				В этом случае целочисленные типы неявно преобразуются в один из 
+				типов с плавающей запятой. При необходимости тип</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">float</code><span class="style2">&nbsp;может 
+				неявно преобразовываться в</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">double</code><span class="style2">. 
+				При этом выражение вычисляется следующим образом:</span></p>
+				<ol style="box-sizing: border-box; border: 0px; margin: 0px 0px 1.5em 3em; padding: 0px; list-style: decimal; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="border: 0px; margin: 0px; padding: 0px;">
+					<span class="style2">Если в 
+					выражении есть тип</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">double</code><span class="style2">, 
+					оно оценивается как</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">double</code><span class="style2">.</li>
+					<li style="border: 0px; margin: 0px; padding: 0px;">Если в 
+					выражении нет типа</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">double</code><span class="style2">, 
+					оно оценивается как</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">float</code><span class="style2">.</span></li>
+				</ol>
+				<p style="border: 0px; margin: 0px 0px 1.5em; padding: 0px; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style2">Можно также смешивать целочисленные типы и тип</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">decimal</code><span class="style2">&nbsp;в 
+				выражении. В этом случае целочисленные типы неявно преобразуются 
+				в тип</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">decimal</code><span class="style2">, 
+				а выражение вычисляется как</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">decimal</code><span class="style2">. 
+				Однако, тип</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">decimal</code><span class="style2">&nbsp;нельзя 
+				смешивать с типами</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">float</code><span><span class="style2">&nbsp;</span></span><span class="style2">и</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">double</code><span class="style2">&nbsp;в 
+				выражении. В этом случае, если требуется выполнить 
+				арифметические операции, операции сравнения или равенства, 
+				необходимо явно преобразовать операнды из типа или в тип</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">decimal</code><span class="style2">, 
+				например, вот так:</span></p>
+				<div class="enlighter-default enlighter-v-standard enlighter-t-enlighter enlighter-l-csharp enlighter-hover enlighter-linenumbers " style="border: 1px solid rgb(224, 224, 224); margin: 0px 0px 20px; padding: 0px; font-family: &quot;Source Code Pro&quot;, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; line-height: 1.35em; white-space: pre-wrap; overflow-wrap: break-word; position: relative; text-align: left; direction: ltr; display: block; color: rgb(147, 147, 147); border-radius: 8px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<div class="enlighter-code" style="border: 0px; margin: 0px; padding: 0px; overflow: hidden;">
+						<div class="enlighter" style="border: 0px; margin: 0px; padding: 0px; display: table; width: 1001.8px; border-collapse: collapse; border-spacing: 0px; empty-cells: show; min-width: 100%; font-size: 1em; text-indent: 0px; counter-reset: enlighter 0;">
+							<div class="" style="border: 0px solid rgb(255, 255, 255); margin: 0px; padding: 0px; display: table-row; list-style: none; font-size: inherit; line-height: 1.35em; min-height: 14px; color: rgb(170, 170, 170); border-radius: 8px 8px 0px 0px;">
+								<div style="border: 0px; margin: 0px; padding: 0px 0px 0px 10px; display: table-cell;">
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(40, 100, 145); font-weight: 700;">
+									double</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);"> 
+									a = </span>
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 153, 153);">
+									1.0</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">;</span></div>
+							</div>
+							<div class="" style="border: 0px solid rgb(255, 255, 255); margin: 0px; padding: 0px; display: table-row; list-style: none; font-size: inherit; line-height: 1.35em; min-height: 14px; color: rgb(170, 170, 170);">
+								<div style="border: 0px; margin: 0px; padding: 0px 0px 0px 10px; display: table-cell;">
+									<span class="enlighter-text" style="border: 0px; margin: 0px; padding: 0px; line-height: inherit; font-size: 1em; font-family: inherit; color: rgb(0, 0, 0);">
+									</span>
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(40, 100, 145); font-weight: 700;">
+									decimal</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);"> 
+									b = </span>
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 153, 153);">
+									2.1</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">m;</span></div>
+							</div>
+							<div class="" style="border: 0px solid rgb(255, 255, 255); margin: 0px; padding: 0px; display: table-row; list-style: none; font-size: inherit; line-height: 1.35em; min-height: 14px; color: rgb(170, 170, 170); border-radius: 0px 0px 8px 8px;">
+								<div style="border: 0px; margin: 0px; padding: 0px 0px 0px 10px; display: table-cell;">
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">
+									Console.</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 134, 179);">WriteLine</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">(</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">a 
+									+ </span>
+									<span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">
+									(</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(40, 100, 145); font-weight: 700;">double</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">)</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">b</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(119, 119, 119);">)</span><span class="style2" style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; line-height: inherit; font-family: inherit; color: rgb(0, 0, 0);">;</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<p style="border: 0px; margin: 0px 0px 1.5em; padding: 0px; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style2">Если не производить явное преобразование</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">decimal</code><span><span class="style2">&nbsp;</span></span><span class="style2">к</span><span><span class="style2">&nbsp;</span></span><code style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 2px 4px; color: rgb(212, 73, 80); background-color: rgb(247, 247, 249); border-radius: 0.2rem; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;" class="style2">double</code><span class="style2">, 
+				то Visual Studio также выдаст ошибку:</span></p>
+				<div class="su-note" style="border: 1px solid rgb(222, 148, 153); margin: 0px 0px 1.5em; padding: 0px; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; border-radius: 3px;">
+					<div class="style2" style="border: 1px solid rgb(255, 255, 255); margin: 0px; padding: 1em; background-color: rgb(248, 174, 179); color: rgb(51, 51, 51); border-radius: 3px;">
+						Ошибка CS0019 Оператор «+» невозможно применить к 
+						операнду типа «double» и «decimal»</div>
+				</div>
+				<p></p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les5.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les5/15.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:18:06 GMT -->
+</html>

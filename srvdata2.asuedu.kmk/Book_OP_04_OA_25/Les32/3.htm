@@ -1,0 +1,452 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les32/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:07:40 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+				color: #800000;
+				text-decoration: underline;
+}
+.style3 {
+				font-size: small;
+}
+.style4 {
+				font-family: var(--main-font-family);
+				line-height: 25.6px;
+				white-space: pre-wrap;
+				clear: both;
+				color: var(--console-textcolor);
+				font-size: small;
+				border: 1px solid rgb(204, 204, 204);
+				padding-left: 10px;
+				background-color: var(--console-bgcolor);
+}
+.style5 {
+				color: #0000FF;
+}
+    .style6 {
+	font-size: medium;
+	color: #800000;
+}
+.style7 {
+	font-size: medium;
+}
+.style8 {
+	font-size: small;
+	color: rgb(0, 0, 128);
+}
+.style9 {
+	color: rgb(0, 0, 128);
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 3. Процедуры и функции – методы класса в C#</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+				<p>
+				<strong style="margin: 0px; padding: 0px;"><span class="style7">Процедуры и функции. 
+				Отличия</span></strong><span class="style3"></p>
+				<p>
+				Функция отличается от процедуры двумя особенностями:</p>
+				<ul>
+								<li style="margin: 0px 0px 0.5em; padding: 0px;">
+								всегда вычисляет некоторое значение, 
+								возвращаемое в качестве результата функции;</li>
+								<li style="margin: 0px 0px 0.5em; padding: 0px;">
+								вызывается в выражениях.</li>
+				</ul>
+				<p>
+				Процедура C# имеет свои особенности:</p>
+				<ul>
+								<li style="margin: 0px 0px 0.5em; padding: 0px;">
+								возвращает формальный результат void, 
+								указывающий на<span>&nbsp;</span><strong style="margin: 0px; padding: 0px;">отсутствие 
+								результата,<span>&nbsp;</span></strong>возвращаемого 
+								при вызове процедуры;</li>
+								<li style="margin: 0px 0px 0.5em; padding: 0px;">
+								вызов процедуры является оператором языка;</li>
+								<li style="margin: 0px 0px 0.5em; padding: 0px;">
+								имеет<span>&nbsp;</span><strong style="margin: 0px; padding: 0px;">входные 
+								и выходные аргументы</strong>, причем выходных 
+								аргументов – ее результатов – может быть 
+								достаточно много.</li>
+				</ul>
+				<p>
+				Хорошо известно, что одновременное существование в языке 
+				процедур и функций в каком-то смысле избыточно. Добавив еще один 
+				выходной аргумент любую функцию можно записать в виде процедуры. 
+				Справедливо и обратное. Если допускать функции с побочным 
+				эффектом, то любую процедуру можно записать в виде функции. В 
+				языке С – дедушке C# – так и сделали, оставив только функции. 
+				Однако значительно удобнее иметь обе формы реализации метода –&nbsp; 
+				процедуры и функции. Обычно метод предпочитают реализовать в 
+				виде функции тогда, когда он имеет один выходной аргумент, 
+				рассматриваемый как результат вычисления значения функции. 
+				Возможность вызова функций в выражениях также влияет на выбор в 
+				пользу реализации метода в виде функции. В других случаях метод 
+				реализуют в виде процедуры.</p>
+				</span>
+				<p class="style7">
+				<strong style="margin: 0px; padding: 0px;">Описание методов 
+				(процедур и функций). Синтаксис</strong></p>
+                <h2 style="margin: calc(13px + 1.2em) 0px calc(10px + 0.2em); padding: 0px; border: 0px; vertical-align: baseline; font-size: 1.6315em; font-family: Roboto, Arial, sans-serif; font-weight: 700; color: rgb(17, 17, 17); -webkit-font-smoothing: antialiased; letter-spacing: normal; line-height: 1.5; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; vertical-align: baseline; font-family: inherit;" class="style2">
+				Объявление функций и методов</strong></h2>
+				<p style="margin: 0px 0px 1.65em; padding: 0px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: ff-more-web-pro, &quot;pt serif&quot;, Georgia, serif; color: rgba(0, 0, 0, 0.74); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Методы (функции в Си шарп также называют методами) позволяют 
+				инкапсулировать поведение и функциональность в объекты, 
+				создаваемые в коде. Объявление осуществляется с помощью<span>&nbsp;</span><strong style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: inherit;">сигнатуры</strong>, 
+				состоящей из ряда составных частей:</p>
+				<ul style="box-sizing: border-box; margin: 1.65em 0px 1.65em 35px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: ff-more-web-pro, &quot;pt serif&quot;, Georgia, serif; list-style: none; color: rgba(0, 0, 0, 0.74); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="margin: 0px 0px 0.8em; padding: 0px 0px 0px 5px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: inherit;">
+					<strong style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: inherit;">
+					модификатор доступа</strong>&nbsp;— показывает, откуда метод 
+					можно вызвать;</li>
+					<li style="margin: 0px 0px 0.8em; padding: 0px 0px 0px 5px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: inherit;">
+					<strong style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: inherit;">
+					тип возвращаемого значения.</strong><span>&nbsp;</span>Необходим 
+					для указания соответствующего типа возвращаемого значения. 
+					Если значение не возвращается, используется тип<span>&nbsp;</span><em style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: inherit;">void;</em></li>
+					<li style="margin: 0px 0px 0.8em; padding: 0px 0px 0px 5px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: inherit;">
+					<strong style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: inherit;">
+					идентификатор (имени) метода</strong>&nbsp;— идентификатор нужен, 
+					чтобы иметь возможность вызывать функцию в коде;</li>
+					<li style="margin: 0px 0px 0.8em; padding: 0px 0px 0px 5px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: inherit;">
+					<strong style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: inherit;">
+					список аргументов (параметров).<span>&nbsp;</span></strong>Это 
+					список параметров, разделяемых запятыми и передаваемых в 
+					метод.</li>
+				</ul>
+				<p style="margin: 0px 0px 1.65em; padding: 0px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: ff-more-web-pro, &quot;pt serif&quot;, Georgia, serif; color: rgba(0, 0, 0, 0.74); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Также перечислим<span>&nbsp;</span><strong style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: inherit;">модификаторы 
+				доступа</strong>:</p>
+				<ul style="box-sizing: border-box; margin: 1.65em 0px 1.65em 35px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: ff-more-web-pro, &quot;pt serif&quot;, Georgia, serif; list-style: none; color: rgba(0, 0, 0, 0.74); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="margin: 0px 0px 0.8em; padding: 0px 0px 0px 5px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: inherit;">
+					<em style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: inherit;">
+					private</em>&nbsp;— доступ возможен только из содержащего эту 
+					функцию класса либо структуры;</li>
+					<li style="margin: 0px 0px 0.8em; padding: 0px 0px 0px 5px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: inherit;">
+					<em style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: inherit;">
+					public&nbsp;</em>— доступ разрешен из любого фрагмента кода в 
+					приложении;</li>
+					<li style="margin: 0px 0px 0.8em; padding: 0px 0px 0px 5px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: inherit;">
+					<em style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: inherit;">
+					protected&nbsp;</em>— доступ есть как из содержащего класса, так 
+					и из производных классов;</li>
+					<li style="margin: 0px 0px 0.8em; padding: 0px 0px 0px 5px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: inherit;">
+					<em style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: inherit;">
+					internal&nbsp;</em>— доступ разрешен из файлов в рамках одной 
+					сборки;</li>
+					<li style="margin: 0px 0px 0.8em; padding: 0px 0px 0px 5px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: inherit;">
+					<em style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: inherit;">
+					static&nbsp;</em>— обозначает, что метод — это статический член 
+					класса, а не член экземпляра конкретного объекта.</li>
+				</ul>
+				<p style="margin: 0px 0px 1.65em; padding: 0px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: ff-more-web-pro, &quot;pt serif&quot;, Georgia, serif; color: rgba(0, 0, 0, 0.74); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример функции в языке программирования Си шарп:</p>
+				<p style="margin: 0px 0px 1.65em; padding: 0px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: ff-more-web-pro, &quot;pt serif&quot;, Georgia, serif; color: rgba(0, 0, 0, 0.74); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-32-32.png" width="815" height="135" /></p>
+				<figure class="wp-block-image size-large" style="margin: 40px auto; padding: 0px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: ff-more-web-pro, &quot;pt serif&quot;, Georgia, serif; display: block; color: rgba(0, 0, 0, 0.74); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</figure>
+				<p style="margin: 0px 0px 1.65em; padding: 0px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: ff-more-web-pro, &quot;pt serif&quot;, Georgia, serif; color: rgba(0, 0, 0, 0.74); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				то здесь что:</p>
+				<figure class="wp-block-image size-large" style="margin: 40px auto; padding: 0px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: ff-more-web-pro, &quot;pt serif&quot;, Georgia, serif; display: block; color: rgba(0, 0, 0, 0.74); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img alt="" src="Pic/r-32-33.png" width="755" height="206" /></figure><p style="margin: 0px 0px 1.65em; padding: 0px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: ff-more-web-pro, &quot;pt serif&quot;, Georgia, serif; color: rgba(0, 0, 0, 0.74); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Чтобы вернуть из метода значение, используют оператор<span>&nbsp;</span><em style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: inherit;">return</em>. 
+				Если же вместо возвращаемого типа будет ключевое слово&nbsp;<em style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: inherit;">void</em>, 
+				то вообще не вернется никакое значение.</p>
+				<p style="margin: 0px 0px 1.65em; padding: 0px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: ff-more-web-pro, &quot;pt serif&quot;, Georgia, serif; color: rgba(0, 0, 0, 0.74); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вы можете определить функцию в том же самом классе, что и<code style="margin: 0px; padding: 4px 10px; border: 0px; vertical-align: baseline; font-size: calc(11px + 0.2em); font-family: sfmono-regular, Consolas, &quot;liberation mono&quot;, Menlo, Courier, monospace; background: rgb(248, 248, 248); word-break: break-word;"><span class="style3">&nbsp;Main()</span></code><span>&nbsp;</span>либо 
+				же определить ее в каком-нибудь другом классе. Также следует 
+				понимать, что все методы в Си шарп являются статическими, а это 
+				значит, что разработчик может вызывать их, не создавая класс 
+				объекта.</p>
+				<p style="margin: 0px 0px 1.65em; padding: 0px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: ff-more-web-pro, &quot;pt serif&quot;, Georgia, serif; color: rgba(0, 0, 0, 0.74); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				И еще один момент: чтобы функции, которые описываются в одном 
+				классе, сделать видимыми в другом классе, их надо описать 
+				посредством модификатора доступа&nbsp;<em style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: inherit;">public</em>. 
+				Если же они вызываются в том же самом классе, то модификатор 
+				доступа&nbsp;<em style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 12pt; font-family: inherit;">public&nbsp;</em>не 
+				нужен.</p>
+                <p class="style7">
+				&nbsp;</p>
+				<span class="style3">
+				<p>
+				Синтаксически в описании метода различают две части –<span>&nbsp;</span><strong style="margin: 0px; padding: 0px;">описание</strong><span>&nbsp;</span><strong style="margin: 0px; padding: 0px;">заголовка</strong><span>&nbsp;</span>и<span>&nbsp;</span><strong style="margin: 0px; padding: 0px;">описание 
+				тела</strong><span>&nbsp;</span>метода:</p>
+				<ul>
+								<li>заголовок_метода</li>
+								<li>тело_метода</li>
+				</ul>
+				<p>
+				Рассмотрим синтаксис заголовка метода:</p>
+				</span>
+				<span class="style2" >
+				<em><span class="style7">[атрибуты][модификаторы]{void| тип_результата_функции} 
+				имя_метода([список_формальных_аргументов])</span></em></span><p>
+				<span class="style3">Имя метода и список формальных аргументов составляют<span>&nbsp;</span><strong style="margin: 0px; padding: 0px;">сигнатуру 
+				метода</strong>. Заметьте, в сигнатуру не входят имена 
+				формальных аргументов, здесь важны типы аргументов. В сигнатуру 
+				не входит и тип возвращаемого результата.</p>
+				<p>
+				<span class="style5"><strong>Квадратные скобки</strong></span> (метасимволы синтаксической формулы) 
+				показывают, <span class="style5"><em>что атрибуты и модификаторы могут быть опущены при 
+				описании метода</em></span>. Подробное их рассмотрение будет дано в лекциях, 
+				посвященных описанию классов. Сейчас же упомяну только об одном 
+				из модификаторов – модификаторе доступа. У него четыре возможных 
+				значения, из которых пока рассмотрим только два – public и 
+				private. Модификатор public показывает, что<span>&nbsp;</span><strong style="margin: 0px; padding: 0px;">метод</strong><span>&nbsp;</span><strong style="margin: 0px; padding: 0px;">открыт</strong><span>&nbsp;</span>и 
+				доступен для вызова клиентами и потомками класса. Модификатор 
+				private говорит, что метод предназначен для внутреннего 
+				использования в классе и доступен для вызова только в теле 
+				методов самого класса. Заметьте, если&nbsp; модификатор доступа 
+				опущен, то по умолчанию предполагается, что он имеет значение 
+				private и метод является<span>&nbsp;</span><strong style="margin: 0px; padding: 0px;">закрытым<span>&nbsp;</span></strong>для 
+				клиентов и потомков класса.</p>
+				<p>
+				Обязательным при описании заголовка является указание типа 
+				результата, имени метода и круглых скобок, наличие которых 
+				необходимо и в том случае, если сам список формальных аргументов 
+				отсутствует. Формально тип результата метода указывается всегда, 
+				но значение void однозначно определяет, что метод реализуется 
+				процедурой. Тип результата, отличный от void, указывает на 
+				функцию. Вот несколько простейших примеров описания методов:</p>
+				</span>
+				<p>
+				<span class="style6">void A() {…};</p>
+				<p>
+				int B(){…);</p>
+				<p>
+				public void C(){…};</span></p>
+				<span class="style3">
+				<p>
+				Методы A и B являются закрытыми, а метод С – открыт. Методы A и 
+				С реализованы процедурами, а метод B – функцией, возвращающей 
+				целое значение.</p>
+				</span>
+				<p class="style7">
+				<strong style="margin: 0px; padding: 0px;">Список формальных 
+				аргументов</strong></p>
+				<span class="style3">
+				<p>
+				Как уже отмечалось, список формальных аргументов метода может 
+				быть пустым и это довольно типичная ситуация для методов класса. 
+				Список может содержать фиксированное число аргументов, 
+				разделяемых символом запятой.</p>
+				<p>
+				Рассмотрим теперь синтаксис объявления одного формального 
+				аргумента:</span></p>
+				<span class="style6" >
+				<strong>[ref|out|params]тип_аргумента имя_аргумент</strong></span><p>
+				<span class="style3">Обязательным является указание типа и имени аргумента. Заметьте, 
+				никаких ограничений на тип аргумента не накладывается. Он может 
+				быть любым скалярным типом, массивом, классом, структурой, 
+				интерфейсом, перечислением, функциональным типом.</p>
+				<p>
+				Несмотря на фиксированное число формальных аргументов, есть 
+				возможность при вызове метода передавать ему<span>&nbsp;</span><strong style="margin: 0px; padding: 0px;">произвольное 
+				число фактических аргументов</strong>. Для реализации этой 
+				возможности в списке формальных аргументов необходимо задать 
+				ключевое слово params. Оно может появляться в объявлении лишь 
+				для последнего аргумента списка, объявляемого как массив 
+				произвольного типа. При вызове метода этому формальному 
+				аргументу соответствует произвольное число фактических 
+				аргументов.</p>
+				<p>
+				Содержательно, все аргументы метода разделяются на три группы:<span>&nbsp;</span><strong style="margin: 0px; padding: 0px;">входные, 
+				выходные и обновляемые</strong>. Аргументы первой группы 
+				передают информацию методу, их значения в теле метода только 
+				читаются. Аргументы второй группы представляют собой результаты 
+				метода, они получают значения в ходе работы метода. Аргументы 
+				третьей группы выполняют обе функции. Их значения используются в 
+				ходе вычислений и обновляются в результате работы метода. 
+				Выходные аргументы всегда должны сопровождаться ключевым словом 
+				out, обновляемые – ref. Что же касается входных аргументов, то, 
+				как правило, они задаются без ключевого слова, хотя иногда их 
+				полезно объявлять с параметром ref, о чем подробнее скажу чуть 
+				позже. Заметьте, если аргумент объявлен как выходной с ключевым 
+				словом out, то в теле метода обязательно должен присутствовать 
+				оператор присваивания, задающий значение этому аргументу. В 
+				противном случае возникает ошибка еще на этапе компиляции.</span></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Если переменные хранят некоторые значения, то методы содержат 
+				собой набор инструкций, которые выполняют определенные действия. 
+				По сути метод - это именованный блок кода, который выполняет 
+				некоторые действия.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Общее определение методов выглядит следующим образом:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<img alt="" src="Pic/r-30-10.png" width="660" height="90" /></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<strong>Модификаторы и параметры необязательны.</strong></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style8">
+				Ранее мы уже использовали как минимум один метод -<span>&nbsp;</span><span class="b" style="font-weight: bold;">Console.WriteLine()</span>, 
+				который выводит информацию на консоль. Теперь рассмотрим, как мы 
+				можем создавать свои методы.</p>
+				<h3 style="font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Определение метода</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Определим один метод:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<img alt="" src="Pic/r-30-12.png" width="280" height="36" /></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style8">
+				Здесь определен метод<span>&nbsp;</span><code style="font-family: monospace;">SayHello</code>, 
+				который выводит некоторое сообшение. К названиям методов 
+				предъявляются в принципе те же требования, что и к названиям 
+				переменных. Однако, как правило, названия методов начинаются с 
+				большой буквы.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style8">
+				Перед названием метода идет возвращаемый тип данных. Здесь это 
+				тип<span>&nbsp;</span><span class="b" style="font-weight: bold;">void</span>, 
+				который указыает, что фактически ничего не возвращает, он просто 
+				производит некоторые действия.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				После названия метода в скобках идет перечисление параметров. Но 
+				в данном случае скобки пустые, что означает, что метод не 
+				принимает никаких параметров.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style8">
+				После списка параметров в круглых скобках идет блок кода, 
+				который представляет набор выполняемых методом инструкций. В 
+				данном случае блок метода SayHello содержит только одну 
+				инструкцию, которая выводит строку на консоль:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<img alt="" src="Pic/r-30-12.png" width="280" height="36" /></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Но если мы запустим данный проект, то мы не увидим никакой 
+				строки, которую должен выводить метод SayHello. Потому что после 
+				определения метод еще надо вызвать, чтобы он выполнил свою 
+				работу.</p>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				Вызов методов</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Чтобы использовать метод SayHello, нам надо его вызвать. Для 
+				вызова метода указывается его имя, после которого в скобках идут 
+				значения для его параметров (если метод принимает параметры).</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<img alt="" src="Pic/r-30-13.png" width="445" height="36" /></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Например, вызов метода SayHello будет выглядеть следующим 
+				образом:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<img alt="" src="Pic/r-30-14.png" width="189" height="33" /></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Поскольку метод не принимает никаких параметров, то после 
+				названия метода идут пустые скобки.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Объединим определение и вызов метода:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<img alt="" src="Pic/r-30-15.png" width="327" height="156" /></p>
+				<img src="pic/2.13.png" alt="методы в C# и .NET" style="max-width: 99%; height: auto; margin-bottom: 15px; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3" /><p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Консольный вывод программы:</p>
+				<div class="console" style="padding: 0px; margin: 5px; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<pre class="style4" style="max-width: 99%; overflow-wrap: break-word;">Hello
+Hello
+</pre>
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Преимуществом методов является то, что их можно повторно и 
+				многократно вызывать в различных частях программы. Например, в 
+				примере выше два раза вызывается метод SayHello.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				При этом в данном случае нет разницы, сначала определяется 
+				метод, а потом вызывается или наоборот. Например, мы могли бы 
+				написать и так:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<img alt="" src="Pic/r-30-16.png" width="327" height="158" /></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Определим и вызовем еще несколько методов:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<img alt="" src="Pic/r-30-17.png" width="332" height="593" /></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style8">
+				Здесь определены три метода<span>&nbsp;</span><code style="font-family: monospace;">SayHelloRu()</code>,<span>&nbsp;</span><code style="font-family: monospace;">SayHelloEn()</code><span>&nbsp;</span>и<span>&nbsp;</span><code style="font-family: monospace;">SayHelloFr()</code>, 
+				которые также имеют тип<span>&nbsp;</span><code style="font-family: monospace;">void</code>, 
+				не принимают никаких параметров и также выводит некоторую строку 
+				на консоль. Условно говоря, они выводят приветствие на 
+				определенном языке.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style8">
+				В конструкции<span>&nbsp;</span><code style="font-family: monospace;">switch</code><span>&nbsp;</span>проверяется 
+				значение переменной<span>&nbsp;</span><code style="font-family: monospace;">language</code>, 
+				которая условно хранит код языка, и в зависимости от ее значения 
+				вызывается определенный метод. Так, в данном случае на консоль 
+				будет выведено</p>
+				<div class="console" style="padding: 0px; margin: 5px; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<pre class="style3" style="font-family: var(--main-font-family); max-width: 99%; line-height: 25.6px; white-space: pre-wrap; border: 1px solid rgb(204, 204, 204); clear: both; overflow-wrap: break-word; background-color: var(--console-bgcolor); color: var(--console-textcolor); padding-left: 10px;">Hello</pre>
+				</div>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				Сокращенная запись методов</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Если метод в качестве тела определяет только одну инструкцию, то 
+				мы можем сократить определение метода. Например, допустим у нас 
+				есть метод:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<img alt="" src="Pic/r-30-18.png" width="332" height="92" /></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Мы можем его сократить следующим образом:</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<img alt="" src="Pic/r-30-19.png" width="410" height="32" /></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style9">
+				То есть после списка параметров ставится оператор<span>&nbsp;</span><span class="b" style="font-weight: bold;">=&gt;</span>, 
+				после которого идет выполняемая инструкция.</p>
+                <p></p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les32.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les32/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:08:10 GMT -->
+</html>

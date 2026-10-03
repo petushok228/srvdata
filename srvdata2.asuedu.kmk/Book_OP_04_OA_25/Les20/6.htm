@@ -1,0 +1,611 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les20/6.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:49:06 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Примеры.  Чтение и запись данных Pascal.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <span class="style2" style="color: rgb(0, 0, 255); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong>Чтение и запись данных</strong></span><br style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<br style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				В большинстве языков программирования, в том числе Pascal, 
+				предусмотрены инструменты для сохранения информации на внешних 
+				носителях (жесткий диск также относится к внешнему запоминающему 
+				устройству), а также ее извлечению (чтению) оттуда.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Данные, хранящиеся на внешних устройствах, организовываются в 
+				виде файлов. Под<span>&nbsp;</span><strong>файлом</strong><span>&nbsp;</span>понимается 
+				область памяти на внешнем запоминающем устройстве, хранящая 
+				(содержащая) определенную информацию. В эту конкретную область 
+				памяти можно помещать данные (операции ввода,<span>&nbsp;</span><strong>записи</strong>), 
+				так и извлекать их оттуда (операции вывода,<span>&nbsp;</span><strong>чтения</strong>).</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				В языке программирования Паскаль для работы с данными, 
+				хранящимися в файлах, должны быть определены<span>&nbsp;</span><strong>переменные 
+				файлового типа</strong>, через которые далее обеспечивается 
+				связь между файлом на диске и программой.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Типизированный файл в Паскале интерпретируется как 
+				последовательность (список) значений определенного (одного и 
+				того же) базового типа. Например, если в файле на диске хранится 
+				список вещественных чисел, то переменная в языке Pascal, через 
+				которую можно получить к ним доступ, может быть описана так:</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255); text-align: center;">
+				<code class="language-pascal" style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">
+				f: file of real;</code></p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Файловый тип определяется служебными словами<span>&nbsp;</span><strong>file 
+				of</strong>, далее идет указание базового типа, который может 
+				быть любым, кроме файлового.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Тут следует понимать такую особенность. В файле могут храниться 
+				числа, но в программе они могут быть интерпретированы как 
+				символы или строки. Все зависит от выбранного базового типа при 
+				определении файловой переменной.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				При определении переменной файлового типа также в программе 
+				появляется скрытый (неявный)<span>&nbsp;</span><strong>текущий 
+				указатель файла</strong>. Его назначение – указывать на 
+				конкретный элемент файла (обеспечивать доступ к нему).</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				В языке программирования Паскаль все действия с файлом (чтение, 
+				запись) производятся поэлементно. Действия совершаются именно 
+				над тем элементом файла, на который указывает текущий указатель 
+				файла. После того как действие будет завершено, указатель 
+				перемещается к следующему элементу. Все элементы файла 
+				пронумерованы, начиная с нуля.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Операции с файловыми переменными включают:</p>
+				<ul style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+					<li style="margin-top: 1em; margin-bottom: 1em;">
+					установочные и завершающие операции;</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">ввод и 
+					вывод;</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">перемещение 
+					по файлу;</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">специальные 
+					операции.</li>
+				</ul>
+				<h2 style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Создание файла и запись данных в него</h2>
+				<pre style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); background-color: rgb(245, 250, 255);"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;">var</span>
+    f: <span class="hljs-keyword" style="font-weight: 700;">file</span> <span class="hljs-keyword" style="font-weight: 700;">of</span> char;
+    c: char;
+    i, n: byte;
+ 
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    assign(f, <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;file.txt&#39;</span>);
+    rewrite(f);
+ 
+    <span class="hljs-keyword" style="font-weight: 700;">write</span>(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;Количество символов: &#39;</span>);
+    readln(n);
+ 
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i := <span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> n <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        <span class="hljs-keyword" style="font-weight: 700;">write</span>(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;Введите символ: &#39;</span>);
+        readln(c);
+        <span class="hljs-keyword" style="font-weight: 700;">write</span>(f, c);
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+ 
+    close (f);
+<span class="hljs-keyword" style="font-weight: 700;">end</span>.</code></pre>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Процедура<span>&nbsp;</span><strong>assign</strong><span>&nbsp;</span>обеспечивает 
+				связь файловой переменной программы с реальным файлом на диске. 
+				Первым аргументом указывается переменная, вторым – адресное имя 
+				файла.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Процедура<span>&nbsp;</span><strong>rewrite</strong><span>&nbsp;</span>открывает 
+				файл в режиме записи, т.е. мы можем вводить данные в файл с 
+				помощью процедуры вывода из программы<span>&nbsp;</span><strong>write</strong>. 
+				Если указанный файл отсутствует на диске, то он будет создан. 
+				Если файл существует и содержит данные, то все они будут удалены 
+				и заменены в дальнейшем новыми (перезаписаны).</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Запись данных в файл – результат выполнения процедуры<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">write(f, 
+				c)</code>, где<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">f</var><span>&nbsp;</span>– 
+				файловая переменная, а<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">с</var><span>&nbsp;</span>– 
+				выводимый из программы, но вводимый в файл символ.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				В конце требуется закрыть файл и &quot;освободить&quot; переменную<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">f</var>. 
+				Это делается с помощью процедуры<span>&nbsp;</span><strong>close</strong>.</p>
+				<h2 style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Чтение данных из файла</h2>
+				<pre style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); background-color: rgb(245, 250, 255);"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;">var</span>
+    f: <span class="hljs-keyword" style="font-weight: 700;">file</span> <span class="hljs-keyword" style="font-weight: 700;">of</span> char;
+    c: char;
+ 
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    assign(f, <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;file.txt&#39;</span>);
+    reset(f);
+ 
+    <span class="hljs-keyword" style="font-weight: 700;">while</span> <span class="hljs-keyword" style="font-weight: 700;">not</span> eof(f) <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        <span class="hljs-keyword" style="font-weight: 700;">read</span>(f, c);
+        writeln(c);
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+ 
+    close (f); 
+<span class="hljs-keyword" style="font-weight: 700;">end</span>.</code></pre>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Процедура<span>&nbsp;</span><strong>reset</strong><span>&nbsp;</span>открывает 
+				файл для чтения. Т.е. мы можем в дальнейшем в программе 
+				извлекать данные из файла с помощью процедуры<span>&nbsp;</span><strong>read</strong>.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Данные извлекаются &quot;порциями&quot; базового типа. В данном примере – 
+				это<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">char</code><span>&nbsp;</span>(символьный 
+				тип).</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Чтение данных из файла продолжается до тех пор, пока не будет 
+				достигнут конец файла. Функция<span>&nbsp;</span><strong>eof</strong><span>&nbsp;</span>проверяет 
+				достигнут ли конец переданного ей в качестве аргумента файла и, 
+				если достигнут, возвращает<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">true</code>. 
+				Выражение<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">not 
+				eof(f)</code><span>&nbsp;</span>проверяет обратное – то, что конец 
+				файла еще не достигнут.</p>
+				<p class="style2" style="color: rgb(0, 0, 255); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong>Текстовые файлы в Паскаль</strong></p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Текстовые файлы состоят из символьных строк переменной длины.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Каждая строка завершается специальной комбинацией &quot;конец 
+				строки&quot;, которая состоит из двух символов: &quot;перевод каретки&quot; 
+				(ASCII-код<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">#13</code>) 
+				и &quot;перевод строки&quot; (<code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">#10</code>).</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Завершается текстовый файл символом &quot;конец файла&quot; (<code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">#26</code>).</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Объект текстового файла может быть присвоен переменной типа<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">Text</code>. 
+				Ее объявление:</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255); text-align: center;">
+				<code class="language-delphi" style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">
+				var файловая_переменная: Text;</code></p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Чтение из текстового файла выполняется операторами<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">read</code><span>&nbsp;</span>и<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">readln</code>.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Чтобы прочитать данные из файла, в качестве первого параметра 
+				указывают имя файловой переменной, далее через запятую 
+				перечисляются переменные, в которые осуществляется чтение данных 
+				из файла.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Если элемент данных может быть преобразован в число, это 
+				преобразование осуществляется автоматически при вводе в числовые 
+				переменные. Элементы числовых данных в строках текстового файла 
+				разделяются пробелами или символами табуляции.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Если строка файла закончилась, а состоящий из числовых или 
+				символьных переменных список параметров в<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">read</code><span>&nbsp;</span>не 
+				исчерпался, то начинает считываться следующая строка.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				При вводе данных из текстового файла в символьные переменные 
+				элементы данных не разделяются.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Если в списке данных после числовой переменной идет строковая, 
+				то пробел, который следует после числового значения в файле, 
+				считывается в строку (это же справедливо и при считывании в 
+				символьную переменную).</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Отличие операторов<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">read</code><span>&nbsp;</span>и<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">readln</code><span>&nbsp;</span>при 
+				чтении из текстовых файлов состоит в том, что оператор<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">readln</code>, 
+				поместив значение в последнюю переменную списка параметров, 
+				переходит на начало следующей строки, не считывая оставшиеся в 
+				строке данные. С другой стороны, оператор<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">read</code><span>&nbsp;</span>остается 
+				готовым считывать данные со следующей позиции текущей строки. 
+				Предположим, что в текстовом файле<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">f</var><span>&nbsp;</span>имеются 
+				две строки:</p>
+				<pre style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); background-color: rgb(245, 250, 255);"><code class="language-plaintext hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;">1 -2
+4</code></pre>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				В этом случае два оператора<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">read(f, 
+				m); read(f, n);</code><span>&nbsp;</span>поместят в целочисленные 
+				переменные<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">m</var><span>&nbsp;</span>и<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">n</var><span>&nbsp;</span>соответственно 
+				значений 1 и -2, а два оператора<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">readln(f, 
+				m); readln(f, n);</code><span>&nbsp;</span>считают значения 1 и 4.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Рассмотрим пример. В текстовом файле<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">f.txt</var><span>&nbsp;</span>через 
+				пробел и<span>&nbsp;</span><kbd>Enter</kbd><span>&nbsp;</span>записаны 
+				целые числа. Переписать в файл<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">f1.txt</var><span>&nbsp;</span>из 
+				файла<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">f.txt</var><span>&nbsp;</span>все 
+				числа, за исключением максимальных (предполагается, что их может 
+				быть несколько).</p>
+				<pre style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); background-color: rgb(245, 250, 255);"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;">var</span>&nbsp;
+    f, f1: text;
+    a, max: integer;
+
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    assign(f, <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;f.txt&#39;</span>);
+    reset(f);
+
+    max := -<span class="hljs-number">1</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">while</span> <span class="hljs-keyword" style="font-weight: 700;">not</span> eof(f) <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        <span class="hljs-keyword" style="font-weight: 700;">read</span>(f, a);
+        <span class="hljs-keyword" style="font-weight: 700;">if</span> a &gt; max <span class="hljs-keyword" style="font-weight: 700;">then</span>
+            max := a;
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+
+    reset(f);
+  &nbsp;&nbsp;
+    assign(f1,<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;f1.txt&#39;</span>);
+    rewrite(f1);
+  &nbsp;&nbsp;
+    <span class="hljs-keyword" style="font-weight: 700;">while</span> <span class="hljs-keyword" style="font-weight: 700;">not</span> eof(f) <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        <span class="hljs-keyword" style="font-weight: 700;">read</span>(f, a);
+        <span class="hljs-keyword" style="font-weight: 700;">write</span>(a, <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39; &#39;</span>);
+        <span class="hljs-keyword" style="font-weight: 700;">if</span> a &lt;&gt; max <span class="hljs-keyword" style="font-weight: 700;">then</span>
+            <span class="hljs-keyword" style="font-weight: 700;">write</span>(f1, a, <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39; &#39;</span>);
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+
+    close(f);
+    close(f1);
+<span class="hljs-keyword" style="font-weight: 700;">end</span>.&nbsp;</code></pre>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				В примере файл<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">f.txt</var><span>&nbsp;</span>прочитывается 
+				два раза. Первый раз для определения максимального числа, второй 
+				раз — для считывания чисел и их записи во второй файл.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Особенностью текстовых файлов является то, что они являются 
+				файлами последовательного доступа: нельзя прочитать какой-либо 
+				элемент текстового файла, не прочитав все предшествующие 
+				элементы. Аналогично нельзя записывать информацию в текстовый 
+				файл произвольным образом, писать в него можно только 
+				последовательно.</p>
+				<p class="style2" style="color: rgb(0, 0, 255); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong>Типизированные файлы в Паскаль&nbsp;</strong></p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Более характерным для Pascal являются типизированные файлы, или 
+				файлы произвольного доступа. Основным свойством этих файлов 
+				является то, что их структура данных представляет собой 
+				последовательность компонентов одного типа.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				При описании типизированных файлов указывается тип его 
+				компонентов, число которых (длина файла) не фиксируется:</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255); text-align: center;">
+				<code class="language-delphi" style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">
+				var имя_файла: file of тип_компонентов</code></p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Поскольку известен тип элементов файла, а следовательно, и объем 
+				памяти, отводимой под каждый из них, можно рассчитать позицию 
+				каждого из элементов внутри файла. Это позволяет организовать 
+				непосредственный доступ к любому элементу типизированного файла. 
+				Пусть имеется такое определение переменной:</p>
+				<pre style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); background-color: rgb(245, 250, 255);"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;">var</span> 
+    FileInt: <span class="hljs-keyword" style="font-weight: 700;">file</span> <span class="hljs-keyword" style="font-weight: 700;">of</span> Integer;</code></pre>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				В этом описании указано, что элементами файла являются данные 
+				типа<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">Integer</code>, 
+				занимающие 2 байта (или 4). При этом отпадает необходимость в 
+				специальном разделении элементов файла, как это делалось в 
+				текстовых файлах. Также возможен произвольный доступ к элементам 
+				данных (этим типизированный файл несколько напоминает одномерный 
+				массив).</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Чтобы можно было работать с типизированным файлом, необходимо, 
+				как и для текстовых файлов, сначала связать имя файловой 
+				переменной с внешним именем файла (оператор<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">assign</code>). 
+				Затем нужно открыть его (используются операторы<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">reset</code><span>&nbsp;</span>или<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">rewrite</code>).</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Операторы<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">reset</code><span>&nbsp;</span>и<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">rewrite</code><span>&nbsp;</span>открывают 
+				файл и для чтения, и для записи (а не только для чтения или 
+				только для записи, как при использовании текстовых файлов). 
+				Отличие их в том, что оператор<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">reset</code><span>&nbsp;</span>открывает 
+				только существующий файл (если такого файла нет, будет 
+				сгенерирована ошибка времени выполнения). С другой стороны, 
+				оператор<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">rewrite</code><span>&nbsp;</span>создает 
+				новый файл (если файл с таким именем уже имеется, то он будет 
+				уничтожен и создан заново).</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				При открытии файла с ним связывается текущий указатель файла, 
+				который позиционируется на его первый элемент. Оперировать можно 
+				только тем элементом файла, на который ссылается указатель 
+				файла. При чтении или записи элемента файла происходит 
+				автоматическое перемещение указателя на следующий элемент.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Чтение из типизированного файла производится оператором<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">read</code><span>&nbsp;</span>(но 
+				не<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">readln</code>), 
+				а запись в него — оператором<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">write</code><span>&nbsp;</span>(но 
+				не<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">writeln</code>). 
+				Однако следует помнить, что в списке вывода оператора<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">write</code><span>&nbsp;</span>могут 
+				быть только переменные. Типы элементов файла и типы переменных в 
+				списках ввода-вывода должны быть согласуемы по присваиванию. 
+				Элементами типизированных файлов могут быть числовые, 
+				символьные, булевы, строковые значения, массивы, записи, но не 
+				файлы или структуры с файловыми элементами.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Узнать количество элементов типизированного файла (размер файла) 
+				можно с помощью функции<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">FileSize</code>, 
+				для которой используется следующий синтаксис:</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255); text-align: center;">
+				<code class="language-delphi" style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">
+				FileSize(имя_файла)</code></p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Например, если переменная<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">k</var><span>&nbsp;</span>имеет 
+				тип<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">LongInt</code>, 
+				а<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">f</var><span>&nbsp;</span>– 
+				файловая переменная типизированного файла, то выражение<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">k 
+				:= FileSize(f)</code>, записывает в переменную<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">k</var><span>&nbsp;</span>размер 
+				файла<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">f</var>.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Элементы типизированного файла нумеруются с нуля (порядковый 
+				номер последнего элемента файла на единицу меньше размера 
+				файла). Чтобы узнать, на каком элементе располагается указатель 
+				файла, используют функцию<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">FilePos</code>:</p>
+				<pre style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); background-color: rgb(245, 250, 255);"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;">FilePos(имя_файла)</code></pre>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Текущим положением указателя можно управлять, для чего служит 
+				процедура<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">Seek</code>, 
+				которая использует следующий синтаксис:</p>
+				<pre style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); background-color: rgb(245, 250, 255);"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;">Seek(имя_файла, номер_элемента)</code></pre>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Второй параметр (тип<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">LongInt</code>) 
+				задает номер элемента (отсчет от 0), на который должен 
+				переместиться указатель файла. Рассмотрим несколько примеров.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Перейти к пятому (фактически шестому) элементу файла<span>&nbsp;</span><code class="language-delphi" style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">f</code>:</p>
+				<pre style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); background-color: rgb(245, 250, 255);"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;">Seek(f, <span class="hljs-number">5</span>);</code></pre>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Перейти к предыдущему элементу:</p>
+				<pre style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); background-color: rgb(245, 250, 255);"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;">Seek(f, FilePos(f)-<span class="hljs-number">1</span>);</code></pre>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Перейти в конец файла:</p>
+				<pre style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); background-color: rgb(245, 250, 255);"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;">Seek(f, FileSize(f)-<span class="hljs-number">1</span>);</code></pre>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Как и для текстовых файлов, можно использовать функцию<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">Eof(имя_файла)</code>, 
+				которая возвращает значение<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">True</code>, 
+				если текущий указатель расположен на признаке конца файла (то 
+				есть при выполнения равенства<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">FilePos(имя_файла) 
+				= FileSize(имя_файла)</code>).</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Процедура<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">seek</code><span>&nbsp;</span>и 
+				функции<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">FilePos</code><span>&nbsp;</span>и<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">FileSize</code><span>&nbsp;</span>позволяют 
+				легко осуществлять коррекцию элементов типизированного файла, 
+				имя которого указано в качестве е параметра, начиная с элемента, 
+				на котором расположен указатель. Однако уничтожить элемент 
+				внутри файла нельзя, для этого файл должен быть перезаписан.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Текстовые файлы могут быть созданы текстовым редактором. Однако 
+				типизированные файлы создаются в результате работы какой-либо 
+				программы.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Пример записи данных в типизированный файл:</p>
+				<pre style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); background-color: rgb(245, 250, 255);"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;">type</span>
+    t_subscriber = <span class="hljs-keyword" style="font-weight: 700;">record</span>
+      surname: <span class="hljs-keyword" style="font-weight: 700;">string</span>[<span class="hljs-number">20</span>];
+      tel: LongInt;
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+&nbsp;
+<span class="hljs-keyword" style="font-weight: 700;">var</span>
+    subscriber: t_subscriber;
+    f: <span class="hljs-keyword" style="font-weight: 700;">file</span> <span class="hljs-keyword" style="font-weight: 700;">of</span> t_subscriber;
+    i: Integer;
+&nbsp;
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+  Assign(f,<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;notebook.dat&#39;</span>);
+  Rewrite(f);
+  <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> <span class="hljs-number">5</span> <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    <span class="hljs-keyword" style="font-weight: 700;">with</span> subscriber <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+      <span class="hljs-keyword" style="font-weight: 700;">Write</span>(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;Surname: &#39;</span>);
+      ReadLn(surname);
+      <span class="hljs-keyword" style="font-weight: 700;">Write</span>(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;Phone: &#39;</span>);
+      ReadLn(tel);
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">Write</span>(f, subscriber);
+  <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+  Close(f);
+<span class="hljs-keyword" style="font-weight: 700;">end</span>.</code></pre>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Пример последовательного доступа к типизированному файлу:</p>
+				<pre style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); background-color: rgb(245, 250, 255);"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;">type</span>
+    t_subscriber = <span class="hljs-keyword" style="font-weight: 700;">record</span>
+      surname: <span class="hljs-keyword" style="font-weight: 700;">string</span>[<span class="hljs-number">20</span>];
+      tel: LongInt;
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+&nbsp;
+<span class="hljs-keyword" style="font-weight: 700;">var</span>
+    subscriber: t_subscriber;
+    f: <span class="hljs-keyword" style="font-weight: 700;">file</span> <span class="hljs-keyword" style="font-weight: 700;">of</span> t_subscriber;
+    s: <span class="hljs-keyword" style="font-weight: 700;">string</span>[<span class="hljs-number">7</span>];
+&nbsp;
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+  Assign(f,<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;notebook.dat&#39;</span>);
+  Reset(f);
+  <span class="hljs-keyword" style="font-weight: 700;">while</span> <span class="hljs-keyword" style="font-weight: 700;">not</span> Eof(f) <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    <span class="hljs-keyword" style="font-weight: 700;">Read</span>(f, subscriber);
+    <span class="hljs-keyword" style="font-weight: 700;">with</span> subscriber <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+      str(tel,s);
+      <span class="hljs-keyword" style="font-weight: 700;">if</span> Copy(s,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>) = <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;33&#39;</span> <span class="hljs-keyword" style="font-weight: 700;">then</span>
+        tel := tel+<span class="hljs-number">4000000</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+    Seek(f,FilePos(f)-<span class="hljs-number">1</span>); <span class="hljs-comment" style="color: rgb(115, 129, 145);">// возврат указателя назад</span>
+    <span class="hljs-keyword" style="font-weight: 700;">Write</span>(f,subscriber);
+  <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+  Close(f);
+<span class="hljs-keyword" style="font-weight: 700;">end</span>. </code></pre>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				В приведенной программе типизированный файл обрабатывается и как 
+				файл последовательного доступа, и как файл произвольного 
+				доступа.</p>
+				<p class="style2" style="color: rgb(0, 0, 255); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong>Нетипизированные файлы в Pascal</strong></p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				В Pascal, кроме рассмотренных, существуют также нетипизированные 
+				файлы. Они совместимы со всеми типами файлов и используются 
+				тогда, когда тип элементов файла не важен (например, при 
+				копировании). Такие файлы описываются следующим образом:</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255); text-align: center;">
+				<code class="language-delphi" style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">
+				var имя_файла: file;</code></p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Например, возможно такое описание:</p>
+				<pre style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); background-color: rgb(245, 250, 255);"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;">var</span> FileOneType: <span class="hljs-keyword" style="font-weight: 700;">file</span>;</code></pre>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Файл без типа представляется как последовательность элементов 
+				произвольного типа, но оговоренного размера. Это значит, что в 
+				файл можно записать значение любой переменной, имеющей заданный 
+				размер, а при чтении из такого файла допускается произвольная 
+				интерпретация содержимого очередного элемента.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Открываются файлы без типа теми же операторами<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">Reset</code><span>&nbsp;</span>и<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">Rewrite</code>, 
+				но в этом случае имеется второй параметр — размер записи 
+				(элемента файла), заданный в байтах. Предварительно нужно с 
+				помощью оператора<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">Assign</code><span>&nbsp;</span>связать 
+				внутреннее имя файла с внешним:</p>
+				<pre style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); background-color: rgb(245, 250, 255);"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;">Assign(FileOneType, <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;f.dat&#39;</span>);
+Reset(fileOneType, <span class="hljs-number">1</span>);</code></pre>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Второй параметр операторов<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">Reset</code><span>&nbsp;</span>и<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">Rewrite</code><span>&nbsp;</span>может 
+				быть опущен, что означает задание размера записи в 128 байт. 
+				Наибольшая скорость обмена данными обеспечивается при длине 
+				записи, кратной 512 байт (размеру сектора на диске).</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Следует помнить, что если общий размер файла не кратен выбранном 
+				размеру записи, то последняя запись окажется неполной, и файл 
+				может быть прочитан не до конца. Этого не будет, если задать 
+				размер записи равным одному байту.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Обмен данными при работе с нетипизированными файлами 
+				осуществляется с участием рабочего буфера. В качестве которого 
+				используется объявленная в программе переменная. Ее размер 
+				должен быть достаточным для размещения данных, которые читаются 
+				(записываются) за один сеанс чтения (записи).</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Перед чтением нетипизированный файл должен быть открыт с помощью 
+				процедуры<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">Reset</code>, 
+				а само чтение осуществляется процедурой<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">BlockRead</code>.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255); text-align: center;">
+				<code class="language-delphi" style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">
+				BlockRead(имя_файла, переменная_буфер, количество_записей)</code></p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Третий параметр — это количество записей, читаемых за один раз 
+				(тип<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">Word</code>).</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				При выполнении процедуры<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">BlockRead</code><span>&nbsp;</span>данные 
+				помещаются в оперативную память, начиная с первого байта 
+				переменной, указанной в качестве второго параметра процедуры<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">BlockRead</code>. 
+				Поэтому<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">переменная_буфер</var><span>&nbsp;</span>должна 
+				иметь размер, равный произведению, количества читаемых за один 
+				раз записей (третий параметр) и размера записи, заданного в 
+				процедуре<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">Reset</code>. 
+				В процедуре<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">BlockRead</code><span>&nbsp;</span>возможно 
+				задание четвертого параметра (тип<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">Word</code>), 
+				в который помещается число фактически прочитанных записей.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Запись данных в нетипизированный файл производится только после 
+				его открытия с помощью процедуры<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">Rewrite</code>. 
+				Для записи данных используется процедура<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">BlockWrite</code>, 
+				которая имеет те же три (или четыре) параметра, что и<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">BlockRead</code>. 
+				При этом в<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">переменную_буфер</var><span>&nbsp;</span>нужно 
+				предварительно поместить записи. Количество этих записей должно 
+				совпадать со значением третьего параметра процедуры<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">BlockWrite</code>, 
+				а размер — со вторым параметром процедуры<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">Rewrite</code>. 
+				В четвертом параметре процедуры<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">BlockWrite</code><span>&nbsp;</span>(если 
+				он имеется) возвращается количество фактически помещенных в фал 
+				записей. Если на диске нет свободного места, то после выполнения 
+				процедуры<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">BlockWrite</code><span>&nbsp;</span>значения 
+				третьего и четвертого параметров будут отличаться.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Если при чтении с диска окажется, что размер буфера будет 
+				меньше, указанного выше, или при записи на диск недостаточно 
+				свободного места, то при отсутствии четвертого параметра в 
+				процедурах<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">BlockRead</code><span>&nbsp;</span>и<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">BlockWrite</code><span>&nbsp;</span>будет 
+				зафиксирована ошибка. При наличии четвертого параметра ошибка не 
+				будет сгенерирована.</p>
+				<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; background-color: rgb(245, 250, 255);">
+				Работа с нетипизированными файлами на примере копирования файла:</p>
+				<pre style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); background-color: rgb(245, 250, 255);"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;">const</span>
+  CountRead = <span class="hljs-number">512</span>; <span class="hljs-comment" style="color: rgb(115, 129, 145);">// кол-во читаемых записей.</span>
+   <span class="hljs-comment" style="color: rgb(115, 129, 145);">// При длине записи в 1 байт - размер буфера.</span>
+&nbsp;
+<span class="hljs-keyword" style="font-weight: 700;">var</span>
+  file_in, file_out: <span class="hljs-keyword" style="font-weight: 700;">file</span>;
+  name1, name2: <span class="hljs-keyword" style="font-weight: 700;">string</span>;
+  num_read, num_write: word; <span class="hljs-comment" style="color: rgb(115, 129, 145);">// фактич. считанные/записанные записи</span>
+  buf: <span class="hljs-keyword" style="font-weight: 700;">array</span>[<span class="hljs-number">1</span>..CountRead] <span class="hljs-keyword" style="font-weight: 700;">of</span> char; <span class="hljs-comment" style="color: rgb(115, 129, 145);">// буфер</span>
+&nbsp;
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+  <span class="hljs-keyword" style="font-weight: 700;">Write</span>(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;File 1: &#39;</span>);
+  Readln(name1);
+  <span class="hljs-keyword" style="font-weight: 700;">Write</span>(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;File 2: &#39;</span>);
+  Readln(name2);
+  Assign(file_in, name1);
+<span class="hljs-meta" style="color: rgb(76, 129, 201);">{$I-}</span>
+  Reset(file_in,<span class="hljs-number">1</span>);
+<span class="hljs-meta" style="color: rgb(76, 129, 201);">{$I+}</span>
+  <span class="hljs-keyword" style="font-weight: 700;">if</span> IOResult &lt;&gt; <span class="hljs-number">0</span> <span class="hljs-keyword" style="font-weight: 700;">then</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    WriteLn(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;Файл-оригинал не найден&#39;</span>); Halt
+  <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+  Assign(file_out, name2);
+  Rewrite(file_out, <span class="hljs-number">1</span>); <span class="hljs-comment" style="color: rgb(115, 129, 145);">// длина записи 1 байт</span>
+  <span class="hljs-keyword" style="font-weight: 700;">repeat</span>
+    BlockRead(file_in, buf, CountRead, num_read);
+    BlockWrite(file_out, buf, CountRead, num_write);
+  <span class="hljs-keyword" style="font-weight: 700;">until</span> (num_read = <span class="hljs-number">0</span>) <span class="hljs-keyword" style="font-weight: 700;">or</span> (num_write &lt;&gt; num_read);
+  writeln(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;Copying is completed&#39;</span>);
+  <span class="hljs-keyword" style="font-weight: 700;">if</span> num_read &lt;&gt; num_write <span class="hljs-keyword" style="font-weight: 700;">then</span>
+    writeln(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;Not enough space&#39;</span>);
+  close(file_out); close(file_in);
+<span class="hljs-keyword" style="font-weight: 700;">end</span>.</code></pre>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les20.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les20/6.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:49:06 GMT -->
+</html>

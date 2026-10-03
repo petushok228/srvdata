@@ -1,0 +1,467 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les27/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:57:44 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	text-align: left;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 2 Условный оператор if и составные условия</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				На этом занятии поговорим об условном операторе. Что это такое? 
+				Представьте, что вам нужно вычислить модуль числа, хранящегося в 
+				переменной x. Как это сделать? Очевидно, нужно реализовать такой 
+				алгоритм.</p>
+				<p align="center" style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img width="309" height="445" id="Рисунок 1" src="Pic/image001.jpg" style="max-width: 600px; height: auto;" /></p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				И в этом алгоритме есть вот такое ветвление программы: при x&lt;0 
+				меняется знак на противоположный, а при других x это не 
+				делается. В результате получаем модуль числа в переменной x.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Так вот, чтобы реализовать проверку таких условий в Python 
+				имеется один условный оператор if, который в самом простом 
+				случае имеет такой синтаксис:</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				if(&lt;условное выражение&gt;) : оператор</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				или так:</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				if &lt;условное выражение&gt; : оператор</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если условное выражение истинно, то выполняется оператор, 
+				записанный в if. Иначе этот оператор не выполняется. Используя 
+				оператор ветвления, запишем программу для вычисления модуля 
+				числа:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">x <span style="color: rgb(102, 204, 102);">=</span> -<span style="color: rgb(255, 69, 0);">5</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">if</span><span style="color: black;">(</span>x <span style="color: rgb(102, 204, 102);">&lt;</span> <span style="color: rgb(255, 69, 0);">0</span><span style="color: black;">)</span> : x <span style="color: rgb(102, 204, 102);">=</span> -x
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>x<span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Здесь операция изменения знака переменной x будет выполняться 
+				только для отрицательных величин, а положительные просто 
+				выводятся в консоль, минуя эту операцию.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Какие операторы сравнения существуют в Python и как они 
+				работают? Многие из них нам известны из школьного курса 
+				математики, это:</p>
+				<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; border-collapse: collapse; border: none;">
+								<tr style="height: 26.3125px;">
+												<td width="92" valign="top" style="width: 69.2pt; border: 1pt solid black; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">a &gt; b</p>
+												</td>
+												<td width="546" valign="top" style="width: 409.35pt; border-top: 1pt solid black; border-right: 1pt solid black; border-bottom: 1pt solid black; border-image: initial; border-left: none; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">Истинно, 
+												если a больше b</p>
+												</td>
+								</tr>
+								<tr style="height: 26.3125px;">
+												<td width="92" valign="top" style="width: 69.2pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">a &lt; b</p>
+												</td>
+												<td width="546" valign="top" style="width: 409.35pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">Истинно, 
+												если a меньше b</p>
+												</td>
+								</tr>
+								<tr style="height: 26.3125px;">
+												<td width="92" valign="top" style="width: 69.2pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">a &gt;= b</p>
+												</td>
+												<td width="546" valign="top" style="width: 409.35pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">Истинно, 
+												если a больше или равно b</p>
+												</td>
+								</tr>
+								<tr style="height: 26.3125px;">
+												<td width="92" valign="top" style="width: 69.2pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">a &lt;= b</p>
+												</td>
+												<td width="546" valign="top" style="width: 409.35pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">Истинно, 
+												если a меньше или равно b</p>
+												</td>
+								</tr>
+								<tr style="height: 51.3125px;">
+												<td width="92" valign="top" style="width: 69.2pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">a == b</p>
+												</td>
+												<td width="546" valign="top" style="width: 409.35pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">Истинно, 
+												если a равно b (обратите 
+												внимание, для сравнения 
+												используется двойной знак 
+												равенства)</p>
+												</td>
+								</tr>
+								<tr style="height: 26.3125px;">
+												<td width="92" valign="top" style="width: 69.2pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; border-image: initial; border-top: none; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">a != b</p>
+												</td>
+												<td width="546" valign="top" style="width: 409.35pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt;">
+												<p style="margin: 0px;">Истинно, 
+												если a не равно b</p>
+												</td>
+								</tr>
+				</table>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Все эти операторы при сравнении возвращают булевое значение: 
+				True – истина или False – ложь. Например:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: rgb(255, 69, 0);">2</span> <span style="color: rgb(102, 204, 102);">&gt;</span> <span style="color: rgb(255, 69, 0);">1</span><span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: rgb(255, 69, 0);">2</span> <span style="color: rgb(102, 204, 102);">==</span> <span style="color: rgb(255, 69, 0);">1</span><span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: rgb(255, 69, 0);">2</span> <span style="color: rgb(102, 204, 102);">!=</span> <span style="color: rgb(255, 69, 0);">1</span><span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Результат сравнения можно присвоить переменной, как и любое 
+				значение:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">result <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(255, 69, 0);">7</span> <span style="color: rgb(102, 204, 102);">&gt;</span> <span style="color: rgb(255, 69, 0);">5</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>result<span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<h2 style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Сравнение строк</h2>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Как вы видите, сравнение двух числовых значений выполняется 
+				вполне очевидным образом. Но можно ли, например, сравнивать 
+				строки между собой? Оказывается да, можно. Чтобы определить, что 
+				одна строка больше другой, Python использует «алфавитный» или 
+				«лексикографический» порядок. Другими словами, строки 
+				сравниваются посимвольно. Например:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: rgb(72, 61, 139);">&#39;Я&#39;</span> <span style="color: rgb(102, 204, 102);">&gt;</span> <span style="color: rgb(72, 61, 139);">&#39;А&#39;</span> <span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span> <span style="color: rgb(72, 61, 139);">&#39;Кот&#39;</span> <span style="color: rgb(102, 204, 102);">&gt;</span> <span style="color: rgb(72, 61, 139);">&#39;Код&#39;</span> <span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span> <span style="color: rgb(72, 61, 139);">&#39;Сонный&#39;</span> <span style="color: rgb(102, 204, 102);">&gt;</span> <span style="color: rgb(72, 61, 139);">&#39;Сон&#39;</span> <span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Алгоритм сравнения двух строк довольно прост:</p>
+				<ol style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li>Сначала сравниваются первые символы строк.</li>
+								<li>Если первый символ первой строки больше 
+								(меньше), чем первый символ второй, то первая 
+								строка больше (меньше) второй.</li>
+								<li>Если первые символы равны, то таким же 
+								образом сравниваются уже вторые символы строк.</li>
+				</ol>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Сравнение продолжается, пока не закончится одна из строк. Если 
+				обе строки заканчиваются одновременно, и все их соответствующие 
+				символы равны между собой, то строки считаются равными. Иначе, 
+				большей считается более длинная строка.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В примерах выше сравнение &#39;Я&#39; &gt; &#39;А&#39; завершится на первом шаге, 
+				тогда как строки &quot;Кот&quot; и &quot;Код&quot; будут сравниваться посимвольно:</p>
+				<ol style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li>К равна К.</li>
+								<li>о равна о.</li>
+								<li>т больше чем д.</li>
+				</ol>
+				<span style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+				На этом сравнение заканчивается. Первая строка больше.</span><h2 style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Конструкция if – elif – else</h2>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Теперь, когда мы знаем как сравниваются между собой величины, 
+				вернемся к нашему условному оператору if. И предположим, что 
+				хотим определить знак числа в переменной x. Конечно, проверку 
+				можно записать вот так:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">x <span style="color: rgb(102, 204, 102);">=</span> -<span style="color: rgb(255, 69, 0);">5</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">if</span> x <span style="color: rgb(102, 204, 102);">&lt;</span> <span style="color: rgb(255, 69, 0);">0</span> : <span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: rgb(72, 61, 139);">&quot;x отрицательное число&quot;</span><span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">if</span> x <span style="color: rgb(102, 204, 102);">&gt;=</span> <span style="color: rgb(255, 69, 0);">0</span> : <span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: rgb(72, 61, 139);">&quot;x неотрицательное число&quot;</span><span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Но можно сделать лучше. Смотрите, мы здесь имеем дело со 
+				взаимоисключающими условиями, то есть, они не могут произойти 
+				одновременно: либо первое, либо второе. Для таких ситуаций можно 
+				использовать ключевое слово else – иначе, чтобы ускорить процесс 
+				проверки:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">x <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(255, 69, 0);">5</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">if</span> x <span style="color: rgb(102, 204, 102);">&lt;</span> <span style="color: rgb(255, 69, 0);">0</span>:
+    <span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: rgb(72, 61, 139);">&quot;x отрицательное число&quot;</span><span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">else</span>:
+    <span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: rgb(72, 61, 139);">&quot;x неотрицательное число&quot;</span><span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Теперь, у нас здесь всего одно условие. Если оно истинно, то 
+				выполнится первый print, а иначе – второй. Такая программа будет 
+				работать быстрее. И обратите внимание на синтаксис записи 
+				функции print: перед ней необходимо записать хотя бы один пробел 
+				(обычно ставится 4 пробела или символ табуляции). Эти пробелы в 
+				Python означают блок кода, который выполняется по некоторому 
+				условию. В данном случае блок кода состоит всего из одного 
+				оператора print. То же самое и для else.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В общем случае, синтаксис оператора if else следующий:</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				if(&lt;выражение&gt;): оператор 1<br />
+				else: оператор 2</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				или</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				if(&lt;выражение&gt;):<br />
+&nbsp;&nbsp;&nbsp; оператор 1<br />
+				else:<br />
+&nbsp;&nbsp;&nbsp; оператор 2</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если же мы хотим по такому принципу выполнить три проверки: x &gt; 
+				0; x &lt; 0; x == 0, то предыдущую программу можно записать так:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;"><span style="color: rgb(255, 119, 0); font-weight: bold;">if</span> x <span style="color: rgb(102, 204, 102);">&lt;</span> <span style="color: rgb(255, 69, 0);">0</span>:
+&nbsp;<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: rgb(72, 61, 139);">&quot;x отрицательное число&quot;</span><span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">elif</span> x <span style="color: rgb(102, 204, 102);">&gt;</span> <span style="color: rgb(255, 69, 0);">0</span>:
+    <span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: rgb(72, 61, 139);">&quot;x положительное число&quot;</span><span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">else</span>:
+    <span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: rgb(72, 61, 139);">&quot;x равен 0&quot;</span><span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				И вообще таких конструкций</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				if – elif – elif –…– elif – else</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				может быть много. Далее, обратим внимание на такой факт: во всех 
+				наших примерах по условию шел один оператор – print. Но что если 
+				нужно выполнить несколько операторов по некоторому условию? Для 
+				этого их нужно записывать по такому синтаксису:</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				if &lt;условие&gt;:<br />
+&nbsp;&nbsp;&nbsp; оператор 1<br />
+&nbsp;&nbsp;&nbsp; оператор 1<br />
+&nbsp;&nbsp;&nbsp; …<br />
+&nbsp;&nbsp;&nbsp; оператор N</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Например:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">x <span style="color: rgb(102, 204, 102);">=</span> -<span style="color: rgb(255, 69, 0);">10</span><span style="color: rgb(102, 204, 102);">;</span> sgn <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(255, 69, 0);">0</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">if</span> x <span style="color: rgb(102, 204, 102);">&lt;</span> <span style="color: rgb(255, 69, 0);">0</span>:
+    sgn <span style="color: rgb(102, 204, 102);">=</span> -<span style="color: rgb(255, 69, 0);">1</span>
+    <span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: rgb(72, 61, 139);">&quot;x отрицательное число&quot;</span><span style="color: rgb(102, 204, 102);">,</span> sgn<span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">elif</span> x <span style="color: rgb(102, 204, 102);">&gt;</span> <span style="color: rgb(255, 69, 0);">0</span>:
+    sgn <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(255, 69, 0);">1</span>
+    <span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: rgb(72, 61, 139);">&quot;x положительное число&quot;</span><span style="color: rgb(102, 204, 102);">,</span> sgn<span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">else</span>:
+    <span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: rgb(72, 61, 139);">&quot;x равен 0&quot;</span><span style="color: rgb(102, 204, 102);">,</span> sgn<span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Здесь по первым двум условиям выполняется два оператора: 
+				присвоение значения переменной sgn и вывод результата в консоль.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В ряде случаев конструкцию if-else удобнее записывать через<span>&nbsp;</span><b>тернарный 
+				условный оператор</b>, который имеет такой синтаксис:</p>
+				<p align="center" style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				result = значение1 if &lt;условие&gt; else значение2</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При истинности условия возвращается значение1, в противном 
+				случае – значение2. Например:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">age <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(255, 69, 0);">18</span>
+accessAllowed <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(0, 128, 0);">True</span> <span style="color: rgb(255, 119, 0); font-weight: bold;">if</span> age <span style="color: rgb(102, 204, 102);">&gt;=</span> <span style="color: rgb(255, 69, 0);">18</span> <span style="color: rgb(255, 119, 0); font-weight: bold;">else</span> <span style="color: rgb(0, 128, 0);">False</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span>accessAllowed<span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Получим True, если возраст (age) больше или равен 18, иначе – 
+				False. Кстати, проверку из данного примера можно сделать короче, 
+				просто прописав</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">accessAllowed <span style="color: rgb(102, 204, 102);">=</span> age <span style="color: rgb(102, 204, 102);">&gt;=</span> <span style="color: rgb(255, 69, 0);">18</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				здесь оператор &gt;= вернет True при возрасте больше или равен 18 и 
+				False – в противном случае.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Теперь, когда мы разобрались с базовыми моментами проверки 
+				условий, сделаем следующий шаг и попробуем реализовать проверку 
+				попадания переменной x в диапазон [2; 7], то есть, условие 
+				должно быть истинным, когда x принимает значения в этом 
+				диапазоне чисел. Очевидно, что здесь должно быть две проверки: 
+				первая – мы проверяем, что x &gt;= 2 и вторая – проверяем, что x &lt;= 
+				7. Если оба этих условия выполняются одновременно, то x попадает 
+				в наш диапазон. Реализовать такую проверку на Python можно так:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">x <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(255, 69, 0);">4</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">if</span> x <span style="color: rgb(102, 204, 102);">&gt;=</span> <span style="color: rgb(255, 69, 0);">2</span> <span style="color: rgb(255, 119, 0); font-weight: bold;">and</span> x <span style="color: rgb(102, 204, 102);">&lt;=</span> <span style="color: rgb(255, 69, 0);">7</span> : <span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: rgb(72, 61, 139);">&quot;x попадает в [2; 7]&quot;</span><span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">else</span>: <span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: rgb(72, 61, 139);">&quot;x не попадает в [2; 7]&quot;</span><span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Смотрите, здесь записано два условия, объединенных по И (and – 
+				это И). В результате, общее составное условие будет считаться 
+				истинным, если истинно и первое и второе условие. Если хотя бы 
+				одно из этих условий ложно, то ложно и все составное условие. В 
+				результате мы корректно реализуем проверку на вхождение значения 
+				переменной в диапазон [2; 7].</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				А теперь давайте реализуем противоположное условие, что x не 
+				принадлежит диапазону [2; 7]. Условие будет таким:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">x <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(255, 69, 0);">40</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">if</span><span style="color: black;">(</span>x <span style="color: rgb(102, 204, 102);">&lt;</span> <span style="color: rgb(255, 69, 0);">2</span> <span style="color: rgb(255, 119, 0); font-weight: bold;">or</span> x <span style="color: rgb(102, 204, 102);">&gt;</span> <span style="color: rgb(255, 69, 0);">7</span><span style="color: black;">)</span>: <span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: rgb(72, 61, 139);">&quot;x не попадает в [2; 7]&quot;</span><span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">else</span>: <span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: rgb(72, 61, 139);">&quot;x попадает в [2; 7]&quot;</span><span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Здесь в составном условии используется связка по ИЛИ (or – это 
+				ИЛИ) и оно будет истинно, если истинно или первое, или второе 
+				условие. То есть, в нашем случае, если x &lt; 2 или x &gt; 7, то 
+				делается вывод о невхождении переменной x в указанный диапазон.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Итак, запомните следующие правила:</p>
+				<ul style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li>условие x &gt;= 2 and x &lt;= 7 истинно, если 
+								истинно каждое из подусловий (x&gt;=2 и x &lt;= 7) и 
+								ложно, если ложно хотя бы одно из них;</li>
+								<li>условие x &lt; 2 or x &gt; 7 истинно, если истинно 
+								хотя бы одно из подусловий (x &lt; 2 или x &gt; 7) и 
+								ложно, когда оба ложны.</li>
+				</ul>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вот так можно записывать более сложные условия в условном 
+				операторе if. Причем они могут комбинироваться в любом 
+				сочетании, например:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">x <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(255, 69, 0);">4</span><span style="color: rgb(102, 204, 102);">;</span> y <span style="color: rgb(102, 204, 102);">=</span> -<span style="color: rgb(255, 69, 0);">2</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">if</span> x <span style="color: rgb(102, 204, 102);">&gt;=</span> <span style="color: rgb(255, 69, 0);">2</span> <span style="color: rgb(255, 119, 0); font-weight: bold;">and</span> x <span style="color: rgb(102, 204, 102);">&lt;=</span> <span style="color: rgb(255, 69, 0);">7</span> <span style="color: rgb(255, 119, 0); font-weight: bold;">and</span> <span style="color: black;">(</span>y <span style="color: rgb(102, 204, 102);">&lt;</span> <span style="color: rgb(255, 69, 0);">0</span> <span style="color: rgb(255, 119, 0); font-weight: bold;">or</span> y <span style="color: rgb(102, 204, 102);">&gt;</span> <span style="color: rgb(255, 69, 0);">5</span><span style="color: black;">)</span>:
+&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: rgb(72, 61, 139);">&quot;x попадает в [2; 7], y не попадает в [0; 5]&quot;</span><span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Здесь реализована проверка, что x должно принадлежать [2; 7], а 
+				y не принадлежать [0; 5]. И обратите внимание вот на эти круглые 
+				скобки. Дело в том, что приоритет у операции and выше, чем у or, 
+				поэтому без скобок у нас бы получилась вот такая проверка:</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				if (x &gt;= 2 and x &lt;= 7 and y &lt; 0) or (y &gt; 5)</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				то есть, мы проверяли бы, что x принадлежит [2; 7] и y меньше 
+				нуля ИЛИ y больше 5. Как вы понимаете – это уже совсем другая 
+				проверка. Поэтому учитывайте приоритет этих операций при 
+				формировании составного условия. Если нужно изменить приоритет – 
+				используйте круглые скобки.</p>
+				<h2 style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Одиночные проверки</h2>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Внутри условия можно прописывать и такие одиночные выражения:</p>
+				<div class="highlight" style="max-width: 1200px; padding: 0px 10px; margin: 0px; overflow: auto hidden; background: rgb(240, 240, 240); color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="block" style="width: 1200px; margin: 0px;">
+												<pre class="python" style="font-family: monospace;">x <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(255, 69, 0);">4</span><span style="color: rgb(102, 204, 102);">;</span> y <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(0, 128, 0);">True</span><span style="color: rgb(102, 204, 102);">;</span> z <span style="color: rgb(102, 204, 102);">=</span> <span style="color: rgb(0, 128, 0);">False</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">if</span><span style="color: black;">(</span>x<span style="color: black;">)</span>: <span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: rgb(72, 61, 139);">&quot;x = &quot;</span><span style="color: rgb(102, 204, 102);">,</span> x<span style="color: rgb(102, 204, 102);">,</span> <span style="color: rgb(72, 61, 139);">&quot; дает true&quot;</span><span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">if</span><span style="color: black;">(</span><span style="color: rgb(255, 119, 0); font-weight: bold;">not</span> <span style="color: rgb(255, 69, 0);">0</span><span style="color: black;">)</span>: <span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: rgb(72, 61, 139);">&quot;0 дает false&quot;</span><span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">if</span><span style="color: black;">(</span><span style="color: rgb(72, 61, 139);">&quot;0&quot;</span><span style="color: black;">)</span>: <span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: rgb(72, 61, 139);">&quot;строка 0 дает true&quot;</span><span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">if</span><span style="color: black;">(</span><span style="color: rgb(255, 119, 0); font-weight: bold;">not</span> <span style="color: rgb(72, 61, 139);">&quot;&quot;</span><span style="color: black;">)</span>: <span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: rgb(72, 61, 139);">&quot;пустая строка дает false&quot;</span><span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">if</span><span style="color: black;">(</span>y<span style="color: black;">)</span>: <span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: rgb(72, 61, 139);">&quot;y = true дает true&quot;</span><span style="color: black;">)</span>
+<span style="color: rgb(255, 119, 0); font-weight: bold;">if</span><span style="color: black;">(</span><span style="color: rgb(255, 119, 0); font-weight: bold;">not</span> z<span style="color: black;">)</span>: <span style="color: rgb(255, 119, 0); font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: rgb(72, 61, 139);">&quot;z = false дает false&quot;</span><span style="color: black;">)</span></pre>
+								</div>
+				</div>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вот этот оператор not – это отрицание – НЕ, то есть, чтобы 
+				проверить, что 0 – это false мы преобразовываем его в 
+				противоположное состояние с помощью оператора отрицания НЕ в 
+				true и условие срабатывает. Аналогично и с переменной z, которая 
+				равна false.</p>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Из этих примеров можно сделать такие выводы:</p>
+				<ol style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li>Любое число, отличное от нуля, дает True. 
+								Число 0 преобразуется в False.</li>
+								<li>Пустая строка – это False, любая другая 
+								строка с символами – это True.</li>
+								<li>С помощью оператора not можно менять условие 
+								на противоположное (в частности, False 
+								превращать в True).</li>
+				</ol>
+				<p style="color: rgb(0, 0, 0); font-family: &quot;Yandex Sans Display Light&quot;; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Итак, в условиях мы можем использовать три оператора: and, or и 
+				not. Самый высокий приоритет у операции not, следующий приоритет 
+				имеет операция and и самый маленький приоритет у операции or. 
+				Вот так работает оператор if в Python.</p>
+                <p></p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les27.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les27/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:57:44 GMT -->
+</html>

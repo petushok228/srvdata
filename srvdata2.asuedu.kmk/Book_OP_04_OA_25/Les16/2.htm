@@ -1,0 +1,1094 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les16/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:38:33 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: #0000FF;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 2. Решение задач на матрицы. Язык Паскаль.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p class="style2"><strong>Сумма элементов двумерного массива</strong></p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Найти сумму элементов матрицы.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Задача вычисления суммы элементов массива достаточно проста: все 
+				элементы массива перебираются и добавляются в одну и ту же 
+				переменную. Перебор элементов массива осуществляется в цикле<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">for</code>. 
+				Аналогично находится сумма элементов двумерного массива с той 
+				лишь разницей, что добавляется вложенный цикл<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">for</code><span>&nbsp;</span>для 
+				прохода по элементам каждой строки матрицы.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Программа на языке Паскаль:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;">const</span>
+    M = <span class="hljs-number">5</span>;
+    N = <span class="hljs-number">4</span>;
+ 
+<span class="hljs-keyword" style="font-weight: 700;">var</span>
+    a: <span class="hljs-keyword" style="font-weight: 700;">array</span>[<span class="hljs-number">1</span>..M, <span class="hljs-number">1</span>..N] <span class="hljs-keyword" style="font-weight: 700;">of</span> byte;
+    i, j: byte;
+    sum: integer;
+ 
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    randomize;
+ 
+    sum := <span class="hljs-number">0</span>;
+
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i := <span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> j := <span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> M <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+            a[i,j] := random(<span class="hljs-number">10</span>);
+            <span class="hljs-keyword" style="font-weight: 700;">write</span>(a[i,j]:<span class="hljs-number">3</span>);
+
+            sum := sum + a[i,j]
+
+        <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+        writeln
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+ 
+    writeln (<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;------------&#39;</span>);
+ 
+    writeln(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;sum = &#39;</span>, sum);
+ 
+<span class="hljs-keyword" style="font-weight: 700;">end</span>.</code></pre>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример выполнения кода:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="hljs language-bash" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;">  1  0  3  8  0
+  6  5  2  2  5
+  5  6  4  2  3
+  1  9  9  2  8
+------------
+<span class="hljs-built_in" style="color: rgb(0, 72, 171);">sum</span> = 81</code></pre>
+				<p class="style2">Суммы элементов строк матрицы&nbsp;</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вариант 1. Найти сумму элементов каждой строки матрицы 
+				(двумерного массива).</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вариант 2. Вычислить сумму элементов определенной строки 
+				матрицы.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong>Если поставлена задача вычислить сумму элементов каждой 
+				строки матрицы</strong>, то алгоритм ее выполнения таков:</p>
+				<ol style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="margin-top: 1em; margin-bottom: 1em;">По-строчно 
+					перебираем элементы матрицы (внешний цикл отвечает за 
+					переход к новой строке, счетчик - первый индекс элементов).</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">Во внешнем 
+					цикле перед внутренним присваиваем переменной для суммы 
+					значение 0. В ней будет накапливаться сумма элементов 
+					текущей строки, элементы которой перебираются во внутреннем 
+					цикле.</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">После 
+					внутреннего цикла выводим значение переменной-суммы на 
+					экран.</li>
+				</ol>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Ниже в примере решения данной задачи заполнение матрицы, вывод 
+				элементов на экран и подсчет суммы выполняются внутри одного 
+				цикла. Это сделано не только для сокращения кода программы, но и 
+				для красивого вывода. После того, как выводятся элементы 
+				очередной строки, в конце этой же строки выводится их сумма.</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;">const</span>
+    M = <span class="hljs-number">7</span>;
+    N = <span class="hljs-number">5</span>;
+<span class="hljs-keyword" style="font-weight: 700;">var</span>
+    mat: <span class="hljs-keyword" style="font-weight: 700;">array</span>[<span class="hljs-number">1</span>..N,<span class="hljs-number">1</span>..M] <span class="hljs-keyword" style="font-weight: 700;">of</span> real;
+    i, j: byte;
+    sum: real;
+<span class="hljs-keyword" style="font-weight: 700;">begin</span> 
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        sum := <span class="hljs-number">0</span>;
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> j:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> M <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+            mat[i,j] := random();
+            <span class="hljs-keyword" style="font-weight: 700;">write</span>(mat[i,j]:<span class="hljs-number">6</span>:<span class="hljs-number">2</span>);
+            sum := sum + mat[i,j];
+        <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+        writeln (<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;|&#39;</span>, sum:<span class="hljs-number">6</span>:<span class="hljs-number">2</span>);
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>; 
+<span class="hljs-keyword" style="font-weight: 700;">end</span>.</code></pre>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример выполнения:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="hljs language-undefined" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;">  0.55  0.59  0.72  0.84  0.60  0.86  0.54|  4.71
+
+  0.85  0.42  0.62  0.65  0.38  0.44  0.30|  3.66
+
+  0.89  0.06  0.96  0.27  0.38  0.48  0.79|  3.84
+
+  0.81  0.53  0.48  0.57  0.39  0.93  0.84|  4.54
+
+  0.07  0.34  0.09  0.65  0.02  0.37  0.83|  2.36</code></pre>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong>Если поставлена задача нахождения суммы элементов только 
+				определенной строки матрицы</strong>, то в решении используется 
+				только один цикл (без вложенного). Перебираются только элементы 
+				указанной строки. При этом меняется значение только второго 
+				индекса, а первый всегда постоянен - это номер строки.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Программа ниже усложнена тем, что пользователь сам определяет 
+				номер строки матрицы, элементы которой необходимо 
+				просуммировать. Если поставлена задача, в которой конкретно 
+				задается строка, то вместо переменной num следует использовать 
+				число, обозначающее номер строки. Например, для третьей строки 
+				выражение<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">sum 
+				:= sum + mat[num,j]</code><span>&nbsp;</span>следует заменить на<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">sum 
+				:= sum + mat[3,j]</code>.</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;">const</span>
+    M = <span class="hljs-number">7</span>;
+    N = <span class="hljs-number">5</span>;
+<span class="hljs-keyword" style="font-weight: 700;">var</span>
+    mat: <span class="hljs-keyword" style="font-weight: 700;">array</span>[<span class="hljs-number">1</span>..N,<span class="hljs-number">1</span>..M] <span class="hljs-keyword" style="font-weight: 700;">of</span> real;
+    i, j: byte;
+    sum: real;
+    num: byte;
+<span class="hljs-keyword" style="font-weight: 700;">begin</span> 
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span> <span class="hljs-comment" style="color: rgb(115, 129, 145);">// только заполняем и выводим матрицу</span>
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> j:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> M <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+            mat[i,j] := random();
+            <span class="hljs-keyword" style="font-weight: 700;">write</span>(mat[i,j]:<span class="hljs-number">6</span>:<span class="hljs-number">2</span>);
+        <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+        writeln;
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>; 
+    <span class="hljs-keyword" style="font-weight: 700;">write</span>(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;Введите номер строки: &#39;</span>);
+    readln(num);
+    sum := <span class="hljs-number">0</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> j:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> M <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-comment" style="color: rgb(115, 129, 145);">// считаем сумму элементов заданной строки</span>
+        sum := sum + mat[num,j];
+    writeln(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;Сумма ее элементов: &#39;</span>, sum:<span class="hljs-number">6</span>:<span class="hljs-number">2</span>);
+<span class="hljs-keyword" style="font-weight: 700;">end</span>.</code></pre>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример выполнения:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="hljs language-undefined" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;">  0.55  0.59  0.72  0.84  0.60  0.86  0.54
+
+  0.85  0.42  0.62  0.65  0.38  0.44  0.30
+
+  0.89  0.06  0.96  0.27  0.38  0.48  0.79
+
+  0.81  0.53  0.48  0.57  0.39  0.93  0.84
+
+  0.07  0.34  0.09  0.65  0.02  0.37  0.83
+
+Введите номер строки: 2
+
+Сумма ее элементов:   3.66</code></pre>
+				<p class="style2">Сумма элементов столбцов матрицы&nbsp;</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вариант 1. Вычислить сумму элементов каждого столбца матрицы 
+				(двумерного массива).</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вариант 2. Найти сумму элементов определенного столбца матрицы.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Матрицу можно представить как массив, в который вложены другие 
+				массивы. Эти другие массивы имеют одинаковую длину (например,<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">M</var>), 
+				а количество этих вложенных массивов - другое число (например,<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">N</var>). 
+				Так, если<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">M</var><span>&nbsp;</span>= 
+				7, а<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">N</var><span>&nbsp;</span>= 
+				5, то это значит, что матрица состоит из 5 одномерных массивов, 
+				в каждом из которых по 7 элементов.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Элементы одного вложенного массива обычно считают строкой 
+				матрицы. Столбцы же матрицы формируют элементы разных вложенных 
+				массивов, но имеющие в них одинаковые индексы (занимающие 
+				одинаковые позиции). Так, все первые элементы вложенных 
+				массивов, формируют первый столбец матрицы. Элементы с индексом 
+				2 образуют второй столбец.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">mat</var><span>&nbsp;</span>- 
+				это переменная-матрица, то выражение<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">mat[i,j]</code><span>&nbsp;</span>обозначает 
+				обращение к элементу, имеющему номер строки<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">i</var><span>&nbsp;</span>(это 
+				номер вложенного массива), и номер столбца<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">j</var><span>&nbsp;</span>(это 
+				номер самого элемента во вложенном массиве).</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Обычно матрицы заполняются построчно: во внешнем цикле 
+				перебираются строки, во внутреннем - элементы строк (формируют 
+				столбцы). Однако это не обязательно. Заполнять можно и по 
+				столбцам: во внешнем цикле перебирать столбцы, во внутреннем - 
+				обращаться к элементам разных вложенных массивов, но имеющих 
+				идентичный индекс.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В программе ниже заполнение двумерного массива происходит 
+				построчно (стандартно), затем вычисляется сумма элементов 
+				каждого столбца, и здесь обход происходит по столбцам. Обратите 
+				внимание, что в данном случае внешний цикл отсчитывает до<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">M</var>, 
+				а внутренний - до<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">N</var>. 
+				В разных итерациях вложенного цикла различна первая 
+				переменная-индекс (в данном случае<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">i</var>), 
+				обозначающая номер строки, а столбец остается постоянным.</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;">const</span>
+    M = <span class="hljs-number">7</span>;
+    N = <span class="hljs-number">5</span>;
+<span class="hljs-keyword" style="font-weight: 700;">var</span>
+    mat: <span class="hljs-keyword" style="font-weight: 700;">array</span>[<span class="hljs-number">1</span>..N,<span class="hljs-number">1</span>..M] <span class="hljs-keyword" style="font-weight: 700;">of</span> real;
+    i, j: byte;
+    sum: real;
+<span class="hljs-keyword" style="font-weight: 700;">begin</span> 
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span> <span class="hljs-comment" style="color: rgb(115, 129, 145);">// заполнение матрицы</span>
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> j:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> M <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+            mat[i,j] := random();
+            <span class="hljs-keyword" style="font-weight: 700;">write</span>(mat[i,j]:<span class="hljs-number">6</span>:<span class="hljs-number">2</span>);
+        <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+        writeln;
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+    writeln(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;Sum of col:&#39;</span>);
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> j:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> M <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span> <span class="hljs-comment" style="color: rgb(115, 129, 145);">// подсчет сумм</span>
+        sum := <span class="hljs-number">0</span>;
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span>
+            sum := sum + mat[i,j];
+        <span class="hljs-keyword" style="font-weight: 700;">write</span>(sum:<span class="hljs-number">6</span>:<span class="hljs-number">2</span>);
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+    writeln;
+<span class="hljs-keyword" style="font-weight: 700;">end</span>.</code></pre>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример выполнения кода программы:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="hljs language-undefined" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;">  0.55  0.59  0.72  0.84  0.60  0.86  0.54
+  0.85  0.42  0.62  0.65  0.38  0.44  0.30
+  0.89  0.06  0.96  0.27  0.38  0.48  0.79
+  0.81  0.53  0.48  0.57  0.39  0.93  0.84
+  0.07  0.34  0.09  0.65  0.02  0.37  0.83
+Sum of col:
+  3.17  1.94  2.87  2.98  1.78  3.07  3.30</code></pre>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Когда поставлена задача нахождения суммы элементов только 
+				определенного столбца, то она решается проще, без вложенного 
+				цикла. Вместо переменной<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">j</var><span>&nbsp;</span>используется 
+				конкретное число, обозначающее столбец, сумму которого следует 
+				посчитать. Например, для вычисления суммы элементов третьего 
+				столбца код будет таким:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;">    ...
+    sum := <span class="hljs-number">0</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span>
+        sum := sum + mat[i,<span class="hljs-number">3</span>];
+    writeln(sum:<span class="hljs-number">6</span>:<span class="hljs-number">2</span>);
+    ...</code></pre>
+				<p class="style2"><strong>Найти строку матрицы с максимальной суммой элементов&nbsp;</strong></p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В двумерном массиве (матрице) найти строку, сумма элементов 
+				которой является максимальной среди всех строк матрицы.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Решения данной задачи, когда требуется найти только одну строку 
+				с максимальной суммой элементов и когда таких строк несколько и 
+				все их надо определить, несколько различаются.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Рассмотрим сначала первый случай. Предположим, что в матрице 
+				суммы всех строк различны или для решения задачи достаточно 
+				найти первую с максимальной суммой.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пусть переменная<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">sum_max</var><span>&nbsp;</span>хранит 
+				найденную максимальную сумму. Переменная<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">row_max</var><span>&nbsp;</span>хранит 
+				номер строки, элементы которой дают в сумме максимум.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Перебираем построчно матрицу. Перед вложенным циклом переменной<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">sum</var><span>&nbsp;</span>(хранит 
+				сумму элементов текущей строки) присваиваем 0. Во вложенном 
+				цикле перебираются элементы текущей строки. Значение каждого из 
+				них добавляется к<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">sum</var>.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				После того, как сумма элементов текущей строки посчитана (вышли 
+				из внутреннего цикла), проверяем не больше ли она значения, 
+				хранимого в<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">sum_max</var>. 
+				Если больше, то записываем ее в<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">sum_max</var>, 
+				а переменной row_max присваиваем номер текущей строки (хранится 
+				в переменной<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">i</var>).</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В конце программы выводим значения<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">sum_max</var><span>&nbsp;</span>и<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">row_max</var><span>&nbsp;</span>(она 
+				содержит ответ задачи - номер искомой строки) на экран. В данном 
+				случае будет найдена только первая строка с максимальной суммой. 
+				Если бы в условном операторе использовался логический оператор<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">&gt;=</code><span>&nbsp;</span>(больше 
+				или равно), то, при наличии нескольких строк с максимальной 
+				суммой, была бы выведена на экран последняя.</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;">const</span>
+    N = <span class="hljs-number">5</span>; M = <span class="hljs-number">3</span>; 
+<span class="hljs-keyword" style="font-weight: 700;">var</span>
+    a: <span class="hljs-keyword" style="font-weight: 700;">array</span>[<span class="hljs-number">1</span>..N,<span class="hljs-number">1</span>..M] <span class="hljs-keyword" style="font-weight: 700;">of</span> integer;
+    i, j, row_max: byte;
+    sum, sum_max: integer;
+<span class="hljs-keyword" style="font-weight: 700;">begin</span> 
+    randomize;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> j:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> M <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+            a[i,j] := random(<span class="hljs-number">10</span>);
+            <span class="hljs-keyword" style="font-weight: 700;">write</span>(a[i,j]:<span class="hljs-number">3</span>);
+        <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+        writeln;
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+    
+    sum_max := -<span class="hljs-number">1</span>;
+    row_max := <span class="hljs-number">0</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        sum := <span class="hljs-number">0</span>;
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> j:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> M <span class="hljs-keyword" style="font-weight: 700;">do</span>
+            sum := sum + a[i,j];
+        <span class="hljs-keyword" style="font-weight: 700;">if</span> sum &gt; sum_max <span class="hljs-keyword" style="font-weight: 700;">then</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+            sum_max := sum;
+            row_max := i;
+        <span class="hljs-keyword" style="font-weight: 700;">end</span>;        
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+    
+    writeln(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;Строка &#39;</span>,row_max,<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;, сумма &#39;</span>,sum_max);
+<span class="hljs-keyword" style="font-weight: 700;">end</span>.</code></pre>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Теперь обратимся ко второму случаю, когда надо определить все 
+				строки с максимальной суммой элементов, если таковых несколько. 
+				В данном случае следует использовать два отдельных перебора 
+				матрицы. В первом просто определяется максимум. Во втором на 
+				экран выводятся номера строк, сумма элементов которых совпала с 
+				ранее найденным максимальным значением.</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;">const</span>
+    N = <span class="hljs-number">20</span>; M = <span class="hljs-number">3</span>; 
+<span class="hljs-keyword" style="font-weight: 700;">var</span>
+    a: <span class="hljs-keyword" style="font-weight: 700;">array</span>[<span class="hljs-number">1</span>..N,<span class="hljs-number">1</span>..M] <span class="hljs-keyword" style="font-weight: 700;">of</span> integer;
+    i, j: byte;
+    sum, sum_max: integer;
+<span class="hljs-keyword" style="font-weight: 700;">begin</span> 
+    randomize;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> j:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> M <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+            a[i,j] := random(<span class="hljs-number">10</span>);
+            <span class="hljs-keyword" style="font-weight: 700;">write</span>(a[i,j]:<span class="hljs-number">3</span>);
+        <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+        writeln;
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+    
+    sum_max := -<span class="hljs-number">1</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        sum := <span class="hljs-number">0</span>;
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> j:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> M <span class="hljs-keyword" style="font-weight: 700;">do</span>
+            sum := sum + a[i,j];
+        <span class="hljs-keyword" style="font-weight: 700;">if</span> sum &gt; sum_max <span class="hljs-keyword" style="font-weight: 700;">then</span> 
+            sum_max := sum;        
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+    
+    <span class="hljs-keyword" style="font-weight: 700;">write</span>(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;Максимальную сумму &#39;</span>,sum_max,<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39; содержат строки:&#39;</span>);
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        sum := <span class="hljs-number">0</span>;
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> j:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> M <span class="hljs-keyword" style="font-weight: 700;">do</span>
+            sum := sum + a[i,j];
+        <span class="hljs-keyword" style="font-weight: 700;">if</span> sum = sum_max <span class="hljs-keyword" style="font-weight: 700;">then</span> 
+            <span class="hljs-keyword" style="font-weight: 700;">write</span>(i:<span class="hljs-number">3</span>);        
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+    writeln;
+<span class="hljs-keyword" style="font-weight: 700;">end</span>.</code></pre>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример выполнения программы:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="hljs language-undefined" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;">  7  8  6
+  6  4  0
+  1  8  1
+  9  7  5
+  4  3  0
+  8  2  8
+  4  7  0
+  0  7  6
+  1  5  9
+  7  4  9
+  0  3  3
+  8  7  4
+  5  5  1
+  1  3  3
+  8  8  4
+  4  6  6
+  8  1  6
+  5  6  7
+  8  9  4
+  2  9  3
+Максимальную сумму 21 содержат строки:  1  4 19</code></pre>
+				<p class="style2">Найти индексы максимальных элементов матрицы&nbsp;</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В двумерном массиве (матрице) найти индексы (номера строк и 
+				столбцов) максимальных элементов.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<b>Описание переменных:</b></p>
+				<ul style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="margin-top: 1em; margin-bottom: 1em;">
+					<var style="padding: 2px; color: var(--color-text-h1);">mx</var><span>&nbsp;</span>- 
+					заданная матрица;</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">
+					<var style="padding: 2px; color: var(--color-text-h1);">max</var><span>&nbsp;</span>- 
+					значение максимального элемента;</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">
+					<var style="padding: 2px; color: var(--color-text-h1);">qty</var><span>&nbsp;</span>- 
+					количество максимальных элементов в матрице;</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">
+					<var style="padding: 2px; color: var(--color-text-h1);">id</var><span>&nbsp;</span>- 
+					массив для хранения номеров строк и столбцов найденных 
+					максимальных элементов;</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">
+					<var style="padding: 2px; color: var(--color-text-h1);">i</var>,<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">j</var><span>&nbsp;</span>- 
+					переменные, используемые в качестве счетчиков и текущих 
+					индексов элементов массива.</li>
+				</ul>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<b>Алгоритм решения задачи:</b></p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Первым этапом решения данной задачи является поиск значения 
+				максимального элемента матрицы. Для этого переменной<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">max</var><span>&nbsp;</span>сначала 
+				присваивается самое минимальное из возможных значений, после 
+				этого каждый элемент матрицы сравнивается со значением<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">max</var>. 
+				Если текущий элемент больше, то значение<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">max</var><span>&nbsp;</span>перезаписывается 
+				на него. Поиск максимума можно выполнить в том же цикле, в 
+				котором происходит заполнения матрицы.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Допустим, задача усложнена тем, что</p>
+				<ol style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="margin-top: 1em; margin-bottom: 1em;">в матрице 
+					может быть несколько равных между собой максимальных 
+					элементов,</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">их индексы 
+					нужно не просто вывести на экран, но и сохранить внутри 
+					программы.</li>
+				</ol>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если бы требовалось просто вывести индексы первого попавшегося 
+				(или единственного) максимального элемента, то достаточно было 
+				бы перебрать матрицу, сравнить каждый элемент с ранее найденным 
+				максимальным значением. Как только совпадение было бы найдено, 
+				вывести на экран значения<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">i</var><span>&nbsp;</span>и<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">j</var>. 
+				После чего прервать выполнение цикла.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Поскольку нужно запомнить индексы максимумов, то в программу 
+				вводится дополнительный двумерный массив (матрица)<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">id</var>. 
+				Каждая его строка состоит всего из двух элементов, в которых 
+				будут храниться номера строки и столбца найденного максимума. 
+				Количество строк массива<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">id</var><span>&nbsp;</span>должно 
+				быть таким, чтобы была возможность записать в него индексы всех 
+				элементов заданной матрицы, если вдруг все они окажутся 
+				максимальными. Однако маловероятно, что все элементы матрицы 
+				будут максимальными. Поэтому массив<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">id</var><span>&nbsp;</span>не 
+				будет заполнен полностью. Чтобы отслеживать сколько строк этого 
+				массива заполнено (т. е. сколько максимумов найдено), вводится 
+				переменная<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">qty</var>.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Итак, перебираем заданную матрицу построчно. Если очередной 
+				элемент равен значению<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">max</var>, 
+				то увеличиваем на 1 значение<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">qty</var>, 
+				а в<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">id</var><span>&nbsp;</span>в 
+				его строку с номером<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">qty</var><span>&nbsp;</span>записываем 
+				индексы<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">i</var><span>&nbsp;</span>и<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">j</var><span>&nbsp;</span>найденного 
+				максимума.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В конце программы выводим значения заполненных ранее ячеек 
+				массива<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">id</var>.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<b>Программа на языке Паскаль:</b></p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;">const</span> N = <span class="hljs-number">5</span>; M = <span class="hljs-number">7</span>;
+<span class="hljs-keyword" style="font-weight: 700;">var</span>
+    mx: <span class="hljs-keyword" style="font-weight: 700;">array</span>[<span class="hljs-number">1</span>..N,<span class="hljs-number">1</span>..M] <span class="hljs-keyword" style="font-weight: 700;">of</span> integer;
+    max: integer;
+    i, j, qty: byte;
+    id: <span class="hljs-keyword" style="font-weight: 700;">array</span>[<span class="hljs-number">1</span>..<span class="hljs-number">2</span>,<span class="hljs-number">1</span>..N*M] <span class="hljs-keyword" style="font-weight: 700;">of</span> byte;
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    max := MAXINT * (-<span class="hljs-number">1</span>) - <span class="hljs-number">1</span>;
+    randomize;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> j:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> M <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+            mx[i,j] := random(<span class="hljs-number">50</span>) - <span class="hljs-number">25</span>;
+            <span class="hljs-keyword" style="font-weight: 700;">write</span>(mx[i,j]:<span class="hljs-number">4</span>);
+            <span class="hljs-keyword" style="font-weight: 700;">if</span> mx[i,j] &gt; max <span class="hljs-keyword" style="font-weight: 700;">then</span> max:=mx[i,j];
+        <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+        writeln;
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+    writeln(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;Максимальное значение: &#39;</span>, max);
+    qty := <span class="hljs-number">0</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> j:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> M <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+            <span class="hljs-keyword" style="font-weight: 700;">if</span> mx[i,j] = max <span class="hljs-keyword" style="font-weight: 700;">then</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+                qty := qty + <span class="hljs-number">1</span>;
+                id[qty,<span class="hljs-number">1</span>] := i;
+                id[qty,<span class="hljs-number">2</span>] := j;
+            <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+        <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> qty <span class="hljs-keyword" style="font-weight: 700;">do</span> 
+        writeln(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;строка: &#39;</span>, id[i,<span class="hljs-number">1</span>], <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;; столбец: &#39;</span>, id[i,<span class="hljs-number">2</span>]);
+<span class="hljs-keyword" style="font-weight: 700;">end</span>.</code></pre>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример выполнения программы определения индексов максимальных 
+				элементов матрицы:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="hljs language-undefined" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"> -24  -1 -14  -1  16 -13  23
+ -24  -9 -22 -25  -4   8 -16
+ -15  -6  -3  18   3   7 -24
+  10   6 -22  17   3  -4  23
+  -3 -17  -4  -6   4  18  -7
+Максимальное значение: 23
+строка: 1; столбец: 7
+строка: 4; столбец: 7</code></pre>
+				<p class="style2"><strong>Максимальные элементы столбцов матрицы&nbsp;</strong></p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Найти максимальный элемент для каждого столбца матриц 
+				размерностью N строк M столбцов.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При переборе элементов матрицы по столбцам во внешнем цикле 
+				изменяется второй индекс, а во внутреннем - первый. Перед 
+				внутренним циклом предполагается, что первый элемент столбца 
+				двумерного массива - максимальный элемент данного столбца. Во 
+				внутреннем цикле, если обнаруживается, что текущий элемент 
+				больше уже найденного максимального, то значение переменной 
+				перезаписывается на него.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Найденный максимум сразу выводится на экран или может быть 
+				сохранен в отдельном одномерном массиве, размерность которого 
+				соответствует количеству столбцов матрицы.</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;">const</span> 
+    N = <span class="hljs-number">5</span>;
+    M = <span class="hljs-number">10</span>;
+
+<span class="hljs-keyword" style="font-weight: 700;">var</span>
+    arr: <span class="hljs-keyword" style="font-weight: 700;">array</span>[<span class="hljs-number">1</span>..N, <span class="hljs-number">1</span>..M] <span class="hljs-keyword" style="font-weight: 700;">of</span> integer;
+    max: integer;
+    i,j: byte;    
+
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    randomize;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i := <span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> j := <span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> M <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+            arr[i, j] := random(<span class="hljs-number">100</span>);
+            <span class="hljs-keyword" style="font-weight: 700;">write</span>(arr[i, j]:<span class="hljs-number">4</span>);
+        <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+        writeln;
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i := <span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> M <span class="hljs-keyword" style="font-weight: 700;">do</span> 
+        <span class="hljs-keyword" style="font-weight: 700;">write</span>(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;  --&#39;</span>);
+    writeln;
+
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> j := <span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> M <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        max := arr[<span class="hljs-number">1</span>, j];
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> i := <span class="hljs-number">2</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span>
+            <span class="hljs-keyword" style="font-weight: 700;">if</span> arr[i, j] &gt; max <span class="hljs-keyword" style="font-weight: 700;">then</span>
+                max := arr[i, j];
+        <span class="hljs-keyword" style="font-weight: 700;">write</span>(max:<span class="hljs-number">4</span>);
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+    writeln;
+<span class="hljs-keyword" style="font-weight: 700;">end</span>.</code></pre>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример выполнения программы:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="hljs language-undefined" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;">   9   1  39  91  65  93  88  87  75  25
+  16  96  90  17  99  36  53  72  41   3
+  82  62  14  53  47  52  73  17  21  39
+  56  52  41  24  83  45  48  12  85  55
+  76  31  54  47  71  13  66  84  94   8
+  --  --  --  --  --  --  --  --  --  --
+  82  96  90  91  99  93  88  87  94  55</code></pre>
+				<p class="style2"><strong>Поменять местами строки матрицы&nbsp;</strong></p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Дана матрица (двумерный массив). Поменять местами две любые ее 
+				строки.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пусть строки, которые требуется поменять местами задаются 
+				пользователем при выполнении программы. Обменять строки - это 
+				значит, каждый элемент одной строки надо поставить на то же 
+				место другой строки.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При обращении к элементу матрицы первым индексом указывается 
+				строка, вторым - столбец. Поскольку строки задаются, проход 
+				осуществляется по столбцам. Для каждого столбца элемент одной 
+				строки присваивается буферной переменной, после чего на его 
+				место записывается элемент того же столбца другой строки. На 
+				место второго элемента записывается первый, взятый из буферной 
+				переменной.</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;">const</span> 
+    N = <span class="hljs-number">7</span>; M = <span class="hljs-number">5</span>;
+<span class="hljs-keyword" style="font-weight: 700;">var</span>
+    arr: <span class="hljs-keyword" style="font-weight: 700;">array</span>[<span class="hljs-number">1</span>..N,<span class="hljs-number">1</span>..M] <span class="hljs-keyword" style="font-weight: 700;">of</span> byte;
+    i,j,a,b,buff: byte;
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    randomize;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> j:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> M <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+            arr[i,j] := random(<span class="hljs-number">20</span>);
+            <span class="hljs-keyword" style="font-weight: 700;">write</span>(arr[i,j]:<span class="hljs-number">3</span>);
+        <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+        writeln;
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">write</span>(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;Какие строки обменять: &#39;</span>);
+    readln(a,b);
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> j:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> M <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        buff := arr[a,j];
+        arr[a,j] := arr[b,j];
+        arr[b,j] := buff;
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> j:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> M <span class="hljs-keyword" style="font-weight: 700;">do</span>
+            <span class="hljs-keyword" style="font-weight: 700;">write</span>(arr[i,j]:<span class="hljs-number">3</span>);
+        writeln;
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+<span class="hljs-keyword" style="font-weight: 700;">end</span>.</code></pre>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример выполнения кода:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="hljs language-undefined" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"> 18 11  5  4 11
+ 18  1  6  7  2
+  2 14 14 10 12
+ 13  5 11 19 19
+  6  6 13 13 16
+  0 17 14  6  0
+ 14  0  2 11  7
+Какие строки обменять: 2 7
+ 18 11  5  4 11
+ 14  0  2 11  7
+  2 14 14 10 12
+ 13  5 11 19 19
+  6  6 13 13 16
+  0 17 14  6  0
+ 18  1  6  7  2</code></pre>
+				<p class="style2"><strong>Отсортировать в матрице столбцы по убыванию значений элементов в первой строке&nbsp;</strong></p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Отсортировать в матрице столбцы по убыванию значений элементов в 
+				первой строке.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Данную задачу можно понять так:</p>
+				<ol style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="margin-top: 1em; margin-bottom: 1em;">
+					отсортировать необходимо первую строку матрицы;</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">остальные 
+					элементы каждого столбца должны переместиться в тот же 
+					столбец, куда переместился их первый (верхний) элемент, т.е. 
+					следовать за ним.</li>
+				</ol>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				См.&nbsp;<a style="color: var(--color-a); text-decoration: none; border-bottom: 1px dashed;" href="https://pas1.ru/choice">сортировка 
+				выбором</a>. Можно использовать метод пузырька.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Отличие данной задачи в том, что цикл сортировки включает 
+				перестановку всех элементов очередного столбца матрицы.</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;">const</span>
+    n = <span class="hljs-number">4</span>; m = <span class="hljs-number">6</span>;
+<span class="hljs-keyword" style="font-weight: 700;">var</span>
+    arr: <span class="hljs-keyword" style="font-weight: 700;">array</span>[<span class="hljs-number">1</span>..n,<span class="hljs-number">1</span>..m] <span class="hljs-keyword" style="font-weight: 700;">of</span> integer;
+    i,j,k,id: byte;
+    min: integer;
+&nbsp;
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    randomize;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> n <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> j:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> m <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+            arr[i,j] := random(<span class="hljs-number">50</span>) - <span class="hljs-number">25</span>;
+            <span class="hljs-keyword" style="font-weight: 700;">write</span>(arr[i,j]:<span class="hljs-number">4</span>);
+        <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+        writeln;
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+&nbsp;
+    k := m;
+    j := <span class="hljs-number">1</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">while</span> k &gt; <span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        min := arr[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>];
+        id := <span class="hljs-number">1</span>;
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> j:=<span class="hljs-number">2</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> k <span class="hljs-keyword" style="font-weight: 700;">do</span>
+            <span class="hljs-keyword" style="font-weight: 700;">if</span> arr[<span class="hljs-number">1</span>,j] &lt; min <span class="hljs-keyword" style="font-weight: 700;">then</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+                min := arr[<span class="hljs-number">1</span>,j];
+                id := j;
+            <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+        arr[<span class="hljs-number">1</span>,id] := arr[<span class="hljs-number">1</span>,j];
+        arr[<span class="hljs-number">1</span>,j] := min;
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">2</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> n <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+            min := arr[i,id];
+            arr[i,id] := arr[i,j];
+            arr[i,j] := min;
+        <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+        k := k - <span class="hljs-number">1</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+&nbsp;
+    writeln;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> n <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> j:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> m <span class="hljs-keyword" style="font-weight: 700;">do</span>
+            <span class="hljs-keyword" style="font-weight: 700;">write</span>(arr[i,j]:<span class="hljs-number">4</span>);
+        writeln;
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+
+<span class="hljs-keyword" style="font-weight: 700;">end</span>.</code></pre>
+				<p class="style2"><strong>Найти максимальный элемент диагонали&nbsp;</strong></p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Найти максимальный диагональный элемент и указать его координаты 
+				в главной диагонали матрицы.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Также решить задачу для побочной диагонали матрицы.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Элементы главной диагонали имеют одинаковые индексы. Поэтому 
+				перебрать эту диагональ и найти максимальный элемент проще. 
+				Поскольку надо вывести еще и индексы наибольшего элемента, то в 
+				переменной-максимуме следует запоминать индекс (один, так как 
+				второй такой же).</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для побочной диагонали индексация немного сложнее, однако второй 
+				индекс зависит от первого и в Паскале определяется по формуле<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">N-i+1</code>, 
+				где<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">i</var><span>&nbsp;</span>- 
+				первый индекс,<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">N</var><span>&nbsp;</span>- 
+				номер последнего элемента массива. Принцип поиска максимума 
+				будет тот же. Сначала предполагаем, что первый элемент диагонали 
+				и есть наибольший. Затем перебираем диагональ, начиная с ее 
+				второго элемента. Если очередной элемент больше, чей индекс 
+				хранится в переменной-максимуме, то записываем туда его первый 
+				индекс (второй всегда можно вычислить по формуле).</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;">const</span> N = <span class="hljs-number">10</span>;
+<span class="hljs-keyword" style="font-weight: 700;">var</span> 
+    m: <span class="hljs-keyword" style="font-weight: 700;">array</span>[<span class="hljs-number">1</span>..N,<span class="hljs-number">1</span>..N] <span class="hljs-keyword" style="font-weight: 700;">of</span> integer;
+    i, j: byte;
+    max: integer;
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    randomize;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> j:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+            m[i,j] := random(<span class="hljs-number">50</span>);
+            <span class="hljs-keyword" style="font-weight: 700;">write</span>(m[i,j]:<span class="hljs-number">3</span>);
+        <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+        writeln;
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+    max := i;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">2</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span>
+        <span class="hljs-keyword" style="font-weight: 700;">if</span> m[i,i] &gt; m[max,max] <span class="hljs-keyword" style="font-weight: 700;">then</span>
+            max := i;
+    writeln(max,<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;,&#39;</span>,max, <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39; = &#39;</span>, m[max,max]);
+    max := <span class="hljs-number">1</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">2</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span>
+        <span class="hljs-keyword" style="font-weight: 700;">if</span> m[i,N-i+<span class="hljs-number">1</span>] &gt; m[max,N-max+<span class="hljs-number">1</span>] <span class="hljs-keyword" style="font-weight: 700;">then</span>
+            max := i;
+    writeln(max,<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;,&#39;</span>,N-max+<span class="hljs-number">1</span>, <span class="hljs-string" style="color: rgb(0, 72, 171);">&#39; = &#39;</span>, m[max,N-max+<span class="hljs-number">1</span>]);
+<span class="hljs-keyword" style="font-weight: 700;">end</span>.</code></pre>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример выполнения программы:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="hljs language-undefined" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;">  0 35  5  8 31 42  1  2 24 16
+ 13 19 16 43 39 27 42 24 29 12
+ 18 20  6  9 36 44 12 23 11 32
+ 49  6 29 42 19  2  8 41 34 21
+ 20 32 40 37 26 45 38 28 12 32
+  6  4 26 13 35 26 26 27 13 29
+ 45 47 40 20 16 36 17  1 33 28
+ 16 40 16  5 36 42 13 10 28 20
+ 33 30 22 21 33 49  7 10  6 38
+ 29 18 27 36  2  0 16 49 31 37
+4,4 = 42
+5,6 = 45</code></pre>
+				<p><strong>Количество отрицательных элементов под главной диагональю матрицы&nbsp;</strong></p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Определить количество отрицательных элементов квадратной 
+				матрицы, расположенных под ее главной диагональю.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Главная диагональ матрицы идет из левого верхнего угла в нижний 
+				правый. Пусть индексом<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">i</var><span>&nbsp;</span>обозначаются 
+				номера строк, а<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">j</var><span>&nbsp;</span>- 
+				номера столбцов (константами<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">N</var><span>&nbsp;</span>и<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">M</var><span>&nbsp;</span>обозначим 
+				количество строк и столбцов соответственно). У элементов главной 
+				диагонали значение этих индексов равно между собой. У элементов 
+				ниже главной диагонали значение<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">i</var><span>&nbsp;</span>будет 
+				меняться от 2 до<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">N</var>, 
+				а значение<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">j</var><span>&nbsp;</span>от 
+				1 до<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">i</var>-1.</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;">const</span>
+    N = <span class="hljs-number">5</span>; M = <span class="hljs-number">5</span>;
+
+<span class="hljs-keyword" style="font-weight: 700;">var</span> 
+    a: <span class="hljs-keyword" style="font-weight: 700;">array</span>[<span class="hljs-number">1</span>..N,<span class="hljs-number">1</span>..M] <span class="hljs-keyword" style="font-weight: 700;">of</span> integer;
+    i, j, count: byte;
+    
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    randomize;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> j:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> M <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+            a[i,j] := random(<span class="hljs-number">10</span>)-<span class="hljs-number">5</span>;
+            <span class="hljs-keyword" style="font-weight: 700;">write</span>(a[i,j]:<span class="hljs-number">3</span>);
+        <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+        writeln;
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+    
+    count := <span class="hljs-number">0</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">2</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span>
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> j:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> i-<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">do</span>
+            <span class="hljs-keyword" style="font-weight: 700;">if</span> a[i,j] &lt; <span class="hljs-number">0</span> <span class="hljs-keyword" style="font-weight: 700;">then</span>
+                count := count + <span class="hljs-number">1</span>;
+    writeln(count);
+<span class="hljs-keyword" style="font-weight: 700;">end</span>.</code></pre>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример выполнения кода:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="hljs language-undefined" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"> -4 -2 -2 -2 -2
+  4 -2 -3 -5  0
+  0 -5 -3 -4 -2
+  3 -4  4 -1  4
+ -3  4  2 -3 -5
+4</code></pre>
+				<p class="style2"><strong>Найти минимальный элемент матрицы ниже побочной диагонали&nbsp;</strong></p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В квадратной матрице найти минимальный элемент ниже побочной 
+				диагонали. Вывести на экран в табличном виде исходную матрицу и 
+				отдельно часть матрицы ниже побочной диагонали.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Побочная диагональ матрицы идет от верхнего правого угла до 
+				нижнего левого. Пусть<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">N</var><span>&nbsp;</span>- 
+				это размерность квадратной матрицы,<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">i</var><span>&nbsp;</span>- 
+				это номер строки, а<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">j</var><span>&nbsp;</span>- 
+				номер столбца (или номер элемента в строке). Тогда, если 
+				перебирать построчно матрицу, то элемент, стоящий на побочной 
+				диагонали будет иметь индекс<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">[i, 
+				N-i+1]</code>. Действительно, когда<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">i 
+				= 1</code>, то<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">j 
+				= N</code>, то есть это последний элемент первой строки. Когда<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">i 
+				= 2</code>, то<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">j 
+				= N - 1</code>, - это предпоследний элемент второй строки; и так 
+				далее.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Таким образом можно сделать вывод, что все элементы в конкретной 
+				строке от побочной диагонали и до конца строки имеют индексы от<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">N-i+1</code><span>&nbsp;</span>до<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">N</var>.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Учитывая то, что сама диагональ нас не интересует, следует в 
+				каждой строке первым брать не элемент диагонали, а следующий за 
+				ним. Следовательно, формула первого элемента строки после 
+				побочной диагонали будет иметь вид<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">N-i+2</code>.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для того, чтобы вывести часть матрицы ниже побочной диагонали 
+				так же, как она располагается в выводе всей матрицы, надо 
+				заполнить строку пробелами в количестве, соответствующем 
+				количеству невыведенных элементов. Так, в примере ниже, на 
+				каждый элемент отводится 5 знакомест. Количество невыведенных 
+				элементов каждой строки равно<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">N-i+1</code>. 
+				Таким образом общее количество пробелов равно 5(<code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">N-i+1</code>).</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Сам поиск минимума - это самая легкая часть задачи. При выводе 
+				элементов, расположенных ниже побочной диагонали, их заодно 
+				можно проверять, не меньше ли они уже найденного минимума.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Программа на языке Паскаль:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;">const</span> N = <span class="hljs-number">10</span>;
+<span class="hljs-keyword" style="font-weight: 700;">var</span> 
+    m: <span class="hljs-keyword" style="font-weight: 700;">array</span>[<span class="hljs-number">1</span>..N,<span class="hljs-number">1</span>..N] <span class="hljs-keyword" style="font-weight: 700;">of</span> integer;
+    i, j: byte;
+    min: integer;
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    randomize;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> j:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+            m[i,j] := random(<span class="hljs-number">100</span>) - <span class="hljs-number">50</span>;
+            <span class="hljs-keyword" style="font-weight: 700;">write</span>(m[i,j]:<span class="hljs-number">5</span>);
+        <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+        writeln;
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+    min := <span class="hljs-number">32767</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i:=<span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        <span class="hljs-keyword" style="font-weight: 700;">write</span>(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39; &#39;</span>:<span class="hljs-number">5</span> * (N - i+<span class="hljs-number">1</span>));
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> j:=N-i+<span class="hljs-number">2</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+            <span class="hljs-keyword" style="font-weight: 700;">write</span>(m[i,j]:<span class="hljs-number">5</span>);
+            <span class="hljs-keyword" style="font-weight: 700;">if</span> min &gt; m[i,j] <span class="hljs-keyword" style="font-weight: 700;">then</span> min := m[i,j];
+        <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+        writeln();
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+    writeln(<span class="hljs-string" style="color: rgb(0, 72, 171);">&#39;Minimum: &#39;</span>, min);
+<span class="hljs-keyword" style="font-weight: 700;">end</span>.</code></pre>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример выполнения:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-plaintext hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;">   37  -15  -14   25  -18   28  -49  -27  -32  -38
+  -10  -26    1   33   49    0   41   28   11   39
+  -43   -5  -33   33  -15    5  -15   -3    1  -24
+  -19  -27  -24   16   46   10   28   47   41  -15
+   26   42   -1    6   46   22   -1  -20   11  -34
+  -48   10  -45   25  -34   30    5   35  -32   24
+  -26   33   29  -37  -11  -14  -11  -10   -7  -15
+  -12   27  -17   24  -46   23  -30  -31  -38  -19
+   30  -44   37   37  -27   40   -7   19  -29  -32
+    8  -33   47  -26   31   43   11   -3   24    5
+                                                  
+                                                39
+                                            1  -24
+                                      47   41  -15
+                                 -1  -20   11  -34
+                            30    5   35  -32   24
+                      -11  -14  -11  -10   -7  -15
+                  24  -46   23  -30  -31  -38  -19
+             37   37  -27   40   -7   19  -29  -32
+       -33   47  -26   31   43   11   -3   24    5
+Minimum: -46</code></pre>
+				<p class="style2"><strong>Заполнить двумерный массив по правилу&nbsp;</strong></p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Заполнить двумерный массив по следующему правилу:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">1 2 3 4 5
+2 1 2 3 4
+3 2 1 2 3
+4 3 2 1 2
+5 4 3 2 1</pre>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Перед решением задачи необходимо найти правило расположения 
+				чисел в данной матрице. Можно увидеть несколько:</p>
+				<ul style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="margin-top: 1em; margin-bottom: 1em;">На главной 
+					диагонали располагаются единицы. Далее по диагоналям над и 
+					под главной идут двойки, затем диагонали троек и четверок. 
+					Заканчивается все угловыми пятерками.</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">От единиц 
+					главной диагонали по столбцам и по строкам, т. е. по 
+					вертикали и по горизонтали, натуральные числа 
+					последовательно увеличиваются на 1.</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">Числа в 
+					строках последовательно смещаются на одну ячейку вправо. При 
+					этом освободившиеся ячейки слева заполняются числами в 
+					обратном порядке.</li>
+				</ul>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Под каждую описанную выше закономерность можно составить 
+				программу. Однако она будет достаточно сложной.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вместо этого обратим внимание на следующее.</p>
+				<ol style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="margin-top: 1em; margin-bottom: 1em;">Значения 
+					элементов матрицы можно связать с их же индексами. На 
+					главной диагонали первый индекс (<var style="padding: 2px; color: var(--color-text-h1);">i</var>) 
+					равен второму (<var style="padding: 2px; color: var(--color-text-h1);">j</var>). 
+					В этом случае в ячейки записывается единица.</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">Если мы 
+					возьмем вторую ячейку первой строки, у которой<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">i</var><span>&nbsp;</span>= 
+					1,<span>&nbsp;</span><var style="padding: 2px; color: var(--color-text-h1);">j</var><span>&nbsp;</span>= 
+					2, то разница между ними составляет единицу. Однако нам надо 
+					записать в ячейку число 2. Значит прибавим к разнице число 
+					1.</li>
+					<li style="margin-top: 1em; margin-bottom: 1em;">Если взять 
+					первую ячейку второй строки [2, 1], разница между индексами 
+					составляет 1. Прибавив 1, получим 2.</li>
+				</ol>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Таким образом, приходим к формуле<span>&nbsp;</span><code style="font-family: var(--font-family-code); background: rgb(235, 241, 248); padding: 0px 5px; margin-left: 1px; margin-right: 2px;">abs(i 
+				- j) + 1</code>.</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;">const</span> N = <span class="hljs-number">7</span>;
+
+<span class="hljs-keyword" style="font-weight: 700;">var</span> 
+    arr: <span class="hljs-keyword" style="font-weight: 700;">array</span>[<span class="hljs-number">1</span>..N, <span class="hljs-number">1</span>..N] <span class="hljs-keyword" style="font-weight: 700;">of</span> byte;
+    i, j: byte;
+
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i := <span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> j := <span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> N <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+            arr[i, j] := abs(j - i) + <span class="hljs-number">1</span>;
+            <span class="hljs-keyword" style="font-weight: 700;">write</span>(arr[i, j]:<span class="hljs-number">3</span>);
+        <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+        writeln;
+    <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+
+<span class="hljs-keyword" style="font-weight: 700;">end</span>.</code></pre>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Результат выполнения программы:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="hljs language-undefined" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;">  1  2  3  4  5  6  7
+  2  1  2  3  4  5  6
+  3  2  1  2  3  4  5
+  4  3  2  1  2  3  4
+  5  4  3  2  1  2  3
+  6  5  4  3  2  1  2
+  7  6  5  4  3  2  1</code></pre>
+				<p class="style2">Умножение матриц&nbsp;</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Три продавца продают четыре вида товаров. Количество проданного 
+				товара сведено в таблицу A.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В таблице B представлены цена каждого товара и комиссионные 
+				(наценка), получаемые от продажи.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: center;">
+				<img alt="Схема умножения матриц" src="matrix_mult.png" /></p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вырученные от продажи деньги подсчитываются так:<br />
+				1-й продавец: 5 * 20.30 + 3 * 18.60 + 7 * 12.10 + 0 * 23.00 = 
+				242.00<br />
+				2-й продавец: 7 * 20.30 + 1 * 18.60 + 9 * 12.10 + 2 * 23.00 = 
+				315.60<br />
+				3-й продавец: 3 * 20.30 + 4 * 18.60 + 7 * 12.10 + 6 * 23.00 = 
+				358.00</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				А полученные комиссионные так:<br />
+				1-й продавец: 5 * 1.60 + 3 * 1.30 + 7 * 1.00 + 0 * 1.80 = 18.90<br />
+				2-й продавец: 7 * 1.60 + 1 * 1.30 + 9 * 1.00 + 2 * 1.80 = 25.10<br />
+				3-й продавец: 3 * 1.60 + 4 * 1.30 + 7 * 1.00 + 6 * 1.80 = 27.80</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Эти вычисления называются умножением матриц и записываются так, 
+				как представлено на рисунке выше. Число столбцов таблицы A 
+				должно совпадать с числом строк таблицы B. Результирующая 
+				таблица C имеет столько строк, сколько у A, и столько столбцов, 
+				сколько у B.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Следующая программа вводит матрицы A и B, перемножает их, затем 
+				выводит их произведение – матрицу C.</p>
+				<p style="font-size: 1.05em; line-height: 1.8em; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Программа на языке Паскаль:</p>
+				<pre style="overflow: auto; letter-spacing: 0.03em; color: rgb(0, 25, 58); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 250, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><code class="language-delphi hljs" style="font-family: var(--font-family-code); background: rgb(234, 238, 243); color: rgb(0, 25, 58); padding: 1em; display: block; overflow-x: auto;"><span class="hljs-keyword" style="font-weight: 700;">type</span>
+    atype = <span class="hljs-keyword" style="font-weight: 700;">array</span>[<span class="hljs-number">1</span>..<span class="hljs-number">3</span>,<span class="hljs-number">1</span>..<span class="hljs-number">4</span>] <span class="hljs-keyword" style="font-weight: 700;">of</span> integer;
+    btype = <span class="hljs-keyword" style="font-weight: 700;">array</span>[<span class="hljs-number">1</span>..<span class="hljs-number">4</span>,<span class="hljs-number">1</span>..<span class="hljs-number">2</span>] <span class="hljs-keyword" style="font-weight: 700;">of</span> real;
+    ctype = <span class="hljs-keyword" style="font-weight: 700;">array</span>[<span class="hljs-number">1</span>..<span class="hljs-number">3</span>,<span class="hljs-number">1</span>..<span class="hljs-number">2</span>] <span class="hljs-keyword" style="font-weight: 700;">of</span> real;
+&nbsp;
+<span class="hljs-keyword" style="font-weight: 700;">var</span>
+    a: atype; b: btype; c: ctype;
+    n,i,j,k: integer;
+&nbsp;
+<span class="hljs-keyword" style="font-weight: 700;">begin</span>
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> n := <span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> <span class="hljs-number">3</span> <span class="hljs-keyword" style="font-weight: 700;">do</span>
+        readln(a[n,<span class="hljs-number">1</span>],a[n,<span class="hljs-number">2</span>],a[n,<span class="hljs-number">3</span>],a[n,<span class="hljs-number">4</span>]);
+&nbsp;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> n := <span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> <span class="hljs-number">4</span> <span class="hljs-keyword" style="font-weight: 700;">do</span>
+        readln(b[n,<span class="hljs-number">1</span>],b[n,<span class="hljs-number">2</span>]);
+&nbsp;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> i := <span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> <span class="hljs-number">3</span> <span class="hljs-keyword" style="font-weight: 700;">do</span>
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> j := <span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> <span class="hljs-number">2</span> <span class="hljs-keyword" style="font-weight: 700;">do</span> <span class="hljs-keyword" style="font-weight: 700;">begin</span>
+            c[i,j] := <span class="hljs-number">0</span>;
+            <span class="hljs-keyword" style="font-weight: 700;">for</span> k := <span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> <span class="hljs-number">4</span> <span class="hljs-keyword" style="font-weight: 700;">do</span>
+                c[i,j] := c[i,j] + a[i,k] * b[k,j];
+        <span class="hljs-keyword" style="font-weight: 700;">end</span>;
+&nbsp;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> n := <span class="hljs-number">1</span> <span class="hljs-keyword" style="font-weight: 700;">to</span> <span class="hljs-number">3</span> <span class="hljs-keyword" style="font-weight: 700;">do</span>
+        writeln(c[n,<span class="hljs-number">1</span>]:<span class="hljs-number">8</span>:<span class="hljs-number">2</span>, c[n,<span class="hljs-number">2</span>]:<span class="hljs-number">8</span>:<span class="hljs-number">2</span>);
+
+<span class="hljs-keyword" style="font-weight: 700;">end</span>.</code></pre>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les16.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les16/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:38:37 GMT -->
+</html>

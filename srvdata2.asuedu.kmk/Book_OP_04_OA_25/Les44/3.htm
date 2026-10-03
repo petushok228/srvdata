@@ -1,0 +1,668 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les44/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:30:35 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	text-align: center;
+}
+.style3 {
+	text-align: left;
+}
+.style4 {
+	color: rgb(128, 0, 0);
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 3.&nbsp;Коллекция Стек (Stack) C# </td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="style2">
+                <div class="style3">
+                <span style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+				Стек представляет собой коллекцию объектов, поступающих последней.<span>&nbsp;</span></ya-tr-span><ya-tr-span data-index="26-1" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="It is used when you need last-in, first-out access to items. " data-translation="Он используется, когда вам нужен доступ к элементам в порядке очереди. " data-ch="0" data-type="trSpan" data-selected="false" style="box-sizing: border-box; font-size: 18px; color: rgb(255, 255, 255); font-family: Nunito, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: 0.162px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(19, 20, 23); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; visibility: inherit !important;">Он 
+				используется, когда вам нужен доступ к элементам в порядке 
+				очереди.<span>&nbsp;</span></ya-tr-span><ya-tr-span data-index="26-2" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="It is both a generic and non-generic type of collection. " data-translation="Это одновременно универсальный и необязательный тип коллекции. " data-ch="0" data-type="trSpan" style="box-sizing: border-box; font-size: 18px; color: rgb(255, 255, 255); font-family: Nunito, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: 0.162px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(19, 20, 23); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; visibility: inherit !important;">Это 
+				одновременно универсальный и необязательный тип коллекции.</ya-tr-span><ya-tr-span data-index="26-6" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value=" namespace, here we will discuss non-generic type stack. " data-translation=", здесь мы обсудим стек нестандартных типов. " data-ch="0" data-type="trSpan" style="box-sizing: border-box; font-size: 18px; color: rgb(255, 255, 255); font-family: Nunito, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: 0.162px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(19, 20, 23); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; visibility: inherit !important;"><span>&nbsp;</span></ya-tr-span><ya-tr-span data-index="26-7" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="A stack is used to create a dynamic collection that grows, according to the need of your program. " data-translation="Стек используется для создания динамической коллекции, которая увеличивается в соответствии с потребностями вашей программы. " data-ch="0" data-type="trSpan" style="box-sizing: border-box; font-size: 18px; color: rgb(255, 255, 255); font-family: Nunito, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: 0.162px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(19, 20, 23); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; visibility: inherit !important;">Стек 
+				используется для создания динамической коллекции, которая 
+				увеличивается в соответствии с потребностями вашей программы.<span>&nbsp;</span></ya-tr-span><ya-tr-span data-index="26-8" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="In a stack, you can store elements of the same type or different types. " data-translation="В стеке можно хранить элементы одного или разных типов. " data-ch="0" data-type="trSpan" style="box-sizing: border-box; font-size: 18px; color: rgb(255, 255, 255); font-family: Nunito, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: 0.162px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(19, 20, 23); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; visibility: inherit !important;">В 
+				стеке можно хранить элементы одного или разных типов.</ya-tr-span><br />
+				Стеки похожи по своей структуре на очереди. Однако если очередь 
+				гарантирует, что элементы извлекаются из коллекции в том 
+				порядке, в котором они были добавлены, стеки позволяют извлекать 
+				сначала самые последние добавленные элементы. Это известно как 
+				последним пришёл — первым ушёл или LIFO.<br />
+					<br />
+					<br />
+					<img alt="" src="Pic/r-44-6.png" width="159" height="337" /></span><br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<span style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+				В операционных системах и языках разработки высокого уровня 
+				часто используются стеки. Одним из ключевых применений является 
+				сохранение точек возврата для вызовов программы. Каждый раз, 
+				когда вызывается подпрограмма, адрес вызывающей функции 
+				добавляется или перемещается в стек. Когда подпрограмма 
+				завершается, последний адрес может быть извлечен или выскочил из 
+				стека, и нормальный поток программы может продолжаться из 
+				предыдущего местоположения. Более ранняя статья по<span>&nbsp;</span></span><a style="text-decoration: none; color: rgb(105, 105, 105); font-weight: bold; font-family: PoiretOne-Regular, arial, san-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;" href="https://upread.ru/art.php?id=653">обработке 
+				исключений C#</a><span style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;"><span>&nbsp;</span>содержит 
+				пример использования стека при чтении свойства StackTrace.</span><br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<b style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Коллекция Stack</b><br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<span style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+				Платформа .NET framework включает класс Stack. Он обеспечивает 
+				все функциональные возможности, необходимые для работы стеков 
+				LIFO без дополнительного кода. Класс Stack предоставляет простую 
+				коллекцию, которая может содержать любой тип объекта, включая 
+				дубликаты и значения null.</span><br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<b style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Реализованные интерфейсы</b><br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<span style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+				Коллекция стека реализует свойства и методы интерфейса 
+				ICollection. Это было описано в предыдущей статье<span>&nbsp;</span></span><a style="text-decoration: none; color: rgb(105, 105, 105); font-weight: bold; font-family: PoiretOne-Regular, arial, san-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;" href="https://upread.ru/art.php?id=657">интерфейсы 
+				коллекции</a><span style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">. 
+				В остальной части этой статьи описываются дополнительные 
+				функциональные возможности, предоставляемые стеком.</span><br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<b style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Конструкторы</b><br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<span style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+				Класс Stack имеет три конструктора. Первый не требует никаких 
+				параметров. Он создает пустой стек с емкостью для хранения до 
+				десяти элементов. При добавлении одиннадцатого элемента емкость 
+				стека автоматически удваивается. Она удваивается снова каждый 
+				раз, когда емкость стека превышена.</span><br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				</div>
+				<div class="style3">
+					<div class="style3">
+						<div class="style3">
+							<div class="style3">
+								<div class="style3">
+									<div class="style3">
+										<div class="style3">
+				<pre class="style3" style="padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; color: rgb(51, 51, 51); border-radius: 4px; display: block; margin: 0px 0px 20px; line-height: 20px; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span class="kwd" style="color: rgb(30, 52, 123);">using</span><span class="pln" style="color: rgb(72, 72, 76);"> </span><span class="typ" style="color: teal;">System</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Collections</span><span class="pun" style="color: rgb(147, 161, 161);">;</span><span class="pln" style="color: rgb(72, 72, 76);">
+</span><span class="typ" style="color: teal;">Stack</span><span class="pln" style="color: rgb(72, 72, 76);"> myLifo </span><span class="pun" style="color: rgb(147, 161, 161);">=</span><span class="pln" style="color: rgb(72, 72, 76);"> </span><span class="kwd" style="color: rgb(30, 52, 123);">new</span><span class="pln" style="color: rgb(72, 72, 76);"> </span><span class="typ" style="color: teal;">Stack</span><span class="pun" style="color: rgb(147, 161, 161);">();</span></pre>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="style3">
+				<span style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+				Если максимальное число элементов, которые будут храниться в 
+				стеке, известно до создания коллекции, более эффективно объявить 
+				его. Если размер занижен, то размер стека все равно будет удвоен 
+				для размещения дополнительных элементов. Чтобы объявить 
+				начальный размер стека, передайте емкость конструктору в виде 
+				целочисленного параметра.</span><br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				</div>
+				<div class="style3">
+					<div class="style3">
+						<div class="style3">
+							<div class="style3">
+								<div class="style3">
+				<pre class="style3" style="padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; color: rgb(51, 51, 51); border-radius: 4px; display: block; margin: 0px 0px 20px; line-height: 20px; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span class="typ" style="color: teal;">Stack</span><span class="pln" style="color: rgb(72, 72, 76);"> myLifo </span><span class="pun" style="color: rgb(147, 161, 161);">=</span><span class="pln" style="color: rgb(72, 72, 76);"> </span><span class="kwd" style="color: rgb(30, 52, 123);">new</span><span class="pln" style="color: rgb(72, 72, 76);"> </span><span class="typ" style="color: teal;">Stack</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="lit" style="color: rgb(25, 95, 145);">15</span><span class="pun" style="color: rgb(147, 161, 161);">);</span></pre>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="style3">
+				<span style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+				Третий конструктор позволяет создать предварительно заполненный 
+				стек, содержащий объекты из любого класса, реализующего 
+				ICollection .</span><br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				</div>
+				<div class="style3">
+					<div class="style3">
+						<div class="style3">
+							<div class="style3">
+								<div class="style3">
+									<div class="style3">
+										<div class="style3">
+											<div class="style3">
+												<div class="style3">
+													<div class="style3">
+														<div class="style3">
+															<div class="style3">
+																<div class="style3">
+																	<div class="style3">
+																		<div class="style3">
+																			<div class="style3">
+				<pre class="style3" style="padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; color: rgb(51, 51, 51); border-radius: 4px; display: block; margin: 0px 0px 20px; line-height: 20px; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span class="typ" style="color: teal;">ArrayList</span><span class="pln" style="color: rgb(72, 72, 76);"> myList </span><span class="pun" style="color: rgb(147, 161, 161);">=</span><span class="pln" style="color: rgb(72, 72, 76);"> </span><span class="kwd" style="color: rgb(30, 52, 123);">new</span><span class="pln" style="color: rgb(72, 72, 76);"> </span><span class="typ" style="color: teal;">ArrayList</span><span class="pun" style="color: rgb(147, 161, 161);">();</span><span class="pln" style="color: rgb(72, 72, 76);">
+myList</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Add</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="str" style="color: rgb(221, 17, 68);">&quot;String 1&quot;</span><span class="pun" style="color: rgb(147, 161, 161);">);</span><span class="pln" style="color: rgb(72, 72, 76);">
+myList</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Add</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="str" style="color: rgb(221, 17, 68);">&quot;String 2&quot;</span><span class="pun" style="color: rgb(147, 161, 161);">);</span><span class="pln" style="color: rgb(72, 72, 76);">
+ 
+</span><span class="typ" style="color: teal;">Stack</span><span class="pln" style="color: rgb(72, 72, 76);"> myLifo </span><span class="pun" style="color: rgb(147, 161, 161);">=</span><span class="pln" style="color: rgb(72, 72, 76);"> </span><span class="kwd" style="color: rgb(30, 52, 123);">new</span><span class="pln" style="color: rgb(72, 72, 76);"> </span><span class="typ" style="color: teal;">Stack</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="pln" style="color: rgb(72, 72, 76);">myList</span><span class="pun" style="color: rgb(147, 161, 161);">);</span><span class="pln" style="color: rgb(72, 72, 76);">               </span><span class="com" style="color: rgb(147, 161, 161);">// копируем</span></pre>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="style3">
+				<b style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Push</b><br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<span style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+				Стеки позволяют добавлять новые элементы в верхнюю часть стека, 
+				а затем извлекать их в обратном порядке. Чтобы добавить новый 
+				элемент в верхнюю часть стека, используйте метод Push. Этот 
+				метод принимает один параметр, являющийся объектом для 
+				добавления в стек.</span><br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				</div>
+				<div class="style3">
+					<div class="style3">
+						<div class="style3">
+							<div class="style3">
+								<div class="style3">
+									<div class="style3">
+										<div class="style3">
+											<div class="style3">
+												<div class="style3">
+													<div class="style3">
+														<div class="style3">
+															<div class="style3">
+																<div class="style3">
+																	<div class="style3">
+																		<div class="style3">
+																			<div class="style3">
+																				<div class="style3">
+				<pre class="style3" style="padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; color: rgb(51, 51, 51); border-radius: 4px; display: block; margin: 0px 0px 20px; line-height: 20px; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span class="typ" style="color: teal;">Stack</span><span class="pln" style="color: rgb(72, 72, 76);"> breadcrumbs </span><span class="pun" style="color: rgb(147, 161, 161);">=</span><span class="pln" style="color: rgb(72, 72, 76);"> </span><span class="kwd" style="color: rgb(30, 52, 123);">new</span><span class="pln" style="color: rgb(72, 72, 76);"> </span><span class="typ" style="color: teal;">Stack</span><span class="pun" style="color: rgb(147, 161, 161);">();</span><span class="pln" style="color: rgb(72, 72, 76);">
+ 
+breadcrumbs</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Push</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="str" style="color: rgb(221, 17, 68);">&quot;Home Page&quot;</span><span class="pun" style="color: rgb(147, 161, 161);">);</span><span class="pln" style="color: rgb(72, 72, 76);">
+breadcrumbs</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Push</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="str" style="color: rgb(221, 17, 68);">&quot;Articles&quot;</span><span class="pun" style="color: rgb(147, 161, 161);">);</span><span class="pln" style="color: rgb(72, 72, 76);">
+breadcrumbs</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Push</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="str" style="color: rgb(221, 17, 68);">&quot;C#&quot;</span><span class="pun" style="color: rgb(147, 161, 161);">);</span><span class="pln" style="color: rgb(72, 72, 76);">
+ 
+</span><span class="typ" style="color: teal;">Console</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">WriteLine</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="str" style="color: rgb(221, 17, 68);">&quot;Count: {0}&quot;</span><span class="pun" style="color: rgb(147, 161, 161);">,</span><span class="pln" style="color: rgb(72, 72, 76);"> breadcrumbs</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Count</span><span class="pun" style="color: rgb(147, 161, 161);">);</span><span class="pln" style="color: rgb(72, 72, 76);">     </span><span class="com" style="color: rgb(147, 161, 161);">// &quot;Count: 3&quot;</span></pre>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="style3">
+				<b style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Метод Pop</b><br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<span style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+				Для извлечения элементов из стека вызывается метод Pop. Pop 
+				возвращает элемент из верхней части стека и удаляет его из 
+				коллекции. Элемент возвращается как объект, который может быть 
+				приведен к правильному типу. В следующем примере метод ToString 
+				используется для выполнения преобразования, когда три элемента 
+				добавляются и затем извлекаются из стека. Нельзя сказать, что 
+				порядок извлечения является обратным порядку, в котором элементы 
+				были помещены в стопку.</span><br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				</div>
+				<div class="style3">
+					<div class="style3">
+						<div class="style3">
+							<div class="style3">
+								<div class="style3">
+									<div class="style3">
+										<div class="style3">
+											<div class="style3">
+												<div class="style3">
+													<div class="style3">
+														<div class="style3">
+															<div class="style3">
+																<div class="style3">
+																	<div class="style3">
+																		<div class="style3">
+																			<div class="style3">
+																				<div class="style3">
+																					<div class="style3">
+																						<div class="style3">
+																							<div class="style3">
+																								<div class="style3">
+																									<div class="style3">
+																										<div class="style3">
+																											<div class="style3">
+																												<div class="style3">
+																													<div class="style3">
+																														<div class="style3">
+																															<div class="style3">
+																																<div class="style3">
+				<pre class="style3" style="padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; color: rgb(51, 51, 51); border-radius: 4px; display: block; margin: 0px 0px 20px; line-height: 20px; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span class="typ" style="color: teal;">Stack</span><span class="pln" style="color: rgb(72, 72, 76);"> breadcrumbs </span><span class="pun" style="color: rgb(147, 161, 161);">=</span><span class="pln" style="color: rgb(72, 72, 76);"> </span><span class="kwd" style="color: rgb(30, 52, 123);">new</span><span class="pln" style="color: rgb(72, 72, 76);"> </span><span class="typ" style="color: teal;">Stack</span><span class="pun" style="color: rgb(147, 161, 161);">();</span><span class="pln" style="color: rgb(72, 72, 76);">
+ 
+breadcrumbs</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Push</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="str" style="color: rgb(221, 17, 68);">&quot;upread.ru&quot;</span><span class="pun" style="color: rgb(147, 161, 161);">);</span><span class="pln" style="color: rgb(72, 72, 76);">
+breadcrumbs</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Push</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="str" style="color: rgb(221, 17, 68);">&quot;Блог&quot;</span><span class="pun" style="color: rgb(147, 161, 161);">);</span><span class="pln" style="color: rgb(72, 72, 76);">
+breadcrumbs</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Push</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="str" style="color: rgb(221, 17, 68);">&quot;Статьи IT&quot;</span><span class="pun" style="color: rgb(147, 161, 161);">);</span><span class="pln" style="color: rgb(72, 72, 76);">
+
+</span><span class="kwd" style="color: rgb(30, 52, 123);">while</span><span class="pln" style="color: rgb(72, 72, 76);"> </span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="pln" style="color: rgb(72, 72, 76);">breadcrumbs</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Count</span><span class="pln" style="color: rgb(72, 72, 76);"> </span><span class="pun" style="color: rgb(147, 161, 161);">!=</span><span class="pln" style="color: rgb(72, 72, 76);"> </span><span class="lit" style="color: rgb(25, 95, 145);">0</span><span class="pun" style="color: rgb(147, 161, 161);">)</span><span class="pln" style="color: rgb(72, 72, 76);">
+</span><span class="pun" style="color: rgb(147, 161, 161);">{</span><span class="pln" style="color: rgb(72, 72, 76);">
+    </span><span class="kwd" style="color: rgb(30, 52, 123);">string</span><span class="pln" style="color: rgb(72, 72, 76);"> </span><span class="kwd" style="color: rgb(30, 52, 123);">next</span><span class="pln" style="color: rgb(72, 72, 76);"> </span><span class="pun" style="color: rgb(147, 161, 161);">=</span><span class="pln" style="color: rgb(72, 72, 76);"> breadcrumbs</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Pop</span><span class="pun" style="color: rgb(147, 161, 161);">().</span><span class="typ" style="color: teal;">ToString</span><span class="pun" style="color: rgb(147, 161, 161);">();</span><span class="pln" style="color: rgb(72, 72, 76);">
+    </span><span class="typ" style="color: teal;">Console</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">WriteLine</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="kwd" style="color: rgb(30, 52, 123);">next</span><span class="pun" style="color: rgb(147, 161, 161);">);</span><span class="pln" style="color: rgb(72, 72, 76);">
+</span><span class="pun" style="color: rgb(147, 161, 161);">}</span><span class="pln" style="color: rgb(72, 72, 76);">
+ 
+</span><span class="style4"><strong>/* Вывод
+ Статьи IT
+</strong><strong>Блог</strong><strong>
+upread.ru 
+*/</strong></span></pre>
+																																</div>
+																															</div>
+																														</div>
+																													</div>
+																												</div>
+																											</div>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="style3">
+				<b style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Peek</b><br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<span style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+				Иногда необходимо получить следующий элемент в стеке, не удаляя 
+				его из коллекции. Метод Peek используется таким же образом, как 
+				и Pop, но когда получается значение верхнего элемента, то он 
+				также остается в положении.</span><br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				</div>
+				<div class="style3">
+					<div class="style3">
+						<div class="style3">
+							<div class="style3">
+								<div class="style3">
+									<div class="style3">
+										<div class="style3">
+											<div class="style3">
+												<div class="style3">
+													<div class="style3">
+														<div class="style3">
+															<div class="style3">
+																<div class="style3">
+																	<div class="style3">
+																		<div class="style3">
+																			<div class="style3">
+																				<div class="style3">
+																					<div class="style3">
+																						<div class="style3">
+																							<div class="style3">
+																								<div class="style3">
+																									<div class="style3">
+																										<div class="style3">
+																											<div class="style3">
+																												<div class="style3">
+																													<div class="style3">
+																														<div class="style3">
+				<pre class="style3" style="padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; color: rgb(51, 51, 51); border-radius: 4px; display: block; margin: 0px 0px 20px; line-height: 20px; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span class="typ" style="color: teal;">Stack</span><span class="pln" style="color: rgb(72, 72, 76);"> breadcrumbs </span><span class="pun" style="color: rgb(147, 161, 161);">=</span><span class="pln" style="color: rgb(72, 72, 76);"> </span><span class="kwd" style="color: rgb(30, 52, 123);">new</span><span class="pln" style="color: rgb(72, 72, 76);"> </span><span class="typ" style="color: teal;">Stack</span><span class="pun" style="color: rgb(147, 161, 161);">();</span><span class="pln" style="color: rgb(72, 72, 76);">
+ 
+breadcrumbs</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Push</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="str" style="color: rgb(221, 17, 68);">&quot;upread.ru&quot;</span><span class="pun" style="color: rgb(147, 161, 161);">);</span><span class="pln" style="color: rgb(72, 72, 76);">
+breadcrumbs</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Push</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="str" style="color: rgb(221, 17, 68);">&quot;Блог&quot;</span><span class="pun" style="color: rgb(147, 161, 161);">);</span><span class="pln" style="color: rgb(72, 72, 76);">
+breadcrumbs</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Push</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="str" style="color: rgb(221, 17, 68);">&quot;Статьи IT&quot;</span><span class="pun" style="color: rgb(147, 161, 161);">);</span><span class="pln" style="color: rgb(72, 72, 76);">
+ 
+</span><span class="kwd" style="color: rgb(30, 52, 123);">string</span><span class="pln" style="color: rgb(72, 72, 76);"> </span><span class="kwd" style="color: rgb(30, 52, 123);">next</span><span class="pln" style="color: rgb(72, 72, 76);"> </span><span class="pun" style="color: rgb(147, 161, 161);">=</span><span class="pln" style="color: rgb(72, 72, 76);"> breadcrumbs</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Peek</span><span class="pun" style="color: rgb(147, 161, 161);">().</span><span class="typ" style="color: teal;">ToString</span><span class="pun" style="color: rgb(147, 161, 161);">();</span><span class="pln" style="color: rgb(72, 72, 76);">
+</span><span class="typ" style="color: teal;">Console</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">WriteLine</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="kwd" style="color: rgb(30, 52, 123);">next</span><span class="pun" style="color: rgb(147, 161, 161);">);</span><span class="pln" style="color: rgb(72, 72, 76);">                                </span><span class="com" style="color: rgb(147, 161, 161);">// &quot;C#&quot;</span><span class="pln" style="color: rgb(72, 72, 76);">
+</span><span class="typ" style="color: teal;">Console</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">WriteLine</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="str" style="color: rgb(221, 17, 68);">&quot;Count: {0}&quot;</span><span class="pun" style="color: rgb(147, 161, 161);">,</span><span class="pln" style="color: rgb(72, 72, 76);"> breadcrumbs</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Count</span><span class="pun" style="color: rgb(147, 161, 161);">);</span><span class="pln" style="color: rgb(72, 72, 76);">     </span><span class="com" style="color: rgb(147, 161, 161);">// &quot;Count: 3&quot;</span></pre>
+																														</div>
+																													</div>
+																												</div>
+																											</div>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="style3">
+				<span style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+				Другие методы работы со стеком</span><br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<span style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+				В дополнение к методам LIFO, класс Stack предоставляет другие 
+				функциональные возможности для изменения и чтения коллекции. Это 
+				увеличивает коллекцию с поведением, похожим на те, которые 
+				встречаются в некоторых других подобных типов.</span><br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<b style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Clear</b><br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<span style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+				Метод Clear используется для очистки содержимого стека. Метод не 
+				требует никаких параметров.</span><br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				</div>
+				<div class="style3">
+					<div class="style3">
+						<div class="style3">
+							<div class="style3">
+								<div class="style3">
+									<div class="style3">
+										<div class="style3">
+											<div class="style3">
+												<div class="style3">
+													<div class="style3">
+														<div class="style3">
+															<div class="style3">
+																<div class="style3">
+																	<div class="style3">
+																		<div class="style3">
+																			<div class="style3">
+																				<div class="style3">
+																					<div class="style3">
+																						<div class="style3">
+																							<div class="style3">
+																								<div class="style3">
+																									<div class="style3">
+																										<div class="style3">
+																											<div class="style3">
+				<pre class="style3" style="padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; color: rgb(51, 51, 51); border-radius: 4px; display: block; margin: 0px 0px 20px; line-height: 20px; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span class="typ" style="color: teal;">Stack</span><span class="pln" style="color: rgb(72, 72, 76);"> breadcrumbs </span><span class="pun" style="color: rgb(147, 161, 161);">=</span><span class="pln" style="color: rgb(72, 72, 76);"> </span><span class="kwd" style="color: rgb(30, 52, 123);">new</span><span class="pln" style="color: rgb(72, 72, 76);"> </span><span class="typ" style="color: teal;">Stack</span><span class="pun" style="color: rgb(147, 161, 161);">();</span><span class="pln" style="color: rgb(72, 72, 76);">
+ 
+breadcrumbs</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Push</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="str" style="color: rgb(221, 17, 68);">&quot;Home Page&quot;</span><span class="pun" style="color: rgb(147, 161, 161);">);</span><span class="pln" style="color: rgb(72, 72, 76);">
+breadcrumbs</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Push</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="str" style="color: rgb(221, 17, 68);">&quot;Articles&quot;</span><span class="pun" style="color: rgb(147, 161, 161);">);</span><span class="pln" style="color: rgb(72, 72, 76);">
+breadcrumbs</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Push</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="str" style="color: rgb(221, 17, 68);">&quot;C#&quot;</span><span class="pun" style="color: rgb(147, 161, 161);">);</span><span class="pln" style="color: rgb(72, 72, 76);">
+ 
+</span><span class="typ" style="color: teal;">Console</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">WriteLine</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="str" style="color: rgb(221, 17, 68);">&quot;Count: {0}&quot;</span><span class="pun" style="color: rgb(147, 161, 161);">,</span><span class="pln" style="color: rgb(72, 72, 76);"> breadcrumbs</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Count</span><span class="pun" style="color: rgb(147, 161, 161);">);</span><span class="pln" style="color: rgb(72, 72, 76);">     </span><span class="com" style="color: rgb(147, 161, 161);">// &quot;Count: 3&quot;</span><span class="pln" style="color: rgb(72, 72, 76);">
+breadcrumbs</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Clear</span><span class="pun" style="color: rgb(147, 161, 161);">();</span><span class="pln" style="color: rgb(72, 72, 76);">
+</span><span class="typ" style="color: teal;">Console</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">WriteLine</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="str" style="color: rgb(221, 17, 68);">&quot;Count: {0}&quot;</span><span class="pun" style="color: rgb(147, 161, 161);">,</span><span class="pln" style="color: rgb(72, 72, 76);"> breadcrumbs</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Count</span><span class="pun" style="color: rgb(147, 161, 161);">);</span><span class="pln" style="color: rgb(72, 72, 76);">     </span><span class="com" style="color: rgb(147, 161, 161);">// &quot;Count: 0&quot;</span></pre>
+																											</div>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="style3">
+				<b style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Contains</b><br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<span style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+				Часто вам нужно будет определить, существует ли элемент в стеке, 
+				но вы не хотите его доставать. Метод Contains разрешает это, 
+				возвращая логическое значение, указывающее, присутствует ли 
+				объект.</span><br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				</div>
+				<div class="style3">
+					<div class="style3">
+						<div class="style3">
+							<div class="style3">
+								<div class="style3">
+									<div class="style3">
+										<div class="style3">
+											<div class="style3">
+												<div class="style3">
+													<div class="style3">
+														<div class="style3">
+															<div class="style3">
+																<div class="style3">
+																	<div class="style3">
+																		<div class="style3">
+																			<div class="style3">
+																				<div class="style3">
+																					<div class="style3">
+																						<div class="style3">
+																							<div class="style3">
+																								<div class="style3">
+																									<div class="style3">
+																										<div class="style3">
+																											<div class="style3">
+				<pre class="style3" style="padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; color: rgb(51, 51, 51); border-radius: 4px; display: block; margin: 0px 0px 20px; line-height: 20px; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span class="typ" style="color: teal;">Stack</span><span class="pln" style="color: rgb(72, 72, 76);"> breadcrumbs </span><span class="pun" style="color: rgb(147, 161, 161);">=</span><span class="pln" style="color: rgb(72, 72, 76);"> </span><span class="kwd" style="color: rgb(30, 52, 123);">new</span><span class="pln" style="color: rgb(72, 72, 76);"> </span><span class="typ" style="color: teal;">Stack</span><span class="pun" style="color: rgb(147, 161, 161);">();</span><span class="pln" style="color: rgb(72, 72, 76);">
+ 
+breadcrumbs</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Push</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="str" style="color: rgb(221, 17, 68);">&quot;Home Page&quot;</span><span class="pun" style="color: rgb(147, 161, 161);">);</span><span class="pln" style="color: rgb(72, 72, 76);">
+breadcrumbs</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Push</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="str" style="color: rgb(221, 17, 68);">&quot;Articles&quot;</span><span class="pun" style="color: rgb(147, 161, 161);">);</span><span class="pln" style="color: rgb(72, 72, 76);">
+breadcrumbs</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Push</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="str" style="color: rgb(221, 17, 68);">&quot;C#&quot;</span><span class="pun" style="color: rgb(147, 161, 161);">);</span><span class="pln" style="color: rgb(72, 72, 76);">
+ 
+</span><span class="typ" style="color: teal;">Console</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">WriteLine</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="pln" style="color: rgb(72, 72, 76);">breadcrumbs</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Contains</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="str" style="color: rgb(221, 17, 68);">&quot;Articles&quot;</span><span class="pun" style="color: rgb(147, 161, 161);">));</span><span class="pln" style="color: rgb(72, 72, 76);">    </span><span class="com" style="color: rgb(147, 161, 161);">// &quot;True&quot;</span><span class="pln" style="color: rgb(72, 72, 76);">
+</span><span class="typ" style="color: teal;">Console</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">WriteLine</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="pln" style="color: rgb(72, 72, 76);">breadcrumbs</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Contains</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="str" style="color: rgb(221, 17, 68);">&quot;SQL Server&quot;</span><span class="pun" style="color: rgb(147, 161, 161);">));</span><span class="pln" style="color: rgb(72, 72, 76);">  </span><span class="com" style="color: rgb(147, 161, 161);">// &quot;False&quot;</span></pre>
+																											</div>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="style3">
+				<b style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				ToArray</b><br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<span style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+				Существует еще один метод, который позволяет считывать 
+				содержимое стопки, не нарушая порядок элементов. Аналогичным 
+				образом , как и в случае с ArrayList, объекты в стеке могут быть 
+				извлечены в массив . Сам стек не затронут.</span><br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<br style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue Cyr Roman&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				</div>
+				<div class="style3">
+					<div class="style3">
+						<div class="style3">
+							<div class="style3">
+								<div class="style3">
+									<div class="style3">
+										<div class="style3">
+											<div class="style3">
+												<div class="style3">
+													<div class="style3">
+														<div class="style3">
+															<div class="style3">
+																<div class="style3">
+																	<div class="style3">
+																		<div class="style3">
+																			<div class="style3">
+																				<div class="style3">
+																					<div class="style3">
+																						<div class="style3">
+																							<div class="style3">
+																								<div class="style3">
+																									<div class="style3">
+																										<div class="style3">
+																											<div class="style3">
+																												<div class="style3">
+																													<div class="style3">
+																														<div class="style3">
+				<pre class="style3" style="padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; color: rgb(51, 51, 51); border-radius: 4px; display: block; margin: 0px 0px 20px; line-height: 20px; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; background-color: rgb(247, 247, 249); border: 1px solid rgb(225, 225, 232); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span class="typ" style="color: teal;">Stack</span><span class="pln" style="color: rgb(72, 72, 76);"> breadcrumbs </span><span class="pun" style="color: rgb(147, 161, 161);">=</span><span class="pln" style="color: rgb(72, 72, 76);"> </span><span class="kwd" style="color: rgb(30, 52, 123);">new</span><span class="pln" style="color: rgb(72, 72, 76);"> </span><span class="typ" style="color: teal;">Stack</span><span class="pun" style="color: rgb(147, 161, 161);">();</span><span class="pln" style="color: rgb(72, 72, 76);">
+ 
+breadcrumbs</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Push</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="str" style="color: rgb(221, 17, 68);">&quot;Home Page&quot;</span><span class="pun" style="color: rgb(147, 161, 161);">);</span><span class="pln" style="color: rgb(72, 72, 76);">
+breadcrumbs</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Push</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="str" style="color: rgb(221, 17, 68);">&quot;Articles&quot;</span><span class="pun" style="color: rgb(147, 161, 161);">);</span><span class="pln" style="color: rgb(72, 72, 76);">
+breadcrumbs</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">Push</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="str" style="color: rgb(221, 17, 68);">&quot;C#&quot;</span><span class="pun" style="color: rgb(147, 161, 161);">);</span><span class="pln" style="color: rgb(72, 72, 76);">
+ 
+</span><span class="kwd" style="color: rgb(30, 52, 123);">object</span><span class="pun" style="color: rgb(147, 161, 161);">[]</span><span class="pln" style="color: rgb(72, 72, 76);"> array </span><span class="pun" style="color: rgb(147, 161, 161);">=</span><span class="pln" style="color: rgb(72, 72, 76);"> breadcrumbs</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">ToArray</span><span class="pun" style="color: rgb(147, 161, 161);">();</span><span class="pln" style="color: rgb(72, 72, 76);">
+ 
+</span><span class="kwd" style="color: rgb(30, 52, 123);">foreach</span><span class="pln" style="color: rgb(72, 72, 76);"> </span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="kwd" style="color: rgb(30, 52, 123);">object</span><span class="pln" style="color: rgb(72, 72, 76);"> o </span><span class="kwd" style="color: rgb(30, 52, 123);">in</span><span class="pln" style="color: rgb(72, 72, 76);"> array</span><span class="pun" style="color: rgb(147, 161, 161);">)</span><span class="pln" style="color: rgb(72, 72, 76);">
+</span><span class="pun" style="color: rgb(147, 161, 161);">{</span><span class="pln" style="color: rgb(72, 72, 76);">
+    </span><span class="typ" style="color: teal;">Console</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">WriteLine</span><span class="pun" style="color: rgb(147, 161, 161);">(</span><span class="pln" style="color: rgb(72, 72, 76);">o</span><span class="pun" style="color: rgb(147, 161, 161);">.</span><span class="typ" style="color: teal;">ToString</span><span class="pun" style="color: rgb(147, 161, 161);">());</span><span class="pln" style="color: rgb(72, 72, 76);">
+</span><span class="pun" style="color: rgb(147, 161, 161);">}</span><span class="pln" style="color: rgb(72, 72, 76);">
+ 
+</span><span class="com" style="color: rgb(147, 161, 161);">/* 
+ 
+C#
+Articles
+Home Page
+ 
+*/</span></pre>
+                																										</div>
+																													</div>
+																												</div>
+																											</div>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+                <p></p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les3.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les44/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:30:43 GMT -->
+</html>

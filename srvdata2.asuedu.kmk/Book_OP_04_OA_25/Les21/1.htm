@@ -1,0 +1,509 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les21/1.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:49:10 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: small;
+}
+.style3 {
+	color: rgb(0, 0, 0);
+	font-size: medium;
+
+}
+.style4 {
+	text-align: center;
+}
+    .style5 {
+	color: rgb(0, 0, 0);
+	font-size: small;
+}
+    .style6 {
+	font-size: medium;
+}
+    .style9 {
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	font-size: small;
+	line-height: normal;
+	font-family: "courier new", courier;
+	color: rgb(255, 0, 0);
+}
+    .style7 {
+	color: rgb(255, 0, 0);
+	background-color: #FFFFFF;
+}
+.style8 {
+	color: rgb(255, 0, 0);
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+				Работа с файлами в C#.&nbsp; Пространство имен System.IO</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text" 
+                >
+                <p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100; font-family: OpenSansRegular, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; h2 text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style6">
+				Пространство имен System.IO в .NET — это область библиотек 
+				базовых классов, посвященная службам файлового ввода-вывода, а 
+				также ввода-вывода из памяти. Подобно любому пространству имен, 
+				в System.IO определен набор классов, интерфейсов, перечислений, 
+				структур и делегатов, большинство из которых находятся в 
+				mscorlib.dll. В дополнение к типам, содержащимся внутри 
+				mscorlib.dll, в сборке System.dll определены дополнительные 
+				члены пространства имен System.IO. Обратите внимание, что все 
+				проекты Visual Studio 2022 автоматически устанавливают ссылки на 
+				обе сборки.</p>
+				<p style="color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-style: normal; font-variant: normal; font-weight: 400; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+				Пространство имен (namespace)<span>&nbsp;</span><span style="color: rgb(0, 0, 255);">System.IO</span><span>&nbsp;</span>содержит 
+				различные классы, используемые для выполнения нескольких 
+				операций с файлами, таких как создание и удаление файлов, чтение 
+				из них и запись в них, закрытие файла, навигация по системе 
+				каталогов файловой системы, доступ к информации о файле (время 
+				создания, атрибуты) и т. д.</p>
+				<p style="color: rgb(0, 0, 0); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-style: normal; font-variant: normal; font-weight: 400; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+				В следующей таблице показаны некоторые обычно чаще всего 
+				используемые не абстрактные классы из System.IO namespace:</p>
+				<table border="0" cellspacing="1" cellpadding="3"  style="color: rgb(0, 0, 0); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); background-color: rgb(222, 231, 236);">
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif; width: 180px;" class="style2">
+												<strong>Имя класса</strong></td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style3">
+												Описание</td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); ">
+												<td class="style9" style="width: 180px">
+												<span class="style5"><strong>BinaryReader</strong></span></td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												<span class="style7"><strong>Читает примитивные данные из 
+												двоичного потока.</strong></span></td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); ">
+												<td style="font: 11px Verdana, Arial, Helvetica, sans-serif; width: 180px;" class="style8">
+												<span face="courier new, courier" style="font-family: &quot;courier new&quot;, courier;" class="style2">
+												<span class="style5"><strong>BinaryWriter</strong></span></span></td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												<span class="style7"><strong>Записывает примитивные данные в 
+												двоичном формате.</strong></span></td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); ">
+												<td style="font: 11px Verdana, Arial, Helvetica, sans-serif; width: 180px;" class="style8">
+												<span face="courier new, courier" style="font-family: &quot;courier new&quot;, courier;" class="style2">
+												<span class="style5"><strong>BufferedStream</strong></span></span></td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												<span class="style7"><strong>Временное хранилище байтового 
+												потока данных.</strong></span></td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); ">
+												<td style="font: 11px Verdana, Arial, Helvetica, sans-serif; width: 180px;" class="style8">
+												<span face="courier new, courier" style="font-family: &quot;courier new&quot;, courier;" class="style6">
+												<strong>Directory</strong></span></td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												<span class="style7"><strong>Помогает работать со структурой 
+												каталогов файловой системы.</strong></span></td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); ">
+												<td style="font: 11px Verdana, Arial, Helvetica, sans-serif; width: 180px;" class="style8">
+												<span face="courier new, courier" style="font-family: &quot;courier new&quot;, courier;" class="style2">
+												<span class="style5"><strong>DirectoryInfo</strong></span></span></td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												<span class="style7"><strong>Используется для выполнения 
+												операций над каталогами.</strong></span></td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); ">
+												<td style="font: 11px Verdana, Arial, Helvetica, sans-serif; width: 180px;" class="style8">
+												<span face="courier new, courier" style="font-family: &quot;courier new&quot;, courier;" class="style2">
+												<span class="style5"><strong>DriveInfo</strong></span></span></td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												<span class="style7"><strong>Предоставляет информацию о 
+												приводах (дисках).</strong></span></td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); ">
+												<td style="font: 11px Verdana, Arial, Helvetica, sans-serif; width: 180px;" class="style8">
+												<span face="courier new, courier" style="font-family: &quot;courier new&quot;, courier;" class="style6">
+												<strong>File</strong></span></td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												<span class="style7"><strong>Помогает в манипуляциях с 
+												файлами.</strong></span></td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); ">
+												<td style="font: 11px Verdana, Arial, Helvetica, sans-serif; width: 180px;" class="style8">
+												<span face="courier new, courier" style="font-family: &quot;courier new&quot;, courier;" class="style2">
+												<span class="style5"><strong>FileInfo</strong></span></span></td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												<span class="style7"><strong>Используется для выполнения 
+												операций с файлами.</strong></span></td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); ">
+												<td style="font: 11px Verdana, Arial, Helvetica, sans-serif; width: 180px;" class="style8">
+												<span face="courier new, courier" style="font-family: &quot;courier new&quot;, courier;" class="style2">
+												<span class="style5"><strong>FileStream</strong></span></span></td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												<span class="style7"><strong>Используется для чтения и записи 
+												любого места в файле.</strong></span></td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); ">
+												<td style="font: 11px Verdana, Arial, Helvetica, sans-serif; width: 180px;" class="style8">
+												<span face="courier new, courier" style="font-family: &quot;courier new&quot;, courier;" class="style2">
+												<span class="style5"><strong>MemoryStream</strong></span></span></td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												<span class="style7"><strong>Используется для произвольного 
+												доступа к данным потока, 
+												сохраненного в памяти.</strong></span></td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); ">
+												<td style="font: 11px Verdana, Arial, Helvetica, sans-serif; width: 180px;" class="style8">
+												<span face="courier new, courier" style="font-family: &quot;courier new&quot;, courier;" class="style6">
+												<strong>Path</strong></span></td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												<span class="style7"><strong>Операции над информацией пути 
+												файлов и каталогов.</strong></span></td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); ">
+												<td style="font: 11px Verdana, Arial, Helvetica, sans-serif; width: 180px;" class="style8">
+												<span face="courier new, courier" style="font-family: &quot;courier new&quot;, courier;" class="style2">
+												<span class="style5"><strong>StreamReader</strong></span></span></td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												<span class="style7"><strong>Используется для чтения символов 
+												в байтовом потоке.</strong></span></td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); ">
+												<td style="font: 11px Verdana, Arial, Helvetica, sans-serif; width: 180px;" class="style8">
+												<span face="courier new, courier" style="font-family: &quot;courier new&quot;, courier;" class="style2">
+												<span class="style5"><strong>StreamWriter</strong></span></span></td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												<span class="style7"><strong>Используется для записи символов 
+												в поток.</strong></span></td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); ">
+												<td style="font: 11px Verdana, Arial, Helvetica, sans-serif; width: 180px;" class="style8">
+												<span face="courier new, courier" style="font-family: &quot;courier new&quot;, courier;" class="style2">
+												<span class="style5"><strong>StringReader</strong></span></span></td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												<span class="style7"><strong>Используется для чтения из 
+												буфера строки.</strong></span></td>
+								</tr>
+								<tr style="font: 11px Verdana, Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); ">
+												<td style="font: 11px Verdana, Arial, Helvetica, sans-serif; width: 180px;" class="style8">
+												<span face="courier new, courier" style="font-family: &quot;courier new&quot;, courier;" class="style2">
+												<span class="style5"><strong>StringWriter</strong></span></span></td>
+												<td style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; font-family: Verdana, Arial, Helvetica, sans-serif;" class="style2">
+												<span class="style7"><strong>Используется для записи в буфер 
+												строки.</strong></span></td>
+								</tr>
+				</table>
+				<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100; font-family: OpenSansRegular, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; h2 text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style6">
+				&nbsp;</p>
+				<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100; font-family: OpenSansRegular, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; h2 text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style6">
+				Многие типы из пространства имен System.IO сосредоточены на 
+				программных манипуляциях физическими каталогами и файлами. 
+				Дополнительные типы предоставляют поддержку чтения и записи 
+				данных в строковые буферы, а также области памяти. Ниже кратко 
+				описаны основные (неабстрактные) классы, которые дают понятие о 
+				функциональности System.IO:</p>
+				<dl style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin-top: 0px; margin-bottom: 20px; color: rgb(255, 255, 255); font-family: OpenSansRegular, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; h2 text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+					<dt style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; font-weight: bold;" class="style3">
+					<strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">
+					BinaryReader, BinaryWriter</strong></dt>
+					<dd style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; margin-left: 0px;">
+					<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100;" class="style6">
+					Эти классы позволяют сохранять и извлекать элементарные типы 
+					данных (целочисленные, булевские, строковые и т.п.) в 
+					двоичном виде</p>
+					</dd>
+					<dt style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; font-weight: bold;" class="style3">
+					<strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">
+					BufferedStream</strong></dt>
+					<dd style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; margin-left: 0px;">
+					<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100;">
+					Этот класс предоставляет временное хранилище для потока 
+					байтов, которые могут затем быть перенесены в постоянные 
+					хранилища</p>
+					</dd>
+					<dt style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; font-weight: bold;" class="style3">
+					<strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">
+					Directory, DirectoryInfo</strong></dt>
+					<dd style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; margin-left: 0px;">
+					<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100;">
+					Эти классы используются для манипуляций структурой каталогов 
+					машины. Тип Directory представляет функциональность, 
+					используя статические члены. Тип DirectoryInfo обеспечивает 
+					аналогичную функциональность через действительную объектную 
+					ссылку</p>
+					</dd>
+					<dt style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; font-weight: bold;" class="style3">
+					<strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">
+					DriveInfo</strong></dt>
+					<dd style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; margin-left: 0px;">
+					<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100;">
+					Этот класс предоставляет детальную информацию относительно 
+					дисковых устройств, используемых данной машиной</p>
+					</dd>
+					<dt style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; font-weight: bold;" class="style3">
+					<strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">
+					File, FileInfo</strong></dt>
+					<dd style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; margin-left: 0px;">
+					<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100;">
+					Эти классы служат для манипуляций множеством файлов данной 
+					машины. Тип File представляет функциональность через 
+					статические члены. Тип FileInfo обеспечивает аналогичную 
+					функциональность через действительную объектную ссылку</p>
+					</dd>
+					<dt style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; font-weight: bold;" class="style3">
+					<strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">
+					FileStream</strong></dt>
+					<dd style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; margin-left: 0px;">
+					<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100;">
+					Этот класс обеспечивает произвольный доступ к файлу (т.е. 
+					возможности поиска) с данными, представленными в виде потока 
+					байт</p>
+					</dd>
+					<dt style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; font-weight: bold;" class="style3">
+					<strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">
+					FileSystemWatcher</strong></dt>
+					<dd style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; margin-left: 0px;">
+					<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100;">
+					Этот класс позволяет отслеживать модификации внешних файлов 
+					в определенном каталоге</p>
+					</dd>
+					<dt style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; font-weight: bold;" class="style3">
+					<strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">
+					MemoryStream</strong></dt>
+					<dd style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; margin-left: 0px;">
+					<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100;">
+					Этот класс обеспечивает произвольный доступ к данным, 
+					хранящимся в памяти, а не в физическом файле</p>
+					</dd>
+					<dd style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; margin-left: 0px;">
+					<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100;">
+					Этот класс выполняет операции над типами System.String, 
+					содержащими информацию о пути к файлу или каталогу в 
+					независимой от платформы манере</p>
+					</dd>
+					<dt style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; font-weight: bold;" class="style3">
+					<strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">
+					StreamWriter, StreamReader</strong></dt>
+					<dd style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; margin-left: 0px;">
+					<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100;">
+					Эти классы используются для хранения (и извлечения) 
+					текстовой информации из файла. Эти классы не поддерживают 
+					произвольного доступа к файлу</p>
+					</dd>
+					<dt style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; font-weight: bold;" class="style3">
+					<strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">
+					StringWriter, StringReader</strong></dt>
+					<dd style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; margin-left: 0px;">
+					<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100;">
+					Подобно классам StreamWriter/StreamReader, эти классы также 
+					работают с текстовой информацией. Однако лежащим в основе 
+					хранилищем является строковый буфер, а не физический файл</p>
+					</dd>
+				</dl>
+				<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100; font-family: OpenSansRegular, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; h2 text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				В дополнение к этим конкретным типам классов в System.IO 
+				определено несколько перечислений, а также набор абстрактных 
+				классов (т.е. Stream, TextReader и TextWriter), которые 
+				определяют разделяемый полиморфный интерфейс для всех 
+				наследников.</p>
+				<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100; font-family: OpenSansRegular, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; h2 text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Как не трудно было заметить в приведенном выше списке, для 
+				представления файлов и папок используются по два класса. Какой 
+				из них применять — во многом зависит от того, сколько раз 
+				требуется получить доступ к данной папке или файлу.</p>
+				<ul style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 20px 0px; list-style-type: none; padding: 0px; color: rgb(255, 255, 255); font-family: OpenSansRegular, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; h2 text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+					<li style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; position: relative; padding-left: 30px;">
+					<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 0px; font-weight: 100;" class="style6">
+					Классы Directory и File содержат только статические методы, 
+					а их экземпляры никогда не создаются. Для их использования 
+					нужно просто предоставить путь к интересующему объекту 
+					файловой системы при каждом вызове метода-члена. Если 
+					требуется выполнить только одну операцию в отношении папки 
+					или файла, то применение этих классов является наиболее 
+					эффективным подходом, поскольку позволяет избегать накладных 
+					расходов, связанных с созданием экземпляров.</p>
+					</li>
+					<li style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; position: relative; padding-left: 30px; left: 2px; top: 2px;">
+					<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 0px; font-weight: 100;">
+					Классы DirectoryInfo и FileInfo реализуют практически те же 
+					общедоступные методы, что и Directory и File, а также 
+					некоторые общедоступные свойства и конструкторы, но 
+					поддерживают состояние, а их члены не являются статическими.</p>
+					<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 0px; font-weight: 100;">
+					Сначала понадобится создать их экземпляр, который затем 
+					ассоциировать с определенной папкой или файлом. Это 
+					означает, что применение этих классов будет более 
+					эффективным подходом, если необходимо выполнять множество 
+					операций в отношении одного и того же объекта. Дело в том, 
+					что во время создания они считывают информацию об 
+					аутентификации и прочие сведения о соответствующем объекте 
+					файловой системы и больше не нуждаются в ее повторном 
+					чтении, сколько бы методов не вызывалось для данного объекта 
+					(экземпляра класса). В отличие от этого, классы, не 
+					поддерживающие состояние, нуждаются в проверке деталей, 
+					связанных с файлом или папкой, при каждом вызове какого-либо 
+					метода.</p>
+					</li>
+				</ul>
+				<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100; font-family: OpenSansRegular, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; h2 text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style2">Обратите внимание на рисунке, что классы Directory и File 
+				непосредственно расширяют System.Object, в то время как 
+				DirectoryInfo и FileInfo наследуются от абстрактного класса<span>&nbsp;</span></span><strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;"><span class="style2">FileSystemInfo</span></strong>:</p>
+				<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100; font-family: OpenSansRegular, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; h2 text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<img alt="" src="Pic/img1719.png" width="841" height="389" /></p>
+				<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; text-indent: 20px; font-weight: 100; font-family: OpenSansRegular, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+				Классы DirectoryInfo и FileInfo унаследовали значительную часть 
+				своего поведения от абстрактного базового класса FileSystemInfo. 
+				По большей части члены класса FileSystemInfo используются для 
+				получения общих характеристик (таких как время создания, 
+				различные атрибуты и т.д.) определенного файла или каталога. В 
+				таблице ниже перечислены некоторые основные свойства, 
+				представляющие интерес:</p>
+				<div class="tabcontent" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; color: rgb(255, 255, 255); font-family: OpenSansRegular, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<div class="table_wrapper" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 30px 0px;">
+						<table style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; border-collapse: collapse; border-spacing: 0px; background-color: transparent; font-size: 14px; line-height: 1.2; border: none;">
+							<tbody style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">
+								<tr style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">
+									<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+									Свойство</td>
+									<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+									Назначение</td>
+								</tr>
+								<tr style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">
+									<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+									<strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">
+									Attributes</strong></td>
+									<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+									Получает или устанавливает ассоциированные с 
+									текущим файлом атрибуты, которые 
+									представлены перечислением FileAttributes 
+									(доступный только для чтения, зашифрованный, 
+									скрытый или сжатый)</td>
+								</tr>
+								<tr style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">
+									<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+									<strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">
+									CreationTime</strong></td>
+									<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+									Получает или устанавливает время создания 
+									текущего файла или каталога</td>
+								</tr>
+								<tr style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">
+									<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+									<strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">
+									Exists</strong></td>
+									<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+									Может использоваться для определения, 
+									существует ли данный файл или каталог</td>
+								</tr>
+								<tr style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">
+									<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+									<strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">
+									Extension</strong></td>
+									<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+									Извлекает расширение файла</td>
+								</tr>
+								<tr style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">
+									<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+									<strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">
+									FullName</strong></td>
+									<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+									Получает полный путь к файлу или каталогу</td>
+								</tr>
+								<tr style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">
+									<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+									<strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">
+									LastAccessTime</strong></td>
+									<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+									Получает или устанавливает время последнего 
+									доступа к текущему файлу или каталогу</td>
+								</tr>
+								<tr style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">
+									<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+									<strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">
+									LastWriteTime</strong></td>
+									<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+									Получает или устанавливает время последней 
+									записи в текущий файл или каталог</td>
+								</tr>
+								<tr style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">
+									<td style="border-style: none; border-color: inherit; border-width: 0px; box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); line-height: 1.4;" class="style5">
+									<strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">
+									Name</strong></td>
+									<td style="border-style: none; border-color: inherit; border-width: 0px; box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); line-height: 1.4;" class="style5">
+									Получает имя текущего файла или каталога</td>
+								</tr>
+						</table>
+					</div>
+				</div>
+				<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; text-indent: 20px; font-weight: 100; font-family: OpenSansRegular, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+				В классе FileSystemInfo также определен метод Delete(). Этот 
+				метод реализуется производными типами для удаления файла или 
+				каталога с жесткого диска. Кроме того, метод Refresh() может 
+				быть вызван перед получением информации об атрибутах, чтобы 
+				обеспечить актуальность состояния статистики о текущем файле или 
+				каталоге.</p>
+				<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100; font-family: OpenSansRegular, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; h2 text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				&nbsp;</p>
+                </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2008 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les22.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les21/1.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:49:13 GMT -->
+</html>

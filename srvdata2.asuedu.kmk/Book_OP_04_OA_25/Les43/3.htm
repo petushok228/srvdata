@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les43/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:28:35 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: small;
+}
+    .style3 {
+	margin-left: 40px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+}
+.style4 {
+	text-align: center;
+}
+    .style5 {
+	font-size: small;
+	text-align: center;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 3. Словарь (map) на языке C#⁠⁠.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+               <p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;">
+					<span class="style2">Словарь (map) — это структура данных, представляющая собой 
+					специальным образом организованный набор элементов хранимых 
+					данные. Все данные хранятся в виде пар ключ-значение. Доступ 
+					к элементам данных осуществляется по ключу. Ключ всегда 
+					должен быть уникальным в пределах одного словаря, данные 
+					могут дублироваться при необходимости. У данной структуры 
+					есть и другие часто встречающиеся названия: ассоциативный 
+					массив или Dictionary. Принцип работы словаря схож с камерой 
+					хранения: есть ячейка, в которой может храниться что угодно, 
+					но доступ к этой ячейке осуществляется по уникальному 
+					номеру, благодаря чему ее всегда легко найти. Давайте 
+					рассмотрим пример реализации словаря на языке C#.</p>
+					<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;">
+					На рисунке ниже представлена схематичная структура словаря.</p>
+				<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;">
+					&nbsp;</p>
+				<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;" class="style4">
+					<img alt="" src="Pic/r-53-3-1.png" width="650" height="513" /></p>
+				<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;">
+					</span></p>
+				
+				<div class="story-block story-block_type_image story-block_padding_left" style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px 24px; margin: 11px 0px 0px; -webkit-tap-highlight-color: transparent; overflow: hidden; line-height: 0; color: rgb(27, 30, 36); font-family: Roboto, &quot;Open Sans&quot;, helvetica, arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<figure class="story-image" style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow: hidden; position: relative; line-height: 0;"><svg class="story-image__stretch" aria-hidden="true" width="650" height="100%" viewBox="0 0 650 513"><rect width="650" height="513"></rect></svg>
+					<div class="story-image__content " style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; line-height: 0; position: absolute; inset: 0px;">
+						</div>
+					</figure></div>
+				<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;">
+					<span class="style2">У словаря доступ осуществляется к любому из элементов 
+					хранимых данные по его ключу. Основные операции, которые 
+					могут выполняться со словарем:</span></p>
+				<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;">
+					<span class="style2"></p>
+					<p style="box-sizing: border-box; background-repeat: no-repeat; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;" class="style3">
+					<b style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; color: var(--color-black-940);">
+					1. Add<span>&nbsp;</span></b>— добавление нового элемента с 
+					уникальным ключом.</p>
+					<p style="box-sizing: border-box; background-repeat: no-repeat; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;" class="style3">
+					<b style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; color: var(--color-black-940);">
+					2. Remove<span>&nbsp;</span></b>— удаление элемента по ключу.</p>
+					<p style="box-sizing: border-box; background-repeat: no-repeat; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;" class="style3">
+					<b style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; color: var(--color-black-940);">
+					3. Update<span>&nbsp;</span></b>— изменить хранимое значение по 
+					ключу.</p>
+					<p style="box-sizing: border-box; background-repeat: no-repeat; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;" class="style3">
+					<b style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; color: var(--color-black-940);">
+					4. Get<span>&nbsp;</span></b>— получить хранимое значение по 
+					ключу.</p>
+				<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;">
+					&nbsp;</p>
+				
+				<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;">
+					Теперь приступим к реализации данной структуры данных. Будем 
+					использовать обобщенный класс с двумя принимаемыми типами 
+					для ключа и значения. Для хранения данных воспользуемся 
+					списком. Данная реализация является весьма примитивной, но 
+					позволяет разобраться в структуре и алгоритме работы данного 
+					типа данных.</p>
+					<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;">
+					Теперь рассмотрим программный код.</p>
+				<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;">
+					&nbsp;Элемент словаря&nbsp;</p>
+				<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;" class="style4">
+					<img alt="" src="Pic/r-53-3-2.png" width="472" height="853" /></p>
+				<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;">
+					</span></p>
+					<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;" class="style2">
+					Объявим класс словаря, его свойства и реализуем основные 
+					операции</p>
+				<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;" class="style2">
+					&nbsp;</p>
+				<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;" class="style5">
+					<img alt="" src="Pic/r-53-3-3.png" width="700" height="595" /></p>
+				<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;" class="style2">
+					&nbsp;</p>
+				<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;" class="style5">
+					<img alt="" src="Pic/r-53-3-4.png" width="700" height="680" /></p>
+				<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;" class="style2">
+					&nbsp;</p>
+				<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;" class="style5">
+					&nbsp;</p>
+				<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;" class="style2">
+					&nbsp;</p>
+				<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;" class="style2">
+					Теперь проверим работу словаря обратившись к нему</p>
+				<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;" class="style2">
+					&nbsp;</p>
+				<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;" class="style5">
+					<img alt="" src="Pic/r-53-3-5.png" width="563" height="676" /></p>
+				<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;" class="style2">
+					&nbsp;</p>
+				<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;" class="style2">
+					Ну и наконец запустим приложение и посмотрим результат 
+					работы на консоли</p>
+				<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;" class="style2">
+					&nbsp;</p>
+				<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;" class="style5">
+					<img alt="" src="Pic/r-53-3-6.png" width="378" height="306" /></p>
+				<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;" class="style5">
+					&nbsp;</p>
+				<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;" class="style2">
+					&nbsp;</p>
+				<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;">
+					<span class="style2">Заключение</p>
+					<p style="box-sizing: border-box; background-repeat: no-repeat; padding: 0px; margin: 0px; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; text-wrap: pretty;">
+					На платформе .NET уже есть готовая реализация данной 
+					структуры данных. Она содержится в пространстве имен 
+					System.Collections и называется Dictionary. Я не претендую 
+					на правильность, оптимальность и красоту реализации. 
+					Единственная цель, которую я преследую, поделиться полезной 
+					информацией о программировании, которая может кому-то 
+					пригодиться.</span></p>
+				
+                <p class="style2">&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les53.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les43/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:28:49 GMT -->
+</html>

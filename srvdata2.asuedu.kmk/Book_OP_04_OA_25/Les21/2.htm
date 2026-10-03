@@ -1,0 +1,588 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les21/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:49:14 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: small;
+	color: #0000FF;
+}
+    .style3 {
+	font-size: small;
+}
+    .style4 {
+	margin-left: 40px;
+}
+    .style5 {
+	font-size: small;
+	color: #FF0000;
+}
+    .style6 {
+	color: #FF0000;
+}
+.style7 {
+	font-size: medium;
+	color: rgb(255, 0, 0);
+}
+.style8 {
+	font-size: small;
+	color: rgb(128, 0, 0);
+}
+.style9 {
+	color: #FF0000;
+	text-indent: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: normal;
+	text-align: start;
+	text-transform: none;
+	word-spacing: 0px;
+	white-space: normal;
+	margin: 10px 0px;
+}
+.style10 {
+	font-size: medium;
+}
+.style11 {
+	font-size: medium;
+	font-weight: bold;
+	color: rgb(255, 0, 0);
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Работа с файлами в C#. Классы File и FileInfo.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text" 
+                >
+                <h2 class="style3">
+				Класс <span class="style7">FileInfo</span> <span class="style6">позволяет получать подробности относительно существующих файлов на жестком диске</span> (т.е. время создания, размер и атрибуты) и предназначен для создания, копирования, перемещения и удаления файлов. Вдобавок к набору функциональности, унаследованной от FileSystemInfo, есть некоторые члены, уникальные для класса FileInfo</h2>
+				<h2 class="style3">
+				Класс FileInfo</h2>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Некоторые полезные методы и свойства класса<span>&nbsp;</span><span class="b" style="font-weight: bold;">FileInfo</span>:</p>
+				<ul style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style3" style="font-weight: bold;">CopyTo(path)</span><span class="style3">: 
+					копирует файл в новое место по указанному пути path</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">Create()</span>: 
+					создает файл</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">Delete()</span>: 
+					удаляет файл</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">MoveTo(destFileName)</span>: 
+					перемещает файл в новое место</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					Свойство<span>&nbsp;</span><span class="b" style="font-weight: bold;">Directory</span>: 
+					получает родительский каталог в виде объекта DirectoryInfo</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					Свойство<span>&nbsp;</span><span class="b" style="font-weight: bold;">DirectoryName</span>: 
+					получает полный путь к родительскому каталогу</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					Свойство<span>&nbsp;</span><span class="b" style="font-weight: bold;">Exists</span>: 
+					указывает, существует ли файл</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					Свойство<span>&nbsp;</span><span class="b" style="font-weight: bold;">Length</span>: 
+					получает размер файла</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					Свойство<span>&nbsp;</span><span class="b" style="font-weight: bold;">Extension</span>: 
+					получает расширение файла</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					Свойство<span>&nbsp;</span><span class="b" style="font-weight: bold;">Name</span>: 
+					получает имя файла</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					Свойство<span>&nbsp;</span><span class="b" style="font-weight: bold;">FullName</span>: 
+					получает полное имя файла</span></p>
+					</li>
+				</ul>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Для создания объекта FileInfo применяется конструктор, который 
+				получает в качестве параметра путь к файлу:</p>
+				<pre class="style2">FileInfo fileInf = new FileInfo(@"C:\app\content.txt");</pre>
+				<h2 class="style3">
+				Класс 
+				File</h2>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Класс<span>&nbsp;</span><code style="font-family: monospace;"><span class="style7"><strong>File</strong></span></code><span>&nbsp;</span><span class="style6"><strong>реализует 
+				похожую функциональность с помощью статических методов</strong></span>:</p>
+				<ul style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style3" style="font-weight: bold;">Copy()</span><span class="style3">: 
+					копирует файл в новое место</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">Create()</span>: 
+					создает файл</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">Delete()</span>: 
+					удаляет файл</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">Move</span>: 
+					перемещает файл в новое место</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">Exists(file)</span>: 
+					определяет, существует ли файл</span></p>
+					</li>
+				</ul>
+				<h2 class="style3">
+				Пути к файлам</h2>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Для работы с файлами можно применять как абсолютные, так и 
+				относительные пути:</p>
+				<pre class="style2">// абсолютные пути
+string path1 = @"C:\Users\eugene\Documents\content.txt";  // для Windows
+string path2 = "C:\\Users\\eugene\\Documents\\content.txt";  // для Windows
+string path2 = "/Users/eugene/Documents/content.txt";  // для MacOS/Linux // относительные пути
+string path4 = "MyDir\\content.txt";  // для Windows
+string path5 = "MyDir/content.txt";  // для MacOS/Linux</pre>
+				<h2 class="style3">
+				Получение информации о файле</h2>
+				<pre class="style2">string path = @"C:\Users\eugene\Documents\content.txt";// 
+string path = "/Users/eugene/Documents/content.txt";  // для MacOS/Linux
+FileInfo fileInfo = new FileInfo(path);
+  if (fileInfo.Exists)
+	{    Console.WriteLine($"Имя файла: {fileInfo.Name}");    
+             Console.WriteLine($"Время создания: {fileInfo.CreationTime}");
+	   Console.WriteLine($"Размер: {fileInfo.Length}");
+	}</pre>
+				<h2 class="style3">
+				Удаление файла</h2>
+				<pre class="style2">string path = @"C:\app\content.txt";
+FileInfo fileInf = new FileInfo(path);
+	if (fileInf.Exists){   fileInf.Delete();
+   // альтернатива с помощью класса File   // 
+File.Delete(path);}</pre>
+				<h2 class="style3">
+				Перемещение файла</h2>
+				<pre class="style2">string path =  @"C:\OldDir\content.txt";
+string newPath = @"C:\NewDir\index.txt";
+FileInfo fileInf = new FileInfo(path);
+		if (fileInf.Exists)
+		{   
+		fileInf.MoveTo(newPath);          // альтернатива с помощью класса File   // 
+		File.Move(path, newPath);
+		}</pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Если файл по новому пути уже существует, то с помощью 
+				дополнительного параметра можно указать, надо ли перезаписать 
+				файл (при значении true файл перезаписывается)</p>
+				<pre class="style2">string path =  @"C:\OldDir\content.txt";
+string newPath = @"C:\NewDir\index.txt";
+FileInfo fileInf = new FileInfo(path);
+	if (fileInf.Exists)
+	{
+		fileInf.MoveTo(newPath, true);          
+		// альтернатива с помощью класса File   // 
+		File.Move(path, newPath, true);
+	}</pre>
+				<h2 class="style3">
+				Копирование файла</h2>
+				<pre class="style2">string path =  @"C:\OldDir\content.txt";
+string newPath = @"C:\NewDir\index2.txt";FileInfo fileInf = new FileInfo(path);
+	if (fileInf.Exists)
+	{
+	   fileInf.CopyTo(newPath, true);
+         // альтернатива с помощью класса File   // 
+	File.Copy(path, newPath, true);
+	}</pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Метод<span>&nbsp;</span><code style="font-family: monospace;">CopyTo</code><span>&nbsp;</span>класса<span>&nbsp;</span><code style="font-family: monospace;">FileInfo</code><span>&nbsp;</span>принимает 
+				два параметра: путь, по которому файл будет копироваться, и 
+				булевое значение, которое указывает, надо ли при копировании 
+				перезаписывать файл (если<span>&nbsp;</span><code style="font-family: monospace;">true</code>, 
+				как в случае выше, файл при копировании перезаписывается). Если 
+				же в качестве последнего параметра передать значение<span>&nbsp;</span><code style="font-family: monospace;">false</code>, 
+				то если такой файл уже существует, приложение выдаст ошибку.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Метод<span>&nbsp;</span><code style="font-family: monospace;">Copy</code><span>&nbsp;</span>класса<span>&nbsp;</span><code style="font-family: monospace;">File</code><span>&nbsp;</span>принимает 
+				три параметра: путь к исходному файлу, путь, по которому файл 
+				будет копироваться, и булевое значение, указывающее, будет ли 
+				файл перезаписываться.</p>
+				<h2 class="style3">
+				Чтение и запись файлов</h2>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style7">
+				<strong>В дополнение к вышерассмотренным методам класс File также 
+				предоставляет ряд методов для чтения-записи текстовых и бинарных 
+				файлов:</strong></p>
+				<ul style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">AppendAllLines(String, 
+					IEnumerable&lt;String&gt;)</span><span>&nbsp;</span>/<span>&nbsp;</span><span class="b" style="font-weight: bold;">AppendAllLinesAsync(String, 
+					IEnumerable&lt;String&gt;, CancellationToken)</span></p>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					добавляют в файл набор строк. Если файл не существует, то он 
+					создается</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">AppendAllText(String, 
+					String)</span><span>&nbsp;</span>/<span>&nbsp;</span><span class="b" style="font-weight: bold;">AppendAllTextAsync(String, 
+					String, CancellationToken)</span></p>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					добавляют в файл строку. Если файл не существует, то он 
+					создается</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">byte[] 
+					ReadAllBytes (string path)</span><span>&nbsp;</span>/<span>&nbsp;</span><span class="b" style="font-weight: bold;">Task&lt;byte[]&gt; 
+					ReadAllBytesAsync (string path, CancellationToken 
+					cancellationToken)</span></p>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					считывают содержимое бинарного файла в массив байтов</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">string[] 
+					ReadAllLines (string path)</span><span>&nbsp;</span>/<span>&nbsp;</span><span class="b" style="font-weight: bold;">Task&lt;string[]&gt; 
+					ReadAllLinesAsync (string path, CancellationToken 
+					cancellationToken)</span></p>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					считывают содержимое текстового файла в массив строк</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">string 
+					ReadAllText (string path)</span><span>&nbsp;</span>/<span>&nbsp;</span><span class="b" style="font-weight: bold;">Task&lt;string&gt; 
+					ReadAllTextAsync (string path, CancellationToken 
+					cancellationToken)</span></p>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					считывают содержимое текстового файла в строку</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">IEnumerable&lt;string&gt; 
+					ReadLines (string path)</span></p>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					считывают содержимое текстового файла в коллекцию строк</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">void 
+					WriteAllBytes (string path, byte[] bytes)</span><span>&nbsp;</span>/<span>&nbsp;</span><span class="b" style="font-weight: bold;">Task 
+					WriteAllBytesAsync (string path, byte[] bytes, 
+					CancellationToken cancellationToken)</span></p>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					записывают массив байт в бинарный файл. Если файл не 
+					существует, он создается. Если существует, то 
+					перезаписывается</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">void 
+					WriteAllLines (string path, string[] contents)</span><span>&nbsp;</span>/<span>&nbsp;</span><span class="b" style="font-weight: bold;">Task 
+					WriteAllLinesAsync (string path, IEnumerable&lt;string&gt; 
+					contents, CancellationToken cancellationToken)</span></p>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					записывают массив строк в текстовый файл. Если файл не 
+					существует, он создается. Если существует, то 
+					перезаписывается</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="b" style="font-weight: bold;">WriteAllText 
+					(string path, string? contents)</span><span>&nbsp;</span>/<span>&nbsp;</span><span class="b" style="font-weight: bold;">Task 
+					WriteAllTextAsync (string path, string? contents, 
+					CancellationToken cancellationToken)</span></p>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					записывают строку в текстовый файл. Если файл не существует, 
+					он создается. Если существует, то перезаписывается</p>
+					</li>
+				</ul>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Как видно, эти методы покрывают практически все основные 
+				сценарии - чтение и запись текстовых и бинарных файлов. Причем в 
+				зависимости от задачи можно применять как синхронные методы, так 
+				и их асинхронные аналоги.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Например, запишем и считаем обратно в строку текстовый файл:</p>
+				<pre class="style2">string path = @"c:\app\content.txt"; 
+string originalText = "Hello Metanit.com";// запись строки
+await File.WriteAllTextAsync(path, originalText);// дозапись в конец файла
+await File.AppendAllTextAsync(path, "\nHello work"); // чтение файла
+string fileText = await File.ReadAllTextAsync(path);
+Console.WriteLine(fileText);</pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style8">
+				Консольный вывод:</p>
+				<div class="style3" style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre class="consoletext" style="font-family: var(--main-font-family); max-width: 99%; line-height: 25.6px; white-space: pre-wrap; border: 1px solid rgb(204, 204, 204); clear: both; overflow-wrap: break-word; background-color: var(--console-bgcolor); color: var(--console-textcolor); padding: 8px;">Hello Metanit.com
+Hello work
+</pre>
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Стоит отметить, что при добавлении текста я добавил в строку 
+				последовательность &quot;\n&quot;, которая выполняет перевод на следующую 
+				строку. Благодаря этому добавляемый текст располагается в файле 
+				на новой строке.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Если мы хотим, что в файле изначально шло добавление на новую 
+				строку, то для записи стоит использовать метод<span>&nbsp;</span><code style="font-family: monospace;">WriteAllLines/ 
+				WriteAllLinesAsync</code>, а для добавления -<span>&nbsp;</span><code style="font-family: monospace;">AppendAllLines 
+				/ AppendAllLinesAsync</code></p>
+				<pre class="style2">await File.WriteAllLinesAsync(path, new[] { "Hello Metanit.com", "Hello work" });</pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Аналогично при чтении файла если мы хотим каждую строку файла 
+				считать отдельно, то вместо<span>&nbsp;</span><code style="font-family: monospace;">ReadAllText 
+				/ ReadAllTextAsync</code><span>&nbsp;</span>применяется<span>&nbsp;</span><code style="font-family: monospace;">ReadAllLines 
+				/ ReadAllLinesAsync</code>.</p>
+				<h4 style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Чтение текстового файла</h4>
+				<p style="font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style9">
+				<b><span class="style10">Класс File в C#</span></b><span><span class="style10">&nbsp;</span></span><span class="style10">определяет два статических 
+				метода для чтения текстового файла, а именно 
+				**File.ReadAllText() и File.ReadAllLines().</span></p>
+				<p style="color: rgb(68, 73, 83); margin: 10px 0px; text-indent: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<b><span class="style7">File.ReadAllText()</span> сразу читает весь файл и возвращает строку</b>. 
+				Нам нужно сохранить эту строку в переменной и использовать ее 
+				для отображения содержимого на экране.</p>
+				<p style="color: rgb(68, 73, 83); margin: 10px 0px; text-indent: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style11">File.ReadAllLines()</span><span>&nbsp;</span>читает файл по одной 
+				строке за раз и возвращает эту строку в строковом формате. Нам 
+				нужен массив строк для хранения каждой строки. Мы отображаем 
+				содержимое файла, используя тот же массив строк.</p>
+				<p style="color: rgb(68, 73, 83); margin: 10px 0px; text-indent: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Есть еще один способ<span>&nbsp;</span><b>прочитать файл в C# — 
+				использовать объект StreamReader</b>.<span>&nbsp;</span><b>StreamReader</b><span>&nbsp;</span>также считывает 
+				построчно и возвращает строку. Все вышеупомянутые способы чтения 
+				файла проиллюстрированы в приведенном ниже примере кода.</p>
+				<p style="color: rgb(68, 73, 83); margin: 10px 0px; text-indent: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Создадим<span>&nbsp;</span><b>консольный проект в Visual Studio</b><span>&nbsp;</span>и 
+				пропишем в нем следующий код.</p>
+				<pre class="style4"><span class="style2">using System;
+// пространство имен для с вводом
+using System.IO;
+
+class Program {
+    static void Main(string[] args)
+  &nbsp;&nbsp;{
+      &nbsp;&nbsp;// определите путь к текстовому файлу в вашей системе
+      &nbsp;&nbsp;string&nbsp;file&nbsp;=&nbsp;@&quot;C:\Documents\Textfile.txt&quot;;
+
+      &nbsp;&nbsp;Console.WriteLine(&quot;Чтение файла с помощью File.ReadAllText()&quot;);
+
+      &nbsp;&nbsp;// Чтение всего файла за один раз
+              &nbsp;&nbsp;// Если файл существует
+      &nbsp;&nbsp;if&nbsp;(File.Exists(file))&nbsp;{
+          &nbsp;&nbsp;// Чтение всего содержимого в одной строке
+                      &nbsp;&nbsp;// и вывод его на экран
+          &nbsp;&nbsp;string&nbsp;str&nbsp;=&nbsp;</span><span class="style5"><strong>File.ReadAllText(file)</strong></span><span class="style2">;
+          &nbsp;&nbsp;Console.WriteLine(str);
+      &nbsp;&nbsp;}
+      &nbsp;&nbsp;Console.WriteLine();
+
+      &nbsp;&nbsp;Console.WriteLine(&quot;Чтение файла с помощью File.ReadAllLines()&quot;);
+
+      &nbsp;&nbsp;// Прочитать текст по одной строке за раз
+      &nbsp;&nbsp;if&nbsp;(File.Exists(file))&nbsp;{
+          &nbsp;&nbsp;// Поместим каждую строку в массив строк
+          &nbsp;&nbsp;string[]&nbsp;lines&nbsp;=&nbsp;</span><span class="style5"><strong>File.ReadAllLines(file);</strong></span><span class="style2">
+
+          &nbsp;&nbsp;foreach(string&nbsp;ln&nbsp;in&nbsp;lines)
+              &nbsp;&nbsp;Console.WriteLine(ln);
+      &nbsp;&nbsp;}
+      &nbsp;&nbsp;Console.WriteLine();
+
+      &nbsp;&nbsp;Console.WriteLine(&quot;Чтение файла с помощью StreamReader&quot;);
+
+      &nbsp;&nbsp;// используем StreamReader
+      &nbsp;&nbsp;if&nbsp;(File.Exists(file))&nbsp;{
+          &nbsp;&nbsp;// Читаем файл построчно
+          &nbsp;&nbsp;var&nbsp;textFile&nbsp;=&nbsp;new&nbsp;StreamReader(file);
+          &nbsp;&nbsp;string&nbsp;line;
+
+          &nbsp;&nbsp;while&nbsp;((line&nbsp;=&nbsp;textFile.ReadLine())&nbsp;!=&nbsp;null)&nbsp;{
+              &nbsp;&nbsp;Console.WriteLine(line);
+          &nbsp;&nbsp;}
+
+            textFile.Close();
+
+          &nbsp;&nbsp;Console.ReadKey();
+      &nbsp;&nbsp;}
+      &nbsp;&nbsp;Console.WriteLine();
+  &nbsp;&nbsp;}
+</span>}
+</pre>
+				<h2 class="style3">
+				Запись строки в файл</h2>
+				<pre class="style4"><span class="style2">using System;
+using System.Text;
+using System.IO;
+namespace TestApplicationForStudy
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string pathToFile = "E:\\cities.txt";
+      // можно также указать вот так pathToFile = @"E:\cities.txt";
+      // выведем содержимое файла целиком
+      string readAllFile = File.ReadAllText(pathToFile);
+      Console.WriteLine(readAllFile); // выйдет весь файл
+      string[] readEveryLine = new string[5];
+      // </span><span class="style5"><strong>записываем в массив каждую строку файла</strong></span><span class="style2">
+      readEveryLine = </span><span class="style5"><strong>File.ReadAllLines(pathToFile);</strong></span><span class="style2">
+      // выводим содержимое массива
+      for (int i = 0; i < readEveryLine.Length; i++) 
+          Console.Write(readEveryLine[i] + " | ");
+      // Попробуем добавить новый город в наш файл
+      // Данная команда перезатрёт наш файл, и в нём будет только "Нижний Новгород"
+      //File.WriteAllText(pathToFile, "Нижний Новгород");
+      // </span><span class="style5"><strong>Следующая команда допишет новый город в конец файла</strong></span><span class="style2">
+      </span><span class="style5"><strong>File.AppendAllText</strong></span><span class="style2">(pathToFile, Environment.NewLine); // Добавим новую строку в наш файл
+      File.AppendAllText(pathToFile, "Нижний Новгород");
+      Console.ReadLine();
+    }
+  }
+</span>}</pre>
+				<h2 class="style3">
+				Кодировка</h2>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				В качестве дополнительного параметра методы чтения-записи 
+				текстовых файлов позволяют установить кодировку в виде объекта<span>&nbsp;</span><span class="style6" style="font-weight: bold;">System.Text.Encoding</span>:</p>
+				<font _mstmutation="1" _msttexthash="625440530" _msthash="11" style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Символы — это абстрактные сущности, которые могут быть 
+				представлены с помощью множество различных схем символов или 
+				кодовых страниц. Например, кодировка Unicode UTF-16 представляет 
+				или кодирует символы в виде последовательностей 16-битных целых 
+				чисел, в то время как Юникод UTF-8 представляет собой те же 
+				символы, что и последовательности 8-битных байтов.</font><p _msttexthash="16564067" _msthash="12" style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				BCL включает в себя следующие производные типы из<span>&nbsp;</span>Encoding:</p>
+				<ul style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li>
+					<font _mstmutation="1" _msttexthash="104887731" _msthash="13">
+					ASCIIEncoding<span>&nbsp;</span>- кодирует символы Unicode как 
+					7-битные ASCII-символы. Эта кодировка поддерживает только 
+					кодовые точки между U+0000 и U+007F включительно.</font></li>
+					<li>
+					<font _mstmutation="1" _msttexthash="121155840" _msthash="14">
+					UnicodeEncoding<span>&nbsp;</span>- кодирует каждый Символ 
+					Юникода в виде двух последовательных байтов. Байт с прямым и 
+					прямым порядком байтов Заказы поддерживаются.</font></li>
+					<li>
+					<font _mstmutation="1" _msttexthash="148710419" _msthash="15">
+					UTF8Encoding<span>&nbsp;</span>- кодирует символы Юникода с 
+					помощью кодировка UTF-8 (формат преобразования UCS, 8-битная 
+					форма). Эта кодировка поддерживает все значения символов 
+					Юникода.</font></li>
+				</ul>
+				<font _mstmutation="1" _msttexthash="355596514" _msthash="16" style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Приложения могут инициализировать новые экземпляры объектов<span>&nbsp;</span><a target="contents" _mstmutation="1" _istranslated="1" href="https://www.gnu.org/projects/dotgnu/pnetlib-doc/System/Text/Encoding.html">Encoding</a><span>&nbsp;</span>с 
+				помощью классов<span>&nbsp;</span><a target="contents" _mstmutation="1" _istranslated="1" href="https://www.gnu.org/projects/dotgnu/pnetlib-doc/System/Text/ASCIIEncoding.html">ASCIIEncoding</a>,<span>&nbsp;</span><a target="contents" _mstmutation="1" _istranslated="1" href="https://www.gnu.org/projects/dotgnu/pnetlib-doc/System/Text/UnicodeEncoding.html">UnicodeEncoding</a><span>&nbsp;</span>и<span>&nbsp;</span><a target="contents" _mstmutation="1" _istranslated="1" href="https://www.gnu.org/projects/dotgnu/pnetlib-doc/System/Text/UTF8Encoding.html">UTF8Encoding</a>.</font><pre class="style2">using System.Text; 
+string path = "/Users/eugene/Documents/app/content.txt";
+string originalText = "Привет Metanit.com";// запись строки
+await <span class="style6"><strong>File.WriteAllTextAsync</strong></span>(path, originalText, <span class="style6"><strong>Encoding.Unicode</strong></span>);// дозапись в конец файла
+await File.AppendAllTextAsync(path, "\nПривет мир", Encoding.Unicode); // чтение файла
+string fileText = await File.ReadAllTextAsync(path, Encoding.Unicode);
+Console.WriteLine(fileText);</pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				Для установки кодировки при записи и чтении здесь применяется 
+				<span class="style6"><strong>встроенное значение</strong><span><strong>&nbsp;</strong></span><code style="font-family: monospace;"><strong>Encoding.Unicode</strong></code><strong>. 
+				</strong></span>Также можно указать название кодировки, 
+				<span class="style6"><strong>единственное следует 
+				удостовериться, что текущая операционная система поддерживает 
+				выбранную кодировку:</strong></span></p>
+				<pre class="style2">using System.Text; 
+string path = @"c:\app\content.txt";
+ string originalText = "Hello Metanit.com";// запись строки
+await File.WriteAllTextAsync(path, originalText, <span class="style6"><strong>Encoding.GetEncoding("iso-8859-1"))</strong></span>;// дозапись в конец файла
+await File.AppendAllTextAsync(path, "\nHello code", Encoding.GetEncoding("iso-8859-1")); // чтение файла
+string fileText = await File.ReadAllTextAsync(path, Encoding.GetEncoding("iso-8859-1"));
+Console.WriteLine(fileText);</pre>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+			</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2008 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les21.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les21/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:49:14 GMT -->
+</html>

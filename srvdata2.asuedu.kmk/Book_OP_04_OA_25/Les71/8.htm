@@ -1,0 +1,519 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les71/8.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 11:03:32 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 8. Редактирование объектов.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <div class="row" style="box-sizing: border-box; margin-left: -15px; margin-right: -15px; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 245, 245); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="col-md-12" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 1170px;">
+												<h1 style="box-sizing: border-box; font-size: 44px; margin: 20px 0px 10px; font-family: Montserrat; font-weight: 500; line-height: 1.1; color: rgb(50, 112, 156); letter-spacing: 0.12em;">
+												<span style="box-sizing: border-box;">
+												11.2. Редактирование объектов</span></h1>
+								</div>
+				</div>
+				<div class="row" style="box-sizing: border-box; margin-left: -15px; margin-right: -15px; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 245, 245); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<div class="col-md-12" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 1170px;">
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Сейчас мы убьем сразу двух 
+												зайцев: рассмотрим еще один 
+												подход к редактированию и 
+												узнаем, как работать с 
+												компонентом ListView в 
+												виртуальном режиме.</p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Допустим, что у нас есть очень 
+												большой массив данных — 
+												например, список сотрудников 
+												крупного предприятия. Мы знаем 
+												их точное количество — 10 тысяч, 
+												и у нас есть некое хранилище, в 
+												котором находятся данные, — 
+												например, список List. Теперь мы 
+												хотим отобразить содержимое 
+												списка. Первое, что приходит в 
+												голову, — просто загрузить 
+												данные в компонент ListView:</p>
+												<pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; display: block; padding: 10px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(238, 238, 238); background: rgb(17, 17, 17); border: 1px solid rgb(204, 204, 204); border-radius: 4px;">   foreach (Person p in persons)
+     myListView.Items.Add(p.FirstName);
+</pre>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Здесь мы загружаем все имена из 
+												массива persons в представление. 
+												Однако для списка в 10 тыс. 
+												человек эта операция займет 
+												достаточно много времени. Кроме 
+												того, при такой объемной 
+												загрузке излишне расходуется 
+												память — имена присутствуют в 
+												списке и в представлении 
+												одновременно, а это 
+												бессмысленное дублирование 
+												информации и лишний расход 
+												памяти. А можно ли как-то 
+												ускорить загрузку? Конечно же 
+												можно. И сэкономить память тоже 
+												можно.</p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												В тех случаях, когда у вас уже 
+												есть в памяти большой список 
+												элементов, то лучше переключить 
+												представление в виртуальный 
+												режим.</p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Создайте новое приложение с 
+												главной формой, как у 
+												приложения, которое мы создавали 
+												в разд. 11.1, т. е. с 
+												компонентом представления списка 
+												ListView и двумя кнопками. У 
+												компонента представления списка 
+												создайте колонки и все 
+												настройки, как и в примере из 
+												разд. 11.1. Сразу можете создать 
+												и дочернее окно для 
+												редактирования, но не пишите 
+												никакого кода.</p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Теперь у компонента 
+												представления списка свойство 
+												VirtualMode установите в true. 
+												Именно это свойство отвечает за 
+												виртуализацию элементов 
+												представления. Когда свойство 
+												VirtualMode включено в true, то 
+												компонент ListView больше не 
+												использует элементы из свойства 
+												Items, и добавление в него 
+												элементов не имеет смысла.</p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Компонент работает виртуально и 
+												не хранит элементы. Вы можете 
+												только сообщить компоненту, 
+												сколько элементов он может 
+												отобразить, т. е. сколько 
+												элементов есть в вашем списке. 
+												Это делается через свойство 
+												VirtualListSize. А когда 
+												компоненту нужно отобразить 
+												определенный элемент из списка, 
+												он запрашивает его данные с 
+												помощью события 
+												RetrieveVirtualItem. Это еще 
+												одно преимущество, которое 
+												влияет на производительность и 
+												позволяет компоненту загружать 
+												даже сверхбольшие массивы 
+												мгновенно, потому что данные 
+												попадают в список по мере 
+												надобности. Допустим, что 
+												размеры компонента и текущая 
+												позиция позволяют отобразить 
+												элементы списка с 10-го по 50-й. 
+												Представление сгенерирует 
+												событие RetrieveVirtualItem для 
+												каждого из этих элементов, а мы 
+												должны через обработчик события 
+												сообщить компоненту данные этих 
+												элементов. Будет загружена 
+												только эта информация, и это 
+												намного быстрее и эффективнее, 
+												чем загружать в представление 
+												все 10 000 элементов.</p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Свойство SelectedItems в 
+												виртуальном режиме тоже не 
+												работает, и даже больше — 
+												обращение к нему приведет к 
+												исключительной ситуации. 
+												Обратиться к выделенным 
+												элементам мы не можем, но можем 
+												узнать индексы выделенных 
+												элементов через свойство 
+												SelectedIndices.</p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Итак, давайте перейдем 
+												непосредственно к примеру. Для 
+												хранения массива элементов в 
+												классе формы заведем переменную 
+												именованного списка:</p>
+												<pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; display: block; padding: 10px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(238, 238, 238); background: rgb(17, 17, 17); border: 1px solid rgb(204, 204, 204); border-radius: 4px;">   List<person style="box-sizing: border-box;"> persons = new List<person style="box-sizing: border-box;">();
+</person></person></pre>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Массив будет состоять из уже 
+												знакомого нам класса Person, 
+												который мы пишем в течение всей 
+												книги.</p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Сразу же создадим обработчик 
+												события RetrieveVirtualItem для 
+												представления и посмотрим, как 
+												он может выглядеть для нашего 
+												приложения:</p>
+												<pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; display: block; padding: 10px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(238, 238, 238); background: rgb(17, 17, 17); border: 1px solid rgb(204, 204, 204); border-radius: 4px;">   private void personsListView_RetrieveVirtualItem(object sender, 
+           RetrieveVirtualItemEventArgs e)
+   {
+     if (e.ItemIndex &gt;= 0 &amp;&amp; e.ItemIndex &lt; persons.Count)
+     {
+       e.Item = new ListViewItem(persons[e.ItemIndex].FirstName);
+       e.Item.SubItems.Add(persons[e.ItemIndex].LastName);
+       e.Item.SubItems.Add(persons[e.ItemIndex].Age.ToString());
+     }
+   }
+</pre>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Первый параметр обработчика 
+												известен и в этом примере нам не 
+												интересен, потому что там 
+												находится объект, 
+												сгенерировавший событие, т. е. 
+												компонент представления на 
+												форме. А вот второй параметр 
+												очень интересен, потому что это 
+												экземпляр класса 
+												RetrieveVirtualItemEventArgs. У 
+												этого класса есть два очень 
+												важных своства:</p>
+												<ul style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px;">
+																<li style="box-sizing: border-box;">
+																ItemIndex — 
+																через это 
+																свойство нам 
+																сообщают индекс 
+																элемента, 
+																который хочет 
+																получить 
+																представление;</li>
+																<li style="box-sizing: border-box;">
+																Item — это 
+																свойство, в 
+																которое мы 
+																должны поместить 
+																элемент.</li>
+												</ul>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												На всякий случай я проверяю, не 
+												вышел ли запрашиваемый индекс по 
+												каким-либо причинам за пределы 
+												массива persons, где мы храним 
+												список людей. Если количество 
+												элементов в списке persons равно 
+												свойству VirtualListSize 
+												компонента представления, то 
+												выхода за пределы произойти не 
+												должно, но от лишней проверки в 
+												этом случае, мне кажется, хуже 
+												не будет.</p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Если проверка прошла успешно, то 
+												в e.Item создаем новый объект 
+												ListViewItem, передавая в 
+												конструктор имя человека под 
+												индексом ItemIndex, и заполняем 
+												в списке SubItems. В разд. 11.1 
+												мы то же самое делали на этапе 
+												создания и добавления элемента в 
+												коллекцию Items, а в этом 
+												примере мы создаем элементы по 
+												мере надобности в ответ на 
+												событие.</p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Теперь посмотрим, как может 
+												выглядеть добавление элемента в 
+												список, — это обеспечивает код, 
+												который должен выполняться по 
+												нажатию кнопки Добавить (листинг 
+												11.3).</p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												<b style="box-sizing: border-box; font-weight: 700;">
+												Листинг 11.3. Код добавления 
+												нового экземпляра person</b></p>
+												<pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; display: block; padding: 10px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(238, 238, 238); background: rgb(17, 17, 17); border: 1px solid rgb(204, 204, 204); border-radius: 4px;">private void addPersonButton_Click(object sender, EventArgs e)
+{
+  // создание нового человека
+  Person person = new Person(&quot;&quot;, &quot;&quot;);
+
+  // создание и отображение окна
+  EditPersonForm editForm = new EditPersonForm(person);
+  if (editForm.ShowDialog() != DialogResult.OK)
+    return;
+
+  // добавление человека в список
+  persons.Add(person);
+  personsListView.VirtualListSize = persons.Count;
+  personsListView.Invalidate();
+}
+</pre>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												После создания нового экземпляра 
+												класса Person мы создаем форму 
+												редактирования EditPersonForm. 
+												Обратите внимание, что 
+												конструктору передается объект 
+												вновь созданного объекта person. 
+												В прошлый раз мы создавали форму 
+												конструктором по умолчанию и 
+												ничего ему не передавали. После 
+												этого все поля формы заполнялись 
+												через свойства. В нашем случае 
+												это делать невыгодно и неудобно. 
+												У нас есть готовый объект person 
+												и намного эффективнее передать 
+												окну именно объект. Конструктор 
+												формы должен выглядеть следующим 
+												образом:</p>
+												<pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; display: block; padding: 10px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(238, 238, 238); background: rgb(17, 17, 17); border: 1px solid rgb(204, 204, 204); border-radius: 4px;">   public EditPersonForm(Person person)
+   {
+     InitializeComponent();
+
+     this.person = person;
+     firstNameTextBox.Text = person.FirstName;
+     lastNameTextBox.Text = person.LastName;
+     ageNumericUpDown.Value = person.Age;
+   }
+</pre>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												После инициализации компонентов 
+												сохраняем переданный объект 
+												person в переменной формы, чтобы 
+												впоследствии в этот объект 
+												сохранить изменения. Далее идет 
+												отображение полей объекта person 
+												в элементах управления на форме.</p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Такой подход эффективнее тем, 
+												что если вы добавите какое-то 
+												свойство в объект person и 
+												захотите добавить его в форму 
+												редактирования, достаточно 
+												изменить только диалоговое окно 
+												и его код. В случае с примером, 
+												рассмотренным в разд. 11.1, 
+												придется изменять диалоговое 
+												окно редактирования и все формы, 
+												из которых оно вызывается. Если 
+												таких мест несколько, то есть 
+												шанс что-то забыть.</p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Давайте сразу посмотрим, как 
+												диалоговое окно сохраняет 
+												изменения. Для этого в 
+												диалоговом окне нужно создать 
+												обработчик события Click для 
+												кнопки Сохранить и написать в 
+												нем:</p>
+												<pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; display: block; padding: 10px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(238, 238, 238); background: rgb(17, 17, 17); border: 1px solid rgb(204, 204, 204); border-radius: 4px;">   private void okButton_Click(object sender, EventArgs e)
+   {
+     person.FirstName = firstNameTextBox.Text;
+     person.LastName = lastNameTextBox.Text;
+     person.Age = (int)ageNumericUpDown.Value;
+   }	
+</pre>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Здесь все изменения сохраняются 
+												в объекте person, ссылку на 
+												который мы сохранили в локальной 
+												для формы переменной. Если 
+												пользователь нажмет отмену, то 
+												этот код не будет выполнен, а, 
+												значит, изменения не сохранятся. 
+												Вот как все оказалось просто и 
+												эффективно!</p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Вернемся к нашему коду из 
+												листинга 11.3. После отображения 
+												окна редактирования, если 
+												пользователь не нажал кнопку 
+												Сохранить, произойдет выход из 
+												метода. Иначе нужно добавить в 
+												список persons новый объект. Раз 
+												в список добавлен новый объект, 
+												надо изменить и свойство 
+												VirtualListSize, где хранится 
+												количество элементов списка. А 
+												чтобы изменения отобразились, 
+												желательно перерисовать 
+												компонент, для чего я вызываю 
+												метод Invalidate().</p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Теперь осталось только 
+												посмотреть, как в таком варианте 
+												будет происходить редактирование 
+												элемента. Соответствующий код 
+												показан в листинге 11.4.</p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												<b style="box-sizing: border-box; font-weight: 700;">
+												Листинг 11.4. Редактирование 
+												элемента</b></p>
+												<pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; display: block; padding: 10px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(238, 238, 238); background: rgb(17, 17, 17); border: 1px solid rgb(204, 204, 204); border-radius: 4px;">private void editPersonButton_Click(object sender, EventArgs e)
+{
+  if (personsListView.SelectedIndices.Count == 0)
+    return;
+
+  Person person = persons[personsListView.SelectedIndices[0]];
+            
+  EditPersonForm editForm = new EditPersonForm(person);
+  if (editForm.ShowDialog() == DialogResult.OK)
+    personsListView.Invalidate();
+}
+</pre>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Сначала проверяем, есть ли 
+												выделенные элементы. Если да, то 
+												получаем из списка persons 
+												элемент, соответствующий 
+												выделенному. Теперь создаем и 
+												вызываем окно редактирования. 
+												Если результат работы окна равен 
+												DialogResult.OK, значит, 
+												изменения произошли и достаточно 
+												только перерисовать окно.</p>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												Вот и все. У нас получился 
+												пример, содержащий только один 
+												список элементов Person, который 
+												не копируется в коллекцию 
+												элементов представления ListView. 
+												Мы экономим память и время 
+												загрузки, жертвуя небольшим 
+												количеством дополнительного 
+												кода. Но, с другой стороны, 
+												получаем очень удобный метод 
+												редактирования.</p>
+												<div class="row" style="box-sizing: border-box; margin-left: -15px; margin-right: -15px; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 245, 245); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+																<div class="col-md-12" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 1170px;">
+																				<h1 style="box-sizing: border-box; font-size: 44px; margin: 20px 0px 10px; font-family: Montserrat; font-weight: 500; line-height: 1.1; color: rgb(50, 112, 156); letter-spacing: 0.12em;"><span style="box-sizing: border-box;">11.3. Специфичный результат</span></h1>
+																</div>
+												</div>
+												<div class="row" style="box-sizing: border-box; margin-left: -15px; margin-right: -15px; color: rgb(68, 68, 68); font-family: Raleway, serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 245, 245); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+																<div class="col-md-12" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 1170px;">
+																				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">До сих пор для получения результата работы диалогового окна мы использовали стандартные возможности. Например, для кнопки OK мы просто установили свойство DialogResult в OK, и теперь кнопка сама закрывает диалоговое окно и возвращает нужное значение родительскому окну. При этом мы не написали ни строчки кода.</p>
+																				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">А что, если нам нужно закрыть окно и вернуть результат OK по какому-то другому событию, где нет возможности так просто взять и установить магическое свойство DialogResult? Например, если мы хотим сохранять значение по щелчку на ссылке компонента LinkLabel, то нужно создать обработчик события LinkClicked для этого компонента и написать в нем строку:</p>
+																				<pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; display: block; padding: 10px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(238, 238, 238); background: rgb(17, 17, 17); border: 1px solid rgb(204, 204, 204); border-radius: 4px;">   DialogResult = DialogResult.OK;
+</pre>
+																				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">Здесь мы присваиваем свойству DialogResult значение DialogResult.OK. Это присваивание заставляет форму закрыться и вернуть значение, которое мы присвоили. Именно это и происходит по нажатию кнопки, если ее свойство DialogResult установлено в какое-то значение, отличное от None.</p>
+																				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">А что, если нам нужно создать собственный, специфичный именно для нас результат, и его просто нет среди готовых значений DialogResult? Мы можем запрограммировать все самостоятельно. Допустим, что мы пишем код копирования фай- лов. Что делать, если файл в месте приемника уже существует? Логично было бы запросить у пользователя, что он хочет сделать. Давайте создадим такое диалоговое окно запроса. Мою форму можно увидеть на рис. 11.4, а ее код приведен в лис- тинге 11.5.</p>
+																				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;"><img src="Pic/11-4-form.jpg" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; margin: 5px 12px 0px 0px;" /></p>
+																				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;"><i style="box-sizing: border-box;">Рис. 11.4. Форма запроса пользователя о действии</i></p>
+																				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;"><b style="box-sizing: border-box; font-weight: 700;">Листинг 11.5. Код формы запроса пользовательского действия</b></p>
+																				<pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; display: block; padding: 10px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(238, 238, 238); background: rgb(17, 17, 17); border: 1px solid rgb(204, 204, 204); border-radius: 4px;">public partial class ActionRequestForm : Form
+{
+  // перечисление результата
+  public enum FileAction { Owerrite, Rename, Skip, OverriteOlder, 
+      OverriteAll, SkipAll, Cancel }
+
+  // свойство результата
+  public FileAction Result { get; set; }
+
+  // конструктор
+  public ActionRequestForm()
+  {            
+     InitializeComponent();
+     Result = FileAction.Cancel;
+  }
+  // обработчик нажатия кнопки Перезаписать
+  private void overriteButton_Click(object sender, EventArgs e)
+  {
+    Result = FileAction.Owerrite;
+    Close();
+  }
+
+  // обработчик нажатия кнопки Переименовать
+  private void renameButton_Click(object sender, EventArgs e)
+  {
+    Result = FileAction.Rename;
+    Close();
+  }
+ 
+   // остальные обработчики событий
+   ...
+}
+</pre>
+																				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">Самое первое, что я объявляю в форме, — это перечисление enum с именем FileAction, которое определяет значения результата. Потом идет свойство с именем Result типа FileAction. Это свойство будет хранить результат. Мы не станем задействовать стандартное свойство DialogResult — вместо него воспользуемся свойством Result.</p>
+																				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">В конструкторе переменной Result присваивается значение по умолчанию FileAction.Cancel, которое будет использовано, если пользователь не выберет ни одну из кнопок, созданных мной, а нажмет крестик в заголовке окна.</p>
+																				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">После этого идут обработчики события для кнопок формы. Каждая из кнопок имеет вид:</p>
+																				<pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; display: block; padding: 10px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(238, 238, 238); background: rgb(17, 17, 17); border: 1px solid rgb(204, 204, 204); border-radius: 4px;">   private void overriteButton_Click(object sender, EventArgs e)
+   {
+     Result = FileAction.Действие;
+     Close();
+   }
+</pre>
+																				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">Сначала изменяется свойство Result, и тут же закрывается форма.</p>
+																				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">Эту форму можно использовать примерно так:</p>
+																				<pre style="box-sizing: border-box; overflow: auto; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; display: block; padding: 10px; margin: 0px 0px 10px; line-height: 1.42857; word-break: break-all; overflow-wrap: break-word; color: rgb(238, 238, 238); background: rgb(17, 17, 17); border: 1px solid rgb(204, 204, 204); border-radius: 4px;">   ActionRequestForm form = new ActionRequestForm();
+   form.ShowDialog();
+   MessageBox.Show(form.Result.ToString());
+</pre>
+																				<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">Как всегда — создаем окно и отображаем его с помощью метода ShowDialog(), и только после отображения окна работаем с созданным нами свойством Result.</p>
+																</div>
+												</div>
+												<p style="box-sizing: border-box; margin: 10px 0px 15px; text-align: justify;">
+												&nbsp;</p>
+								</div>
+				</div>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les66.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les71/8.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 11:03:38 GMT -->
+</html>

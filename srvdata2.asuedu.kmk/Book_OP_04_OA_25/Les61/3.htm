@@ -1,0 +1,485 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les61/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:57:10 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Пример использования абстрактного класса для построения иерархий классов.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p style="border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В данной теме представлен демонстрационный пример, в котором 
+				реализована иерархия из трех классов. В вершине иерархии 
+				объявлен абстрактный класс. Класс содержит абстрактные свойства 
+				и методы.</p>
+				<p style="border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				На основании данного примера можно научиться:</p>
+				<ul style="box-sizing: border-box; border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px 20px; outline: 0px; padding: 0px; vertical-align: baseline; list-style: disc; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								правильно разрабатывать программы с 
+								использованием абстрактных классов, абстрактных 
+								методов и свойств;</li>
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								правильно строить иерархии классов, которые 
+								максимально используют преимущества 
+								полиморфизма.</li>
+				</ul>
+				<hr style="background-color: rgba(0, 0, 0, 0.1); border: 0px; height: 1px; margin-bottom: 23px; color: rgb(43, 43, 43); font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<h3 id="contents" style="border: 0px; font-family: Lato, sans-serif; font-size: 22px; font-style: normal; font-weight: 700; margin: 36px 0px 12px; outline: 0px; padding: 0px; vertical-align: baseline; clear: both; line-height: 1.09091; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: center;">
+				&nbsp;Содержание</h3>
+				<ul style="box-sizing: border-box; border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px 20px; outline: 0px; padding: 0px; vertical-align: baseline; list-style: disc; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								<span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 0);">
+								<a style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 0); text-decoration: underline;" href="https://www.bestprog.net/ru/2020/03/18/c-an-example-of-using-an-abstract-class-to-build-class-hierarchies-ru/#q01">
+								1. Условие задачи</a></span></li>
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								<span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 0);">
+								<a style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 0); text-decoration: underline;" href="https://www.bestprog.net/ru/2020/03/18/c-an-example-of-using-an-abstract-class-to-build-class-hierarchies-ru/#q02">
+								2. Решение</a></span><ul style="box-sizing: border-box; border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px 0px 0px 20px; outline: 0px; padding: 0px; vertical-align: baseline; list-style: disc;">
+												<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+												<span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 0);">
+												<a style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 0); text-decoration: underline;" href="https://www.bestprog.net/ru/2020/03/18/c-an-example-of-using-an-abstract-class-to-build-class-hierarchies-ru/#q02_1">
+												2.1. UML-диаграмма классов. 
+												Рисунок</a></span></li>
+												<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+												<span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 0);">
+												<a style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 0); text-decoration: underline;" href="https://www.bestprog.net/ru/2020/03/18/c-an-example-of-using-an-abstract-class-to-build-class-hierarchies-ru/#q02_2">
+												2.2. Текст программы на языке C# 
+												(с подробными комментариями)</a></span></li>
+												<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+												<span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 0);">
+												<a style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 0); text-decoration: underline;" href="https://www.bestprog.net/ru/2020/03/18/c-an-example-of-using-an-abstract-class-to-build-class-hierarchies-ru/#q02_3">
+												2.3. Результат выполнения 
+												программы</a></span></li>
+								</ul>
+								</li>
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								<a style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(36, 137, 13); text-decoration: underline;" href="https://www.bestprog.net/ru/2020/03/18/c-an-example-of-using-an-abstract-class-to-build-class-hierarchies-ru/#topics">
+								<strong style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: 700; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								<span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(51, 51, 0);">
+								Связанные темы</span></strong></a></li>
+				</ul>
+				<hr style="background-color: rgba(0, 0, 0, 0.1); border: 0px; height: 1px; margin-bottom: 23px; color: rgb(43, 43, 43); font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<h4 id="q01" style="border: 0px; font-family: Lato, sans-serif; font-size: 20px; font-style: normal; font-weight: 700; margin: 36px 0px 12px; outline: 0px; padding: 0px; vertical-align: baseline; clear: both; line-height: 1.2; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				1. Условие задачи</h4>
+				<p style="border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Разработать абстрактный класс<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">Figure</span>, 
+				в котором нужно реализовать следующие элементы:</p>
+				<ul style="box-sizing: border-box; border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px 20px; outline: 0px; padding: 0px; vertical-align: baseline; list-style: disc; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								скрытое внутреннее поле<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">name</span><span>&nbsp;</span>(название 
+								фигуры);</li>
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								конструктор с 1 параметром, инициализирующий 
+								поле name заданным значением;</li>
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								свойство<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">Name</span><span>&nbsp;</span>для 
+								доступа к внутреннему полю name;</li>
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								абстрактное свойство<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">Area2</span>, 
+								предназначенное для получения площади фигуры;</li>
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								абстрактный метод<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">Area()</span>, 
+								предназначенный для получения площади фигуры;</li>
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								виртуальный метод<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">Print()</span>, 
+								который выводит название фигуры.</li>
+				</ul>
+				<p style="border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Разработать класс<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">Triangle</span>, 
+				который наследует (расширяет) возможности класса<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">Figure</span>. 
+				В классе нужно реализовать следующие элементы:</p>
+				<ul style="box-sizing: border-box; border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px 20px; outline: 0px; padding: 0px; vertical-align: baseline; list-style: disc; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								скрытые внутренние поля<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">a</span>,<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">b</span>,<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">c</span><span>&nbsp;</span>(стороны 
+								треугольника);</li>
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								конструктор с 4 параметрами;</li>
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								методы доступа к полям класса<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">SetABC()</span>,<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">GetABC()</span>. 
+								Каждый метод получает 3 параметра – длины сторон 
+								треугольника;</li>
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								свойство<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">Area2</span>, 
+								которое определяет площадь треугольника на 
+								основании его сторон<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">a</span>,<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">b</span>,<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">c</span>;</li>
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								метод<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">Area()</span>, 
+								возвращающий площадь треугольника по его 
+								сторонам;</li>
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								виртуальный метод<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">Print()</span><span>&nbsp;</span>для 
+								вывода внутренних полей класса. Метод обращается 
+								к одноименному методу базового класса.</li>
+				</ul>
+				<p style="border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Разработать класс<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">TriangleColor</span>, 
+				который наследует (расширяет) возможности класса<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">Triangle</span>. 
+				В классе реализовать следующие элементы:</p>
+				<ul style="box-sizing: border-box; border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px 20px; outline: 0px; padding: 0px; vertical-align: baseline; list-style: disc; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								скрытое внутреннее поле color (цвет фона 
+								треугольника);</li>
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								конструктор с 5 параметрами, вызывающий 
+								конструктор базового класса;</li>
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								свойство Color, которое предназначено для 
+								доступа к внутреннему полю color;</li>
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								свойство Area2, вызывающее одноименное свойство 
+								базового класса для вычисления площади 
+								треугольника;</li>
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								метод Area(), возвращающий площадь треугольника 
+								по его сторонам;</li>
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								виртуальный метод<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">Print()</span><span>&nbsp;</span>для 
+								вывода внутренних полей класса. Метод обращается 
+								к одноименному методу базового класса.</li>
+				</ul>
+				<h4 id="q02" style="border: 0px; font-family: Lato, sans-serif; font-size: 20px; font-style: normal; font-weight: 700; margin: 36px 0px 12px; outline: 0px; padding: 0px; vertical-align: baseline; clear: both; line-height: 1.2; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				2. Решение</h4>
+				<h5 id="q02_1" style="border: 0px; font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-weight: 700; margin: 36px 0px 12px; outline: 0px; padding: 0px; vertical-align: baseline; clear: both; line-height: 1.33333; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				2.1. UML-диаграмма классов. Рисунок</h5>
+				<p style="border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Иерархии создаваемых классов удобно отображать с помощью 
+				UML-диаграммы классов, которая описывает классы и отображает 
+				отношение, существующее между ними.</p>
+				<p style="border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				На рисунке 1 приведена UML-диаграмма классов, которые 
+				представляют решение данной задачи.</p>
+				<p style="border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: center;">
+				<img alt="" src="Pic/r-59-3.png" width="255" height="674" /></p>
+				<p style="border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: center;">
+				Рисунок 1. UML-диаграмма классов</p>
+				<p style="border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Абстрактный класс<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">Figure</span><span>&nbsp;</span>и 
+				два производных<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">Triangle</span><span>&nbsp;</span>и<span>&nbsp;</span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">TriangleColor</span></p>
+				<hr style="background-color: rgba(0, 0, 0, 0.1); border: 0px; height: 1px; margin-bottom: 23px; color: rgb(43, 43, 43); font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<p style="border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</p>
+				<hr style="background-color: rgba(0, 0, 0, 0.1); border: 0px; height: 1px; margin-bottom: 23px; color: rgb(43, 43, 43); font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<h5 id="q02_2" style="border: 0px; font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-weight: 700; margin: 36px 0px 12px; outline: 0px; padding: 0px; vertical-align: baseline; clear: both; line-height: 1.33333; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				2.2. Текст программы на языке C#</h5>
+				<p style="border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Ниже приведен текст программы на языке C# для шаблона Console 
+				Application.</p>
+				<pre style="border: 1px solid rgba(0, 0, 0, 0.1); font-family: monospace, serif; font-size: 15px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 12px; vertical-align: baseline; hyphens: none; line-height: 1.6; box-sizing: border-box; max-width: 100%; overflow: auto; white-space: pre-wrap; overflow-wrap: break-word; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">using</span> System;
+<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">using</span> System.Collections.Generic;
+<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">using</span> System.Linq;
+<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">using</span> System.Text;
+
+<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">namespace</span> ConsoleApplication8
+{
+  <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// Абстрактный класс Figure - содержит абстрактный метод Area()</span>
+<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">  // и абстрактное свойство Area2</span>
+ &nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">abstract class</span> <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);">Figure</span>
+ &nbsp;{
+    <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 1. Скрытое поле класса</span>
+ &nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">private string</span> name; <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// Название фигуры</span>
+
+    <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 2. Конструктор класса</span>
+ &nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">public</span> <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);">Figure</span>(<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">string</span> name)
+ &nbsp;&nbsp;&nbsp;{
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">this</span>.name = name;
+ &nbsp;&nbsp;&nbsp;}
+
+    <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 3. Свойство доступа к полю класса</span>
+ &nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">public string</span> Name
+ &nbsp;&nbsp;&nbsp;{
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">get</span> { <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">return</span> name; }
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">set</span> { name = <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">value</span>; }
+ &nbsp;&nbsp;&nbsp;}
+
+    <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 4. Абстрактное свойство, которое возвращает площадь фигуры</span>
+ &nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">public abstract double</span> Area2 { <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">get</span>; }
+
+    <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 5. Абстрактный метод, который возвращает площадь фигуры</span>
+    <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">//   Метод не имеет тела метода</span>
+ &nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">public abstract double</span> Area();
+
+    <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 6. Виртуальный метод, который выводит значение полей класса</span>
+ &nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">public virtual void</span> Print()
+ &nbsp;&nbsp;&nbsp;{
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);">Console</span>.WriteLine(<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(128, 0, 0);">&quot;name = {0}&quot;</span>, name);
+ &nbsp;&nbsp;&nbsp;}
+ &nbsp;}
+
+  <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// Класс, который реализует треугольник. В классе нет абстрактных методов,</span>
+<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">  // поэтому слово abstract не указывается перед объявлением класса.</span>
+ &nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">class</span> <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);">Triangle</span> : <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);">Figure</span>
+ &nbsp;{
+    <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 1. Внутренние поля класса</span>
+ &nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">double</span> a, b, c;
+
+    <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 2. Конструктор класса</span>
+ &nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">public</span> Triangle(<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">string</span> name, <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">double</span> a, <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">double</span> b, <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">double</span> c)
+                : <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">base</span>(name)
+ &nbsp;&nbsp;&nbsp;{
+      <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// Проверка на корректность значений a, b, c</span>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">if</span> (((a + b) &gt; c) &amp;&amp; ((b + c) &gt; a) &amp;&amp; ((a + c) &gt; b))
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">this</span>.a = a; <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">this</span>.b = b; <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">this</span>.c = c;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">else</span>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);">Console</span>.WriteLine(<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(128, 0, 0);">&quot;Incorrect values a, b, c.&quot;</span>);
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);">Console</span>.WriteLine(<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(128, 0, 0);">&quot;By default: a=1, b=1, c=1.&quot;</span>);
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">this</span>.a = <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">this</span>.b = <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">this</span>.c = 1;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+ &nbsp;&nbsp;&nbsp;}
+
+    <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 3. Реализация методов доступа к скрытым полям a, b, c</span>
+<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">    // 3.1. Установление значений полей a, b, c</span>
+ &nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">public void</span> SetABC(<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">double</span> a, <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">double</span> b, <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">double</span> c)
+ &nbsp;&nbsp;&nbsp;{
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">if</span> (((a + b) &gt; c) &amp;&amp; ((b + c) &gt; a) &amp;&amp; ((a + c) &gt; b))
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">this</span>.a = a; <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">this</span>.b = b; <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">this</span>.c = c;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">else</span>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">this</span>.a = <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">this</span>.b = <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">this</span>.c = 1;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+ &nbsp;&nbsp;&nbsp;}
+
+    <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 3.2. Чтение значений полей - обратить внимание на модификатор out</span>
+ &nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">public void</span> GetABC(<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">out double</span> a, <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">out double</span> b, <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">out double</span> c)
+ &nbsp;&nbsp;&nbsp;{
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a = <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">this</span>.a; b = <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">this</span>.b; c = <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">this</span>.c;
+ &nbsp;&nbsp;&nbsp;}
+
+    <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 4. Переопределение абстрактного свойства Area2 класса Figure,</span>
+<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">    //   ключевое слово override обязательно</span>
+ &nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">public override double</span> Area2
+    {
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">get</span>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+        <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 1. Провести вычисления</span>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">double</span> p, s;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p = (a + b + c) / 2;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s = <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);">Math</span>.Sqrt(p * (p - a) * (p - b) * (p - c));
+
+        <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 2. Вывести результат в свойстве - для контроля</span>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);">Console</span>.WriteLine(<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(128, 0, 0);">&quot;Property Triangle.Area2: s = {0:f3}&quot;</span>, s);
+
+        <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 3. Вернуть результат</span>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">return</span> s;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+ &nbsp;&nbsp;&nbsp;} 
+
+    <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 5. Реализация метода Area(), который в классе Figure</span>
+<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">    //   объявлен как абстрактный</span>
+ &nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">public override double</span> Area()
+ &nbsp;&nbsp;&nbsp;{
+      <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 1. Провести вычисления</span>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">double</span> p, s;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p = (a + b + c) / 2;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s = <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);">Math</span>.Sqrt(p * (p - a) * (p - b) * (p - c));
+
+     <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);"> // 2. Вывести результат в свойстве - для контроля</span>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);">Console</span>.WriteLine(<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(128, 0, 0);">&quot;Method Triangle.Area(): s = {0:f3}&quot;</span>, s);
+
+      <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 3. Вернуть результат</span>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">return</span> s;   
+ &nbsp;&nbsp;&nbsp;}
+
+<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">    // 6. Виртуальный метод Print</span>
+ &nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">public override void</span> Print()
+ &nbsp;&nbsp;&nbsp;{
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">base</span>.Print();
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);">Console</span>.WriteLine(<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(128, 0, 0);">&quot;a = {0:f2}&quot;</span>, a);
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);">Console</span>.WriteLine(<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(128, 0, 0);">&quot;b = {0:f2}&quot;</span>, b);
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);">Console</span>.WriteLine(<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(128, 0, 0);">&quot;c = {0:f2}&quot;</span>, c);
+    }
+  }
+
+  <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// Класс, который определяет треугольник с цветом</span>
+ &nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">class</span> <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);">TriangleColor</span> : <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);">Triangle</span>
+ &nbsp;{
+ &nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 1. Скрытое поле color</span>
+ &nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">private int</span> color;
+
+    <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 2. Конструктор с 5 параметрами</span>
+ &nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">public</span> <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);">TriangleColor</span>(<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">string</span> name, <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">double</span> a, <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">double</span> b, <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">double</span> c, <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">int</span> color) :
+                <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">base</span>(name, a, b, c)
+ &nbsp;&nbsp;&nbsp;{
+      <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// Проверка на корректность указания значения color</span>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">if</span> ((color &gt;= 0) &amp;&amp; (color &lt;= 255))
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">this</span>.color = color;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">else</span>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">this</span>.color = 0;
+ &nbsp;&nbsp;&nbsp;}
+
+    <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 3. Свойство доступа к полю color</span>
+ &nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">public int</span> Color
+ &nbsp;&nbsp;&nbsp;{
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">get</span> { <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">return</span> color; }
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">set</span>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+        <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// Проверка на корректность указания значения color</span>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">if</span> ((color &gt;= 0) &amp;&amp; (color &lt;= 255))
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color = <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">value</span>;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">else</span>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color = 0;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+    }
+
+    <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 4. Свойство Area2 - вызывает одноименное</span>
+<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">    //   свойство базового класса.</span>
+ &nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">public override double</span> Area2
+ &nbsp;&nbsp;&nbsp;{
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">get</span> 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ 
+        <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 1. Предварительно вывести контрольное сообщение</span>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);">Console</span>.WriteLine(<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(128, 0, 0);">&quot;Property TriangleColor.Area2:&quot;</span>);
+
+        <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 2. Вызвать свойство базового класса</span>
+        <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">return</span> <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">base</span>.Area2; 
+      }
+    }
+
+    <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 5. Абстрактный метод Area()</span>
+ &nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">public override double</span> Area()
+ &nbsp;&nbsp;&nbsp;{
+      <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 1. Вывести контрольное сообщение</span>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);">Console</span>.WriteLine(<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(128, 0, 0);">&quot;Method TriangleColor.Area():&quot;</span>);
+
+      <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 2. Вызвать свойство базового класса</span>
+      <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">return</span> <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">base</span>.Area();
+    }
+
+    <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 6. Виртуальный метод Print()</span>
+ &nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">public override void</span> Print()
+ &nbsp;&nbsp;&nbsp;{            
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">base</span>.Print();
+      <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);">Console</span>.WriteLine(<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(128, 0, 0);">&quot;color = {0}&quot;</span>, color);
+    }
+ &nbsp;}
+
+ &nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">class</span> <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);">Program</span>
+  {
+ &nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">static void</span> Main(<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">string</span>[] args)
+ &nbsp;&nbsp;&nbsp;{
+      <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// Демонстрация полиморфизма с использованием</span>
+<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">      // абстрактного класса.</span>
+<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">      // 1. Объявить ссылку на базовый класс</span>
+      <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);">Figure</span> refFg;
+
+      <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 2. Объявить экземпляр класса Figure</span>
+<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">      // 2.1. Невозможно создать экземпляр абстрактного класса</span>
+<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">      // Figure objFg = new Figure(&quot;Figure&quot;); - ошибка!</span>
+
+      <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 2.2. Объявить экземпляры классов Triangle, TriangleColor</span>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);">Triangle</span> Tr = <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">new</span> <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);">Triangle</span>(<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(128, 0, 0);">&quot;Triangle&quot;</span>, 2, 3, 2);
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);">TriangleColor</span> TrCol = <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">new</span> <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);">TriangleColor</span>(<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(128, 0, 0);">&quot;TriangleColor&quot;</span>, 1, 3, 3, 0);
+
+      <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 3. Демонстрация полиморфизма на примере метода Print()</span>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;refFg = Tr;
+      refFg.Print();
+      refFg = TrCol;
+      refFg.Print();
+
+      <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 4. Демонстрация полиморфизма на примере метода Area()</span>
+      refFg = Tr;
+      refFg.Area(); <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// вызывается метод Triangle.Area()</span>
+      refFg = TrCol;
+      refFg.Area(); <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// вызывается метод TriangleColor.Area()</span>
+
+      <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// 5. Демонстрация полиморфизма на примере свойства Area2</span>
+      refFg = Tr;
+      <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">double</span> area = refFg.Area2; <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// свойство Triangle.Area2</span>
+      <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);">Console</span>.WriteLine(<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(128, 0, 0);">&quot;area = {0:f3}&quot;</span>, area);
+      refFg = TrCol;
+      area = refFg.Area2; <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">// свойство TriangleColor.Area2</span>
+      <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);">Console</span>.WriteLine(<span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(128, 0, 0);">&quot;area = {0:f3}&quot;</span>, area);
+
+      <span style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);">Console</span>.ReadKey();
+    }
+  }
+}</pre>
+				<h3 style="border: 0px; font-family: Lato, sans-serif; font-size: 22px; font-style: normal; font-weight: 700; margin: 36px 0px 12px; outline: 0px; padding: 0px; vertical-align: baseline; clear: both; line-height: 1.09091; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				&nbsp;<span>&nbsp;</span>2.3. Результат выполнения программы</h3>
+				<pre style="border: 1px solid rgba(0, 0, 0, 0.1); font-family: monospace, serif; font-size: 15px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 12px; vertical-align: baseline; hyphens: none; line-height: 1.6; box-sizing: border-box; max-width: 100%; overflow: auto; white-space: pre-wrap; overflow-wrap: break-word; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">name = Triangle
+a = 2.00
+b = 3.00
+c = 2.00
+name = TriangleColor
+a = 1.00
+b = 3.00
+c = 3.00
+color = 0
+Method Triangle.Area(): s = 1.984
+Method TriangleColor.Area():
+Method Triangle.Area(): s = 1.479
+Property Triangle.Area2: s = 1.984
+area = 1.984
+Property TriangleColor.Area2:
+Property Triangle.Area2: s = 1.479
+area = 1.479</pre>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les59.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les61/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:57:17 GMT -->
+</html>

@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les56/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:47:52 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: small;
+}
+.style3 {
+	color: #0000FF;
+}
+.style4 {
+	font-size: small;
+	margin-left: 40px;
+}
+.style5 {
+	font-size: small;
+	color: #0000FF;
+	margin-left: 40px;
+}
+.style6 {
+	font-size: small;
+	color: blue;
+}
+.style7 {
+	font-size: medium;
+	color: purple;
+}
+.style8 {
+	font-size: small;
+	color: #FF0000;
+	margin-left: 40px;
+}
+.style9 {
+	color: red;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 3.  Перегрузка операторов для пользовательских типов.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p class="style7"><strong>Перегрузка операторов для пользовательских типов</strong></p>
+				<p class="style2">
+Когда мы используем оператор для пользовательских объектов, Python не знает, как с ним работать. Чтобы операторы работали с пользовательскими классами, Python предоставляет специальные методы (также называемые магическими методами).
+</p><pre class="style4">
+<span class="style3"><strong>+ оператор -> вызывает __add__(self, other)
+- оператор -> вызывает __sub__(self, other)
+== оператор -> вызывает __eq__(self, other)</strong></span>
+</pre><p class="style2">
+Итак, когда мы пишем obj1 + obj2, Python внутренне вызывает:</p>
+				<pre class="style8">
+<strong>obj1.__add__(obj2)</strong></pre><p class="style2">
+
+Если этот метод определён в классе, то перегрузка операторов работает.
+</p><p class="style2">
+Пример 1: В этом коде показано, <span class="style9"><strong>как перегрузить оператор + для целых чисел и строк внутри пользовательского класса.
+</strong></span>
+</p><pre class="style4">
+<span class="style3"><strong>class A:
+    def __init__(self, a):
+        self.a = a
+</strong>​<strong>
+    # define behavior of +
+    def __add__(self, o):
+        return self.a + o.a 
+</strong>​<strong>
+ob1 = A(1)
+ob2 = A(2)
+ob3 = A("Geeks")
+ob4 = A("For")
+</strong>​<strong>
+print(ob1 + ob2)   # integer addition
+print(ob3 + ob4)   # string concatenation
+</strong>​<strong>
+# actual working (internally)
+print(A.__add__(ob1, ob2))
+print(ob1.__add__(ob2))
+
+Выходной сигнал
+</strong>3<strong>
+</strong><strong>GeeksFor</strong><strong>
+</strong>3<strong>
+</strong>3<strong>
+Объяснение:
+
+ob1 + ob2 автоматически вызывает ob1.__add__(ob2).</strong></span></pre>
+				<p class="style2">
+Python преобразует это в <span class="style9"><strong>A.__add__(ob1, ob2)</strong></span></p>
+				<p class="style2">
+Первый операнд (ob1) становится self, а второй операнд (ob2) становится other.</p>
+				<p class="style2">
+Пример 2: В этом коде показано, как перегрузить оператор + для пользовательского класса Complex, чтобы он добавлял действительную и мнимую части по отдельности.</p>
+				<pre class="style5">
+<strong>class Complex:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+</strong>​<strong>
+    def __add__(self, other):
+        return self.a + other.a, self.b + other.b
+</strong>​<strong>
+Ob1 = Complex(1, 2)
+Ob2 = Complex(2, 3)
+Ob3 = Ob1 + Ob2
+print(Ob3)
+
+Выходной сигнал
+(3, 5)</strong></pre><p class="style2">
+Пояснение: Здесь Ob1 + Ob2 складывает действительные части (1 + 2) и мнимые части (2 + 3) по отдельности.
+</p><p class="style7">
+<strong>Перегрузка операторов сравнения</strong></p><p class="style2">
+Такие операторы, как >, < и ==, также могут быть перегружены.
+</p><p class="style2">
+Пример 1: В этом коде показано, как перегрузить оператор > для сравнения двух объектов на основе их сохранённых значений.</p>
+				<pre class="style5">
+<strong>class A:
+    def __init__(self, a):
+        self.a = a
+    
+    def __gt__(self, other):
+        return self.a > other.a
+</strong>​<strong>
+ob1 = A(2)
+ob2 = A(3)
+if ob1 > ob2:
+    print("ob1 is greater than ob2")
+else:
+    print("ob2 is greater than ob1")
+
+Выходной сигнал
+ob2 is greater than ob1</strong></pre><p class="style2">
+Пример 2: В этом коде показано, как перегрузить операторы < и == для пользовательских сравнений.
+</p><pre class="style5">
+<strong>class A:
+    def __init__(self, a):
+        self.a = a
+    
+    def __lt__(self, other):
+        return "ob1 is less than ob2" if self.a < other.a else "ob2 is less than ob1"
+    
+    def __eq__(self, other):
+        return "Both are equal" if self.a == other.a else "Not equal"
+</strong>​<strong>
+ob1 = A(2)
+ob2 = A(3)
+print(ob1 < ob2)
+</strong>​<strong>
+ob3 = A(4)
+ob4 = A(4)
+print(ob3 == ob4)
+
+Выходной сигнал
+ob1 is less than ob2
+Both are equal</strong></pre><p class="style2">
+Неассоциативные операторы</p><p class="style2">
+Не все операторы можно объединять в цепочки. Некоторые из них не являются ассоциативными. Например, = и += нельзя объединить в одном выражении.
+
+</p><pre class="style5">
+<strong>a = 5
+b = 10
+c = 15
+</strong>​<strong>
+# Invalid: mixing assignment (=) and +=
+# a = b = (a < b) += (b < c)</strong></pre><p class="style2">
+Пояснение: В Python = (присваивание) и += (расширенное присваивание) нельзя использовать в одном выражении, так как они неассоциативны.
+</p><p class="style7">
+<strong>Перегрузка логических операторов</strong></p><p class="style2">
+Мы также можем перегружать логические операторы с помощью магических методов:
+</p><pre class="style5">
+<strong>и: __and__(self, other)
+или: __or__(self, other)
+не: __not__(self)</strong></pre><p class="style2">
+Пример: В этом коде показано, как перегрузить оператор & так, чтобы он работал как логическое И для пользовательских объектов.
+
+</p><pre class="style4">
+<span class="style3"><strong>class MyClass:
+    def __init__(self, value):
+        self.value = value
+</strong>​<strong>
+    def __and__(self, other):
+        return MyClass(self.value and other.value)
+</strong>​<strong>
+a = MyClass(True)
+b = MyClass(False)
+c = a & b  
+print(c.value)</strong></span>
+</pre><p class="style2">
+Выходной сигнал</p><p class="style2">
+False</p><p class="style2">
+Пояснение: Здесь мы переопределили & так, чтобы он работал как логическое И для пользовательских объектов.
+</p><p class="style2">
+Особые (волшебные) методы перегрузки операторов</p><p class="style2">
+В Python для каждого оператора предусмотрены специальные магические методы.</p>
+				<pre class="style5">
+<strong>Бинарные операторы
+Оператор	Волшебный Метод
++	__add__(self, other)
+-	__sub__(self, other)
+*	__mul__(self, other)
+/	__truediv__(self, other)
+//	__floordiv__(self, other)
+%	__mod__(self, other)
+**	__pow__(self, другое число)
+Операторы сравнения
+Оператор	Волшебный Метод
+<	__lt__(self, other)
+>	__gt__(self, other)
+<=	__le__(self, other)
+>=	__ge__(self, other)
+==	__eq__(self, other)
+!=	__ne__(self, other)
+Операторы присваивания
+Оператор	Волшебный Метод
+-=	__isub__(self, other)
++=	__iadd__(self, other)
+*=	__imul__(self, other)
+/=	__itruediv__(self, other)
+//=	__ifloordiv__(self, other)
+%=	__imod__(self, other)
+**=	__ipow__(self, other)
+Унарные операторы
+Оператор	Волшебный Метод
+-	__нег__(самость)
++	__pos__(самовывоз)
+~	__инвертировать__(self)</strong></pre><p class="style2">
+Преимущества</p>
+				<ul>
+					<li>
+					<p class="style6">Перегрузка операторов в пользовательских классах даёт ряд преимуществ:
+					</p>
+					</li>
+					<li>
+					<p class="style6">Улучшена читаемость: код выглядит естественно (например, ob1 + ob2 вместо ob1.add(ob2)).</p>
+					</li>
+					<li>
+					<p class="style6">Согласованность со встроенными типами: пользовательские объекты ведут себя как целые числа, строки и т. д.</p>
+					</li>
+					<li>
+					<p class="style6">Лаконичность: меньше шаблонного кода.</p>
+					</li>
+					<li>
+					<p class="style6">Пользовательское поведение: расширение операторов для пользовательских классов (например, векторов, матриц).</p>
+					</li>
+					<li>
+					<p class="style6">Расширенная функциональность: позволяет операторам эффективно работать с новыми типами данных.</p>
+					</li>
+				</ul>
+				<p>
+</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les551.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les56/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:47:52 GMT -->
+</html>

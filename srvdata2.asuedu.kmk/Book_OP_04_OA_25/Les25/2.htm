@@ -1,0 +1,508 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les25/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:52:57 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: rgb(255, 0, 0);
+	font-size: medium;
+}
+.style3 {
+	color: rgb(255, 0, 0);
+	font-weight: bold;
+}
+    .style4 {
+	color: rgb(0, 0, 255);
+}
+.style5 {
+	color: rgb(0, 0, 255);
+	font-size: medium;
+}
+.style6 {
+	font-size: medium;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 2. Отладка кода в Visual Studio.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100; font-family: OpenSansRegular, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="font-family: &quot;YS Text&quot;, -apple-system, BlinkMacSystemFont, Arial, Helvetica, &quot;Arial Unicode MS&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style5">
+				Отладчик (debugger) в программировании</strong><span style="font-family: &quot;YS Text&quot;, -apple-system, BlinkMacSystemFont, Arial, Helvetica, &quot;Arial Unicode MS&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;" class="style6"><span class="style4"><strong>&nbsp;</strong></span></span><span style="font-family: &quot;YS Text&quot;, -apple-system, BlinkMacSystemFont, Arial, Helvetica, &quot;Arial Unicode MS&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;" class="style5"><strong>— 
+				это компьютерная программа, которая помогает разработчикам 
+				находить и устранять ошибки в программном коде. Ошибки (баги) 
+				могут проявляться в виде сбоев, некорректного выполнения функций 
+				или неправильного отображения данных. Отладчик позволяет 
+				отслеживать выполнение программы, анализировать состояние 
+				переменных и выявлять ошибки.&nbsp;</strong></span></p>
+				<h2 class="FuturisTitle FuturisContentSection-Title" style="display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 6; overflow: hidden; font: 700 20px / 24px &quot;YS Text&quot;, -apple-system, BlinkMacSystemFont, Arial, Helvetica, &quot;Arial Unicode MS&quot;, sans-serif; color: rgb(51, 51, 51); margin-block: 0px 8px; margin: 24px 0px 8px; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Виды</h2>
+				<div class="FuturisMarkdown FuturisRSRContent-Block" tabindex="0" style="overflow-wrap: break-word; color: rgb(51, 51, 51); font-family: &quot;YS Text&quot;, -apple-system, BlinkMacSystemFont, Arial, Helvetica, &quot;Arial Unicode MS&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<div data-end-streaming-block="true">
+					</div>
+					<div class="FuturisMarkdown-Paragraph" style="font: 400 16px / 22px &quot;YS Text&quot;, -apple-system, BlinkMacSystemFont, Arial, Helvetica, &quot;Arial Unicode MS&quot;, sans-serif; margin-top: 0px; margin-bottom: 8px;">
+						Отладчики могут быть:</div>
+					<ul class="FuturisMarkdown-UnorderedList" style="margin: 0px; padding-left: 5px;">
+						<li class="FuturisMarkdown-ListItem" data-value="" data-shift="0" style="font: 400 16px / 22px &quot;YS Text&quot;, -apple-system, BlinkMacSystemFont, Arial, Helvetica, &quot;Arial Unicode MS&quot;, sans-serif; position: relative; margin-bottom: 8px; list-style-type: none; margin-top: 8px; padding-left: 17px;">
+						<strong>Символьными</strong><span>&nbsp;</span>— 
+						высокоуровневыми, как правило встраиваются в 
+						интегрированные среды разработки.</li>
+						<li class="FuturisMarkdown-ListItem" data-value="" data-shift="0" style="font: 400 16px / 22px &quot;YS Text&quot;, -apple-system, BlinkMacSystemFont, Arial, Helvetica, &quot;Arial Unicode MS&quot;, sans-serif; position: relative; margin-bottom: 8px; list-style-type: none; padding-left: 17px;">
+						<strong>Машинные</strong><span>&nbsp;</span>— низкоуровневые, 
+						работают непосредственно с исполняемым процессорным 
+						кодом, включают дизассемблеры и отладочные символы для 
+						представления точек выполнения.</li>
+						<li class="FuturisMarkdown-ListItem" data-value="" data-shift="0" style="font: 400 16px / 22px &quot;YS Text&quot;, -apple-system, BlinkMacSystemFont, Arial, Helvetica, &quot;Arial Unicode MS&quot;, sans-serif; position: relative; margin-bottom: 8px; list-style-type: none; padding-left: 17px;">
+						<strong>Специальными</strong><span>&nbsp;</span>— по виду 
+						отлаживаемого программного обеспечения (например, 
+						отладчики ядра для ядер операционных систем).</li>
+					</ul>
+				</div>
+				<h2 class="FuturisTitle FuturisContentSection-Title" style="display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 6; overflow: hidden; font: 700 20px / 24px &quot;YS Text&quot;, -apple-system, BlinkMacSystemFont, Arial, Helvetica, &quot;Arial Unicode MS&quot;, sans-serif; color: rgb(51, 51, 51); margin-block: 0px 8px; margin: 24px 0px 8px; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Функции</h2>
+				<div class="FuturisMarkdown FuturisRSRContent-Block" tabindex="0" style="overflow-wrap: break-word; color: rgb(51, 51, 51); font-family: &quot;YS Text&quot;, -apple-system, BlinkMacSystemFont, Arial, Helvetica, &quot;Arial Unicode MS&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<div data-end-streaming-block="true">
+					</div>
+					<div class="FuturisMarkdown-Paragraph" style="font: 400 16px / 22px &quot;YS Text&quot;, -apple-system, BlinkMacSystemFont, Arial, Helvetica, &quot;Arial Unicode MS&quot;, sans-serif; margin-top: 0px; margin-bottom: 8px;">
+						Некоторые возможности отладчиков:</div>
+					<ul class="FuturisMarkdown-UnorderedList" style="margin: 0px; padding-left: 5px;">
+						<li class="FuturisMarkdown-ListItem" data-value="" data-shift="0" style="font: 400 16px / 22px &quot;YS Text&quot;, -apple-system, BlinkMacSystemFont, Arial, Helvetica, &quot;Arial Unicode MS&quot;, sans-serif; position: relative; margin-bottom: 8px; list-style-type: none; margin-top: 8px; padding-left: 17px;">
+						<strong>Установка точек останова (breakpoints)</strong><span>&nbsp;</span>— 
+						позволяют приостановить выполнение программы в 
+						определённом месте, чтобы изучить текущее состояние 
+						переменных.</li>
+						<li class="FuturisMarkdown-ListItem" data-value="" data-shift="0" style="font: 400 16px / 22px &quot;YS Text&quot;, -apple-system, BlinkMacSystemFont, Arial, Helvetica, &quot;Arial Unicode MS&quot;, sans-serif; position: relative; margin-bottom: 8px; list-style-type: none; padding-left: 17px;">
+						<strong>Пошаговое выполнение (stepping)</strong><span>&nbsp;</span>— 
+						выполнение кода построчно, что помогает понять, как 
+						каждая команда влияет на состояние программы.</li>
+						<li class="FuturisMarkdown-ListItem" data-value="" data-shift="0" style="font: 400 16px / 22px &quot;YS Text&quot;, -apple-system, BlinkMacSystemFont, Arial, Helvetica, &quot;Arial Unicode MS&quot;, sans-serif; position: relative; margin-bottom: 8px; list-style-type: none; padding-left: 17px;">
+						<strong>Просмотр стека вызовов (call stack)</strong><span>&nbsp;</span>— 
+						показывает последовательность вызовов функций, что 
+						помогает определить путь, который привёл к ошибке.</li>
+						<li class="FuturisMarkdown-ListItem" data-value="" data-shift="0" style="font: 400 16px / 22px &quot;YS Text&quot;, -apple-system, BlinkMacSystemFont, Arial, Helvetica, &quot;Arial Unicode MS&quot;, sans-serif; position: relative; margin-bottom: 8px; list-style-type: none; padding-left: 17px;">
+						<strong>Условные точки останова</strong><span>&nbsp;</span>— 
+						активируются только при выполнении определённого 
+						условия, что позволяет сэкономить время и не 
+						останавливать программу без необходимости.</li>
+						<li class="FuturisMarkdown-ListItem" data-value="" data-shift="0" style="font: 400 16px / 22px &quot;YS Text&quot;, -apple-system, BlinkMacSystemFont, Arial, Helvetica, &quot;Arial Unicode MS&quot;, sans-serif; position: relative; margin-bottom: 8px; list-style-type: none; padding-left: 17px;">
+						<strong>Специальные окна</strong><span>&nbsp;</span>для 
+						наблюдения за значениями выражений или переменных в 
+						реальном времени.</li>
+					</ul>
+				</div>
+				<h2 class="FuturisTitle FuturisContentSection-Title" style="display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 6; overflow: hidden; font: 700 20px / 24px &quot;YS Text&quot;, -apple-system, BlinkMacSystemFont, Arial, Helvetica, &quot;Arial Unicode MS&quot;, sans-serif; color: rgb(51, 51, 51); margin-block: 0px 8px; margin: 24px 0px 8px; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Правила использования</h2>
+				<div class="FuturisMarkdown FuturisRSRContent-Block" tabindex="0" style="overflow-wrap: break-word; color: rgb(51, 51, 51); font-family: &quot;YS Text&quot;, -apple-system, BlinkMacSystemFont, Arial, Helvetica, &quot;Arial Unicode MS&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<div data-end-streaming-block="true">
+					</div>
+					<div class="FuturisMarkdown-Paragraph" style="font: 400 16px / 22px &quot;YS Text&quot;, -apple-system, BlinkMacSystemFont, Arial, Helvetica, &quot;Arial Unicode MS&quot;, sans-serif; margin-top: 0px; margin-bottom: 8px;">
+						Отладчик не универсальный инструмент для исправления 
+						ошибок кода, но он помогает находить и определять 
+						причину багов. Некоторые рекомендации по использованию 
+						отладчиков:&nbsp;<a class="Link FuturisFootnote FuturisFootnote_redesign FuturisFootnote_lastFootnote" rel="nofollow noopener" data-counter="[&quot;b&quot;]" data-log-node="1_fv81w01-0-1p" target="_blank" style="text-decoration: none; outline: 0px; touch-action: manipulation; -webkit-tap-highlight-color: transparent; cursor: pointer; display: inline-flex; margin: 0px; color: rgba(0, 0, 0, 0.6); background-color: rgba(0, 0, 0, 0.05); padding: 2px 6px 2px 4px; font: 400 12px / 16px &quot;YS Text&quot;, -apple-system, BlinkMacSystemFont, Arial, Helvetica, &quot;Arial Unicode MS&quot;, sans-serif; border-radius: 100px; transition: 0.1s ease-out; justify-content: center; align-items: center;" href="https://ru.hexlet.io/blog/posts/chto-takoe-otladka"><span class="FuturisFootnote-Icon" style="display: inline-block; width: 12px; height: 12px; margin-right: 4px; border-radius: 4px; background-color: rgb(255, 255, 255); background-size: 12px; background-image: url(_https_/favicon.yandex.net/favicon/v2/https_/ru.hexlet.io/blog/posts/chto-takoe-otladkab65a.html?size=16&amp;stub=1%22);"></span>ru.hexlet.io</a></div>
+					<ul class="FuturisMarkdown-UnorderedList" style="margin: 0px; padding-left: 5px;">
+						<li class="FuturisMarkdown-ListItem" data-value="" data-shift="0" style="font: 400 16px / 22px &quot;YS Text&quot;, -apple-system, BlinkMacSystemFont, Arial, Helvetica, &quot;Arial Unicode MS&quot;, sans-serif; position: relative; margin-bottom: 8px; list-style-type: none; margin-top: 8px; padding-left: 17px;">
+						<strong>Устанавливать точки останова</strong><span>&nbsp;</span>в 
+						тех местах кода, где подозревается наличие ошибки.</li>
+						<li class="FuturisMarkdown-ListItem" data-value="" data-shift="0" style="font: 400 16px / 22px &quot;YS Text&quot;, -apple-system, BlinkMacSystemFont, Arial, Helvetica, &quot;Arial Unicode MS&quot;, sans-serif; position: relative; margin-bottom: 8px; list-style-type: none; padding-left: 17px;">
+						<strong>Разбивать сложный код на более простые части</strong><span>&nbsp;</span>— 
+						это упрощает отладку.</li>
+						<li class="FuturisMarkdown-ListItem" data-value="" data-shift="0" style="font: 400 16px / 22px &quot;YS Text&quot;, -apple-system, BlinkMacSystemFont, Arial, Helvetica, &quot;Arial Unicode MS&quot;, sans-serif; position: relative; margin-bottom: 8px; list-style-type: none; padding-left: 17px;">
+						<strong>Использовать отладочные сообщения</strong><span>&nbsp;</span>— 
+						добавлять в код сообщения для вывода информации о 
+						выполнении программы.</li>
+					</ul>
+				</div>
+				<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100; font-family: OpenSansRegular, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				&nbsp;</p>
+				<h2 style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-family: OpenSansBold, sans-serif; line-height: 1.4; color: rgb(0, 0, 0); margin: 30px 0px; font-size: 20px; text-indent: 0px;  padding: 0px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong>Пошаговая отладка</strong></h2>
+				<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100; font-family: OpenSansRegular, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<dfn style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-style: italic;">
+				Пошаговая отладка (single-step debugging)</dfn><span>&nbsp;</span>позволяет 
+				выполнять код по одной строке за раз. Выглядит она чрезвычайно 
+				просто и подразумевает выполнение следующих действий:</p>
+				<ol style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin-top: 0px; margin-bottom: 10px; color: rgb(0, 0, 0); font-family: OpenSansRegular, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">
+					<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100;">
+					<span class="style2"><strong>Найдите в коде точку</strong></span><span class="style6">, в которой необходимо приостановить 
+					выполнение, и начните пошаговое выполнение (можно 
+					использовать любую исполняемую строку кода, но не объявление 
+					переменной, комментарий или пустую строку). Щелкните на поле 
+					возле кода строки, после чего появится точка останова, 
+					помеченная красным цветом:</span></p>
+					<div class="imgcontent" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; width: 900px; padding: 15px;">
+						<img src="Pic/img51017.jpg" alt="Добавление точки останова " style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; border: 0px; vertical-align: middle; margin-left: auto; margin-right: auto; display: block; max-width: 100%;" /></div>
+					</li>
+					<li style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">
+					<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100;" class="style6">
+					Теперь запустите свою программу обычным образом. Когда 
+					программа достигнет точки останова, выполнение 
+					приостановится, и вы переключитесь обратно в окно кода 
+					Visual Studio. Оператор, на котором установлена точка 
+					останова, не выполнится.</p>
+					</li>
+					<li style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">
+					<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100;" class="style6">
+					На этом этапе доступно несколько возможностей. Вы можете 
+					выполнить текущую строку, нажав клавишу &lt;F11&gt;. Следующая 
+					строка кода будет помечена желтой стрелкой, указывая на то, 
+					что именно она будет выполнена. <span class="style3">
+					<strong>Вы можете продолжать это на 
+					протяжении всей программы, запуская по одной строке за раз 
+					нажатием &lt;F11&gt; и следуя пути выполнения кода.</strong></span> Или же вы 
+					можете выйти из этого режима и возобновить нормальное 
+					выполнение кода, нажав клавишу &lt;F5&gt;.</p>
+					<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100;" class="style6">
+					Вместо клавиш быстрого вызова команд вроде &lt;F11&gt; и &lt;F5&gt; 
+					можно использовать кнопки панели инструментов Debug 
+					(Отладка) в Visual Studio. В качестве альтернативы можно 
+					щелкнуть правой кнопкой мыши в окне кода и выбрать опцию из 
+					контекстного меню.</p>
+					</li>
+					<li style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">
+					<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100;" class="style6">
+					Каждый раз, когда код находится в режиме паузы, можно 
+					поместить курсор над любой переменной и просмотреть ее 
+					содержимое. Это позволяет проверить, содержит ли переменная 
+					ожидаемое значение:</p>
+					<div class="imgcontent" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; width: 900px; padding: 15px;">
+						<img src="Pic/img51018.jpg" alt="Просмотр содержимого переменной в режиме паузы" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; border: 0px; vertical-align: middle; margin-left: auto; margin-right: auto; display: block; max-width: 100%;" /></div>
+					<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100;" class="style6">
+					Если вы поместите курсор над объектом, то сможете 
+					просмотреть все его свойства, щелкнув на маленьком знаке 
+					&quot;плюс&quot;:</p>
+					<div class="imgcontent" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; width: 900px; padding: 15px;">
+						<img src="Pic/img51019.jpg" alt="Просмотр свойств объекта в режиме паузы " style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; border: 0px; vertical-align: middle; margin-left: auto; margin-right: auto; display: block; max-width: 100%;" /></div>
+					<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100;" class="style6">
+					Можно даже непосредственно изменить значение переменной или 
+					свойства — просто щелкните внутри окна подсказки и введите 
+					новое значение. Это позволит смоделировать сценарии, которые 
+					сложно или долго воспроизвести вручную, либо проверить 
+					специфические условия ошибок.</p>
+					</li>
+					<li style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">
+					<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100;" class="style6">
+					В режиме паузы можно также использовать команды, 
+					перечисленные в таблице ниже. Эти команды доступны в 
+					контекстном меню, появляющемся после щелчка правой кнопкой 
+					мыши на окне кода, либо через соответствующие клавиши 
+					быстрого вызова команд.</p>
+					</li>
+				</ol>
+				<div class="table_wrapper" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 30px 0px; color: rgb(0, 0, 0); font-family: OpenSansRegular, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<table class="new_table" border="2" cellpadding="15" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; border-collapse: collapse; border-spacing: 0px; background-color: transparent; font-size: 14px; line-height: 1.2; border: none;">
+						<caption style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding-top: 8px; padding-bottom: 8px; color: rgb(119, 119, 119); text-align: left;">
+						Команды, доступные в режиме паузы</caption>
+						<tbody style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">
+							<tr style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">
+								<th style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; text-align: left; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+								Команда (клавиша быстрого вызова команды)</th>
+								<th style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; text-align: left; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+								Описание</th>
+							</tr>
+							<tr style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">
+								<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+								Step Into (Войти) &lt;F11&gt;</td>
+								<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+								Выполняет выделенную на текущий момент строку и 
+								затем приостанавливается. Если в этой строке 
+								вызывается какой-то метод или свойство, процесс 
+								выполнения будет приостановлен на первой 
+								выполняемой строке внутри данного метода или 
+								свойства (из-за чего эта команда и называется 
+								командной входа)</td>
+							</tr>
+							<tr style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">
+								<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+								Step Over (Пропустить) &lt;F10&gt;</td>
+								<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+								Делает то же, что и команда Step Into, но только 
+								выполняет методы (или свойства) так, будто бы 
+								они являются одной строкой. Если выбрать команду 
+								Step Over при выделенном вызове метода, этот 
+								метод будет выполнен весь целиком, а процесс 
+								выполнения будет приостановлен на следующем 
+								операторе в текущей процедуре</td>
+							</tr>
+							<tr style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">
+								<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+								Step Out (Выйти) &lt;Shift+F11&gt;</td>
+								<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+								Выполняет весь код в текущей процедуре, а затем 
+								приостанавливается на операторе, следующем сразу 
+								же за тем, который вызвал данный метод или 
+								свойство. Другими словами, эта команда позволяет 
+								&quot;выходить&quot; из текущей процедуры одним большим 
+								&quot;прыжком&quot;</td>
+							</tr>
+							<tr style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">
+								<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+								Continue (Продолжить) &lt;F5&gt;</td>
+								<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+								Возобновляет выполнение программы и продолжает 
+								ее нормальную работу без пауз вплоть до 
+								следующей точки останова</td>
+							</tr>
+							<tr style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">
+								<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+								Run to Cursor (Выполнить до курсора)</td>
+								<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+								Позволяет выполнять весь код до определенной 
+								строки (до той, на которой в текущий момент 
+								находится курсор). С помощью этого приема удобно 
+								пропускать занимающие много времени циклы</td>
+							</tr>
+							<tr style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">
+								<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+								Set Next Statement (Установить следующий 
+								оператор)</td>
+								<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+								Позволяет изменять путь выполнения программы во 
+								время отладки. Вынуждает программу помечать 
+								текущую строку (ту, на которой находится курсор) 
+								как следующую подлежащую выполнению. При 
+								возобновлении процесса выполнения, выполнение 
+								программы продолжается уже с этой строки. С 
+								помощью такого приема удобно временно обходить 
+								проблемный код, но при этом очень легко 
+								столкнуться с ошибкой, если пропустить какую-то 
+								обязательную деталь или оставить данные в 
+								несогласованном состоянии</td>
+							</tr>
+							<tr style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">
+								<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+								Show Next Statement (Показать следующий 
+								оператор)</td>
+								<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+								Перемещает фокус на следующую строку кода, 
+								которая помечена как подлежащая выполнению. О 
+								том, что строка помечена как подлежащая 
+								выполнению, свидетельствует наличие рядом с ней 
+								желтой стрелки. Командой Show Next Statement 
+								удобно пользоваться в тех случаях, когда после 
+								редактирования кода потеряно место, где ранее 
+								находился курсор</td>
+							</tr>
+					</table>
+				</div>
+				<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100; font-family: OpenSansRegular, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Перевести программу в режим паузы можно в любой момент, щелкнув 
+				на кнопке паузы в панели инструментов или выбрав в меню Debug 
+				(Отладка) команду Break All (Остановить все).</p>
+				<h2 style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-family: OpenSansBold, sans-serif; line-height: 1.4; color: rgb(0, 0, 0); margin: 30px 0px; font-size: 20px; text-indent: 0px;  padding: 0px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong>Слежение за переменными</strong></h2>
+				<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100; font-family: OpenSansRegular, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В некоторых случаях может понадобиться отслеживать состояние 
+				переменной без постоянного переключения в режим паузы. В таких 
+				ситуациях более полезными оказываются окна Locals (Локальные), 
+				Autos (Автоматические) и Watch (Слежение), которые позволяют 
+				отслеживать переменные во всем приложении:</p>
+				<div class="table_wrapper" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 30px 0px; color: rgb(0, 0, 0); font-family: OpenSansRegular, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<table class="new_table" border="2" cellpadding="15" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; border-collapse: collapse; border-spacing: 0px; background-color: transparent; font-size: 14px; line-height: 1.2; border: none;">
+						<caption style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding-top: 8px; padding-bottom: 8px; color: rgb(119, 119, 119); text-align: left;">
+						Окна для слежения за переменными</caption>
+						<tbody style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">
+							<tr style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">
+								<th style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; text-align: left; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+								Окно</th>
+								<th style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; text-align: left; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+								Описание</th>
+							</tr>
+							<tr style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">
+								<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+								Locals</td>
+								<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+								Автоматически отображает все переменные в 
+								пределах текущей процедуры, предлагая быстрый 
+								обзор важных переменных</td>
+							</tr>
+							<tr style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">
+								<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+								Autos</td>
+								<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+								Автоматически отображает переменные, которые 
+								система Visual Studio определила как важные для 
+								текущего оператора в коде. Сюда могут входить, 
+								например, переменные, к которым получается 
+								доступ или которые изменяются в предыдущей 
+								строке</td>
+							</tr>
+							<tr style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased;">
+								<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+								Watch</td>
+								<td style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; padding: 15px; background-color: rgb(37, 38, 49); color: rgb(175, 181, 185); font-size: 15px; border: 0px; line-height: 1.4;">
+								Отображает добавленные вами переменные. 
+								Установки слежения сохраняются вместе с 
+								проектом, чтобы можно было продолжить слежение 
+								за переменными позже. Для добавления слежения 
+								щелкните правой кнопкой мыши на переменной в 
+								коде и выберите в контекстном меню пункт Add 
+								Watch (Добавить слежение); в качестве 
+								альтернативы дважды щелкните на последней строке 
+								в окне Watch и введите имя переменной</td>
+							</tr>
+					</table>
+				</div>
+				<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100; font-family: OpenSansRegular, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Каждая строка в окнах Locals, Autos и Watch предоставляет 
+				информацию о типе или классе переменной и ее текущем значении. 
+				Если переменная содержит экземпляр объекта, ее можно развернуть 
+				и просмотреть приватные члены и свойства.</p>
+				<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100; font-family: OpenSansRegular, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Например, в окне Locals вы увидите переменную this, которая 
+				является ссылкой на текущий объект страницы. Если вы щелкнете на 
+				знаке &quot;плюс&quot; возле нее, появится полный список свойств страницы 
+				(и некоторые системные значения):</p>
+				<div class="imgcontent" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; width: 940px; padding: 15px; color: rgb(0, 0, 0); font-family: OpenSansRegular, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<img src="Pic/img51020.jpg" alt="Просмотр текущего объекта страницы в окне Locals" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; border: 0px; vertical-align: middle; margin-left: auto; margin-right: auto; display: block; max-width: 100%;" /></div>
+				<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100; font-family: OpenSansRegular, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Окна Locals, Autos и Watch позволяют изменять переменные или 
+				свойства во время нахождения программы в режиме паузы. Дважды 
+				щелкните на текущем значении в столбце Value (Значение) и 
+				введите новое значение. Если не хватает какого-то окна слежения, 
+				отобразите его вручную, выбрав его в подменю Windows меню Debug.</p>
+				<h2 style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-family: OpenSansBold, sans-serif; line-height: 1.4; color: rgb(0, 0, 0); margin: 30px 0px; font-size: 20px; text-indent: 0px;  padding: 0px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong>Расширенные точки останова</strong></h2>
+				<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100; font-family: OpenSansRegular, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Выберите в меню Debug (Отладка) команду Windows --&gt; Breakpoints 
+				для отображения окна, в котором перечислены все точки останова в 
+				текущем проекте. Окно Breakpoints (Точки останова) предоставляет 
+				счетчик попаданий в точку останова. Дважды щелкнув на точке 
+				останова, можно переместиться в соответствующее место кода:</p>
+				<div class="imgcontent" style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; width: 940px; padding: 15px; color: rgb(0, 0, 0); font-family: OpenSansRegular, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<img src="Pic/img51021.jpg" alt="Окно Breakpoints " style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; border: 0px; vertical-align: middle; margin-left: auto; margin-right: auto; display: block; max-width: 100%;" /></div>
+				<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100; font-family: OpenSansRegular, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Окно Breakpoints можно также применять для отключения точки 
+				останова без ее удаления. Это позволяет сохранить точку 
+				останова, чтобы использовать во время тестирования позже. Точки 
+				останова автоматически сохраняются в файле решения.</p>
+				<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100; font-family: OpenSansRegular, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Visual Studio позволяет настраивать точки останова так, чтобы 
+				они проявлялись только в случае соблюдения определенных условий. 
+				Чтобы настроить точку останова, щелкните на ней правой кнопкой 
+				мыши и выберите одну из перечисленных ниже опций:</p>
+				<dl style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin-top: 0px; margin-bottom: 20px; color: rgb(0, 0, 0); font-family: OpenSansRegular, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<dt style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; font-weight: bold;">
+					<strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">
+					Location</strong></dt>
+					<dd style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; margin-left: 0px;">
+					<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100;">
+					Используйте эту опцию, если хотите увидеть точный файл и 
+					строку, в которой находится данная точка останова.</p>
+					</dd>
+					<dt style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; font-weight: bold;">
+					<strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">
+					Condition</strong></dt>
+					<dd style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; margin-left: 0px;">
+					<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100;">
+					Используйте эту опцию, если хотите настроить выражение и 
+					сделать так, чтобы эта точка останова срабатывала только в 
+					случае, когда данное выражение будет истинным, или в случае 
+					его изменения с момента последнего срабатывания данной точки 
+					останова.</p>
+					</dd>
+					<dt style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; font-weight: bold;">
+					<strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">
+					Hit Count</strong></dt>
+					<dd style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; margin-left: 0px;">
+					<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100;">
+					Используйте эту опцию, если хотите создать точку останова, 
+					которая будет приостанавливать процесс выполнения только 
+					либо после определенного количества срабатываний (например, 
+					хотя бы после 20), либо через определенное количество 
+					срабатываний (например, через каждые 5).</p>
+					</dd>
+					<dt style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; font-weight: bold;">
+					<strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">
+					Filter</strong></dt>
+					<dd style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; margin-left: 0px;">
+					<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100;">
+					Используйте эту опцию, если хотите включить точку останова 
+					только для конкретных процессов или потоков. В ASP.NET эта 
+					опция применяется редко, поскольку весь код веб-страниц 
+					выполняется рабочим процессом ASP.NET, а он использует пул 
+					потоков.</p>
+					</dd>
+					<dt style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; font-weight: bold;">
+					<strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">
+					When Hit</strong></dt>
+					<dd style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; line-height: 1.42857; margin-left: 0px;">
+					<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100;">
+					Используйте эту опцию, если хотите настроить действие, 
+					которое должно автоматически выполняться при каждом 
+					срабатывании точки останова. Существует два удобных 
+					варианта. Первый — указать в качестве такого действия вывод 
+					сообщения в окне Debug (Отладка), что позволит следить за 
+					ходом выполнения кода без его загромождения операторами 
+					Debug.Write(). Такой прием называется созданием<span>&nbsp;</span><strong style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; font-weight: bold;">точек 
+					трассировки (tracepoint)</strong>.</p>
+					<p style="box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; margin: 15px 0px; color: rgb(0, 0, 0); text-indent: 20px; font-weight: 100;">
+					Второй вариант — указать в качестве такого действия запуск 
+					макроса Visual Studio, что позволит выполнить в IDE-среде 
+					практически любое действие.</p>
+					</dd>
+				</dl>
+                <p></p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les25.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les25/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:53:11 GMT -->
+</html>

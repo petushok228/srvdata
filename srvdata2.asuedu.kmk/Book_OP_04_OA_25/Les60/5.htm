@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les60/5.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:56:42 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+				color: rgb(255, 0, 0);
+}
+.style3 {
+				color: rgb(255, 0, 0);
+				font-style: italic;
+				text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 5. Обработка сообщений Windows.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <a name="h01" style="color: rgb(0, 0, 0); font-family: Verdana, Arial, Helvetica, &quot;Sans Serif&quot;; font-size: 11.2px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</a>
+				<h3 style="color: rgb(0, 0, 0); font-size: 12pt; font-weight: bold; font-family: Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Работа, управляемая событиями</h3>
+				<p class="body_first" style="color: rgb(0, 0, 0); font-size: 12pt; font-weight: 400; font-family: &quot;Times New Roman&quot;, serif; text-align: justify; text-indent: 0px; margin-bottom: 3pt; margin-top: 0pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Программы для Windows управляются событиями. Это значит, что 
+				программа, вместо того, чтобы бежать за информацией, может 
+				бездельничать и ждать сообщений, поступающих ей через очередь 
+				сообщений. Все сообщения получает и обрабатывает<span>&nbsp;</span><i>обработчик 
+				сообщений</i><span>&nbsp;</span>(<i>message handler</i>). Элементы, 
+				обрабатываемые в обработчике сообщений обычно называются<span class="style2"><span>&nbsp;</span><i>событиями</i></span><span>&nbsp;</span>(<i>events</i>).</p>
+				<a name="h01a" style="color: rgb(0, 0, 0); font-family: Verdana, Arial, Helvetica, &quot;Sans Serif&quot;; font-size: 11.2px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</a>
+				<h4 style="color: rgb(0, 0, 0); font-size: 11pt; font-weight: bold; font-family: Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				События</h4>
+				<p class="body_first" style="color: rgb(0, 0, 0); font-size: 12pt; font-weight: 400; font-family: &quot;Times New Roman&quot;, serif; text-align: justify; text-indent: 0px; margin-bottom: 3pt; margin-top: 0pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вы можете задаться вопросом, какие виды событий обрабатываются. 
+				Существуют сотни, если не тысячи возможных событий, и некоторые 
+				из них описаны в таблице&nbsp;1.</p>
+				<table cellspacing="0" cellpadding="3" border="0" width="100%" style="color: black; font-family: Arial, Helvetica, &quot;Sans Serif&quot;; font-size: 10pt; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<tr>
+												<td colspan="2">
+												<p class="table_name" style="color: rgb(0, 0, 0); font-size: 10pt; font-weight: bold; font-family: Tahoma, Arial, sans-serif; text-align: justify; text-indent: 0.05in; margin-bottom: 0pt; margin-top: 0pt;">
+												Таблица 1. События Windows</p>
+												</td>
+								</tr>
+								<tr bgcolor="666666">
+												<td class="table_head" width="20%" style="color: rgb(255, 255, 255); font-size: 10pt; font-weight: bold; font-family: Tahoma, Arial, sans-serif; text-indent: 0.05in;">
+												<tt style="font-size: 12pt; font-weight: bold; font-family: &quot;Courier New&quot;, monospace;">
+												<b>Событие</b></tt></td>
+												<td class="table_head" style="color: rgb(255, 255, 255); font-size: 10pt; font-weight: bold; font-family: Tahoma, Arial, sans-serif; text-indent: 0.05in;">
+												<tt style="font-size: 12pt; font-weight: bold; font-family: &quot;Courier New&quot;, monospace;">
+												<b>Описание</b></tt></td>
+								</tr>
+								<tr>
+												<td width="20%" valign="top">
+												<tt style="font-size: 12pt; font-weight: bold; font-family: &quot;Courier New&quot;, monospace;">
+												WM_KEYDOWN</tt></td>
+												<td>Это событие генерируется 
+												каждый раз, когда нажимается 
+												клавиша на клавиатуре. Ввод с 
+												клавиатуры жизненно необходим 
+												для большинства игр, поэтому 
+												данное сообщение очень важно.</td>
+								</tr>
+								<tr>
+												<td width="20%" valign="top">
+												<tt style="font-size: 12pt; font-weight: bold; font-family: &quot;Courier New&quot;, monospace;">
+												WM_KEYUP</tt></td>
+												<td>Это событие генерируется 
+												когда нажатая клавиша будет 
+												отпущена. Вам необходимо знать 
+												не только когда клавишу нажали, 
+												но и когда ее отпустили. Поэтому 
+												данное событие также важно.</td>
+								</tr>
+								<tr>
+												<td width="20%" valign="top">
+												<tt style="font-size: 12pt; font-weight: bold; font-family: &quot;Courier New&quot;, monospace;">
+												WM_LBUTTONDOWN</tt></td>
+												<td>Это событие генерируется 
+												когда пользователь нажимает 
+												левую кнопку мыши, если 
+												указатель мыши находится в 
+												пределах окна.</td>
+								</tr>
+								<tr>
+												<td width="20%" valign="top">
+												<tt style="font-size: 12pt; font-weight: bold; font-family: &quot;Courier New&quot;, monospace;">
+												WM_LBUTTONUP</tt></td>
+												<td>Это событие генерируется 
+												когда пользователь отпускает 
+												левую кнопку мыши, если 
+												указатель мыши находится в 
+												пределах окна.</td>
+								</tr>
+								<tr>
+												<td width="20%" valign="top">
+												<tt style="font-size: 12pt; font-weight: bold; font-family: &quot;Courier New&quot;, monospace;">
+												WM_SETFOCUS</tt></td>
+												<td>Это событие генерируется 
+												когда приложение получает фокус 
+												клавиатуры. Например, событие<span>&nbsp;</span><tt style="font-size: 12pt; font-weight: bold; font-family: &quot;Courier New&quot;, monospace;">WM_SETFOCUS</tt><span>&nbsp;</span>генерируется, 
+												когда вы щелкаете мышью по 
+												неактивному окну.</td>
+								</tr>
+								<tr>
+												<td width="20%" valign="top">
+												<tt style="font-size: 12pt; font-weight: bold; font-family: &quot;Courier New&quot;, monospace;">
+												WM_SIZE</tt></td>
+												<td>Это событие сообщает окну, 
+												что его размеры были изменены. 
+												Оно важно в ситуациях, когда для 
+												подгонки интерфейса к новому 
+												размеру окна требуется изменение 
+												расположения элементов.</td>
+								</tr>
+								<tr>
+												<td colspan="2"><hr /></td>
+								</tr>
+				</table>
+				<div class="tip_head" style="border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0); padding: 2px 4px; font-family: Helvetica, Arial, sans-serif; font-size: 10pt; font-weight: bold; float: left; margin: 4px 10px 5px 0px; color: rgb(0, 0, 0); background-color: rgb(211, 237, 246); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								СОВЕТ</div>
+				<div class="tip_body" style="border-width: 1px; border-style: solid; border-color: rgb(0, 0, 116); padding: 10px 10px 6px; margin-top: 16px; background-color: rgb(234, 234, 234); font-family: Helvetica, Arial, sans-serif; font-size: 10pt; font-weight: 400; text-align: justify; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								Существует множество других событий. Я советую 
+								вам воспользоваться встроенной справкой Visual&nbsp;C<span lang="en-us">#</span> 
+								и поискать описание всех сообщений, названия 
+								которых начинаются с<span>&nbsp;</span><tt style="font-size: 12pt; font-weight: bold; font-family: &quot;Courier New&quot;, monospace;">WM_</tt>.</div>
+				<a name="h02" style="color: rgb(0, 0, 0); font-family: Verdana, Arial, Helvetica, &quot;Sans Serif&quot;; font-size: 11.2px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</a>
+				<h3 style="color: rgb(0, 0, 0); font-size: 12pt; font-weight: bold; font-family: Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Структура программы</h3>
+				<br style="color: rgb(0, 0, 0); font-family: Verdana, Arial, Helvetica, &quot;Sans Serif&quot;; font-size: 11.2px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<center style="color: rgb(0, 0, 0); font-family: Verdana, Arial, Helvetica, &quot;Sans Serif&quot;; font-size: 11.2px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<img src="Pic/f02_01.jpg" border="0" alt="Рис. 2.1. Структура обработки сообщений Windows" /></center>
+				<br style="color: rgb(0, 0, 0); font-family: Verdana, Arial, Helvetica, &quot;Sans Serif&quot;; font-size: 11.2px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<p style="color: rgb(0, 0, 0); font-size: 12pt; font-weight: 400; font-family: &quot;Times New Roman&quot;, serif; text-align: center; text-indent: 0.3in; margin-bottom: 0pt; margin-top: 0pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<i><b>Рис. 1.</b><span>&nbsp;</span>Структура обработки сообщений 
+				Windows</i></p>
+				<br style="color: rgb(0, 0, 0); font-family: Verdana, Arial, Helvetica, &quot;Sans Serif&quot;; font-size: 11.2px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+				<p class="body_text" style="color: rgb(0, 0, 0); font-size: 12pt; font-weight: 400; font-family: &quot;Times New Roman&quot;, serif; text-align: justify; text-indent: 0.3in; margin-bottom: 3pt; margin-top: 0pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				На рис.&nbsp;1 есть несколько областей, представляющих для нас 
+				интерес. Прежде всего обратите внимание на изображение окна 
+				программы. Под ним нарисована клавиатура, представляющая входные 
+				данные, которые поступают от пользователя.</p>
+				<a name="h02a" style="color: rgb(0, 0, 0); font-family: Verdana, Arial, Helvetica, &quot;Sans Serif&quot;; font-size: 11.2px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</a>
+				<h4 style="color: rgb(0, 0, 0); font-size: 11pt; font-weight: bold; font-family: Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Очередь событий</h4>
+				<p class="body_first" style="color: rgb(0, 0, 0); font-size: 12pt; font-weight: 400; font-family: &quot;Times New Roman&quot;, serif; text-align: justify; text-indent: 0px; margin-bottom: 3pt; margin-top: 0pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вторая ключевая область называется<span>&nbsp;</span><span class="style3">очередь 
+				событий</span><span>&nbsp;</span>(<i>event queue</i>). События 
+				помещаются в очередь событий. Почти всегда, когда программа 
+				Windows получает входные данные или уведомление от пользователя 
+				или операционной системы, происходит генерация события, которое 
+				сохраняется в очереди. Программы используют систему очередей, 
+				чтобы сообщения никогда не терялись. Кроме того, сообщение может 
+				храниться в очереди так долго, как требуется программе.</p>
+				<p class="body_text" style="color: rgb(0, 0, 0); font-size: 12pt; font-weight: 400; font-family: &quot;Times New Roman&quot;, serif; text-align: justify; text-indent: 0.3in; margin-bottom: 3pt; margin-top: 0pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если программа занята, а пользователь в это время нажимает 
+				клавишу, данные о нажатии могут быть потеряны. Это происходит 
+				потому, что программа была занята чем-то другим и пропустила 
+				данное событие. В Windows сообщение клавиатуры посылается в 
+				очередь событий для хранения. Там оно находится в безопасности, 
+				пока не будет затребовано программой. </p>
+				<p class="body_text" style="color: rgb(0, 0, 0); font-size: 12pt; font-weight: 400; font-family: &quot;Times New Roman&quot;, serif; text-align: justify; text-indent: 0.3in; margin-bottom: 3pt; margin-top: 0pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				События, помещенные в очередь обрабатываются по принципу «первым 
+				пришел&nbsp;— первым ушел (FIFO)». Это означает, что первое 
+				помещенное в очередь событие будет первым вытолкнуто из очереди, 
+				когда программа запросит следующее событие. В этом нет ничего 
+				революционного&nbsp;— всего лишь стандартная очередь.</p>
+				<p class="body_text" style="color: rgb(0, 0, 0); font-size: 12pt; font-weight: 400; font-family: &quot;Times New Roman&quot;, serif; text-align: justify; text-indent: 0.3in; margin-bottom: 3pt; margin-top: 0pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				На рис.&nbsp;1 в очереди событий содержится три сообщения:<span>&nbsp;</span><tt style="font-size: 12pt; font-weight: bold; font-family: &quot;Courier New&quot;, monospace;">WM_KEYDOWN</tt>,<span>&nbsp;</span><tt style="font-size: 12pt; font-weight: bold; font-family: &quot;Courier New&quot;, monospace;">WM_KEYUP</tt><span>&nbsp;</span>и<span>&nbsp;</span><tt style="font-size: 12pt; font-weight: bold; font-family: &quot;Courier New&quot;, monospace;">WM_SIZE</tt>. 
+				Для разработчика они представляют три возможных действия 
+				пользователя. Сначала пользователь нажал клавишу и затем 
+				отпустил ее. После этого пользователь изменил размер окна.</p>
+				<a name="h02b" style="color: rgb(0, 0, 0); font-family: Verdana, Arial, Helvetica, &quot;Sans Serif&quot;; font-size: 11.2px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</a>
+				<h4 style="color: rgb(0, 0, 0); font-size: 11pt; font-weight: bold; font-family: Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Функция WinMain()</h4>
+				<p class="body_first" style="color: rgb(0, 0, 0); font-size: 12pt; font-weight: 400; font-family: &quot;Times New Roman&quot;, serif; text-align: justify; text-indent: 0px; margin-bottom: 3pt; margin-top: 0pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Следуя далее мы столкнемся с функцией<span>&nbsp;</span><tt style="font-size: 12pt; font-weight: bold; font-family: &quot;Courier New&quot;, monospace;">WinMain()</tt>. 
+				Как я говорил ранее, она является неотъемлемой частью всех 
+				программ Windows, а также является первой функцией, вызываемой 
+				во время выполнения программы.</p>
+				<p class="body_text" style="color: rgb(0, 0, 0); font-size: 12pt; font-weight: 400; font-family: &quot;Times New Roman&quot;, serif; text-align: justify; text-indent: 0.3in; margin-bottom: 3pt; margin-top: 0pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				На рис.&nbsp;1 под функцией<span>&nbsp;</span><tt style="font-size: 12pt; font-weight: bold; font-family: &quot;Courier New&quot;, monospace;">WinMain()</tt><span>&nbsp;</span>располагается 
+				блок условия с текстом «Событие для обработки?». Он изображает 
+				цикл обработки сообщений, являющийся стандартной частью 
+				большинства приложений для Windows. Обычно после того как вы 
+				инициализировали программу Windows, чтобы она отображала окно и 
+				необходимые кнопки, начинается ожидание событий. В большинстве 
+				случаев в коде программы присутствует тот или иной вид цикла, 
+				проверяющего наличие событий в очереди. На рисунке это 
+				изображено пунктирной линией, ведущей к очереди событий. Цикл 
+				обработки событий проверяет очередь, пока не обнаружит наличие в 
+				ней какой-либо информации.</p>
+				<p class="body_text" style="color: rgb(0, 0, 0); font-size: 12pt; font-weight: 400; font-family: &quot;Times New Roman&quot;, serif; text-align: justify; text-indent: 0.3in; margin-bottom: 3pt; margin-top: 0pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Как только в очереди найдено событие, оно извлекается и 
+				передается для дальнейшей обработки обработчику сообщений.</p>
+				<a name="h02c" style="color: rgb(0, 0, 0); font-family: Verdana, Arial, Helvetica, &quot;Sans Serif&quot;; font-size: 11.2px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</a>
+				<h4 style="color: rgb(0, 0, 0); font-size: 11pt; font-weight: bold; font-family: Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Обработчик сообщений</h4>
+				<p class="body_first" style="color: rgb(0, 0, 0); font-size: 12pt; font-weight: 400; font-family: &quot;Times New Roman&quot;, serif; text-align: justify; text-indent: 0px; margin-bottom: 3pt; margin-top: 0pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Когда в своей программе вы создаете окно, то должны указать 
+				функцию, которая будет обрабатывать сообщения, поступающие от 
+				этого окна. Эта функция является действительным обработчиком 
+				сообщений. Итак мы пришли к следующему: обработчик сообщений&nbsp;— 
+				это обычная функция, получающая сообщения, направляемые вашей 
+				программе.</p>
+				<p class="body_text" style="color: rgb(0, 0, 0); font-size: 12pt; font-weight: 400; font-family: &quot;Times New Roman&quot;, serif; text-align: justify; text-indent: 0.3in; margin-bottom: 3pt; margin-top: 0pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Обычно обработчик сообщений представляет собой одну гигантскую 
+				инструкцию switch, проверяющую каждый имеющий отношение к вашей 
+				программе тип сообщений, и затем выполняющую необходимые 
+				действия. Существует множество типов сообщений, которые никогда 
+				не будут докучать вам. Большинство моих игр проверяет только 
+				несколько ключевых типов сообщений.</p>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les62.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les60/5.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:56:51 GMT -->
+</html>

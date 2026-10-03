@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les63/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:59:25 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: rgb(0, 0, 255);
+}
+    .style3 {
+	font-size: medium;
+	color: #0000FF;
+	margin-left: 40px;
+}
+    .style4 {
+	font-size: medium;
+	color: #800000;
+	margin-left: 80px;
+}
+    .style5 {
+	font-size: medium;
+	color: #FF0000;
+	margin-left: 40px;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 1. Лямбда-выражения C#.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style2"><strong>Лямбда-выражения представляют 
+				упрощенную запись анонимных методов.</strong></span> 
+				Лямбда-выражения позволяют создать емкие лаконичные методы, 
+				которые могут возвращать некоторое значение и которые можно 
+				передать в качестве параметров в другие методы.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Ламбда-выражения имеют следующий синтаксис: слева от 
+				лямбда-оператора<span>&nbsp;</span><code style="font-family: monospace;">=&gt;</code><span>&nbsp;</span>определяется 
+				список параметров, а справа блок выражений, использующий эти 
+				параметры:</p>
+				<pre class="style5"><strong>(список_параметров) => выражение</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				С точки зрения типа данных лямбда-выражение представляет 
+				делегат. Например, определим простейшее лямбда-выражение:</p>
+				<pre class="style3"><strong>Message hello = () => Console.WriteLine("Hello");
+hello();       // Hello
+hello();       // Hello
+hello();       // Hello 
+delegate void Message();</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В данном случае переменная hello представляет делегат Message - 
+				то есть некоторое действие, которое ничего не возвращает и не 
+				принимает никаких параметров. В качестве значения этой 
+				переменной присваивается лямбда-выражение. Это лямбда-выражение 
+				должно соответствовать делегату Message - оно тоже не принимает 
+				никаких параметров, поэтому слева от лямбда-оператора идут 
+				пустые скобки. А справа от лямбда-оператора идет выполняемое 
+				выражение -<span>&nbsp;</span><code style="font-family: monospace;">Console.WriteLine(&quot;Hello&quot;)</code></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Затем в программе можно вызывать эту переменную как метод.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если лямбда-выражение содержит несколько действий, то они 
+				помещаются в фигурные скобки:</p>
+				<pre class="style3"><strong>Message hello = () =>{
+	Console.Write("Hello ");    
+	Console.WriteLine("World");
+};
+hello();       // Hello World</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Выше мы определили переменную hello, которая представляет 
+				делегат Message. Но начиная с версии<span>&nbsp;</span><span class="b" style="font-weight: bold;">C# 
+				10</span><span>&nbsp;</span>мы можем применять неявную типизацию 
+				(определение переменной с помощью оператора<span>&nbsp;</span><span class="b" style="font-weight: bold;">var</span>) 
+				при определении лямбда-выражения:</p>
+				<pre class="style3"><strong>var hello = () => Console.WriteLine("Hello");
+hello();       // Hello
+hello();       // Hello
+hello();       // Hello</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Но какой тип в данном случае представляет переменная hello? При 
+				неявной типизации компилятор сам пытается сопоставить 
+				лямбда-выражение на основе его опеределения с каким-нибудь 
+				делегатом. Например, выше определенное лямбда-выражение hello по 
+				умолчанию компилятор будет рассматривать как переменную 
+				встроенного делегата<span>&nbsp;</span><span class="b" style="font-weight: bold;">Action</span>, 
+				который не принимает никаких параметров и ничего не возвращает.</p>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Параметры лямбды</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При определении списка параметров мы можем не указывать для них 
+				тип данных:</p>
+				<pre class="style3"><strong>Operation sum = (x, y) => Console.WriteLine($"{x} + {y} = {x + y}");
+sum(1, 2);       // 1 + 2 = 3
+sum(22, 14);    // 22 + 14 = 36 
+delegate void Operation(int x, int y);</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В данном случае компилятор видит, что лямбда-выражение sum 
+				представляет тип Operation, а значит оба параметра лямбды 
+				представляют тип<span>&nbsp;</span><code style="font-family: monospace;">int</code>. 
+				Поэтому никак проблем не возникнет.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Однако если мы применяем неявную типизацию, то у компилятора 
+				могут возникнуть трудности, чтобы вывести тип делегата для 
+				лямбда-выражения, например, в следующем случае</p>
+				<pre class="style3"><strong>var sum = (x, y) => Console.WriteLine($"{x} + {y} = {x + y}");   // ! Ошибка</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В этом случае можно указать тип параметров</p>
+				<pre class="style3"><strong>var sum = (int x, int y) => Console.WriteLine($"{x} + {y} = {x + y}");
+sum(1, 2);       // 1 + 2 = 3
+sum(22, 14);    // 22 + 14 = 36</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если лямбда имеет один параметр, для которого не требуется 
+				указывать тип данных, то скобки можно опустить:</p>
+				<pre class="style3"><strong>PrintHandler print = message => Console.WriteLine(message);
+print("Hello");         // Hello
+print("Welcome");       // Welcome 
+delegate void PrintHandler(string message);</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Начиная с C# 12 параметры лямбда-выражений могут иметь значения 
+				по умолчанию:</p>
+				<pre class="style3"><strong>var welcome = (string message = "hello")=> Console.WriteLine(message); 
+welcome("hello world"); // hello world
+welcome();              // hello</strong></pre>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Возвращение результата</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Лямбда-выражение может возвращать результат. Возвращаемый 
+				результат можно указать после лямбда-оператора:</p>
+				<pre class="style3"><strong>var sum = (int x, int y) => x + y;
+int sumResult = sum(4, 5);                  // 9
+Console.WriteLine(sumResult);               // 9 
+Operation multiply = (x, y) => x * y;
+int multiplyResult = multiply(4, 5);        // 20
+Console.WriteLine(multiplyResult);          // 20 
+delegate int Operation(int x, int y);</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если лямбда-выражение содержит несколько выражений (или одно 
+				выражение в фигурных скобках), тогда нужно использовать оператор<span>&nbsp;</span><span class="b" style="font-weight: bold;">return</span>, 
+				как в обычных методах:</p>
+				<pre class="style3"><strong>var subtract = (int x, int y) =>
+{    
+	if (x > y) return x - y;   
+	 else return y - x;
+};
+int result1 = subtract(10, 6);  // 4 
+Console.WriteLine(result1);     // 4 
+int result2 = subtract(-10, 6);  // 16
+Console.WriteLine(result2);      // 16</strong></pre>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Добавление и удаление действий в лямбда-выражении</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Поскольку лямбда-выражение представляет делегат, тот как и в 
+				делегат, в переменную, которая представляет лямбда-выражение 
+				можно добавлять методы и другие лямбды:</p>
+				<pre class="style3"><strong>var hello = () => Console.WriteLine("METANIT.COM"); 
+var message = () => Console.Write("Hello ");
+message += () => Console.WriteLine("World"); // добавляем анонимное лямбда-выражение
+message += hello;   // добавляем лямбда-выражение из переменной 
+hellomessage += Print;   // добавляем метод message();
+Console.WriteLine("--------------"); // для разделения вывода
+message -= Print;   // удаляем метод
+message -= hello;   // удаляем лямбда-выражение из переменной hello 
+message?.Invoke();  // на случай, если в message больше нет действий
+void Print() => Console.WriteLine("Welcome to C#");</strong></pre>
+				<pre class="style4"><strong>Hello World
+METANIT.COM
+Welcome to C#
+--------------
+Hello World</strong></pre>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Лямбда-выражение как аргумент метода</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Как и делегаты, лямбда-выражения можно передавать параметрам 
+				метода, которые представляют делегат:</p>
+				<pre class="style3"><strong>int[] integers = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }; 
+// найдем сумму чисел больше 5
+int result1 = Sum(integers, x => x > 5);
+Console.WriteLine(result1); // 30 
+// найдем сумму четных чисел
+int result2 = Sum(integers, x => x % 2 == 0);
+Console.WriteLine(result2);  //20 
+int Sum(int[] numbers, IsEqual func)
+	{    
+		int result = 0;    
+		foreach (int i in numbers)    
+		{        
+			if (func(i))            
+				result += i;    
+		}    
+		return result;
+	} 
+delegate bool IsEqual(int x);</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Метод Sum принимает в качестве параметра массив чисел и делегат 
+				IsEqual и возвращает сумму чисел массива в виде объекта int. В 
+				цикле проходим по всем числам и складываем их. Причем складываем 
+				только те числа, для которых делегат<span>&nbsp;</span><code style="font-family: monospace;">IsEqual 
+				func</code><span>&nbsp;</span>возвращает true. То есть делегат 
+				IsEqual здесь фактически задает условие, которому должны 
+				соответствовать значения массива. Но на момент написания метода 
+				Sum нам неизвестно, что это за условие.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При вызове метода Sum ему передается массив и лямбда-выражение:</p>
+				<pre class="style3"><strong>int result1 = Sum(integers, x => x > 5);</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				То есть параметр x здесь будет представлять число, которое 
+				передается в делегат:</p>
+				<pre class="style3"><code class="c# keyword" style="font-family: var(--code-font-family) !important; border-radius: 0px !important; background: none !important; border: 0px !important; inset: auto !important; float: none !important; height: auto !important; line-height: 21px; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; text-align: left !important; vertical-align: baseline !important; width: auto !important; box-sizing: content-box !important; font-weight: normal !important; font-style: normal !important; font-size: var(--code-font-size) !important; min-height: auto !important; white-space: pre !important; color: var(--code-keyword) !important;"><strong>if</strong></code> <code class="c# plain" style="font-family: var(--code-font-family) !important; border-radius: 0px !important; background: none !important; border: 0px !important; inset: auto !important; float: none !important; height: auto !important; line-height: 21px; margin: 0px !important; outline: 0px !important; overflow: visible !important; padding: 0px !important; position: static !important; text-align: left !important; vertical-align: baseline !important; width: auto !important; box-sizing: content-box !important; font-weight: normal !important; font-style: normal !important; font-size: var(--code-font-size) !important; min-height: auto !important; white-space: pre !important; color: var(--code-plain) !important;">(<strong>func(i))</strong></code></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				А выражение<span>&nbsp;</span><code style="font-family: monospace;">x 
+				&gt; 5</code><span>&nbsp;</span>представляет условие, которому должно 
+				соответствовать число. Если число соответствует этому условию, 
+				то лямбда-выражение возвращает true, а переданное число 
+				складывается с другими числами.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Подобным образом работает второй вызов метода Sum, только здесь 
+				уже идет проверка числа на четность, то есть если остаток от 
+				деления на 2 равен нулю:</p>
+				<pre class="style3"><strong>int result2 = Sum(integers, x => x % 2 == 0);</strong></pre>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Лямбда-выражение как результат метода</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Метод также может возвращать лямбда-выражение. В этом случае 
+				возвращаемым типом метода выступает делегат, которому 
+				соответствует возвращаемое лямбда-выражение. Например:</p>
+				<pre class="style3"><strong>Operation operation = SelectOperation(OperationType.Add);
+Console.WriteLine(operation(10, 4));    // 14 
+operation = SelectOperation(OperationType.Subtract);
+Console.WriteLine(operation(10, 4));    // 6 
+operation = SelectOperation(OperationType.Multiply);
+Console.WriteLine(operation(10, 4));    // 40 
+Operation SelectOperation(OperationType opType){    switch (opType)  
+  {       
+	 case OperationType.Add: return (x, y) => x + y;        
+	case OperationType.Subtract: return (x, y) => x - y;
+        default: return (x, y) => x * y;    
+}}
+enum OperationType
+{    
+Add, Subtract, Multiply}
+delegate int Operation(int x, int y);</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В данном случае метод SelectOperation() в качестве параметра 
+				принимает перечисление типа OperationType. Это перечисление 
+				хранит три константы, каждая из которых соответствует 
+				определенной арифметической операции. И в самом методе в 
+				зависимости от значения параметра возвращаем определенное 
+				лямбда-выражение.</p>
+                <p></p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les63.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les63/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:59:25 GMT -->
+</html>

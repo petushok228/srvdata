@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les56/5.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:47:56 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: small;
+}
+.style3 {
+	color: red;
+}
+.style4 {
+	color: maroon;
+}
+    .style5 {
+	font-size: medium;
+	color: maroon;
+}
+    .style6 {
+	font-size: medium;
+	color: #0000FF;
+	margin-left: 40px;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 5.  Библиотека multipledispatch в Python.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p><span class="style2">Библиотека multipledispatch в Python 
+				предназначена для реализации перегрузки функций (multiple 
+				dispatch) — механизма, при котором реализация функции выбирается 
+				на основе типов аргументов во время исполнения. </span></p>
+				<p><span class="style2">Это позволяет: </span></p>
+				<ul>
+					<li><span class="style2">Определять несколько функций с 
+					одинаковым именем, но с разными сигнатурами (типами, 
+					количеством аргументов). </span></li>
+					<li><span class="style2">Использовать одно имя операции для 
+					обработки различных комбинаций входных данных (например, (int, 
+					list), (str, dict)). </span></li>
+					<li><span class="style2">Нативно Python не поддерживает 
+					перегрузку функций из-за динамической типизации: во время 
+					исполнения любая переменная может содержать объект почти 
+					любого типа, и единственная «актуальная» сигнатура функции 
+					видна только в рантайме.</span> </li>
+				</ul>
+				<p class="style2"><span class="style4"><strong>Принцип работы</strong></span><br />
+				Библиотека использует декоратор <span class="style3"><strong>
+				@dispatch </strong></span>для регистрации функций с разными 
+				сигнатурами. При вызове функции система диспетчеризации 
+				динамически проверяет типы аргументов, находит подходящую 
+				функцию и выполняет её на этих аргументах. <br />
+				<br />
+				<span class="style4"><strong>Особенности:</strong></span></p>
+				<ul>
+					<li>
+					<p class="style2">Позволяет указывать несколько допустимых 
+					типов с помощью кортежа (например, @dispatch((list, tuple))).</p>
+					</li>
+					<li>
+					<p class="style2">Поддерживает встроенные абстрактные 
+					классы, например, Iterator, Number</p>
+					</li>
+					<li>
+					<p class="style2">Идентифицирует возможные неоднозначности 
+					при определении функции и предоставляет подсказки для их 
+					разрешения.</p>
+					</li>
+				</ul>
+				<p class="style5" ><strong>Пример использования модуля multipledispatch.</strong></p>
+				<p>Пример перегрузки функций:</p><pre class="style6">
+<strong>from multipledispatch import dispatch
+
+@dispatch(object, object)
+# базовая реализация функции `add()`
+def add(x, y):
+    return f"{x} + {y}"
+
+@dispatch(int, int)
+# реализация функции `add()` для целых чисел
+def add(x, y):
+    return x + y
+
+
+>>> add(1, 2)
+# 3
+>>> add(1, 'hello')
+# '1 + hello'&nbsp;</strong></pre><p class="style5"><strong>Пример перегрузки методов у класса:</strong></p>
+				<pre class="style6"><strong>from multipledispatch import dispatch
+
+class Concate():
+
+    @dispatch(object, object)
+    # базовая реализация метода `.add()`
+    def add(x, y):
+        return f"{x} + {y}"
+
+    @dispatch(int, int)
+    # реализация функции `add()` для целых чисел
+    def add(x, y):
+        return x + y
+
+
+>>> c = Concate()
+>>> c.add(1, 2)
+# 3
+>>> c.add(1, 'hello')
+# '1 + hello'</strong></pre>
+				<p class="style5">Разрешение перегруженных методов/функций.&nbsp;</p>
+				<p class="style2">Множественная диспетчеризация/отправка выбирает метод/функцию, на основе анализа типов входящих аргументов.&nbsp;</p>
+				<pre class="style6"><strong>from multipledispatch import dispatch
+
+@dispatch(int)
+# реализация функции `f()` для целого числа
+def f(x):
+    # увеличит целое число
+    return x + 1
+
+@dispatch(float)
+# реализация функции `f()` для вещественного числа
+def f(x):
+    # уменьшит вещественное число
+    return x - 1
+
+>>> f(1)
+# 2
+>>> f(1.0)
+# 0.0&nbsp;</strong></pre>
+				<p class="style5">Реализация метода/функции для нескольких типов.&nbsp;</p>
+				<p class="style2">Аналогично встроенной функции isinstance(), в декораторе @dispatch() указываются несколько допустимых типов с помощью кортежа. Приведенная ниже реализация f() для (list, tuple) применит реализацию f() для целого числа к каждому элементу в списке или кортеже, переданному в качестве аргумента.&nbsp;</p>
+				<pre class="style6"><strong>@dispatch((list, tuple))
+# реализация функции `f()` для типов `list` и `tuple`
+def f(x):
+    """ Применит `f(y: int)` к каждому элементу в списке или кортеже """
+    return [f(y) for y in x]
+
+>>> f([1, 2, 3])
+# [2, 3, 4]
+>>> f((1, 2, 3))
+# [2, 3, 4]&nbsp;</strong></pre>
+				<p class="style5">Использование абстрактных типов.&nbsp;</p>
+				<p class="style2">В декораторе @dispatch() можно также использовать абстрактные классы, такие как Iterable и Number, вместо типов объединения, таких как (list, tuple) или (int, float) соответственно.&nbsp;</p>
+				<pre class="style6"><strong>from collections.abc import Iterable
+
+# @dispatch((list, tuple))
+@dispatch(Iterable)
+def f(x):
+    """ Применит `f(y: int)` к каждому элементу в итерационном """
+    return [f(y) for y in x]&nbsp;</strong></pre>
+				<p class="style5"><strong>Выбор конкретной реализации.&nbsp;</strong></p>
+				<p class="style2">Если существует несколько допустимых реализаций, то используется наиболее конкретная. В следующем примере создается функция для "сглаживания" вложенных итераций.&nbsp;</p>
+				<pre class="style6"><strong>from multipledispatch import dispatch
+from collections.abc import Iterable
+
+@dispatch(Iterable)
+def flatten(L):
+    return sum([flatten(x) for x in L], [])
+
+@dispatch(object)
+def flatten(x):
+    return [x]
+
+>>> flatten([1, 2, 3])
+# [1, 2, 3]
+>>> flatten([1, [2], 3])
+# [1, 2, 3]
+>>> flatten([1, 2, (3, 4), [[5]], [(6, 7), (8, 9)]])
+# [1, 2, 3, 4, 5, 6, 7, 8, 9]&nbsp;</strong></pre>
+				<p class="style2">Так как строки итерируемы, то они тоже будут "сглажены":&nbsp;</p>
+				<pre class="style6"><strong>>>> flatten([1, 'hello', 3])
+# [1, 'h', 'e', 'l', 'l', 'o', 3]&nbsp;</strong></pre>
+				<p class="style2">Нужно избегать этого, конкретизируя реализацию flatten() до типа str. Поскольку тип str более конкретен, чем Iterable, то следующая реализация имеет приоритет для типа str.&nbsp;</p>
+				<pre class="style6"><strong>@dispatch(str)
+def flatten(s):
+    return s
+
+>>> flatten([1, 'hello', 3])
+# [1, 'hello', 3]&nbsp;</strong></pre>
+				<p class="style2">Модуль multipledispatch зависит от механизма работы функции issubclass(), который определяет, какие типы более специфичны, чем другие.&nbsp;</p>
+				<p class="style5"><strong>Множественная отправка.&nbsp;</strong></p>
+				<p class="style2">Все эти правила применяются, когда метод/функция принимает несколько аргументов в качестве входных данных.</p>
+				<pre class="style6"><strong>from multipledispatch import dispatch
+
+@dispatch(object, object)
+def f(x, y):
+    return x + y
+
+@dispatch(object, float)
+def f(x, y):
+    """ Квадрат второго аргумента, если это `float` """
+    return x + y**2
+
+>>> f(1, 10)
+# 11
+>>> f(1.0, 10.0)
+# 101.0&nbsp;</strong></pre>
+				<p class="style5"><strong>Множественная вариативная отправка.&nbsp;</strong></p>
+				<p class="style2">Модуль multipledispatch поддерживает множественную отправку (включая поддержку типов объединения) в качестве последнего набора аргументов, переданных в функцию.
+
+</p>
+				<p class="style2">Вариативные сигнатуры задаются одноэлементным списком, содержащим тип аргументов, которые принимает функция.
+
+</p>
+				<p class="style2">Пример функции, которая принимает число с плавающей запятой, за которым следует любое число (включая 0) либо int, либо str:&nbsp;</p>
+				<pre class="style6"><strong>from multipledispatch import dispatch
+
+@dispatch(float, [(int, str)])
+def float_then_int_or_str(x, *args):
+    return x + sum(map(int, args))
+
+>>> f(1.0, '2', '3', 4)
+# 10.0
+>>> f(2.0, '4', 6, 8)
+# 20.0&nbsp;</strong></pre>
+				<p class="style5"><strong>Неоднозначность выбора реализации перегруженной функции.&nbsp;</strong></p>
+				<p class="style2">Однако неоднозначности возникают, когда разные реализации функции одинаково допустимы.&nbsp;</p>
+				<pre class="style6"><strong>from multipledispatch import dispatch
+
+@dispatch(object, object)
+def f(x, y):
+    return x + y
+
+@dispatch(object, float)
+def f(x, y):
+    """ Квадрат второго аргумента, если он `float` """
+    return x + y**2
+
+@dispatch(float, object)
+def f(x, y):
+    """ Квадрат первого аргумента, если он `float` """
+    return x**2 + y
+
+>>> f(2.0, 10.0)&nbsp;</strong></pre>
+				<p class="style2">Какого результата ждать: 2,0 ** 2 + 10,0 или 2,0 + 10,0 ** 2? Типы входных данных удовлетворяют трем различным реализациям, две из которых имеют одинаковую силу.&nbsp;</p>
+				<pre class="style6"><strong>input types:     float, float
+Вариант 1:       object, object
+Вариант 2:       object, float
+Вариант 3:       float, object&nbsp;</strong></pre>
+				<p class="style2">Вариант 1 - строго менее конкретен, чем варианты 2 или 3, поэтому он отбрасывается. Но варианты 2 и 3 одинаково специфичны, поэтому неясно, какой из них использовать.
+
+</p>
+				<p class="style2">Чтобы решить такие проблемы, как эта, множественная отправка проверяет предоставленные ей сигнатуры типов и ищет неоднозначности. Затем появляется предупреждение, подобное следующему:&nbsp;</p>
+				<pre class="style6"><strong>multipledispatch/dispatcher.py:27: AmbiguityWarning: 
+Ambiguities exist in dispatched function f
+
+The following signatures may result in ambiguous behavior:
+        [object, float], [float, object]
+
+Consider making the following additions:
+
+@dispatch(float, float)
+def f(...)
+  warn(warning_text(dispatcher.name, ambiguities), AmbiguityWarning)
+14.0&nbsp;</strong></pre>
+				<p class="style2">multipledispatch/dispatcher.py:27: AmbiguityWarning: 
+Ambiguities exist in dispatched function f
+
+The following signatures may result in ambiguous behavior:
+        [object, float], [float, object]
+
+Consider making the following additions:
+
+@dispatch(float, float)
+def f(...)
+  warn(warning_text(dispatcher.name, ambiguities), AmbiguityWarning)
+14.0&nbsp;</p>
+				<pre class="style6"><strong>@dispatch(float, float)
+def f(x, y):
+    ...
+
+@dispatch(float, object)
+def f(x, y):
+    ...
+
+@dispatch(object, float)
+def f(x, y):
+    ...&nbsp;</strong></pre>
+				<p class="style2">Если не устранить двусмысленность, то одна из конкурирующих функций будет выбрана псевдослучайно. По умолчанию, выбор зависит от хэша, поэтому он будет согласован во время сеанса интерпретатора, но может меняться от сеанса к сеансу.&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les551.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les56/5.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:47:56 GMT -->
+</html>

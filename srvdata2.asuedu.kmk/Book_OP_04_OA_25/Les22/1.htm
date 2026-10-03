@@ -1,0 +1,1307 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les22/1.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:49:43 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: small;
+}
+.style3 {
+	font-size: small;
+	font-weight: bold;
+}
+    .style4 {
+	font-size: medium;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 1. <span lang="ru">Операции</span><span>&nbsp;</span>ввода-вывода 
+				посредством потоков C#.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text" style="height: 5255px" 
+                >
+                <p xmlns:edi="" id="id_1" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				С#-программы выполняют<span>&nbsp;</span><a name="keyword1"></a><span class="keyword" style="font-style: oblique;">операции</span><span>&nbsp;</span>ввода-вывода 
+				посредством потоков, которые построены на иерархии классов.<span>&nbsp;</span><i>Поток<span>&nbsp;</span></i>(<a name="keyword2"></a><span class="keyword" style="font-style: oblique;">stream</span>) 
+				- это<span>&nbsp;</span><a name="keyword3"></a><span class="keyword" style="font-style: oblique;">абстракция</span>, 
+				которая генерирует и принимает данные. С помощью потока можно 
+				читать данные из различных источников (клавиатура,<span>&nbsp;</span><a name="keyword4"></a><span class="keyword" style="font-style: oblique;">файл</span>) 
+				и записывать в различные источники (принтер, экран,<span>&nbsp;</span><a name="keyword5"></a><span class="keyword" style="font-style: oblique;">файл</span>). 
+				Несмотря на то, что потоки связываются с различными физическими 
+				устройствами, характер поведения всех потоков одинаков. Поэтому 
+				классы и методы ввода-вывода можно применить ко многим типам 
+				устройств.</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_1" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_2" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				На самом низком уровне иерархии<span>&nbsp;</span><a name="keyword6"></a><span class="keyword" style="font-style: oblique;">потоков 
+				ввода-вывода</span><span>&nbsp;</span>находятся потоки, оперирующие 
+				байтами. Это объясняется тем, что многие устройства при 
+				выполнении операций ввода-вывода ориентированы на байты. Однако 
+				для человека привычнее оперировать символами, поэтому 
+				разработаны символьные потоки, которые фактически представляют 
+				собой оболочки, выполняющие преобразование байтовых потоков в 
+				символьные и наоборот. Кроме этого, реализованы потоки для 
+				работы с<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">int</span><span>&nbsp;</span>-,<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">double</span><span>&nbsp;</span>-,<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">short</span><span>&nbsp;</span>- 
+				значениями, которые также представляют оболочку для байтовых 
+				потоков, но работают не с самими значениями, а с их внутренним 
+				представлением в виде двоичных кодов.</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_2" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_6" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Центральную часть потоковой С#-системы занимает<span>&nbsp;</span><a name="keyword7"></a><span class="keyword" style="font-style: oblique;">класс</span><span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">Stream<span>&nbsp;</span></span>пространства 
+				имен<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">System.IO. 
+				Класс Stream</span><span>&nbsp;</span>представляет байтовый<span>&nbsp;</span><a name="keyword8"></a><span class="keyword" style="font-style: oblique;">поток</span><span>&nbsp;</span>и 
+				является базовым для всех остальных потоковых классов. Из класса<span>&nbsp;</span><a name="keyword9"></a><span class="keyword" style="font-style: oblique;">Stream</span><span>&nbsp;</span>выведены 
+				такие байтовые классы потоков как:</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_6" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<ol id="id_9" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li xmlns:edi="" style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					<span class="style2" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+					FileStream<span>&nbsp;</span></span><span class="style2">- 
+					байтовый поток, разработанный для<span>&nbsp;</span><a name="keyword10"></a><span class="keyword" style="font-style: oblique;">файлового 
+					ввода-вывода</span></li>
+					<li xmlns:edi="" style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+					BufferedStream<span>&nbsp;</span></span>- заключает в оболочку 
+					байтовый поток и добавляет буферизацию, которая во многих 
+					случаях увеличивает производительность программы;</li>
+					<li xmlns:edi="" style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+					MemoryStream<span>&nbsp;</span></span>- байтовый поток, который 
+					использует память для хранения данных.</span></li>
+				</ol>
+				<div class="lecture_mark" id="mark_9" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_16" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Программист может вывести собственные потоковые классы. Однако 
+				для подавляющего большинства приложений достаточно встроенных 
+				потоков.</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_16" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_17" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Подробно мы рассмотрим<span>&nbsp;</span><a name="keyword11"></a><span class="keyword" style="font-style: oblique;">класс</span><span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">FileStream</span>, 
+				классы<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">StreamWriter<span>&nbsp;</span></span>и<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">StreamReader</span>, 
+				представляющие собой оболочки для класса<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">FileStream<span>&nbsp;</span></span>и 
+				позволяющие преобразовывать байтовые потоки в символьные, а 
+				также классы<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">BinaryWriter<span>&nbsp;</span></span>и<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">BinaryReader</span>, 
+				представляющие собой оболочки для класса<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">FileStream<span>&nbsp;</span></span>и 
+				позволяющие преобразовывать байтовые потоки в двоичные для 
+				работы с<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">int</span><span>&nbsp;</span>-,<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">double</span><span>&nbsp;</span>-,<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">short</span><span>&nbsp;</span>- 
+				и т.д. значениями.</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_17" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<a xmlns:edi="" name="sect2" style="color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				</a>
+				<h4 style="margin: 0px; padding: 0px; font-weight: bold; line-height: normal !important; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Байтовый поток</h4>
+				<p xmlns:edi="" id="id_28" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Чтобы создать байтовый поток, связанный с файлом, создается 
+				объект класса<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">FileStream</span>. 
+				При этом в классе определено несколько конструкторов. Чаще всего 
+				используется конструктор, который открывает поток для чтения 
+				и/или записи:</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_28" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="style2" id="id_30" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>FileStream(string filename, FileMode mode)</pre>
+				</div>
+				<div xmlns:edi="" class="lecture_mark" id="mark_30" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_31" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				где:</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_31" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<ol id="id_32" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li xmlns:edi="" style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					<span class="style2">параметр<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">filename<span>&nbsp;</span></span>определяет 
+					имя файла, с которым будет связан поток ввода-вывода данных; 
+					при этом<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">filename<span>&nbsp;</span></span>определяет 
+					либо полный путь к файлу, либо имя файла, который находится 
+					в папке bin/debug вашего проекта.</li>
+					<li xmlns:edi="" style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					параметр mode определяет режим открытия файла, который может 
+					принимать одно из возможных значений, определенных 
+					перечислением<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">FileMode</span>:<ul id="id_38" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px;">
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.2em 1.5em; list-style-type: none; list-style-image: none; background: url('../../../intuit.ru/studies/courses/486/342/lecture/images/menu-leaf.gif') no-repeat 1px 0.35em;">
+						<span class="style4" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+						FileMode.Append<span>&nbsp;</span></span><span class="style4">- предназначен для 
+						добавления данных в конец файла;</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.2em 1.5em; list-style-type: none; list-style-image: none; background: url('../../../intuit.ru/studies/courses/486/342/lecture/images/menu-leaf.gif') no-repeat 1px 0.35em;">
+						<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+						FileMode.Create</span><span>&nbsp;</span>- предназначен для 
+						создания нового файла, при этом если существует файл с 
+						таким же именем, то он будет предварительно удален;</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.2em 1.5em; list-style-type: none; list-style-image: none; background: url('../../../intuit.ru/studies/courses/486/342/lecture/images/menu-leaf.gif') no-repeat 1px 0.35em;">
+						<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+						FileMode.<a name="keyword12"></a><span class="keyword" style="font-style: oblique;">CreateNew</span></span><span>&nbsp;</span>- 
+						предназначен для создания нового файла, при этом файл с 
+						таким же именем не должен существовать;</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.2em 1.5em; list-style-type: none; list-style-image: none; background: url('../../../intuit.ru/studies/courses/486/342/lecture/images/menu-leaf.gif') no-repeat 1px 0.35em;">
+						<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+						FileMоde.Open<span>&nbsp;</span></span>- предназначен для 
+						открытия существующего файла;</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.2em 1.5em; list-style-type: none; list-style-image: none; background: url('../../../intuit.ru/studies/courses/486/342/lecture/images/menu-leaf.gif') no-repeat 1px 0.35em;">
+						<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+						FileMode.ОpenOrCreate</span><span>&nbsp;</span>- если файл 
+						существует, то открывает его, в противном случае создает 
+						новый</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.2em 1.5em; list-style-type: none; list-style-image: none; background: url('../../../intuit.ru/studies/courses/486/342/lecture/images/menu-leaf.gif') no-repeat 1px 0.35em;">
+						<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+						FileMode.Truncate</span><span>&nbsp;</span>- открывает 
+						существующий файл, но усекает его длину до нуля</span></span></li>
+					</ul>
+					<div class="lecture_mark" id="mark_38" style="padding: 0px; margin: 0px;">
+					</div>
+					</li>
+				</ol>
+				<div class="lecture_mark" id="mark_32" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_51" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Если попытка открыть файл оказалась неуспешной, то генерируется 
+				одно из исключений:<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">FileNotFoundException<span>&nbsp;</span></span>- 
+				файл невозможно открыть по причине его отсутствия,<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">IOException<span>&nbsp;</span></span>- 
+				файл невозможно открыть из-за ошибки ввода-вывода,<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">ArgumentNullException<span>&nbsp;</span></span>- 
+				имя файла представляет собой<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">null</span><span>&nbsp;</span>-значение,<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">ArgumentException<span>&nbsp;</span></span>- 
+				некорректен параметр mode,<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">SecurityException<span>&nbsp;</span></span>- 
+				пользователь не обладает правами доступа,<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">DirectoryNotFoundException<span>&nbsp;</span></span>- 
+				некорректно задан каталог.</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_51" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_59" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Другая версия конструктора позволяет ограничить доступ только 
+				чтением или только записью:</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_59" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="style2" id="id_60" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>FileStream(string filename, FileMode mode, FileAccess how)</pre>
+				</div>
+				<div xmlns:edi="" class="lecture_mark" id="mark_60" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_61" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				где:</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_61" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<ol id="id_62" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+					<li xmlns:edi="" style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					параметры<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">filename<span>&nbsp;</span></span>и 
+					mode имеют то же назначение, что и в предыдущей версии 
+					конструктора;</li>
+					<li xmlns:edi="" style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					параметр how, определяет способ доступа к файлу и может 
+					принимать одно из значений, определенных перечислением<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">FileAccess</span>:</li>
+				</ol>
+				<div class="lecture_mark" id="mark_62" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<ol id="id_67" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li xmlns:edi="" style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					<span class="style2" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+					FileAccess.Read<span>&nbsp;</span></span><span class="style2">- 
+					только чтение;</li>
+					<li xmlns:edi="" style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+					FileAccess.Write<span>&nbsp;</span></span>- только запись;</li>
+					<li xmlns:edi="" style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+					FileAccess.ReadWrite<span>&nbsp;</span></span>- и чтение, и 
+					запись.</span></li>
+				</ol>
+				<div class="lecture_mark" id="mark_67" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_74" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				После установления связи байтового потока с физическим файлом 
+				внутренний указатель потока устанавливается на начальный байт 
+				файла.</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_74" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_75" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Для чтения очередного байта из потока, связанного с физическим 
+				файлом, используется метод<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">ReadByte()</span>. 
+				После прочтения очередного байта внутренний указатель 
+				перемещается на следующий байт файла. Если достигнут конец 
+				файла, то метод<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">ReadByte()</span><span>&nbsp;</span>возвращает 
+				значение<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">-1</span>.</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_75" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_79" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Для побайтовой записи данных в поток используется метод<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">WriteByte()</span>.</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_79" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_81" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				По завершении работы с файлом его необходимо закрыть. Для этого 
+				достаточно вызвать метод<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">Close 
+				()</span>. При закрытии файла освобождаются системные ресурсы, 
+				ранее выделенные для этого файла, что дает возможность 
+				использовать их для работы с другими файлами.</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_81" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_83" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Рассмотрим пример использования класса<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">FileStream</span>, 
+				для копирования одного файла в другой. Но вначале создадим 
+				текстовый файл<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">text.txt<span>&nbsp;</span></span>в 
+				папке<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">bin/debug<span>&nbsp;</span></span>текущего 
+				проекта. И внесем в него произвольную информацию, например:</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_83" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="style2" id="id_87" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>12    456
+Hello! 
+23,67  4: Message
+
+using System;
+using System.Text;
+using System.IO; //для работы с потоками
+
+namespace MyProgram
+{
+ class Program
+ {
+  static void Main()
+  {
+   try
+   {
+   FileStream fileIn = new FileStream(&quot;text.txt&quot;, 
+                                       FileMode.Open, 
+                                       FileAccess.Read);
+   FileStream fileOut = new FileStream(&quot;newText.txt&quot;, 
+                                        FileMode.Create, 
+                                        FileAccess.Write);
+   int i;
+   while ((i = fileIn.ReadByte())!=-1)
+   {
+    //запись очередного файла в поток, связанный с файлом fIleOut
+    fileOut.WriteByte((byte)i); 
+   } 
+   fileIn.Close();
+   fileOut.Close();
+   }  
+   catch (Exception EX)
+   {
+    Console.WriteLine(EX.Message);
+   }
+  }
+ }
+}</pre>
+				</div>
+				<div xmlns:edi="" class="lecture_mark" id="mark_87" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="xml_inset" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<span class="style3">Задание</span><span class="style2">. 
+					Подумайте, почему для переменной<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">i</span><span>&nbsp;</span>указан 
+					тип<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">int</span>. 
+					Можно было бы указать тип<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">byte</span>?</span></div>
+				<a xmlns:edi="" name="sect3" style="color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				</a>
+				<h4 style="margin: 0px; padding: 0px; font-weight: bold; line-height: normal !important; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Символьный поток</h4>
+				<p xmlns:edi="" id="id_92" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Чтобы создать символьный поток нужно поместить объект класса<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">Stream<span>&nbsp;</span></span>(например,<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">FileStream</span><span>&nbsp;</span>) 
+				&quot;внутрь&quot; объекта класса<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">StreamWriter<span>&nbsp;</span></span>или 
+				объекта класса<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">StreamReader</span>. 
+				В этом случае байтовый поток будет автоматически 
+				преобразовываться в символьный.</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_92" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_97" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<b><span class="style2">Класс StreamWriter</span></b><span><span class="style2">&nbsp;</span></span><span class="style2">предназначен 
+				для организации выходного символьного потока. В нем определено 
+				несколько конструкторов. Один из них записывается следующим 
+				образом:</span></p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_97" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="example" id="id_98" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre class="style2">StreamWriter(Stream stream);</pre>
+				</div>
+				<div xmlns:edi="" class="lecture_mark" id="mark_98" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_99" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				где параметр stream определяет имя уже открытого байтового 
+				потока.</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_99" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_100" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Например, создать экземпляр класса<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">StreamReader</span><span>&nbsp;</span>можно 
+				следующим образом:</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_100" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="style2" id="id_102" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>StreamWriter fileOut=new StreamWriter(new FileStream(&quot;text.txt&quot;, 
+                                                      FileMode.Create, 
+                                                      FileAccess.Write));</pre>
+				</div>
+				<div xmlns:edi="" class="lecture_mark" id="mark_102" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_103" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Этот конструктор генерирует исключение типа<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">ArgumentException</span>, 
+				если поток stream не открыт для вывода, и исключение типа<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">ArgumentNullException</span>, 
+				если он (поток) имеет null-значение.</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_103" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_106" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Другой вид конструктора позволяет открыть поток сразу через 
+				обращения к файлу:</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_106" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="example" id="id_107" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre class="style2">StreamWriter(string name);</pre>
+				</div>
+				<div xmlns:edi="" class="lecture_mark" id="mark_107" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_108" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				где параметр name определяет имя открываемого файла.</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_108" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_109" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Например, обратиться к данному конструктору можно следующим 
+				образом:</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_109" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="style2" id="id_110" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>StreamWriter fileOut=new StreamWriter(&quot;c:\temp\t.txt&quot;);</pre>
+				</div>
+				<div xmlns:edi="" class="lecture_mark" id="mark_110" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_111" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				И еще один вариант конструктора<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">StreamWriter</span>:</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_111" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="style2" id="id_113" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>StreamWriter(string name, bool appendFlag);</pre>
+				</div>
+				<div xmlns:edi="" class="lecture_mark" id="mark_113" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_114" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				где параметр<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">name<span>&nbsp;</span></span>определяет 
+				имя открываемого файла;</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_114" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_116" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				параметр<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">appendFlag<span>&nbsp;</span></span>может 
+				принимать значение<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">true<span>&nbsp;</span></span>- 
+				если нужно добавлять данные в конец файла, или<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">false<span>&nbsp;</span></span>- 
+				если файл необходимо перезаписать.</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_116" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_120" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Например:</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_120" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="style2" id="id_121" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>StreamWriter fileOut=new StreamWriter(&quot;t.txt&quot;, true);</pre>
+				</div>
+				<div xmlns:edi="" class="lecture_mark" id="mark_121" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_122" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Теперь для записи данных в поток<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">fileOut<span>&nbsp;</span></span>можно 
+				обратиться к методу<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">WriteLine</span>. 
+				Это можно сделать следующим образом:</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_122" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="example" id="id_125" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre class="style2">fileOut.WriteLine(&quot;test&quot;);</pre>
+				</div>
+				<div xmlns:edi="" class="lecture_mark" id="mark_125" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_126" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				В данном случае в конец файла<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">t.txt<span>&nbsp;</span></span>будет 
+				дописано слово<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">test</span>.</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_126" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_129" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<b><span class="style2">Класс StreamReader</span></b><span><span class="style2">&nbsp;</span></span><span class="style2">предназначен 
+				для организации входного символьного потока. Один из его 
+				конструкторов выглядит следующим образом:</span></p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_129" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="example" id="id_130" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre class="style2">StreamReader(Stream stream);</pre>
+				</div>
+				<div xmlns:edi="" class="lecture_mark" id="mark_130" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_131" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				где параметр<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">stream<span>&nbsp;</span></span>определяет 
+				имя уже открытого байтового потока.</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_131" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_133" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Этот конструктор генерирует исключение типа<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">ArgumentException</span>, 
+				если поток<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">stream<span>&nbsp;</span></span>не 
+				открыт для ввода.</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_133" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_136" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Например, создать экземпляр класса<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">StreamWriter<span>&nbsp;</span></span>можно 
+				следующим образом:</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_136" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="style2" id="id_138" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>StreamReader fileIn = new StreamReader(new FileStream(&quot;text.txt&quot;, 
+                                                       FileMode.Open, 
+                                                       FileAccess.Read));</pre>
+				</div>
+				<div xmlns:edi="" class="lecture_mark" id="mark_138" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_139" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Как и в случае с классом<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">StreamWriter<span>&nbsp;</span></span>у 
+				класса<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">StreamReader<span>&nbsp;</span></span>есть 
+				и другой вид конструктора, который позволяет открыть файл 
+				напрямую:</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_139" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="example" id="id_142" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre class="style2">StreamReader (string name);</pre>
+				</div>
+				<div xmlns:edi="" class="lecture_mark" id="mark_142" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_143" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				где параметр<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">name<span>&nbsp;</span></span>определяет 
+				имя открываемого файла.</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_143" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_145" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Обратиться к данному конструктору можно следующим образом:</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_145" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="style2" id="id_146" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>StreamReader fileIn=new StreamReader (&quot;c:\temp\t.txt&quot;);</pre>
+				</div>
+				<div xmlns:edi="" class="lecture_mark" id="mark_146" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_147" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				В C# символы реализуются кодировкой Unicode. Для того, чтобы 
+				можно было обрабатывать текстовые файлы, содержащие русские 
+				символы, созданные, например, в Блокноте, рекомендуется вызывать 
+				следующий вид конструктора StreamReader:</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_147" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="style2" id="id_148" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>StreamReader fileIn=new StreamReader (&quot;c:\temp\t.txt&quot;, 
+                                       Encoding.GetEncoding(1251));</pre>
+				</div>
+				<div xmlns:edi="" class="lecture_mark" id="mark_148" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_149" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Параметр<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">Encoding.GetEncoding(1251)</span><span>&nbsp;</span>говорит 
+				о том, что будет выполняться преобразование из кода Windows-1251 
+				(одна из модификаций кода ASCII, содержащая русские символы) в 
+				Unicode.<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">Encoding.GetEncoding(1251)</span><span>&nbsp;</span>реализован 
+				в пространстве имен<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">System.Text</span>.</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_149" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_153" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Теперь для чтения данных из потока<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">fileIn<span>&nbsp;</span></span>можно 
+				воспользоваться методом<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">ReadLine</span>. 
+				При этом если будет достигнут конец файла, то метод<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">ReadLine<span>&nbsp;</span></span>вернет 
+				значение null.</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_153" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_157" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Рассмотрим пример, в котором данные из одного файла копируются в 
+				другой, но уже с использованием классов<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">StreamWriter<span>&nbsp;</span></span>и<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">StreamReader</span>.</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_157" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="style2" id="id_160" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>static void Main()
+{
+  StreamReader fileIn = new StreamReader(&quot;text.txt&quot;, 
+                                          Encoding.GetEncoding(1251));
+  StreamWriter fileOut=new StreamWriter(&quot;newText.txt&quot;, false);
+  string line;
+  while ((line=fileIn.ReadLine())!=null) //пока поток не пуст
+  {
+    fileOut.WriteLine(line);
+  }
+  fileIn.Close();
+  fileOut.Close();
+}</pre>
+				</div>
+				<div xmlns:edi="" class="lecture_mark" id="mark_160" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="xml_inset" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<span class="style3">Задание</span><span class="style2">. 
+					Выясните, для чего предназначен метод<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">ReadToEnd()</span><span>&nbsp;</span>и 
+					когда имеется смысл его применять.</span></div>
+				<p xmlns:edi="" id="id_163" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Таким образом, данный способ копирования одного файла в другой, 
+				даст нам тот же результат, что и при использовании байтовых 
+				потоков. Однако, его работа будет менее эффективной, т.к. будет 
+				тратиться дополнительное время на преобразование байтов в 
+				символы. Но у символьных потоков есть свои преимущества. 
+				Например, мы можем использовать регулярные выражения для поиска 
+				заданных фрагментов текста в файле.</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_163" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="example" id="id_164" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre><span class="style2">static void Main()
+{
+  StreamReader fileIn = new StreamReader(&quot;text.txt&quot;);
+  StreamWriter fileOut=new StreamWriter(&quot;newText.txt&quot;, false);
+  string text=fileIn.ReadToEnd();
+  Regex r= new Regex(@&quot;[-+]?\d+&quot;);
+  Match integer = r.Match(text);
+  while (integer.Success)
+  {
+    fileOut.WriteLine(integer);
+    integer = integer.NextMatch();
+  }
+  fileIn.Close();
+  fileOut.Close();
+</span>}</pre>
+				</div>
+				<h4 style="margin: 0px; padding: 0px; font-weight: bold; font-size: 14.4px; line-height: normal !important; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Двоичные потоки</h4>
+				<p xmlns:edi="" id="id_165" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Двоичные файлы хранят данные в том же виде, в котором они 
+				представлены в оперативной памяти, то есть во внутреннем 
+				представлении. Двоичные файлы не применяются для просмотра 
+				человеком, они используются только для программной обработки.</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_165" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_166" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Выходной поток<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">BinaryWriter<span>&nbsp;</span></span>поддерживает 
+				произвольный доступ, т.е. имеется возможность выполнять запись в 
+				произвольную позицию двоичного файла. Наиболее важные методы 
+				потока<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">BinaryWriter</span>:</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_166" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="style2" id="id_169" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<a name="table."></a>
+					<table border="0" class="xml_table" cellpadding="2" cellspacing="1" style="border-collapse: separate !important; margin: 0px; width: auto !important; padding: 0px;  border: 0px;">
+						<tbody style="border: 0px; padding: 0px; margin: 0px; ">
+							<tr style="border: 0px; padding: 0px; margin: 0px; ">
+								<th bgcolor="#d8d8d8" style="text-align: center; padding: 0px; border: 0px;  margin: 0px;">
+								Член класса</th>
+								<th bgcolor="#d8d8d8" style="text-align: center; padding: 0px; border: 0px;  margin: 0px;">
+								Описание</th>
+							</tr>
+							<tr style="border: 0px; padding: 0px; margin: 0px; ">
+								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">
+								<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+								BaseStream</span></td>
+								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">
+								Определяет базовый поток, с которым работает 
+								объект BinaryWriter</td>
+							</tr>
+							<tr style="border: 0px; padding: 0px; margin: 0px; ">
+								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">
+								<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+								Close</span></td>
+								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">
+								Закрывает поток</td>
+							</tr>
+							<tr style="border: 0px; padding: 0px; margin: 0px; ">
+								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">
+								<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+								Flush</span></td>
+								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">
+								Очищает буфер</td>
+							</tr>
+							<tr style="border: 0px; padding: 0px; margin: 0px; ">
+								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">
+								<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+								Seek</span></td>
+								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">
+								Устанавливает позицию в текущем потоке</td>
+							</tr>
+							<tr style="border: 0px; padding: 0px; margin: 0px; ">
+								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">
+								<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+								Write</span></td>
+								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">
+								Записывает значение в текущий поток</td>
+							</tr>
+					</table>
+				</div>
+				<div xmlns:edi="" class="lecture_mark" id="mark_169" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_175" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Наиболее важные методы выходного потока<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">BinaryReader</span>:</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_175" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="style2" id="id_177" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<a name="table."></a>
+					<table border="0" class="xml_table" cellpadding="2" cellspacing="1" style="border-collapse: separate !important; margin: 0px; width: auto !important; padding: 0px;  border: 0px;">
+						<tbody style="border: 0px; padding: 0px; margin: 0px; ">
+							<tr style="border: 0px; padding: 0px; margin: 0px; ">
+								<th bgcolor="#d8d8d8" style="text-align: center; padding: 0px; border: 0px;  margin: 0px;">
+								Член класса</th>
+								<th bgcolor="#d8d8d8" style="text-align: center; padding: 0px; border: 0px;  margin: 0px;">
+								Описание</th>
+							</tr>
+							<tr style="border: 0px; padding: 0px; margin: 0px; ">
+								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">
+								<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+								BaseStream</span></td>
+								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">
+								Определяет базовый поток, с которым работает 
+								объект BinaryReader</td>
+							</tr>
+							<tr style="border: 0px; padding: 0px; margin: 0px; ">
+								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">
+								<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+								Close</span></td>
+								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">
+								Закрывает поток</td>
+							</tr>
+							<tr style="border: 0px; padding: 0px; margin: 0px; ">
+								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">
+								<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+								PeekChar</span></td>
+								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">
+								Возвращает следующий символ потока без 
+								перемещения внутреннего указателя в потоке</td>
+							</tr>
+							<tr style="border: 0px; padding: 0px; margin: 0px; ">
+								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">
+								<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+								Read</span></td>
+								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">
+								Считывает очередной поток байтов или символов и 
+								сохраняет в массиве, передаваемом во входном 
+								параметре</td>
+							</tr>
+							<tr style="border: 0px; padding: 0px; margin: 0px; ">
+								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">
+								<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+								ReadBoolean</span>,<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">ReadByte</span>,<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">ReadInt32<span>&nbsp;</span></span>и 
+								т.д</td>
+								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">
+								Считывает из потока данные определенного типа</td>
+							</tr>
+					</table>
+				</div>
+				<div xmlns:edi="" class="lecture_mark" id="mark_177" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_185" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Двоичный поток открывается на основе базового потока (например,<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">FileStream</span><span>&nbsp;</span>), 
+				при этом двоичный поток будет преобразовывать байтовый поток в 
+				значения<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">int</span><span>&nbsp;</span>-,<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">double</span><span>&nbsp;</span>-,<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">short</span><span>&nbsp;</span>- 
+				и т.д.</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_185" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_190" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Рассмотрим пример формирования двоичного файла:</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_190" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="style2" id="id_191" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>static void Main()
+  {
+    //открываем двоичный поток    
+    BinaryWriter fOut=new BinaryWriter(new FileStream(&quot;t.dat&quot;,FileMode.Create));
+    //записываем данные в двоичный поток    
+    for (int i=0; i&lt;=100; i+=2)
+    {
+     fOut.Write(i);
+    }
+    fOut.Close(); //закрываем двоичный поток
+  }</pre>
+				</div>
+				<div xmlns:edi="" class="lecture_mark" id="mark_191" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_192" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Попытка просмотреть двоичный файл через текстовый редактор 
+				неинформативна. Двоичный файл просматривается программным путем, 
+				например следующим образом:</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_192" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="style2" id="id_193" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>static void Main()
+  {
+     FileStream f=new FileStream(&quot;t.dat&quot;,FileMode.Open);
+    BinaryReader fIn=new BinaryReader(f);
+    long n=f.Length/4; //определяем количество чисел в двоичном потоке
+    int a;
+    for (int i=0; i&lt;n; i++)
+    {
+     a=fIn.ReadInt32();
+     Console.Write(a+&quot; &quot;);
+    }
+    fIn.Close();
+    f.Close();
+  }</pre>
+				</div>
+				<div xmlns:edi="" class="lecture_mark" id="mark_193" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_194" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Двоичные файлы являются файлами с произвольным доступом, при 
+				этом нумерация элементов в двоичном файле ведется с нуля. 
+				Произвольный доступ обеспечивает метод<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">Seek</span>. 
+				Рассмотрим его синтаксис:</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_194" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="style2" id="id_196" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>Seek(long newPos, SeekOrigin pos)</pre>
+				</div>
+				<div xmlns:edi="" class="lecture_mark" id="mark_196" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_197" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				где параметр<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">newPos<span>&nbsp;</span></span>определяет 
+				новую позицию внутреннего указателя файла в байтах относительно 
+				исходной позиции указателя, которая определяется параметром<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">pos</span>. 
+				В свою очередь параметр<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">pos<span>&nbsp;</span></span>должен 
+				быть задан одним из значений перечисления<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">SeekOrigin</span>:</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_197" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="style2" id="id_202" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<a name="table."></a>
+					<table border="0" class="xml_table" cellpadding="2" cellspacing="1" style="border-collapse: separate !important; margin: 0px; width: auto !important; padding: 0px;  border: 0px;">
+						<tbody style="border: 0px; padding: 0px; margin: 0px; ">
+							<tr style="border: 0px; padding: 0px; margin: 0px; ">
+								<th bgcolor="#d8d8d8" style="text-align: center; padding: 0px; border: 0px;  margin: 0px;">
+								Значение</th>
+								<th bgcolor="#d8d8d8" style="text-align: center; padding: 0px; border: 0px;  margin: 0px;">
+								Описание</th>
+							</tr>
+							<tr style="border: 0px; padding: 0px; margin: 0px; ">
+								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">
+								<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+								SeekOrigin.Begin</span></td>
+								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">
+								Поиск от начала файла</td>
+							</tr>
+							<tr style="border: 0px; padding: 0px; margin: 0px; ">
+								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">
+								<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+								SeekOrigin.Current</span></td>
+								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">
+								Поиск от текущей позиции указателя</td>
+							</tr>
+							<tr style="border: 0px; padding: 0px; margin: 0px; ">
+								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">
+								<span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">
+								SeekOrigin.End</span></td>
+								<td bgcolor="#eaeaea" valign="top" style="padding: 0px; border: 0px;  margin: 0px;">
+								Поиск от конца файла</td>
+							</tr>
+					</table>
+				</div>
+				<div xmlns:edi="" class="lecture_mark" id="mark_202" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_206" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				После вызова метода<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">Seek<span>&nbsp;</span></span>следующие 
+				операции чтения или записи будут выполняться с новой позиции 
+				внутреннего указателя файла.</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_206" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_208" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Рассмотрим пример организации произвольного доступа к двоичному 
+				файлу (на примере файла<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">t.dat</span><span>&nbsp;</span>):</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_208" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="style2" id="id_210" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>static void Main()
+  {
+    //изменение данных в двоичном потоке
+    FileStream f=new FileStream(&quot;t.dat&quot;,FileMode.Open);
+    BinaryWriter fOut=new BinaryWriter(f);
+    long n=f.Length; //определяем количество байт в байтовом потоке
+    int a;
+    for (int i=0; i&lt;n; i+=8) //сдвиг на две позиции, т.к. тип int занимает 4 байта
+    {
+     fOut.Seek(i,SeekOrigin.Begin);
+     fOut.Write(0);
+    }
+    fOut.Close();
+    //чтение данных из двоичного потока
+    f=new FileStream(&quot;t.dat&quot;,FileMode.Open);
+    BinaryReader fIn=new BinaryReader(f);
+    n=f.Length/4; //определяем количество чисел в двоичном потоке
+    for (int i=0; i&lt;n; i++)
+    {
+     a=fIn.ReadInt32();
+     Console.Write(a+&quot; &quot;);
+    }
+    fIn.Close();
+    f.Close();
+ }</pre>
+				</div>
+				<div xmlns:edi="" class="lecture_mark" id="mark_210" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_211" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Поток<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">BinaryReader<span>&nbsp;</span></span>не 
+				имеет метода<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">Seek</span>, 
+				однако используя возможности потока<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">FileStream<span>&nbsp;</span></span>можно 
+				организовать произвольный доступ при чтении двоичных файлов. 
+				Рассмотрим следующий пример:</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_211" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="style2" id="id_215" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>static void Main()
+{
+ //Записываем в файл t.dat целые числа от 0 до 100 
+ FileStream f=new FileStream(&quot;t.dat&quot;,FileMode.Open);
+ BinaryWriter fOut=new BinaryWriter(f);
+ for (int i=0; i&lt;100; ++i) 
+ {
+  fOut.Write(i);
+ }
+ fOut.Close();
+ //Объекты f и fIn связаны с одним и тем же файлом 
+ f=new FileStream(&quot;t.dat&quot;,FileMode.Open);
+ BinaryReader fIn=new BinaryReader(f);
+ long n=f.Length; //определяем количество байт потоке
+ //Читаем данные из файла t.dat, перемещая внутренний указатель на 8 байт, т.е. на два целых числа
+ for (int i=0; i&lt;n; i+=8)
+ {
+  f.Seek(i,SeekOrigin.Begin); 
+  int a=fIn.ReadInt32();
+  Console.Write(a+&quot; &quot;);
+ }
+ fIn.Close();
+ f.Close();
+}</pre>
+				</div>
+				<div xmlns:edi="" class="lecture_mark" id="mark_215" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<a xmlns:edi="" name="sect5" style="color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				</a>
+				<h5 style="margin: 0px; padding: 0px; font-weight: bold; line-height: normal !important; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Перенаправление стандартных потоков</h5>
+				<p xmlns:edi="" id="id_216" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Тремя стандартными потоками, доступ к которым осуществляется 
+				через свойства<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">Console.Out</span>,<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">Console.In</span><span>&nbsp;</span>и<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">Console.Error</span>, 
+				могут пользоваться все программы, работающие в пространстве имен<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">System</span>. 
+				Свойство<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">Console.Out</span><span>&nbsp;</span>относится 
+				к стандартному выходному потоку. По умолчанию это консоль. 
+				Например, при вызове метода<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">Console.WriteLine()</span><span>&nbsp;</span>информация 
+				автоматически передается в поток<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">Console.Out</span>. 
+				Свойство<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">Console.In</span><span>&nbsp;</span>относится 
+				к стандартному входному потоку, источником которого по умолчанию 
+				является клавиатура. Например, при вводе данных с клавиатуры 
+				информация автоматически передается потоку<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">Console.In</span>, 
+				к которому можно обратиться с помощью метода<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">Console.ReadLine()</span>. 
+				Свойство<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">Console.Error<span>&nbsp;</span></span>относится 
+				к ошибкам в стандартном потоке, источником которого также по 
+				умолчанию является консоль. Однако эти потоки могут быть 
+				перенаправлены на любое совместимое устройство ввода-вывода, 
+				например, на работу с физическими файлами.</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_216" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_228" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Перенаправить стандартный поток можно с помощью методов<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">SetIn()</span>,<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">SetOut()</span><span>&nbsp;</span>и<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">SetError()</span>, 
+				которые являются членами класса<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">Console</span>:</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_228" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="style2" id="id_233" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>static void Setln(TextReader input)
+static void SetOut(TextWriter output)
+static void SetError(TextWriter output)</pre>
+				</div>
+				<div xmlns:edi="" class="lecture_mark" id="mark_233" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_234" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Пример<span>&nbsp;</span><a name="keyword13"></a><span class="keyword" style="font-style: oblique;">перенаправления 
+				потоков</span><span>&nbsp;</span>проиллюстрирован следующей 
+				программой, в которой двумерный массив вводится из файла<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">input.txt</span>, 
+				а выводится в файл<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">output.txt</span></p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_234" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="style2" id="id_237" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>static void Main()
+{
+ try
+ {
+  int[,] MyArray;
+  StreamReader file=new StreamReader(&quot;input.txt&quot;); 
+  Console.SetIn(file);  // перенаправляем стандартный входной поток на file
+  string line=Console.ReadLine();
+  string []mas=line.Split(&#39; &#39;);
+  int n=int.Parse(mas[0]);
+int m=int.Parse(mas[1]);
+  MyArray = new int[n,m];
+  for (int i = 0; i &lt; n; i++)
+  {
+   line = Console.ReadLine();
+   mas = line.Split(&#39; &#39;);
+   for (int j = 0; j &lt; m; j++)
+   {
+    MyArray[i,j] = int.Parse(mas[j]);
+   }
+  }
+  PrintArray(&quot;исходный массив:&quot;, MyArray, n, m);
+  file.Close();
+}
+
+static void PrintArray(string a, int[,] mas, int n, int m)
+{
+ StreamWriter file=new StreamWriter(&quot;output.txt&quot;); // перенаправляем стандартный входной поток на file
+ Console.SetOut(file);
+ Console.WriteLine(a);
+ for (int i = 0; i &lt; n; i++)
+ {
+  for (int j=0; j&lt;m; j++) Console.Write(&quot;{0} &quot;, mas[i,j]);
+  Console.WriteLine();
+ }
+ file.Close();
+}
+
+___input.txt_________
+3 4
+1 4 2 8
+4 9 0 1
+5 7 4 2</pre>
+				</div>
+				<div xmlns:edi="" class="lecture_mark" id="mark_237" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_238" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				При необходимости восстановить исходное состояние потока<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">Console.In</span><span>&nbsp;</span>можно 
+				следующим образом:</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_238" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="style2" id="id_240" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>TextWriter str = Console.In;  // первоначально сохраняем исходное состояние входного потока
+…
+Console.SetIn(str);    // при необходимости восстанавливаем исходное состояние входного потока</pre>
+				</div>
+				<div xmlns:edi="" class="lecture_mark" id="mark_240" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p xmlns:edi="" id="id_241" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Аналогичным образом можно восстановить исходное состояние потока<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">Console.Out</span>:</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_241" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="style2" id="id_243" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<pre>TextWriter str = Console.Out;  // первоначально сохраняем исходное состояние выходного потока
+…
+// при необходимости восстанавливаем исходное состояние выходного потока
+Console.SetOut(str);</pre>
+				</div>
+				<div xmlns:edi="" class="lecture_mark" id="mark_243" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<div xmlns:edi="" class="xml_inset" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<span class="style3">Задание</span><span class="style2">. 
+					Подумайте для чего нужно два потока<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">Console.Out</span><span>&nbsp;</span>и<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">Console.Error</span>, 
+					если они оба при стандартной работе выводят информацию на 
+					экран.</span></div>
+				<h3 style="margin: 5px 0px; padding: 0px; font-weight: bold; font-size: 15.96px; line-height: normal !important; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Практикум</h3>
+				<ol id="id_247" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li xmlns:edi="" style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					<b><span class="style2">Работа с двоичными файлами</span></b><span class="style2">:<ol id="id_249" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px;">
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Создать файл и записать в него вещественные числа из 
+						диапазона от<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">a<span>&nbsp;</span></span>до<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">b<span>&nbsp;</span></span>с 
+						шагом<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">h</span>. 
+						Вывести на экран все компоненты файла с нечетными 
+						порядковыми номерами.<p id="id_254" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px;">
+						<b>Пример</b>:</p>
+						<div class="lecture_mark" id="mark_254" style="padding: 0px; margin: 0px;">
+						</div>
+						<div class="example" id="id_255" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left;">
+							<pre>using System;
+using System.Text;
+using System.IO; 
+
+namespace MyProgram
+{
+ class Program
+ {
+  static void Main()
+  {
+    Console.Write(&quot;a= &quot;);
+    double a=double.Parse(Console.ReadLine());
+    Console.Write(&quot;b= &quot;);
+    double b=double.Parse(Console.ReadLine());
+    Console.Write(&quot;h= &quot;);
+    double h=double.Parse(Console.ReadLine());
+    //Записываем в файл t.dat вещественные числа из заданного диапазона 
+    FileStream f=new FileStream(&quot;t.dat&quot;,FileMode.Open);
+    BinaryWriter fOut=new BinaryWriter(f);
+    for (double i=a; i&lt;=b; i+=h) 
+    {
+     fOut.Write(i);
+    }
+    fOut.Close();
+    //Объекты f и fIn связаны с одним и тем же файлом 
+    f=new FileStream(&quot;t.dat&quot;,FileMode.Open);
+    BinaryReader fIn=new BinaryReader(f);
+    long m=f.Length; //определяем количество байт в потоке
+    //Читаем данные из файла t.dat начиная с элемента с номером 1, т.е с 8 байта,
+    //перемещая внутренний указатель на 16 байт, т.е. на два вещественных числа
+    for (long i=8; i&lt;m; i+=16)
+    {
+     f.Seek(i,SeekOrigin.Begin); 
+     a=fIn.ReadDouble();
+     Console.Write(&quot;{0:f2} &quot;,a);
+    }
+    fIn.Close();
+    f.Close();
+   }
+ }
+}</pre>
+						</div>
+						<div class="lecture_mark" id="mark_255" style="padding: 0px; margin: 0px;">
+						</div>
+						</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Создать файл и записать в него степени числа 3. Вывести 
+						на экран все компоненты файла с четным порядковым 
+						номером.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Создать файл и записать в него обратные натуральные 
+						числа<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">1,1/2,...,1/n</span>. 
+						Вывести на экран все компоненты файла с порядковым 
+						номером, кратным 3.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Создать файл и записать в него<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">n<span>&nbsp;</span></span>первых 
+						членов последовательности Фибоначчи. Вывести на экран 
+						все компоненты файла с порядковым номером, не кратным 3.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дана последовательность из<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">n<span>&nbsp;</span></span>целых 
+						чисел. Создать файл и записать в него все четные числа 
+						последовательности. Вывести содержимое файла на экран.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дана последовательность из<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">n<span>&nbsp;</span></span>целых 
+						чисел. Создать файл и записать в него все отрицательные 
+						числа последовательности. Вывести содержимое файла на 
+						экран.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дана последовательность из<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">n<span>&nbsp;</span></span>целых 
+						чисел. Создать файл и записать в него числа 
+						последовательности, попадающие в заданный интервал. 
+						Вывести содержимое файла на экран.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дана последовательность из<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">n<span>&nbsp;</span></span>целых 
+						чисел. Создать файл и записать в него числа 
+						последовательности, не кратные заданному числу. Вывести 
+						содержимое файла на экран.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дана последовательность из<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">n<span>&nbsp;</span></span>вещественных 
+						чисел. Записать все эти числа в файл. Вывести на экран 
+						все компоненты, не попадающие в данный диапазон.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дана последовательность из<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">n<span>&nbsp;</span></span>вещественных 
+						чисел. Записать все эти числа в файл. Вывести на экран 
+						все компоненты файла с нечетными номерами, большие 
+						заданного числа.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дана последовательность из<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">n<span>&nbsp;</span></span>вещественных 
+						чисел. Записать все эти числа в файл. Вывести на экран 
+						все компоненты файла с четными номерами, меньшие 
+						заданного числа.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дана последовательность из<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">n<span>&nbsp;</span></span>вещественных 
+						чисел. Записать все эти числа в файл. Вывести на экран 
+						все положительные компоненты файла.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дана последовательность из<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">n<span>&nbsp;</span></span>вещественных 
+						чисел. Записать все эти числа в файл. Подсчитать среднее 
+						арифметическое компонентов файла, стоящих на четных 
+						позициях.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дана последовательность из<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">n<span>&nbsp;</span></span>вещественных 
+						чисел. Записать все эти числа в файл. Найти максимальное 
+						значение среди компонентов файла, стоящих на нечетных 
+						позициях.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дано предложение. Создать файл и записать в него все 
+						символы данного предложения, отличные от знаков 
+						препинания. Вывести содержимое файла на экран.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дано предложение. Создать файл и записать в него все 
+						символы данного предложения, отличные от цифр. Вывести 
+						содержимое файла на экран.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Создать файл, состоящий из слов. Вывести на экран все 
+						слова, которые начинаются на заданную букву.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Создать файл, состоящий из слов. Вывести на экран все 
+						слова, длина которых равна заданному числу.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Создать файл, состоящий из слов. Вывести на экран все 
+						слова, которые начинаются и заканчиваются одной буквой.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Создать файл, состоящий из слов. Вывести на экран все 
+						слова, которые начинаются на ту же букву, что и 
+						последнее слово.</li>
+					</ol>
+					<div class="lecture_mark" id="mark_249" style="padding: 0px; margin: 0px;">
+					</div>
+					</li>
+					<li xmlns:edi="" style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					<b>Работа с текстовым (символьным) файлом</b>.<ol id="id_288" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px;">
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дан текстовый файл. Найти количество строк, которые 
+						начинаются с данной буквы.<p id="id_290" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px;">
+						<b>Пример</b>:</p>
+						<div class="lecture_mark" id="mark_290" style="padding: 0px; margin: 0px;">
+						</div>
+						<div class="xml_inset" style="padding: 0px; margin: 0px;">
+							<b>Замечание</b>: Напоминаем, что файл text.txt 
+							должен содержать английский текст</div>
+						<div class="example" id="id_292" style="padding: 0px; margin: 0px 0px 0px 10px; color: rgb(139, 0, 0); font-family: monospace; text-align: left;">
+							<pre>using System;
+using System.Text;
+using System.IO; 
+using System.Text.RegularExpressions;
+
+namespace MyProgram
+{
+ class Program
+ {
+  static void Main()
+  {
+    Console.Write(&quot;Введите заданную букву: &quot;);
+    char a=char.Parse(Console.ReadLine());
+    StreamReader fileIn = new StreamReader(&quot;text.txt&quot;);
+    string text=fileIn.ReadToEnd(); //считываем из файла весь текст
+    fileIn.Close();
+    int k=0;
+    //разбиваем текст на слова используя регулярные выражения
+    string []newText=Regex.Split(text,&quot;[ ,.:;]+&quot;); 
+    //подсчитываем количество слов, начинающихся на заданную букву 
+    foreach( string b in newText)
+     if (b[0]==a)++k;
+    Console.WriteLine(&quot;k= &quot;+k);
+   }
+ }
+}</pre>
+						</div>
+						<div class="lecture_mark" id="mark_292" style="padding: 0px; margin: 0px;">
+						</div>
+						</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дан текстовый файл. Найти количество строк, которые 
+						начинаются и заканчиваются одной буквой.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дан текстовый файл. Найти самую длинную строку и ее 
+						длину.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дан текстовый файл. Найти самую короткую строку и ее 
+						длину.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дан текстовый файл. Найти номер самой длинной строки.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дан текстовый файл. Найти номер самой короткой строки.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дан текстовый файл. Выяснить, имеется ли в нем строка, 
+						которая начинается с данной буквы. Если да, то 
+						напечатать ее.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дан текстовый файл. Напечатать первый символ каждой 
+						строки.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дан текстовый файл. Напечатать символы с<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">k1<span>&nbsp;</span></span>по<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">k2<span>&nbsp;</span></span>в 
+						каждой строке.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дан текстовый файл. Напечатать все нечетные строки.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дан текстовый файл. Напечатать все строки, в которых 
+						имеется хотя бы один пробел.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дан текстовый файл. Напечатать все строки, длина которых 
+						равна данному числу.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дан текстовый файл. Напечатать все строки, длина которых 
+						меньше заданного числа.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дан текстовый файл. Напечатать все строки с номерами от<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">k1<span>&nbsp;</span></span>до<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">k2</span>.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дан текстовый файл. Получить слово, образованное k-ыми 
+						символами каждой строки.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дан текстовый файл. Переписать в новый файл все его 
+						строки, вставив в конец каждой строки ее номер.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дан текстовый файл. Переписать в новый файл все его 
+						строки, вставив в конец каждой строки количество 
+						символов в ней.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дан текстовый файл. Переписать в новый файл все его 
+						строки, длина которых больше заданного числа.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дан текстовый файл. Переписать в новый файл все его 
+						строки четной длины.</li>
+						<li style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+						Дан текстовый файл. Переписать в новый файл все его 
+						строки, удалив из них символы, стоящие на четных местах.</span></li>
+					</ol>
+					<div class="lecture_mark" id="mark_288" style="padding: 0px; margin: 0px;">
+					</div>
+					</li>
+				</ol>
+				<div class="lecture_mark" id="mark_247" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<a xmlns:edi="" name="sect7" style="color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				</a>
+				<h3 style="margin: 5px 0px; padding: 0px; font-weight: bold; line-height: normal !important; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Самостоятельная работа</h3>
+				<p xmlns:edi="" id="id_316" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Используя дополнительную литературу и<span>&nbsp;</span><a name="keyword14"></a><span class="keyword" style="font-style: oblique;">Интернет</span><span>&nbsp;</span>рассмотреть 
+				использование:</p>
+				<div xmlns:edi="" class="lecture_mark" id="mark_316" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<ol id="id_317" style="margin-top: 7px !important; margin-right: 0px; margin-bottom: 7px !important; margin-left: 0px; padding: 0px; line-height: 16px; color: rgb(0, 0, 0); font-family: &quot;lucida grande&quot;, tahoma, verdana, arial, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li xmlns:edi="" style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					<span class="style2">класса<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">MemoryStream</span><span>&nbsp;</span>;</li>
+					<li xmlns:edi="" style="margin: 0.15em 0px 0.15em 2em; padding: 0px 0px 0.3em;">
+					классов<span>&nbsp;</span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;">StringReader<span>&nbsp;</span></span>и<span>&nbsp;</span></span><span class="texample" style="color: rgb(139, 0, 0); font-family: monospace; text-align: left; padding-left: 5px; padding-right: 5px;"><span class="style2">StringWriter</span></span>.</li>
+				</ol>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+			</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2008 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les21.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les22/1.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:49:52 GMT -->
+</html>

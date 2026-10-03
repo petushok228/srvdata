@@ -1,0 +1,336 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les55/4.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:47:27 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: #0000FF;
+}
+    .style3 {
+				color: #FF0000;
+				text-decoration: underline;
+}
+    .style4 {
+	color: #0000FF;
+	margin-left: 40px;
+}
+.style5 {
+	font-size: medium;
+}
+.style6 {
+	margin-left: 80px;
+}
+    .style7 {
+	color: #800000;
+}
+.style8 {
+	color: #808000;
+}
+.style9 {
+	color: #FF0000;
+}
+    .style10 {
+	font-size: small;
+}
+.style11 {
+	font-size: small;
+	color: maroon;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 4. Основы перегрузки операторов. </td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text" style="font-size: medium">
+                <p class="style10">В C#, подобно любому языку программирования, имеется готовый набор лексем, используемых для выполнения базовых операций над встроенными типами. </p>
+				<p class="style10">Например, известно, что операция + может применяться к двум целым, чтобы дать их сумму: </p>
+ <pre class="style4"><strong><span class="style5">// Операция + с целыми.
+</span><span class="style5">int а = 100;
+</span><span class="style5">int b = 240;
+</span><span class="style5">int с = а + b;	//с теперь равно 340 </span></strong></pre>
+ <p class="style10">Здесь нет ничего нового, но задумывались ли вы когда-нибудь о том, что одна и та же 
+	<span class="style3"><strong>операция +</strong></span> может применяться к большинству встроенных типов данных C#? </p>
+				<p class="style10">Например, рассмотрим такой код: </p>
+ <pre class="style4"><strong><span class="style5">// Операция + со строками.
+string si = "Hello";
+string s2 = " world!";
+string s3 = si + s2;	// s3 теперь содержит "Hello world!" </span></strong></pre>
+ <p class="style10">По сути, функциональность операции + уникальным образом базируются на представленных типах данных (строках или целых в данном случае). </p>
+				<p class="style10">Когда операция + применяется к числовым типам, мы получаем арифметическую сумму операндов. Однако когда та же операция применяется </p>
+				<p class="style10">к строковым типам, получается конкатенация строк. </p>
+ <p class="style10">Язык C# предоставляет возможность строить специальные классы и структуры, которые также уникально реагируют на один и тот же набор базовых лексем (вроде операции +). </p>
+				<p class="style10">Имейте в виду, что абсолютно каждую встроенную операцию C# перегружать нельзя. В следующей таблице описаны возможности перегрузки основных операций: </p>
+ <p class="style10">Операция C#	Возможность перегрузки </p>
+ <pre><strong><span class="style2">+, -, !, ++, --, true, false	Этот набор унарных операций может быть перегружен
++, -, *, /, %, &, |, ^, <<, >>	Эти бинарные операции могут быть перегружены
+==, !=, <, >, <=, >=	Эти операции сравнения могут быть перегружены. C# требует совместной перегрузки "подобных" операций (т.е. < и >, <= и >=, == и !=)
+[]	Операция [] не может быть перегружена. Oднако, аналогичную функциональность предлагают индексаторы
+()	Операция () не может быть перегружена. Однако ту же функциональность предоставляют специальные методы преобразования
++=, -=, *=, /=, %=, &=, |=, ^=, <<=, >>=	Сокращенные операции присваивания не могут перегружаться; однако вы получаете их автоматически, </span></strong></pre>
+				<pre><strong><span class="style2">перегружая соответствующую бинарную операцию </span></strong></pre>
+ <p class="style10">Перегрузка операторов тесно связана с перегрузкой методов. Для перегрузки оператора служит ключевое слово operator, определяющее операторный метод, который, </p>
+				<p class="style10">в свою очередь, определяет действие оператора относительно своего класса. Существуют две формы операторных методов (operator): одна - для унарных операторов, другая - для бинарных. Ниже приведена общая форма для каждой разновидности этих методов: </p>
+ <p class="style10">// Общая форма перегрузки унарного оператора. </p>
+ <pre class="style6"><span class="style2"><strong>public static </span><span class="style7">возвращаемый_тип</span><span class="style2"> operator op(</span><span class="style8">тип_параметра операнд</span><span class="style2">)
+</span></strong>{<span class="style2"><strong>
+// операции
+</strong></span>}<span class="style2"><strong>
+
+// Общая форма перегрузки бинарного оператора.
+public static возвращаемый_тип operator op(тип_параметра1 операнд1,
+тип_параметра2 операнд2)
+</strong></span>{<span class="style2"><strong>
+// операции
+} </strong></span></pre>
+ <p class="style10">Здесь вместо op подставляется перегружаемый оператор, например + или /, а возвращаемый_тип обозначает конкретный тип значения, возвращаемого указанной операцией. Это значение может быть любого типа, но зачастую оно указывается такого же типа, как и у класса, для которого перегружается оператор. Такая корреляция упрощает применение перегружаемых операторов в выражениях. Для унарных операторов операнд обозначает передаваемый операнд, а для бинарных операторов то же самое обозначают операнд1 и операнд2. Обратите внимание на то, что операторные методы должны иметь оба спецификатора типа - public и static. </p>
+ <p class="style11">Перегрузка бинарных операторов </p>
+ <p class="style10">Давайте рассмотрим применение <span class="style9">перегрузки бинарных операторов</span> на простейшем примере: </p>
+ <pre class="style6">
+<span class="style2"><strong>using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication1
+</strong></span>{<span class="style2"><strong>
+    class MyArr
+    {
+        // Координаты точки в трехмерном пространстве
+        public int x, y, z;
+
+        public MyArr(int x = 0, int y = 0, int z = 0)
+        {
+            this.x = x;
+            this.y = y;
+            this.z = z;
+        }
+
+        // Перегружаем бинарный оператор +
+        public static MyArr </span><span class="style7">operator</span><span class="style2"> +(MyArr obj1, MyArr obj2)
+        {
+            MyArr </span><span class="style9">arr</span><span class="style2"> = new MyArr();
+            arr.x = obj1.x + obj2.x;
+            arr.y = obj1.y + obj2.y;
+            arr.z = obj1.z + obj2.z;
+            return arr;
+        }
+
+        // Перегружаем бинарный оператор - 
+        public static MyArr </span><span class="style7">operator</span><span class="style2"> -(MyArr obj1, MyArr obj2)
+        {
+            MyArr arr = new MyArr();
+            arr.x = obj1.x - obj2.x;
+            arr.y = obj1.y - obj2.y;
+            arr.z = obj1.z - obj2.z;
+            return arr;
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            MyArr Point1 = new MyArr(1, 12, -4);
+            MyArr Point2 = new MyArr(0, -3, 18);
+            Console.WriteLine("Координаты первой точки: " +
+                Point1.x + " " + Point1.y + " " + Point1.z);
+            Console.WriteLine("Координаты второй точки: " +
+                Point2.x + " " + Point2.y + " " + Point2.z + "\n");
+
+            MyArr Point3 = Point1 + Point2;
+            Console.WriteLine("\nPoint1 + Point2 = " 
+                + Point3.x + " " + Point3.y + " " + Point3.z);
+            Point3 = Point1 - Point2;
+            Console.WriteLine("\nPoint1 - Point2 = "
+                + Point3.x + " " + Point3.y + " " + Point3.z);
+
+            Console.ReadLine();
+        }
+    }
+} </span></strong></pre>
+ <p class="style10">Использование перегрузки бинарных операторов в C# </p>
+				<p><img alt="" src="Pic/img6693.png" width="677" height="186" /></p>
+ <p class="style11">Перегрузка унарных операторов </p>
+ <p class="style10">Унарные операторы перегружаются таким же образом, как и бинарные. Главное отличие заключается, конечно, в том, что у них имеется лишь один операнд. </p>
+				<p class="style10">Давайте модернизируем предыдущий пример, дополнив перегрузки операций ++, --, -: </p>
+ <pre class="style6">
+<span class="style2"><strong>using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication1
+</strong></span>{<span class="style2"><strong>
+    class MyArr
+    {
+        // Координаты точки в трехмерном пространстве
+        public int x, y, z;
+
+        public MyArr(int x = 0, int y = 0, int z = 0)
+        {
+            this.x = x;
+            this.y = y;
+            this.z = z;
+        }
+
+        // Перегружаем бинарный оператор +
+        public static MyArr operator +(MyArr obj1, MyArr obj2)
+        {
+            MyArr arr = new MyArr();
+            arr.x = obj1.x + obj2.x;
+            arr.y = obj1.y + obj2.y;
+            arr.z = obj1.z + obj2.z;
+            return arr;
+        }
+
+        // Перегружаем бинарный оператор - 
+        public static MyArr operator -(MyArr obj1, MyArr obj2)
+        {
+            MyArr arr = new MyArr();
+            arr.x = obj1.x - obj2.x;
+            arr.y = obj1.y - obj2.y;
+            arr.z = obj1.z - obj2.z;
+            return arr;
+        }
+
+        // Перегружаем унарный оператор -
+        public static MyArr operator -(MyArr obj1)
+        {
+            MyArr arr = new MyArr();
+            arr.x = -obj1.x;
+            arr.y = -obj1.y;
+            arr.z = -obj1.z;
+            return arr;
+        }
+
+        // Перегружаем унарный оператор ++
+        public static MyArr operator ++(MyArr obj1)
+        {
+            obj1.x += 1;
+            obj1.y += 1;
+            obj1.z +=1;
+            return obj1;
+        }
+
+        // Перегружаем унарный оператор --
+        public static MyArr operator --(MyArr obj1)
+        {
+            obj1.x -= 1;
+            obj1.y -= 1;
+            obj1.z -= 1;
+            return obj1;
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            MyArr Point1 = new MyArr(1, 12, -4);
+            MyArr Point2 = new MyArr(0, -3, 18);
+            Console.WriteLine("Координаты первой точки: " +
+                Point1.x + " " + Point1.y + " " + Point1.z);
+            Console.WriteLine("Координаты второй точки: " +
+                Point2.x + " " + Point2.y + " " + Point2.z + "\n");
+
+            MyArr Point3 = Point1 + Point2;
+            Console.WriteLine("\nPoint1 + Point2 = " 
+                + Point3.x + " " + Point3.y + " " + Point3.z);
+            Point3 = Point1 - Point2;
+            Console.WriteLine("Point1 - Point2 = "
+                + Point3.x + " " + Point3.y + " " + Point3.z);
+            Point3 = -Point1;
+            Console.WriteLine("-Point1 = "
+                + Point3.x + " " + Point3.y + " " + Point3.z);
+            Point2++;
+            Console.WriteLine("Point2++ = "
+                + Point2.x + " " + Point2.y + " " + Point2.z);
+            Point2--;
+            Console.WriteLine("Point2-- = "
+                + Point2.x + " " + Point2.y + " " + Point2.z);
+
+            Console.ReadLine();
+        }
+    }
+} </strong></span></pre>
+ <p class="style10">Использование перегрузки унарных операторов </p>
+				<p><img alt="" src="Pic/img6694.png" width="677" height="198" /></p>
+ <p class="style10">Выполнение операций со встроенными в C# типами данных </p>
+ <p class="style10">Для любого заданного класса и оператора имеется также возможность перегрузить сам операторный метод. </p>
+				<p class="style10">Это, в частности, требуется для того, чтобы разрешить операции с типом класса и другими типами данных, в том числе и встроенными. </p>
+				<p class="style10">Давайте добавим следующую перегрузку в предыдущий пример: </p>
+ <pre class="style6"><span class="style2"><strong><span class="style5">public static string operator +(MyArr obj1, string s)
+</span></strong></span>{<span class="style2"><strong><span class="style5">
+    return s + " " + obj1.x + " " + obj1.y + " " + obj1.z;
+</span></strong></span>}<span class="style2"><strong><span class="style5">
+
+...
+
+string s = Point2 + "Координаты точки Point2:";
+</span><span class="style5">Console.WriteLine(s);</span></strong></span>
+ </pre>
+ <p><img alt="" src="Pic/img6695.png" width="677" height="210" /></p>
+				<p class="style10">Как подтверждает приведенный выше результат, когда оператор + применяется к двум объектам класса MyArr, то складываются их координаты. </p>
+				<p class="style10">А когда он применяется к объекту типа MyArr и строковому значению, то возвращается строка с текущими координатами объекта.</p> 
+                </td></tr>
+
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les55.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les55/4.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:47:33 GMT -->
+</html>

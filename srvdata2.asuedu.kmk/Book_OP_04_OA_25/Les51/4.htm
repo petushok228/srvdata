@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les51/4.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:41:19 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+				font-size: small;
+				color: #0000FF;
+				margin-left: 40px;
+}
+.style3 {
+				font-size: small;
+				color: #0000FF;
+}
+.style4 {
+				font-size: small;
+				color: red;
+}
+.style5 {
+				color: red;
+}
+.style8 {
+				margin-left: 40px;
+	color: blue;
+}
+    .style9 {
+	font-size: small;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 4. Методы классов. <span class="style5"><strong>Параметр self</strong></span>.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p class="style9">Благодаря методам внутри класса можно реализовывать самые разные алгоритмы, то есть методы – это действия. Именно поэтому, в названиях методов используют глаголы, например:</p>
+<pre class="style2">
+<strong>set_value, get_param, start, stop, и т.п.</strong></pre>
+<p class="style9">
+В то время как именами свойств (данных) выступают существительные:</p>
+<pre class="style2">
+<strong>color, size, x, y, и т.п.</strong></pre>
+<p>
+<span class="style9">Рекомендуется придерживаться этого простого правила.</p>
+<p>
+Давайте, для примера объявим метод set_coords в классе Point, который будет просто выводить в консоль сообщение «вызов метода set_coords»:</span></p>
+<pre class="style3">
+<strong>class Point:
+    color = 'red'
+    circle = 2
+</strong> <strong>
+    def set_coords(self):
+        print("вызов метода set_coords")</strong></pre>
+<p><span class="style9">Здесь сразу бросается в глаза вот этот параметр </span> <span class="style4">self</span><span class="style9">, который автоматически прописывает интегрированная среда. Зачем он здесь, если мы пока ничего не собираемся передавать этому методу? Давайте его уберем! Пока никаких проблем не возникло. Мало того, мы можем его вызвать из класса Point:</span></p>
+<pre class="style2">
+<strong>Point.set_coords()</strong></pre>
+<p><span class="style9">и все будет работать без ошибок. Здесь мы видим, как вызываются методы класса. Все довольно очевидно. Записываем имя класса (Point), и через точку указываем имя метода. В конце обязательно прописываем круглые скобки, так как это оператор вызова функций. И, так как метод – это функция класса, то для вызова метода используется тот же оператор, что и для вызова функций.</p>
+<p>
+В результате, мы получили класс, в котором два свойства и один метод. Далее, создадим экземпляр этого класса:</span></p>
+<pre class="style2">
+<strong>pt = Point()</strong></pre>
+<p class="style9">И, как мы с вами говорили, через объект pt можно обращаться ко всем атрибутам класса Point, в том числе и к методу set_coords:</p>
+<pre class="style2">
+<strong>pt.set_coords</strong></pre>
+<p class="style9">Этот атрибут ссылается на объект-функцию, которую мы определили в классе Point. Попробуем ее вызвать:</p>
+<pre class="style2">
+<strong>pt.set_coords()</strong></pre>
+<p><span class="style9">Видим ошибку, что в метод set_coords при вызове передается один аргумент, а он у нас определен без параметров. Дело в том, что когда мы вызываем методы класса через его объекты, то интерпретатор Python автоматически добавляет первым аргументом ссылку на объект, из которого этот метод вызывается.</p>
+<p class="style5"></span><strong><span class="style9">Поэтому, если мы хотим внутри класса определить метод, который можно было бы вызывать из его экземпляров, то дополнительно прописывается первый параметр, обычно, с именем 
+self:</span></strong></p>
+<pre class="style2">
+<strong>class Point:
+    color = 'red'
+    circle = 2
+</strong> <strong>
+    def set_coords(</strong><span class="style5"><strong>self</strong></span><strong>):
+        print("вызов метода set_coords " + str(<span class="style5">self</span>))</strong></pre>
+<p><span class="style9">Еще раз, </span> <span class="style5"><strong>
+<span class="style9">параметр self будет ссылаться на 
+экземпляр класса, из которого вызывается метод</span></strong></span><span class="style9">. </p>
+				<p>Зачем это надо?&nbsp; После этого дополнения мы уже не сможем вызвать данный метод через класс без указания первого аргумента:</span></p>
+<pre class="style2">
+<strong>Point.set_coords()</strong></pre>
+<p class="style9">но можем через его объекты:</p>
+<pre class="style2">
+<strong>pt.set_coords()</strong></pre>
+<p class="style5"><strong><span class="style9">То есть, когда метод вызывается через класс, то Python автоматически не подставляет никаких аргументов. А когда вызов идет через экземпляры класса, то первый аргумент – это всегда ссылка на экземпляр. Данный момент нужно знать и помнить.</span></strong><span class="style9"></p>
+<p>Но мы все же можем вызвать метод set_coords и через класс, если явно передадим ссылку на объект pt, следующим образом:</span></p>
+<pre class="style2">
+<strong>Point.set_coords(pt)</strong></pre>
+<p><span class="style9">Именно это на автомате делает Python, когда вызов осуществляется через объекты классов.</p>
+<p>Так зачем понадобилось такое поведение? Дело в том, что метод класса – это тоже его атрибут и когда создаются экземпляры класса, то метод становится общим для всех объектов и не копируется в них. 
+<span class="style5"><strong>Фактически, только благодаря параметру self мы «знаем» какой объект вызвал данный метод и можем организовать с ним обратную связь.</strong></span></p>
+<p>Например, пусть метод set_coords задает координаты точек для текущего объекта. Тогда, мы пропишем в нем два дополнительных параметра и через self в самом экземпляре класса создадим (либо переопределим) два свойства:</span></p>
+<pre class="style2">
+<strong>class Point:
+    color = 'red'
+    circle = 2
+</strong> <strong>
+    def set_coords(self, x, y):
+        self.x = x
+        self.y = y</strong></pre>
+<p class="style9">В результате, при вызове метода:</p>
+<pre class="style2">
+<strong>pt.set_coords(1, 2)
+print(pt.__dict__)</strong></pre>
+<p class="style9">в объекте pt будут созданы два свойства x, y со значениями 1 и 2. Вот для чего нужен этот параметр self. Если в программе создать еще один объект:</p>
+<pre class="style2"><strong>pt2 = Point()</strong></pre>
+<p class="style9">и через него вызвать тот же самый метод:</p>
+<pre class="style2"><strong>pt2.set_coords(10, 20)
+print(pt2.__dict__)</strong></pre>
+<p><span class="style9">То увидим, что свойства x, y со значениями 10 и 20 были созданы только в нем (в его пространстве имен) и никак не связаны с координатами другого объекта pt или классом Point. То есть, через self мы работаем с конкретным объектом, из которого был вызван данный метод.</p>
+<p>Конечно, в классах мы можем прописывать произвольное количество методов. Например, определим еще один, который будет возвращать координаты точки в виде кортежа значений:</span></p>
+<pre class="style2">
+<strong>class Point:
+    color = 'red'
+    circle = 2
+</strong> <strong>
+    def set_coords(self, x, y):
+        self.x = x
+        self.y = y
+</strong> <strong>
+    def get_coords(self):
+        return (self.x, self.y)</strong></pre>
+<p class="style9">И ниже в программе можем вызвать его:</p>
+<pre class="style2">
+<strong>print(pt.get_coords())</strong></pre>
+<p class="style9">Интересно, что так как имя метода – это атрибут класса, то мы можем обратиться к нему через знакомую нам уже функцию:</p>
+<pre class="style2">
+<strong>res = getattr(pt, 'get_coords')
+print(res)</strong></pre>
+<p class="style9">Видим, что это ссылка на объект-функцию. А раз так, то ничто нам не мешает ее здесь вызывать:</p>
+<pre class="style2">
+<strong>print(res())</strong></pre>
+<p class="style9">Конечно, так делают очень редко. Обычно используют синтаксис через точку. Я привел это, чтобы еще раз подчеркнуть, что имена методов – это те же самые атрибуты, просто они ведут не на данные, а на функции. Во всем остальном они схожи с атрибутами-данными класса.</p>
+				<p class="ZagT" style="font-size: small">Что такое self в Python?</p>
+				<p><span class="style9">Служебное слово&nbsp;<span class="style5"><strong>self&nbsp;- это 
+				ссылка на текущий экземпляр класса</strong></span>. Как правило, 
+				эта ссылка передается в качестве первого параметра метода 
+				Python:</p>
+				<p class="style8"><strong>class&nbsp;Apple:<br />
+				<br />
+				____# Создаем объект с общим количеством яблок 12<br />
+				____def __init__(self):<br />
+				________self.whole_amount = 12<br />
+				<br />
+				____# Съедаем часть яблок для текущего объекта<br />
+				____def eat(self, number):<br />
+				________self.whole_amount -= number</strong></p>
+				<p>Стоит обратить внимание, что на самом деле слово&nbsp;self&nbsp;не 
+				является зарезервированным. Просто существует некоторое 
+				соглашение, по которому первый параметр метода именуется&nbsp;self&nbsp;и 
+				передает ссылку на текущий объект, для которого этот метода был 
+				вызван. Хотите назвать первый параметр метода по-другому - 
+				пожалуйста.<br />
+				<br />
+				В других языках программирования(например, Java или C++) 
+				аналогом этого ключа является служебное слово&nbsp;this.</span></p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les51.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les51/4.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:41:19 GMT -->
+</html>

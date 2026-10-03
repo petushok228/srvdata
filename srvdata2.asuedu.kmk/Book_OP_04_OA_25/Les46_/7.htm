@@ -1,0 +1,375 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les46_/7.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 11:39:55 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: small;
+}
+    .style3 {
+	font-size: medium;
+	color: #0000FF;
+}
+    .style4 {
+	font-size: medium;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 7 Метод String.Split() в C#</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <h2 style="color: rgb(0, 0, 0); font-family: georgia; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<font _mstmutation="1" _msttexthash="236899" _msthash="15">C# 
+				String.Split</font></h2>
+				<p _msttexthash="327689180" _msthash="59" style="box-sizing: border-box; margin: 0px 0px 1em; color: rgb(102, 102, 102); font-family: Arial; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: 0.1px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				В C# мы можем использовать String . Split(), который разбивает 
+				строку на массив строк, поэтому в этой статье я упомянул 
+				несколько возможных способов использования метода String.Split() 
+				и как мы можем разбить строку на массив на примере консольного 
+				приложения.</p>
+				<p style="box-sizing: border-box; margin: 0px 0px 1em; color: rgb(102, 102, 102); font-family: Arial; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: 0.1px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); white-space: nowrap; background-color: rgb(249, 242, 244); border-radius: 3px;" class="style2">
+				.Split()</code><font _mstmutation="1" _msttexthash="120412487" _msthash="60" style="box-sizing: border-box;"><span class="style2">&nbsp;Разделителями 
+				методов могут быть символы или массивы символов или массив 
+				строк. Существует около 10 перегрузок для метода String.Split(). 
+				Обычно используются:</span></font></p>
+				<ul style="box-sizing: border-box; margin-top: 0px; margin-bottom: 11.5px; color: rgb(102, 102, 102); font-family: Arial; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: 0.1px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li style="box-sizing: border-box;">
+					<code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); white-space: nowrap; background-color: rgb(249, 242, 244); border-radius: 3px;" class="style2">
+					Split(Char[])</code><font _mstmutation="1" _msttexthash="31834374" _msthash="61" style="box-sizing: border-box;"><span class="style2">Разбивает 
+					строку на подстроки на основе заданных разделяющих символов.</span></font></li>
+					<li style="box-sizing: border-box;">
+					<code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); white-space: nowrap; background-color: rgb(249, 242, 244); border-radius: 3px;" class="style2">
+					Split(Char, StringSplitOptions)</code><font _mstmutation="1" _msttexthash="40916161" _msthash="62" style="box-sizing: border-box;"><span class="style2">: 
+					Разбивает строку на подстроки на основе указанного 
+					разделяющего символа и, опций</span></font></li>
+					<li style="box-sizing: border-box;">
+					<code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); white-space: nowrap; background-color: rgb(249, 242, 244); border-radius: 3px;" class="style2">
+					Split(Char[], Int32)</code><font _mstmutation="1" _msttexthash="62819094" _msthash="63" style="box-sizing: border-box;"><span class="style2">: 
+					Первый аргумент указывает, разделяющий символ, а второй 
+					указывает максимальное количество подстрок.</span></font></li>
+					<li style="box-sizing: border-box;">
+					<code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); white-space: nowrap; background-color: rgb(249, 242, 244); border-radius: 3px;" class="style2">
+					Split(String, StringSplitOptions)</code><font _mstmutation="1" _msttexthash="47114509" _msthash="64" style="box-sizing: border-box;"><span class="style2">: 
+					Разбивает строку на подстроки, которые основаны на 
+					предоставленном разделителе строк.</span></font></li>
+					<li style="box-sizing: border-box;">
+					<code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); white-space: nowrap; background-color: rgb(249, 242, 244); border-radius: 3px;" class="style2">
+					Split(Char[], StringSplitOptions)</code><font _mstmutation="1" _msttexthash="45286397" _msthash="65" style="box-sizing: border-box;"><span class="style2">: 
+					Разбивает строку на подстроки на основе указанных 
+					разделяющих символов и параметров.</span></font></li>
+					<li style="box-sizing: border-box;">
+					<code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; padding: 2px 4px; color: rgb(199, 37, 78); white-space: nowrap; background-color: rgb(249, 242, 244); border-radius: 3px;" class="style2">
+					Split(String[], StringSplitOptions)</code><font _mstmutation="1" _msttexthash="20541378" _msthash="66" style="box-sizing: border-box;"><span class="style2">: 
+					Разбивает строку на подстроки на основе строк в массиве.</span></font></li>
+				</ul>
+				<p style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				&nbsp;</p>
+				<p style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<font _mstmutation="1" _msttexthash="254760129" _msthash="16">
+				Метод создает массив подстрок путем разбиения Входная строка на 
+				основе одного или нескольких разделителей. Строки также могут 
+				быть разделены с помощью метода; Он разбивает строку на основе 
+				обычного шаблон выражения.</font><code style="font-family: Consolas;">String.SplitRegex.Split</code></p>
+				<pre class="compact" style="font-family: Consolas, monospace; font-size: 10pt; overflow: auto; line-height: 1.3; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">Split(Char[], Int32, StringSplitOptions)
+Split(Char, Int32, StringSplitOptions)
+Split(String[], Int32, StringSplitOptions)
+Split(String[], StringSplitOptions)
+Split(String, Int32, StringSplitOptions)
+Split(Char[], StringSplitOptions)
+Split(Char[], Int32)
+Split(Char, StringSplitOptions)
+Split(String, StringSplitOptions)
+Split(Char[])
+</pre>
+				<p style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<font _mstmutation="1" _msttexthash="12460890" _msthash="17">
+				Существует десять перегруженных методов.</font><code style="font-family: Consolas;">String.Split</code></p>
+				<span id="ezoic-pub-ad-placeholder-709" data-method="ai-placeholders" class="ezoic-autoinsert-ad" style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</span>
+				<pre class="compact" style="font-family: Consolas, monospace; font-size: 10pt; overflow: auto; line-height: 1.3; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">Split(String, String, RegexOptions, TimeSpan)
+Split(String, String, RegexOptions)
+Split(String, Int32, Int32)
+Split(String, Int32)
+Split(String)
+Split(String, String)
+</pre>
+				<p style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<font _mstmutation="1" _msttexthash="11284884" _msthash="18">
+				Существует семь перегруженных методов.</font><code style="font-family: Consolas;">Regex.Split</code></p>
+				<h3 _msttexthash="13671697" _msthash="67" style="box-sizing: border-box; font-family: Arial; font-weight: 400; line-height: 1.1; margin-top: 23px; margin-bottom: 11.5px; font-size: 34px; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: 0.1px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Разбиение строки на массив с помощью запятой</h3>
+				<p _msttexthash="110141941" _msthash="68" style="box-sizing: border-box; margin: 0px 0px 1em; color: rgb(102, 102, 102); font-family: Arial; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: 0.1px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Давайте рассмотрим пример консольного приложения, в котором мы 
+				будем разбивать строку на массив с помощью запятой в качестве 
+				разделителя в C#</p>
+				<pre><span class="style3"><strong>using System;
+
+namespace StringSplitArray
+</strong>{<strong>
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            var names = "Vikram,Vikas,Vinod,Hitesh,Prem";
+            //split names string into array
+            string[] namesList = names.Split(",");
+
+            //loop and print
+            foreach (string name in namesList)
+            {
+                Console.WriteLine(name);
+            }
+
+        }
+    }
+</strong></span><span class="style4"><strong>}</strong></span></pre>
+				<h2 _msttexthash="9132279" _msthash="19" style="color: rgb(0, 0, 0); font-family: georgia; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Простой пример разбиения строки на C#</h2>
+				<p style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<font _mstmutation="1" _msttexthash="16997422" _msthash="20">
+				Ниже приведена простая демонстрация этого метода.</font><code style="font-family: Consolas;">String.Split</code></p>
+				<div class="codehead" _msttexthash="146965" _msthash="21" style="font-family: Consolas; font-weight: 600; color: rgb(89, 154, 96); background: rgb(213, 232, 215); border-top-left-radius: 4px; border-top-right-radius: 4px; padding: 4px 15px; margin-bottom: 0px; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					Program.cs</div>
+				<pre class="code" style="font-family: Consolas, monospace; font-size: 10pt; overflow: auto; line-height: 1.4; margin-top: 0px; padding: 10px 0px 10px 10px; background: rgb(237, 239, 244); border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">var text = &quot;There is an old hawk in the sky&quot;;
+
+var words = text.Split(&#39; &#39;);
+Array.ForEach(words, Console.WriteLine);
+</pre>
+				<p style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<font _mstmutation="1" _msttexthash="83242315" _msthash="22">В 
+				примере мы разбиваем предложение на массив слов по символу 
+				пробела. С помощью метода мы выводим все слова в файл терминал.</font><code style="font-family: Consolas;">Array.ForEach</code></p>
+				<span id="ezoic-pub-ad-placeholder-712" data-method="ai-placeholders" class="ezoic-autoinsert-ad" style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</span>
+				<span id="ezoic-pub-ad-placeholder-909" data-method="placement-service" style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</span>
+				<pre class="compact" style="font-family: Consolas, monospace; font-size: 10pt; overflow: auto; line-height: 1.3; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">$ dotnet run
+There
+is
+an
+old
+hawk
+in
+the
+sky
+</pre>
+				<h2 style="color: rgb(0, 0, 0); font-family: georgia; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span id="ezoic-pub-ad-placeholder-132" class="ezoic-adpicker-ad">
+				</span>
+				<font _mstmutation="1" _msttexthash="13472745" _msthash="23">C# 
+				разделять строки и опускать пустые записи</font></h2>
+				<p style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<font _mstmutation="1" _msttexthash="74898759" _msthash="24">
+				Разделение строк может привести к появлению пустых записей. 
+				Чтобы этого избежать, мы можем Воспользуйтесь опцией.</font><code style="font-family: Consolas;">StringSplitOptions.RemoveEmptyEntries</code></p>
+				<span id="ezoic-pub-ad-placeholder-710" data-method="ai-placeholders" class="ezoic-autoinsert-ad" style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</span>
+				<div class="codehead" _msttexthash="146965" _msthash="25" style="font-family: Consolas; font-weight: 600; color: rgb(89, 154, 96); background: rgb(213, 232, 215); border-top-left-radius: 4px; border-top-right-radius: 4px; padding: 4px 15px; margin-bottom: 0px; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					Program.cs</div>
+				<pre class="code" style="font-family: Consolas, monospace; font-size: 10pt; overflow: auto; line-height: 1.4; margin-top: 0px; padding: 10px 0px 10px 10px; background: rgb(237, 239, 244); border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">var text = &quot;There  is an old  hawk in the sky&quot;;
+
+var words = text.Split(&#39; &#39;, StringSplitOptions.RemoveEmptyEntries);
+Array.ForEach(words, Console.WriteLine);
+</pre>
+				<p style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<font _mstmutation="1" _msttexthash="140820628" _msthash="26">В 
+				примере у нас есть несколько пробелов между словами. Это привело 
+				бы к пустые записи в результирующем массиве. Мы используем опцию 
+				опускать такие пустые Записи.</font><code style="font-family: Consolas;">StringSplitOptions.RemoveEmptyEntries</code></p>
+				<span id="ezoic-pub-ad-placeholder-910" data-method="placement-service" style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</span>
+				<h2 _msttexthash="12821783" _msthash="27" style="color: rgb(0, 0, 0); font-family: georgia; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				C# разделение строки на несколько символов</h2>
+				<p _msttexthash="27072513" _msthash="28" style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				C# позволяет разбивать строку с помощью нескольких разделителей.</p>
+				<span id="ezoic-pub-ad-placeholder-713" data-method="ai-placeholders" class="ezoic-autoinsert-ad" style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</span>
+				<div class="codehead" _msttexthash="146965" _msthash="29" style="font-family: Consolas; font-weight: 600; color: rgb(89, 154, 96); background: rgb(213, 232, 215); border-top-left-radius: 4px; border-top-right-radius: 4px; padding: 4px 15px; margin-bottom: 0px; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					Program.cs</div>
+				<pre class="code" style="font-family: Consolas, monospace; font-size: 10pt; overflow: auto; line-height: 1.4; margin-top: 0px; padding: 10px 0px 10px 10px; background: rgb(237, 239, 244); border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">var text = &quot;falcon;eagle,forest,sky;cloud,water,rock;wind&quot;;
+
+var words = text.Split([&#39;,&#39;, &#39;;&#39;]);
+Array.ForEach(words, Console.WriteLine);
+</pre>
+				<p _msttexthash="37158836" _msthash="30" style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В примере мы разделили строку с помощью двух символов: запятая и 
+				точка с запятой.</p>
+				<span id="ezoic-pub-ad-placeholder-711" data-method="ai-placeholders" class="ezoic-autoinsert-ad" style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</span>
+				<pre class="compact" style="font-family: Consolas, monospace; font-size: 10pt; overflow: auto; line-height: 1.3; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">var words = text.Split([&#39;,&#39;, &#39;;&#39;]);
+</pre>
+				<p style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<font _mstmutation="1" _msttexthash="28999165" _msthash="31">
+				Перегруженный метод принимает массив символов в качестве 
+				параметр.</font><code style="font-family: Consolas;">String.Split</code></p>
+				<span id="ezoic-pub-ad-placeholder-911" data-method="placement-service" style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</span>
+				<h2 style="color: rgb(0, 0, 0); font-family: georgia; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span id="ezoic-pub-ad-placeholder-133" class="ezoic-adpicker-ad">
+				</span>
+				<font _mstmutation="1" _msttexthash="8575762" _msthash="32">
+				Ограничение количества подстрок</font></h2>
+				<p style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<font _mstmutation="1" _msttexthash="77200734" _msthash="33">Мы 
+				можем ограничить количество подстрок с помощью перегруженного 
+				метода, который принимает метод Второй параметр.</font><code style="font-family: Consolas;">count</code></p>
+				<div class="codehead" _msttexthash="146965" _msthash="34" style="font-family: Consolas; font-weight: 600; color: rgb(89, 154, 96); background: rgb(213, 232, 215); border-top-left-radius: 4px; border-top-right-radius: 4px; padding: 4px 15px; margin-bottom: 0px; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					Program.cs</div>
+				<pre class="code" style="font-family: Consolas, monospace; font-size: 10pt; overflow: auto; line-height: 1.4; margin-top: 0px; padding: 10px 0px 10px 10px; background: rgb(237, 239, 244); border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">var text = &quot;falcon,eagle,forest,sky,cloud,water,rock,wind&quot;;
+
+var words = text.Split(&#39;,&#39;, 4);
+Array.ForEach(words, Console.WriteLine);
+</pre>
+				<p _msttexthash="14971580" _msthash="35" style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В примере мы разбили строку на четыре подстроки.</p>
+				<span id="ezoic-pub-ad-placeholder-714" data-method="ai-placeholders" class="ezoic-autoinsert-ad" style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</span>
+				<pre class="compact" style="font-family: Consolas, monospace; font-size: 10pt; overflow: auto; line-height: 1.3; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">$ dotnet run
+falcon
+eagle
+forest
+sky,cloud,water,rock,wind
+</pre>
+				<p _msttexthash="15643784" _msthash="36" style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Последняя строка содержит весь остальной текст.</p>
+				<h2 _msttexthash="7399340" _msthash="37" style="color: rgb(0, 0, 0); font-family: georgia; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				C# разделение строка за строкой</h2>
+				<p _msttexthash="69214054" _msthash="38" style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Иногда мы можем захотеть разделить строки по другой строке, а не 
+				по символу. Для этого есть перегруженный метод.</p>
+				<div class="codehead" _msttexthash="146965" _msthash="39" style="font-family: Consolas; font-weight: 600; color: rgb(89, 154, 96); background: rgb(213, 232, 215); border-top-left-radius: 4px; border-top-right-radius: 4px; padding: 4px 15px; margin-bottom: 0px; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					Program.cs</div>
+				<pre class="code" style="font-family: Consolas, monospace; font-size: 10pt; overflow: auto; line-height: 1.4; margin-top: 0px; padding: 10px 0px 10px 10px; background: rgb(237, 239, 244); border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">var text = &quot;hawkxxowlxxvulturexxeagle&quot;;
+
+var birds = text.Split(&quot;xx&quot;);
+Array.ForEach(birds, Console.WriteLine);
+</pre>
+				<span id="ezoic-pub-ad-placeholder-702" data-method="ai-placeholders" class="ezoic-autoinsert-ad" style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</span>
+				<p _msttexthash="10889580" _msthash="40" style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В примере мы разделили строку на строку &quot;xx&quot;.</p>
+				<pre class="compact" style="font-family: Consolas, monospace; font-size: 10pt; overflow: auto; line-height: 1.3; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">$ dotnet run
+hawk
+owl
+vulture
+eagle
+</pre>
+				<h2 style="color: rgb(0, 0, 0); font-family: georgia; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span id="ezoic-pub-ad-placeholder-134" class="ezoic-adpicker-ad">
+				</span>
+				<font _mstmutation="1" _msttexthash="7495072" _msthash="41">C# 
+				разделение строки с помощью Regex.Split</font></h2>
+				<p style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<font _mstmutation="1" _msttexthash="257152974" _msthash="42">
+				Метод разбивает входную строку на массив подстроки в позициях, 
+				определенных регулярным выражением, совпадают.<span>&nbsp;</span><a _mstmutation="1" _istranslated="1" style="color: rgb(0, 153, 247);" href="https://zetcode.com/csharp/regex/">Учебник 
+				по регулярным выражениям в C#</a><span>&nbsp;</span>охватывает 
+				регулярные выражения выражения на языке C# более подробно.</font><code style="font-family: Consolas;">Regex.Split</code></p>
+				<span id="ezoic-pub-ad-placeholder-715" data-method="ai-placeholders" class="ezoic-autoinsert-ad" style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</span>
+				<span id="ezoic-pub-ad-placeholder-912" data-method="placement-service" style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</span>
+				<div class="codehead" _msttexthash="146965" _msthash="43" style="font-family: Consolas; font-weight: 600; color: rgb(89, 154, 96); background: rgb(213, 232, 215); border-top-left-radius: 4px; border-top-right-radius: 4px; padding: 4px 15px; margin-bottom: 0px; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					Program.cs</div>
+				<pre class="code" style="font-family: Consolas, monospace; font-size: 10pt; overflow: auto; line-height: 1.4; margin-top: 0px; padding: 10px 0px 10px 10px; background: rgb(237, 239, 244); border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">using System.Text.RegularExpressions;
+
+var text = &quot;There are\t\t many clouds   in the \n sky.&quot;;
+
+var rx = new Regex(@&quot;\s+&quot;, RegexOptions.Compiled);
+var data = rx.Split(text);
+
+Array.ForEach(data, Console.WriteLine);
+</pre>
+				<p _msttexthash="19853080" _msthash="44" style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В примере предложение разбивается на слова по пробелам.</p>
+				<pre class="explanation" style="font-family: Consolas, monospace; font-size: 10pt; overflow: auto; line-height: 1.5; padding: 5px 0px 5px 10px; border-radius: 4px; background: rgb(237, 239, 244); color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">var rx = new Regex(@&quot;\s+&quot;, RegexOptions.Compiled);
+</pre>
+				<p _msttexthash="30862130" _msthash="45" style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Регулярное выражение разбивает строку на один или несколько 
+				пробелов.</p>
+				<span id="ezoic-pub-ad-placeholder-716" data-method="ai-placeholders" class="ezoic-autoinsert-ad" style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</span>
+				<h2 _msttexthash="205179" _msthash="46" style="color: rgb(0, 0, 0); font-family: georgia; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				C# String.Join</h2>
+				<p style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<font _mstmutation="1" _msttexthash="155084813" _msthash="47">В 
+				предыдущих примерах мы разбили строки на массив подстрок. Метод 
+				конкатенирует все элементы строки массива, используя указанный 
+				разделитель между каждым элементом.</font><code style="font-family: Consolas;">String.Join</code></p>
+				<div class="codehead" _msttexthash="146965" _msthash="48" style="font-family: Consolas; font-weight: 600; color: rgb(89, 154, 96); background: rgb(213, 232, 215); border-top-left-radius: 4px; border-top-right-radius: 4px; padding: 4px 15px; margin-bottom: 0px; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					Program.cs</div>
+				<pre class="code" style="font-family: Consolas, monospace; font-size: 10pt; overflow: auto; line-height: 1.4; margin-top: 0px; padding: 10px 0px 10px 10px; background: rgb(237, 239, 244); border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">List&lt;string&gt; words = [&quot;falcon&quot;, &quot;wood&quot;, &quot;sky&quot;, &quot;water&quot;];
+
+var text = string.Join(&#39;,&#39;, words);
+Console.WriteLine(text);
+</pre>
+				<p _msttexthash="24006645" _msthash="49" style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В примере мы объединяем список слов с помощью символа-запятой.</p>
+				<span id="ezoic-pub-ad-placeholder-913" data-method="placement-service" style="color: rgb(0, 0, 0); font-family: georgia; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</span>
+				<pre class="compact" style="font-family: Consolas, monospace; font-size: 10pt; overflow: auto; line-height: 1.3; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">$ dotnet run
+falcon,wood,sky,water</pre>
+                <p></p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les46.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les46_/7.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 11:39:55 GMT -->
+</html>

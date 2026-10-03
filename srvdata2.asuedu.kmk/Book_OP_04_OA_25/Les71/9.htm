@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les71/9.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 11:03:43 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+				color: rgb(0, 0, 255);
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Где писать код (form.cs или program.cs)?</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <div id="post_message_14731983" style="color: rgb(0, 0, 0); font-family: verdana, tahoma, sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 2px 2px 2px 5px;">
+								<b>А вот в Windows Form возникают некоторые 
+								проблемы.</b><br />
+								Создадим пустое приложение и поместим на него 
+								кнопку. Сделаем двойной клик по кнопке. Visual 
+								Studio откроет файл Form1.cs. Тем не менее, его 
+								нет в инспекторе объектов. Я знаю, что можно 
+								сделать Form.cs - &gt; Перейти к коду. <u>Но так 
+								или иначе странно, что файл кода и файл формы 
+								представлены в инспекторе как один объект. </u>
+								Говоря проще - где в инспекторе Form1.cs (во 
+								вложенном меню тоже не нашел)? Инспектор должен 
+								показывать мое текущее местоположение. В то же 
+								время другой cs файл - Program.cs представлен 
+								отдельно.<br />
+								<br />
+								Собственно отсюда вытекает основной вопрос - где 
+								писать код? В form.cs или program.cs?<br />
+								В program.cs вижу<br />
+								<div style="margin: 5px 10px 5px 30px;">
+												<table class="csharp" style="font-family: monospace;">
+																<thead>
+																				<tr>
+																								<td colspan="2" class="head" style="font: bold 11px sans-serif; color: rgb(96, 96, 96); border-bottom: 1px solid rgb(144, 144, 144); padding: 2px; width: 800px;">C#<a style="color: rgb(96, 96, 96); text-decoration: underline; float: right; font-weight: normal;" href="https://www.cyberforum.ru/#">Выделить код</a></td>
+																				</tr>
+																</thead>
+																<tr class="li1" style="font-weight: 400; vertical-align: top;">
+																				<td style="font: 13px verdana, tahoma, sans-serif;">
+																				<div id="546317506" class="codeframe" style="width: 805px; overflow: auto; height: 281px;">
+																								<table>
+																												<tr class="li1" style="font-weight: 400; vertical-align: top;">
+																																<td class="ln" style="font: 13px verdana, tahoma, sans-serif; width: 1px; text-align: right; margin: 0px; padding: 0px 10px 0px 5px; vertical-align: top;">
+																																<pre class="de1" style="font: 1em / 1.2em monospace; margin: 0px; padding: 0px; background: 0px 0px; vertical-align: top;">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre>
+																																</td>
+																																<td class="de1" style="font: 1em / 1.2em monospace; margin: 0px; padding: 0px; background: 0px 0px; vertical-align: top;">
+																																<pre class="de1" style="font: 1em / 1.2em monospace; margin: 0px; padding: 0px; background: 0px 0px; vertical-align: top;"><span class="kw1" style="color: rgb(6, 0, 255); font-weight: 700;">namespace</span> WindowsFormsApp2
+<span class="br0" style="color: green;">{</span>
+    <span class="kw1" style="color: rgb(6, 0, 255); font-weight: 700;">static</span> <span class="kw4" style="color: rgb(102, 102, 204); font-weight: 700;">class</span> Program
+    <span class="br0" style="color: green;">{</span>
+        <span class="co1" style="color: teal; font-style: italic;">/// &lt;summary&gt;</span>
+        <span class="co1" style="color: teal; font-style: italic;">/// Главная точка входа для приложения.</span>
+        <span class="co1" style="color: teal; font-style: italic;">/// &lt;/summary&gt;</span>
+        <span class="br0" style="color: green;">[</span>STAThread<span class="br0" style="color: green;">]</span>
+        <span class="kw1" style="color: rgb(6, 0, 255); font-weight: 700;">static</span> <span class="kw4" style="color: rgb(102, 102, 204); font-weight: 700;">void</span> Main<span class="br0" style="color: green;">()</span>
+        <span class="br0" style="color: green;">{</span>
+            Application<span class="sy0" style="color: green;">.</span><span class="me1" style="color: rgb(0, 0, 255);">EnableVisualStyles</span><span class="br0" style="color: green;">()</span><span class="sy0" style="color: green;">;</span>
+            Application<span class="sy0" style="color: green;">.</span><span class="me1" style="color: rgb(0, 0, 255);">SetCompatibleTextRenderingDefault</span><span class="br0" style="color: green;">(</span><span class="kw1" style="color: rgb(6, 0, 255); font-weight: 700;">false</span><span class="br0" style="color: green;">)</span><span class="sy0" style="color: green;">;</span>
+            Application<span class="sy0" style="color: green;">.</span><span class="me1" style="color: rgb(0, 0, 255);">Run</span><span class="br0" style="color: green;">(</span><span class="kw3" style="color: green;">new</span> Form1<span class="br0" style="color: green;">())</span><span class="sy0" style="color: green;">;</span>
+        <span class="br0" style="color: green;">}</span>
+    <span class="br0" style="color: green;">}</span>
+<span class="br0" style="color: green;">}</span></pre>
+																																</td>
+																												</tr>
+																								</table>
+																				</div>
+																				</td>
+																</tr>
+												</table>
+								</div>
+								Main() как бы говорит - пиши код здесь. Более 
+								того Application.Run(new Form1) показывает, что 
+								отсюда идет создание экземпляра Form1.<br />
+								<br />
+								Но перейдем к визуальному редактору формы и 
+								сделаем двойной клик по кнопке. Visual Studio 
+								откроет файл<br />
+								Form1.cs.<br />
+								Там мы видим<br />
+								<div style="margin: 5px 10px 5px 30px;">
+												<table class="csharp" style="font-family: monospace;">
+																<thead>
+																				<tr>
+																								<td colspan="2" class="head" style="font: bold 11px sans-serif; color: rgb(96, 96, 96); border-bottom: 1px solid rgb(144, 144, 144); padding: 2px; width: 800px;">C#<a style="color: rgb(96, 96, 96); text-decoration: underline; float: right; font-weight: normal;" href="https://www.cyberforum.ru/#">Выделить код</a></td>
+																				</tr>
+																</thead>
+																<tr class="li1" style="font-weight: 400; vertical-align: top;">
+																				<td style="font: 13px verdana, tahoma, sans-serif;">
+																				<div id="852874764" class="codeframe" style="width: 805px; overflow: auto; height: 265px;">
+																								<table>
+																												<tr class="li1" style="font-weight: 400; vertical-align: top;">
+																																<td class="ln" style="font: 13px verdana, tahoma, sans-serif; width: 1px; text-align: right; margin: 0px; padding: 0px 10px 0px 5px; vertical-align: top;">
+																																<pre class="de1" style="font: 1em / 1.2em monospace; margin: 0px; padding: 0px; background: 0px 0px; vertical-align: top;">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre>
+																																</td>
+																																<td class="de1" style="font: 1em / 1.2em monospace; margin: 0px; padding: 0px; background: 0px 0px; vertical-align: top;">
+																																<pre class="de1" style="font: 1em / 1.2em monospace; margin: 0px; padding: 0px; background: 0px 0px; vertical-align: top;"><span class="kw1" style="color: rgb(6, 0, 255); font-weight: 700;">namespace</span> WindowsFormsApp2
+<span class="br0" style="color: green;">{</span>
+    <span class="kw1" style="color: rgb(6, 0, 255); font-weight: 700;">public</span> <span class="kw1" style="color: rgb(6, 0, 255); font-weight: 700;">partial</span> <span class="kw4" style="color: rgb(102, 102, 204); font-weight: 700;">class</span> Form1 <span class="sy0" style="color: green;">:</span> Form
+    <span class="br0" style="color: green;">{</span>
+        <span class="kw1" style="color: rgb(6, 0, 255); font-weight: 700;">public</span> Form1<span class="br0" style="color: green;">()</span>
+        <span class="br0" style="color: green;">{</span>
+            InitializeComponent<span class="br0" style="color: green;">()</span><span class="sy0" style="color: green;">;</span>
+        <span class="br0" style="color: green;">}</span>
+&nbsp;
+        <span class="kw1" style="color: rgb(6, 0, 255); font-weight: 700;">private</span> <span class="kw4" style="color: rgb(102, 102, 204); font-weight: 700;">void</span> button1_Click<span class="br0" style="color: green;">(</span><span class="kw4" style="color: rgb(102, 102, 204); font-weight: 700;">object</span> sender, EventArgs e<span class="br0" style="color: green;">)</span>
+        <span class="br0" style="color: green;">{</span>
+&nbsp;
+        <span class="br0" style="color: green;">}</span>
+    <span class="br0" style="color: green;">}</span>
+<span class="br0" style="color: green;">}</span></pre>
+																																</td>
+																												</tr>
+																								</table>
+																				</div>
+																				</td>
+																</tr>
+												</table>
+								</div>
+								То есть обработчик события, где обычно и пишут 
+								код.<br />
+								<br />
+								А где писать свои классы и всё то, что будет 
+								вызываться по нажатии на кнопку? Ил без нажатия, 
+								при запуске программы?<br />
+								<br />
+								<span style="font-family: verdana, tahoma, sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;" class="style2">
+								<strong>Обычно код, связанный с формой пишут в 
+								классе формы. </strong></span>
+								<span style="color: rgb(0, 0, 0); font-family: verdana, tahoma, sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+								Или в обработчике событий, или в самом теле 
+								класса.</span><br style="color: rgb(0, 0, 0); font-family: verdana, tahoma, sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" />
+								<div style="color: rgb(0, 0, 0); font-family: verdana, tahoma, sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 5px 10px 5px 30px;">
+												<table class="csharp" style="font-family: monospace;">
+																<thead>
+																				<tr>
+																								<td colspan="2" class="head" style="font: bold 11px sans-serif; color: rgb(96, 96, 96); border-bottom: 1px solid rgb(144, 144, 144); padding: 2px; width: 800px;">C#<a style="color: rgb(96, 96, 96); text-decoration: underline; float: right; font-weight: normal;" href="https://www.cyberforum.ru/#">Выделить код</a></td>
+																				</tr>
+																</thead>
+																<tr class="li1" style="font-weight: 400; vertical-align: top;">
+																				<td style="font: 13px verdana, tahoma, sans-serif;">
+																				<div id="352105941" class="codeframe" style="width: 805px; overflow: auto; height: 297px;">
+																								<table>
+																												<tr class="li1" style="font-weight: 400; vertical-align: top;">
+																																<td class="ln" style="font: 13px verdana, tahoma, sans-serif; width: 1px; text-align: right; margin: 0px; padding: 0px 10px 0px 5px; vertical-align: top;">
+																																<pre class="de1" style="font: 1em / 1.2em monospace; margin: 0px; padding: 0px; background: 0px 0px; vertical-align: top;">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre>
+																																</td>
+																																<td class="de1" style="font: 1em / 1.2em monospace; margin: 0px; padding: 0px; background: 0px 0px; vertical-align: top;">
+																																<pre class="de1" style="font: 1em / 1.2em monospace; margin: 0px; padding: 0px; background: 0px 0px; vertical-align: top;"><span class="kw1" style="color: rgb(6, 0, 255); font-weight: 700;">namespace</span> WindowsFormsApp2
+<span class="br0" style="color: green;">{</span>
+    &nbsp;<span class="kw1" style="color: rgb(6, 0, 255); font-weight: 700;">public</span> <span class="kw1" style="color: rgb(6, 0, 255); font-weight: 700;">partial</span> <span class="kw4" style="color: rgb(102, 102, 204); font-weight: 700;">class</span> Form1 <span class="sy0" style="color: green;">:</span> Form
+    <span class="br0" style="color: green;">{</span>
+        <span class="kw1" style="color: rgb(6, 0, 255); font-weight: 700;">public</span> Form1<span class="br0" style="color: green;">()</span>
+        <span class="br0" style="color: green;">{</span>
+            InitializeComponent<span class="br0" style="color: green;">()</span><span class="sy0" style="color: green;">;</span>
+        <span class="br0" style="color: green;">}</span>
+        <span class="co1" style="color: teal; font-style: italic;">//здесь (или между обработчиками событий) задаются переменные, используемые во всем классе и собственные методы</span>
+        <span class="kw1" style="color: rgb(6, 0, 255); font-weight: 700;">private</span> <span class="kw4" style="color: rgb(102, 102, 204); font-weight: 700;">void</span> button1_Click<span class="br0" style="color: green;">(</span><span class="kw4" style="color: rgb(102, 102, 204); font-weight: 700;">object</span> sender, EventArgs e<span class="br0" style="color: green;">)</span>
+        <span class="br0" style="color: green;">{</span>
+              <span class="co1" style="color: teal; font-style: italic;">//здесь пишется код события</span>
+        <span class="br0" style="color: green;">}</span>
+&nbsp;
+    <span class="br0" style="color: green;">}</span>
+    <span class="co1" style="color: teal; font-style: italic;">// а здесь (в пространстве имен, но не в классе формы) можно создавать другие классы со своими методами и переменными</span>
+<span class="br0" style="color: green;">}</span></pre>
+																																</td>
+																												</tr>
+																								</table>
+																				</div>
+																				</td>
+																</tr>
+												</table>
+								</div>
+								<span style="color: rgb(0, 0, 0); font-family: verdana, tahoma, sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(246, 246, 246); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+								А в program.cs такие дилетанты как я заходят 
+								только если нужно сменить номер первой 
+								открываемой формы ))</span></div>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les66.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les71/9.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 11:03:43 GMT -->
+</html>

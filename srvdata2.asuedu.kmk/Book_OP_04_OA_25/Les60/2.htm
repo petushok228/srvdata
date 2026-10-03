@@ -1,0 +1,557 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les60/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:54:43 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+				color: #0000FF;
+				text-decoration: underline;
+}
+.style3 {
+				color: #FF0000;
+}
+.style4 {
+				text-decoration: underline;
+				color: #FF0000;
+}
+.style5 {
+				color: rgb(0, 0, 255);
+}
+    .style6 {
+				font-size: medium;
+}
+    .style7 {
+	font-size: small;
+}
+    .style11 {
+	font-size: medium;
+	color: #0000FF;
+}
+    .style12 {
+	color: #800000;
+	font-size: medium;
+}
+    .style13 {
+	color: #FF0000;
+	font-size: medium;
+}
+.style14 {
+	text-decoration: underline;
+	color: #FF0000;
+	font-size: medium;
+}
+.style15 {
+	margin-left: 60px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 24px;
+	padding: 0px;
+}
+    .style16 {
+	font-size: large;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 1 События. </td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <header class="entry-header cf" style="box-sizing: inherit; display: block; margin-bottom: 4px; color: rgb(48, 48, 48); font-family: Arial, sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<h1 class="style6" itemprop="headline" style="box-sizing: inherit; border: none; margin: 0px; padding: 0px; list-style: none; vertical-align: baseline; font-size: 1.5rem; clear: both; font-family: &quot;Roboto Condensed&quot;, sans-serif; font-weight: inherit; line-height: 1;">
+				<a style="box-sizing: inherit; color: rgb(48, 48, 48); cursor: pointer; text-decoration: none;" href="https://www.nookery.ru/what-are-events-in-c/">
+				Что такое События в C#?</a></h1>
+				<p class="style5"><span class="style7"><strong>Общие сведения о событиях</strong></P>
+				<p class="style6">
+События имеют следующие свойства:</P>
+				<ul class="style12">
+					<li><strong><span class="style3">Издатель</span> определяет, когда возникает событие; 
+					<span class="style3">подписчики</span> определяют, какое действие выполняется в ответ на событие.
+					</strong></li>
+					<li><strong><span class="style3">У события может быть несколько подписчиков</span>. Подписчик может обрабатывать несколько событий от нескольких издателей.
+					</strong></li>
+					<li><strong>События, не имеющие подписчиков, никогда не возникают.
+					</strong></li>
+					<li><strong>Обычно события используются для оповещения о действиях пользователя, например нажатиях кнопок или выборе пунктов меню в графических пользовательских интерфейсах.
+					</strong></li>
+					<li><strong>Если событие имеет несколько подписчиков, при возникновении события обработчики событий вызываются синхронно. 
+					</strong></li>
+					<li><strong>В библиотеке классов .NET события основываются на делегате 
+					<span class="style3">EventHandler</span> и базовом классе 
+					<span class="style3">EventArgs</span>.</strong></span></li>
+				</ul>
+				<p class="style11" itemprop="headline" style="box-sizing: inherit; border: none; margin: 0px; padding: 0px; list-style: none; vertical-align: baseline; font-size: 1.5rem; clear: both; font-family: &quot;Roboto Condensed&quot;, sans-serif; font-weight: inherit; line-height: 1;">
+				<strong>События позволяют классу или объекту уведомлять другие классы или объекты о возникновении каких-либо ситуаций. </strong></p>
+				<p class="style11" itemprop="headline" style="box-sizing: inherit; border: none; margin: 0px; padding: 0px; list-style: none; vertical-align: baseline; font-size: 1.5rem; clear: both; font-family: &quot;Roboto Condensed&quot;, sans-serif; font-weight: inherit; line-height: 1;">
+				<strong>Класс, отправляющий (или порождающий) событие, называется издателем , а классы, принимающие (или обрабатывающие) событие, называются подписчиками.&nbsp;</strong></p>
+				</header>
+				<div class="entry-content cf" itemprop="text" style="box-sizing: inherit; font-family: Arimo, sans-serif; font-size: 12pt;
+ line-height: 1.6; color: rgb(48, 48, 48); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<p style="box-sizing: inherit; border: none; margin: 4px 0px 12px; padding: 0px; list-style: none; vertical-align: baseline;" class="style6">
+								События - это не просто действия 
+								пользователя.&nbsp;Существуют события разного 
+								типа, инициируемые различными объектами.</p>
+								<p style="border-style: none; border-color: inherit; border-width: medium; box-sizing: inherit; margin: 4px 0px 12px; padding: 0px; list-style: none; vertical-align: baseline; font-family: Arimo, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style4">
+				<strong>Алгоритм создания и 
+				использования событий:</strong></p>
+				<ul style="box-sizing: inherit; border: none; margin: 4px 0px 8px; padding: 0px 0px 0px 20px; list-style: none; vertical-align: baseline; color: rgb(48, 48, 48); font-family: Arimo, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li style="box-sizing: inherit; border: none; margin: 4px 0px 4px 15px; padding: 0px; list-style: outside disc; vertical-align: baseline;">
+								1. Создание событийного делегата.</li>
+								<li style="box-sizing: inherit; border: none; margin: 4px 0px 4px 15px; padding: 0px; list-style: outside disc; vertical-align: baseline;">
+								2. Создание класса-издателя. В этом классе 
+								определяется событие.<ul style="box-sizing: inherit; border: none; margin: 4px 0px 8px; padding: 0px 0px 0px 20px; list-style: none; vertical-align: baseline; color: rgb(48, 48, 48); font-family: Arimo, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+									<li style="box-sizing: inherit; border: none; margin: 4px 0px 4px 15px; padding: 0px; list-style: outside disc; vertical-align: baseline;">2.1 Создание события, как объект делегата.</li>
+									<li style="box-sizing: inherit; border: none; margin: 4px 0px 4px 15px; padding: 0px; list-style: outside disc; vertical-align: baseline;">2.2 Создание метода, который вызывает событие.</li>
+								</ul>
+								</li>
+								<li style="box-sizing: inherit; border: none; margin: 4px 0px 4px 15px; padding: 0px; list-style: outside disc; vertical-align: baseline;">
+								3 Создание класса-подписчика.<ul style="box-sizing: inherit; border: none; margin: 4px 0px 8px; padding: 0px 0px 0px 20px; list-style: none; vertical-align: baseline; color: rgb(48, 48, 48); font-family: Arimo, sans-serif; font-size: 12pt; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+									<li style="box-sizing: inherit; border: none; margin: 4px 0px 4px 15px; padding: 0px; list-style: outside disc; vertical-align: baseline;">3.1 Создание обработчика события.</li>
+								</ul>
+								</li>
+								<li style="box-sizing: inherit; border: none; margin: 4px 0px 4px 15px; padding: 0px; list-style: outside disc; vertical-align: baseline;">
+								4. Создание объекта класса-издателя.</li>
+								<li style="box-sizing: inherit; border: none; margin: 4px 0px 4px 15px; padding: 0px; list-style: outside disc; vertical-align: baseline;">
+								5. Создание объекта класса-подписчика.</li>
+								<li style="box-sizing: inherit; border: none; margin: 4px 0px 4px 15px; padding: 0px; list-style: outside disc; vertical-align: baseline;">
+								6. Добавление обработчика события в список 
+								события.</li>
+								<li style="box-sizing: inherit; border: none; margin: 4px 0px 4px 15px; padding: 0px; list-style: outside disc; vertical-align: baseline;">
+								7. Генерирование события.</li>
+				</ul>
+								<h2 style="box-sizing: inherit; border: none; margin: 0px; padding: 0px; list-style: none; vertical-align: baseline; font-size: 1.375rem; clear: none; font-family: &quot;Roboto Condensed&quot;, sans-serif; font-weight: inherit; line-height: 1.5;" class="style6">
+								Как события работают с делегатами?</h2>
+								<p style="box-sizing: inherit; border: none; margin: 4px 0px 12px; padding: 0px; list-style: none; vertical-align: baseline;">
+								<span class="style13"><strong>Делегаты используются для ссылки на 
+								метод.</strong></span><span class="style6">&nbsp;
+								<span class="style2"><strong>Событие связывается с обработчиком 
+								событий с помощью делегатов</strong></span>.&nbsp;</span><span class="style5"><em><span class="style6">Когда событие 
+								возникает, оно <strong>посылает сигнал делегатам</strong>, и 
+								делегаты выполняют соответствующую функцию.</span></em></span></p>
+								<h2 style="box-sizing: inherit; border: none; margin: 0px; padding: 0px; list-style: none; vertical-align: baseline; font-size: 1.375rem; clear: none; font-family: &quot;Roboto Condensed&quot;, sans-serif; font-weight: inherit; line-height: 1.5;" class="style6">
+								<span class="style16">Что такое </span> <span class="style3">
+								<span class="style16">модель издатель-подписчик</span></span>?</h2>
+								<p style="box-sizing: inherit; border: none; margin: 4px 0px 12px; padding: 0px; list-style: none; vertical-align: baseline;" class="style6">
+								В любом случае есть <span class="style2">
+								<strong>две части программы 
+								обработки событий</strong></span>.&nbsp;Одна часть является 
+								<span class="style3"><strong>издателем</strong></span>, который содержит определение событий 
+								и делегатов, а другая часть - 
+								<span class="style3"><strong>подписчиком,</strong></span> который 
+								принимает событие и предоставляет обработчик 
+								событий.</p>
+								<ol style="box-sizing: inherit; border: none; margin: 4px 0px 8px; padding: 0px 0px 0px 20px; list-style: none; vertical-align: baseline;">
+												<li style="box-sizing: inherit; border: none; margin: 4px 0px 4px 15px; padding: 0px; list-style: outside decimal; vertical-align: baseline;">
+												Событие создается с помощью 
+												ключевого слова 
+												<span class="style3"><strong>event.</strong></span></li>
+												<li style="box-sizing: inherit; border: none; margin: 4px 0px 4px 15px; padding: 0px; list-style: outside decimal; vertical-align: baseline;" class="style3">
+												<strong>Событие не имеет возвращаемого 
+												типа и всегда является пустым.</strong></li>
+												<li style="box-sizing: inherit; border: none; margin: 4px 0px 4px 15px; padding: 0px; list-style: outside decimal; vertical-align: baseline;">
+												Все события основаны на 
+												делегатах.</li>
+												<li style="box-sizing: inherit; border: none; margin: 4px 0px 4px 15px; padding: 0px; list-style: outside decimal; vertical-align: baseline;">
+												Все опубликованные события 
+												должны иметь объект 
+												прослушивания.</li>
+												<li style="box-sizing: inherit; border: none; margin: 4px 0px 4px 15px; padding: 0px; list-style: outside decimal; vertical-align: baseline;">
+												Все события должны быть 
+												определены, начиная с ключевого 
+												слова <span class="style3">
+												<strong>«On». - <span lang="ru">
+												для графических проиложений</span></strong></span></li>
+								</ol>
+				</div>
+                <p><span class="style7"><span class="style3"><strong>Событие представляет собой автоматическое уведомление о том, что произошло некоторое действие.</strong></span> События действуют по следующему принципу: объект, проявляющий интерес к событию, регистрирует обработчик этого события. Когда же событие происходит, вызываются все зарегистрированные обработчики этого события. Обработчики событий обычно представлены делегатами.</p>
+<p class="style6">События являются членами класса и объявляются с помощью ключевого слова event. Чаще всего для этой цели используется следующая форма:</p>
+<p class="style2"><em><strong><span class="style13">event</span><span class="style6">&nbsp; делегат_события&nbsp; имя_события;</span></strong></em></p>
+<p class="style6">где <span class="style3"><strong>делегат_события</strong></span> обозначает имя делегата, используемого для поддержки события, а 
+<span class="style3"><strong>имя_события</strong></span> — конкретный объект объявляемого события.</p>
+				<font FACE="Cascadia Mono" SIZE="2">
+				<p class="style6">public <span class="style3"><strong>event</strong></span> 
+				dlgUserEventHandler myEvent;</p>
+				</font>
+<p class="style6">События основаны на делегатах и <span class="style2"><em>предоставляют им механизм публикации/подписки</em></span>. </p>
+<p class="style6">Как и делегаты, <span class="style3"><strong>события поддерживают групповую адресацию</strong></span>. Это дает возможность нескольким объектам реагировать на уведомле��ие о событии.</p>
+<p><span class="style14"><em>Методы экземпляра и статические методы могут быть использованы в качестве обработчиков событий,</em></span><span class="style6"> но между ними имеется одно существенное отличие. 
+</span> </p>
+				<p class="style6">Когда <span class="style4"><strong>статический метод</strong></span> используется в качестве обработчика, 
+				<span class="style2"><em>уведомление о событии распространяется на весь класс</em></span>. </p>
+				<p><span class="style6">А когда <span class="style4"><strong>в качестве обработчика используется метод экземпляра</strong></span>, то 
+				<span class="style2"><em>события адресуются конкретным экземплярам объектов</em></span>. Следовательно, каждый объект определенного класса, которому требуется получить уведомление о событии, должен быть зарегистрирован отдельно. 
+				</span> 
+				</span> 
+				<span class="style4"><strong><span class="style6">На практике большинство обработчиков событий представляет собой методы экземпляра, хотя это, конечно, зависит от конкретного приложения.</span></strong></span></p>
+				<h5 id="q01" style="border-style: none; border-color: inherit; border-width: 0px; font-family: Lato, sans-serif; font-style: normal; font-weight: 700; margin: 36px 0px 12px; outline: 0px; padding: 0px; vertical-align: baseline; clear: both; line-height: 1.33333; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style6">
+				1. Какая целесообразность использования событий в языке C#?</h5>
+				<p style="border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: 700; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" class="style6">
+				Событие</strong><span class="style6">&nbsp;– это автоматическое сообщение о 
+				том, что в программе состоялось некоторое действие.</span></p>
+				<p style="border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style6">На выполнение того или другого события программа может 
+				соответственно реагировать. Реакция на событие осуществляется с 
+				помощью так называемых обработчиков события.</span><span><span class="style6">&nbsp;</span></span><em style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: italic; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" class="style6">Обработчик 
+				события</em><span class="style6">&nbsp;– это обычный метод, который выполняет 
+				некоторые действия в программе, в случае если состоялось 
+				(сгенерировалось) событие.</span></p>
+				<p style="border-style: none; border-color: inherit; border-width: 0px; font-family: Lato, sans-serif; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style6">
+				События работают в объединении с делегатами. Такое объединение 
+				позволяет формировать списки (цепочки) обработчиков события 
+				(методов), которые должны вызваться при вызове (запуске, 
+				генерировании) данного события. Такой подход есть эффективным 
+				при написании больших программных систем, поскольку он позволяет 
+				упорядочить большой сложный программный код в котором очень 
+				легко допустить логическую ошибку.</p>
+				<p style="border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style6">На рисунке 1 схематично отображена работа события</span><span><span class="style6">&nbsp;</span></span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">MyEvent</span><span class="style7">.</span></p>
+				<p style="border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: center;">
+				<a style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(36, 137, 13); text-decoration: underline;" href="../../../www.bestprog.net/wp-content/uploads/2017/11/02_02_02_17_08_01r.jpg" class="style7">
+				<img decoding="async" class="aligncenter wp-image-7443 size-large" src="Pic/02_02_02_17_08_01r-1024x286.jpg" alt="" width="474" height="132" srcset="../../../www.bestprog.net/wp-content/uploads/2017/11/02_02_02_17_08_01r-1024x286.jpg 1024w, ../../../www.bestprog.net/wp-content/uploads/2017/11/02_02_02_17_08_01r-300x84.jpg 300w, ../../../www.bestprog.net/wp-content/uploads/2017/11/02_02_02_17_08_01r-768x215.jpg 768w, ../../../www.bestprog.net/wp-content/uploads/2017/11/02_02_02_17_08_01r.jpg 1080w" sizes="(max-width: 474px) 100vw, 474px" style="height: auto; max-width: 100%; border: 0px; vertical-align: middle; clear: both; display: block; margin: 7px auto;" /></a><span class="style7">Рис. 
+				1. Вызов цепи методов для события</span><span><span class="style7">&nbsp;</span></span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style7">MyEvent</span></p>
+				<h5 id="q02" style="border: 0px; font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-weight: 700; margin: 36px 0px 12px; outline: 0px; padding: 0px; vertical-align: baseline; clear: both; line-height: 1.33333; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style6">2. Какая общая форма объявления события? Ключевое слово</span><span><span class="style6">&nbsp;</span></span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">event</span><span class="style6">. 
+				Пример</span></h5>
+				<p style="border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style14"><em>Объявление события осуществляется на 
+				основе ранее объявленного типа делегата.</em></span><span class="style6"> Общая форма 
+				объявления события:</span></p>
+				<pre style="border: 1px solid rgba(0, 0, 0, 0.1); font-family: monospace, serif; font-size: 15px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 12px; vertical-align: baseline; hyphens: none; line-height: 1.6; box-sizing: border-box; max-width: 100%; overflow: auto; white-space: pre-wrap; overflow-wrap: break-word; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">event </span><strong style="border: 0px; font-family: inherit; font-size: 15px; font-style: inherit; font-weight: 700; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"><em style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: italic; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" class="style6">делегат_события</em> <em style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: italic; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" class="style6">имя_события</em></strong><span class="style6">;</span></pre>
+				<p style="border-style: none; border-color: inherit; border-width: 0px; font-family: Lato, sans-serif; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style6">
+				где</p>
+				<ul style="box-sizing: border-box; border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px 20px; outline: 0px; padding: 0px; vertical-align: baseline; list-style: disc; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								<span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">
+								<em style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: italic; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" class="style6">
+								делегат_события</em></span><span class="style6">&nbsp;– имя 
+								типа делегата, который используется для 
+								объявления события;</span></li>
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								<span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);">
+								<em style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: italic; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" class="style6">
+								имя_события</em></span><span class="style6">&nbsp;– 
+								конкретное имя объекта (переменной) типа 
+								«событие».</span></li>
+				</ul>
+				<p style="border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: 700; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" class="style6">
+				Пример.</strong><span class="style6">&nbsp;Объявление события с именем</span><span><span class="style6">&nbsp;</span></span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">MyEvent</span><span><span class="style6">&nbsp;</span></span><span class="style6"><span class="style5"><strong>на 
+				основе типа делегата</strong></span></span><span><span class="style6">&nbsp;</span></span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">MyDelType</span><span class="style7">.</span></p>
+				<pre style="border: 1px solid rgba(0, 0, 0, 0.1); font-family: monospace, serif; font-size: 15px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 12px; vertical-align: baseline; hyphens: none; line-height: 1.6; box-sizing: border-box; max-width: 100%; overflow: auto; white-space: pre-wrap; overflow-wrap: break-word; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">event</span> <span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);" class="style6">MyDelType</span> <span class="style6">MyEvent;</span></pre>
+				<p style="border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; font-weight: 700; color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style6">
+				События в C#</strong><span style="color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;"><span class="style6">&nbsp;</span></span><span style="color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;" class="style6">позволяют&nbsp;</span><span class="style6">классу&nbsp;или 
+				объекту</span><span style="color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;"><span class="style6">&nbsp;</span></span><span style="color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;" class="style6">уведомлять 
+				другие классы или объекты о возникновении каких-либо ситуаций. 
+				События активно используются в Windows-приложениях.<span>&nbsp;</span></span></p>
+				<p style="border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style13"><strong>Класс</strong></span><span style="font-family: &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;" class="style13"><strong>, 
+				который порождает (отправляет) событие,</strong></span><span style="color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;" class="style6"> 
+				называется&nbsp;</span><em style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; font-style: italic; font-family: &quot;Open Sans&quot;, sans-serif; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style11"><strong>издателем</strong></em><span style="color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;" class="style6">, 
+				а </span>
+				<span style="font-family: &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;" class="style13">
+				<strong>классы, обрабатывающие (принимающие) событие</strong></span><span style="color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;" class="style6">, 
+				называются&nbsp;</span><em style="border-style: none; border-color: inherit; border-width: 0px; margin: 0px; padding: 0px; font-style: italic; font-family: &quot;Open Sans&quot;, sans-serif; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style11"><strong>подписчиками</strong></em><span style="color: rgb(58, 58, 58); font-family: &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;" class="style6">. 
+				Соответственно, на одно и то же событие могут подписываться 
+				несколько подписчиков.</span></p>
+				<h5 id="q03" style="border-style: none; border-color: inherit; border-width: 0px; font-family: Lato, sans-serif; font-style: normal; font-weight: 700; margin: 36px 0px 12px; outline: 0px; padding: 0px; vertical-align: baseline; clear: both; line-height: 1.33333; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style6">
+				3. Какие требования к делегату, который будет использоваться для 
+				обработки события?</h5>
+				<p style="border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style5"><strong><span class="style6">Для того, чтобы можно было 
+				обрабатывать (запускать) списки обработчиков события,</span></strong></span><span class="style6">
+				</span>
+				<span class="style4"><em><span class="style6">делегат не должен возвращать значение.</span></em></span><span class="style6"> 
+				То есть, делегат может возвращать тип</span><span><span class="style6">&nbsp;</span></span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">void</span><span class="style6">.</span></p>
+				<p style="border-style: none; border-color: inherit; border-width: 0px; font-family: Lato, sans-serif; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style6">
+				Если делегат возвращает значение, то вызывается последний метод 
+				(обработчик) из сформированного списка методов.</p>
+				<h5 id="q04" style="border-style: none; border-color: inherit; border-width: 0px; font-family: Lato, sans-serif; font-style: normal; font-weight: 700; margin: 36px 0px 12px; outline: 0px; padding: 0px; vertical-align: baseline; clear: both; line-height: 1.33333; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style6">
+				4. Какие требования относятся к методу, который может быть 
+				обработчиком некоторого события?</h5>
+				<p style="border-style: none; border-color: inherit; border-width: 0px; font-family: Lato, sans-serif; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style6">
+				Основное требование – метод может иметь точно такую же сигнатуру 
+				как и делегат, на основе которого объявлено событие.</p>
+				<p style="border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style6">Если нужно организовать список методов, которые вызовутся при 
+				вызове события, тогда тип делегата и метод должны возвращать 
+				значение</span><span><span class="style6">&nbsp;</span></span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">void</span><span class="style6">&nbsp;(ничего 
+				не возвращать). Если есть список методов, возвращающих значение, 
+				то при запуске события из этого списка вызывается последний 
+				метод.</span></p>
+				<h5 id="q05" style="border-style: none; border-color: inherit; border-width: 0px; font-family: Lato, sans-serif; font-style: normal; font-weight: 700; margin: 36px 0px 12px; outline: 0px; padding: 0px; vertical-align: baseline; clear: both; line-height: 1.33333; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style6">
+				5. Как осуществляется регистрация метода в событии? Пример</h5>
+				<p style="border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style6">Чтобы зарегистрировать метод для обработки данного события нужно 
+				использовать операторы</span><strong style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: 700; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);"><span class="style6">&nbsp;</span></span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">‘=’</span></strong><span class="style6">&nbsp;или</span><span><span class="style6">&nbsp;</span></span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);"><strong style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: 700; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" class="style6">‘+=’</strong></span><span class="style7">.</span></p>
+				<p style="border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: 700; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" class="style6">
+				Пример.</strong></p>
+				<p style="border-style: none; border-color: inherit; border-width: 0px; font-family: Lato, sans-serif; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style6">
+				Пусть в теле некоторого класса объявляется:</p>
+				<ul style="box-sizing: border-box; border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px 20px; outline: 0px; padding: 0px; vertical-align: baseline; list-style: disc; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								<span class="style6">событие с именем</span><span><span class="style6">&nbsp;</span></span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">MyEvent</span><span class="style6">;</span></li>
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								<span class="style6">метод обработки события (обработчик события)</span><span><span class="style6">&nbsp;</span></span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">MyMethod1()</span><span class="style6">;</span></li>
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								<span class="style6">обработчик события</span><span><span class="style6">&nbsp;</span></span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">MyMethod2()</span><span class="style6">;</span></li>
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								<span class="style6">обработчик события</span><span><span class="style6">&nbsp;</span></span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">MyMethod3()</span><span class="style7">.</span></li>
+				</ul>
+				<p style="border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style6">Методы имеют точно такую же сигнатуру, как и тип делегата, на 
+				основе которого объявлено событие</span><span><span class="style6">&nbsp;</span></span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">MyEvent</span><span class="style6">. 
+				Чтобы зарегистрировать методы</span><span><span class="style6">&nbsp;</span></span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">MyMethod1()</span>,<span class="style6">&nbsp;</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">MyMethod2()</span>,<span class="style6">&nbsp;</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">MyMethod3()</span><span class="style6">&nbsp;для 
+				события</span><span><span class="style6">&nbsp;</span></span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">MyEvent</span><span class="style6">&nbsp;нужно 
+				написать следующий программный код:</span></p>
+				<pre style="border: 1px solid rgba(0, 0, 0, 0.1); font-family: monospace, serif; font-size: 15px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 12px; vertical-align: baseline; hyphens: none; line-height: 1.6; box-sizing: border-box; max-width: 100%; overflow: auto; white-space: pre-wrap; overflow-wrap: break-word; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span class="style6">...
+
+</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// регистрация методов для события MyEvent</span><span class="style6">
+</span><span class="style6">MyEvent = MyMethod1(); </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// MyEvent =&gt; MyMethod1</span><span class="style6">
+</span><span class="style6">MyEvent += MyMethod2(); </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// MyEvent =&gt; MyMethod1 -&gt; MyMethod2</span><span class="style6">
+</span><span class="style6">MyEvent += MyMethod3(); </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// MyEvent =&gt; MyMethod1 -&gt; MyMethod2 -&gt; MyMethod3</span><span class="style6">
+
+...</span></pre>
+				<p style="border-style: none; border-color: inherit; border-width: 0px; font-family: Lato, sans-serif; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style6">
+				В этом случае образуется список (цепочка) из трех методов. 
+				Методы в списке идут в той же последовательности, в которой они 
+				были зарегистрированы (добавлены) в событие.</p>
+				<p style="border-style: none; border-color: inherit; border-width: 0px; font-family: Lato, sans-serif; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style6">
+				Если методы не возвращают никакого значения, то при вызове 
+				события будут выполняться все методы с списке в порядке их 
+				добавления. Если методы возвращают значение, то при вызове 
+				события будет выполняться последний метод из списка.</p>
+				<h5 id="q06" style="border-style: none; border-color: inherit; border-width: 0px; font-family: Lato, sans-serif; font-style: normal; font-weight: 700; margin: 36px 0px 12px; outline: 0px; padding: 0px; vertical-align: baseline; clear: both; line-height: 1.33333; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style6">
+				6. Какая последовательность шагов в программе для организации 
+				списка обработчиков событий, которые будут вызваться при вызове 
+				(запуске) события</h5>
+				<p style="border-style: none; border-color: inherit; border-width: 0px; font-family: Lato, sans-serif; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style6">
+				Чтобы организовать список обработчиков события (методов) нужно 
+				выполнить такую последовательность шагов:</p>
+				<ol style="border-style: none; border-color: inherit; border-width: 0px; box-sizing: border-box; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; outline: 0px; vertical-align: baseline; list-style: decimal; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style15">
+								<li style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" class="style6">
+								Объявить тип делегата в классе.</li>
+								<li style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" class="style6">
+								Объявить событие в данном классе или создать 
+								другой класс, который содержит объявления 
+								события.</li>
+								<li style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+								<span class="style6">В некотором методе (программном коде) создать 
+								список обработчиков (методов), которые будут 
+								вызываться при вызове данного события. Это 
+								осуществляется с помощью операторов</span><span><span class="style6">&nbsp;</span></span><span style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);"><strong style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: 700; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" class="style6">‘=’</strong></span><span><span class="style6">&nbsp;</span></span><span class="style6">и</span><span><span class="style6">&nbsp;</span></span><strong style="border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: 700; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">‘+=’</span></strong><span class="style6">. 
+								Создание списка означает регистрацию 
+								обработчиков для данного события.</span></li>
+								<li style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" class="style6">
+								Вызвать событие (запустить на выполнение) из 
+								этого метода.</li>
+				</ol>
+				<h5 id="q07" style="border-style: none; border-color: inherit; border-width: 0px; font-family: Lato, sans-serif; font-style: normal; font-weight: 700; margin: 36px 0px 12px; outline: 0px; padding: 0px; vertical-align: baseline; clear: both; line-height: 1.33333; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style6">
+				7. Пример использования события для случая если методы и события 
+				объявлены в одном классе</h5>
+				<pre style="border: 1px solid rgba(0, 0, 0, 0.1); font-family: monospace, serif; font-size: 15px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 12px; vertical-align: baseline; hyphens: none; line-height: 1.6; box-sizing: border-box; max-width: 100%; overflow: auto; white-space: pre-wrap; overflow-wrap: break-word; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">using</span><span class="style6"> System;
+</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">using</span> <span class="style6">System.Collections.Generic;
+</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">using</span> <span class="style6">System.ComponentModel;
+</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">using</span> <span class="style6">System.Data;
+</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">using</span> <span class="style6">System.Drawing;
+</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">using</span> <span class="style6">System.Linq;
+</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">using</span> <span class="style6">System.Text;
+</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">using</span> <span class="style6">System.Windows.Forms;
+
+</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">namespace</span><span class="style6"> TrainEvents03
+{
+    </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">public partial class</span> <span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);" class="style6">Form1</span><span class="style6"> : </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);" class="style6">Form</span><span class="style6">
+    {
+        </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// 1. Объявить тип делегата</span><span class="style6">
+        </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">delegate void</span> <span class="style6">CalcFigure(double R);
+
+        </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// 2. Объявить событие с именем ECF</span><span class="style6">
+        </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">event</span> <span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);" class="style6">CalcFigure</span><span class="style6"> ECF;
+
+        </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// 3. Методы обработки события - размещаются в этом же классе</span><span class="style6">
+</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">        //   Методы имеют точно такую же сигнатуру как тип делегата CalcFigure</span><span class="style6">
+</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">        // Длина окружности на основе радиуса R</span><span class="style6">
+        </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">void</span> <span class="style6">GetLength(</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">double</span><span class="style6"> R)
+        {
+            </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">double</span><span class="style6"> res;
+            </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">const double</span><span class="style6"> Pi = 3.1415;
+            res = 2 * Pi * R;
+            label1.Text = </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(128, 0, 0);" class="style6">&quot;Длина окружности = &quot;</span><span class="style6"> + res.ToString(); </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// вывести на форму</span><span class="style6">
+        }
+
+        </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// Площадь круга</span><span class="style6">
+        </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">void</span> <span class="style6">GetArea(</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">double</span><span class="style6"> R)
+        {
+            </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">double</span><span class="style6"> res;
+            </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">const double</span><span class="style6"> Pi = 3.1415;
+            res = Pi * R * R;
+            label2.Text = </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(128, 0, 0);" class="style6">&quot;Площадь круга = &quot;</span><span class="style6"> + res.ToString(); </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// результат - на форму</span><span class="style6">
+        }
+
+        </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// Объем шара</span><span class="style6">
+        </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">void</span> <span class="style6">GetVolume(</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">double</span><span class="style6"> R)
+        {
+            </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">double</span><span class="style6"> res;
+            </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">const double</span><span class="style6"> Pi = 3.1415;
+            res = 4.0 / 3.0 * Pi * R * R * R;
+            label3.Text = </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(128, 0, 0);" class="style6">&quot;Объем шара = &quot;</span><span class="style6"> + res.ToString();
+        }
+
+        </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">public</span><span class="style6"> Form1()
+        {
+            InitializeComponent();
+        }
+
+        </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">private void</span><span class="style6"> button1_Click(</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">object</span><span class="style6"> sender, </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);" class="style6">EventArgs</span><span class="style6"> e)
+        {
+            </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// 4. Демонстрация работы с методами с помощью события</span><span class="style6">
+</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">            // 4.1. Создать цепочку методов, которые будут вызываться из события ECF</span><span class="style6">
+            ECF = GetLength; </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// ECF =&gt; GetLength()</span><span class="style6">
+            ECF += GetArea; </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// ECF =&gt; GetLength() -&gt; GetArea()</span><span class="style6">
+            ECF += GetVolume; </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// ECF =&gt; GetLength() -&gt; GetArea() -&gt; GetVolume()</span><span class="style6">
+
+            </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// 4.2. Вызов события ECF с параметром 2.0</span><span class="style6">
+            ECF(2.0); </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// вызываются последовательно три метода GetLength(), GetArea(), GetVolume()</span><span class="style6">
+
+            </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// Вызов события для параметра 3.5</span><span class="style6">
+            ECF(3.5);
+        }
+    }
+}</span></pre>
+				<h5 id="q08" style="border-style: none; border-color: inherit; border-width: 0px; font-family: Lato, sans-serif; font-style: normal; font-weight: 700; margin: 36px 0px 12px; outline: 0px; padding: 0px; vertical-align: baseline; clear: both; line-height: 1.33333; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style6">
+				8. Пример использования события, которое объявлено в отдельном 
+				классе. Обработчики события объявлены в другом классе</h5>
+				<p style="border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style6">Пусть в модуле</span><span><span class="style6">&nbsp;</span></span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">CalcFigures.cs</span><span class="style6">&nbsp;объявлен 
+				класс, содержащий следующее описание</span></p>
+				<pre style="border: 1px solid rgba(0, 0, 0, 0.1); font-family: monospace, serif; font-size: 15px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 12px; vertical-align: baseline; hyphens: none; line-height: 1.6; box-sizing: border-box; max-width: 100%; overflow: auto; white-space: pre-wrap; overflow-wrap: break-word; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">namespace</span><span class="style6"> TrainEvents05
+{
+    </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">class</span> <span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);" class="style6">CalcFigures</span><span class="style6">
+    {
+        </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// класс, содержащий методы обработки события</span><span class="style6">
+        </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">public void</span><span class="style6"> GetLength(</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">double</span><span class="style6"> r, </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">ref double</span><span class="style6"> L)
+        {
+            L = (</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">double</span><span class="style6">)(2 * 3.1415 * r);
+        }
+
+        </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">public void</span><span class="style6"> GetArea(</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">double</span><span class="style6"> r, </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">ref double</span><span class="style6"> S)
+        {
+            S = (</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">double</span><span class="style6">)(3.1415 * r * r);
+        }
+    }
+}</span></pre>
+				<p style="border: 0px; font-family: Lato, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style6">В другом модуле</span><span><span class="style6">&nbsp;</span></span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">Form1.cs</span><span class="style6">&nbsp;объявлен 
+				класс, который демонстрирует использование методов из класса</span><span><span class="style6">&nbsp;</span></span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">CalcFigures</span><span class="style6">. 
+				Листинг модуля</span><span><span class="style6">&nbsp;</span></span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">Form1.cs</span><span class="style6">&nbsp;следующий:</span></p>
+				<pre style="border: 1px solid rgba(0, 0, 0, 0.1); font-family: monospace, serif; font-size: 15px; font-style: normal; font-weight: 400; margin: 0px 0px 24px; outline: 0px; padding: 12px; vertical-align: baseline; hyphens: none; line-height: 1.6; box-sizing: border-box; max-width: 100%; overflow: auto; white-space: pre-wrap; overflow-wrap: break-word; color: rgb(43, 43, 43); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">using</span><span class="style6"> System;
+</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">using</span><span class="style6"> System.Collections.Generic;
+</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">using</span><span class="style6"> System.ComponentModel;
+</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">using</span><span class="style6"> System.Data;
+</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">using</span><span class="style6"> System.Drawing;
+</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">using</span><span class="style6"> System.Linq;
+</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">using</span><span class="style6"> System.Text;
+</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">using</span><span class="style6"> System.Windows.Forms;
+
+</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">namespace</span><span class="style6"> TrainEvents05
+{
+    </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">public partial class</span> <span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);" class="style6">Form1</span><span class="style6"> : </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);" class="style6">Form</span><span class="style6">
+    {
+        </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// объявление типа делегата</span><span class="style6">
+        </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">delegate void</span> <span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);" class="style6">CalcFig</span>(<span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">double</span><span class="style6"> r, </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">ref double</span><span class="style6"> l);
+
+        </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// объявление события на основе типа CalcFig</span><span class="style6">
+        </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">event </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);" class="style6">CalcFig</span><span class="style6"> EvCF;
+
+        </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">public</span><span class="style6"> Form1()
+        {
+            InitializeComponent();
+        }
+
+        </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">private void</span><span class="style6"> button1_Click(</span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">object</span><span class="style6"> sender, </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);" class="style6">EventArgs</span><span class="style6"> e)
+        {
+            </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// Демонстрация использования события EvCF</span><span class="style6">
+            </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);" class="style6">CalcFigures</span><span class="style6"> CF = </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">new </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 128);" class="style6">CalcFigures</span><span class="style6">(); </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// CF - екземпляр объекта класса</span><span class="style6">
+            </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 255);" class="style6">double</span><span class="style6"> len, r;
+
+            r = 1.0;
+            len = 0;
+            EvCF = CF.GetLength;
+
+            </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// запустить событие</span><span class="style6">
+            EvCF(r, ref len); </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// len = 6.238 - длина окружности</span><span class="style6">
+            </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// удалить из списка</span><span class="style6">
+            EvCF -= CF.GetLength;
+
+            </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// добавить в список другой метод</span><span class="style6">
+            EvCF += CF.GetArea;
+
+            </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// запустить событие</span><span class="style6">
+            EvCF(r, ref len); </span><span style="border-style: none; border-color: inherit; border-width: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 128, 0);" class="style6">// len = 3.1415 - площадь шара</span><span class="style6">
+            label1.Text = len.ToString();
+        }
+    }</span></pre>
+				<p>&nbsp;</p>
+			</td></p>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les62.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les60/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:54:56 GMT -->
+</html>

@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les57/Human.HTM by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 11:22:38 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+				color: #0000FF;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 1. <span lang="ru">Класс <span class="style2"><strong>Human</strong></span></span></td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <pre> <span class="style2"><strong>class Human
+    {
+        // описание полей
+        private string name; //Защищенное поле имя
+        private string secondname;
+        private string lastname;
+        private int age;//Защищенное поле возраст
+                        // описание свойств
+                        //Свойства объекта – это средства доступа к полям, позволяющие изменять его данные и выполнять его код. 
+        public string Name
+        {
+            set
+            {
+                name = value;
+            }
+        }
+        public string SecondName
+        {
+            set
+            {
+                secondname = value;
+            }
+        }
+        public string LastName
+        {
+            set
+            {
+                lastname = value;
+            }
+        }
+
+        public int Age
+        {
+            get
+            {
+                return age;
+            }
+            set
+            {
+                age = value;
+            }
+        }
+        //Метод возвращаюций полное фамилия, имя и отчество
+        public string FullName
+        {
+            get
+            {
+                return lastname + " " + name + " " + secondname;
+            }
+        }
+        public Human()  //конструктор класса Human без ввода полей
+        { }
+
+        //конструктор класса Human
+        public Human(string lastname, string name, string secondname, int age)
+        {   //this представляет ссылку на текущий экземпляр/объект класса
+            this.lastname = lastname;
+            this.name = name;
+            this.secondname = secondname;
+            this.age = age;
+        }
+        // описание метода вывод информации о человеке
+        public void Info()
+        {
+            string s;
+            switch (age % 10) //используется деление возраста и определение остатка
+            {       //если остаток 1 добавляем год  
+                case 1:
+                    s = " год";
+                    break;
+                case 2:  //  если остаток 2 (32, 33, 34) добавляем слово года
+                case 3:
+                case 4:
+                    s = " года";
+                    break;
+                default:   //  если остаток 5 или 6 или 7 (35, 36, 37) добавляем слово лет
+                    s = " лет";
+                    break;
+            } // сформированная строка
+            Console.WriteLine(lastname + " " + name + " " + secondname + "," + age + s);
+        }
+    }</strong></span></pre></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les56.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les57/Human.HTM by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 11:22:41 GMT -->
+</html>

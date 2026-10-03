@@ -1,0 +1,557 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les59/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:51:53 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+				font-size: small;
+}
+.style3 {
+				font-size: small;
+				margin: 0px;
+				padding: 0px;
+}
+    .style4 {
+				color: #008080;
+}
+    .style5 {
+				color: #0000FF;
+}
+    .style6 {
+				font-size: medium;
+}
+    .style14 {
+	font-size: small;
+}
+    .style7 {
+	color: rgb(0, 0, 255);
+}
+    .style10 {
+	font-size: medium;
+	color: #FF0000;
+}
+    .style9 {
+	font-size: small;
+	color: #0000FF;
+}
+    .style11 {
+	font-size: medium;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                &nbsp;Простые примеры реализации делегатов. </td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <blockquote style="box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(15, 17, 17); font-family: Inter, Helvetica, Arial, sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+ text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<p style="box-sizing: border-box; margin: 16px 0px; padding: 0px; font-size: var(--tp-font-size-primary-text); line-height: var(--tp-line-height-primary-text); letter-spacing: var(--tp-letter-spacing-primary-text); word-break: break-word;" class="style2">
+								«Делегат ссылается на метод и после назначения 
+								метода ведёт себя идентично ему. Делегат можно 
+								использовать как любую функцию с параметром и 
+								возвращаемым значением».</p>
+				</blockquote>
+				<p style="box-sizing: border-box; margin: 16px 0px; padding: 0px; line-height: var(--tp-line-height-primary-text); letter-spacing: normal; word-break: break-word; color: rgb(15, 17, 17); font-family: Inter, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+ text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Несмотря на то, что .NET использует концепцию функционального 
+				указателя посредством делегатов, есть несколько существенных 
+				отличий:</p>
+				<ul style="box-sizing: border-box; margin: 6px 0px 6px 25px; padding: 0px; color: rgb(15, 17, 17); font-family: Inter, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+ text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+								<li style="box-sizing: border-box; margin: 0px; padding: 0px;">
+								делегаты нечувствительны к ошибкам ввода;</li>
+								<li style="box-sizing: border-box; margin: 0px; padding: 0px;">
+								объектно-ориентированы;</li>
+								<li style="box-sizing: border-box; margin: 0px; padding: 0px;">
+								безопасны.</li>
+				</ul>
+				<p style="box-sizing: border-box; margin: 16px 0px; padding: 0px; line-height: var(--tp-line-height-primary-text); letter-spacing: normal; word-break: break-word; color: rgb(15, 17, 17); font-family: Inter, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+ text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Делегаты C# обладают следующими свойствами:</p>
+				<ul style="box-sizing: border-box; margin: 6px 0px 6px 25px; padding: 0px; color: rgb(15, 17, 17); font-family: Inter, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+ text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+								<li style="box-sizing: border-box; margin: 0px; padding: 0px;">
+								позволяют обрабатывать методы в качестве 
+								аргумента;</li>
+								<li style="box-sizing: border-box; margin: 0px; padding: 0px;">
+								могут быть связаны вместе;</li>
+								<li style="box-sizing: border-box; margin: 0px; padding: 0px;">
+								несколько методов могут быть вызваны по одному 
+								событию;</li>
+								<li style="box-sizing: border-box; margin: 0px; padding: 0px;">
+								тип делегата определяется его именем;</li>
+								<li style="box-sizing: border-box; margin: 0px; padding: 0px;">
+								не зависят от класса объекта, на который 
+								ссылается;</li>
+								<li style="box-sizing: border-box; margin: 0px; padding: 0px;">
+								сигнатура метода должна совпадать с сигнатурой 
+								делегата.</li>
+				</ul>
+				<h2 style="box-sizing: border-box; margin: 32px 0px 8px; padding: 0px; font-size: var(--tp-font-size-secondary-h2-title); font-weight: var(--tp-font-weight-secondary-h2-title); line-height: var(--tp-line-height-secondary-h2-title); letter-spacing: normal; color: rgb(15, 17, 17); font-family: Inter, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+ text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Синтаксис</h2>
+				<p style="box-sizing: border-box; margin: 16px 0px; padding: 0px; line-height: var(--tp-line-height-primary-text); letter-spacing: normal; word-break: break-word; color: rgb(15, 17, 17); font-family: Inter, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+ text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				<strong style="box-sizing: border-box; margin: 0px; padding: 0px; font-weight: var(--tp-font-weight-semi-bold-text);">
+				Шаг 1 — Объявление</strong></p>
+				<div class="code-toolbar" style="box-sizing: border-box; margin: 0px; padding: 0px; position: relative; color: rgb(15, 17, 17); font-family: Inter, Helvetica, Arial, sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+ text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<pre class="language-csharp" tabindex="0" style="box-sizing: border-box; margin: 10px 0px; padding: 10px 1em; border-radius: 12px; font-family: &quot;jetbrains mono&quot;, Consolas, Monaco, &quot;andale mono&quot;, &quot;ubuntu mono&quot;, monospace; line-height: 1.5; color: var(--tp-secondary-color-text); background: var(--tp-tertiary-background-color); text-align: left; white-space: pre; word-spacing: normal; overflow-wrap: normal; word-break: normal; tab-size: 42; hyphens: none; font-variant-ligatures: none; contain: content; overflow: auto;"><code class="lazy-code entered language-csharp" data-ll-status="entered" style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: &quot;jetbrains mono&quot;, Consolas, Monaco, &quot;andale mono&quot;, &quot;ubuntu mono&quot;, monospace; line-height: 1.5; color: var(--tp-secondary-color-text); background: 0px 0px; text-align: left; white-space: pre; word-spacing: normal; overflow-wrap: normal; word-break: normal; tab-size: 42; hyphens: none; font-variant-ligatures: none; contain: content;"><span class="style2">modifier</span><span class="style2" style="box-sizing: border-box; margin: 0px; padding: 0px;"> </span><span class="style2" style="box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 119, 170);">delegate</span><span class="style2" style="box-sizing: border-box; margin: 0px; padding: 0px;"> </span><span class="style2" style="box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(221, 74, 104);">ReturnType</span><span class="style2" style="box-sizing: border-box; margin: 0px; padding: 0px;"> </span><span class="style2">DelegateName</span><span class="style2" style="box-sizing: border-box; margin: 0px; padding: 0px;"> </span><span class="style2" style="box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(153, 153, 153);">([</span><span class="token attribute" style="box-sizing: border-box; margin: 0px; padding: 0px;"><span class="style2" style="box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(221, 74, 104);">Parameter_1</span></span><span class="style2" style="box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(153, 153, 153);">]);</span></code></pre>
+								<div class="toolbar" style="box-sizing: border-box; margin: 0px; padding: 14px 32px 4px; position: absolute; z-index: 4; top: 0px; right: 0px;">
+												<div class="style3" style="box-sizing: border-box;">
+																<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" style="box-sizing: border-box; margin: 0px; padding: 12px 14px; display: flex; justify-content: center; align-items: center; position: relative; border: 1px solid var(--tp-primary-border-color); border-radius: 12px; background-image: initial; background-position: 0px 0px; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: var(--tp-secondary-background-color); cursor: pointer; transition: border 0.25s ease 0s;">
+																</button></div>
+								</div>
+				</div>
+				<p style="box-sizing: border-box; margin: 16px 0px; padding: 0px; line-height: var(--tp-line-height-primary-text); letter-spacing: normal; word-break: break-word; color: rgb(15, 17, 17); font-family: Inter, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+ text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				<strong style="box-sizing: border-box; margin: 0px; padding: 0px; font-weight: var(--tp-font-weight-semi-bold-text);">
+				Шаг 2 — Инициализация</strong></p>
+				<p style="box-sizing: border-box; margin: 16px 0px; padding: 0px; line-height: var(--tp-line-height-primary-text); letter-spacing: normal; word-break: break-word; color: rgb(15, 17, 17); font-family: Inter, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+ text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Делегат инициализируется путём передачи ему имени метода в 
+				качестве аргумента.</p>
+				<div class="code-toolbar" style="box-sizing: border-box; margin: 0px; padding: 0px; position: relative; color: rgb(15, 17, 17); font-family: Inter, Helvetica, Arial, sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+ text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<pre class="language-csharp" tabindex="0" style="box-sizing: border-box; margin: 10px 0px; padding: 10px 1em; border-radius: 12px; font-family: &quot;jetbrains mono&quot;, Consolas, Monaco, &quot;andale mono&quot;, &quot;ubuntu mono&quot;, monospace; line-height: 1.5; color: var(--tp-secondary-color-text); background: var(--tp-tertiary-background-color); text-align: left; white-space: pre; word-spacing: normal; overflow-wrap: normal; word-break: normal; tab-size: 42; hyphens: none; font-variant-ligatures: none; contain: content; overflow: auto;"><code class="lazy-code entered language-csharp" data-ll-status="entered" style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: &quot;jetbrains mono&quot;, Consolas, Monaco, &quot;andale mono&quot;, &quot;ubuntu mono&quot;, monospace; line-height: 1.5; color: var(--tp-secondary-color-text); background: 0px 0px; text-align: left; white-space: pre; word-spacing: normal; overflow-wrap: normal; word-break: normal; tab-size: 42; hyphens: none; font-variant-ligatures: none; contain: content;"><span class="style2" style="box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(221, 74, 104);">DelegateName</span><span class="style2" style="box-sizing: border-box; margin: 0px; padding: 0px;"> </span><span class="style2">DelgObjectName</span><span class="style2" style="box-sizing: border-box; margin: 0px; padding: 0px;"> </span><span class="style2" style="box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(154, 110, 58);">=</span><span class="style2" style="box-sizing: border-box; margin: 0px; padding: 0px;"> </span><span class="style2" style="box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 119, 170);">new</span><span class="style2" style="box-sizing: border-box; margin: 0px; padding: 0px;"> </span><span class="style2" style="box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(221, 74, 104);">DelegateName</span><span class="style2" style="box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(153, 153, 153);">(</span><span class="style2">MethodName</span><span class="style2" style="box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(153, 153, 153);">);</span></code></pre>
+								<div class="toolbar" style="box-sizing: border-box; margin: 0px; padding: 14px 32px 4px; position: absolute; z-index: 4; top: 0px; right: 0px;">
+												<div class="style3" style="box-sizing: border-box;">
+																<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" style="box-sizing: border-box; margin: 0px; padding: 12px 14px; display: flex; justify-content: center; align-items: center; position: relative; border: 1px solid var(--tp-primary-border-color); border-radius: 12px; background-image: initial; background-position: 0px 0px; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: var(--tp-secondary-background-color); cursor: pointer; transition: border 0.25s ease 0s;">
+																</button></div>
+								</div>
+				</div>
+				<p style="box-sizing: border-box; margin: 16px 0px; padding: 0px; line-height: var(--tp-line-height-primary-text); letter-spacing: normal; word-break: break-word; color: rgb(15, 17, 17); font-family: Inter, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+ text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				<strong style="box-sizing: border-box; margin: 0px; padding: 0px; font-weight: var(--tp-font-weight-semi-bold-text);">
+				Шаг 3 — Вызов</strong></p>
+				<p style="box-sizing: border-box; margin: 16px 0px; padding: 0px; line-height: var(--tp-line-height-primary-text); letter-spacing: normal; word-break: break-word; color: rgb(15, 17, 17); font-family: Inter, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+ text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Вызываем созданный делегат с указанием параметров, если это 
+				необходимо.</p>
+				<div class="code-toolbar" style="box-sizing: border-box; margin: 0px; padding: 0px; position: relative; color: rgb(15, 17, 17); font-family: Inter, Helvetica, Arial, sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+ text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<pre class="language-csharp" tabindex="0" style="box-sizing: border-box; margin: 10px 0px; padding: 10px 1em; border-radius: 12px; font-family: &quot;jetbrains mono&quot;, Consolas, Monaco, &quot;andale mono&quot;, &quot;ubuntu mono&quot;, monospace; line-height: 1.5; color: var(--tp-secondary-color-text); background: var(--tp-tertiary-background-color); text-align: left; white-space: pre; word-spacing: normal; overflow-wrap: normal; word-break: normal; tab-size: 42; hyphens: none; font-variant-ligatures: none; contain: content; overflow: auto;"><code class="lazy-code entered language-csharp" data-ll-status="entered" style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: &quot;jetbrains mono&quot;, Consolas, Monaco, &quot;andale mono&quot;, &quot;ubuntu mono&quot;, monospace; line-height: 1.5; color: var(--tp-secondary-color-text); background: 0px 0px; text-align: left; white-space: pre; word-spacing: normal; overflow-wrap: normal; word-break: normal; tab-size: 42; hyphens: none; font-variant-ligatures: none; contain: content;"><span class="style2" style="box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(221, 74, 104);">DelegateObjectName</span><span class="style2" style="box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(153, 153, 153);">([</span><span class="token attribute" style="box-sizing: border-box; margin: 0px; padding: 0px;"><span class="style2" style="box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(221, 74, 104);">Parameter_1</span></span><span class="style2" style="box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(153, 153, 153);">]);</span></code></pre>
+				</div>
+				<p><span lang="ru">В нашем примере:</span></p>
+				<p><img alt="" src="Pic/r61-36.jpg" width="640" height="293" /></p>
+				<p>Из примера видно, что мы по-разному реагируем на происходящее в зависимости от хода развития события. В программировании эту вариативность реакций привносит делегат — он отслеживает события 
+				<span class="style5"><strong>Event </strong></span>и реагирует на изменение исходной ситуации, запуская созданные заранее пронумерованные методы.&nbsp;</p>
+				<p>
+				<strong style="box-sizing: border-box; margin: 0px; padding: 0px; font-weight: var(--tp-font-weight-semi-bold-text);">
+				Шаг 1 — Объявление&nbsp; </strong></p>
+				<font FACE="Consolas" SIZE="2">
+				<p><font FACE="Consolas" SIZE="2" COLOR="#0000ff">public</font><font FACE="Consolas" SIZE="2">
+				</font><font FACE="Consolas" SIZE="2" COLOR="#0000ff">delegate</font><font FACE="Consolas" SIZE="2">
+				</font><font FACE="Consolas" SIZE="2" COLOR="#0000ff">void</font><font FACE="Consolas" SIZE="2">
+				</font><font FACE="Consolas" SIZE="2" COLOR="#2b91af">
+				PrimDelegate</font><font FACE="Consolas" SIZE="2">();</font></p>
+				<p>Создание методов для различной реализации:&nbsp;
+				<strong class="style4">Функция (метод), добавляемая к делегатам, 
+				должна иметь тот же тип и сигнатуру, что и делегат;</strong></p>
+				<p><img alt="" src="Pic/r-61-36.png" width="426" height="349" /></p>
+				<p class="style6">
+				<strong style="box-sizing: border-box; margin: 0px; padding: 0px; font-weight: var(--tp-font-weight-semi-bold-text);">
+				Шаг 2 — Инициализация</strong></p>
+				<p>ExampleDelegate <span class="style4">PrimDelegate</span> =
+				<font FACE="Consolas" SIZE="2" COLOR="#0000ff">new</font><font FACE="Consolas" SIZE="2"> 
+				ExampleDelegate(); </font>
+				<font FACE="Consolas" SIZE="2" COLOR="#008000">//вызов 
+				конструктора класса</font></p>
+				<p class="style6">
+				<strong style="box-sizing: border-box; margin: 0px; padding: 0px; font-weight: var(--tp-font-weight-semi-bold-text);">
+				Шаг 3 — Вызов</strong></p>
+				<p><font FACE="Consolas" SIZE="2" COLOR="#008000">
+				//прикрепляем делегату методы</p>
+				</font><font FACE="Consolas" SIZE="2">
+				<p>ExampleDelegate.PrimDelegate fd1 = </font>
+				<font FACE="Consolas" SIZE="2" COLOR="#0000ff">new</font><font FACE="Consolas" SIZE="2"> 
+				ExampleDelegate.PrimDelegate(PrimDelegate.func1);</p>
+				<p>ExampleDelegate.PrimDelegate fd2 = </font>
+				<font FACE="Consolas" SIZE="2" COLOR="#0000ff">new</font><font FACE="Consolas" SIZE="2"> 
+				ExampleDelegate.PrimDelegate(PrimDelegate.func2);</p>
+				<p>ExampleDelegate.PrimDelegate fd3 = </font>
+				<font FACE="Consolas" SIZE="2" COLOR="#0000ff">new</font><font FACE="Consolas" SIZE="2"> 
+				ExampleDelegate.PrimDelegate(PrimDelegate.func3);</p>
+				<p></font><font FACE="Consolas" SIZE="2" COLOR="#008000">
+				//Вызываем методы через делегат</p>
+				</font><font FACE="Consolas" SIZE="2">
+				<p>fd1();</p>
+				<p>fd2();</p>
+				<p>fd3();</p>
+				</font>
+				<p>
+				<strong style="box-sizing: border-box; margin: 0px; padding: 0px; font-weight: var(--tp-font-weight-semi-bold-text);">
+				<span lang="ru">Результат:</span></strong></p>
+				<p><img alt="" src="Pic/r-61-35.png" width="383" height="116" /></p>
+					
+				<h2>
+				Пример 1</h2>
+				<p>
+				Нижеприведённый код складывает между собой два числа:</p>
+				<pre class="style3"><span class="style2"><strong>using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace DelgateForNotes
+
+  class Program
+  {
+    // Объявление делегата, ссылающегося на функцию
+    // с двумя параметрами и целочисленным результатом
+    public delegate int AddDelegate(int num1, int num2);
+
+    static void Main(string[] args)
+    {
+      // Создание метода делегата и передача функции Add в качестве аргумента
+      AddDelegate funct1 = new AddDelegate(Add);
+      // Вызов делегата
+      int k = funct1(7, 2);
+      Console.WriteLine(&quot;Sumation = {0}&quot;, k);
+      Console.Read();
+    }
+
+    // Статическая функция Add с той же сигнатурой, что и у делегата
+    public static int Add(int num1, int num2)
+    {
+      Console.WriteLine(&quot;I am called by Delegate&quot;);
+      int sumation;
+      sumation = num1 + num2;
+      return sumation;
+    }
+  }</strong></span>
+</pre>
+					<button class="tp-content-code__button" aria-label="Копировать код" data-v-04728ac0="" style="box-sizing: border-box; font-family: &quot;Jetbrains Mono&quot;, &quot;Jetbrains Mono override&quot;, Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; margin: 0px; padding: 6px; stroke: var(--tp-color-item); fill: transparent; align-items: center; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: var(--tp-background-color-secondary); border: 1px solid var(--tp-border-color-primary); border-radius: 8px; cursor: pointer; display: inline-flex; justify-content: center; position: absolute; right: 14px; top: 14px; transition: stroke 0.25s ease 0s, border 0.25s ease 0s;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" role="presentation" data-v-04728ac0=""><g fill="inherit" stroke="inherit"><rect stroke="inherit" width="14.655" height="14.655" x="7.345" y="2.5" stroke-width="2" rx="1"></rect><path stroke="inherit" stroke-width="2" d="M4.897 6.569H4a2 2 0 0 0-2 2V20.5a2 2 0 0 0 2 2h12.655a2 2 0 0 0 2-2v-.896"></path></g></svg>
+					</button></div>
+				<p class="style14"
+>
+				Выводом будет следующий результат:</p>
+				<div class="tp-content-image" data-v-2298f8a6="" style="box-sizing: border-box; font-family: Inter, Helvetica, Arial, sans-serif; margin: 30px 0px; padding: 0px; align-items: center; display: flex; flex-direction: column; gap: 10px; justify-content: center; color: rgb(0, 0, 0); font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; 
+ text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<a class="tp-content-image__image-viewer-item" data-pswp-src="../../../media.tproger.ru/uploads/2018/10/Delegate20Example1.jpg" data-pswp-width="600" data-pswp-height="393" data-v-2298f8a6="" style="box-sizing: border-box; font-family: Inter, Helvetica, Arial, sans-serif; margin: 0px; padding: 0px; color: var(--tp-color-brand); text-decoration: none; cursor: zoom-in;">
+					<div class="tp-image" data-v-d15050b5="" data-v-2298f8a6="" style="box-sizing: border-box; font-family: Inter, Helvetica, Arial, sans-serif; margin: 0px; padding: 0px; display: inline-flex; flex-shrink: 0; overflow: hidden; width: 559.2px; border-radius: 8px;">
+						<img class="tp-image__image" src="Pic/Delegate20Example1.jpg" srcset="https://tproger.ru/signed_image/SduElbkQJLhXPUJvNVBPtvDRLwYvhZ3aU0MEj5ftir8/rs:fill:600:0:true/cb:vimg_2/f:webp/aHR0cHM6Ly9tZWRpYS50cHJvZ2VyLnJ1L3VwbG9hZHMvMjAxOC8xMC9EZWxlZ2F0ZTIwRXhhbXBsZTEuanBn 600w,https://tproger.ru/signed_image/YU3f--hrc9jkMRZAxpyyA5c09rxy1cZtTamWMxcZwSE/rs:fill:1200:0:true/cb:vimg_2/f:webp/aHR0cHM6Ly9tZWRpYS50cHJvZ2VyLnJ1L3VwbG9hZHMvMjAxOC8xMC9EZWxlZ2F0ZTIwRXhhbXBsZTEuanBn 1200w,https://tproger.ru/signed_image/SduElbkQJLhXPUJvNVBPtvDRLwYvhZ3aU0MEj5ftir8/rs:fill:600:0:true/cb:vimg_2/f:webp/aHR0cHM6Ly9tZWRpYS50cHJvZ2VyLnJ1L3VwbG9hZHMvMjAxOC8xMC9EZWxlZ2F0ZTIwRXhhbXBsZTEuanBn 600w,https://tproger.ru/signed_image/YU3f--hrc9jkMRZAxpyyA5c09rxy1cZtTamWMxcZwSE/rs:fill:1200:0:true/cb:vimg_2/f:webp/aHR0cHM6Ly9tZWRpYS50cHJvZ2VyLnJ1L3VwbG9hZHMvMjAxOC8xMC9EZWxlZ2F0ZTIwRXhhbXBsZTEuanBn 1200w,https://tproger.ru/signed_image/SduElbkQJLhXPUJvNVBPtvDRLwYvhZ3aU0MEj5ftir8/rs:fill:600:0:true/cb:vimg_2/f:webp/aHR0cHM6Ly9tZWRpYS50cHJvZ2VyLnJ1L3VwbG9hZHMvMjAxOC8xMC9EZWxlZ2F0ZTIwRXhhbXBsZTEuanBn 600w,https://tproger.ru/signed_image/YU3f--hrc9jkMRZAxpyyA5c09rxy1cZtTamWMxcZwSE/rs:fill:1200:0:true/cb:vimg_2/f:webp/aHR0cHM6Ly9tZWRpYS50cHJvZ2VyLnJ1L3VwbG9hZHMvMjAxOC8xMC9EZWxlZ2F0ZTIwRXhhbXBsZTEuanBn 1200w,https://tproger.ru/signed_image/oUuKdo-UeegwS75b2WSbVUVXPBhQB5_a8KHgooeyHgU/rs:fill:466:0:true/cb:vimg_2/f:webp/aHR0cHM6Ly9tZWRpYS50cHJvZ2VyLnJ1L3VwbG9hZHMvMjAxOC8xMC9EZWxlZ2F0ZTIwRXhhbXBsZTEuanBn 466w,https://tproger.ru/signed_image/Xq5biX_jLtGosdvqZdbwUf425Ah_EhZMFmxL_bNa3LE/rs:fill:932:0:true/cb:vimg_2/f:webp/aHR0cHM6Ly9tZWRpYS50cHJvZ2VyLnJ1L3VwbG9hZHMvMjAxOC8xMC9EZWxlZ2F0ZTIwRXhhbXBsZTEuanBn 932w" sizes="(min-width: 1441px) 600px,(min-width: 1281px) 600px,(min-width: 1281px) 600px,(min-width: 961px) 600px,(min-width: 671px) 600px,(min-width: 500px) 466px" alt="Введение в делегаты C# 1" loading="lazy" decoding="async" width="600" height="393" data-v-d15050b5="" style="box-sizing: border-box; font-family: Inter, Helvetica, Arial, sans-serif; margin: 0px; padding: 0px; display: block; height: 365.987px; position: relative; width: 559.2px; object-fit: cover; aspect-ratio: auto; object-position: 50% 50%;" /></div>
+					</a></div>
+					<li class="tp-content-list__item" data-v-5c5c9e85="" style="box-sizing: border-box; font-family: Inter, Helvetica, Arial, sans-serif; margin: 0px; padding: 0px; color: var(--tp-color-text-primary); font-size: inherit; font-weight: inherit; letter-spacing: inherit; line-height: inherit;">
+					<code class="" style="box-sizing: border-box; font-family: Inter, Helvetica, Arial, sans-serif; margin: 0px; padding: 0px;">
+					<strong><span class="style14">BubbleSortClass</span></strong></code></li>
+					<span class="style14">
+					<li class="tp-content-list__item" data-v-5c5c9e85="" style="box-sizing: border-box; font-family: Inter, Helvetica, Arial, sans-serif; margin: 0px; padding: 0px; color: var(--tp-color-text-primary); font-size: inherit; font-weight: inherit; letter-spacing: inherit; line-height: inherit;">
+					<code class="" style="box-sizing: border-box; font-family: Inter, Helvetica, Arial, sans-serif; margin: 0px; padding: 0px;">
+					<strong>Student</strong></code></li>
+					<li class="tp-content-list__item" data-v-5c5c9e85="" style="box-sizing: border-box; font-family: Inter, Helvetica, Arial, sans-serif; margin: 0px; padding: 0px; color: var(--tp-color-text-primary); font-size: inherit; font-weight: inherit; letter-spacing: inherit; line-height: inherit;">
+					<code class="" style="box-sizing: border-box; font-family: Inter, Helvetica, Arial, sans-serif; margin: 0px; padding: 0px;">
+					<strong>Program</strong></code></li></span> <br />
+				<h3 class="style7" data-v-de4f74a7="" style="box-sizing: border-box; font-family: Inter, Helvetica, Arial, sans-serif; margin: 0px; padding: 0px; font-size: var(--tp-font-size-h4); font-weight: var(--tp-font-weight-h4); letter-spacing: normal; line-height: var(--tp-line-height-h4); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; 
+ text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong>BubbleSortClass.cs</strong></h3>
+				<pre class="style3"><span class="style2"><strong>using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace DelgateForNotes
+</strong>{<strong>
+  public class BubbleSortClass
+  {
+    static public void </strong></span><strong><span class="style10">Sort</span><span class="style2">(object[] sortArray, CompareDelegate gtMethod)
+    {
+      for (int i = 0; i < sortArray.Length; i++)
+      {
+        for (int j = 0; j < sortArray.Length; j++)
+        {
+          if (gtMethod(sortArray[j], sortArray[i]))
+          {
+            object temp = sortArray[i];
+            sortArray[i] = sortArray[j];
+            sortArray[j] = temp;
+          }
+        }
+      }
+    }
+  }
+</span></strong>}</pre>
+				<p
+>
+				<span class="style14">Этот класс будет содержать статическую функцию</span><span><span class="style14">&nbsp;</span></span><span class="style9"><code class="" style="box-sizing: border-box; font-family: monospace, &quot;monospace override&quot;; margin: 0px; padding: 0px;"><strong>Sort()</strong></code></span><span class="style14">, 
+				у которой нет возвращаемого значения. В качестве аргумента она 
+				принимает массив, который будет отсортирован путём сравнивания 
+				пар элементов.</span></p>
+					<button class="tp-content-code__button" aria-label="Копировать код" data-v-04728ac0="" style="box-sizing: border-box; font-family: &quot;Jetbrains Mono&quot;, &quot;Jetbrains Mono override&quot;, Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; margin: 0px; padding: 6px; stroke: var(--tp-color-item); fill: transparent; align-items: center; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: var(--tp-background-color-secondary); border: 1px solid var(--tp-border-color-primary); border-radius: 8px; cursor: pointer; display: inline-flex; justify-content: center; position: absolute; right: 14px; top: 14px; transition: stroke 0.25s ease 0s, border 0.25s ease 0s;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" role="presentation" data-v-04728ac0=""><g fill="inherit" stroke="inherit"><rect stroke="inherit" width="14.655" height="14.655" x="7.345" y="2.5" stroke-width="2" rx="1"></rect><path stroke="inherit" stroke-width="2" d="M4.897 6.569H4a2 2 0 0 0-2 2V20.5a2 2 0 0 0 2 2h12.655a2 2 0 0 0 2-2v-.896"></path></g></svg>
+					</button></div>
+				<h3 class="style7" data-v-de4f74a7="" style="box-sizing: border-box; font-family: Inter, Helvetica, Arial, sans-serif; margin: 0px; padding: 0px; font-size: var(--tp-font-size-h4); font-weight: var(--tp-font-weight-h4); letter-spacing: normal; line-height: var(--tp-line-height-h4); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; 
+ text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<strong>Student.cs</strong></h3>
+				<p class="style14"
+>
+				Объект этого класса и будет использован для сортировки.</p>
+				<pre class="style3">
+<span class="style2"><strong>using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace DelgateForNotes
+
+  class Student
+  {
+    private string name;
+    private int rollno;
+    private int marks;
+    // Инициализация объекта класса
+    public Student(string name, int rollno, int marks)
+    {
+      this.name = name;
+      this.rollno = rollno;
+      this.marks = marks;
+    }
+
+    // Переопределение метода для вывода результата
+    public override string ToString()
+    {
+      return string.Format(&quot;Name =&gt; {0}, RollNumber =&gt; {1}, Marks =&gt; {2} &quot;, name, rollno, marks);
+    }
+
+    // Пользовательская функция сравнение, возвращающая булевое значение
+    public static bool RhsIsGreater(object lhs, object rhs)
+    {
+      Student stdLhs = (Student)lhs;
+      Student stdRhs = (Student)rhs;
+      return stdRhs.marks &gt; stdLhs.marks;
+    }
+  }</strong></span>
+</pre>
+					<button class="tp-content-code__button" aria-label="Копировать код" data-v-04728ac0="" style="box-sizing: border-box; font-family: &quot;Jetbrains Mono&quot;, &quot;Jetbrains Mono override&quot;, Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; margin: 0px; padding: 6px; stroke: var(--tp-color-item); fill: transparent; align-items: center; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: var(--tp-background-color-secondary); border: 1px solid var(--tp-border-color-primary); border-radius: 8px; cursor: pointer; display: inline-flex; justify-content: center; position: absolute; right: 14px; top: 14px; transition: stroke 0.25s ease 0s, border 0.25s ease 0s;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" role="presentation" data-v-04728ac0=""><g fill="inherit" stroke="inherit"><rect stroke="inherit" width="14.655" height="14.655" x="7.345" y="2.5" stroke-width="2" rx="1"></rect><path stroke="inherit" stroke-width="2" d="M4.897 6.569H4a2 2 0 0 0-2 2V20.5a2 2 0 0 0 2 2h12.655a2 2 0 0 0 2-2v-.896"></path></g></svg>
+					</button></div>
+				<h3 class="tp-content-subtitle tp-content-subtitle--h3" data-v-de4f74a7="" style="box-sizing: border-box; font-family: Inter, Helvetica, Arial, sans-serif; margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-size: var(--tp-font-size-h4); font-weight: var(--tp-font-weight-h4); letter-spacing: normal; line-height: var(--tp-line-height-h4); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; 
+ text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Program.cs</h3>
+				<p class="style14"
+>
+				Код основной программы. Здесь создаётся делегат и выводится 
+				отсортированный массив.</p>
+				<pre class="style3">
+<span class="style2"><strong>using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace DelgateForNotes
+
+  public class Program
+  {
+    // Объявление делегата, ссылающегося на функцию
+    // с двумя параметрами и выводом булевого типа
+    public delegate bool CompareDelegate(object lhs, object rhs);
+
+    static void Main(string[] args)
+    {
+      // Создание массива объектов класса Student.cs
+      Student[] students = {
+        new Student(&quot;Mark&quot;, 1, 799),
+        new Student(&quot;David&quot;, 2, 545),
+        new Student(&quot;Lavish&quot;, 3, 999),
+        new Student(&quot;Voora&quot;, 4, 228),
+        new Student(&quot;Boll&quot;, 5, 768),
+        new Student(&quot;Donna&quot;, 6, 367),
+        new Student(&quot;Adam&quot;, 7, 799),
+        new Student(&quot;Steve&quot;, 8, 867),
+        new Student(&quot;Ricky&quot;, 9, 978),
+        new Student(&quot;Brett&quot;, 10, 567)
+      }; 
+
+      // Создание делегата с передачей
+      // статического метода класса Student в качестве аргумента
+      CompareDelegate StudentCompareOp = new CompareDelegate(Student.RhsIsGreater);
+
+      // Вызов статического метода класса BubbleSortClass,
+      // передача массива объектов и делегата
+      BubbleSortClass.Sort(students, StudentCompareOp);
+      for(int i = 0; i &lt; students.Length; i++)
+      {
+        Console.WriteLine(students[i].ToString());
+      }
+      Console.Read();
+    }
+  }</strong></span>
+</pre>
+					<button class="tp-content-code__button" aria-label="Копировать код" data-v-04728ac0="" style="box-sizing: border-box; font-family: &quot;Jetbrains Mono&quot;, &quot;Jetbrains Mono override&quot;, Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; margin: 0px; padding: 6px; stroke: var(--tp-color-item); fill: transparent; align-items: center; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: var(--tp-background-color-secondary); border: 1px solid var(--tp-border-color-primary); border-radius: 8px; cursor: pointer; display: inline-flex; justify-content: center; position: absolute; right: 14px; top: 14px; transition: stroke 0.25s ease 0s, border 0.25s ease 0s;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" role="presentation" data-v-04728ac0=""><g fill="inherit" stroke="inherit"><rect stroke="inherit" width="14.655" height="14.655" x="7.345" y="2.5" stroke-width="2" rx="1"></rect><path stroke="inherit" stroke-width="2" d="M4.897 6.569H4a2 2 0 0 0-2 2V20.5a2 2 0 0 0 2 2h12.655a2 2 0 0 0 2-2v-.896"></path></g></svg>
+					</button></div>
+				<h2
+">
+				Мультикаст-делегаты</h2>
+				<p
+>
+				Делегаты, включающие в себя более одного метода, называются 
+				мультикаст-делегатами. При вызове они выполняют каждый метод в 
+				заданном порядке, позволяя таким образом связывать несколько 
+				методов в цепочку.</p>
+				<p
+>
+				Для работы мультикаст-делегатов те не должны возвращать 
+				какой-либо результат. В противном случае обработается результат 
+				последнего метода цепочки.</p>
+				<h3 class="tp-content-subtitle tp-content-subtitle--h3" data-v-de4f74a7="" style="box-sizing: border-box; font-family: Inter, Helvetica, Arial, sans-serif; margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-size: var(--tp-font-size-h4); font-weight: var(--tp-font-weight-h4); letter-spacing: normal; line-height: var(--tp-line-height-h4); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; 
+ text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример 3</h3>
+				<p
+>
+				<span class="style14">Пример использования мультикаст-делегата для вывода приветствия</span>:</p>
+				<pre class="style3">
+<span class="style2"><strong>using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace MulticastDelegate1
+
+  class Program
+  {
+    // Объявление делегата, ссылающегося на метод
+    // с результатом типа void и одним строковым аргументом
+    public delegate void showDelegate(string s);
+    static void Main(string[] args)
+    {
+      showDelegate s = Display;
+      s += Show;
+      s(&quot;Hello&quot;);
+      s(&quot;Scott&quot;);
+      Console.Read();
+    }
+
+    // Пользовательская функция для отображения результата
+    public static void Display(string title)
+    {
+      Console.WriteLine(title);
+    }
+
+    // Пользовательская функция для вывода
+    public static void Show(string title)
+    {
+      Console.WriteLine(title);
+    }
+  }</strong></span>
+</pre>
+					<button class="tp-content-code__button" aria-label="Копировать код" data-v-04728ac0="" style="box-sizing: border-box; font-family: &quot;Jetbrains Mono&quot;, &quot;Jetbrains Mono override&quot;, Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; margin: 0px; padding: 6px; stroke: var(--tp-color-item); fill: transparent; align-items: center; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: var(--tp-background-color-secondary); border: 1px solid var(--tp-border-color-primary); border-radius: 8px; cursor: pointer; display: inline-flex; justify-content: center; position: absolute; right: 14px; top: 14px; transition: stroke 0.25s ease 0s, border 0.25s ease 0s;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" role="presentation" data-v-04728ac0=""><g fill="inherit" stroke="inherit"><rect stroke="inherit" width="14.655" height="14.655" x="7.345" y="2.5" stroke-width="2" rx="1"></rect><path stroke="inherit" stroke-width="2" d="M4.897 6.569H4a2 2 0 0 0-2 2V20.5a2 2 0 0 0 2 2h12.655a2 2 0 0 0 2-2v-.896"></path></g></svg>
+					</button></div>
+				<div class="tp-content-image" data-v-2298f8a6="" style="box-sizing: border-box; font-family: Inter, Helvetica, Arial, sans-serif; margin: 30px 0px; padding: 0px; align-items: center; display: flex; flex-direction: column; gap: 10px; justify-content: center; color: rgb(0, 0, 0); font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; 
+ text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<a class="tp-content-image__image-viewer-item" data-pswp-src="../../../media.tproger.ru/uploads/2018/10/Multicast20Delegate1.jpg" data-pswp-width="600" data-pswp-height="394" data-v-2298f8a6="" style="box-sizing: border-box; font-family: Inter, Helvetica, Arial, sans-serif; margin: 0px; padding: 0px; color: var(--tp-color-brand); text-decoration: none; cursor: zoom-in;">
+					<div class="tp-image" data-v-d15050b5="" data-v-2298f8a6="" style="box-sizing: border-box; font-family: Inter, Helvetica, Arial, sans-serif; margin: 0px; padding: 0px; display: inline-flex; flex-shrink: 0; overflow: hidden; width: 559.2px; border-radius: 8px;">
+						<img class="tp-image__image" src="Pic/Multicast20Delegate1.jpg" srcset="https://tproger.ru/signed_image/Mb8h0hhvPQuCQcEZUDOfsYvzWnzGWpDkVKRWH0tAcAc/rs:fill:600:0:true/cb:vimg_2/f:webp/aHR0cHM6Ly9tZWRpYS50cHJvZ2VyLnJ1L3VwbG9hZHMvMjAxOC8xMC9NdWx0aWNhc3QyMERlbGVnYXRlMS5qcGc 600w,https://tproger.ru/signed_image/5SjvrB40CeUz3atlGcc_GH51BD6nXyJ9ffmI5KA4RWM/rs:fill:1200:0:true/cb:vimg_2/f:webp/aHR0cHM6Ly9tZWRpYS50cHJvZ2VyLnJ1L3VwbG9hZHMvMjAxOC8xMC9NdWx0aWNhc3QyMERlbGVnYXRlMS5qcGc 1200w,https://tproger.ru/signed_image/Mb8h0hhvPQuCQcEZUDOfsYvzWnzGWpDkVKRWH0tAcAc/rs:fill:600:0:true/cb:vimg_2/f:webp/aHR0cHM6Ly9tZWRpYS50cHJvZ2VyLnJ1L3VwbG9hZHMvMjAxOC8xMC9NdWx0aWNhc3QyMERlbGVnYXRlMS5qcGc 600w,https://tproger.ru/signed_image/5SjvrB40CeUz3atlGcc_GH51BD6nXyJ9ffmI5KA4RWM/rs:fill:1200:0:true/cb:vimg_2/f:webp/aHR0cHM6Ly9tZWRpYS50cHJvZ2VyLnJ1L3VwbG9hZHMvMjAxOC8xMC9NdWx0aWNhc3QyMERlbGVnYXRlMS5qcGc 1200w,https://tproger.ru/signed_image/Mb8h0hhvPQuCQcEZUDOfsYvzWnzGWpDkVKRWH0tAcAc/rs:fill:600:0:true/cb:vimg_2/f:webp/aHR0cHM6Ly9tZWRpYS50cHJvZ2VyLnJ1L3VwbG9hZHMvMjAxOC8xMC9NdWx0aWNhc3QyMERlbGVnYXRlMS5qcGc 600w,https://tproger.ru/signed_image/5SjvrB40CeUz3atlGcc_GH51BD6nXyJ9ffmI5KA4RWM/rs:fill:1200:0:true/cb:vimg_2/f:webp/aHR0cHM6Ly9tZWRpYS50cHJvZ2VyLnJ1L3VwbG9hZHMvMjAxOC8xMC9NdWx0aWNhc3QyMERlbGVnYXRlMS5qcGc 1200w,https://tproger.ru/signed_image/6Zbs4ifgXx1F_S-KKYga2VNUepeBDzMVDK6VSosqyrA/rs:fill:466:0:true/cb:vimg_2/f:webp/aHR0cHM6Ly9tZWRpYS50cHJvZ2VyLnJ1L3VwbG9hZHMvMjAxOC8xMC9NdWx0aWNhc3QyMERlbGVnYXRlMS5qcGc 466w,https://tproger.ru/signed_image/FO5-mhtR0xbRvlTjPW-0tRK8S3q2ZzVWyqAdcka1eII/rs:fill:932:0:true/cb:vimg_2/f:webp/aHR0cHM6Ly9tZWRpYS50cHJvZ2VyLnJ1L3VwbG9hZHMvMjAxOC8xMC9NdWx0aWNhc3QyMERlbGVnYXRlMS5qcGc 932w" sizes="(min-width: 1441px) 600px,(min-width: 1281px) 600px,(min-width: 1281px) 600px,(min-width: 961px) 600px,(min-width: 671px) 600px,(min-width: 500px) 466px" alt="Введение в делегаты C# 2" loading="lazy" decoding="async" width="600" height="394" data-v-d15050b5="" style="box-sizing: border-box; font-family: Inter, Helvetica, Arial, sans-serif; margin: 0px; padding: 0px; display: block; height: 367.188px; position: relative; width: 559.2px; object-fit: cover; aspect-ratio: auto; object-position: 50% 50%;" /></div>
+					</a></div>
+				<h3 class="tp-content-subtitle tp-content-subtitle--h3" data-v-de4f74a7="" style="box-sizing: border-box; font-family: Inter, Helvetica, Arial, sans-serif; margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-size: var(--tp-font-size-h4); font-weight: var(--tp-font-weight-h4); letter-spacing: normal; line-height: var(--tp-line-height-h4); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; 
+ text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример 4</h3>
+				<p class="style14"
+>
+				Данный код умножает полученное число на два и возводит его же в 
+				квадрат:</p>
+				<pre class="style3">
+<span class="style7"><span class="style11"><strong>using System.Collections.Generic;
+using System.Linq;
+using System.Text; 
+
+namespace MulticastDelegate
+</strong>{</strong></span></span><strong><span class="style7"><span class="style11">
+  // Пользовательский класс для математических операций,
+  // содержит два статических метода
+  class MathOperation
+  {
+    // Метод умножения числа на 2
+    public static void MultiplyByTwo(double d)
+    {
+      double res = d * 2;
+      Console.WriteLine(&quot;Multiply: &quot; + res.ToString());
+    }
+
+    // Метод возведения числа в квадрат
+    public static void Squre(double e)
+    {
+      double res = e * e;
+      Console.WriteLine(&quot;Square&quot; + res.ToString());
+    }
+  }
+
+  class NewProgram
+  {
+    // Объявление делегата 
+    public delegate void del(double Qr);
+
+    static void Main()
+    {
+      // Создание делегата 
+      del d = MathOperation.MultiplyByTwo;
+      // Добавление метода к делегату 
+      d += MathOperation.Squre;
+      // Вызов функции отображения,
+      // в качестве аргументов — имя делегата и число типа double
+      Display(d, 2.00);
+      Display(d, 9.9);
+      Console.ReadLine();
+    }
+
+    // Пользовательская функция для вывода результата 
+    static void Display(del action, double value)
+    {
+      Console.WriteLine(&quot;Result = &quot; + value);
+      action(value);
+    }
+  }</span></span></pre>
+					</strong>
+				<p></p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+			</td>
+        </tr>
+       
+            
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les62.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les59/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:53:09 GMT -->
+</html>

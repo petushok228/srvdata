@@ -1,0 +1,532 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les28/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:00:05 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 3. Работа с файлами в Python.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <div class="section" id="id21" style="box-sizing: border-box; color: rgb(64, 64, 64); font-family: Lato, proxima-nova, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(252, 252, 252); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<h3 style="box-sizing: border-box; margin-top: 0px; font-weight: 700; font-family: &quot;Roboto Slab&quot;, ff-tisa-web-pro, Georgia, Arial, sans-serif; font-size: 20px;">
+								<a class="toc-backref" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#id57">
+								Основные свойства и методы</a><a class="headerlink" title="Ссылка на этот заголовок" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#id21"></a></h3>
+								<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px; text-align: justify;">
+								Файловый объект предоставляет ряд свойств и 
+								методов для работы с файлами. Большинство 
+								методов универсально и предполагают работу 
+								(чтение/запись) со строками в указанной 
+								кодировке (<a class="reference internal" title="str" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer;" href="https://www.yuripetrov.ru/edu/python/ch_03_01.html#id41"><code class="xref py py-class docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(64, 64, 64); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">str</span></code></a><span>&nbsp;</span>для 
+								текстовых файлов) или с набором байт (<code class="xref py py-class docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(64, 64, 64); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">bytes</span></code><span>&nbsp;</span>для 
+								двоичных файлов).</p>
+								<dl class="py class" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none;">
+												<dt id="id0" style="box-sizing: border-box; font-weight: 700; margin: 0px 0px 6px; display: table; font-size: 14.4px; line-height: normal; background: rgb(231, 242, 250); color: rgb(27, 122, 65); border-top: 3px solid rgb(106, 176, 222); padding: 6px; position: relative;">
+												<em class="property" style="box-sizing: border-box; display: inline-block; padding-right: 8px;">
+												class</em><code class="sig-name descname" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 14.4px; white-space: nowrap; max-width: 100%; background: transparent; border: none; padding: 0px; color: rgb(0, 0, 0); overflow-x: auto; font-weight: 700;">file</code><a class="headerlink" title="Ссылка на это определение" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14.4px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#id0"></a></dt>
+												<dd style="box-sizing: border-box; margin: 0px 0px 12px 24px; text-align: justify; line-height: 24px;">
+												<dl class="py attribute" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none;">
+																<dt id="file.name" style="box-sizing: border-box; font-weight: 700; margin: 0px 0px 6px; display: table; font-size: 14.4px; line-height: normal; background: rgb(240, 240, 240); color: rgb(85, 85, 85); border-top: none; padding: 6px; position: relative; border-right: none; border-bottom: none; border-image: initial; border-left: 3px solid rgb(204, 204, 204);">
+																<code class="sig-name descname" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 14.4px; white-space: nowrap; max-width: 100%; background: transparent; border: none; padding: 0px; color: rgb(0, 0, 0); overflow-x: auto; font-weight: 700;">
+																name</code><a class="headerlink" title="Ссылка на это определение" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14.4px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#file.name"></a></dt>
+																<dd style="box-sizing: border-box; margin: 0px 0px 12px 24px; text-align: justify; line-height: 24px;">
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+																Имя файла (если 
+																имеется).</p>
+																</dd>
+												</dl>
+												<dl class="py attribute" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none;">
+																<dt id="file.mode" style="box-sizing: border-box; font-weight: 700; margin: 0px 0px 6px; display: table; font-size: 14.4px; line-height: normal; background: rgb(240, 240, 240); color: rgb(85, 85, 85); border-top: none; padding: 6px; position: relative; border-right: none; border-bottom: none; border-image: initial; border-left: 3px solid rgb(204, 204, 204);">
+																<code class="sig-name descname" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 14.4px; white-space: nowrap; max-width: 100%; background: transparent; border: none; padding: 0px; color: rgb(0, 0, 0); overflow-x: auto; font-weight: 700;">
+																mode</code><a class="headerlink" title="Ссылка на это определение" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14.4px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#file.mode"></a></dt>
+																<dd style="box-sizing: border-box; margin: 0px 0px 12px 24px; text-align: justify; line-height: 24px;">
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+																Режим, в котором 
+																был открыт файл.</p>
+																</dd>
+												</dl>
+												<dl class="py attribute" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none;">
+																<dt id="file.encoding" style="box-sizing: border-box; font-weight: 700; margin: 0px 0px 6px; display: table; font-size: 14.4px; line-height: normal; background: rgb(240, 240, 240); color: rgb(85, 85, 85); border-top: none; padding: 6px; position: relative; border-right: none; border-bottom: none; border-image: initial; border-left: 3px solid rgb(204, 204, 204);">
+																<code class="sig-name descname" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 14.4px; white-space: nowrap; max-width: 100%; background: transparent; border: none; padding: 0px; color: rgb(0, 0, 0); overflow-x: auto; font-weight: 700;">
+																encoding</code><a class="headerlink" title="Ссылка на это определение" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14.4px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#file.encoding"></a></dt>
+																<dd style="box-sizing: border-box; margin: 0px 0px 12px 24px; text-align: justify; line-height: 24px;">
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+																Кодировка, 
+																используемая для 
+																строковых 
+																преобразований в 
+																файле.</p>
+																</dd>
+												</dl>
+												<dl class="py attribute" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none;">
+																<dt id="file.closed" style="box-sizing: border-box; font-weight: 700; margin: 0px 0px 6px; display: table; font-size: 14.4px; line-height: normal; background: rgb(240, 240, 240); color: rgb(85, 85, 85); border-top: none; padding: 6px; position: relative; border-right: none; border-bottom: none; border-image: initial; border-left: 3px solid rgb(204, 204, 204);">
+																<code class="sig-name descname" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 14.4px; white-space: nowrap; max-width: 100%; background: transparent; border: none; padding: 0px; color: rgb(0, 0, 0); overflow-x: auto; font-weight: 700;">
+																closed</code><a class="headerlink" title="Ссылка на это определение" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14.4px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#file.closed"></a></dt>
+																<dd style="box-sizing: border-box; margin: 0px 0px 12px 24px; text-align: justify; line-height: 24px;">
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+																Возвращает<span>&nbsp;</span><a class="reference internal" title="True" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer;" href="https://www.yuripetrov.ru/edu/python/ch_03_01.html#True"><code class="xref py py-data docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(64, 64, 64); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">True</span></code></a>, 
+																если файл 
+																закрыт.</p>
+																</dd>
+												</dl>
+												<dl class="py method" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none;">
+																<dt id="id22" style="box-sizing: border-box; font-weight: 700; margin: 0px 0px 6px; display: table; font-size: 14.4px; line-height: normal; background: rgb(240, 240, 240); color: rgb(85, 85, 85); border-top: none; padding: 6px; position: relative; border-right: none; border-bottom: none; border-image: initial; border-left: 3px solid rgb(204, 204, 204);">
+																<code class="sig-name descname" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 14.4px; white-space: nowrap; max-width: 100%; background: transparent; border: none; padding: 0px; color: rgb(0, 0, 0); overflow-x: auto; font-weight: 700;">
+																close</code><span class="sig-paren" style="box-sizing: border-box;">()</span><a class="headerlink" title="Ссылка на это определение" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14.4px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#id22"></a></dt>
+																<dd style="box-sizing: border-box; margin: 0px 0px 12px 24px; text-align: justify; line-height: 24px;">
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+																Закрывает файл. 
+																После этого 
+																работа с файлом 
+																невозможна 
+																(чтение, запись 
+																и др.).</p>
+																</dd>
+												</dl>
+												<dl class="py method" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none;">
+																<dt id="file.read" style="box-sizing: border-box; font-weight: 700; margin: 0px 0px 6px; display: table; font-size: 14.4px; line-height: normal; background: rgb(240, 240, 240); color: rgb(85, 85, 85); border-top: none; padding: 6px; position: relative; border-right: none; border-bottom: none; border-image: initial; border-left: 3px solid rgb(204, 204, 204);">
+																<code class="sig-name descname" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 14.4px; white-space: nowrap; max-width: 100%; background: transparent; border: none; padding: 0px; color: rgb(0, 0, 0); overflow-x: auto; font-weight: 700;">
+																read</code><span class="sig-paren" style="box-sizing: border-box;">(</span><em class="sig-param" style="box-sizing: border-box;"><span class="n" style="box-sizing: border-box;">count</span></em><span class="sig-paren" style="box-sizing: border-box;">)</span><a class="headerlink" title="Ссылка на это определение" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14.4px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#file.read"></a></dt>
+																<dd style="box-sizing: border-box; margin: 0px 0px 12px 24px; text-align: justify; line-height: 24px;">
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+																Читает до<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">count</span></code><span>&nbsp;</span>байт 
+																из файлового 
+																объекта. Если 
+																значение<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">count</span></code><span>&nbsp;</span>не 
+																определено, то 
+																читаются все 
+																байты, начиная 
+																от текущей 
+																позиции и до 
+																конца.</p>
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+																Если ничего не 
+																было прочитано 
+																(конец файла), 
+																возвращается 
+																пустой объект<span>&nbsp;</span><a class="reference internal" title="str" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer;" href="https://www.yuripetrov.ru/edu/python/ch_03_01.html#id41"><code class="xref py py-class docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(64, 64, 64); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">str</span></code></a><span>&nbsp;</span>или<span>&nbsp;</span><code class="xref py py-class docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(64, 64, 64); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">bytes</span></code>.</p>
+																</dd>
+												</dl>
+												<dl class="py method" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none;">
+																<dt id="file.readinto" style="box-sizing: border-box; font-weight: 700; margin: 0px 0px 6px; display: table; font-size: 14.4px; line-height: normal; background: rgb(240, 240, 240); color: rgb(85, 85, 85); border-top: none; padding: 6px; position: relative; border-right: none; border-bottom: none; border-image: initial; border-left: 3px solid rgb(204, 204, 204);">
+																<code class="sig-name descname" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 14.4px; white-space: nowrap; max-width: 100%; background: transparent; border: none; padding: 0px; color: rgb(0, 0, 0); overflow-x: auto; font-weight: 700;">
+																readinto</code><span class="sig-paren" style="box-sizing: border-box;">(</span><em class="sig-param" style="box-sizing: border-box;"><span class="n" style="box-sizing: border-box;">ba</span></em><span class="sig-paren" style="box-sizing: border-box;">)</span><a class="headerlink" title="Ссылка на это определение" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14.4px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#file.readinto"></a></dt>
+																<dd style="box-sizing: border-box; margin: 0px 0px 12px 24px; text-align: justify; line-height: 24px;">
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+																Читает до<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">len(ba)</span></code><span>&nbsp;</span>байт 
+																в объект<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">ba</span></code><span>&nbsp;</span>типа<span>&nbsp;</span><code class="xref py py-class docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(64, 64, 64); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">bytearray</span></code><span>&nbsp;</span>и 
+																возвращает число 
+																прочитанных байт 
+																(0, если был 
+																достигнут конец 
+																файла).</p>
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+																Доступен только 
+																в двоичном 
+																режиме.</p>
+																</dd>
+												</dl>
+												<dl class="py method" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none;">
+																<dt id="file.readline" style="box-sizing: border-box; font-weight: 700; margin: 0px 0px 6px; display: table; font-size: 14.4px; line-height: normal; background: rgb(240, 240, 240); color: rgb(85, 85, 85); border-top: none; padding: 6px; position: relative; border-right: none; border-bottom: none; border-image: initial; border-left: 3px solid rgb(204, 204, 204);">
+																<code class="sig-name descname" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 14.4px; white-space: nowrap; max-width: 100%; background: transparent; border: none; padding: 0px; color: rgb(0, 0, 0); overflow-x: auto; font-weight: 700;">
+																readline</code><span class="sig-paren" style="box-sizing: border-box;">(</span><em class="sig-param" style="box-sizing: border-box;"><span class="n" style="box-sizing: border-box;">count</span></em><span class="sig-paren" style="box-sizing: border-box;">)</span><a class="headerlink" title="Ссылка на это определение" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14.4px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#file.readline"></a></dt>
+																<dd style="box-sizing: border-box; margin: 0px 0px 12px 24px; text-align: justify; line-height: 24px;">
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+																Читает следующую 
+																строку (до<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">count</span></code><span>&nbsp;</span>байт, 
+																если значение<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">count</span></code><span>&nbsp;</span>определено 
+																и число 
+																прочитанных 
+																байтов было 
+																достигнуто 
+																раньше, чем 
+																встретился 
+																символ перевода 
+																строки<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">&#39;\n&#39;</span></code>), 
+																включая символ 
+																перевода строки<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">&#39;\n&#39;</span></code>.</p>
+																</dd>
+												</dl>
+												<dl class="py method" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none;">
+																<dt id="file.readlines" style="box-sizing: border-box; font-weight: 700; margin: 0px 0px 6px; display: table; font-size: 14.4px; line-height: normal; background: rgb(240, 240, 240); color: rgb(85, 85, 85); border-top: none; padding: 6px; position: relative; border-right: none; border-bottom: none; border-image: initial; border-left: 3px solid rgb(204, 204, 204);">
+																<code class="sig-name descname" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 14.4px; white-space: nowrap; max-width: 100%; background: transparent; border: none; padding: 0px; color: rgb(0, 0, 0); overflow-x: auto; font-weight: 700;">
+																readlines</code><span class="sig-paren" style="box-sizing: border-box;">(</span><em class="sig-param" style="box-sizing: border-box;"><span class="n" style="box-sizing: border-box;">sizehint</span></em><span class="sig-paren" style="box-sizing: border-box;">)</span><a class="headerlink" title="Ссылка на это определение" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14.4px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#file.readlines"></a></dt>
+																<dd style="box-sizing: border-box; margin: 0px 0px 12px 24px; text-align: justify; line-height: 24px;">
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+																Читает все 
+																строки до конца 
+																файла и 
+																возвращает их в 
+																виде списка.</p>
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+																Если значение 
+																аргумента<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">sizehint</span></code><span>&nbsp;</span>определено, 
+																то будет 
+																прочитано 
+																примерно<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">sizehint</span></code><span>&nbsp;</span>байт 
+																(если файл 
+																поддерживает 
+																такую 
+																возможность).</p>
+																</dd>
+												</dl>
+												<dl class="py method" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none;">
+																<dt id="file.write" style="box-sizing: border-box; font-weight: 700; margin: 0px 0px 6px; display: table; font-size: 14.4px; line-height: normal; background: rgb(240, 240, 240); color: rgb(85, 85, 85); border-top: none; padding: 6px; position: relative; border-right: none; border-bottom: none; border-image: initial; border-left: 3px solid rgb(204, 204, 204);">
+																<code class="sig-name descname" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 14.4px; white-space: nowrap; max-width: 100%; background: transparent; border: none; padding: 0px; color: rgb(0, 0, 0); overflow-x: auto; font-weight: 700;">
+																write</code><span class="sig-paren" style="box-sizing: border-box;">(</span><em class="sig-param" style="box-sizing: border-box;"><span class="n" style="box-sizing: border-box;">s</span></em><span class="sig-paren" style="box-sizing: border-box;">)</span><a class="headerlink" title="Ссылка на это определение" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14.4px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#file.write"></a></dt>
+																<dd style="box-sizing: border-box; margin: 0px 0px 12px 24px; text-align: justify; line-height: 24px;">
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+																Записывает в 
+																файл объект<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">s</span></code><span>&nbsp;</span>типа:</p>
+																<ul class="simple" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: disc; text-align: justify; line-height: 24px;">
+																				<li style="box-sizing: border-box; text-align: justify; list-style: disc; margin-left: 24px;">
+																				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px; text-align: justify;"><a class="reference internal" title="str" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer;" href="https://www.yuripetrov.ru/edu/python/ch_03_01.html#id41"><code class="xref py py-class docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(64, 64, 64); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">str</span></code></a><span>&nbsp;</span>для текстового режима;</p>
+																				</li>
+																				<li style="box-sizing: border-box; text-align: justify; list-style: disc; margin-left: 24px;">
+																				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px; text-align: justify;"><code class="xref py py-class docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(64, 64, 64); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">bytes</span></code><span>&nbsp;</span>/<span>&nbsp;</span><code class="xref py py-class docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(64, 64, 64); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">bytearray</span></code><span>&nbsp;</span>для двоичного режима.</p>
+																				</li>
+																</ul>
+																<div class="admonition note" style="box-sizing: border-box; -webkit-font-smoothing: antialiased; padding: 12px; line-height: 24px; margin-bottom: 24px; background: rgb(231, 242, 250); clear: both;">
+																				<p class="admonition-title" style="box-sizing: border-box; line-height: 1; font-size: inherit; margin: -12px -12px 12px; text-align: justify; display: block; font-style: normal; font-variant: normal; font-weight: 700; font-stretch: normal; font-family: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; color: rgb(255, 255, 255); background: rgb(106, 176, 222); padding: 6px 12px;">Примечание</p>
+																				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px; text-align: justify;">Запись в файл возможна и с помощью стандартной функции<span>&nbsp;</span><a class="reference internal" title="print" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer;" href="https://www.yuripetrov.ru/edu/python/ch_03_01.html#print"><code class="xref py py-func docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(64, 64, 64); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">print()</span></code></a>, установив ключевой параметр<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">file</span></code><span>&nbsp;</span>в открытый файловый объект.</p>
+																</div>
+																</dd>
+												</dl>
+												<dl class="py method" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none;">
+																<dt id="file.writelines" style="box-sizing: border-box; font-weight: 700; margin: 0px 0px 6px; display: table; font-size: 14.4px; line-height: normal; background: rgb(240, 240, 240); color: rgb(85, 85, 85); border-top: none; padding: 6px; position: relative; border-right: none; border-bottom: none; border-image: initial; border-left: 3px solid rgb(204, 204, 204);">
+																<code class="sig-name descname" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 14.4px; white-space: nowrap; max-width: 100%; background: transparent; border: none; padding: 0px; color: rgb(0, 0, 0); overflow-x: auto; font-weight: 700;">
+																writelines</code><span class="sig-paren" style="box-sizing: border-box;">(</span><em class="sig-param" style="box-sizing: border-box;"><span class="n" style="box-sizing: border-box;">seg</span></em><span class="sig-paren" style="box-sizing: border-box;">)</span><a class="headerlink" title="Ссылка на это определение" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14.4px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#file.writelines"></a></dt>
+																<dd style="box-sizing: border-box; margin: 0px 0px 12px 24px; text-align: justify; line-height: 24px;">
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+																Записывает в 
+																файл 
+																последовательность 
+																объектов типа:</p>
+																<ul class="simple" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: disc; text-align: justify; line-height: 24px;">
+																				<li style="box-sizing: border-box; text-align: justify; list-style: disc; margin-left: 24px;">
+																				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px; text-align: justify;"><a class="reference internal" title="str" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer;" href="https://www.yuripetrov.ru/edu/python/ch_03_01.html#id41"><code class="xref py py-class docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(64, 64, 64); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">str</span></code></a><span>&nbsp;</span>для текстового режима;</p>
+																				</li>
+																				<li style="box-sizing: border-box; text-align: justify; list-style: disc; margin-left: 24px;">
+																				<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px; text-align: justify;"><code class="xref py py-class docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(64, 64, 64); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">bytes</span></code><span>&nbsp;</span>/<span>&nbsp;</span><code class="xref py py-class docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(64, 64, 64); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">bytearray</span></code><span>&nbsp;</span>для двоичного режима.</p>
+																				</li>
+																</ul>
+																</dd>
+												</dl>
+												<dl class="py method" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none;">
+																<dt id="file.flush" style="box-sizing: border-box; font-weight: 700; margin: 0px 0px 6px; display: table; font-size: 14.4px; line-height: normal; background: rgb(240, 240, 240); color: rgb(85, 85, 85); border-top: none; padding: 6px; position: relative; border-right: none; border-bottom: none; border-image: initial; border-left: 3px solid rgb(204, 204, 204);">
+																<code class="sig-name descname" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 14.4px; white-space: nowrap; max-width: 100%; background: transparent; border: none; padding: 0px; color: rgb(0, 0, 0); overflow-x: auto; font-weight: 700;">
+																flush</code><span class="sig-paren" style="box-sizing: border-box;">()</span><a class="headerlink" title="Ссылка на это определение" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14.4px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#file.flush"></a></dt>
+																<dd style="box-sizing: border-box; margin: 0px 0px 12px 24px; text-align: justify; line-height: 24px;">
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+																При работе с 
+																файлами Python 
+																по умолчанию 
+																использует буфер 
+																определенного 
+																размера. Вызов 
+																методов записи 
+																приводит к 
+																записи в буфер, 
+																после чего в 
+																определенный 
+																момент 
+																производится 
+																очистка буфера и 
+																передача сигнала 
+																для записи 
+																данных на диск.</p>
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+																Метод<span>&nbsp;</span><a class="reference internal" title="file.flush" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#file.flush"><code class="xref py py-meth docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(64, 64, 64); overflow-x: auto; font-weight: 700;"><span class="pre" style="box-sizing: border-box;">flush()</span></code></a><span>&nbsp;</span>вызывает 
+																принудительное 
+																очистку буфера. 
+																В большинстве 
+																случаев вызывать 
+																его напрямую не 
+																нужно.</p>
+																</dd>
+												</dl>
+												<dl class="py method" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: none none;">
+																<dt id="id23" style="box-sizing: border-box; font-weight: 700; margin: 0px 0px 6px; display: table; font-size: 14.4px; line-height: normal; background: rgb(240, 240, 240); color: rgb(85, 85, 85); border-top: none; padding: 6px; position: relative; border-right: none; border-bottom: none; border-image: initial; border-left: 3px solid rgb(204, 204, 204);">
+																<code class="sig-name descname" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 14.4px; white-space: nowrap; max-width: 100%; background: transparent; border: none; padding: 0px; color: rgb(0, 0, 0); overflow-x: auto; font-weight: 700;">
+																close</code><span class="sig-paren" style="box-sizing: border-box;">()</span><a class="headerlink" title="Ссылка на это определение" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14.4px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#id23"></a></dt>
+																<dd style="box-sizing: border-box; margin: 0px 0px 12px 24px; text-align: justify; line-height: 24px;">
+																<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 12px; text-align: justify;">
+																Закрывает файл. 
+																После этого 
+																работа с файлом 
+																невозможна 
+																(чтение, запись 
+																и др.).</p>
+																</dd>
+												</dl>
+												</dd>
+								</dl>
+				</div>
+				<div class="section" id="id24" style="box-sizing: border-box; color: rgb(64, 64, 64); font-family: Lato, proxima-nova, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(252, 252, 252); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<h3 style="box-sizing: border-box; margin-top: 0px; font-weight: 700; font-family: &quot;Roboto Slab&quot;, ff-tisa-web-pro, Georgia, Arial, sans-serif; font-size: 20px;">
+								<a class="toc-backref" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#id58">
+								Простое чтение и запись</a><a class="headerlink" title="Ссылка на этот заголовок" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#id24"></a></h3>
+								<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px; text-align: justify;">
+								В Листинге&nbsp;2 приведен пример работы с двоичным 
+								файлом.</p>
+								<div class="literal-block-wrapper docutils container" id="id40" style="box-sizing: border-box;">
+												<div class="code-block-caption" style="box-sizing: border-box; font-weight: bold; font-size: 13.6px; font-style: italic; line-height: 1; padding: 1em 0px; text-align: left;">
+																<span class="caption-text" style="box-sizing: border-box;">
+																Листинг&nbsp;2 - 
+																Пример работы с 
+																двоичным файлом
+																</span>
+																<a class="headerlink" title="Постоянная ссылка на код" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#id40">
+																</a></div>
+												<div class="highlight-default notranslate" style="box-sizing: border-box; border: 1px solid rgb(225, 228, 229); overflow-x: auto; margin: 1px 0px 24px;">
+																<div class="highlight" style="box-sizing: border-box; background: rgb(248, 248, 248); border: none; overflow-x: auto; margin: 0px; padding: 0px;">
+																				<pre style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: pre; line-height: 1.4; margin: 0px; padding: 12px; display: block; overflow: auto;"><span class="n" style="box-sizing: border-box;">human</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">dict</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">name</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;Михаил Толстых&quot;</span><span class="p" style="box-sizing: border-box;">,</span> <span class="n" style="box-sizing: border-box;">age</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span><span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">35</span><span class="p" style="box-sizing: border-box;">,</span> <span class="n" style="box-sizing: border-box;">weight</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span><span class="mf" style="box-sizing: border-box; color: rgb(102, 102, 102);">90.5</span><span class="p" style="box-sizing: border-box;">)</span>
+<span class="n" style="box-sizing: border-box;">filename</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;08_01_02_data.txt&quot;</span>
+
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;"># 1. Запись в файл</span>
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;">#    При записи бинарных файлов все данные должны быть преобразованы в тип bytes</span>
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;">#    Удобно выполнить преобразование через метод str.encode()</span>
+<span class="n" style="box-sizing: border-box;">fh</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="kc" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">None</span>
+<span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">try</span><span class="p" style="box-sizing: border-box;">:</span>
+    <span class="n" style="box-sizing: border-box;">fh</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">open</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">filename</span><span class="p" style="box-sizing: border-box;">,</span> <span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;wb&quot;</span><span class="p" style="box-sizing: border-box;">)</span>
+    <span class="n" style="box-sizing: border-box;">fh</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">write</span><span class="p" style="box-sizing: border-box;">(</span><span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">bytes</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">human</span><span class="p" style="box-sizing: border-box;">[</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;name&quot;</span><span class="p" style="box-sizing: border-box;">]</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">encode</span><span class="p" style="box-sizing: border-box;">(</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;utf-8&quot;</span><span class="p" style="box-sizing: border-box;">)))</span>
+    <span class="n" style="box-sizing: border-box;">fh</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">write</span><span class="p" style="box-sizing: border-box;">(</span><span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">bytes</span><span class="p" style="box-sizing: border-box;">(</span><span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">str</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">human</span><span class="p" style="box-sizing: border-box;">[</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;age&quot;</span><span class="p" style="box-sizing: border-box;">])</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">encode</span><span class="p" style="box-sizing: border-box;">(</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;utf-8&quot;</span><span class="p" style="box-sizing: border-box;">)))</span>
+    <span class="n" style="box-sizing: border-box;">fh</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">write</span><span class="p" style="box-sizing: border-box;">(</span><span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">bytes</span><span class="p" style="box-sizing: border-box;">(</span><span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">str</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">human</span><span class="p" style="box-sizing: border-box;">[</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;weight&quot;</span><span class="p" style="box-sizing: border-box;">])</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">encode</span><span class="p" style="box-sizing: border-box;">(</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;utf-8&quot;</span><span class="p" style="box-sizing: border-box;">)))</span>
+<span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">finally</span><span class="p" style="box-sizing: border-box;">:</span>
+    <span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="n" style="box-sizing: border-box;">fh</span><span class="p" style="box-sizing: border-box;">:</span>
+        <span class="n" style="box-sizing: border-box;">fh</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">close</span><span class="p" style="box-sizing: border-box;">()</span>
+
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;"># 2. Чтение из файла</span>
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;">#    При чтении бинарных файлов необходимо точно знать, сколько байт</span>
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;">#    прочитать и как их декодировать, используя bytes.decode()</span>
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;">#    При редактировании файла в стороннем редакторе файл может быть не читаем</span>
+<span class="n" style="box-sizing: border-box;">fh</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="kc" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">None</span>
+<span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">try</span><span class="p" style="box-sizing: border-box;">:</span>
+    <span class="n" style="box-sizing: border-box;">fh</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">open</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">filename</span><span class="p" style="box-sizing: border-box;">,</span> <span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;rb&quot;</span><span class="p" style="box-sizing: border-box;">)</span>
+    <span class="n" style="box-sizing: border-box;">name</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="n" style="box-sizing: border-box;">fh</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">read</span><span class="p" style="box-sizing: border-box;">(</span><span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">27</span><span class="p" style="box-sizing: border-box;">)</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">decode</span><span class="p" style="box-sizing: border-box;">(</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;utf-8&quot;</span><span class="p" style="box-sizing: border-box;">)</span>
+    <span class="n" style="box-sizing: border-box;">age</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">int</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">fh</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">read</span><span class="p" style="box-sizing: border-box;">(</span><span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">2</span><span class="p" style="box-sizing: border-box;">)</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">decode</span><span class="p" style="box-sizing: border-box;">(</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;utf-8&quot;</span><span class="p" style="box-sizing: border-box;">))</span>
+    <span class="n" style="box-sizing: border-box;">weight</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">float</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">fh</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">read</span><span class="p" style="box-sizing: border-box;">(</span><span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">4</span><span class="p" style="box-sizing: border-box;">)</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">decode</span><span class="p" style="box-sizing: border-box;">(</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;utf-8&quot;</span><span class="p" style="box-sizing: border-box;">))</span>
+    <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">print</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">name</span><span class="p" style="box-sizing: border-box;">,</span> <span class="n" style="box-sizing: border-box;">age</span><span class="p" style="box-sizing: border-box;">,</span> <span class="n" style="box-sizing: border-box;">weight</span><span class="p" style="box-sizing: border-box;">)</span>  <span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;"># Михаил Толстых 35 90.5</span>
+<span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">finally</span><span class="p" style="box-sizing: border-box;">:</span>
+    <span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="n" style="box-sizing: border-box;">fh</span><span class="p" style="box-sizing: border-box;">:</span>
+        <span class="n" style="box-sizing: border-box;">fh</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">close</span><span class="p" style="box-sizing: border-box;">()</span>
+</pre>
+																</div>
+												</div>
+								</div>
+								<div class="admonition note" style="box-sizing: border-box; -webkit-font-smoothing: antialiased; padding: 12px; line-height: 24px; margin-bottom: 24px; background: rgb(231, 242, 250); clear: both;">
+												<p class="admonition-title" style="box-sizing: border-box; line-height: 1; font-size: inherit; margin: -12px -12px 12px; text-align: justify; display: block; font-style: normal; font-variant: normal; font-weight: 700; font-stretch: normal; font-family: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; color: rgb(255, 255, 255); background: rgb(106, 176, 222); padding: 6px 12px;">
+												Примечание</p>
+												<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px; text-align: justify;">
+												Работа с бинарными файлами не 
+												рассматривается детально в 
+												настоящем курсе и, в целом, 
+												аналогична работе с текстовыми 
+												файлами с необходимостью работы 
+												не со строкой, а набором байт с 
+												необходимой перекодировкой.</p>
+												<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px; text-align: justify;">
+												Больше примеров:<span>&nbsp;</span><a class="reference external" target="_blank" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer;" href="http://www.devdungeon.com/content/working-binary-data-python">http://www.devdungeon.com/content/working-binary-data-python</a>.</p>
+								</div>
+								<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px; text-align: justify;">
+								В Листинге&nbsp;3 приведен пример работы с текстовым 
+								файлом.</p>
+								<div class="literal-block-wrapper docutils container" id="id41" style="box-sizing: border-box;">
+												<div class="code-block-caption" style="box-sizing: border-box; font-weight: bold; font-size: 13.6px; font-style: italic; line-height: 1; padding: 1em 0px; text-align: left;">
+																<span class="caption-text" style="box-sizing: border-box;">
+																Листинг&nbsp;3 - 
+																Пример работы с 
+																текстовым файлом
+																</span>
+																<a class="headerlink" title="Постоянная ссылка на код" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#id41">
+																</a></div>
+												<div class="highlight-default notranslate" style="box-sizing: border-box; border: 1px solid rgb(225, 228, 229); overflow-x: auto; margin: 1px 0px 24px;">
+																<div class="highlight" style="box-sizing: border-box; background: rgb(248, 248, 248); border: none; overflow-x: auto; margin: 0px; padding: 0px;">
+																				<pre style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: pre; line-height: 1.4; margin: 0px; padding: 12px; display: block; overflow: auto;"><span class="n" style="box-sizing: border-box;">human</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">dict</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">name</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;Михаил Толстых&quot;</span><span class="p" style="box-sizing: border-box;">,</span> <span class="n" style="box-sizing: border-box;">age</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span><span class="mi" style="box-sizing: border-box; color: rgb(102, 102, 102);">35</span><span class="p" style="box-sizing: border-box;">,</span> <span class="n" style="box-sizing: border-box;">weight</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span><span class="mf" style="box-sizing: border-box; color: rgb(102, 102, 102);">90.5</span><span class="p" style="box-sizing: border-box;">)</span>
+<span class="n" style="box-sizing: border-box;">filename</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;08_01_03_data.txt&quot;</span>
+
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;"># 1. Запись в файл</span>
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;">#    При записи текстовых файлов все данные должны быть преобразованы в тип str</span>
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;">#    По умолчанию, write() не добавляет перенос строки, однако его можно добавить самостоятельно</span>
+<span class="n" style="box-sizing: border-box;">fh</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="kc" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">None</span>
+<span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">try</span><span class="p" style="box-sizing: border-box;">:</span>
+    <span class="n" style="box-sizing: border-box;">fh</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">open</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">filename</span><span class="p" style="box-sizing: border-box;">,</span> <span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;w&quot;</span><span class="p" style="box-sizing: border-box;">,</span> <span class="n" style="box-sizing: border-box;">encoding</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;utf-8&quot;</span><span class="p" style="box-sizing: border-box;">)</span>
+    <span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;"># При добавлении переноса записываемые данные будут на отдельной строке</span>
+    <span class="n" style="box-sizing: border-box;">fh</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">write</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">human</span><span class="p" style="box-sizing: border-box;">[</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;name&quot;</span><span class="p" style="box-sizing: border-box;">]</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">+</span> <span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;</span><span class="se" style="box-sizing: border-box; color: rgb(187, 102, 34); font-weight: bold;">\n</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;</span><span class="p" style="box-sizing: border-box;">)</span>
+    <span class="n" style="box-sizing: border-box;">fh</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">write</span><span class="p" style="box-sizing: border-box;">(</span><span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">str</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">human</span><span class="p" style="box-sizing: border-box;">[</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;age&quot;</span><span class="p" style="box-sizing: border-box;">])</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">+</span> <span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;</span><span class="se" style="box-sizing: border-box; color: rgb(187, 102, 34); font-weight: bold;">\n</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;</span><span class="p" style="box-sizing: border-box;">)</span>
+    <span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;"># Как альтернатива - print() позволяет не переводить в строку и не добавлять перенос вручную</span>
+    <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">print</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">human</span><span class="p" style="box-sizing: border-box;">[</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;weight&quot;</span><span class="p" style="box-sizing: border-box;">],</span> <span class="n" style="box-sizing: border-box;">file</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span><span class="n" style="box-sizing: border-box;">fh</span><span class="p" style="box-sizing: border-box;">)</span>
+<span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">finally</span><span class="p" style="box-sizing: border-box;">:</span>
+    <span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="n" style="box-sizing: border-box;">fh</span><span class="p" style="box-sizing: border-box;">:</span>
+        <span class="n" style="box-sizing: border-box;">fh</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">close</span><span class="p" style="box-sizing: border-box;">()</span>
+
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;"># 2. Чтение из файла</span>
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;">#    Для чтения отдельной строки достаточно вызвать метод readline().</span>
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;">#    В конце полученной строки знак переноса - \n,</span>
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;">#    который можно убрать, например, методом str.strip()</span>
+<span class="n" style="box-sizing: border-box;">fh</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="kc" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">None</span>
+<span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">try</span><span class="p" style="box-sizing: border-box;">:</span>
+    <span class="n" style="box-sizing: border-box;">fh</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">open</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">filename</span><span class="p" style="box-sizing: border-box;">,</span> <span class="n" style="box-sizing: border-box;">encoding</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;utf-8&quot;</span><span class="p" style="box-sizing: border-box;">)</span>
+    <span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;"># Читаем первые 3 строки и преобразуем при необходимости</span>
+    <span class="n" style="box-sizing: border-box;">name</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="n" style="box-sizing: border-box;">fh</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">readline</span><span class="p" style="box-sizing: border-box;">()</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">strip</span><span class="p" style="box-sizing: border-box;">()</span>
+    <span class="n" style="box-sizing: border-box;">age</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">int</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">fh</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">readline</span><span class="p" style="box-sizing: border-box;">())</span>
+    <span class="n" style="box-sizing: border-box;">weight</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">float</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">fh</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">readline</span><span class="p" style="box-sizing: border-box;">())</span>
+    <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">print</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">name</span><span class="p" style="box-sizing: border-box;">,</span> <span class="n" style="box-sizing: border-box;">age</span><span class="p" style="box-sizing: border-box;">,</span> <span class="n" style="box-sizing: border-box;">weight</span><span class="p" style="box-sizing: border-box;">)</span>  <span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;"># Михаил Толстых 35 90.5</span>
+<span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">finally</span><span class="p" style="box-sizing: border-box;">:</span>
+    <span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">if</span> <span class="n" style="box-sizing: border-box;">fh</span><span class="p" style="box-sizing: border-box;">:</span>
+        <span class="n" style="box-sizing: border-box;">fh</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">close</span><span class="p" style="box-sizing: border-box;">()</span>
+</pre>
+																</div>
+												</div>
+								</div>
+				</div>
+				<div class="section" id="id25" style="box-sizing: border-box; color: rgb(64, 64, 64); font-family: Lato, proxima-nova, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(252, 252, 252); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+								<h3 style="box-sizing: border-box; margin-top: 0px; font-weight: 700; font-family: &quot;Roboto Slab&quot;, ff-tisa-web-pro, Georgia, Arial, sans-serif; font-size: 20px;">
+								<a class="toc-backref" style="box-sizing: border-box; color: rgb(64, 64, 64); text-decoration: none; cursor: pointer;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#id59">
+								Чтение файла целиком</a><a class="headerlink" title="Ссылка на этот заголовок" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#id25"></a></h3>
+								<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px; text-align: justify;">
+								Чтение файла, приведенное в Листинге&nbsp;8.1.3 не 
+								подразумевает, что содержимое файла может 
+								меняться.</p>
+								<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px; text-align: justify;">
+								Учитывать такие изменения можно, прочитав файл 
+								целиком:</p>
+								<ul class="simple" style="box-sizing: border-box; margin: 0px 0px 24px; padding: 0px; list-style: disc; text-align: justify; line-height: 24px;">
+												<li style="box-sizing: border-box; text-align: justify; list-style: disc; margin-left: 24px;">
+												<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px; text-align: justify;">
+												в одну строку;</p>
+												</li>
+												<li style="box-sizing: border-box; text-align: justify; list-style: disc; margin-left: 24px;">
+												<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px; text-align: justify;">
+												в список строк;</p>
+												</li>
+												<li style="box-sizing: border-box; text-align: justify; list-style: disc; margin-left: 24px;">
+												<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px; text-align: justify;">
+												построчно, пока не достигнут 
+												конец файла.</p>
+												</li>
+								</ul>
+								<p style="box-sizing: border-box; line-height: 24px; font-size: 16px; margin: 0px 0px 24px; text-align: justify;">
+								Примеры реализации данных вариантов приведены в 
+								Листинге&nbsp;8.1.4 на примере файла<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto;"><span class="pre" style="box-sizing: border-box;">08_01_04_data.txt</span></code>:</p>
+								<div class="literal-block-wrapper docutils container" id="id42" style="box-sizing: border-box;">
+												<div class="code-block-caption" style="box-sizing: border-box; font-weight: bold; font-size: 13.6px; font-style: italic; line-height: 1; padding: 1em 0px; text-align: left;">
+																<span class="caption-text" style="box-sizing: border-box;">
+																Содержимое файла<span>&nbsp;</span><code class="docutils literal notranslate" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 10.2px; white-space: nowrap; max-width: 100%; background: rgb(255, 255, 255); border: 1px solid rgb(225, 228, 229); padding: 2px 5px; color: rgb(231, 76, 60); overflow-x: auto;"><span class="pre" style="box-sizing: border-box;">08_01_04_data.txt</span></code><span>&nbsp;</span></span><a class="headerlink" title="Постоянная ссылка на код" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#id42"></a></div>
+												<div class="highlight-default notranslate" style="box-sizing: border-box; border: 1px solid rgb(225, 228, 229); overflow-x: auto; margin: 1px 0px 24px;">
+																<div class="highlight" style="box-sizing: border-box; background: rgb(248, 248, 248); border: none; overflow-x: auto; margin: 0px; padding: 0px;">
+																				<pre style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: pre; line-height: 1.4; margin: 0px; padding: 12px; display: block; overflow: auto;"><span class="n" style="box-sizing: border-box;">Когда</span> <span class="n" style="box-sizing: border-box;">дети</span> <span class="n" style="box-sizing: border-box;">будут</span> <span class="n" style="box-sizing: border-box;">смотреть</span> <span class="n" style="box-sizing: border-box;">на</span> <span class="n" style="box-sizing: border-box;">великих</span> <span class="n" style="box-sizing: border-box;">учёных</span> <span class="n" style="box-sizing: border-box;">так</span> <span class="n" style="box-sizing: border-box;">же</span><span class="p" style="box-sizing: border-box;">,</span>
+<span class="n" style="box-sizing: border-box;">как</span> <span class="n" style="box-sizing: border-box;">они</span> <span class="n" style="box-sizing: border-box;">смотрят</span> <span class="n" style="box-sizing: border-box;">на</span> <span class="n" style="box-sizing: border-box;">знаменитых</span> <span class="n" style="box-sizing: border-box;">актёров</span> <span class="n" style="box-sizing: border-box;">и</span> <span class="n" style="box-sizing: border-box;">музыкантов</span><span class="p" style="box-sizing: border-box;">,</span>
+<span class="n" style="box-sizing: border-box;">человечество</span> <span class="n" style="box-sizing: border-box;">совершит</span> <span class="n" style="box-sizing: border-box;">большой</span> <span class="n" style="box-sizing: border-box;">прорыв</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span>
+
+<span class="n" style="box-sizing: border-box;">Брайан</span> <span class="n" style="box-sizing: border-box;">Грин</span>
+<span class="n" style="box-sizing: border-box;">https</span><span class="p" style="box-sizing: border-box;">:</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">//</span><span class="n" style="box-sizing: border-box;">ru</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">wikipedia</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">org</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">/</span><span class="n" style="box-sizing: border-box;">wiki</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">/</span><span class="n" style="box-sizing: border-box;">Грин</span><span class="p" style="box-sizing: border-box;">,</span><span class="n" style="box-sizing: border-box;">_Брайан_Рэндолф</span>
+</pre>
+																</div>
+												</div>
+								</div>
+								<div class="literal-block-wrapper docutils container" id="id43" style="box-sizing: border-box;">
+												<div class="code-block-caption" style="box-sizing: border-box; font-weight: bold; font-size: 13.6px; font-style: italic; line-height: 1; padding: 1em 0px; text-align: left;">
+																<span class="caption-text" style="box-sizing: border-box;">
+																Листинг&nbsp;8.1.4 - 
+																Различные 
+																способы чтения 
+																текстового файла 
+																целиком </span>
+																<a class="headerlink" title="Постоянная ссылка на код" style="box-sizing: border-box; color: rgb(27, 122, 65); text-decoration: none; cursor: pointer; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: inherit; font-size: 14px; text-rendering: auto; -webkit-font-smoothing: antialiased; visibility: hidden;" href="https://www.yuripetrov.ru/edu/python/ch_08_01.html#id43">
+																</a></div>
+												<div class="highlight-default notranslate" style="box-sizing: border-box; border: 1px solid rgb(225, 228, 229); overflow-x: auto; margin: 1px 0px 24px;">
+																<div class="highlight" style="box-sizing: border-box; background: rgb(248, 248, 248); border: none; overflow-x: auto; margin: 0px; padding: 0px;">
+																				<pre style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; white-space: pre; line-height: 1.4; margin: 0px; padding: 12px; display: block; overflow: auto;"><span class="n" style="box-sizing: border-box;">filename</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;08_01_04_data.txt&quot;</span>
+
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;"># В данном примере обработка исключений не приводится, чтобы</span>
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;"># сосредоточить внимание на чтении файлов </span>
+
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;"># 1. Чтение из файла (в одну строку)</span>
+<span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">with</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">open</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">filename</span><span class="p" style="box-sizing: border-box;">,</span> <span class="n" style="box-sizing: border-box;">encoding</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;utf-8&quot;</span><span class="p" style="box-sizing: border-box;">)</span> <span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">as</span> <span class="n" style="box-sizing: border-box;">fh</span><span class="p" style="box-sizing: border-box;">:</span>
+    <span class="n" style="box-sizing: border-box;">data</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="n" style="box-sizing: border-box;">fh</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">read</span><span class="p" style="box-sizing: border-box;">()</span>
+    <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">print</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">data</span><span class="p" style="box-sizing: border-box;">)</span>
+
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;"># 2. Чтение из файла (в список)</span>
+<span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">with</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">open</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">filename</span><span class="p" style="box-sizing: border-box;">,</span> <span class="n" style="box-sizing: border-box;">encoding</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;utf-8&quot;</span><span class="p" style="box-sizing: border-box;">)</span> <span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">as</span> <span class="n" style="box-sizing: border-box;">fh</span><span class="p" style="box-sizing: border-box;">:</span>
+    <span class="n" style="box-sizing: border-box;">data</span> <span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span> <span class="n" style="box-sizing: border-box;">fh</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">readlines</span><span class="p" style="box-sizing: border-box;">()</span>
+    <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">print</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">data</span><span class="p" style="box-sizing: border-box;">)</span>
+
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;"># [&#39;Когда дети будут смотреть на великих учёных так же,\n&#39;,</span>
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;">#  &#39;как они смотрят на знаменитых актёров и музыкантов,\n&#39;,</span>
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;">#  &#39;человечество совершит большой прорыв.\n&#39;,</span>
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;">#  &#39;\n&#39;,</span>
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;">#  &#39;Брайан Грин\n&#39;,</span>
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;">#  &#39;https://ru.wikipedia.org/wiki/Грин,_Брайан_Рэндолф\n&#39;]</span>
+
+<span class="c1" style="box-sizing: border-box; color: rgb(64, 128, 128); font-style: italic;"># 3. Чтение из файла (построчно)</span>
+<span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">with</span> <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">open</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">filename</span><span class="p" style="box-sizing: border-box;">,</span> <span class="n" style="box-sizing: border-box;">encoding</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">=</span><span class="s2" style="box-sizing: border-box; color: rgb(186, 33, 33);">&quot;utf-8&quot;</span><span class="p" style="box-sizing: border-box;">)</span> <span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">as</span> <span class="n" style="box-sizing: border-box;">fh</span><span class="p" style="box-sizing: border-box;">:</span>
+    <span class="k" style="box-sizing: border-box; color: rgb(0, 128, 0); font-weight: bold;">for</span> <span class="n" style="box-sizing: border-box;">line</span> <span class="ow" style="box-sizing: border-box; color: rgb(170, 34, 255); font-weight: bold;">in</span> <span class="n" style="box-sizing: border-box;">fh</span><span class="p" style="box-sizing: border-box;">:</span>
+        <span class="nb" style="box-sizing: border-box; color: rgb(0, 128, 0);">print</span><span class="p" style="box-sizing: border-box;">(</span><span class="n" style="box-sizing: border-box;">line</span><span class="o" style="box-sizing: border-box; color: rgb(102, 102, 102);">.</span><span class="n" style="box-sizing: border-box;">strip</span><span class="p" style="box-sizing: border-box;">())</span></pre>
+																</div>
+												</div>
+								</div>
+				</div>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les28.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les28/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:00:05 GMT -->
+</html>

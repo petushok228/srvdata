@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les23/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:50:02 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: medium;
+	color: rgb(0, 0, 255);
+}
+    .style3 {
+	color: rgb(255, 0, 0);
+}
+    .style4 {
+	color: rgb(0, 0, 255);
+}
+    .style5 {
+	color: rgb(255, 0, 0);
+	font-size: large;
+}
+    .style6 {
+	color: rgb(255, 0, 0);
+	font-weight: bold;
+}
+.style7 {
+	font-size: large;
+}
+    .style8 {
+	color: rgb(255, 0, 0);
+	font-size: medium;
+}
+.style9 {
+	font-weight: bold;
+}
+    .style10 {
+	color: #800000;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 2. Работа с текстовыми файлами.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <h3 style="font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Запись в текстовый файл</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Чтобы открыть текстовый файл на запись, необходимо применить 
+				режим<span>&nbsp;</span><span class="b" style="font-weight: bold;">w</span><span>&nbsp;</span>(перезапись),<span>&nbsp;</span><span class="b" style="font-weight: bold;">a</span>(дозапись) 
+				или<span>&nbsp;</span><span class="b" style="font-weight: bold;">r+</span>/<span class="b" style="font-weight: bold;">w+</span><span>&nbsp;</span>(чтение 
+				и запись) . Затем для записи применяется метод<span>&nbsp;</span><span class="b" style="font-weight: bold;">write(str)</span>, 
+				в который передается записываемая строка. Стоит отметить, что 
+				записывается именно строка, поэтому, если нужно записать числа, 
+				данные других типов, то их предварительно нужно конвертировать в 
+				строку.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style3"><strong>Запишем некоторую информацию</strong></span> в файл &quot;hello.txt&quot;:</p>
+				<pre class="style2"><strong>with open("hello.txt", "w") as file:    
+	file.write("hello world") 
+print("Файл записан")</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если мы откроем папку, в которой находится текущий скрипт 
+				Python, то увидем там файл &quot;hello.txt&quot;. Этот файл можно открыть 
+				в любом текстовом редакторе и при желании изменить.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Теперь <span class="style3"><strong>дозапишем в этот файл еще одну строку:</strong></span></p>
+				<pre class="style2"><strong>with open("hello.txt", "a") as file:   
+		file.write("\nhello work") 
+print("Файл изменен")</strong></pre>
+				<div style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style4"><strong>Дозапись выглядит как добавление</strong></span> строки к последнему символу в 
+				файле, поэтому, если необходимо сделать запись с новой строки, 
+				то можно использовать эскейп-последовательность &quot;\n&quot;. В итоге 
+				файл hello.txt будет иметь следующее содержимое:</p>
+				<pre class="style2"><strong>hello world
+hello work
+</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style3"><strong>Для записи списка строк</strong></span> имеется метод<span>&nbsp;</span><span class="style5" style="font-weight: bold;">writelines()</span>. 
+				В качестве параметра он принимает список строк:</p>
+				<pre class="style2"><strong>lines = [
+		"Hello Word\n", 
+		"Hello Work\n", 
+		"Hello World\n"
+	]
+with open("hello2.txt", "a") as file:
+	    file.writelines(lines)     
+print("Список строк записан в файл")</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Стоит учитывать, что, если мы хотим, чтобы каждая строка из 
+				списка располагалась на отдельной строке в файле, то строка в 
+				списке должна заканчиваться на символ &quot;\n&quot;.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				<span class="style3"><strong>Еще один способ записи в файл 
+				</strong></span>представляет стандартный метод<span>&nbsp;</span><span class="style3" style="font-weight: bold;"><span class="style7">print()</span></span><span class="style6"><span class="style7">, 
+				</span></span>который применяется для вывода данных на консоль:</p>
+				<pre class="style2"><strong>with open("hello.txt", "a") as myfile:    
+	print("\nhello metanit.com", file=myfile)</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для вывода данных в файл в метод print в качестве второго 
+				параметра передается название файла через параметр file. А 
+				первый параметр представляет записываемую в файл строку.</p>
+				<h3 style="font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Чтение файла</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для чтения <span class="style8"><b>файла он открывается с режимом<span>&nbsp;</span></b><span class="style9">r&nbsp;</span><b>(Read), 
+				</b></span>и затем мы можем считать его содержимое различными методами:</p>
+				<ul style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style5" style="font-weight: bold;">readline()</span>: 
+					считывает одну строку из файла</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style5" style="font-weight: bold;">read()</span>: 
+					считывает все содержимое файла в одну строку</p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style5" style="font-weight: bold;">readlines()</span>: 
+					считывает все строки файла в список</p>
+					</li>
+				</ul>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Например, <span class="style3"><strong>считаем выше записанный файл построчно</strong></span>:</p>
+				<pre class="style2"><strong>with open("hello.txt", "r") as file:
+	for line in file:        
+		print(line)</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Несмотря на то, что мы явно не применяем метод<span>&nbsp;</span><code style="font-family: monospace;">readline()</code><span>&nbsp;</span>для 
+				чтения каждой строки, но в при переборе файла этот метод 
+				автоматически вызывается для получения каждой новой строки. 
+				Поэтому в цикле вручную нет смысла вызывать метод readline. 
+				Консольный вывод:</p>
+				<pre class="style2"><strong>hello world
+
+hello work
+
+hello metanit.com</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Однако поскольку функция print неявно добавляет к каждой строке 
+				перевод строки <span class="style5"><strong>&quot;\n&quot;,
+				</strong></span>а строки в записанном файлетакже 
+				разделяются символом перевода строки <span class="style8">
+				<strong>&quot;\n&quot;, </strong></span>то получается, что 
+				каждая строка оканчивается двойным &quot;\n&quot;. и чтобы исключить 
+				излишнего переноса на другую строку в функцию print можно 
+				передать значение<span>&nbsp;</span><span class="style5"><code style="font-family: monospace;"><strong>end=&quot;&quot;</strong></code></span>.</p>
+				<pre class="style2"><strong>with open("hello.txt", "r") as file:
+	for line in file:        
+		print(line, <span class="style3">end=""</span>)</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Теперь явным образом вызовем метод<span>&nbsp;</span><span class="style5"><code style="font-family: monospace;"><strong>readline()</strong></code></span><span>&nbsp;</span>для 
+				чтения отдельных строк:</p>
+				<pre class="style2"><strong>with open("hello.txt", "r") as file: 
+		str1 = file.readline()      # считываем первую строку    
+		print(str1, end="")    
+		str2 = file.readline()      # считываем вторую строку    
+		print(str2)</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Консольный вывод:</p>
+				<pre class="sh" style="font-family: var(--main-font-family); max-width: 99%; line-height: 25.6px; white-space: pre-wrap; border: 1px solid rgb(204, 204, 204); clear: both; overflow-wrap: break-word; padding: 8px; background-color: var(--console-bgcolor); color: var(--console-textcolor); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span class="style2"><strong>hello world
+hello work</strong></span>
+</pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Метод readline можно использовать для построчного считывания 
+				файла в цикле while:</p>
+				<pre class="style2"><strong>with open("hello.txt", "r") as file:
+	line = file.readline()    
+	while line:        
+		print(line, end="")        
+		line = file.readline()</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Если файл небольшой, то его можно разом считать с помощью метода<span>&nbsp;</span><span class="style5" style="font-weight: bold;">read()</span>:</p>
+				<pre class="style2"><strong>with open("hello.txt", "r") as file:
+	content = file.read()    
+	print(content)</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				И также применим метод<span>&nbsp;</span><span class="style5" style="font-weight: bold;">readlines()</span><span>&nbsp;</span>для 
+				считывания всего файла в список строк:</p>
+				<pre class="style2"><strong>with open("hello.txt", "r") as file:    
+	contents = file.readlines()    
+	str1 = contents[0]    
+	str2 = contents[1]    
+	print(str1, end="")    print(str2)</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При чтении файла мы можем столкнуться с тем, что его кодировка 
+				не совпадает с ASCII. В этом случае мы явным образом можем 
+				указать кодировку с помощью параметра<span>&nbsp;</span><span class="style5" style="font-weight: bold;">encoding</span>:</p>
+				<pre class="style2"><strong>filename = "hello.txt"
+with open(filename, encoding="utf8") as file:    
+	text = file.read()</strong></pre>
+				<h3 style="font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Чтение и запись</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для открытия файла сразу для чтения и записи применяются флаги:</p>
+				<ul style="color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style5" style="font-weight: bold;">r+</span>: если 
+					файл не найден, то генерируется исключение 
+					<span class="style5">FileNotFoundError</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style5" style="font-weight: bold;">w+</span>: если 
+					файл не существует, то он автоматически создается. Если файл 
+					существует, то он перезаписывается</p>
+					</li>
+				</ul>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Например, запишем и считаем из файла данные:</p>
+				<pre class="style2"><strong>with open("hello.txt", "w+") as file:
+	file.write("Hello world\nHello work\n")  # сначала записываем данные    
+	file.seek(0)        # перемещаемся к первому байту в файле    
+	content = file.read()   # считываем данные    
+	print(content)</strong></pre>
+				<h3 style="font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Перемещение по файлу</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для перемещения по файлу после его открытия применяется метод<span>&nbsp;</span><span class="style5" style="font-weight: bold;">seek()</span>. 
+				В него передается индекс байта, к которому надо переместить 
+				указатель в файле. Например, в примере выше после записи 
+				указатель в файле автоматически устанавливается на конец файла. 
+				И считывания данных идет с позиции, на которой стоит указатель. 
+				И чтобы его сдвинуть в самое начало, применяется вызов</p>
+				<pre class="style2"><strong>file.seek(0)</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Аналогичным образом <span class="style4"><strong>мы можем перемещаться по файлу на нужную 
+				позицию.</strong></span> Например, считаем данные, начиная с 5-го символа:</p>
+				<pre class="style2"><strong>with open("hello.txt", "w+") as file:
+	file.write("Hello world\n")  # сначала записываем данные    
+	file.seek(6)  # перемещаемся к шестому байту в файле              
+	content = file.read()       # считываем данные   
+	print(content)      # world</strong></pre>
+				<h3 style="font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style2">
+				Пример работы с файлами</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Теперь напишем небольшой скрипт, в котором будет записывать 
+				введенный пользователем массив строк и считывать его обратно из 
+				файла на консоль:</p>
+				<pre class="style2"><strong># имя файла
+FILENAME = "messages.txt" 
+# запись строки в файл
+def write():    
+	message = input("Введите строку: ")   
+	 with open(FILENAME, "a") as file:
+		        file.write(message + "\n") # чтение файла файл
+def read():    
+	with open(FILENAME, "r") as file:
+	        for message in file:            
+			print(message, end="")    
+	print() # перевод строки для разделения меню и вывода             
+while(True):    
+	selection = int(input("1.Запись в файл\t\t2.Чтение файла\t\t3.Выход\nВыберите действие: "))    
+		match selection:        
+			case 1: write()        
+			case 2: read()        
+			case 3: break        
+			case _: print("Некорректный ввод")     
+print("Программа завершена")</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, &quot;system-ui&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Пример работы программы:</p>
+				<pre class="style10" style="font-family: var(--main-font-family); max-width: 99%; line-height: 25.6px; white-space: pre-wrap; border: 1px solid rgb(204, 204, 204); clear: both; overflow-wrap: break-word; padding: 8px; background-color: var(--console-bgcolor); color: var(--console-textcolor); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong>1.Запись в файл         2.Чтение файла          3.Выход
+Выберите действие: 1
+Введите строку: Hello World
+
+1.Запись в файл         2.Чтение файла          3.Выход
+Выберите действие: 1
+Введите строку: Hello METANIT.COM
+
+1.Запись в файл         2.Чтение файла          3.Выход
+Выберите действие: 2
+Hello World
+Hello METANIT.COM
+
+1.Запись в файл         2.Чтение файла          3.Выход
+Выберите действие: 3
+Программа завершена</strong></pre>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2024 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les22.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les23/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:50:03 GMT -->
+</html>

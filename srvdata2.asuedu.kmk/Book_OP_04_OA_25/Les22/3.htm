@@ -1,0 +1,335 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les22/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:49:53 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: rgb(0, 0, 255);
+}
+.style3 {
+	color: rgb(255, 0, 0);
+}
+    .style5 {
+	color: rgb(0, 0, 255);
+	margin-left: 40px;
+	font-size: medium;
+}
+.style6 {
+	font-size: medium;
+}
+.style7 {
+	color: rgb(0, 0, 255);
+	font-size: medium;
+}
+    .style8 {
+	font-size: small;
+}
+.style9 {
+	color: rgb(0, 0, 255);
+	font-size: small;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 3. Чтение и запись текстовых файлов. StreamReader и StreamWriter.</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для работы непосредственно с текстовыми файлами в пространстве 
+				System.IO определены специальные классы:<span>&nbsp;</span><span class="b" style="font-weight: bold;">StreamReader</span><span>&nbsp;</span>и<span>&nbsp;</span><span class="b" style="font-weight: bold;">StreamWriter</span>.</p>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Запись в файл и StreamWriter</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Для записи в текстовый файл используется класс<span>&nbsp;</span><span class="style3" style="font-weight: bold;">StreamWriter</span>. 
+				Некоторые из его конструкторов, которые могут применяться для 
+				создания объекта StreamWriter:</p>
+				<ul style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style9"><code style="font-family: monospace;">
+					<strong>StreamWriter(string path)</strong></code><strong>:
+					</strong></span><span class="style8">через параметр path передается путь к файлу, 
+					который будет связан с потоком</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style9"><code style="font-family: monospace;">
+					<strong>StreamWriter(string path, bool append)</strong></code></span><span class="style8">: 
+					параметр append указывает, надо ли добавлять в конец файла 
+					данные или же перезаписывать файл. Если равно true, то новые 
+					данные добавляются в конец файла. Если равно false, то файл 
+					перезаписываетсяя заново</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;" class="style8">
+					параметр encoding указывает на кодировку, которая будет 
+					применяться при записи<span class="style2"><code style="font-family: monospace;"><strong>StreamWriter(string 
+					path, bool append, System.Text.Encoding encoding)</strong></code><strong>:
+					</strong></span></p>
+					</li>
+				</ul>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Свою функциональность StreamWriter реализует через следующие 
+				методы:</p>
+				<ul style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style9"><code style="font-family: monospace;">
+					<strong>int Close()</strong></code></span><span class="style8">: закрывает 
+					записываемый файл и освобождает все ресурсы</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style9"><code style="font-family: monospace;">
+					<strong>void Flush()</strong></code></span><span class="style8">: записывает в 
+					файл оставшиеся в буфере данные и очищает буфер.</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style9"><code style="font-family: monospace;">
+					<strong>Task FlushAsync()</strong></code><strong>: </strong>
+					</span><span class="style8">асинхронная версия метода Flush</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style9"><code style="font-family: monospace;">
+					<strong>void Write(string value)</strong></code></span><span class="style8">: 
+					записывает в файл данные простейших типов, как int, double, 
+					char, string и т.д. Соответственно имеет ряд перегруженных 
+					версий для записи данных элементарных типов, например,<span>&nbsp;</span><code style="font-family: monospace;">Write(char 
+					value)</code>,<span>&nbsp;</span><code style="font-family: monospace;">Write(int 
+					value)</code>,<span>&nbsp;</span><code style="font-family: monospace;">Write(double 
+					value)</code><span>&nbsp;</span>и т.д.</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style9"><code style="font-family: monospace;">
+					<strong>Task WriteAsync(string value)</strong></code></span><span class="style8">: 
+					асинхронная версия метода Write. Обратите внимание, что 
+					асинхронные версии есть не для всех перегрузок метода Write.</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style9"><code style="font-family: monospace;">
+					<strong>void WriteLine(string value)</strong></code></span><span class="style8">: 
+					также записывает данные, только после записи добавляет в 
+					файл символ окончания строки</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style9"><code style="font-family: monospace;">
+					<strong>Task WriteLineAsync(string value)</strong></code></span><span class="style8">: 
+					асинхронная версия метода WriteLine</span></p>
+					</li>
+				</ul>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Рассмотрим запись в файл на примере:</p>
+				<pre class="style5"><strong>string path = "note1.txt";
+string text = "Hello World\nHello METANIT.COM"; 
+// полная перезапись файла 
+using (StreamWriter writer = new StreamWriter(path, false))
+	{    
+		await writer.WriteLineAsync(text);
+	}
+// добавление в файл
+using (StreamWriter writer = new StreamWriter(path, true))
+	{
+		await writer.WriteLineAsync("Addition");
+		await writer.WriteAsync("4,5");
+	}</strong></pre>
+				</div>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В данном случае два раза создаем объект StreamWriter. В первом 
+				случае если файл существует, то он будет перезаписан. Если не 
+				существует, он будет создан. И в нее будет записан текст из 
+				переменной text. Во втором случае файл открывается для дозаписи, 
+				и будут записаны атомарные данные - строка и число.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style6">
+				По завершении в папке программы мы сможем найти файл note.txt, 
+				который будет иметь следующие строки:</p>
+				<pre class="style6">Hello World
+Hello METANIT.COM
+Addition
+4,5</pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В пример выше будет использоваться кодировка по умолчанию. но 
+				также можно задать ее явным образом:</p>
+				<pre class="style5"><strong>using (StreamWriter writer = new StreamWriter(path, true, System.Text.Encoding.Default))
+	{    
+		// операции с writer
+	}</strong></pre>
+				<h3 style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Чтение из файла и StreamReader</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Класс <span class="style3"><strong>StreamReader</strong></span> 
+				позволяет нам легко считывать весь текст или отдельные строки из 
+				текстового файла.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Некоторые из конструкторов класса StreamReader:</p>
+				<ul style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style7">
+					<code style="font-family: monospace;"><strong>StreamReader(string 
+					path)</strong></code></span><span class="style6">: через параметр path передается путь к 
+					считываемому файлу</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style2">
+					<code style="font-family: monospace;"><strong>
+					<span class="style6">StreamReader(string 
+					path, System.Text.Encoding encoding)</span></strong></code></span><strong><span class="style6">: 
+					</span> 
+					</strong><span class="style6">параметр 
+					encoding задает кодировку для чтения файла</span></p>
+					</li>
+				</ul>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Среди методов StreamReader можно выделить следующие:</p>
+				<ul style="color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style7">
+					<code style="font-family: monospace;"><strong>void Close()</strong></code></span><span class="style6">: 
+					закрывает считываемый файл и освобождает все ресурсы</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style7">
+					<code style="font-family: monospace;"><strong>int Peek()</strong></code></span><span class="style6">: 
+					возвращает следующий доступный символ, если символов больше 
+					нет, то возвращает -1</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style7">
+					<code style="font-family: monospace;"><strong>int Read()</strong></code></span><span class="style6">: 
+					считывает и возвращает следующий символ в численном 
+					представлении. Имеет перегруженную версию:<span>&nbsp;</span><code style="font-family: monospace;">Read(char[] 
+					array, int index, int count)</code>, где<span>&nbsp;</span><code style="font-family: monospace;">array</code><span>&nbsp;</span>- 
+					массив, куда считываются символы,<span>&nbsp;</span><code style="font-family: monospace;">index</code><span>&nbsp;</span>- 
+					индекс в массиве array, начиная с которого записываются 
+					считываемые символы, и count - максимальное количество 
+					считываемых символов</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style7">
+					<code style="font-family: monospace;"><strong>Task&lt;int&gt; ReadAsync()</strong></code></span><span class="style6">: 
+					асинхронная версия метода Read</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style7">
+					<code style="font-family: monospace;"><strong>string ReadLine()</strong></code></span><span class="style6">: 
+					считывает одну строку в файле</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style7">
+					<code style="font-family: monospace;"><strong>string ReadLineAsync()</strong></code></span><span class="style6">: 
+					асинхронная версия метода ReadLine</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<span class="style7">
+					<code style="font-family: monospace;"><strong>string ReadToEnd()</strong></code></span><span class="style6">: 
+					считывает весь текст из файла</span></p>
+					</li>
+					<li>
+					<p style="line-height: 1.56; overflow-wrap: break-word;">
+					<code style="font-family: monospace;">s<span class="style7"><strong>tring ReadToEndAsync()</strong></span></code><span class="style6">: 
+					асинхронная версия метода ReadToEnd</span></p>
+					</li>
+				</ul>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Сначала считаем текст полностью из ранее записанного файла:</p>
+				<pre class="style7"><strong>string path = "note1.txt";
+// асинхронное чтение
+using (StreamReader reader = new StreamReader(path))
+	{    
+		string text = await reader.ReadToEndAsync();    
+		Console.WriteLine(text);
+	}</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Считаем текст из файла построчно:</p>
+				<pre class="style5"><strong>string path = "/Users/eugene/Documents/app/note1.txt"; 
+// асинхронное чтение
+using (StreamReader reader = new StreamReader(path))
+	{    
+		string? line;
+		while ((line = await reader.ReadLineAsync()) != null)    
+			{        
+				Console.WriteLine(line);    
+			}
+	}</strong></pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word; color: rgb(0, 0, 0); font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В данном случае считываем построчно через цикл while:<span>&nbsp;</span><code style="font-family: monospace;">while 
+				((line = await reader.ReadLineAsync()) != null)</code><span>&nbsp;</span>- 
+				сначала присваиваем переменной line результат функции<span>&nbsp;</span><code style="font-family: monospace;">reader.ReadLineAsync()</code>, 
+				а затем проверяем, не равна ли она null. Когда объект sr дойдет 
+				до конца файла и больше строк не останется, то метод<span>&nbsp;</span><code style="font-family: monospace;">reader.ReadLineAsync()</code><span>&nbsp;</span>будет 
+				возвращать null.</p>
+                <p>&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les22.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les22/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:49:53 GMT -->
+</html>

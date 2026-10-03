@@ -1,0 +1,373 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les11/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:24:52 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: #0000FF;
+}
+    .style3 {
+				color: maroon;
+}
+    .style4 {
+	color: #0000FF;
+	text-decoration: underline;
+}
+    .style5 {
+	font-size: medium;
+}
+.style6 {
+	color: maroon;
+	font-size: medium;
+}
+.style7 {
+	font-size: medium;
+	color: #0000FF;
+}
+.style8 {
+	font-size: large;
+}
+.style9 {
+	font-size: large;
+	color: #0000FF;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 3.  Циклы C#. </td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text" style="font-size: 12pt;">
+                <p class="style5">Циклы являются управляющими конструкциями, позволяя в 
+				зависимости от определенных условий выполнять некоторое действие 
+				множество раз. В C# имеются следующие виды циклов:</p>
+				<ul class="style5">
+					<li>for</li>
+					<li>foreach</li>
+					<li>while</li>
+					<li>do...while</li>
+				</ul>
+				<p class="ZagT" style="font-size: medium">				Цикл for</p>
+				<p class="style5">				Цикл for имеет следующее формальное определение:</p><p>				
+				<span class="style2"><strong><em><span class="style5"><br />
+				for ([действия_до_выполнения_цикла]; [условие]; [действия_после_выполнения])<br />
+				</span>
+				</em></strong><span class="style5">{</span><strong><em><span class="style5"><br />
+				// действия<br />
+				</span>
+				</em></strong></span><span class="style5">}</span></p>
+				<p class="style5">				<br />
+				Объявление цикла for состоит из трех частей. Первая часть 
+				объявления цикла - некоторые действия, которые выполняются один 
+				раз до выполнения цикла. Обычно здесь определяются переменные, 
+				которые будут использоваться в цикле.</p><p class="style5">				Вторая часть - условие, при котором будет выполняться цикл. Пока 
+				условие равно true, будет выполняться цикл.</p>
+				<p class="style5">				И третья часть - некоторые действия, которые выполняются после 
+				завершения блока цикла. Эти действия выполняются каждый раз при 
+				завершении блока цикла.</p><p class="style5">				После объявления цикла в фигурных скобках помещаются сами 
+				действия цикла.</p><p class="style5">				Рассмотрим стандартный цикл for:</p><p>				
+				<span class="style6">for (int i = 1; i &lt; 4; i++)<br />
+				{<br />
+				Console.WriteLine(i);<br />
+				</span><span class="style5">}</span></p>
+				<p class="style5">				<br />
+				Здесь первая часть объявления цикла - int i = 1 - создает и 
+				инициализирует переменную i.</p><p class="style5">				Вторая часть - условие i &lt; 4. То есть пока переменная i меньше 
+				4, будет выполняться цикл.</p><p class="style5">				И третья часть - действия, выполняемые после завершения действий 
+				из блока цикла - увеличение переменной i на единицу.</p>
+				<p class="style5">				Весь процесс цикла можно представить следующим образом:</p>
+				<p class="style5">				Определяется переменная int i = 1</p>
+				<p class="style5">				Проверяется условие i &lt; 4. Оно истинно (так как 1 меньше 4), 
+				поэтому выполняется блок цикла, а именно инструкция 
+				Console.WriteLine(i), которая выводит на консоль значение 
+				переменной i</p><p class="style5">				Блок цикла закончил выполнение, поэтому выполняется треться 
+				часть объявления цикла - i++. После этого переменная i будет 
+				равна 2.</p><p class="style5">				Снова проверяется условие i &lt; 4. Оно истинно (так как 2 меньше 
+				4), поэтому опять выполняется блок цикла - Console.WriteLine(i)</p>
+				<p class="style5">				Блок цикла закончил выполнение, поэтому снова выполняется 
+				выражение i++. После этого переменная i будет равна 3.</p>
+				<p class="style5">				Снова проверяется условие i &lt; 4. Оно истинно (так как 3 меньше 
+				4), поэтому опять выполняется блок цикла - Console.WriteLine(i)</p>
+				<p class="style5">				Блок цикла закончил выполнение, поэтому снова выполняется 
+				выражение i++. После этого переменная i будет равна 4.</p>
+				<p class="style5">				Снова проверяется условие i &lt; 4. Теперь оно возвражает false, 
+				так как значение переменной i НЕ меньше 4, поэтому цикл 
+				завершает выполнение. Далее уже выполняется остальная часть 
+				программы, которая идет после цикла</p><p class="style5">				В итоге блок цикла сработает 3 раза, пока значение i не станет 
+				равным 4. И каждый раз это значение будет увеличиваться на 1. 
+				Однократное выполнение блока цикла называется итерацией. Таким 
+				образом, здесь цикл выполнит три итерации. Результат работы 
+				программы:</p><p class="style5">				<br />
+				Если блок цикла for содержит одну инструкцию, то мы можем его 
+				сократить, убрав фигурные скобки:</p><p class="style6">				for (int i = 1; i &lt; 4; i++)<br />
+				Console.WriteLine(i);</p><p class="style5">				// или так</p>
+				<p class="style6">				for (int i = 1; i &lt; 4; i++) Console.WriteLine(i);</p>
+				<p class="style5">				При этом необязательно именно в первой части цикла объявлять 
+				переменную, а в третий части изменять ее значение - это могут 
+				быть любые действия. Например:</p><p class="style6">				var i = 1;</p><p>				
+				<span class="style6">for (Console.WriteLine(&quot;Начало выполнения цикла&quot;); i &lt; 4; 
+				Console.WriteLine($&quot;i = {i}&quot;))<br />
+				{<br />
+				i++;<br />
+				</span><span class="style5">}</span></p>
+				<p class="style5">				<br />
+				Здесь опять же цикл срабатывает, пока переменная i меньше 4, 
+				только приращение переменной i происходит в блоке цикла. 
+				Консольный вывод данной программы:</p><p class="style5">				Начало выполнения цикла<br />
+				i = 2<br />
+				i = 3<br />
+				i = 4<br />
+				Нам необязательно указывать все условия при объявлении цикла. 
+				Например, мы можем написать так:</p><p class="style6">				int i = 1;<br />
+				for (; ;)<br />
+				{<br />
+				Console.WriteLine($&quot;i = {i}&quot;);<br />
+				i++;<br />
+				}</p>
+				<p class="style5">				<br />
+				Формально определение цикла осталось тем же, только теперь блоки 
+				в определении у нас пустые: for (; ;). У нас нет 
+				инициализированной переменной, нет условия, поэтому цикл будет 
+				работать вечно - бесконечный цикл.</p><p class="style5">				Мы также можем опустить ряд блоков:</p><p>				
+				<span class="style6">int i = 1;<br />
+				for (; i&lt;4;)<br />
+				{<br />
+				Console.WriteLine($&quot;i = {i}&quot;);<br />
+				i++;<br />
+				</span><span class="style5">}</span></p>
+				<p class="style5">				<br />
+				Этот пример по сути эквивалентен первому примеру: у нас также 
+				есть переменная-счетчик, только определена она вне цикла. У нас 
+				есть условие выполнения цикла. И есть приращение переменной уже 
+				в самом блоке for.</p><p class="style5">				Также стоит отметить, что можно определять несколько переменных 
+				в объявлении цикла:</p><p class="style6">				for (int i = 1, j = 1; i &lt; 10; i++, j++)<br />
+				Console.WriteLine($&quot;{i * j}&quot;);</p>
+				<p class="style5">				<br />
+				Здесь в первой части объявления цикла определяются две 
+				переменных: i и j. Цикл выполняется, пока i не будет равна 10. 
+				После каждой итерации переменые i и j увеличиваются на единицу. 
+				Консольный вывод программы:</p><p>				1<span class="style5"><br />
+				4<br />
+				9<br />
+				16<br />
+				25<br />
+				36<br />
+				49<br />
+				64<br />
+				81</span></p>
+				<p class="style8">				<br />
+				<span class="style2"><strong>Цикл do..while</strong></span></p>
+				<p class="style5">				<br />
+				В цикле do сначала выполняется код цикла, а потом происходит 
+				проверка условия в инструкции while. И пока это условие истинно, 
+				цикл повторяется.</p><p class="style6">				<strong>do<br />
+				</strong>{<strong><br />
+				действия цикла<br />
+				</strong>}<strong><br />
+				while (условие)</strong></p>
+				<p class="style5">				<br />
+				Например:</p><p class="style6">				<strong>int i = 6;<br />
+				do<br />
+				</strong>{<strong><br />
+				Console.WriteLine(i);<br />
+				i--;<br />
+				</strong>}<strong><br />
+				while (i &gt; 0);</strong></p>
+				<p class="style5">				<br />
+				Здесь код цикла сработает 6 раз, пока i не станет равным нулю. 
+				Но важно отметить, что цикл do гарантирует хотя бы единократное 
+				выполнение действий, даже если условие в инструкции while не 
+				будет истинно. То есть мы можем написать:</p><p class="style6">				
+				<strong>int i = -1;<br />
+				do<br />
+				</strong>{<strong><br />
+				Console.WriteLine(i);<br />
+				i--;<br />
+				</strong>}<strong><br />
+				while (i &gt; 0);</strong></p>
+				<p class="style5">				<br />
+				Хотя у нас переменная i меньше 0, цикл все равно один раз 
+				выполнится.</p><p class="style9">				Цикл while</p>
+				<p class="style5">				<br />
+				В отличие от цикла do цикл while сразу проверяет истинность 
+				некоторого условия, и если условие истинно, то код цикла 
+				выполняется:</p><p>				<span class="style6"><strong>while (условие)<br />
+				</strong>{<strong><br />
+				действия цикла<br />
+				</strong></span><span class="style5">}</span></p>
+				<p class="style5">				<br />
+				Например:</p><p>				<span class="style6"><strong>int i = 6;<br />
+				while (i &gt; 0)<br />
+				</strong>{<strong><br />
+				Console.WriteLine(i);<br />
+				i--;<br />
+				</strong></span><span class="style5">}</span></p>
+				<p class="style5">				<br />
+				<span class="style9"><strong>Цикл foreach</strong></span></p>
+				<p class="style5">				<br />
+				Цикл foreach предназначен <span class="style4"><strong>для перебора набора или коллекции 
+				элементов</strong></span>. Его общее определение:</p><p>				
+				<span class="style6">foreach(тип_данных переменная in коллекция)<br />
+				{<br />
+				// действия цикла<br />
+				</span><span class="style5">}</span></p>
+				<p class="style5">				<br />
+				После оператора foreach в скобках сначала идет определение 
+				переменной. Затем ключевое слово in и далее коллекция, элементы 
+				которой надо перебрать.</p><p class="style5">				При выполнении цикл последовательно перебирает элементы 
+				коллекции и помещает их в переменную, и таким образом в блоке 
+				цикла мы можем выполнить с ними некоторые действия.</p>
+				<p class="style5">				Например, возьмем строку. Строка по сути - это коллекция 
+				символов. И .NET позволяет перебрать все элементы строки - ее 
+				символы с помощью цикла foreach.</p><p>				
+				<span class="style6">foreach(char c in &quot;Tom&quot;)<br />
+				{<br />
+				Console.WriteLine(c);<br />
+				</span><span class="style5">}</span></p>
+				<p class="style5">				<br />
+				Здесь цикл foreach пробегается по всем символам строки &quot;Tom&quot; и 
+				каждый символ помещает в символьную переменную c. В блоке цикла 
+				значение переменной c выводится на консоль. Поскольку в строке 
+				&quot;Tom&quot; три символа, то цикл выполнится три раза. Консольный вывод 
+				программы:</p><p>				T<span class="style5"><br />
+				o<br />
+				m</span></p>
+				<p class="style5">				<br />
+				Стоит отметить, что определяемая в объявлении цикла должна по 
+				типу соответствовать типу элементов перебираемой коллекции. Так, 
+				элементы строки - значения типа char - символы. Поэтому 
+				переменная c имеет тип char. Однако в реальности не всегда 
+				бывает очевидно, какой тип представляют элементы коллекции. В 
+				этом случае мы можем определить переменную с помощью оператора 
+				var:</p><p>				<span class="style6"><strong>foreach(var c in &quot;Tom&quot;)<br />
+				</strong>{<strong><br />
+				Console.WriteLine(c);<br />
+				</strong></span><span class="style5">}</span></p>
+				<p class="style5">				<br />
+				В дальнейшем мы подробнее рассмотрим, что представляют собой 
+				коллекции в .NET и какие именно коллекции можно перебирать с 
+				помощью цикла foreach.</p>
+				<p class="style9">				<strong>Операторы continue и break</strong></p>
+				<p class="style5">				<br />
+				Иногда возникает ситуация, когда требуется выйти из цикла, не 
+				дожидаясь его завершения. В этом случае мы можем воспользоваться 
+				оператором break.</p><p class="style5">				Например:</p>
+				<p class="style6">				for (int i = 0; i &lt; 9; i++)<br />
+				{<br />
+				if (i == 5)<br />
+				break;<br />
+				Console.WriteLine(i);<br />
+				}</p>
+				<p class="style5">				<br />
+				Хотя в условии цикла сказано, что цикл будет выполняться, пока 
+				счетчик i не достигнет значения 9, в реальности цикл сработает 5 
+				раз. Так как при достижении счетчиком i значения 5, сработает 
+				оператор break, и цикл завершится.</p><p>				0<span class="style5"><br />
+				1<br />
+				2<br />
+				3<br />
+				4<br />
+				Теперь поставим себе другую задачу. А что если мы хотим, чтобы 
+				при проверке цикл не завершался, а просто пропускал текущую 
+				итерацию. Для этого мы можем воспользоваться оператором 
+				continue:</span></p><p class="style3">				<strong>
+				<span class="style5"><br />
+				for (int i = 0; i &lt; 9; i++)<br />
+				</span>
+				</strong><span class="style5">{<strong><br />
+				if (i == 5)<br />
+				continue;<br />
+				</strong></span><strong><span class="style5">Console.WriteLine(i);<br />
+				}</span></strong></p>
+				<p class="style5">				<br />
+				В этом случае цикл, когда дойдет до числа 5, которое не 
+				удовлетворяет условию проверки, просто пропустит это число и 
+				перейдет к следующей итерации:</p><p>				0<span class="style5"><br />
+				1<br />
+				2<br />
+				3<br />
+				4<br />
+				6<br />
+				7<br />
+				8<br />
+				Стоит отметить, что операторы break и continue можно применять в 
+				любом типе циклов.</span></p><p class="style7">				
+				<strong>Вложенные циклы</strong></p>
+				<p class="style5">				Одни циклы могут быть вложенными в другие. Например:</p><p>				
+				<span class="style5">				<br />
+				</span>
+				<span class="style3"><span class="style5">for (int i = 1; i &lt; 10; i++)<br />
+				{<br />
+				for (int j = 1; j &lt; 10; j++)<br />
+				{<br />
+				Console.Write($&quot;{i * j} \t&quot;);<br />
+				}<br />
+				Console.WriteLine();<br />
+				</span>
+				</span><span class="style5">}</span></p>
+				<p class="style5">				<br />
+				В данном случае цикл for (int i = 1; i &lt; 10; i++) выполняется 9 
+				раз, то есть имеет 9 итераций. Но в рамках каждой итерации 
+				выполняется девять раз вложенный цикл for (int j = 1; j &lt; 10; 
+				j++). В итоге данная программа выведет таблицу умножения.</p>
+				<p>				&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les11.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les11/3.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 09:24:52 GMT -->
+</html>

@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les51/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:40:56 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+				color: #0000FF;
+				font-size: small;
+				margin-left: 40px;
+}
+.style3 {
+				font-size: small;
+				margin-left: 40px;
+}
+.style4 {
+				font-size: small;
+}
+.style5 {
+				margin-left: 40px;
+}
+.style6 {
+				color: #0000FF;
+				font-size: small;
+}
+.style7 {
+				color: blue;
+}
+.style8 {
+				color: red;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 2.&nbsp; Инициализатор __init__ и финализатор __del__</td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p>В<span class="style4"> каждом классе языка Python есть набор предопределенных «<span class="style7"><strong>магических</strong></span>» методов. Да, это такое общепринятое название. Магические методы начинаются и заканчиваются 
+				<span class="style8"><strong>двумя подчеркиваниями</strong></span>:</span></p>
+<pre class="style2"><strong>__ имя метода__</strong></pre>
+<p class="style4">В частности существуют два таких метода:</p>
+<pre class="style2">
+__init__(self) –  инициализатор объекта класса
+__del__(self) – финализатор класса</pre>
+<p><span class="style4">Первый вызывается сразу после создания экземпляра класса, а второй – перед непосредственным его удалением. Давайте посмотрим, как они работают и зачем нужны.</p>
+<p>Давайте определим класс с двумя свойствами color и circle и двумя методами set_coords и get_coords:</span></p>
+<pre class="style2">
+<strong>class Point:
+    color = 'red'
+    circle = 2
+</strong> <strong>
+    def set_coords(self, x, y):
+        self.x = x
+        self.y = y
+</strong> <strong>
+    def get_coords(self):
+        return (self.x, self.y)</strong></pre>
+<p class="style4">Использовать на практике такой класс не очень удобно, так как после создания объекта:</p>
+<pre class="style2">
+<strong>pt = Point()</strong></pre>
+<p class="style4">координат x, y в нем никаких не будет. Дополнительно для этого нужно еще вызывать метод:</p>
+<pre class="style2">
+<strong>pt.set_coords(1, 2)</strong></pre>
+<p class="style4">Было бы хорошо сделать эти действия сразу в момент создания экземпляра класса. И поможет нам в этом магический метод __init__. Давайте сначала мы его пропишем в самом простом виде:</p>
+<pre class="style2">
+<strong>class Point:
+    color = 'red'
+    circle = 2
+</strong> <strong>
+    def __init__(self):
+        print("вызов __init__")
+        self.x = 0
+        self.y = 0
+    ...</strong></pre>
+<p class="style4">Здесь первый параметр self является ссылкой на созданный экземпляр класса, через который мы создаем в этом новом объекте локальные свойства x, y. В результате, создавая экземпляр класса:</p>
+<pre class="style3">
+<strong>pt = Point()</strong></pre>
+<p class="style4">мы увидим в консоли, что, во-первых, произошел вызов этого метода и, во-вторых, в объекте pt были созданы два локальных свойства x, y с нулевыми значениями:</p>
+<pre class="style2">
+<strong>print(pt.__dict__)</strong></pre>
+<p><span class="style4">Детально это работает, следующим образом. Вначале происходит создание объекта в памяти устройства. Непосредственно перед его созданием вызывается магический метод __new__ (О нем мы еще будем говорить). Затем, после успешного создания объекта, вызывается магический метод __init__ для начальной инициализации созданного объекта. В результате, у нас появляются два локальных атрибута x и y.</p>
+<p>
+Давайте теперь сделаем так, чтобы в момент создания экземпляра класса мы могли сразу указывать значения координат точки. Для этого в инициализаторе можно прописывать дополнительные параметры:</span></p>
+<pre class="style2">
+<strong>    def __init__(self, a, b):
+        self.x = a
+        self.y = b</strong></pre>
+<p class="style4">И при создании объекта с таким инициализатором мы уже должны в круглых скобках передавать эти два аргумента:</p>
+<pre class="style2">
+<strong>pt = Point(1, 2)</strong></pre>
+<p><span class="style4">Если этого не сделать, то возникнет ошибка и объект создан не будет.</p>
+<p>
+Обратите внимание, я специально в качестве дополнительных параметров указал имена a и b. При этом, в самом объекте создаются локальные свойства с именами x и y. То есть, то, что мы прописываем после self, то и является именем нового атрибута. Конечно, на практике, обычно, имена параметров в инициализаторе совпадают с именами создаваемых свойств и лучше записать инициализатор в таком виде:</span></p>
+<pre class="style2">
+<strong>    def __init__(self, x, y):
+        self.x = x
+        self.y = y</strong></pre>
+<p><span class="style4">Также всегда следует помнить, что метод __init__ - это обычная функция, поэтому мы в качестве дополнительных параметров можем указывать и фактические и формальные параметры. Например, так:</p>
+<pre class="style5">
+    def __init__(self, x=0, y=0):
+        self.x = x
+        self.y = y</span></pre>
+<p class="style4">Тогда, при создании объектов мы можем вообще не указывать аргументы:</p>
+<pre class="style2">
+<strong>pt = Point()</strong></pre>
+<p class="style4">Либо указать один или два:</p>
+<pre class="style3">
+<strong>pt = Point(10)
+pt = Point(10, 20)</strong></pre>
+<p class="style4">То есть, здесь все ровно так, как и с обычными функциями.</p>
+<p class="ZagT" style="font-size: small">Финализатор объекта класса</p>
+<p><span class="style4">Я, надеюсь, вы теперь хорошо себе представляете, как работает инициализатор объектов класса и зачем он нужен. Второй аналогичный магический метод __del__ автоматически вызывается непосредственно перед уничтожением экземпляра класса. Он называется финализатор.</p>
+<p>
+Давайте пропишем такой магический метод в классе Point, следующим образом:</p>
+<pre class="style5">
+   </span><span class="style6"><strong> def __del__(self):
+        print("Удаление экземпляра: "+ str(self))</strong></span></pre>
+<p><span class="style4">Здесь по-прежнему self – это ссылка на экземпляр класса, который будет удален.</p>
+<p>
+После запуска программы видим, что объект в конце программы действительно был удален и вызван метод __del__. Но, здесь у вас может возникнуть вопрос: а когда и в какой момент вообще происходит удаление объектов. Мы же в программе это явно нигде не указываем? Работает все достаточно просто. Интерпретатор языка Python имеет, так называемый, сборщик мусора. Это алгоритм, который отслеживает объекты и как только они становятся ненужными, удаляет их. Но как он определяет нужный объект или ненужный? Все очень просто. Пока на какой-либо объект ведет хотя бы одна внешняя ссылка, то он считается используемым и сохраняется в памяти. Как только все внешние ссылки пропадают, то сборщик мусора его уничтожает (освобождает память, которую он занимал).</span></p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2012 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les51.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les51/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:40:56 GMT -->
+</html>

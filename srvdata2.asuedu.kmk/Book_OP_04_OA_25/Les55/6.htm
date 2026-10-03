@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les55/6.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:47:44 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: #0000FF;
+}
+    .style3 {
+	font-size: small;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 6. Перегрузка логических операторов. </td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text" style="font-size: medium">
+                <p class="style3">Как вам должно быть уже известно, в C# предусмотрены следующие логические операторы: &, |, !, && и ||. Из них перегрузке, безусловно, подлежат только операторы &, | и !. Тем не менее, соблюдая определенные правила, можно извлечь также пользу из укороченных логических операторов && и ||.</p>
+<p class="style3">Рассмотрим сначала простейший случай. Если не пользоваться укороченными логическими операторами, то перегрузку операторов & и | можно выполнять совершенно естественным путем, получая в каждом случае результат типа bool. Аналогичный результат, как правило, дает и перегружаемый оператор !:</p>
+<pre><span class="style2"><strong>using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication1
+</strong></span>{<span class="style2"><strong>
+    class MyArr
+    {
+        // Координаты точки в трехмерном пространстве
+        public int x, y, z;
+
+        public MyArr(int x = 0, int y = 0, int z = 0)
+        {
+            this.x = x;
+            this.y = y;
+            this.z = z;
+        }
+
+        // Перегружаем логический оператор &
+        public static bool operator &(MyArr obj1, MyArr obj2)
+        {
+            if (((obj1.x > 0) && (obj1.y > 0) && (obj1.z > 0))
+                & ((obj2.x > 0) && (obj2.y > 0) && (obj2.z > 0)))
+                return true;
+            return false;
+        }
+
+        // Перегружаем логический оператор !
+        public static bool operator !(MyArr obj1)
+        {
+            if ((obj1.x > 0) && (obj1.y > 0) && (obj1.z > 0))
+                return false;
+            return true;
+        }
+        
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            MyArr myObject1 = new MyArr(x: 4, z: 5, y: 12);
+            MyArr myObject2 = new MyArr(x: -2, z: 1, y: 10);
+
+            if (myObject1 & myObject2)
+                Console.WriteLine("У объектов все координаты положительные");
+            else
+                Console.WriteLine("Есть отрицательные или равные нулю координаты");
+
+            if (!myObject2)
+                Console.WriteLine("Во втором объекте есть отрицательные координаты");
+
+            Console.ReadLine();
+        }
+    }
+</strong></span>}</pre>
+<p class="style3">При таком способе перегрузки логических операторов &, | и ! методы каждого из них возвращают результат типа bool. Это необходимо для того, чтобы использовать рассматриваемые операторы обычным образом, т.е. в тех выражениях, где предполагается результат типа bool. Напомним, что для всех встроенных в C# типов данных результатом логической операции должно быть значение типа bool. Поэтому вполне разумно предусмотреть возврат значения типа bool и в перегружаемых вариантах этих логических операторов. Но, к сожалению, такой способ перегрузки пригоден лишь в том случае, если не требуются укороченные логические операторы.</p>
+<p class="style3">Перегрузка укороченных логических операторов</p>
+<p class="style3">Для того чтобы применение укороченных логических операторов && и || стало возможным, необходимо соблюсти следующие четыре правила:</p>
+<p class="style3">В классе должна быть произведена перегрузка логических операторов & и |.</p>
+<p class="style3">Перегружаемые методы операторов & и | должны возвращать значение того же типа, что и у класса, для которого эти операторы перегружаются.</p>
+<p class="style3">Каждый параметр должен содержать ссылку на объект того класса, для которого перегружается логический оператор.</p>
+<p class="style3">Для класса должны быть перегружены операторы true и false.</p>
+<p class="style3">Если все эти условия выполняются, то укороченные логические операторы автоматически становятся пригодными для применения. Давайте рассмотрим пример:</p>
+<pre>
+<span class="style2"><strong>using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication1
+</strong></span>{<span class="style2"><strong>
+    class MyArr
+    {
+        // Координаты точки в трехмерном пространстве
+        public int x, y, z;
+
+        public MyArr(int x = 0, int y = 0, int z = 0)
+        {
+            this.x = x;
+            this.y = y;
+            this.z = z;
+        }
+
+        // Перегружаем логический оператор &
+        public static MyArr operator &(MyArr obj1, MyArr obj2)
+        {
+            if (((obj1.x > 0) && (obj1.y > 0) && (obj1.z > 0))
+                & ((obj2.x > 0) && (obj2.y > 0) && (obj2.z > 0)))
+                return obj1;
+            return new MyArr(1,1,1);
+        }
+
+        // Перегружаем логический оператор |
+        public static MyArr operator |(MyArr obj1, MyArr obj2)
+        {
+            if (((obj1.x > 0) || (obj1.y > 0) || (obj1.z > 0))
+                | ((obj2.x > 0) || (obj2.y > 0) || (obj2.z > 0)))
+                return obj1;
+            return new MyArr(1, 1, 1);
+        }
+
+        // Перегружаем логический оператор !
+        public static bool operator !(MyArr obj1)
+        {
+            if ((obj1.x > 0) && (obj1.y > 0) && (obj1.z > 0))
+                return false;
+            return true;
+        }
+
+        // Перегружаем оператор true
+        public static bool operator true(MyArr obj)
+        {
+            if ((obj.x > 0) || (obj.y > 0) || (obj.z > 0))
+                return true;
+            return false;
+        }
+
+        // Перегружаем оператор false
+        public static bool operator false(MyArr obj)
+        {
+            if ((obj.x > 0) && (obj.y > 0) && (obj.z > 0))
+                return false;
+            return true;
+        }
+
+        // Вспомогательный метод
+        public static bool And(MyArr obj1, MyArr obj2)
+        {
+            if (obj1 && obj2)
+                return true;
+            return false;
+        }
+        
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            const string STR = "Координаты объектов";
+            MyArr obj1 = new MyArr(x: 4, z: 5, y: 12);
+            MyArr obj2 = new MyArr(x: 10, z: 3, y: 5);
+
+            if (MyArr.And(obj1, obj2))
+                Console.WriteLine(STR + " obj1 и obj2 находятся в допустимых пределах");
+            else Console.WriteLine(STR + "obj1 или obj2 находятся в НЕдопустимых пределах");
+
+            Console.ReadLine();
+        }
+    }
+}</strong></span></pre>
+<p class="style3">Благодаря тому что все необходимые правила соблюдены, укороченные операторы становятся доступными для применения к объектам MyArr. Они действуют следующим образом. Первый операнд проверяется с помощью операторного метода operator true (для оператора ||) или же с помощью операторного метода operator false (для оператора &&). Если удается определить результат данной операции, то соответствующий перегружаемый оператор (& или |) далее не выполняется. В противном случае перегружаемый оператор (& или | соответственно) используется для определения конечного результата. Следовательно, когда применяется укороченный логический оператор && или ||, то соответствующий логический оператор & или | вызывается лишь в том случае, если по первому операнду невозможно определить результат вычисления выражения.</p>
+<p class="style3">Описанный выше способ применения укороченных логических операторов может показаться, на первый взгляд, несколько запутанным, но если подумать, то в таком применении обнаруживается известный практический смысл. Ведь благодаря перегрузке операторов true и false для класса компилятор получает разрешение на применение укороченных логических операторов, не прибегая к явной их перегрузке. Это дает также возможность использовать объекты в условных выражениях. И вообще, логические операторы & и | лучше всего реализовывать полностью, если, конечно, не требуется очень узко направленная их реализация.</p>
+                </td></tr>
+
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les55.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les55/6.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:47:44 GMT -->
+</html>

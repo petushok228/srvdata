@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les55/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:47:03 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	color: #0000FF;
+}
+    .style3 {
+	margin-left: 40px;
+}
+.style4 {
+	color: #FF0000;
+}
+    .style5 {
+	font-size: medium;
+}
+.style6 {
+	color: #FF0000;
+	font-size: medium;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 2. Перегрузка конструкторов. </td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text" style="font-size: small">
+                <p><span class="style6"><strong>Как и методы, конструкторы также могут перегружаться</strong></span><span class="style5">. Это дает возможность конструировать объекты самыми разными способами:</span><pre class="style3">
+<span class="style2"><strong>using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication1
+</strong></span>{<span class="style2"><strong>
+    class UserInfo
+    {
+        public string Name, Family;
+        public byte Age;
+
+        // Создадим </span><span class="style4">несколько перегруженных конструкторов</span><span class="style2">
+        public UserInfo() { }
+        public UserInfo(string Name)
+        {
+            this.Name = Name;
+        }
+        public UserInfo(</span><span class="style4">string Name, string Family</span><span class="style2">)
+        {
+            this.Name = Name;
+            this.Family = Family;
+        }
+        public UserInfo(</span><span class="style4">string Name, string Family, byte Age</span><span class="style2">)
+        {
+            this.Name = Name;
+            this.Family = Family;
+            this.Age = Age;
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Создадим несколько объектов типа UserInfo
+            // используя перегруженные конструкторы
+            UserInfo obj1 = new UserInfo();
+            UserInfo obj2 = new UserInfo(Name: "Alex");
+            UserInfo obj3 = new UserInfo(Name: "Alex", Family: "Erohin");
+            UserInfo obj4 = new UserInfo(Name: "Alex", Family: "Erohin", Age: 26);
+                        
+            Console.ReadLine();
+        }
+    }
+</span></strong>}</pre>
+<p class="style5">Одна из самых распространенных причин для перегрузки конструкторов заключается в необходимости предоставить возможность одним объектам инициализировать другие, наподобие того, как в предыдущем примере инициализируются поля класса.</p>
+<p class="style5">Когда приходится работать с перегружаемыми конструкторами, то иногда очень полезно предоставить возможность одному конструктору вызывать другой. В C# это дается с помощью ключевого слова this. Ниже приведена общая форма такого вызова:</p>
+<pre><span class="style2"><strong>имя_конструктора(список_параметров1) : this(список_параметров2) {
+// ... Тело конструктора, которое может быть пустым.
+</strong></span>}</pre>
+<p class="style5">В исходном конструкторе сначала выполняется перегружаемый конструктор, список параметров которого соответствует критерию список_параметров2, а затем все остальные операторы, если таковые имеются в исходном конструкторе. Ниже приведен соответствующий пример:</p>
+<pre class="style3"><span class="style2"><strong>using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication1
+</strong></span>{<span class="style2"><strong>
+    class UserInfo
+    {
+        public string Name, Family;
+        public byte Age;
+
+        // Используем ключевое слово this для
+        // создания "цепочки" конструкторов
+        public UserInfo() : this("None","None",0)
+        {
+        }
+
+        public UserInfo(UserInfo obj)
+            : this(obj.Name, obj.Family, obj.Age)
+        {
+        }
+        
+        public UserInfo(string Name, string Family, byte Age)
+        {
+            this.Name = Name;
+            this.Family = Family;
+            this.Age = Age;
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            UserInfo ui1 = new UserInfo();
+            Console.WriteLine("ui1: {0}, {1}, {2}",ui1.Name,ui1.Family,ui1.Age);
+
+            UserInfo ui2 = new UserInfo("Alex","Erohin",26);
+            Console.WriteLine("ui2: {0}, {1}, {2}", ui2.Name, ui2.Family, ui2.Age);
+
+            UserInfo ui3 = new UserInfo(ui2);
+            Console.WriteLine("ui3: {0}, {1}, {2}", ui3.Name, ui3.Family, ui3.Age);
+                        
+            Console.ReadLine();
+        }
+    }</strong></span>
+}</pre>
+<p>Constructor chaining</p>
+				<p><img alt="" src="Pic/img6691.png" width="677" height="138" /></p>
+<p class="style5">Вызывать перегружаемый конструктор с помощью ключевого слова this полезно, в частности, потому, что он позволяет исключить ненужное дублирование кода. В приведенном выше примере нет никакой необходимости дублировать во всех трех конструкторах одну и ту же последовательность инициализации, и благодаря применению ключевого слова this такое дублирование исключается. Другое преимущество организации подобного вызова перегружаемого конструктора заключается в возможности создавать конструкторы с задаваемыми "по умолчанию" аргументами, когда эти аргументы не указаны явно.</p></td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год.</td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les55.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les55/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:47:11 GMT -->
+</html>

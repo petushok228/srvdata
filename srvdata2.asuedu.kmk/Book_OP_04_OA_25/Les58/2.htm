@@ -1,0 +1,328 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les58/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:49:27 GMT -->
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/Oa-2.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    .style2 {
+	font-size: small;
+}
+.style3 {
+	color: #0000FF;
+}
+    .style4 {
+	margin-left: 40px;
+}
+    .style5 {
+	color: #0000FF;
+	margin-left: 40px;
+}
+    .style6 {
+	color: #0000FF;
+	margin-left: 80px;
+}
+.style7 {
+	color: #FF0000;
+}
+    .style8 {
+	font-size: medium;
+}
+    .style9 {
+	color: #0000FF;
+	font-size: small;
+}
+.style10 {
+	color: #0000FF;
+	font-size: medium;
+}
+    </style>
+</head>
+<body>
+
+    <table class="style1">
+        <tr>
+            <td colspan="3" class="zag" 
+                style="border-bottom-color: #800000; border-bottom-width: thin; border-bottom-style: double">
+                Тема 1 Использование конструкторов в классах при наследовании. </td>
+        </tr>
+        <tr>
+            <td width="60%">
+                &nbsp;</td>
+            <td width="20%">
+                &nbsp;</td>
+            <td width="20%" id="Naz" align="center" class="og" onmouseover="return Naz_onmouseover()" onmouseout="return Naz_onmouseout()" onclick="return Naz_onclick()">
+                Назад</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text">
+                <p style="line-height: 1.56; overflow-wrap: break-word;">
+				<span class="b" style="font-weight: bold;"><span class="style2">
+				Наследование</span></span><span><span class="style2">&nbsp;</span></span><span class="style2">позволяет 
+				создавать новый класс на основе уже существующего класса. Наряду 
+				с инкапсуляцией наследование является одним из краеугольных 
+				камней объектно-ориентированного программирования.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word;" class="style2">
+				Ключевыми понятиями наследования являются<span>&nbsp;</span><span class="b" style="font-weight: bold;">подкласс</span><span>&nbsp;</span>и<span>&nbsp;</span><span class="b" style="font-weight: bold;">суперкласс</span>.<span>&nbsp;</span></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word;">
+				<span class="style3" style="font-weight: bold;">
+				<span class="style2">Подкласс</span></span><span><span class="style2">&nbsp;</span></span><span class="style2">наследует 
+				от суперкласса все публичные атрибуты и методы. </span> </p>
+				<p style="line-height: 1.56; overflow-wrap: break-word;">
+				<span class="style9"><strong>Суперкласс</strong></span><span class="style2"> еще 
+				называется базовым (base class) или родительским (parent class), 
+				а подкласс - производным (derived class) или дочерним (child 
+				class).</span></p>
+				<p style="line-height: 1.56; overflow-wrap: break-word;" class="style8">
+				Синтаксис для наследования классов выглядит следующим образом:</p>
+				<pre class="style4"><span class="style3">class подкласс (суперкласс):    </span></pre>
+				<pre class="style4">  <span class="style3"> методы_подкласса</span>	</pre>
+				<p class="style10"><strong>Super().init() в Python — это вызов метода инициализации из родительского класса. 
+
+Это гарантирует, что при создании объекта дочернего класса как атрибуты родительского, так и дочернего класса будут правильно инициализированы. 
+				</strong> </p>
+				<h2 id="vyzov-initsializatora-superklassa-s-super" style="box-sizing: border-box; margin-top: 3rem !important; margin-bottom: 1.5rem !important; font-weight: 500; line-height: 1.2; color: rgb(33, 33, 33); font-size: 2rem; font-family: Manrope, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Вызов инициализатора суперкласса с<span>&nbsp;</span><code style="box-sizing: border-box; font-family: var(--bs-font-monospace); font-size: 0.875em; color: var(--bs-code-color); overflow-wrap: break-word;">super()</code></h2>
+				<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: rgb(33, 33, 33); font-family: Manrope, sans-serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				При наследовании классов часто возникает необходимость не только 
+				добавить новые атрибуты или методы, но и расширить или изменить 
+				инициализацию объекта. В этом случае очень важно корректно 
+				вызвать конструктор суперкласса, чтобы все атрибуты и состояние, 
+				которые должны быть наследованы, были правильно установлены.</p>
+				<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: rgb(33, 33, 33); font-family: Manrope, sans-serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				Использование<span>&nbsp;</span><code style="box-sizing: border-box; font-family: var(--bs-font-monospace); font-size: 0.875em; color: var(--bs-code-color); overflow-wrap: break-word;">super()</code><span>&nbsp;</span>в<span>&nbsp;</span><code style="box-sizing: border-box; font-family: var(--bs-font-monospace); font-size: 0.875em; color: var(--bs-code-color); overflow-wrap: break-word;">__init__</code><span>&nbsp;</span>позволяет 
+				нам вызвать конструктор суперкласса, что гарантирует, что весь 
+				необходимый код инициализации будет выполнен:</p>
+				<pre class="style6"><strong>class Counter:
+    def __init__(self):
+        self.value = 0
+
+    def inc(self):
+        self.value += 1
+
+    def dec(self):
+        self.value -= 1
+
+class NonDecreasingCounter(Counter):
+    def __init__(self):
+        <span class="style7">super().__init__()  # Вызываем конструктор предка</span>
+        self.non_decreasing = True  # Дополнительный атрибут для наследника
+
+    def dec(self):
+        if self.non_decreasing:
+            print("Уменьшение значения запрещено.")
+        else:
+            super().dec()  # Вызываем метод dec предка, если уменьшение разрешено
+
+n = NonDecreasingCounter()
+n.inc()
+print(n.value)  # 1
+n.dec()         # Уменьшение значения запрещено.
+print(n.value)  # 1
+
+</strong><strong>n.non_decreasing = False
+n.dec()
+print(n.value)  # 0</strong></pre>
+				<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; font-family: Manrope, sans-serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" class="style3">
+				<span class="style8">В этом примере метод</span><span><span class="style8">&nbsp;</span></span><code style="box-sizing: border-box; font-family: var(--bs-font-monospace); color: var(--bs-code-color); overflow-wrap: break-word;"><span class="style8">__init__</span></code><span><span class="style8">&nbsp;</span></span><span class="style8">в</span><span><span class="style8">&nbsp;</span></span><code style="box-sizing: border-box; font-family: var(--bs-font-monospace); color: var(--bs-code-color); overflow-wrap: break-word;"><span class="style8">NonDecreasingCounter</span></code><span class="style8">&nbsp;вызывает 
+				метод</span><span><span class="style8">&nbsp;</span></span><code style="box-sizing: border-box; font-family: var(--bs-font-monospace); color: var(--bs-code-color); overflow-wrap: break-word;"><span class="style8">__init__</span></code><span class="style8">&nbsp;предка</span><span><span class="style8">&nbsp;</span></span><code style="box-sizing: border-box; font-family: var(--bs-font-monospace); color: var(--bs-code-color); overflow-wrap: break-word;"><span class="style8">Counter</span></code><span class="style8">&nbsp;с 
+				помощью</span><span><span class="style8">&nbsp;</span></span><code style="box-sizing: border-box; font-family: var(--bs-font-monospace); color: var(--bs-code-color); overflow-wrap: break-word;"><span class="style8">super()</span></code><span class="style8">. 
+				Это гарантирует, что атрибут</span><span><span class="style8">&nbsp;</span></span><code style="box-sizing: border-box; font-family: var(--bs-font-monospace); color: var(--bs-code-color); overflow-wrap: break-word;"><span class="style8">value</span></code><span class="style8">&nbsp;инициализируется 
+				как в</span><span><span class="style8">&nbsp;</span></span><code style="box-sizing: border-box; font-family: var(--bs-font-monospace); color: var(--bs-code-color); overflow-wrap: break-word;"><span class="style8">Counter</span></code><span class="style8">. 
+				Класс</span><span><span class="style8">&nbsp;</span></span><code style="box-sizing: border-box; font-family: var(--bs-font-monospace); color: var(--bs-code-color); overflow-wrap: break-word;"><span class="style8">NonDecreasingCounter</span></code><span class="style8">&nbsp;добавляет 
+				дополнительный атрибут</span><span><span class="style8">&nbsp;</span></span><code style="box-sizing: border-box; font-family: var(--bs-font-monospace); color: var(--bs-code-color); overflow-wrap: break-word;"><span class="style8">non_decreasing</span></code><span class="style8">&nbsp;и 
+				изменяет поведение метода</span><span><span class="style8">&nbsp;</span></span><code style="box-sizing: border-box; font-family: var(--bs-font-monospace); color: var(--bs-code-color); overflow-wrap: break-word;"><span class="style8">dec</span></code><span class="style8">, 
+				чтобы контролировать, может ли счетчик уменьшаться. Это 
+				демонстрирует, как можно расширить и настроить поведение классов 
+				при наследовании.</span></p>
+				<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: rgb(33, 33, 33); font-family: Manrope, sans-serif; font-size: 17.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;  text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+				В контексте множественного наследования использование<span>&nbsp;</span><code style="box-sizing: border-box; font-family: var(--bs-font-monospace); font-size: 0.875em; color: var(--bs-code-color); overflow-wrap: break-word;">super()</code><span>&nbsp;</span>становится 
+				еще более важным, так как оно гарантирует, что все конструкторы 
+				суперклассов вызываются в правильном порядке. Это предотвращает 
+				проблемы с инициализацией и позволяет каждому классу в иерархии 
+				наследования вносить свой вклад в конечное состояние объекта.</p>
+				<p class="style3">&nbsp;</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word;" class="style2">
+				Например, у нас есть класс Person, который представляет 
+				человека:</p>
+				<pre class="style5">class Person:    
+	 def __init__(self, name):        
+	     self.__name = name   # имя человека     
+	 @property    
+	 def name(self):        
+	     return self.__name        
+	 def display_info(self):        
+	     print(f"Name: {self.__name} ")</pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word;" class="style2">
+				Предположим, нам необходим класс работника, который работает на 
+				некотором предприятии. Мы могли бы создать с нуля новый класс, к 
+				примеру, класс Employee:</p>
+				<pre class="style5">class Employee:     
+	def __init__(self, name):        
+		self.__name = name  # имя работника     
+	@property    
+		def name(self):        
+			return self.__name     
+		def display_info(self):        
+			print(f"Name: {self.__name} ")     
+		def work(self):        
+			print(f"{self.name} works")</pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word;">
+				<span class="style2">Однако класс Employee может иметь те же 
+				атрибуты и методы, что и класс Person, так как работник - это 
+				человек. Так, в выше в классе Employee только добавляется метод<span>&nbsp;</span><code style="font-family: monospace;">works</code>, 
+				весь остальной код повторяет функционал класса Person. Но чтобы 
+				не дублировать функционал одного класса в другом, в данном 
+				случае лучше применить наследование.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word;">Итак, 
+				унаследуем класс Employee от класса Person:</p>
+				<pre class="style5">class Person:     
+	def __init__(self, name):        
+		self.__name = name   # имя человека     
+	@property    
+	def name(self):        
+		return self.__name     
+	def display_info(self):        
+		print(f"Name: {self.__name} ")  
+class Employee(Person):     
+	def work(self):        
+		print(f"{self.name} works")  
+tom = Employee("Tom")
+print(tom.name)     # Tom
+tom.display_info()  # Name: <span class="style2">Tom </span>
+tom.work()          # Tom works</pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word;" class="style2">
+				Класс Employee полностью перенимает функционал класса Person, 
+				лишь добавляя метод<span>&nbsp;</span><code style="font-family: monospace;">work()</code>. 
+				Соответственно при создании объекта Employee мы можем 
+				использовать унаследованный от Person конструктор:</p>
+				<pre>tom = Employee("Tom")</pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word;" class="style2">
+				И также можно обращаться к унаследованным атрибутам/свойствам и 
+				методам:</p>
+				<pre class="style5">print(tom.name)     # Tom
+tom.display_info()  # Name: Tom</pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word;" class="style2">
+				Однако, стоит обратить внимание, что для Employee НЕ доступны 
+				закрытые атрибуты типа __name. Например, мы НЕ можем в методе 
+				work обратиться к приватному атрибуту<span>&nbsp;</span><code style="font-family: monospace;">self.__name</code>:</p>
+				<pre class="style5">def work(self):    
+	print(f"{self.__name} works")   # ! Ошибка</pre>
+				<h3 style="color: var(--h-text-color);" class="style2">
+				Множественное наследование</h3>
+				<p style="line-height: 1.56; overflow-wrap: break-word;" class="style2">
+				Одной из отличительных особенностей языка Python является 
+				поддержка множественного наследования, то есть один класс можно 
+				унаследовать от нескольких классов:</p>
+				<pre class="style5">#  класс работника
+class Employee:    
+	def work(self):        
+		print("Employee works")  
+#  класс студента
+class Student:    
+	def study(self):        
+		print("Student studies")  
+class WorkingStudent(Employee, Student):  Наследование от классов Employee и Student    
+	pass
+# класс работающего студента
+tom = WorkingStudent()
+tom.work()      # Employee <span class="style2">works</span>
+tom.study()     # Student studies</pre>
+				<p style="line-height: 1.56; overflow-wrap: break-word;">
+				<span class="style2">Здесь определен класс Employee, который 
+				представляет сотрудника фирмы, и класс Student, который 
+				представляет учащегося студента. Класс WorkingStudent, который 
+				представляет работающего студента, не определяет никакого 
+				функционала, поэтому в нем определен оператор<span>&nbsp;</span><span class="b" style="font-weight: bold;">pass</span>. 
+				Класс WorkingStudent просто наследует функционал от двух классов 
+				Employee и Student. Соответственно у объекта этого класса мы 
+				можем вызвать методы обоих классов.</p>
+				<p style="line-height: 1.56; overflow-wrap: break-word;">При 
+				этом наследуемые классы могут более сложными по 
+				функциональности, например:</p>
+				<pre class="style5">class Employee:     
+	def __init__(self, name):        
+		self.__name = name     
+	@property    
+	def name(self):        
+		return self.__name     
+	def work(self):        
+		print(f"{self.name} works")  
+class Student:     
+	def __init__(self, name):        
+		self.__name = name     
+	@property    
+	def name(self):        
+		return self.__name     
+	def study(self):        
+		print(f"{self.name} studies")  
+class WorkingStudent(Employee, Student):    pass  
+tom = WorkingStudent("Tom")
+tom.work()      # Tom works
+tom.study()     # Tom studies</pre>
+                <p class="style2">&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td>
+                <p><span class="style2">Чтобы один класс наследовал от другого нужно при объявлении класса передать родительский класс как аргумент.</p>
+<pre>
+
+class A:
+    def funcA(self):
+        print("A")
+
+
+class B(A):
+    def funcB(self):
+        print("B")
+
+
+b = B()
+A.funcA = B.funcB
+b.funcA()
+
+</pre>
+				<pre>
+</span></pre>
+			</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" 
+                style="font-family: 'Comic Sans MS'; font-size: 8px; color: #000099">
+                Конспект подготовлен Бакулиным А. М. 2022 год./td>
+        </tr>
+    </table>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Naz_onmouseover() {
+Naz.style.fontSize=12;
+Naz.style.cursor="hand"
+}
+
+function Naz_onmouseout() {
+Naz.style.fontSize=10;
+Naz.style.cursor="none"
+}
+
+function Naz_onclick() {
+window.location="Index_Les58.htm"
+}
+
+// ]]>
+</script>
+
+</body>
+
+<!-- Mirrored from http://srvdata2.asuedu.kmk/Book_OP_04_OA_25/Les58/2.htm by HTTrack Website Copier/3.x [XR&CO], Sat, 03 Oct 2026 10:49:27 GMT -->
+</html>
